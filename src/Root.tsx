@@ -4,6 +4,7 @@ import {FPS, HEIGHT, WIDTH, sceneFrames} from './lib/timing';
 import {Intro, INTRO_FRAMES} from './Intro';
 import {SCENES} from './scenes';
 import {Test3D} from './three/Test3D';
+import {Thumbnail} from './Thumbnail';
 
 const useFonts = () => {
   const [handle] = useState(() => delayRender('fonts'));
@@ -51,6 +52,7 @@ export const RemotionRoot: React.FC = () => (
   <>
     <Composition id="VideoMaster" component={VideoMaster} durationInFrames={total} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="Test3D" component={() => <WithFonts><Test3D /></WithFonts>} durationInFrames={1200} fps={FPS} width={WIDTH} height={HEIGHT} />
+    <Composition id="Thumbnail" component={() => <WithFonts><Thumbnail /></WithFonts>} durationInFrames={90} fps={FPS} width={1280} height={720} />
     <Composition id="Intro" component={() => <WithFonts><Intro /></WithFonts>} durationInFrames={INTRO_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
     {SCENES.map((Scene, i) => (
       <Composition

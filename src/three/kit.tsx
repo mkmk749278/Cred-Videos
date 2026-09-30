@@ -17,7 +17,9 @@ export const Scene3D: React.FC<{
   style?: React.CSSProperties;
   env?: 'studio' | 'warm' | 'cool';
   exposure?: number;
-}> = ({width = 1920, height = 770, camera, children, style, env = 'studio', exposure = 1.1}) => (
+  /** override the internal resolution (1 = full) */
+  dpr?: number;
+}> = ({width = 1920, height = 770, camera, children, style, env = 'studio', exposure = 1.1, dpr = DPR}) => (
   <div
     style={{
       position: 'absolute',
@@ -35,7 +37,7 @@ export const Scene3D: React.FC<{
       width={width}
       height={height}
       // Reduced internal resolution, upscaled by the browser: software WebGL cost scales with pixel count.
-      dpr={DPR}
+      dpr={dpr}
       gl={{alpha: true, antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: exposure}}
       camera={{position: camera.position, fov: camera.fov ?? 38, near: 0.1, far: 200}}
       style={{background: 'transparent'}}

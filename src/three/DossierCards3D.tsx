@@ -17,7 +17,7 @@ export const DossierCards3D: React.FC<{cards: DossierCard[]; width: number; heig
   const unit = (2 * dist * Math.tan(((fov / 2) * Math.PI) / 180)) / height;
   const scale = (cardPx * unit) / 1.7;
   return (
-    <Scene3D width={width} height={height} camera={{position: [0, 0, dist], lookAt: [0, 0, 0], fov}} style={{maskImage: 'none', WebkitMaskImage: 'none'}}>
+    <Scene3D width={width} height={height} dpr={1} camera={{position: [0, 0, dist], lookAt: [0, 0, 0], fov}} style={{maskImage: 'none', WebkitMaskImage: 'none'}}>
       {cards.map((c, i) => {
         const p = spring({frame: frame - c.at, fps, config: {mass: 0.9, stiffness: 110, damping: 13}});
         if (frame < c.at) return null;

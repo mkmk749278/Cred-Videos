@@ -86,6 +86,9 @@ export const Scene02: React.FC = () => {
   const cSC = cueFrame(I, 'The Supreme Court has said');
   const cHistory = cueFrame(I, 'If you maintained');
   const cPolice = cueFrame(I, 'And the police');
+  const cDayOne = cueFrame(I, 'from the very first day');
+  const cProblems = cueFrame(I, 'your problems started');
+  const tlGrow = interpolate(frame, [cDayOne, cHistory + 40, cProblems, cProblems + 24], [0, 0.6, 0.62, 1], CLAMP);
   const cSec = cueFrame(I, 'Pure credit card defaults');
   const smash = cArrest + 20;
   const sh = shake(frame, smash + 7, 16);
@@ -204,7 +207,7 @@ export const Scene02: React.FC = () => {
             <Label color={C.gold}>Supreme Court precedents</Label>
           </Reveal>
         </div>
-        <div style={{position: 'absolute', left: 150, top: 110, display: 'flex', flexDirection: 'column', gap: 34}}>
+        <div style={{position: 'absolute', left: 150, top: 100, display: 'flex', flexDirection: 'column', gap: 22}}>
           <PointCard
             at={cSC + 6}
             color={C.gold}
@@ -233,6 +236,39 @@ export const Scene02: React.FC = () => {
             checkAt={sentenceEnd(I, 'If you maintained') - 10}
           />
         </div>
+        {/* intent timeline: cheating needs a plan on day one */}
+        <div style={{position: 'absolute', left: 150, top: 610, width: 1400, opacity: vis(frame, cDayOne)}}>
+          <div style={{position: 'relative', height: 150}}>
+            <div style={{position: 'absolute', left: 0, right: 0, top: 40, height: 6, borderRadius: 3, background: '#1e293b'}} />
+            <div style={{position: 'absolute', left: 0, top: 40, height: 6, borderRadius: 3, width: `${tlGrow * 100}%`, background: `linear-gradient(90deg, ${C.emerald} 0%, ${C.emerald} 62%, ${C.amber} 78%, ${C.crimson} 100%)`}} />
+            {[
+              {x: 0, at: cDayOne, label: 'Day 1: card taken', sub: 'no plan to cheat', color: C.emerald},
+              {x: 0.2, at: cHistory + 10, label: '', sub: '', color: C.emerald, pay: true},
+              {x: 0.33, at: cHistory + 18, label: '', sub: '', color: C.emerald, pay: true},
+              {x: 0.46, at: cHistory + 26, label: 'Normal payments', sub: 'months / years', color: C.emerald, pay: true},
+              {x: 0.59, at: cHistory + 34, label: '', sub: '', color: C.emerald, pay: true},
+              {x: 0.76, at: cProblems, label: 'Crisis', sub: 'job loss · illness', color: C.amber},
+              {x: 1, at: cProblems + 20, label: 'Default', sub: 'civil, not criminal', color: C.crimson},
+            ].map((m, i) => {
+              const o = vis(frame, m.at);
+              return (
+                <div key={i} style={{position: 'absolute', left: `${m.x * 100}%`, top: 0, width: 0, opacity: o}}>
+                  <div style={{position: 'absolute', left: m.pay ? -13 : -17, top: m.pay ? 30 : 26, width: m.pay ? 26 : 34, height: m.pay ? 26 : 34, borderRadius: 17, background: m.pay ? alpha(m.color, 0.25) : m.color, border: `3px solid ${m.color}`, transform: `scale(${0.6 + 0.4 * o})`, display: 'grid', placeItems: 'center', fontSize: 16, fontWeight: 900, color: C.text}}>{m.pay ? '✓' : ''}</div>
+                  {m.label && (
+                    <div style={{position: 'absolute', top: 76, left: i === 0 ? -17 : i === 6 ? -300 : -150, width: 300, textAlign: i === 0 ? 'left' : i === 6 ? 'right' : 'center'}}>
+                      <div style={{fontSize: 26, fontWeight: 800, color: m.color}}>{m.label}</div>
+                      <div style={{fontSize: 20, color: C.muted}}>{m.sub}</div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        {[cHistory + 10, cHistory + 18, cHistory + 26, cHistory + 34].map((a) => (
+          <Sfx key={a} at={a} name="tactile_click" volume={0.22} />
+        ))}
+        <Sfx at={cProblems} name="warning_pulse" volume={0.25} />
         <Sfx at={cSC + 6} name="node_pop" volume={0.45} />
         <Sfx at={cSC + 60} name="node_pop" volume={0.45} />
         <Sfx at={cHistory + 90} name="node_pop" volume={0.45} />

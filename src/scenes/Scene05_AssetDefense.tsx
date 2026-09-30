@@ -96,7 +96,7 @@ export const Scene05: React.FC = () => {
         <div style={{position: 'absolute', left: 1120, top: 190, opacity: vis(frame, cImagine, cMove + 20)}}>
           <KLine at={cImagine} size={36} color="#FCA5A5">Salary day → ₹0.00 in your account</KLine>
         </div>
-        <div style={{position: 'absolute', left: 1360, top: 130, display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start', opacity: vis(frame, cNoLoan, cKeep)}}>
+        <div style={{position: 'absolute', left: 1590, top: 170, display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start', opacity: vis(frame, cNoLoan, cKeep)}}>
           {[
             {at: cNoLoan, t: 'No loan'},
             {at: cNoCard, t: 'No credit card'},

@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, inr, spr, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Counter, Glass, Label, Layer, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
 import {CardOrbit3D} from '../three/CardOrbit3D';
@@ -99,7 +99,7 @@ const BalanceScale: React.FC<{start: number; tilt: number}> = ({start, tilt}) =>
 export const Scene03: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const cCut = cueFrame(I, 'SBI Card cannot join');
   const cLedger = cueFrame(I, 'Look at how recovery');
   const cScale = cueFrame(I, 'Filing a civil suit');

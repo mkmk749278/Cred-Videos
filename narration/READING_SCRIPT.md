@@ -1,6 +1,6 @@
 # Narration Script — Read-Aloud Version
 
-**Credit Card Debt in India — Know Your Rights** · 13 modules · about 17 minutes total
+**Credit Card Debt in India — Know Your Rights** · 13 modules · about 19 minutes total
 
 Talk to **one person** — imagine a friend who is scared and sitting across from you. You're not reading a news report; you're calmly explaining what you know. Warm, steady, confident. Smile slightly while you talk — people can hear it.
 
@@ -25,6 +25,7 @@ The words below are exactly what appears in the subtitles, so please read them a
 - `⏸` means take a breath and pause a little longer, because a new idea starts.
 - **Bold** phrases are the key messages: slow down slightly and lean on them.
 - Numbers like "forty-eight percent" or "twenty-five to thirty-five percent": say them clearly, never rushed.
+- **Linking lines** (marked ↪) open each module. They connect the last topic to the next one, so say them like a natural "okay, so now…", not like a new announcement.
 - Don't read in one flat tone. Go softer for the reassuring parts ("You didn't steal anything.") and firmer for warnings ("Never make cash payments to an agent.").
 
 ### Pronunciation guide
@@ -49,7 +50,7 @@ The words below are exactly what appears in the subtitles, so please read them a
 
 ## Module 01 — The Core Premise
 
-*File: `m01.wav` · De-stigmatization · about 1:53*
+*File: `m01.wav` · De-stigmatization · about 1:57*
 
 > *(3 seconds of silence)*
 
@@ -77,17 +78,23 @@ Now, let me show you something. Look at the business side. Why do credit cards c
 
 `⏸`
 
-And remember the Golden Rule. **Your family comes first.** Food, medicine, rent, school fees. All of that takes absolute priority over paying the bank. Never starve your family to pay a card bill. Okay? Let's fix this the right way, step by step.
+And remember the Golden Rule. **Your family comes first.** Food, medicine, rent, school fees. All of that takes absolute priority over paying the bank. Never starve your family to pay a card bill. Okay? Let's fix this the right way, step by step. And step one is knowing what the law really says.
 
 ---
 
 ## Module 02 — Legal Reality
 
-*File: `m02.wav` · Civil breach vs. criminal law · about 1:45*
+*File: `m02.wav` · Civil breach vs. criminal law · about 1:52*
 
 > *(3 seconds of silence)*
 
-Now, what's the biggest weapon recovery agents use? Fear. They'll shout things like 'Section 420', 'criminal case', 'police will come'. Scary, right? So let's check what the law really says.
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+So, debt is not a crime. But the recovery agents will try very hard to make you feel like a criminal. Let's see what the law actually says.
+
+`⏸`
+
+What's the biggest weapon they use? Fear. They'll shout things like 'Section 420', 'criminal case', 'police will come'. Scary, right?
 
 `⏸`
 
@@ -109,11 +116,17 @@ And the police? Police are not the bank's recovery agents. An unpaid card bill i
 
 ## Module 03 — Portfolio Architecture
 
-*File: `m03.wav` · Recovery economics · about 1:14*
+*File: `m03.wav` · Recovery economics · about 1:22*
 
 > *(3 seconds of silence)*
 
-Do you have cards from many banks? Then you might be scared of this. What if all the banks join together and file one big case against you?
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+Okay. So the law is on your side, and the police are not the bank's agents. But what if you owe money to not one bank, but many?
+
+`⏸`
+
+And here's the fear. What if all the banks join together and file one big case against you?
 
 `⏸`
 
@@ -131,9 +144,15 @@ Even in high tiers above one lakh, card cases rarely go to court. Courts are slo
 
 ## Module 04 — Phantom Accounting
 
-*File: `m04.wav` · The revolving debt trap · about 1:08*
+*File: `m04.wav` · The revolving debt trap · about 1:18*
 
 > *(3 seconds of silence)*
+
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+So banks think about cost before they chase you. Now let's look at the other side of the money, the big number on your statement.
+
+`⏸`
 
 Have you noticed this? Your card is blocked. You haven't spent even one rupee. But the amount keeps going up and up. Strange, right? I call this Phantom Accounting.
 
@@ -153,9 +172,15 @@ In six months, a one-lakh rupee debt can show up as one lakh sixty-five thousand
 
 ## Module 05 — Asset Defense
 
-*File: `m05.wav` · The banker's right of set-off · about 1:07*
+*File: `m05.wav` · The banker's right of set-off · about 1:16*
 
 > *(3 seconds of silence)*
+
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+So most of that scary balance is just fees. But before we talk about settling anything, there's one thing you must do first.
+
+`⏸`
 
 Before you answer even one recovery call, do this first. **Protect your family's money.** This is very important.
 
@@ -175,11 +200,17 @@ And keep every bank where you owe money at a zero balance. Your family's groceri
 
 ## Module 06 — The Legal Shield
 
-*File: `m06.wav` · PNO intimation protocol · about 1:12*
+*File: `m06.wav` · PNO intimation protocol · about 1:19*
 
 > *(3 seconds of silence)*
 
-Now, many people think, 'I'll just switch off my phone and disappear.' **Please don't do that.** If you go totally silent, the bank's system may mark you as 'Skip or Absconding'. That means they think you ran away. And then they start calling your relatives, your friends, even your office.
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+Good. Your salary is safe now. The next question is, how should you deal with the bank itself?
+
+`⏸`
+
+Many people think, 'I'll just switch off my phone and disappear.' **Please don't do that.** If you go totally silent, the bank's system may mark you as 'Skip or Absconding'. That means they think you ran away. And then they start calling your relatives, your friends, even your office.
 
 `⏸`
 
@@ -197,11 +228,17 @@ The bank will reply with a reference number. Keep it safe. The Case Reference ID
 
 ## Module 07 — Recovery Counter-Tactics
 
-*File: `m07.wav` · Doorstep rules · about 1:42*
+*File: `m07.wav` · Doorstep rules · about 1:54*
 
 > *(3 seconds of silence)*
 
-Recovery agents often use the same few tricks to scare you. Once you know them, they stop working. Ready? Let's go one by one.
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+Now the bank has your email, and you have a paper trail. But the recovery agents won't stop right away. So let me show you their tricks, so they can't scare you anymore.
+
+`⏸`
+
+Recovery agents often use the same few tricks. Once you know them, they stop working. Ready? Let's go one by one.
 
 `⏸`
 
@@ -223,9 +260,15 @@ And if someone actually knocks on your door? **Don't let them in.** Step outside
 
 ## Module 08 — Telecom Defense
 
-*File: `m08.wav` · Technical filtering · about 0:58*
+*File: `m08.wav` · Technical filtering · about 1:05*
 
 > *(3 seconds of silence)*
+
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+Those tricks mostly come by message. But what about the endless phone calls? Let's fix that next.
+
+`⏸`
 
 Here's a simple truth. You can't win against a computer with emotions. Most of these calls come from a computer that dials numbers automatically. Every time you answer, even just to explain or argue, the system may mark your number as 'Active'. And an active number can get even more calls the next day.
 
@@ -241,11 +284,17 @@ Outside agencies usually get your file for sixty to ninety days. When they get t
 
 ## Module 09 — The Delinquency Lifecycle
 
-*File: `m09.wav` · Day 0 to day 360 · about 1:19*
+*File: `m09.wav` · Day 0 to day 360 · about 1:21*
 
 > *(3 seconds of silence)*
 
-Now let me tell you something most people don't know. Settlements follow the bank's own calendar. Once you understand it, you'll see **why patience matters.**
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+Once the calls are under control, you get something very valuable: time. And time matters, because banks settle on their own calendar.
+
+`⏸`
+
+Once you understand this calendar, you'll see **why patience matters.**
 
 `⏸`
 
@@ -267,9 +316,15 @@ Typically after about one hundred and eighty days, banks may write off the accou
 
 ## Module 10 — Lender Profiles
 
-*File: `m10.wav` · Reported collection patterns · about 1:06*
+*File: `m10.wav` · Reported collection patterns · about 1:14*
 
 > *(3 seconds of silence)*
+
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+So now you know when banks become ready to settle. But not every bank behaves the same way.
+
+`⏸`
 
 Every bank has its own style. What I'm sharing now comes from what many borrowers have commonly reported. So please treat these as rough patterns, not promises.
 
@@ -301,9 +356,15 @@ And IDFC FIRST Bank mostly works online, and reportedly settles in a clear, step
 
 ## Module 11 — OTS & Lok Adalat
 
-*File: `m11.wav` · Execution · about 1:24*
+*File: `m11.wav` · Execution · about 1:31*
 
 > *(3 seconds of silence)*
+
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+Now that you know how different banks behave, let's talk about the settlement itself. How does it actually happen?
+
+`⏸`
 
 Once your account is written off, there are usually two ways to settle. A National Lok Adalat, or a direct One-Time Settlement with the bank.
 
@@ -327,9 +388,15 @@ And when you pay, use only official bank channels. NEFT, RTGS, or the bank's own
 
 ## Module 12 — CIBIL Rehabilitation
 
-*File: `m12.wav` · The 24-month rebuild · about 1:16*
+*File: `m12.wav` · The 24-month rebuild · about 1:25*
 
 > *(3 seconds of silence)*
+
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+Once you've settled, one big worry is left. What about my CIBIL score? Will I ever get a loan again?
+
+`⏸`
 
 After you settle, your CIBIL report will show 'Settled', and your score will drop for some time. But is your financial life over? No! **That's just a myth.**
 
@@ -357,11 +424,17 @@ Debt is a difficult chapter, but it's not your whole story. Protect your family 
 
 ## Module 13 — Emergency Action Protocol
 
-*File: `m13.wav` · Your 8-step summary · about 1:16*
+*File: `m13.wav` · Your 8-step summary · about 1:20*
 
 > *(3 seconds of silence)*
 
-Okay, let's put it all together. Here's your simple eight-step plan.
+*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*
+
+We've covered a lot today. So let's put it all together in one simple plan.
+
+`⏸`
+
+Here's your simple eight-step plan.
 
 `⏸`
 

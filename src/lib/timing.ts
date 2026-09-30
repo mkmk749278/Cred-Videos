@@ -12,7 +12,7 @@ export const TAIL = 1.4;
 export type Word = {w: string; s: number; e: number};
 export type Sentence = {text: string; para: number; start: number; end: number; words: Word[]};
 export type ModuleTiming = {id: string; duration: number; sentences: Sentence[]};
-export type ModuleMeta = {id: string; number: number; title: string; kicker: string; vo: string[]};
+export type ModuleMeta = {id: string; number: number; title: string; kicker: string; vo: string[]; bridge?: boolean; recap?: string};
 
 export const timing = timingData as {voice: string; modules: ModuleTiming[]};
 export const script = scriptData as {title: string; modules: ModuleMeta[]};
@@ -61,3 +61,13 @@ export const cueEnd = (moduleIndex: number, phrase: string, nth = 0): number => 
 };
 
 export const narrationEnd = (moduleIndex: number) => toFrame(timing.modules[moduleIndex].duration);
+
+/**
+ * Frame where the module's own topic begins. Modules with a `bridge` open with a linking line
+ * (recap of the previous module + why this one matters); the title card stays up while it is spoken.
+ */
+export const contentStart = (moduleIndex: number): number => {
+  if (!script.modules[moduleIndex].bridge) return Math.round(LEAD * FPS);
+  const first = timing.modules[moduleIndex].sentences.find((s) => s.para === 1);
+  return first ? toFrame(first.start) : Math.round(LEAD * FPS);
+};

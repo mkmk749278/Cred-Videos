@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Counter, Cross, Glass, Label, Layer, Phone, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
 import {Person} from '../components/icons';
@@ -21,7 +21,7 @@ const Bubble: React.FC<{at: number; children: React.ReactNode; from?: string; co
 export const Scene07: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const cWa = cueFrame(I, 'Number One');
   const cWhy = cueFrame(I, 'why would they');
   const cCall = cueFrame(I, 'sitting in a call center');

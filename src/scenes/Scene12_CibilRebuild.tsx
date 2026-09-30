@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Check, Glass, Label, Layer, Reveal, Sfx} from '../components/primitives';
 import {HeroCard3D} from '../three/HeroCard3D';
@@ -13,7 +13,7 @@ const I = 11;
 export const Scene12: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const cMyth = cueFrame(I, 'But is your financial');
   const cWeight = cueFrame(I, 'Credit scoring models');
   const cSteps = cueFrame(I, 'Once your settlements');

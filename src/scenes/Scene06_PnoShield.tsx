@@ -2,7 +2,7 @@ import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {spr, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Glass, Label, Layer, Reveal, Sfx, shake, Stamp, Type} from '../components/primitives';
 import {MailIcon} from '../components/icons';
@@ -56,7 +56,7 @@ export const Scene06: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const cFlag = cueFrame(I, 'Skip or Absconding');
   const cEmail = cueFrame(I, 'Instead, build');
   const cPoints = CLAUSES.map((c) => cueFrame(I, c.cue));

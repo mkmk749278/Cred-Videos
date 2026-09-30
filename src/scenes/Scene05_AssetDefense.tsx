@@ -2,7 +2,7 @@ import React from 'react';
 import {useCurrentFrame} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Glass, Label, Layer, Reveal, Sfx, shake} from '../components/primitives';
 import {Vaults3D} from '../three/Vaults3D';
@@ -22,7 +22,7 @@ const VaultTitle: React.FC<{x: number; at: number; out: number; title: string; s
 export const Scene05: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const c171 = cueFrame(I, 'Under Section 171');
   const cVaults = cueFrame(I, 'If you have an unpaid');
   const cSweep = cueFrame(I, 'may sweep');

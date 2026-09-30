@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, inr, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {FeeStack3D} from '../three/FeeStack3D';
 import {Banner, Glass, Label, Layer, Reveal, Sfx, shake} from '../components/primitives';
@@ -19,7 +19,7 @@ const BRICKS = [
 export const Scene04: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const brickAt = BRICKS.map((b) => cueFrame(I, b.cue) + 6);
   const cSix = cueFrame(I, 'In six months');
   const cRbi = cueFrame(I, 'Under the RBI Framework');

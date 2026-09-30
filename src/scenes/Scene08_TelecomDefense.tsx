@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, spr, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Glass, Label, Layer, Phone, Reveal, Sfx, Stamp, Type} from '../components/primitives';
 
@@ -67,7 +67,7 @@ export const Scene08: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const cAnswer = cueFrame(I, 'Every time you answer');
   const cMore = cueFrame(I, 'can get even more');
   const cSilence = cueFrame(I, 'The answer is mechanical');

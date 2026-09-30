@@ -48,6 +48,7 @@ The words below are exactly what appears in the subtitles, so please read them a
 - `⏸` means take a breath and pause a little longer, because a new idea starts.
 - **Bold** phrases are the key messages: slow down slightly and lean on them.
 - Numbers like "forty-eight percent" or "twenty-five to thirty-five percent": say them clearly, never rushed.
+- **Linking lines** (marked ↪) open each module. They connect the last topic to the next one, so say them like a natural "okay, so now…", not like a new announcement.
 - Don't read in one flat tone. Go softer for the reassuring parts ("You didn't steal anything.") and firmer for warnings ("Never make cash payments to an agent.").
 
 ### Pronunciation guide
@@ -82,6 +83,8 @@ def main():
         out.append(f"*File: `{m['id']}.wav` · {m['kicker']} · about {int(secs // 60)}:{int(secs % 60):02d}*\n")
         out.append('> *(3 seconds of silence)*\n')
         for i, p in enumerate(m['vo']):
+            if i == 0 and m.get('bridge'):
+                out.append('*↪ Linking line: look back at what we just covered, then lead into the new topic. Say it warmly, like "okay, now…".*\n')
             for e in EMPHASIS.get(m['id'], []):
                 if e in p:
                     p = p.replace(e, f'**{e}**', 1)

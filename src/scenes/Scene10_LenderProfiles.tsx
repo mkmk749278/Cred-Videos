@@ -2,7 +2,7 @@ import React from 'react';
 import {useCurrentFrame} from 'remotion';
 import {C, MONO, alpha} from '../theme';
 import {vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Glass, Label, Sfx} from '../components/primitives';
 import {DossierCards3D} from '../three/DossierCards3D';
@@ -47,7 +47,7 @@ const Cell: React.FC<{d: Dossier; at: number; done: boolean}> = ({d, at, done}) 
 export const Scene10: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const ats = DOSSIERS.map((d) => cueFrame(I, d.cue) + (d.offset ?? 0));
   const cEnd = ats[7] + 90;
   return (

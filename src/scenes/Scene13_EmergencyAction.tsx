@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Glass, Layer, Reveal, Sfx} from '../components/primitives';
 import {Person} from '../components/icons';
@@ -23,7 +23,7 @@ const STEPS = [
 export const Scene13: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const ats = STEPS.map((s) => cueFrame(I, s.cue));
   const cFinal = cueFrame(I, 'Take control today');
   const part = interpolate(frame, [cFinal - 10, cFinal + 30], [0, 1], CLAMP);

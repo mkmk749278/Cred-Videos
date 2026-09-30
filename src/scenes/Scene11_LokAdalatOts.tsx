@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, spr, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Glass, Label, Layer, Phone, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
 import {GavelIcon} from '../components/icons';
@@ -20,7 +20,7 @@ export const Scene11: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const cNalsa = cueFrame(I, 'National Lok Adalat is organized');
   const cAward = cueFrame(I, 'An award passed');
   const cFinal = cueFrame(I, 'It is final');

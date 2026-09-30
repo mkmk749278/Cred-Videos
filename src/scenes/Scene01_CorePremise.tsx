@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Counter, Glass, Label, Layer, Phone, PointCard, Reveal, Sfx, shake, Tag} from '../components/primitives';
 import {FamilyIcon} from '../components/icons';
@@ -131,7 +131,7 @@ const FunnelBeat: React.FC<{start: number}> = ({start}) => {
 export const Scene01: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const cIntense = cueFrame(I, 'Within days');
   const cThreat = cueFrame(I, 'Messages that say');
   const cFunnel = cueFrame(I, 'And when we panic');

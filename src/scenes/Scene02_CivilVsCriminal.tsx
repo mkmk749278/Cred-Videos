@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, spr, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Glass, Label, Layer, PointCard, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
 import {Person, Scales} from '../components/icons';
@@ -67,7 +67,7 @@ const PoliceBlueprint: React.FC<{start: number}> = ({start}) => {
 export const Scene02: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const cThreat = cueFrame(I, "They'll shout");
   const cContract = cueFrame(I, 'A credit card or a personal loan');
   const cRemedies = cueFrame(I, 'So what can the bank');

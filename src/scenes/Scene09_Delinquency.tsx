@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, vis} from '../lib/anim';
-import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {VaultDoor3D} from '../three/VaultDoor3D';
 import {Banner, Cross, Glass, Label, Layer, Reveal, Sfx, Tag} from '../components/primitives';
@@ -25,7 +25,7 @@ const dayX = (d: number) => X0 + interpolate(d, DAY_STOPS, POS_STOPS, CLAMP) * (
 export const Scene09: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
-  const c0 = LEAD * FPS;
+  const c0 = contentStart(I);
   const cSma0 = cueFrame(I, 'In the first thirty');
   const cSma1 = cueFrame(I, 'Between days thirty');
   const cOffer = cueFrame(I, 'Banks may also offer');

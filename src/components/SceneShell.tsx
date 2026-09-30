@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, spr} from '../lib/anim';
-import {FPS, LEAD, script, timing, toFrame, Word} from '../lib/timing';
+import {contentStart, FPS, LEAD, script, timing, toFrame, Word} from '../lib/timing';
 import {Sfx} from './primitives';
 
 export type Music = 'tension' | 'analytic' | 'hope';
@@ -61,15 +61,60 @@ export const Backdrop: React.FC<{tint?: string}> = ({tint = C.cyan}) => {
 
 /* ------------------------------------------------------------------ title card + HUD */
 
+/** 13-step journey: finished modules checked, current one pulsing */
+const Journey: React.FC<{index: number; at: number}> = ({index, at}) => {
+  const frame = useCurrentFrame();
+  const n = script.modules.length;
+  const w = 1000;
+  const fill = interpolate(frame, [at, at + 24], [Math.max(0, index - 1), index], CLAMP) / (n - 1);
+  return (
+    <div style={{position: 'relative', width: w, height: 40, margin: '0 auto', opacity: interpolate(frame, [at - 6, at + 6], [0, 1], CLAMP)}}>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 19, height: 3, background: 'rgba(148,163,184,0.2)'}} />
+      <div style={{position: 'absolute', left: 0, width: w * fill, top: 19, height: 3, background: C.emerald, boxShadow: `0 0 10px ${C.emerald}`}} />
+      {script.modules.map((m, i) => {
+        const done = i < index;
+        const cur = i === index;
+        const size = cur ? 26 : 16;
+        return (
+          <div
+            key={m.id}
+            style={{
+              position: 'absolute',
+              left: (i / (n - 1)) * w - size / 2,
+              top: 20 - size / 2,
+              width: size,
+              height: size,
+              borderRadius: '50%',
+              background: done ? C.emerald : cur ? C.cyan : C.bg2,
+              border: `2px solid ${done ? C.emerald : cur ? C.cyan : 'rgba(148,163,184,0.35)'}`,
+              boxShadow: cur ? `0 0 ${14 + 6 * Math.sin(frame / 6)}px ${C.cyan}` : undefined,
+              display: 'grid',
+              placeItems: 'center',
+              fontSize: 10,
+              fontWeight: 900,
+              color: C.bg,
+            }}
+          >
+            {done ? '✓' : ''}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 const TitleCard: React.FC<{index: number}> = ({index}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const m = script.modules[index];
-  const end = LEAD * FPS;
+  const end = contentStart(index);
   if (frame > end + 4) return null;
   const p = spr(frame, fps, 2);
   const out = interpolate(frame, [end - 12, end], [0, 1], CLAMP);
   const line = interpolate(frame, [6, 30], [0, 1], CLAMP);
+  // while the bridge line is spoken, the title eases up and the recap appears
+  const lead = Math.round(LEAD * FPS);
+  const phase = m.bridge ? interpolate(frame, [lead - 8, lead + 14], [0, 1], CLAMP) : 0;
   const num = String(m.number).padStart(2, '0');
   return (
     <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: 1 - out, transform: `scale(${1 + out * 0.08})`, filter: out > 0 ? `blur(${out * 12}px)` : undefined}}>
@@ -81,18 +126,29 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
           fontSize: 520,
           color: 'transparent',
           WebkitTextStroke: `3px ${alpha(C.cyan, 0.16)}`,
-          transform: `translateY(${(1 - p) * 60}px)`,
+          transform: `translateY(${(1 - p) * 60 - phase * 60}px)`,
           letterSpacing: -10,
         }}
       >
         {num}
       </div>
-      <div style={{textAlign: 'center', transform: `translateY(${(1 - p) * 40}px)`, opacity: p}}>
+      <div style={{textAlign: 'center', transform: `translateY(${(1 - p) * 40 - phase * 90}px) scale(${1 - phase * 0.12})`, opacity: p}}>
         <div style={{fontFamily: MONO, color: C.cyan, fontSize: 28, letterSpacing: 10, fontWeight: 700}}>MODULE {num} / 13</div>
         <div style={{fontFamily: FONT, color: C.text, fontSize: 116, fontWeight: 900, letterSpacing: -2, marginTop: 14, textShadow: `0 0 40px ${alpha(C.cyan, 0.3)}`}}>{m.title}</div>
         <div style={{height: 4, width: 520 * line, margin: '18px auto', background: `linear-gradient(90deg, transparent, ${C.cyan}, transparent)`}} />
         <div style={{fontFamily: FONT, color: C.muted, fontSize: 38, fontWeight: 500, letterSpacing: 1}}>{m.kicker}</div>
       </div>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 780}}>
+        <Journey index={index} at={10} />
+      </div>
+      {m.recap && (
+        <div style={{position: 'absolute', left: 0, right: 0, top: 660, display: 'flex', justifyContent: 'center', opacity: phase, transform: `translateY(${(1 - phase) * 30}px)`}}>
+          <div style={{display: 'flex', alignItems: 'center', gap: 16, padding: '14px 28px', borderRadius: 999, background: alpha(C.emerald, 0.12), border: `1.5px solid ${alpha(C.emerald, 0.6)}`}}>
+            <span style={{fontFamily: MONO, fontSize: 20, letterSpacing: 3, color: C.emerald, fontWeight: 800}}>SO FAR</span>
+            <span style={{fontFamily: FONT, fontSize: 32, fontWeight: 700, color: C.text}}>{m.recap}</span>
+          </div>
+        </div>
+      )}
     </AbsoluteFill>
   );
 };
@@ -100,7 +156,7 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
 const Hud: React.FC<{index: number; duration: number}> = ({index, duration}) => {
   const frame = useCurrentFrame();
   const m = script.modules[index];
-  const start = LEAD * FPS - 6;
+  const start = contentStart(index) - 6;
   const o = interpolate(frame, [start, start + 14], [0, 1], CLAMP);
   const prog = interpolate(frame, [start, duration], [0, 1], CLAMP);
   return (
@@ -210,7 +266,8 @@ export const SceneShell: React.FC<{
     y: Math.cos(frame / 131) * 5 + Math.cos(frame / 43) * 1,
     s: 1 + 0.012 * Math.sin(frame / 260),
   };
-  const stageIn = interpolate(frame, [LEAD * FPS - 10, LEAD * FPS + 8], [0, 1], CLAMP);
+  const cs = contentStart(index);
+  const stageIn = interpolate(frame, [cs - 10, cs + 8], [0, 1], CLAMP);
   return (
     <AbsoluteFill style={{fontFamily: FONT, color: C.text, overflow: 'hidden'}}>
       <Backdrop tint={tint} />
@@ -223,6 +280,7 @@ export const SceneShell: React.FC<{
         <Audio src={staticFile(`audio/vo/${m.id}.mp3`)} volume={1} />
       </Sequence>
       <Sfx at={0} name="title_hit" volume={0.32} />
+      {script.modules[index].bridge && <Sfx at={Math.round(LEAD * FPS) - 6} name="air_whoosh" volume={0.22} />}
       <div
         style={{
           position: 'absolute',

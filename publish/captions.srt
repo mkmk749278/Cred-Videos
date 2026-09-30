@@ -479,857 +479,861 @@ You only crossed your limit because of their own fees!
 And on top of everything, eighteen percent GST on every charge.
 
 121
-00:05:14,146 --> 00:05:19,278
-In six months, a one-lakh rupee debt can show up as one lakh sixty-five thousand.
+00:05:14,146 --> 00:05:19,003
+In six months, a one-lakh rupee debt can grow to almost one lakh forty thousand.
 
 122
-00:05:19,308 --> 00:05:22,359
-The bank knows it will never collect most of that extra.
+00:05:19,033 --> 00:05:22,777
+Leave it for a year, and it can cross one lakh sixty-five thousand.
 
 123
-00:05:22,759 --> 00:05:23,965
-Now, good news.
+00:05:22,807 --> 00:05:25,857
+The bank knows it will never collect most of that extra.
 
 124
-00:05:23,995 --> 00:05:28,758
-Under the RBI Framework for Compromise Settlements and Technical Write-offs,
+00:05:26,257 --> 00:05:27,464
+Now, good news.
 
 125
-00:05:28,508 --> 00:05:34,041
-when you do a proper One-Time Settlement, these penalties and extra interest may be waived,
+00:05:27,494 --> 00:05:32,257
+Under the RBI Framework for Compromise Settlements and Technical Write-offs,
 
 126
-00:05:33,791 --> 00:05:34,922
-often completely.
+00:05:32,007 --> 00:05:37,540
+when you do a proper One-Time Settlement, these penalties and extra interest may be waived,
 
 127
-00:05:34,952 --> 00:05:38,207
-So always try to settle based on what you actually spent.
+00:05:37,290 --> 00:05:38,420
+often completely.
 
 128
-00:05:38,237 --> 00:05:40,186
-Not the big number on your statement.
+00:05:38,450 --> 00:05:41,705
+So always try to settle based on what you actually spent.
 
 129
-00:05:44,200 --> 00:05:46,764
-So most of that scary balance is just fees.
+00:05:41,735 --> 00:05:43,685
+Not the big number on your statement.
 
 130
-00:05:46,793 --> 00:05:50,946
-But before we talk about settling anything, there's one thing you must do first.
+00:05:47,700 --> 00:05:50,264
+So most of that scary balance is just fees.
 
 131
-00:05:51,346 --> 00:05:54,649
-Before you answer even one recovery call, do this first.
+00:05:50,293 --> 00:05:54,446
+But before we talk about settling anything, there's one thing you must do first.
 
 132
-00:05:54,679 --> 00:05:56,291
-Protect your family's money.
+00:05:54,846 --> 00:05:58,149
+Before you answer even one recovery call, do this first.
 
 133
-00:05:56,321 --> 00:05:57,824
-This is very important.
+00:05:58,179 --> 00:05:59,791
+Protect your family's money.
 
 134
-00:05:58,224 --> 00:06:04,676
-Under Section 171 of the Indian Contract Act, and the rules in most bank agreements,
+00:05:59,821 --> 00:06:01,324
+This is very important.
 
 135
-00:06:04,426 --> 00:06:06,936
-banks have something called the Right of Set-Off.
+00:06:01,724 --> 00:06:08,176
+Under Section 171 of the Indian Contract Act, and the rules in most bank agreements,
 
 136
-00:06:06,966 --> 00:06:08,337
-What does that mean for you?
+00:06:07,926 --> 00:06:10,436
+banks have something called the Right of Set-Off.
 
 137
-00:06:08,367 --> 00:06:09,810
-Let me explain simply.
+00:06:10,466 --> 00:06:11,837
+What does that mean for you?
 
 138
-00:06:09,840 --> 00:06:14,850
-If you have an unpaid card with Bank A, and your salary also comes into your savings
+00:06:11,867 --> 00:06:13,310
+Let me explain simply.
 
 139
-00:06:14,600 --> 00:06:18,787
-account at Bank A, the bank may sweep your savings balance to zero.
+00:06:13,340 --> 00:06:18,350
+If you have an unpaid card with Bank A, and your salary also comes into your savings
 
 140
-00:06:18,817 --> 00:06:20,182
-They don't need a court order.
+00:06:18,100 --> 00:06:22,287
+account at Bank A, the bank may sweep your savings balance to zero.
 
 141
-00:06:20,212 --> 00:06:24,111
-Imagine waking up on salary day and finding nothing in your account.
+00:06:22,317 --> 00:06:23,682
+They don't need a court order.
 
 142
-00:06:24,511 --> 00:06:26,022
-So here's your first move.
+00:06:23,712 --> 00:06:27,611
+Imagine waking up on salary day and finding nothing in your account.
 
 143
-00:06:26,052 --> 00:06:30,551
-Move your salary, your savings, and your family's money to a totally clean bank.
+00:06:28,011 --> 00:06:29,522
+So here's your first move.
 
 144
-00:06:30,581 --> 00:06:34,404
-A bank where you have no loan, no credit card, and no overdraft.
+00:06:29,552 --> 00:06:34,051
+Move your salary, your savings, and your family's money to a totally clean bank.
 
 145
-00:06:34,434 --> 00:06:36,338
-For example, Bank of Baroda.
+00:06:34,081 --> 00:06:37,904
+A bank where you have no loan, no credit card, and no overdraft.
 
 146
-00:06:36,738 --> 00:06:40,024
-And keep every bank where you owe money at a zero balance.
+00:06:37,934 --> 00:06:39,838
+For example, Bank of Baroda.
 
 147
-00:06:40,054 --> 00:06:45,695
-Your family's groceries, medicines, and home loan EMI always come before credit card
+00:06:40,238 --> 00:06:43,524
+And keep every bank where you owe money at a zero balance.
 
 148
-00:06:45,445 --> 00:06:45,981
-bills.
+00:06:43,554 --> 00:06:49,195
+Your family's groceries, medicines, and home loan EMI always come before credit card
 
 149
-00:06:50,000 --> 00:06:50,711
-Good.
+00:06:48,945 --> 00:06:49,481
+bills.
 
 150
-00:06:50,741 --> 00:06:52,308
-Your salary is safe now.
+00:06:53,500 --> 00:06:54,211
+Good.
 
 151
-00:06:52,338 --> 00:06:55,538
-The next question is, how should you deal with the bank itself?
+00:06:54,241 --> 00:06:55,808
+Your salary is safe now.
 
 152
-00:06:55,938 --> 00:07:00,431
-Many people think, 'I'll just switch off my phone and disappear.' Please don't do that.
+00:06:55,838 --> 00:06:59,038
+The next question is, how should you deal with the bank itself?
 
 153
-00:07:00,461 --> 00:07:04,944
-If you go totally silent, the bank's system may mark you as 'Skip or Absconding'.
+00:06:59,438 --> 00:07:03,931
+Many people think, 'I'll just switch off my phone and disappear.' Please don't do that.
 
 154
-00:07:04,974 --> 00:07:06,836
-That means they think you ran away.
+00:07:03,961 --> 00:07:08,444
+If you go totally silent, the bank's system may mark you as 'Skip or Absconding'.
 
 155
-00:07:06,866 --> 00:07:10,714
-And then they start calling your relatives, your friends, even your office.
+00:07:08,474 --> 00:07:10,336
+That means they think you ran away.
 
 156
-00:07:11,114 --> 00:07:12,910
-Instead, build a paper trail.
+00:07:10,366 --> 00:07:14,214
+And then they start calling your relatives, your friends, even your office.
 
 157
-00:07:12,940 --> 00:07:16,394
-Send a proper email to the bank's Principal Nodal Officer.
+00:07:14,614 --> 00:07:16,410
+Instead, build a paper trail.
 
 158
-00:07:16,424 --> 00:07:19,501
-That's the top person who handles complaints in the bank.
+00:07:16,440 --> 00:07:19,894
+Send a proper email to the bank's Principal Nodal Officer.
 
 159
-00:07:19,901 --> 00:07:22,397
-In that email, write four simple things.
+00:07:19,924 --> 00:07:23,001
+That's the top person who handles complaints in the bank.
 
 160
-00:07:22,427 --> 00:07:24,213
-First, explain what happened.
+00:07:23,401 --> 00:07:25,897
+In that email, write four simple things.
 
 161
-00:07:24,243 --> 00:07:26,485
-Illness, job loss, whatever it was.
+00:07:25,927 --> 00:07:27,713
+First, explain what happened.
 
 162
-00:07:26,515 --> 00:07:29,984
-Second, declare that you are reachable, and you're not running away.
+00:07:27,743 --> 00:07:29,985
+Illness, job loss, whatever it was.
 
 163
-00:07:30,014 --> 00:07:34,128
-Third, request that because of the stress, they talk to you only in writing,
+00:07:30,015 --> 00:07:33,484
+Second, declare that you are reachable, and you're not running away.
 
 164
-00:07:33,878 --> 00:07:34,673
-by email.
+00:07:33,514 --> 00:07:37,628
+Third, request that because of the stress, they talk to you only in writing,
 
 165
-00:07:34,703 --> 00:07:39,319
-Fourth, state that you want to settle with a proper One-Time Settlement once your money
+00:07:37,378 --> 00:07:38,173
+by email.
 
 166
-00:07:39,069 --> 00:07:40,372
-situation is better.
+00:07:38,203 --> 00:07:42,819
+Fourth, state that you want to settle with a proper One-Time Settlement once your money
 
 167
-00:07:40,772 --> 00:07:43,065
-The bank will reply with a reference number.
+00:07:42,569 --> 00:07:43,872
+situation is better.
 
 168
-00:07:43,095 --> 00:07:44,123
-Keep it safe.
+00:07:44,272 --> 00:07:46,565
+The bank will reply with a reference number.
 
 169
-00:07:44,153 --> 00:07:46,366
-The Case Reference ID is your proof.
+00:07:46,595 --> 00:07:47,623
+Keep it safe.
 
 170
-00:07:46,396 --> 00:07:48,103
-It shows you acted honestly.
+00:07:47,653 --> 00:07:49,866
+The Case Reference ID is your proof.
 
 171
-00:07:48,133 --> 00:07:50,772
-It helps counter any claim of 'Willful Default'.
+00:07:49,896 --> 00:07:51,603
+It shows you acted honestly.
 
 172
-00:07:50,802 --> 00:07:52,836
-And it helps you later at Lok Adalat.
+00:07:51,633 --> 00:07:54,272
+It helps counter any claim of 'Willful Default'.
 
 173
-00:07:56,867 --> 00:07:59,837
-Now the bank has your email, and you have a paper trail.
+00:07:54,302 --> 00:07:56,336
+And it helps you later at Lok Adalat.
 
 174
-00:07:59,867 --> 00:08:02,372
-But the recovery agents won't stop right away.
+00:08:00,367 --> 00:08:03,337
+Now the bank has your email, and you have a paper trail.
 
 175
-00:08:02,402 --> 00:08:05,437
-So let me show you their tricks, so they can't scare you anymore.
+00:08:03,367 --> 00:08:05,872
+But the recovery agents won't stop right away.
 
 176
-00:08:05,837 --> 00:08:08,859
-Recovery agents often use the same few tricks.
+00:08:05,902 --> 00:08:08,937
+So let me show you their tricks, so they can't scare you anymore.
 
 177
-00:08:08,889 --> 00:08:10,943
-Once you know them, they stop working.
+00:08:09,337 --> 00:08:12,359
+Recovery agents often use the same few tricks.
 
 178
-00:08:10,973 --> 00:08:11,708
-Ready?
+00:08:12,389 --> 00:08:14,443
+Once you know them, they stop working.
 
 179
-00:08:11,738 --> 00:08:13,152
-Let's go one by one.
+00:08:14,473 --> 00:08:15,208
+Ready?
 
 180
-00:08:13,552 --> 00:08:16,401
-Number One: the WhatsApp live location message.
+00:08:15,238 --> 00:08:16,652
+Let's go one by one.
 
 181
-00:08:16,431 --> 00:08:19,167
-You get a text saying, 'Our team is near your house.
+00:08:17,052 --> 00:08:19,901
+Number One: the WhatsApp live location message.
 
 182
-00:08:19,197 --> 00:08:21,692
-Share your live location now.' Now think.
+00:08:19,931 --> 00:08:22,667
+You get a text saying, 'Our team is near your house.
 
 183
-00:08:21,722 --> 00:08:26,140
-If they really had your address, and the right to visit, why would they need your location?
+00:08:22,697 --> 00:08:25,192
+Share your live location now.' Now think.
 
 184
-00:08:26,170 --> 00:08:29,111
-They may be sitting in a call center, just trying their luck.
+00:08:25,222 --> 00:08:29,640
+If they really had your address, and the right to visit, why would they need your location?
 
 185
-00:08:29,141 --> 00:08:30,456
-Just block the number.
+00:08:29,670 --> 00:08:32,611
+They may be sitting in a call center, just trying their luck.
 
 186
-00:08:30,856 --> 00:08:33,281
-Number Two: the ghost visit SMS.
+00:08:32,641 --> 00:08:33,956
+Just block the number.
 
 187
-00:08:33,311 --> 00:08:35,280
-'Our agent visited your house today.
+00:08:34,356 --> 00:08:36,781
+Number Two: the ghost visit SMS.
 
 188
-00:08:35,310 --> 00:08:40,505
-The door was locked.' This is often an automated script, a message sent to thousands
+00:08:36,811 --> 00:08:38,780
+'Our agent visited your house today.
 
 189
-00:08:40,255 --> 00:08:41,927
-of people at the same time.
+00:08:38,810 --> 00:08:44,005
+The door was locked.' This is often an automated script, a message sent to thousands
 
 190
-00:08:41,957 --> 00:08:44,729
-In many cases, nobody came to your door at all.
+00:08:43,755 --> 00:08:45,427
+of people at the same time.
 
 191
-00:08:45,129 --> 00:08:46,981
-Number Three: the tracking link.
+00:08:45,457 --> 00:08:48,229
+In many cases, nobody came to your door at all.
 
 192
-00:08:47,011 --> 00:08:52,447
-A message says, 'Click here to see your legal notice.' These are often ready-made messages
+00:08:48,629 --> 00:08:50,481
+Number Three: the tracking link.
 
 193
-00:08:52,197 --> 00:08:53,990
-with tracking tokens inside.
+00:08:50,511 --> 00:08:55,947
+A message says, 'Click here to see your legal notice.' These are often ready-made messages
 
 194
-00:08:54,020 --> 00:08:58,415
-If you click, they may see your IP and your phone details, and they know you're scared.
+00:08:55,697 --> 00:08:57,490
+with tracking tokens inside.
 
 195
-00:08:58,445 --> 00:09:03,547
-Real court summons come properly, for example by registered post or through the court.
+00:08:57,520 --> 00:09:01,915
+If you click, they may see your IP and your phone details, and they know you're scared.
 
 196
-00:09:03,947 --> 00:09:06,181
-And if someone actually knocks on your door?
+00:09:01,945 --> 00:09:07,047
+Real court summons come properly, for example by registered post or through the court.
 
 197
-00:09:06,211 --> 00:09:07,316
-Don't let them in.
+00:09:07,447 --> 00:09:09,681
+And if someone actually knocks on your door?
 
 198
-00:09:07,346 --> 00:09:10,538
-Step outside and start a video recording on your phone.
+00:09:09,711 --> 00:09:10,816
+Don't let them in.
 
 199
-00:09:10,568 --> 00:09:16,013
-Politely ask for two documents: their ID card, and a letter from the bank for your account.
+00:09:10,846 --> 00:09:14,038
+Step outside and start a video recording on your phone.
 
 200
-00:09:16,043 --> 00:09:20,763
-If they cannot produce both, remind them of the RBI Fair Practices Code.
+00:09:14,068 --> 00:09:19,513
+Politely ask for two documents: their ID card, and a letter from the bank for your account.
 
 201
-00:09:20,793 --> 00:09:23,582
-And if you ever feel unsafe, dial 112.
+00:09:19,543 --> 00:09:24,263
+If they cannot produce both, remind them of the RBI Fair Practices Code.
 
 202
-00:09:23,612 --> 00:09:26,714
-People without proper papers usually leave quickly.
+00:09:24,293 --> 00:09:27,082
+And if you ever feel unsafe, dial 112.
 
 203
-00:09:30,733 --> 00:09:32,864
-Those tricks mostly come by message.
+00:09:27,112 --> 00:09:30,214
+People without proper papers usually leave quickly.
 
 204
-00:09:32,894 --> 00:09:34,890
-But what about the endless phone calls?
+00:09:34,233 --> 00:09:36,364
+Those tricks mostly come by message.
 
 205
-00:09:34,920 --> 00:09:36,339
-Let's fix that next.
+00:09:36,394 --> 00:09:38,390
+But what about the endless phone calls?
 
 206
-00:09:36,739 --> 00:09:38,142
-Here's a simple truth.
+00:09:38,420 --> 00:09:39,839
+Let's fix that next.
 
 207
-00:09:38,172 --> 00:09:40,710
-You can't win against a computer with emotions.
+00:09:40,239 --> 00:09:41,642
+Here's a simple truth.
 
 208
-00:09:40,740 --> 00:09:44,909
-Most of these calls come from a computer that dials numbers automatically.
+00:09:41,672 --> 00:09:44,210
+You can't win against a computer with emotions.
 
 209
-00:09:44,939 --> 00:09:50,228
-Every time you answer, even just to explain or argue, the system may mark your number
+00:09:44,240 --> 00:09:48,409
+Most of these calls come from a computer that dials numbers automatically.
 
 210
-00:09:49,978 --> 00:09:50,671
-as 'Active'.
+00:09:48,439 --> 00:09:53,728
+Every time you answer, even just to explain or argue, the system may mark your number
 
 211
-00:09:50,701 --> 00:09:53,931
-And an active number can get even more calls the next day.
+00:09:53,478 --> 00:09:54,171
+as 'Active'.
 
 212
-00:09:54,331 --> 00:09:55,590
-So what's the answer?
+00:09:54,201 --> 00:09:57,431
+And an active number can get even more calls the next day.
 
 213
-00:09:55,620 --> 00:09:57,833
-The answer is mechanical silence.
+00:09:57,831 --> 00:09:59,090
+So what's the answer?
 
 214
-00:09:57,863 --> 00:09:59,288
-Split your phone lines.
+00:09:59,120 --> 00:10:01,333
+The answer is mechanical silence.
 
 215
-00:09:59,318 --> 00:10:01,297
-Keep work and family on SIM 1.
+00:10:01,363 --> 00:10:02,788
+Split your phone lines.
 
 216
-00:10:01,327 --> 00:10:05,775
-On your card number, block the telemarketing series, like one-four-zero,
+00:10:02,818 --> 00:10:04,797
+Keep work and family on SIM 1.
 
 217
-00:10:05,525 --> 00:10:07,090
-and known call-centre numbers.
+00:10:04,827 --> 00:10:09,275
+On your card number, block the telemarketing series, like one-four-zero,
 
 218
-00:10:07,120 --> 00:10:09,900
-And turn on 'Silence Unknown Callers' in WhatsApp.
+00:10:09,025 --> 00:10:10,590
+and known call-centre numbers.
 
 219
-00:10:09,930 --> 00:10:10,937
-Easy, right?
+00:10:10,620 --> 00:10:13,400
+And turn on 'Silence Unknown Callers' in WhatsApp.
 
 220
-00:10:11,337 --> 00:10:15,518
-Outside agencies usually get your file for sixty to ninety days.
+00:10:13,430 --> 00:10:14,437
+Easy, right?
 
 221
-00:10:15,548 --> 00:10:20,225
-When they get total silence, no clicks, and no small payments, their time may run out.
+00:10:14,837 --> 00:10:19,018
+Outside agencies usually get your file for sixty to ninety days.
 
 222
-00:10:20,255 --> 00:10:24,563
-The calls typically slow down, and the file may go back to the bank's own team.
+00:10:19,048 --> 00:10:23,725
+When they get total silence, no clicks, and no small payments, their time may run out.
 
 223
-00:10:28,567 --> 00:10:32,652
-Once the calls are under control, you get something very valuable: time.
+00:10:23,755 --> 00:10:28,063
+The calls typically slow down, and the file may go back to the bank's own team.
 
 224
-00:10:32,682 --> 00:10:35,777
-And time matters, because banks settle on their own calendar.
+00:10:32,067 --> 00:10:36,152
+Once the calls are under control, you get something very valuable: time.
 
 225
-00:10:36,177 --> 00:10:39,776
-Once you understand this calendar, you'll see why patience matters.
+00:10:36,182 --> 00:10:39,277
+And time matters, because banks settle on their own calendar.
 
 226
-00:10:40,176 --> 00:10:44,742
-In the first thirty days, the bank calls your account Special Mention Account Zero.
+00:10:39,677 --> 00:10:43,276
+Once you understand this calendar, you'll see why patience matters.
 
 227
-00:10:44,772 --> 00:10:49,699
-They still expect normal payment, and customer care usually can't offer any settlement.
+00:10:43,676 --> 00:10:48,242
+In the first thirty days, the bank calls your account Special Mention Account Zero.
 
 228
-00:10:50,099 --> 00:10:56,302
-Between days thirty and ninety, called SMA-1 and SMA-2, your account may go to outside
+00:10:48,272 --> 00:10:53,199
+They still expect normal payment, and customer care usually can't offer any settlement.
 
 229
-00:10:56,052 --> 00:10:57,445
-recovery agencies.
+00:10:53,599 --> 00:10:59,802
+Between days thirty and ninety, called SMA-1 and SMA-2, your account may go to outside
 
 230
-00:10:57,475 --> 00:10:59,492
-This is when the calls are the worst.
+00:10:59,552 --> 00:11:00,945
+recovery agencies.
 
 231
-00:10:59,522 --> 00:11:03,938
-Banks may also offer to turn your card dues into a loan with EMIs.
+00:11:00,975 --> 00:11:02,992
+This is when the calls are the worst.
 
 232
-00:11:03,968 --> 00:11:06,045
-Think carefully before you say yes.
+00:11:03,022 --> 00:11:07,438
+Banks may also offer to turn your card dues into a loan with EMIs.
 
 233
-00:11:06,075 --> 00:11:09,273
-It can start a brand new loan, with brand new problems.
+00:11:07,468 --> 00:11:09,545
+Think carefully before you say yes.
 
 234
-00:11:09,673 --> 00:11:15,078
-At ninety days, RBI rules say the bank must call your account a Non-Performing Asset.
+00:11:09,575 --> 00:11:12,773
+It can start a brand new loan, with brand new problems.
 
 235
-00:11:15,108 --> 00:11:20,246
-After that, the bank can't count your unpaid interest as income, and it must set aside
+00:11:13,173 --> 00:11:18,578
+At ninety days, RBI rules say the bank must call your account a Non-Performing Asset.
 
 236
-00:11:19,996 --> 00:11:21,777
-its own money to cover the loss.
+00:11:18,608 --> 00:11:23,746
+After that, the bank can't count your unpaid interest as income, and it must set aside
 
 237
-00:11:22,177 --> 00:11:26,963
-Typically after about one hundred and eighty days, banks may write off the account from
+00:11:23,496 --> 00:11:25,277
+its own money to cover the loss.
 
 238
-00:11:26,713 --> 00:11:27,700
-their main books.
+00:11:25,677 --> 00:11:30,463
+Typically after about one hundred and eighty days, banks may write off the account from
 
 239
-00:11:27,730 --> 00:11:29,373
-The loss is already counted.
+00:11:30,213 --> 00:11:31,200
+their main books.
 
 240
-00:11:29,403 --> 00:11:32,920
-So any recovery effectively becomes extra profit for them.
+00:11:31,230 --> 00:11:32,873
+The loss is already counted.
 
 241
-00:11:32,950 --> 00:11:37,900
-And this is often when real settlement offers, with bigger discounts, become possible.
+00:11:32,903 --> 00:11:36,420
+So any recovery effectively becomes extra profit for them.
 
 242
-00:11:41,900 --> 00:11:44,670
-So now you know when banks become ready to settle.
+00:11:36,450 --> 00:11:41,400
+And this is often when real settlement offers, with bigger discounts, become possible.
 
 243
-00:11:44,701 --> 00:11:47,014
-But not every bank behaves the same way.
+00:11:45,400 --> 00:11:48,170
+So now you know when banks become ready to settle.
 
 244
-00:11:47,414 --> 00:11:49,146
-Every bank has its own style.
+00:11:48,201 --> 00:11:50,514
+But not every bank behaves the same way.
 
 245
-00:11:49,176 --> 00:11:53,306
-What I'm sharing now comes from what many borrowers have commonly reported.
+00:11:50,914 --> 00:11:52,646
+Every bank has its own style.
 
 246
-00:11:53,336 --> 00:11:56,595
-So please treat these as rough patterns, not promises.
+00:11:52,676 --> 00:11:56,806
+What I'm sharing now comes from what many borrowers have commonly reported.
 
 247
-00:11:56,995 --> 00:12:03,282
-SBI Card reportedly sends lots of automatic legal notices and has active recovery teams.
+00:11:56,836 --> 00:12:00,095
+So please treat these as rough patterns, not promises.
 
 248
-00:12:03,312 --> 00:12:07,533
-Settlements around thirty to forty percent have been reported at Lok Adalat.
+00:12:00,495 --> 00:12:06,782
+SBI Card reportedly sends lots of automatic legal notices and has active recovery teams.
 
 249
-00:12:07,933 --> 00:12:12,587
-HDFC Bank is known to use set-off, so keep your savings there at zero.
+00:12:06,812 --> 00:12:11,033
+Settlements around thirty to forty percent have been reported at Lok Adalat.
 
 250
-00:12:12,617 --> 00:12:16,897
-Settlements around twenty-five to thirty-five percent have been reported,
+00:12:11,433 --> 00:12:16,087
+HDFC Bank is known to use set-off, so keep your savings there at zero.
 
 251
-00:12:16,647 --> 00:12:18,640
-usually after about six months.
+00:12:16,117 --> 00:12:20,397
+Settlements around twenty-five to thirty-five percent have been reported,
 
 252
-00:12:19,040 --> 00:12:24,838
-ICICI Bank reportedly follows a more formal process, and often prefers settling through
+00:12:20,147 --> 00:12:22,140
+usually after about six months.
 
 253
-00:12:24,588 --> 00:12:25,348
-the courts.
+00:12:22,540 --> 00:12:28,338
+ICICI Bank reportedly follows a more formal process, and often prefers settling through
 
 254
-00:12:25,748 --> 00:12:30,805
-Axis, YES, and Kotak Mahindra reportedly send accounts to agencies quickly,
+00:12:28,088 --> 00:12:28,848
+the courts.
 
 255
-00:12:30,555 --> 00:12:35,450
-and then to special settlement teams, where settlements around twenty-five to thirty-five
+00:12:29,248 --> 00:12:34,305
+Axis, YES, and Kotak Mahindra reportedly send accounts to agencies quickly,
 
 256
-00:12:35,200 --> 00:12:36,801
-percent have been reported.
+00:12:34,055 --> 00:12:38,950
+and then to special settlement teams, where settlements around twenty-five to thirty-five
 
 257
-00:12:37,201 --> 00:12:42,594
-RBL Bank has reportedly given bigger discounts, around twenty to thirty percent,
+00:12:38,700 --> 00:12:40,301
+percent have been reported.
 
 258
-00:12:42,344 --> 00:12:45,636
-after a formal complaint to the Principal Nodal Officer.
+00:12:40,701 --> 00:12:46,094
+RBL Bank has reportedly given bigger discounts, around twenty to thirty percent,
 
 259
-00:12:46,036 --> 00:12:51,586
-And IDFC FIRST Bank mostly works online, and reportedly settles in a clear,
+00:12:45,844 --> 00:12:49,136
+after a formal complaint to the Principal Nodal Officer.
 
 260
-00:12:51,336 --> 00:12:53,314
-step-by-step way after write-off.
+00:12:49,536 --> 00:12:55,086
+And IDFC FIRST Bank mostly works online, and reportedly settles in a clear,
 
 261
-00:12:57,333 --> 00:13:01,731
-Now that you know how different banks behave, let's talk about the settlement itself.
+00:12:54,836 --> 00:12:56,814
+step-by-step way after write-off.
 
 262
-00:13:01,761 --> 00:13:03,369
-How does it actually happen?
+00:13:00,833 --> 00:13:05,231
+Now that you know how different banks behave, let's talk about the settlement itself.
 
 263
-00:13:03,769 --> 00:13:07,360
-Once your account is written off, there are usually two ways to settle.
+00:13:05,261 --> 00:13:06,869
+How does it actually happen?
 
 264
-00:13:07,390 --> 00:13:11,364
-A National Lok Adalat, or a direct One-Time Settlement with the bank.
+00:13:07,269 --> 00:13:10,860
+Once your account is written off, there are usually two ways to settle.
 
 265
-00:13:11,764 --> 00:13:17,309
-National Lok Adalat is organized regularly by the National Legal Services Authority.
+00:13:10,890 --> 00:13:14,864
+A National Lok Adalat, or a direct One-Time Settlement with the bank.
 
 266
-00:13:17,339 --> 00:13:21,355
-Think of it as a friendly legal meeting, where both sides agree on a deal.
+00:13:15,264 --> 00:13:20,809
+National Lok Adalat is organized regularly by the National Legal Services Authority.
 
 267
-00:13:21,385 --> 00:13:25,440
-An award passed at Lok Adalat is treated like a civil court decree.
+00:13:20,839 --> 00:13:24,855
+Think of it as a friendly legal meeting, where both sides agree on a deal.
 
 268
-00:13:25,470 --> 00:13:26,480
-It is final.
+00:13:24,885 --> 00:13:28,940
+An award passed at Lok Adalat is treated like a civil court decree.
 
 269
-00:13:26,510 --> 00:13:28,032
-It binds both sides.
+00:13:28,970 --> 00:13:29,980
+It is final.
 
 270
-00:13:28,062 --> 00:13:30,072
-And nobody can appeal against it.
+00:13:30,010 --> 00:13:31,532
+It binds both sides.
 
 271
-00:13:30,472 --> 00:13:35,884
-In compromise settlements, card balances have often been reported to settle at twenty-five
+00:13:31,562 --> 00:13:33,572
+And nobody can appeal against it.
 
 272
-00:13:35,634 --> 00:13:38,438
-to thirty-five percent of what you actually spent.
+00:13:33,972 --> 00:13:39,384
+In compromise settlements, card balances have often been reported to settle at twenty-five
 
 273
-00:13:38,838 --> 00:13:39,732
-But wait.
+00:13:39,134 --> 00:13:41,938
+to thirty-five percent of what you actually spent.
 
 274
-00:13:39,762 --> 00:13:42,629
-Before you pay even one rupee, check four things.
+00:13:42,338 --> 00:13:43,232
+But wait.
 
 275
-00:13:42,659 --> 00:13:47,417
-First: the settlement letter must be on the bank's official letterhead, signed by a bank
+00:13:43,262 --> 00:13:46,129
+Before you pay even one rupee, check four things.
 
 276
-00:13:47,167 --> 00:13:47,780
-officer.
+00:13:46,159 --> 00:13:50,917
+First: the settlement letter must be on the bank's official letterhead, signed by a bank
 
 277
-00:13:47,810 --> 00:13:51,026
-Never accept a letter only from a recovery agency.
+00:13:50,667 --> 00:13:51,280
+officer.
 
 278
-00:13:51,056 --> 00:13:55,205
-Second: the letter must show your exact card number and the settlement amount.
+00:13:51,310 --> 00:13:54,526
+Never accept a letter only from a recovery agency.
 
 279
-00:13:55,235 --> 00:13:59,930
-Third: it must clearly say that after this payment, your account is fully closed,
+00:13:54,556 --> 00:13:58,705
+Second: the letter must show your exact card number and the settlement amount.
 
 280
-00:13:59,680 --> 00:14:00,840
-with zero balance.
+00:13:58,735 --> 00:14:03,430
+Third: it must clearly say that after this payment, your account is fully closed,
 
 281
-00:14:00,870 --> 00:14:05,792
-Fourth: it should promise a No Dues Certificate, usually within thirty to forty-five
+00:14:03,180 --> 00:14:04,340
+with zero balance.
 
 282
-00:14:05,542 --> 00:14:06,054
-days.
+00:14:04,370 --> 00:14:09,292
+Fourth: it should promise a No Dues Certificate, usually within thirty to forty-five
 
 283
-00:14:06,454 --> 00:14:09,360
-And when you pay, use only official bank channels.
+00:14:09,042 --> 00:14:09,554
+days.
 
 284
-00:14:09,390 --> 00:14:12,931
-NEFT, RTGS, or the bank's own website.
+00:14:09,954 --> 00:14:12,860
+And when you pay, use only official bank channels.
 
 285
-00:14:12,961 --> 00:14:15,056
-Never make cash payments to an agent.
+00:14:12,890 --> 00:14:16,431
+NEFT, RTGS, or the bank's own website.
 
 286
-00:14:15,086 --> 00:14:15,826
-Never.
+00:14:16,461 --> 00:14:18,556
+Never make cash payments to an agent.
 
 287
-00:14:19,833 --> 00:14:22,415
-Once you've settled, one big worry is left.
+00:14:18,586 --> 00:14:19,326
+Never.
 
 288
-00:14:22,445 --> 00:14:23,965
-What about my CIBIL score?
+00:14:23,333 --> 00:14:25,915
+Once you've settled, one big worry is left.
 
 289
-00:14:23,995 --> 00:14:25,630
-Will I ever get a loan again?
+00:14:25,945 --> 00:14:27,465
+What about my CIBIL score?
 
 290
-00:14:26,030 --> 00:14:30,801
-After you settle, your CIBIL report will show 'Settled', and your score will drop for
+00:14:27,495 --> 00:14:29,130
+Will I ever get a loan again?
 
 291
-00:14:30,551 --> 00:14:31,297
-some time.
+00:14:29,530 --> 00:14:34,301
+After you settle, your CIBIL report will show 'Settled', and your score will drop for
 
 292
-00:14:31,327 --> 00:14:33,156
-But is your financial life over?
+00:14:34,051 --> 00:14:34,797
+some time.
 
 293
-00:14:33,186 --> 00:14:33,861
-No!
+00:14:34,827 --> 00:14:36,656
+But is your financial life over?
 
 294
-00:14:33,891 --> 00:14:35,081
-That's just a myth.
+00:14:36,686 --> 00:14:37,361
+No!
 
 295
-00:14:35,481 --> 00:14:40,988
-Credit scoring models usually care most about how you behaved recently, especially the
+00:14:37,391 --> 00:14:38,581
+That's just a myth.
 
 296
-00:14:40,738 --> 00:14:43,149
-last twenty-four to thirty-six months.
+00:14:38,981 --> 00:14:44,488
+Credit scoring models usually care most about how you behaved recently, especially the
 
 297
-00:14:43,549 --> 00:14:47,375
-So once your settlements are done, and you have your No Dues Certificates,
+00:14:44,238 --> 00:14:46,649
+last twenty-four to thirty-six months.
 
 298
-00:14:47,125 --> 00:14:48,159
-start rebuilding.
+00:14:47,049 --> 00:14:50,875
+So once your settlements are done, and you have your No Dues Certificates,
 
 299
-00:14:48,189 --> 00:14:49,126
-Here's how.
+00:14:50,625 --> 00:14:51,659
+start rebuilding.
 
 300
-00:14:49,156 --> 00:14:54,430
-Open a small fixed deposit of twenty-five to fifty thousand rupees in a clean bank,
+00:14:51,689 --> 00:14:52,626
+Here's how.
 
 301
-00:14:54,180 --> 00:14:57,191
-and obtain an FD-backed Secured Credit Card on it.
+00:14:52,656 --> 00:14:57,930
+Open a small fixed deposit of twenty-five to fifty thousand rupees in a clean bank,
 
 302
-00:14:57,221 --> 00:15:01,752
-These cards usually don't need salary proof, because your deposit is the safety.
+00:14:57,680 --> 00:15:00,691
+and obtain an FD-backed Secured Credit Card on it.
 
 303
-00:15:02,152 --> 00:15:06,223
-Keep your monthly usage low, under fifteen to twenty percent of the limit.
+00:15:00,721 --> 00:15:05,252
+These cards usually don't need salary proof, because your deposit is the safety.
 
 304
-00:15:06,253 --> 00:15:08,118
-Use it only for small bills.
+00:15:05,652 --> 00:15:09,723
+Keep your monthly usage low, under fifteen to twenty percent of the limit.
 
 305
-00:15:08,148 --> 00:15:10,957
-And pay the full bill on time, every single month.
+00:15:09,753 --> 00:15:11,618
+Use it only for small bills.
 
 306
-00:15:11,357 --> 00:15:14,964
-Month after month, your report fills up with on-time payments.
+00:15:11,648 --> 00:15:14,457
+And pay the full bill on time, every single month.
 
 307
-00:15:14,994 --> 00:15:19,616
-Within eighteen to twenty-four months, this good record can beat the old bad one,
+00:15:14,857 --> 00:15:18,464
+Month after month, your report fills up with on-time payments.
 
 308
-00:15:19,366 --> 00:15:23,134
-and may help bring your score back toward seven-hundred-and-fifty-plus.
+00:15:18,494 --> 00:15:23,116
+Within eighteen to twenty-four months, this good record can beat the old bad one,
 
 309
-00:15:23,534 --> 00:15:26,763
-Debt is a difficult chapter, but it's not your whole story.
+00:15:22,866 --> 00:15:26,634
+and may help bring your score back toward seven-hundred-and-fifty-plus.
 
 310
-00:15:26,793 --> 00:15:28,382
-Protect your family first.
+00:15:27,034 --> 00:15:30,263
+Debt is a difficult chapter, but it's not your whole story.
 
 311
-00:15:28,412 --> 00:15:29,885
-Trust the law, not fear.
+00:15:30,293 --> 00:15:31,882
+Protect your family first.
 
 312
-00:15:29,915 --> 00:15:31,322
-And settle with dignity.
+00:15:31,912 --> 00:15:33,385
+Trust the law, not fear.
 
 313
-00:15:35,333 --> 00:15:36,907
-We've covered a lot today.
+00:15:33,415 --> 00:15:34,822
+And settle with dignity.
 
 314
-00:15:36,937 --> 00:15:39,592
-So let's put it all together in one simple plan.
+00:15:38,833 --> 00:15:40,407
+We've covered a lot today.
 
 315
-00:15:39,992 --> 00:15:41,941
-Here's your simple eight-step plan.
+00:15:40,437 --> 00:15:43,092
+So let's put it all together in one simple plan.
 
 316
-00:15:42,341 --> 00:15:47,478
-Step One: move your salary and savings to a clean bank, and keep your other bank balances
+00:15:43,492 --> 00:15:45,441
+Here's your simple eight-step plan.
 
 317
-00:15:47,228 --> 00:15:47,961
-at zero.
+00:15:45,841 --> 00:15:50,978
+Step One: move your salary and savings to a clean bank, and keep your other bank balances
 
 318
-00:15:48,361 --> 00:15:53,184
-Step Two: send a hardship email to the Principal Nodal Officer of each bank,
+00:15:50,728 --> 00:15:51,461
+at zero.
 
 319
-00:15:52,934 --> 00:15:54,381
-and save your Case IDs.
+00:15:51,861 --> 00:15:56,684
+Step Two: send a hardship email to the Principal Nodal Officer of each bank,
 
 320
-00:15:54,781 --> 00:16:00,314
-Step Three: turn on Silence Unknown Callers on WhatsApp, and block the auto-dialer numbers.
+00:15:56,434 --> 00:15:57,881
+and save your Case IDs.
 
 321
-00:16:00,714 --> 00:16:05,286
-Step Four: stop paying small amounts or Minimum Dues that only cover fees.
+00:15:58,281 --> 00:16:03,814
+Step Three: turn on Silence Unknown Callers on WhatsApp, and block the auto-dialer numbers.
 
 322
-00:16:05,686 --> 00:16:07,805
-Step Five: don't argue with callers.
+00:16:04,214 --> 00:16:08,786
+Step Four: stop paying small amounts or Minimum Dues that only cover fees.
 
 323
-00:16:07,835 --> 00:16:09,897
-Ask the bank to talk to you in writing.
+00:16:09,186 --> 00:16:11,305
+Step Five: don't argue with callers.
 
 324
-00:16:10,297 --> 00:16:11,833
-Step Six: be patient.
+00:16:11,335 --> 00:16:13,397
+Ask the bank to talk to you in writing.
 
 325
-00:16:11,863 --> 00:16:15,735
-Real settlement talks usually start after the account is written off.
+00:16:13,797 --> 00:16:15,333
+Step Six: be patient.
 
 326
-00:16:16,135 --> 00:16:21,854
-Step Seven: do a proper One-Time Settlement, often reported around twenty-five to thirty-five
+00:16:15,363 --> 00:16:19,235
+Real settlement talks usually start after the account is written off.
 
 327
-00:16:21,604 --> 00:16:22,229
-percent.
+00:16:19,635 --> 00:16:25,354
+Step Seven: do a proper One-Time Settlement, often reported around twenty-five to thirty-five
 
 328
-00:16:22,260 --> 00:16:26,739
-Check the official letter, pay the bank directly, and get your No Dues Certificate.
+00:16:25,104 --> 00:16:25,729
+percent.
 
 329
-00:16:27,139 --> 00:16:32,218
-And Step Eight: rebuild your credit with an FD-backed secured card, and bring your CIBIL
+00:16:25,760 --> 00:16:30,239
+Check the official letter, pay the bank directly, and get your No Dues Certificate.
 
 330
-00:16:31,968 --> 00:16:34,771
-score back toward seven-hundred-and-fifty-plus.
+00:16:30,639 --> 00:16:35,718
+And Step Eight: rebuild your credit with an FD-backed secured card, and bring your CIBIL
 
 331
-00:16:35,171 --> 00:16:38,111
-Remember, you are not alone, and you are not a criminal.
+00:16:35,468 --> 00:16:38,271
+score back toward seven-hundred-and-fifty-plus.
 
 332
-00:16:38,141 --> 00:16:39,518
-Take control today.
+00:16:38,671 --> 00:16:41,611
+Remember, you are not alone, and you are not a criminal.
 
 333
-00:16:39,548 --> 00:16:41,207
-The law protects your dignity.
+00:16:41,641 --> 00:16:43,018
+Take control today.
 
 334
-00:16:41,237 --> 00:16:44,271
+00:16:43,048 --> 00:16:44,707
+The law protects your dignity.
+
+335
+00:16:44,737 --> 00:16:47,771
 And if this helped you, please share it with someone who needs it.

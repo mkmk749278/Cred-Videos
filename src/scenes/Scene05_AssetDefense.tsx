@@ -93,7 +93,7 @@ export const Scene05: React.FC = () => {
         </div>
         <VaultTitle x={640} out={cKeep + 10} at={cVaults} title="Bank A · Creditor" sub="Unpaid card + savings account" />
         <VaultTitle x={1290} out={cKeep + 10} at={cVaults + 12} title="Clean Anchor Bank" sub="e.g. Bank of Baroda · zero loans/cards" />
-        <div style={{position: 'absolute', left: 90, top: 160, opacity: vis(frame, cImagine, cMove + 20)}}>
+        <div style={{position: 'absolute', left: 1120, top: 190, opacity: vis(frame, cImagine, cMove + 20)}}>
           <KLine at={cImagine} size={36} color="#FCA5A5">Salary day → ₹0.00 in your account</KLine>
         </div>
         <div style={{position: 'absolute', left: 1360, top: 130, display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start', opacity: vis(frame, cNoLoan, cKeep)}}>
@@ -113,7 +113,7 @@ export const Scene05: React.FC = () => {
         {[cNoLoan, cNoCard, cNoOd, cBob].map((a, i) => (
           <Sfx key={i} at={a} name="tactile_click" volume={0.3} />
         ))}
-        <div style={{position: 'absolute', left: 90, top: 90, opacity: vis(frame, cSweep + 40, cMove + 20)}}>
+        <div style={{position: 'absolute', left: 1120, top: 110, opacity: vis(frame, cSweep + 40, cMove + 20)}}>
           <div style={{padding: '12px 22px', borderRadius: 12, background: alpha(C.crimson, 0.25 + 0.15 * Math.sin(frame / 3)), border: `2px solid ${C.crimson}`, fontWeight: 900, fontSize: 30, color: '#FECACA', fontFamily: FONT}}>
             ⚠ SALARY SWEPT TO ZERO · NO COURT ORDER
           </div>

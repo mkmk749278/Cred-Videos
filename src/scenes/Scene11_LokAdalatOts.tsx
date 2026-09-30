@@ -94,7 +94,7 @@ export const Scene11: React.FC = () => {
               ))}
             </svg>
           </Reveal>
-          <div style={{position: 'absolute', left: 170, top: 180, width: 440, opacity: vis(frame, cAward - 10), transform: `rotate(-3deg)`}}>
+          <div style={{position: 'absolute', left: 170, top: 300, width: 440, opacity: vis(frame, cAward - 10), transform: `rotate(-3deg)`}}>
             <div style={{background: '#fefce8', color: '#1c1917', borderRadius: 8, padding: 24, boxShadow: '0 20px 40px rgba(0,0,0,0.5)', fontFamily: FONT}}>
               <div style={{fontWeight: 900, fontSize: 24, textAlign: 'center', letterSpacing: 1}}>LOK ADALAT AWARD</div>
               {[1, 2, 3, 4].map((l) => (
@@ -105,7 +105,7 @@ export const Scene11: React.FC = () => {
               <Stamp at={gavelHit} text="DEEMED CIVIL DECREE" color="#b91c1c" size={24} rotate={-14} />
             </div>
           </div>
-          <div style={{position: 'absolute', left: 640, top: 120, transform: `rotate(${gavelRot}deg)`, transformOrigin: '20% 80%', opacity: vis(frame, cAward - 20)}}>
+          <div style={{position: 'absolute', left: 640, top: 250, transform: `rotate(${gavelRot}deg)`, transformOrigin: '20% 80%', opacity: vis(frame, cAward - 20)}}>
             <GavelIcon size={220} />
           </div>
         </div>

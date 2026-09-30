@@ -67,4 +67,23 @@ In a container that already has Chromium, set `REMOTION_BROWSER=/path/to/headles
 
 3. Re-render. Scene lengths and all animation cues follow the new timing automatically.
 
-To use a human voice instead, replace `public/audio/vo/mNN.mp3` with the recordings and regenerate `timing.json` with a forced aligner (or keep the TTS timing if the pacing matches).
+### Using your own voice
+
+1. Read from **`narration/READING_SCRIPT.md`**. It is word for word what the subtitles show, with recording tips and pronunciation notes. Record one file per module.
+2. Put the files in `narration/raw/` as `m01.wav` … `m13.wav` (wav/flac/mp3/m4a all work). Leave 3 s of silence at the start of each file.
+3. Process:
+
+   ```bash
+   pip install pedalboard noisereduce pyloudnorm faster-whisper soundfile numpy
+   python3 narration/process_voice.py --preview   # listen to narration/processed/*.mp3 first
+   python3 narration/process_voice.py             # write public/audio/vo + src/data/timing.json
+   ```
+
+   What the processing does:
+   - Spectral noise reduction, using the 3 s of room tone as the noise profile.
+   - Transcription and alignment against the script, so subtitles and every animation cue follow your real pacing.
+   - Automatic removal of false starts, retakes and "um/uh" fillers, and shortening of pauses longer than 1.1 s. `--no-cut` turns this off.
+   - Voice chain: high-pass, de-mud, warmth low-shelf, presence, air, de-esser, two-stage compression, −16 LUFS loudness, RMS downward expander, limiter.
+
+   Each module gets a report in `narration/processed/mNN_report.txt` listing every cut, so you can check nothing wanted was removed.
+4. Re-render with `npm run build`.

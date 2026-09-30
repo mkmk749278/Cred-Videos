@@ -14,10 +14,14 @@ import glob
 import json
 import os
 import re
+import sys
 
 import numpy as np
 import soundfile as sf
 from kokoro_onnx import Kokoro
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from textutil import split_sentences  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SR = 24000
@@ -41,18 +45,6 @@ def spoken(token: str) -> str:
     core = SPOKEN.get(core, core)
     post = post.replace("'", "").replace("’", "")
     return core + post
-
-
-def split_sentences(paragraph: str):
-    parts = re.split(r"(?<=[.!?])\s+(?=[A-Z'‘\"])", paragraph.strip())
-    out = []
-    for p in parts:
-        if len(p) > 260:  # keep TTS chunks comfortably short
-            sub = re.split(r"(?<=[;:])\s+", p)
-            out.extend(s for s in sub if s)
-        else:
-            out.append(p)
-    return out
 
 
 def trim(audio: np.ndarray, thresh=0.012, pad=0.04):

@@ -5,3 +5,6 @@ out/
 models/
 __pycache__/
 public/audio/**/*.wav
+narration/processed/
+narration/raw/*
+!narration/raw/.gitkeep

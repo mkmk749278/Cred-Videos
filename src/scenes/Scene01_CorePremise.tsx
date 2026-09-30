@@ -214,6 +214,10 @@ export const Scene01: React.FC = () => {
             <Label color={C.cyan}>Mental pivot #1</Label>
           </Reveal>
         </div>
+        <div style={{position: 'absolute', left: 0, right: 0, top: 290, textAlign: 'center', opacity: vis(frame, cPivot, cNode1 + 2)}}>
+          <KLine at={cPivot + 2} size={86} mark={C.cyan}>Listen carefully.</KLine>
+        </div>
+        <Sfx at={cPivot + 2} name="air_whoosh" volume={0.25} />
         <svg width={1920} height={770} style={{position: 'absolute', inset: 0}}>
           <path d="M 151 180 L 151 400" stroke={alpha(C.cyan, 0.7)} strokeWidth={3} fill="none" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - interpolate(frame, [cNode2 - 10, cNode2 + 8], [0, 1], CLAMP)} />
         </svg>

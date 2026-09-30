@@ -96,11 +96,11 @@ export const Scene04: React.FC = () => {
         </Banner>
       </div>
       <div style={{position: 'absolute', left: 1180, top: 560, width: 620}}>
-        <KLine at={cBlocked} size={40} out={cNotSpent + 20} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Card blocked.</KLine>
-        <KLine at={cNotSpent} size={40} color={C.muted} out={cUp} style={{position: 'absolute', left: 0, top: 0, width: 620}}>₹0 new spending.</KLine>
-        <KLine at={cUp} size={46} color={C.crimson} out={cCall} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Yet the balance keeps rising.</KLine>
-        <KLine at={cCall} size={54} color={C.gold} mark={C.gold} out={cAuto} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Phantom Accounting</KLine>
-        <KLine at={cAuto} size={34} color={C.muted} out={brickAt[0] + 20} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Charges added automatically by the bank's software</KLine>
+        <KLine at={cBlocked} size={40} out={cNotSpent} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Card blocked.</KLine>
+        <KLine at={cNotSpent + 10} size={40} color={C.muted} out={cUp} style={{position: 'absolute', left: 0, top: 0, width: 620}}>₹0 new spending.</KLine>
+        <KLine at={cUp + 10} size={46} color={C.crimson} out={cCall} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Yet the balance keeps rising.</KLine>
+        <KLine at={cCall + 10} size={54} color={C.gold} mark={C.gold} out={cAuto} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Phantom Accounting</KLine>
+        <KLine at={cAuto + 10} size={34} color={C.muted} out={brickAt[0] + 20} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Charges added automatically by the bank's software</KLine>
         <KLine at={cOwnFees} size={34} color="#FCA5A5" out={brickAt[3]} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Over the limit… only because of their own fees!</KLine>
         <KLine at={cGood} size={54} color={C.emerald} out={cRbi + 10} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Now, the good news</KLine>
       </div>

@@ -206,7 +206,7 @@ export const Scene07: React.FC = () => {
           <rect x={150} y={70} width={400 * (1 - 0.35 * Math.min(1, (frame - cDoor) / 20))} height={610} fill="#5b3a26" stroke="#2b1a10" strokeWidth={4} />
           <circle cx={520 - 140 * Math.min(1, Math.max(0, (frame - cDoor) / 20))} cy={380} r={12} fill={C.gold} />
         </svg>
-        <div style={{position: 'absolute', left: 560 - interpolate(frame, [cLeave, cLeave + 60], [0, 420], CLAMP), top: 180, opacity: 1 - interpolate(frame, [cLeave + 10, cLeave + 50], [0, 1], CLAMP), transform: frame > cLeave ? 'scaleX(-1)' : undefined}}>
+        <div style={{position: 'absolute', left: 560, top: 180, opacity: 1 - interpolate(frame, [cLeave + 10, cLeave + 55], [0, 1], CLAMP), transformOrigin: '50% 100%', transform: `translateY(${-interpolate(frame, [cLeave, cLeave + 55], [0, 60], CLAMP)}px) scale(${1 - interpolate(frame, [cLeave, cLeave + 55], [0, 0.45], CLAMP)})`}}>
           <Person size={420} color="#64748b" />
         </div>
         <div style={{position: 'absolute', left: 1000, top: 30, width: 800}}>

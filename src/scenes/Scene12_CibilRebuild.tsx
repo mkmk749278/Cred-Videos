@@ -5,7 +5,7 @@ import {CLAMP, vis} from '../lib/anim';
 import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Check, Glass, Label, Layer, Reveal, Sfx} from '../components/primitives';
-import {CreditCard} from '../components/icons';
+import {HeroCard3D} from '../three/HeroCard3D';
 import {Gauge3D} from '../three/Gauge3D';
 
 const I = 11;
@@ -93,10 +93,8 @@ export const Scene12: React.FC = () => {
             </Reveal>
           ))}
         </div>
-        <div style={{position: 'absolute', left: 260, top: 520, opacity: vis(frame, cCard)}}>
-          <Reveal at={cCard} from="bottom">
-            <CreditCard bank="SECURED" product="FD-backed card" color1="#064e3b" color2="#10b981" width={340} glow={C.emerald} />
-          </Reveal>
+        <div style={{position: 'absolute', left: 900, top: 470, width: 880, height: 300, opacity: vis(frame, cCard)}}>
+          <HeroCard3D at={cCard} width={880} height={300} bank="SECURED" product="FD-backed card" c1="#064e3b" c2="#10b981" amount="₹25,000" amountLabel="BACKED BY FD" badge={{text: 'NO INCOME PROOF', color: '#6ee7b7'}} glow="#10b981" size={2.3} />
         </div>
         {[cSteps, cFd, cCard, cUtil].map((a, i) => (
           <Sfx key={i} at={a + 52} name="tactile_click" volume={0.45} />

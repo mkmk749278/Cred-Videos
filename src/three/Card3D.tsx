@@ -7,12 +7,17 @@ type CardProps = {
   product?: string;
   c1: string;
   c2: string;
+  /** big printed figure, bottom-right (e.g. a balance) */
   amount?: string;
+  /** small caption above the amount */
+  amountLabel?: string;
+  /** colored pill, top-right (e.g. a tier) */
+  badge?: {text: string; color: string};
   glow?: string;
 } & JSX.IntrinsicElements['group'];
 
 /** Glossy 3D credit card with a printed face (no real logos). 1.7 x 1.07 world units. */
-export const Card3D: React.FC<CardProps> = ({bank, product, c1, c2, amount, glow, ...group}) => {
+export const Card3D: React.FC<CardProps> = ({bank, product, c1, c2, amount, amountLabel, badge, glow, ...group}) => {
   const face = useCanvasTexture(
     1024,
     644,
@@ -53,18 +58,43 @@ export const Card3D: React.FC<CardProps> = ({bank, product, c1, c2, amount, glow
       g.moveTo(140, 270);
       g.lineTo(140, 374);
       g.stroke();
-      g.font = '500 54px JetBrains Mono';
       g.globalAlpha = 0.9;
-      g.fillText('•••• •••• •••• 4821', 70, 570);
-      g.globalAlpha = 1;
+      g.fillStyle = '#ffffff';
       if (amount) {
-        g.font = '900 70px Inter';
+        g.font = '500 38px JetBrains Mono';
+        g.fillText('•••• 4821', 70, 585);
+        g.globalAlpha = 1;
         g.textAlign = 'right';
-        g.fillText(amount, 960, 340);
+        g.shadowColor = 'rgba(0,0,0,0.45)';
+        g.shadowBlur = 12;
+        if (amountLabel) {
+          g.font = '700 34px JetBrains Mono';
+          g.globalAlpha = 0.85;
+          g.fillText(amountLabel, 960, 470);
+          g.globalAlpha = 1;
+        }
+        g.font = '900 118px Inter';
+        g.fillText(amount, 960, 590);
+        g.shadowBlur = 0;
+        g.textAlign = 'left';
+      } else {
+        g.font = '500 54px JetBrains Mono';
+        g.fillText('•••• •••• •••• 4821', 70, 570);
+        g.globalAlpha = 1;
+      }
+      if (badge) {
+        g.font = '800 34px JetBrains Mono';
+        const w = g.measureText(badge.text).width + 44;
+        roundRect(g, 960 - w, 70, w, 62, 31);
+        g.fillStyle = badge.color;
+        g.fill();
+        g.fillStyle = '#0b1020';
+        g.textAlign = 'right';
+        g.fillText(badge.text, 960 - 22, 113);
         g.textAlign = 'left';
       }
     },
-    `${bank}|${product}|${amount}`,
+    `${bank}|${product}|${amount}|${amountLabel}|${badge?.text}|${badge?.color}`,
   );
   const back = useCanvasTexture(
     512,

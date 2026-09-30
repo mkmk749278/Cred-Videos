@@ -6,6 +6,7 @@ import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Counter, Glass, Label, Layer, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
 import {CardOrbit3D} from '../three/CardOrbit3D';
+import {CardLedger3D} from '../three/CardLedger3D';
 
 const I = 2;
 
@@ -41,52 +42,16 @@ const HubLabel: React.FC<{start: number; cut: number}> = ({start, cut}) => {
   );
 };
 
-const Ledger: React.FC<{start: number}> = ({start}) => {
+const TOTAL = PORTFOLIO.reduce((acc, p) => acc + p.amt, 0);
+
+const LedgerHeader: React.FC<{start: number}> = ({start}) => {
   const frame = useCurrentFrame();
-  const scanY = interpolate(frame, [start + 40, start + 220], [0, 1], CLAMP);
   return (
-    <div style={{position: 'absolute', left: 260, top: 20, width: 1400}}>
-      <Reveal at={start} from="top" distance={60}>
-        <Glass pad={0} style={{overflow: 'hidden', position: 'relative'}}>
-          <div style={{display: 'grid', gridTemplateColumns: '80px 1fr 1fr 300px 220px', padding: '18px 30px', fontFamily: MONO, fontSize: 18, color: C.muted, letterSpacing: 2, borderBottom: `1px solid ${C.border}`}}>
-            <span>#</span>
-            <span>LENDER</span>
-            <span>CARD</span>
-            <span>TIER</span>
-            <span style={{textAlign: 'right'}}>BALANCE</span>
-          </div>
-          {PORTFOLIO.map((p, i) => {
-            const rowAt = start + 40 + (i / 8) * 180;
-            const lit = frame >= rowAt;
-            const t = TIERS[p.tier];
-            return (
-              <div
-                key={i}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '80px 1fr 1fr 300px 220px',
-                  padding: '14px 30px',
-                  alignItems: 'center',
-                  fontSize: 27,
-                  fontWeight: 700,
-                  borderLeft: `6px solid ${lit ? t.color : 'transparent'}`,
-                  background: lit ? alpha(t.color, 0.08 + (p.tier === 1 ? 0.06 * Math.abs(Math.sin(frame / 10)) : 0)) : 'transparent',
-                  borderBottom: `1px solid rgba(148,163,184,0.08)`,
-                }}
-              >
-                <span style={{fontFamily: MONO, color: C.muted}}>{String(i + 1).padStart(2, '0')}</span>
-                <span>{p.bank}</span>
-                <span style={{color: C.muted, fontWeight: 500}}>{p.product}</span>
-                <span style={{color: t.color, fontSize: 20, fontFamily: MONO}}>{lit ? t.name : ''}</span>
-                <span style={{textAlign: 'right', fontFamily: MONO, color: lit ? C.text : C.dim}}>
-                  ₹<Counter from={0} to={p.amt} start={rowAt} end={rowAt + 20} format={inr} />
-                </span>
-              </div>
-            );
-          })}
-          <div style={{position: 'absolute', left: 0, right: 0, top: 58 + scanY * 520, height: 4, background: C.cyan, boxShadow: `0 0 20px 6px ${alpha(C.cyan, 0.5)}`, opacity: scanY > 0 && scanY < 1 ? 1 : 0}} />
-        </Glass>
-      </Reveal>
+    <div style={{position: 'absolute', left: 0, right: 0, top: 6, textAlign: 'center', opacity: vis(frame, start)}}>
+      <Label color={C.gold}>Example portfolio · 8 cards · 8 separate contracts</Label>
+      <div style={{fontSize: 30, fontWeight: 800, marginTop: 4}}>
+        Total ₹<Counter from={0} to={TOTAL} start={start + 40} end={start + 40 + 8 * 22} format={inr} />
+      </div>
     </div>
   );
 };
@@ -153,9 +118,15 @@ export const Scene03: React.FC = () => {
         <Sfx at={cCut + 4} name="chain_break" volume={0.5} />
       </Layer>
       <Layer opacity={vis(frame, cLedger, cScale + 6)}>
-        <Ledger start={cLedger} />
-        <Sfx at={cLedger + 40} name="counter_spin" volume={0.3} />
-        <Sfx at={cLedger + 100} name="counter_spin" volume={0.25} />
+        <CardLedger3D
+          start={cLedger}
+          cards={PORTFOLIO.map((p) => ({bank: p.bank, product: p.product, c1: p.c1, c2: p.c2, amount: `₹${inr(p.amt)}`, tier: `TIER ${p.tier}`, tierColor: TIERS[p.tier].color}))}
+        />
+        <LedgerHeader start={cLedger} />
+        {PORTFOLIO.map((_, i) => (
+          <Sfx key={i} at={cLedger + 40 + i * 22} name="card_slide" volume={0.35} />
+        ))}
+        <Sfx at={cLedger + 40} name="counter_spin" volume={0.18} />
       </Layer>
       <Layer opacity={vis(frame, cScale, cHigh + 6)}>
         <BalanceScale start={cScale} tilt={cScale + 24} />

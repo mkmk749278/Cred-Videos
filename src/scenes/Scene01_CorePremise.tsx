@@ -7,6 +7,7 @@ import {SceneShell} from '../components/SceneShell';
 import {Check, Counter, Glass, Label, Layer, Phone, PointCard, Reveal, Sfx, shake, Tag} from '../components/primitives';
 import {FamilyIcon} from '../components/icons';
 import {Phone3D} from '../three/Phone3D';
+import {HeroCard3D} from '../three/HeroCard3D';
 
 const I = 0;
 
@@ -177,19 +178,24 @@ export const Scene01: React.FC = () => {
             body="No house, gold or land pledged. The high rate is the bank's built-in risk margin for defaults."
           />
         </div>
-        <div style={{position: 'absolute', left: 1240, top: 150, width: 520, opacity: vis(frame, cRate - 6)}}>
-          <Glass accent={C.gold} style={{textAlign: 'center'}}>
-            <Label color={C.gold}>Typical card interest</Label>
-            <div style={{fontSize: 170, fontWeight: 900, color: C.gold, lineHeight: 1.05, textShadow: `0 0 40px ${alpha(C.gold, 0.5)}`}}>
-              <Counter from={0} to={48} start={cRate} end={cRate + 45} />%
-            </div>
-            <div style={{fontSize: 26, color: C.muted}}>per year · risk of default already priced in</div>
-            <div style={{display: 'flex', gap: 10, justifyContent: 'center', marginTop: 20}}>
-              {['No collateral', 'No gold', 'No house'].map((t) => (
-                <Tag key={t} color={C.gold} style={{fontSize: 16}}>{t}</Tag>
-              ))}
-            </div>
-          </Glass>
+        <div style={{position: 'absolute', left: 1130, top: 40, width: 720, height: 470}}>
+          <HeroCard3D
+            at={cRate - 6}
+            width={720}
+            height={470}
+            bank="UNSECURED"
+            product="Credit Card"
+            c1="#1c1917"
+            c2="#78350f"
+            amount="42–48%"
+            amountLabel="INTEREST / YEAR"
+            badge={{text: 'NO COLLATERAL', color: '#f5b942'}}
+            size={2.7}
+          />
+        </div>
+        <div style={{position: 'absolute', left: 1130, top: 500, width: 720, textAlign: 'center', opacity: vis(frame, cRate + 20)}}>
+          <div style={{fontSize: 28, color: C.muted}}>No house · no gold · no land pledged</div>
+          <div style={{fontSize: 30, fontWeight: 800, color: C.gold, marginTop: 6}}>The high rate is their built-in risk cushion</div>
         </div>
         <Sfx at={cNode1} name="node_pop" volume={0.5} />
         <Sfx at={cNode1 + 6} name="air_whoosh" volume={0.35} />

@@ -4,6 +4,7 @@ import {interpolate, useCurrentFrame} from 'remotion';
 import * as THREE from 'three';
 import {CLAMP, rnd} from '../lib/anim';
 import {Floor, Glow, Scene3D, useCanvasTexture} from './kit';
+import {Card3D} from './Card3D';
 
 type Brick = {label: string; amount: string; color: string; at: number; h: number};
 
@@ -62,10 +63,10 @@ const Stack: React.FC<{frame: number; start: number; bricks: Brick[]; waive: num
   return (
     <>
       <Floor y={-0.12} size={12} />
-      {/* card slab */}
-      <RoundedBox args={[3.4, 0.12, 2.4]} radius={0.05} position-y={-0.06}>
-        <meshPhysicalMaterial color="#1e293b" metalness={0.8} roughness={0.3} clearcoat={1} />
-      </RoundedBox>
+      {/* the credit card the debt sits on */}
+      <group rotation-x={-Math.PI / 2} position-y={-0.04} scale={2.15}>
+        <Card3D bank="MY CARD" product="Blocked · no new spends" c1="#1e3a8a" c2="#0ea5e9" />
+      </group>
       {/* principal block */}
       <group position-y={(baseH * grow) / 2} scale-y={grow}>
         <RoundedBox args={[W, baseH, D]} radius={0.04}>

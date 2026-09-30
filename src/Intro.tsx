@@ -4,6 +4,7 @@ import {C, FONT, MONO, alpha} from './theme';
 import {CLAMP, spr} from './lib/anim';
 import {Backdrop} from './components/SceneShell';
 import {Sfx} from './components/primitives';
+import {HeroCard3D} from './three/HeroCard3D';
 
 export const INTRO_FRAMES = 210;
 
@@ -18,16 +19,32 @@ export const Intro: React.FC = () => {
     <AbsoluteFill style={{fontFamily: FONT, color: C.text}}>
       <Backdrop tint={C.gold} />
       <Sfx at={8} name="title_hit" volume={0.5} />
-      <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: 1 - out}}>
-        <div style={{textAlign: 'center', transform: `translateY(${(1 - p) * 60}px)`, opacity: p}}>
+      <AbsoluteFill style={{opacity: 1 - out}}>
+        <div style={{position: 'absolute', right: 40, top: 90, width: 980, height: 720}}>
+          <HeroCard3D
+            at={4}
+            width={980}
+            height={720}
+            bank="YOUR RIGHTS"
+            product="Credit card debt · India"
+            c1="#0c0a09"
+            c2="#57391a"
+            amount="13 modules"
+            amountLabel="A BORROWER'S GUIDE"
+            badge={{text: 'LAW > FEAR', color: '#f5b942'}}
+            size={3}
+            spins={1.5}
+          />
+        </div>
+        <div style={{position: 'absolute', left: 130, top: 250, width: 900, transform: `translateY(${(1 - p) * 60}px)`, opacity: p}}>
           <div style={{fontFamily: MONO, color: C.gold, fontSize: 30, letterSpacing: 14, fontWeight: 700}}>KNOW YOUR RIGHTS</div>
-          <div style={{fontSize: 122, fontWeight: 900, letterSpacing: -2, lineHeight: 1.02, marginTop: 20, textShadow: `0 0 50px ${alpha(C.gold, 0.25)}`}}>
+          <div style={{fontSize: 118, fontWeight: 900, letterSpacing: -2, lineHeight: 1.02, marginTop: 20, textShadow: `0 0 50px ${alpha(C.gold, 0.25)}`}}>
             Credit Card Debt
             <br />
             <span style={{color: C.gold}}>in India</span>
           </div>
-          <div style={{height: 4, width: 700 * line, margin: '30px auto', background: `linear-gradient(90deg, transparent, ${C.gold}, transparent)`}} />
-          <div style={{fontSize: 38, color: C.muted, fontWeight: 500}}>A borrower's guide to law, dignity and resolution · 13 modules</div>
+          <div style={{height: 4, width: 600 * line, margin: '30px 0', background: `linear-gradient(90deg, ${C.gold}, transparent)`}} />
+          <div style={{fontSize: 36, color: C.muted, fontWeight: 500}}>A borrower's guide to law, dignity and resolution</div>
         </div>
         <div
           style={{

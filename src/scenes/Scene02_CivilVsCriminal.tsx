@@ -101,8 +101,8 @@ export const Scene02: React.FC = () => {
               <span style={{color: '#FCA5A5'}}>CRIMINAL CHEATING</span>
             </div>
           </div>
-          <div style={{position: 'absolute', left: 40, top: 250}}>
-            <Handcuffs3D smash={smash + 7} width={720} height={480} />
+          <div style={{position: 'absolute', left: -60, top: 250}}>
+            <Handcuffs3D smash={smash + 7} width={640} height={480} />
           </div>
           {['“Section 420!”', '“Criminal breach of trust”', '“Police action today”'].map((t, i) => (
             <div key={i} style={{position: 'absolute', left: 520 - i * 60, top: 330 + i * 90, opacity: vis(frame, cThreat + i * 14, smash)}}>

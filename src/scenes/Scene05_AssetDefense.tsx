@@ -9,10 +9,10 @@ import {Vaults3D} from '../three/Vaults3D';
 
 const I = 4;
 
-const VaultTitle: React.FC<{x: number; at: number; title: string; sub: string}> = ({x, at, title, sub}) => {
+const VaultTitle: React.FC<{x: number; at: number; out: number; title: string; sub: string}> = ({x, at, out, title, sub}) => {
   const frame = useCurrentFrame();
   return (
-    <div style={{position: 'absolute', left: x - 210, top: 320, width: 420, textAlign: 'center', opacity: vis(frame, at + 10)}}>
+    <div style={{position: 'absolute', left: x - 260, top: 672, width: 520, textAlign: 'center', opacity: vis(frame, at + 10, out)}}>
       <div style={{fontSize: 34, fontWeight: 900, textShadow: '0 2px 12px rgba(0,0,0,0.8)'}}>{title}</div>
       <div style={{fontSize: 22, color: C.muted}}>{sub}</div>
     </div>
@@ -52,9 +52,9 @@ export const Scene05: React.FC = () => {
         <div style={{position: 'absolute', left: 860, top: 0, width: 200, textAlign: 'center'}}>
           <div style={{display: 'inline-block', padding: '8px 18px', borderRadius: 12, background: alpha(C.gold, 0.2), border: `2px solid ${C.gold}`, fontFamily: MONO, fontWeight: 800, color: C.gold, fontSize: 22}}>SALARY ₹45,000</div>
         </div>
-        <VaultTitle x={500} at={cVaults} title="Bank A · Creditor" sub="Unpaid card + savings account" />
-        <VaultTitle x={1420} at={cVaults + 12} title="Clean Anchor Bank" sub="e.g. Bank of Baroda · zero loans/cards" />
-        <div style={{position: 'absolute', left: 300, top: 150, opacity: vis(frame, cSweep + 40, cMove + 20)}}>
+        <VaultTitle x={640} out={cKeep + 10} at={cVaults} title="Bank A · Creditor" sub="Unpaid card + savings account" />
+        <VaultTitle x={1290} out={cKeep + 10} at={cVaults + 12} title="Clean Anchor Bank" sub="e.g. Bank of Baroda · zero loans/cards" />
+        <div style={{position: 'absolute', left: 240, top: 90, opacity: vis(frame, cSweep + 40, cMove + 20)}}>
           <div style={{padding: '12px 22px', borderRadius: 12, background: alpha(C.crimson, 0.25 + 0.15 * Math.sin(frame / 3)), border: `2px solid ${C.crimson}`, fontWeight: 900, fontSize: 30, color: '#FECACA', fontFamily: FONT}}>
             ⚠ SALARY SWEPT TO ZERO · NO COURT ORDER
           </div>

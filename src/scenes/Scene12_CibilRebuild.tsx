@@ -33,7 +33,9 @@ export const Scene12: React.FC = () => {
       <div style={{position: 'absolute', left: 90, top: 30, opacity: vis(frame, c0 - 10, cClose)}}>
         <Glass pad={24} accent={score > 730 ? C.emerald : C.crimson}>
           <Label>CIBIL score</Label>
-          <Gauge3D score={score} width={620} height={384} />
+          <div style={{position: 'relative', width: 620, height: 384}}>
+            <Gauge3D score={score} width={620} height={384} />
+          </div>
           <div style={{textAlign: 'center', fontFamily: MONO, fontSize: 22, color: C.muted}}>STATUS: {frame < cMonths ? 'SETTLED · POST WRITE-OFF' : 'REBUILDING'}</div>
         </Glass>
       </div>

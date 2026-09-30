@@ -67,7 +67,7 @@ export const Scene07: React.FC = () => {
 
       {/* 1: WhatsApp live location */}
       <Layer opacity={vis(frame, cWa, cGhost + 4)}>
-        <div style={{position: 'absolute', left: 200, top: 0, transform: `scale(${1 - zoom * 0.35}) translate(${-zoom * 200}px, ${zoom * 80}px)`, transformOrigin: 'top left'}}>
+        <div style={{position: 'absolute', left: 220, top: 50, transform: `scale(${0.9 - zoom * 0.3}) translate(${-zoom * 200}px, ${zoom * 60}px)`, transformOrigin: 'top left'}}>
           <Phone width={380} height={750} screen="#0b141a">
             <div style={{position: 'absolute', top: 60, left: 0, right: 0, height: 70, background: '#202c33', display: 'flex', alignItems: 'center', padding: '0 20px', gap: 12, fontFamily: FONT}}>
               <div style={{width: 44, height: 44, borderRadius: 22, background: '#475569'}} />

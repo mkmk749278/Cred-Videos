@@ -50,14 +50,47 @@ export const Scene11: React.FC = () => {
         <div style={{position: 'absolute', left: 140, top: 60, width: 900, height: 600}}>
           <Reveal at={c0} from="bottom">
             <svg width={900} height={600}>
-              <rect x={60} y={60} width={780} height={70} rx={10} fill="#78350f" />
-              <text x={450} y={108} textAnchor="middle" fontFamily="Inter" fontWeight={900} fontSize={30} fill="#fde68a" letterSpacing={4}>
+              <defs>
+                <linearGradient id="col" x1="0" x2="1">
+                  <stop offset="0" stopColor="#78350f" />
+                  <stop offset="0.45" stopColor="#fde68a" />
+                  <stop offset="1" stopColor="#92400e" />
+                </linearGradient>
+                <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stopColor="#3b2410" />
+                  <stop offset="1" stopColor="#1c1107" />
+                </linearGradient>
+              </defs>
+              {/* pediment with scales of justice */}
+              <polygon points="60,160 450,36 840,160" fill="url(#stone)" stroke="#f5b942" strokeWidth={5} strokeLinejoin="round" />
+              <g transform="translate(450 112)" stroke="#fde68a" strokeWidth={4} fill="none" strokeLinecap="round">
+                <line x1={0} y1={-34} x2={0} y2={30} />
+                <line x1={-52} y1={-22} x2={52} y2={-22} />
+                <path d="M -52 -22 L -70 10 L -34 10 Z M 52 -22 L 34 10 L 70 10 Z" />
+                <line x1={-22} y1={32} x2={22} y2={32} />
+              </g>
+              {/* entablature */}
+              <rect x={50} y={164} width={800} height={62} rx={6} fill="#451a03" stroke="#f5b942" strokeWidth={4} />
+              <text x={450} y={206} textAnchor="middle" fontFamily="Inter" fontWeight={900} fontSize={30} fill="#fde68a" letterSpacing={5}>
                 NATIONAL LOK ADALAT
               </text>
-              <rect x={20} y={330} width={860} height={250} rx={16} fill="#451a03" stroke="#92400e" strokeWidth={6} />
-              <rect x={20} y={330} width={860} height={30} fill="#92400e" />
-              {[140, 450, 760].map((x) => (
-                <circle key={x} cx={x} cy={455} r={46} fill="none" stroke="#b45309" strokeWidth={6} />
+              {/* columns */}
+              {[0, 1, 2, 3, 4, 5].map((i) => {
+                const x = 108 + i * 136;
+                return (
+                  <g key={i}>
+                    <rect x={x - 6} y={232} width={60} height={16} rx={3} fill="#b45309" />
+                    <rect x={x} y={248} width={48} height={236} fill="url(#col)" opacity={0.9} />
+                    {[12, 24, 36].map((dx) => (
+                      <line key={dx} x1={x + dx} y1={252} x2={x + dx} y2={480} stroke="#78350f" strokeWidth={2} opacity={0.6} />
+                    ))}
+                    <rect x={x - 6} y={484} width={60} height={14} rx={3} fill="#b45309" />
+                  </g>
+                );
+              })}
+              {/* steps */}
+              {[0, 1, 2].map((k) => (
+                <rect key={k} x={40 - k * 18} y={500 + k * 28} width={820 + k * 36} height={24} rx={4} fill={['#78350f', '#5c2a0c', '#451a03'][k]} stroke="#92400e" strokeWidth={2} />
               ))}
             </svg>
           </Reveal>

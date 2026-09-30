@@ -29,8 +29,21 @@ const Vault: React.FC<{frame: number; open: number}> = ({frame, open}) => {
     <group position-y={-0.8} scale={0.62}>
       {/* wall */}
       <RoundedBox args={[6.5, 4.6, 0.6]} radius={0.08} position-z={-0.35}>
-        <meshStandardMaterial color="#1e293b" metalness={0.6} roughness={0.55} />
+        <meshStandardMaterial color="#334155" metalness={0.85} roughness={0.38} />
       </RoundedBox>
+      {/* brushed steel trim + rivets so the wall reads as a vault, not a flat panel */}
+      {[[0, 2.2, 6.3, 0.14], [0, -2.2, 6.3, 0.14], [3.1, 0, 0.14, 4.3], [-3.1, 0, 0.14, 4.3]].map(([x, y, w, h], i) => (
+        <mesh key={`t${i}`} position={[x, y, 0]}>
+          <boxGeometry args={[w, h, 0.08]} />
+          <Steel color="#94a3b8" />
+        </mesh>
+      ))}
+      {[-2.8, -1.4, 1.4, 2.8].flatMap((x) => [1.95, -1.95].map((y) => [x, y])).concat([[-2.8, 0], [2.8, 0]]).map(([x, y], i) => (
+        <mesh key={`r${i}`} position={[x, y, 0.02]}>
+          <sphereGeometry args={[0.09, 16, 12]} />
+          <Steel color="#e2e8f0" />
+        </mesh>
+      ))}
       {/* frame ring */}
       <mesh position-z={0.02}>
         <torusGeometry args={[R + 0.12, 0.14, 24, 96]} />

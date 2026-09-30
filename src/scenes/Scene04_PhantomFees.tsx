@@ -22,6 +22,7 @@ export const Scene04: React.FC = () => {
   const c0 = contentStart(I);
   const brickAt = BRICKS.map((b) => cueFrame(I, b.cue) + 6);
   const cSix = cueFrame(I, 'In six months');
+  const cYear = cueFrame(I, 'Leave it for a year');
   const cRbi = cueFrame(I, 'Under the RBI Framework');
   const cWaive = cueFrame(I, 'may be waived');
   const cSettle = cueFrame(I, 'always try to settle');
@@ -76,7 +77,10 @@ export const Scene04: React.FC = () => {
         <div style={{marginTop: 24, opacity: vis(frame, cSix, cRbi)}}>
           <Glass accent={C.crimson} pad={20}>
             <div style={{fontSize: 28, fontWeight: 700}}>
-              6 months: ₹1,00,000 can show as <span style={{color: C.crimson}}>₹1,65,000</span>
+              6 months: ₹1,00,000 → <span style={{color: C.crimson}}>₹1,39,176</span>
+            </div>
+            <div style={{fontSize: 28, fontWeight: 700, marginTop: 4, opacity: vis(frame, cYear)}}>
+              ~1 year: can cross <span style={{color: C.crimson}}>₹1,65,000</span>
             </div>
             <div style={{fontSize: 22, color: C.muted, marginTop: 6}}>Largely uncollectible — and banks know it.</div>
           </Glass>

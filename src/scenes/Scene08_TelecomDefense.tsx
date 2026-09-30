@@ -79,6 +79,10 @@ export const Scene08: React.FC = () => {
   const cExhaust = cueFrame(I, 'When they get total');
   const cDrop = cueFrame(I, 'The calls typically');
   const toggle = spr(frame, fps, cToggle + 20);
+  const cSplit = cueFrame(I, 'Split your phone lines');
+  const cBack = cueFrame(I, "back to the bank's own team");
+  const noise = interpolate(frame, [cSim, cSim + 12, cRules + 30, cRules + 42, cRules + 70, cRules + 82, cToggle + 20, cToggle + 32], [0.95, 0.75, 0.75, 0.5, 0.5, 0.3, 0.3, 0.06], CLAMP);
+  const marker = interpolate(frame, [cCycle + 20, cCycle + 50, cExhaust + 40, cBack, cBack + 30], [0, 0.25, 0.8, 0.8, 0.92], CLAMP);
   const day = Math.round(interpolate(frame, [cCycle + 10, cExhaust + 40], [1, 90], CLAMP));
 
   return (
@@ -123,6 +127,16 @@ export const Scene08: React.FC = () => {
               </div>
             </Glass>
           </Reveal>
+        </div>
+        <div style={{position: 'absolute', left: 150, top: 470, width: 700, opacity: vis(frame, cSplit)}}>
+          <Label color={C.crimson}>Noise reaching you</Label>
+          <div style={{marginTop: 12, height: 34, borderRadius: 17, background: '#1e293b', overflow: 'hidden', border: `1px solid ${C.border}`}}>
+            <div style={{height: '100%', width: `${noise * 100}%`, borderRadius: 17, background: `linear-gradient(90deg, ${C.emerald}, ${noise > 0.4 ? C.crimson : C.emerald})`, boxShadow: `0 0 24px ${alpha(noise > 0.4 ? C.crimson : C.emerald, 0.5)}`}} />
+          </div>
+          <div style={{display: 'flex', justifyContent: 'space-between', marginTop: 10, fontSize: 22, color: C.muted, fontFamily: MONO}}>
+            <span>quiet</span>
+            <span style={{color: noise > 0.4 ? C.crimson : C.emerald, fontWeight: 800}}>{noise > 0.7 ? 'NON-STOP' : noise > 0.4 ? 'HIGH' : noise > 0.15 ? 'LOW' : 'SILENT'}</span>
+          </div>
         </div>
         <div style={{position: 'absolute', left: 1080, top: 0}}>
           <Reveal at={cRules - 10} from="right">
@@ -191,7 +205,22 @@ export const Scene08: React.FC = () => {
             </Glass>
           </Reveal>
           <div style={{marginTop: 30, marginLeft: 200}}>
-            <Stamp at={cDrop + 30} text="CONTRACT WINDOW EXHAUSTED" color={C.slate} size={36} rotate={-4} />
+            <Stamp at={cDrop + 30} text="CONTRACT WINDOW EXHAUSTED" color={C.emerald} size={36} rotate={-4} />
+          </div>
+        </div>
+        <div style={{position: 'absolute', left: 260, top: 560, width: 1460, opacity: vis(frame, cCycle + 20)}}>
+          <div style={{position: 'relative', height: 60}}>
+            {[
+              {from: 0, to: 0.25, label: "Bank's team", color: C.slate},
+              {from: 0.25, to: 0.8, label: 'Outside agency · 60–90 days', color: C.crimson},
+              {from: 0.8, to: 1, label: 'Back to bank', color: C.emerald},
+            ].map((seg) => (
+              <div key={seg.label} style={{position: 'absolute', left: `${seg.from * 100}%`, width: `${(seg.to - seg.from) * 100}%`, top: 0, height: 60, padding: '0 4px', boxSizing: 'border-box'}}>
+                <div style={{height: 16, borderRadius: 8, background: alpha(seg.color, 0.35), border: `1px solid ${seg.color}`}} />
+                <div style={{marginTop: 10, fontSize: 22, fontWeight: 700, color: seg.color, textAlign: 'center'}}>{seg.label}</div>
+              </div>
+            ))}
+            <div style={{position: 'absolute', top: -8, left: `${marker * 100}%`, width: 32, height: 32, marginLeft: -16, borderRadius: 16, background: C.text, boxShadow: `0 0 20px ${alpha(C.cyan, 0.9)}`}} />
           </div>
         </div>
         <Sfx at={cCycle + 10} name="pages_flip" volume={0.4} />

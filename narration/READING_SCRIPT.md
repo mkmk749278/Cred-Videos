@@ -144,7 +144,7 @@ Even in high tiers above one lakh, card cases rarely go to court. Courts are slo
 
 ## Module 04 — Phantom Accounting
 
-*File: `m04.wav` · The revolving debt trap · about 1:18*
+*File: `m04.wav` · The revolving debt trap · about 1:24*
 
 > *(3 seconds of silence)*
 
@@ -162,7 +162,7 @@ Here's what happens. The moment you miss payments, the bank's computer starts ad
 
 `⏸`
 
-In six months, a one-lakh rupee debt can show up as one lakh sixty-five thousand. The bank knows it will never collect most of that extra.
+In six months, a one-lakh rupee debt can grow to almost one lakh forty thousand. Leave it for a year, and it can cross one lakh sixty-five thousand. The bank knows it will never collect most of that extra.
 
 `⏸`
 

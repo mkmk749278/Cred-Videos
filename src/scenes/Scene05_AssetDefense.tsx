@@ -2,9 +2,9 @@ import React from 'react';
 import {useCurrentFrame} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {vis} from '../lib/anim';
-import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames, sentenceEnd} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Banner, Glass, KLine, Label, Layer, NextChip, Reveal, Sfx, shake, Tag} from '../components/primitives';
+import {Banner, Glass, KLine, Label, Layer, NextChip, Reveal, Sfx, shake, SpokenTile, Tag} from '../components/primitives';
 import {Vaults3D} from '../three/Vaults3D';
 
 const I = 4;
@@ -19,6 +19,12 @@ const VaultTitle: React.FC<{x: number; at: number; out: number; title: string; s
   );
 };
 
+const Arrow: React.FC<{at: number}> = ({at}) => {
+  const frame = useCurrentFrame();
+  const p = vis(frame, at);
+  return <div style={{fontSize: 54, fontWeight: 900, color: C.gold, opacity: p, transform: `translateX(${(1 - p) * -20}px)`}}>→</div>;
+};
+
 export const Scene05: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
@@ -31,6 +37,10 @@ export const Scene05: React.FC = () => {
   const cFamily = cueFrame(I, "Your family's groceries");
   const cSetOff = cueFrame(I, 'the Right of Set-Off');
   const cMean = cueFrame(I, 'What does that mean');
+  const cCall = cueFrame(I, 'even one recovery call');
+  const cProtect = cueFrame(I, "Protect your family's money");
+  const cImportant = sentenceEnd(I, 'This is very important');
+  const cRules = cueFrame(I, 'the rules in most bank');
   const cImagine = cueFrame(I, 'Imagine waking up');
   const cNoLoan = cueFrame(I, 'no loan');
   const cNoCard = cueFrame(I, 'no credit card');
@@ -42,23 +52,38 @@ export const Scene05: React.FC = () => {
   return (
     <SceneShell index={I} duration={D} music="analytic" tint={C.cyan} stageStyle={{translate: `${sh.x}px ${sh.y}px`}}>
       <Layer opacity={vis(frame, c0 - 10, cVaults - 4)}>
-        <div style={{position: 'absolute', left: 0, right: 0, top: 110, display: 'flex', justifyContent: 'center'}}>
+        <div style={{position: 'absolute', left: 0, right: 0, top: 40, display: 'flex', justifyContent: 'center'}}>
           <Reveal at={c0} from="scale">
-            <Glass accent={C.cyan} style={{width: 1100, textAlign: 'center'}} pad={40}>
+            <Glass accent={C.cyan} style={{width: 1100, textAlign: 'center'}} pad={34}>
               <Label color={C.cyan}>Step zero · before any call</Label>
-              <div style={{fontSize: 64, fontWeight: 900, marginTop: 12}}>Secure household survival cash</div>
-              <div style={{fontSize: 30, color: C.muted, marginTop: 18, opacity: vis(frame, c171)}}>
-                Section 171, Indian Contract Act + account terms → <span style={{color: C.gold, fontWeight: 800}}>Banker's Right of Set-Off</span>
-              </div>
+              <div style={{fontSize: 60, fontWeight: 900, marginTop: 10}}>Secure household survival cash</div>
             </Glass>
           </Reveal>
         </div>
-        <div style={{position: 'absolute', left: 0, right: 0, top: 440, textAlign: 'center'}}>
-          <KLine at={cSetOff} size={68} color={C.gold} mark={C.gold} out={cMean - 4}>The Right of Set-Off</KLine>
+        {/* before the law: what to protect */}
+        <div style={{position: 'absolute', left: 0, right: 0, top: 290, display: 'flex', justifyContent: 'center', gap: 22, opacity: vis(frame, cCall, c171 - 4)}}>
+          <SpokenTile at={cCall} icon="☏" label="Recovery call" sub="not yet" color={C.crimson} width={240} doneAt={cCall + 20} mark="cross" />
+          <SpokenTile at={cProtect} icon="₹" label="Salary" color={C.emerald} width={200} doneAt={cImportant} />
+          <SpokenTile at={cProtect + 6} icon="S" label="Savings" color={C.emerald} width={200} doneAt={cImportant + 5} />
+          <SpokenTile at={cProtect + 12} icon="♥" label="Family money" color={C.emerald} width={240} doneAt={cImportant + 10} />
         </div>
-        <div style={{position: 'absolute', left: 0, right: 0, top: 440, textAlign: 'center'}}>
-          <KLine at={cMean} size={60}>What does that mean for you?</KLine>
+        {/* the legal chain */}
+        <div style={{position: 'absolute', left: 0, right: 0, top: 290, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 18, opacity: vis(frame, c171, cMean - 4)}}>
+          <SpokenTile at={c171} icon="§" label="Section 171" sub="Indian Contract Act" color={C.gold} width={290} />
+          <Arrow at={cRules - 6} />
+          <SpokenTile at={cRules} icon="✎" label="Bank agreement" sub="the fine print" color={C.gold} width={290} />
+          <Arrow at={cSetOff - 6} />
+          <SpokenTile at={cSetOff} icon="⇄" label="Right of Set-Off" sub="bank can take your money" color={C.crimson} width={320} />
         </div>
+        <div style={{position: 'absolute', left: 0, right: 0, top: 560, textAlign: 'center'}}>
+          <KLine at={cSetOff + 8} size={60} color={C.gold} mark={C.gold} out={cMean - 4}>The Right of Set-Off</KLine>
+        </div>
+        <div style={{position: 'absolute', left: 0, right: 0, top: 380, textAlign: 'center'}}>
+          <KLine at={cMean} size={72}>What does that mean for you?</KLine>
+        </div>
+        {[cProtect, cProtect + 6, cProtect + 12, c171, cRules].map((a, i) => (
+          <Sfx key={i} at={a} name="node_pop" volume={0.32} />
+        ))}
         <Sfx at={cSetOff} name="title_hit" volume={0.22} />
       </Layer>
       <Layer opacity={vis(frame, cVaults - 4, D)}>
@@ -68,7 +93,7 @@ export const Scene05: React.FC = () => {
         </div>
         <VaultTitle x={640} out={cKeep + 10} at={cVaults} title="Bank A · Creditor" sub="Unpaid card + savings account" />
         <VaultTitle x={1290} out={cKeep + 10} at={cVaults + 12} title="Clean Anchor Bank" sub="e.g. Bank of Baroda · zero loans/cards" />
-        <div style={{position: 'absolute', left: 240, top: 160, opacity: vis(frame, cImagine, cMove + 20)}}>
+        <div style={{position: 'absolute', left: 90, top: 160, opacity: vis(frame, cImagine, cMove + 20)}}>
           <KLine at={cImagine} size={36} color="#FCA5A5">Salary day → ₹0.00 in your account</KLine>
         </div>
         <div style={{position: 'absolute', left: 1360, top: 130, display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start', opacity: vis(frame, cNoLoan, cKeep)}}>
@@ -88,7 +113,7 @@ export const Scene05: React.FC = () => {
         {[cNoLoan, cNoCard, cNoOd, cBob].map((a, i) => (
           <Sfx key={i} at={a} name="tactile_click" volume={0.3} />
         ))}
-        <div style={{position: 'absolute', left: 240, top: 90, opacity: vis(frame, cSweep + 40, cMove + 20)}}>
+        <div style={{position: 'absolute', left: 90, top: 90, opacity: vis(frame, cSweep + 40, cMove + 20)}}>
           <div style={{padding: '12px 22px', borderRadius: 12, background: alpha(C.crimson, 0.25 + 0.15 * Math.sin(frame / 3)), border: `2px solid ${C.crimson}`, fontWeight: 900, fontSize: 30, color: '#FECACA', fontFamily: FONT}}>
             ⚠ SALARY SWEPT TO ZERO · NO COURT ORDER
           </div>

@@ -124,7 +124,7 @@ export const Scene03: React.FC = () => {
       <Layer opacity={vis(frame, c0 - 10, cLedger + 6)}>
         <CardOrbit3D cards={PORTFOLIO} start={c0} cut={cCut} />
         <HubLabel start={cFear} cut={cCut} />
-        <div style={{position: 'absolute', left: 0, right: 0, top: 590, textAlign: 'center', opacity: vis(frame, cRelax, cSeparate)}}>
+        <div style={{position: 'absolute', left: 0, right: 0, top: 690, textAlign: 'center', opacity: vis(frame, cRelax, cSeparate)}}>
           <KLine at={cRelax} size={64} color={C.emerald}>Relax. It doesn't work like that.</KLine>
         </div>
         <div style={{position: 'absolute', left: 50, top: 120, display: 'flex', flexDirection: 'column', gap: 14}}>

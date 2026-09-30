@@ -5,6 +5,9 @@ import {useThree} from '@react-three/fiber';
 import * as THREE from 'three';
 import {useCurrentFrame} from 'remotion';
 
+/** Internal resolution of 3D layers relative to the video (1 = full). */
+export const DPR = 0.6;
+
 /** A transparent 3D viewport laid over the 2D backdrop. Frame-driven only (no useFrame). */
 export const Scene3D: React.FC<{
   width?: number;
@@ -31,6 +34,8 @@ export const Scene3D: React.FC<{
     <ThreeCanvas
       width={width}
       height={height}
+      // Reduced internal resolution, upscaled by the browser: software WebGL cost scales with pixel count.
+      dpr={DPR}
       gl={{alpha: true, antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: exposure}}
       camera={{position: camera.position, fov: camera.fov ?? 38, near: 0.1, far: 200}}
       style={{background: 'transparent'}}

@@ -3,9 +3,11 @@ import {Composition, continueRender, delayRender, Series, staticFile} from 'remo
 import {FPS, HEIGHT, WIDTH, sceneFrames} from './lib/timing';
 import {Intro, INTRO_FRAMES} from './Intro';
 import {SCENES} from './scenes';
+import {Test3D} from './three/Test3D';
 
 const useFonts = () => {
   const [handle] = useState(() => delayRender('fonts'));
+  const [ready, setReady] = useState(false);
   useEffect(() => {
     const faces = [
       new FontFace('Inter', `url(${staticFile('fonts/Inter.woff2')}) format('woff2')`, {weight: '100 900'}),
@@ -14,13 +16,18 @@ const useFonts = () => {
     Promise.all(faces.map((f) => f.load()))
       .then((loaded) => loaded.forEach((f) => (document.fonts as unknown as Set<FontFace>).add(f)))
       .catch((e) => console.error('font load failed', e))
-      .finally(() => continueRender(handle));
+      .finally(() => {
+        setReady(true);
+        continueRender(handle);
+      });
   }, [handle]);
+  return ready;
 };
 
+// Children mount only after fonts load, so canvas-drawn 3D textures never use fallback fonts.
 const WithFonts: React.FC<{children: React.ReactNode}> = ({children}) => {
-  useFonts();
-  return <>{children}</>;
+  const ready = useFonts();
+  return ready ? <>{children}</> : null;
 };
 
 export const VideoMaster: React.FC = () => (
@@ -43,6 +50,7 @@ const total = INTRO_FRAMES + SCENES.reduce((acc, _, i) => acc + sceneFrames(i), 
 export const RemotionRoot: React.FC = () => (
   <>
     <Composition id="VideoMaster" component={VideoMaster} durationInFrames={total} fps={FPS} width={WIDTH} height={HEIGHT} />
+    <Composition id="Test3D" component={() => <WithFonts><Test3D /></WithFonts>} durationInFrames={1200} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="Intro" component={() => <WithFonts><Intro /></WithFonts>} durationInFrames={INTRO_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
     {SCENES.map((Scene, i) => (
       <Composition

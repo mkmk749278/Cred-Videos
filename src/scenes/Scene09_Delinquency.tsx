@@ -1,9 +1,10 @@
 import React from 'react';
-import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, useCurrentFrame} from 'remotion';
 import {C, MONO, alpha} from '../theme';
-import {CLAMP, spr, vis} from '../lib/anim';
+import {CLAMP, vis} from '../lib/anim';
 import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
+import {VaultDoor3D} from '../three/VaultDoor3D';
 import {Banner, Cross, Glass, Label, Layer, Reveal, Sfx, Tag} from '../components/primitives';
 
 const I = 8;
@@ -23,12 +24,11 @@ const dayX = (d: number) => X0 + interpolate(d, DAY_STOPS, POS_STOPS, CLAMP) * (
 
 export const Scene09: React.FC = () => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
   const D = sceneFrames(I);
   const c0 = LEAD * FPS;
   const cSma0 = cueFrame(I, 'In the first thirty');
   const cSma1 = cueFrame(I, 'Between days thirty');
-  const cOffer = cueFrame(I, 'banks may offer');
+  const cOffer = cueFrame(I, 'Banks may also offer');
   const cThink = cueFrame(I, 'Think carefully');
   const cNpa = cueFrame(I, 'At ninety days');
   const cProv = cueFrame(I, 'must set aside');
@@ -38,7 +38,6 @@ export const Scene09: React.FC = () => {
 
   const day = interpolate(frame, [c0, cSma0, cSma1, cNpa, cWo, cWo + 60], [0, 5, 35, 91, 180, 200], CLAMP);
   const gateAt = [cSma0, cSma1, cNpa, cWo];
-  const vaultOpen = spr(frame, fps, cWindow, {mass: 2, stiffness: 60, damping: 18});
 
   return (
     <SceneShell index={I} duration={D} music="analytic" tint={C.emerald}>
@@ -154,36 +153,10 @@ export const Scene09: React.FC = () => {
         </div>
         <Sfx at={cNpa} name="gear_shift" volume={0.5} />
       </Layer>
+      <Layer opacity={vis(frame, cWo, D)}>
+        <VaultDoor3D start={cWo} open={cWindow} />
+      </Layer>
       <Layer opacity={vis(frame, cWo, D)} style={{top: 260}}>
-        <div style={{position: 'absolute', left: 660, top: 10, width: 600, height: 340}}>
-          <div style={{position: 'absolute', inset: 0, borderRadius: 30, background: `radial-gradient(circle, ${alpha(C.gold, 0.6 * vaultOpen)}, transparent 70%)`}} />
-          {[0, 1].map((side) => (
-            <div
-              key={side}
-              style={{
-                position: 'absolute',
-                top: 0,
-                [side ? 'right' : 'left']: 0,
-                width: 300,
-                height: 340,
-                background: 'linear-gradient(135deg, #a16207, #fde68a 50%, #a16207)',
-                border: '4px solid #713f12',
-                transformOrigin: side ? 'right center' : 'left center',
-                transform: `perspective(1200px) rotateY(${(side ? 1 : -1) * vaultOpen * 75}deg)`,
-                display: 'grid',
-                placeItems: 'center',
-                boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
-              }}
-            >
-              <div style={{width: 120, height: 120, borderRadius: '50%', border: '10px solid #713f12', transform: `rotate(${frame * 2 * (frame < cWindow + 30 ? 1 : 0)}deg)`}} />
-            </div>
-          ))}
-          <div style={{position: 'absolute', top: 120, left: 0, right: 0, textAlign: 'center', fontSize: 40, fontWeight: 900, color: '#fff', opacity: vaultOpen, textShadow: `0 0 20px ${C.gold}`}}>
-            SETTLEMENT
-            <br />
-            WINDOW
-          </div>
-        </div>
         <div style={{position: 'absolute', left: 120, top: 60, width: 480}}>
           <Reveal at={cWo} from="left">
             <Glass accent={C.emerald}>

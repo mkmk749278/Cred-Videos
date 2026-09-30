@@ -1,11 +1,12 @@
 import React, {useMemo} from 'react';
-import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate, useCurrentFrame} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
-import {CLAMP, rnd, spr, vis} from '../lib/anim';
+import {CLAMP, rnd, vis} from '../lib/anim';
 import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Counter, Glass, Label, Layer, Phone, PointCard, Reveal, Sfx, shake, Tag} from '../components/primitives';
 import {FamilyIcon} from '../components/icons';
+import {Phone3D} from '../three/Phone3D';
 
 const I = 0;
 
@@ -19,51 +20,9 @@ const calls = [
 
 const PhoneBeat: React.FC<{start: number; intense: number; threats: number}> = ({start, intense, threats}) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const dolly = interpolate(frame, [start - 20, start + 150], [0.82, 1], CLAMP);
-  const vib = frame > intense ? Math.sin(frame * 0.8) * 4 * (0.6 + 0.4 * Math.abs(Math.sin(frame / 14))) : Math.sin(frame * 0.8) * 1.5;
   return (
     <>
-      <div style={{position: 'absolute', left: 1020, top: -30, transform: `scale(${dolly}) translateX(${vib}px) rotate(${-4 + vib * 0.15}deg)`, transformOrigin: 'center'}}>
-        <Phone width={400} height={800}>
-          <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(180deg, #1a0b12, #0b0f1c 50%)'}} />
-          <div style={{position: 'absolute', top: 90, left: 0, right: 0, textAlign: 'center', fontFamily: FONT}}>
-            <div style={{fontSize: 18, color: C.muted, letterSpacing: 2}}>INCOMING CALL</div>
-            <div style={{fontSize: 34, fontWeight: 800, marginTop: 10}}>+91 140XXXXX11</div>
-            <div style={{display: 'inline-block', marginTop: 12, padding: '6px 14px', borderRadius: 10, background: alpha(C.crimson, 0.2), color: '#FCA5A5', fontSize: 18, fontWeight: 700}}>
-              ⚠ Spam likely · 48 calls today
-            </div>
-          </div>
-          <div style={{position: 'absolute', top: 290, left: 18, right: 18, display: 'flex', flexDirection: 'column', gap: 10}}>
-            {calls.map((c, i) => {
-              const at = start + 24 + i * 16;
-              const p = spr(frame, fps, at);
-              if (frame < at) return null;
-              return (
-                <div
-                  key={i}
-                  style={{
-                    transform: `translateY(${(1 - p) * 120}px)`,
-                    opacity: Math.min(1, p * 1.5),
-                    background: 'rgba(30,41,59,0.85)',
-                    borderLeft: `4px solid ${c.c}`,
-                    borderRadius: 14,
-                    padding: '12px 14px',
-                    fontFamily: FONT,
-                  }}
-                >
-                  <div style={{fontSize: 20, fontWeight: 800}}>{c.n}</div>
-                  <div style={{fontSize: 15, color: C.muted, marginTop: 2}}>Missed · {c.t}</div>
-                </div>
-              );
-            })}
-          </div>
-          <div style={{position: 'absolute', bottom: 40, left: 0, right: 0, display: 'flex', justifyContent: 'space-around'}}>
-            <div style={{width: 76, height: 76, borderRadius: '50%', background: C.red, display: 'grid', placeItems: 'center', fontSize: 34}}>✆</div>
-            <div style={{width: 76, height: 76, borderRadius: '50%', background: C.green, display: 'grid', placeItems: 'center', fontSize: 34}}>✆</div>
-          </div>
-        </Phone>
-      </div>
+      <Phone3D start={start} intense={intense} />
       {calls.map((_, i) => (
         <Sfx key={i} at={start + 24 + i * 16} name="notification" volume={0.18} />
       ))}
@@ -173,9 +132,9 @@ export const Scene01: React.FC = () => {
   const D = sceneFrames(I);
   const c0 = LEAD * FPS;
   const cIntense = cueFrame(I, 'Within days');
-  const cThreat = cueFrame(I, 'automated messages');
-  const cFunnel = cueFrame(I, 'Driven by panic');
-  const cPivot = cueFrame(I, 'Here is your first');
+  const cThreat = cueFrame(I, 'Messages that say');
+  const cFunnel = cueFrame(I, 'And when we panic');
+  const cPivot = cueFrame(I, 'So listen to me');
   const cNode1 = cueFrame(I, 'Debt is a financial event');
   const cNode2 = cueFrame(I, 'Look at the business');
   const cRate = cueFrame(I, '42%');

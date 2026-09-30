@@ -5,7 +5,7 @@ import {CLAMP, inr, spr, vis} from '../lib/anim';
 import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Counter, Glass, Label, Layer, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
-import {CreditCard} from '../components/icons';
+import {CardOrbit3D} from '../three/CardOrbit3D';
 
 const I = 2;
 
@@ -27,60 +27,17 @@ const TIERS: Record<number, {name: string; color: string}> = {
   4: {name: 'Tier 4 · Micro / Low', color: C.slate},
 };
 
-const Orbit: React.FC<{start: number; cut: number}> = ({start, cut}) => {
+/** 2D label floating over the 3D hub */
+const HubLabel: React.FC<{start: number; cut: number}> = ({start, cut}) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const rot = frame * 0.35;
-  const cx = 960;
-  const cy = 360;
-  const broken = frame >= cut;
+  const o = vis(frame, start + 30) * (frame >= cut ? Math.max(0, 1 - (frame - cut) / 20) : 1);
   return (
-    <>
-      <svg width={1920} height={770} style={{position: 'absolute', inset: 0}}>
-        {PORTFOLIO.map((_, i) => {
-          const a = ((i / 8) * 360 + rot) * (Math.PI / 180);
-          const x = cx + Math.cos(a) * 560;
-          const y = cy + Math.sin(a) * 230;
-          const draw = interpolate(frame, [start + 20 + i * 5, start + 50 + i * 5], [0, 1], CLAMP);
-          const k = broken ? Math.min(1, (frame - cut) / 20) : 0;
-          const mx = cx + (x - cx) * 0.5;
-          const my = cy + (y - cy) * 0.5;
-          return (
-            <g key={i} opacity={1 - k}>
-              <line x1={cx} y1={cy} x2={cx + (mx - cx) * draw} y2={cy + (my - cy) * draw + k * 80} stroke={C.gold} strokeWidth={5} strokeDasharray="14 8" />
-              <line x1={x} y1={y} x2={x + (mx - x) * draw} y2={y + (my - y) * draw + k * 120} stroke={C.gold} strokeWidth={5} strokeDasharray="14 8" />
-            </g>
-          );
-        })}
-        {broken && <line x1={0} y1={600} x2={1920 * Math.min(1, (frame - cut + 6) / 10)} y2={120} stroke={C.crimson} strokeWidth={6} style={{filter: `drop-shadow(0 0 16px ${C.crimson})`}} opacity={Math.max(0, 1 - (frame - cut) / 30)} />}
-      </svg>
-      <div style={{position: 'absolute', left: cx - 170, top: cy - 70, width: 340, textAlign: 'center', opacity: broken ? Math.max(0.15, 1 - (frame - cut) / 20) : 1}}>
-        <Glass accent={C.gold} pad={20}>
-          <Label color={C.gold}>Joint lawsuit?</Label>
-          <div style={{fontSize: 36, fontWeight: 900}}>“COMBINED SUIT”</div>
-        </Glass>
-      </div>
-      {PORTFOLIO.map((p, i) => {
-        const a = ((i / 8) * 360 + rot) * (Math.PI / 180);
-        const depth = (Math.sin(a) + 1) / 2;
-        const pop = spr(frame, fps, start + i * 5);
-        return (
-          <div
-            key={i}
-            style={{
-              position: 'absolute',
-              left: cx + Math.cos(a) * 560 - 110,
-              top: cy + Math.sin(a) * 230 - 70,
-              transform: `scale(${(0.72 + depth * 0.35) * pop}) rotateY(${Math.cos(a) * 25}deg)`,
-              zIndex: Math.round(depth * 100),
-              opacity: 0.55 + depth * 0.45,
-            }}
-          >
-            <CreditCard bank={p.bank} product={p.product} color1={p.c1} color2={p.c2} width={220} />
-          </div>
-        );
-      })}
-    </>
+    <div style={{position: 'absolute', left: 960 - 170, top: 70, width: 340, textAlign: 'center', opacity: o}}>
+      <Glass accent={C.gold} pad={16}>
+        <Label color={C.gold}>Joint lawsuit?</Label>
+        <div style={{fontSize: 34, fontWeight: 900}}>“COMBINED SUIT”</div>
+      </Glass>
+    </div>
   );
 };
 
@@ -182,12 +139,13 @@ export const Scene03: React.FC = () => {
   const cLedger = cueFrame(I, 'Look at how recovery');
   const cScale = cueFrame(I, 'Filing a civil suit');
   const cHigh = cueFrame(I, 'Even in High Tiers');
-  const cLok = cueFrame(I, 'Compromise settlements via');
+  const cLok = cueFrame(I, 'why compromise settlements');
   const sh = shake(frame, cScale + 24, 12);
   return (
     <SceneShell index={I} duration={D} music="analytic" tint={C.gold} stageStyle={{translate: `${sh.x}px ${sh.y}px`}}>
       <Layer opacity={vis(frame, c0 - 10, cLedger + 6)}>
-        <Orbit start={c0} cut={cCut} />
+        <CardOrbit3D cards={PORTFOLIO} start={c0} cut={cCut} />
+        <HubLabel start={c0} cut={cCut} />
         <div style={{position: 'absolute', left: 0, right: 0, top: 700}}>
           <Banner at={cCut + 16} color={C.crimson} size={44}>Zero aggregation · 8 independent contracts</Banner>
         </div>

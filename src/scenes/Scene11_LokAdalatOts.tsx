@@ -25,9 +25,9 @@ export const Scene11: React.FC = () => {
   const cAward = cueFrame(I, 'An award passed');
   const cFinal = cueFrame(I, 'It is final');
   const cRange = cueFrame(I, 'In compromise settlements');
-  const cRules = cueFrame(I, 'However, observe four');
+  const cRules = cueFrame(I, 'check four things');
   const cChecks = CHECKS.map((c) => cueFrame(I, c.cue));
-  const cRemit = cueFrame(I, 'Remit all funds');
+  const cRemit = cueFrame(I, 'And when you pay');
   const cCash = cueFrame(I, 'Never make cash');
   const gavelHit = cAward + 20;
   const g = frame - gavelHit;

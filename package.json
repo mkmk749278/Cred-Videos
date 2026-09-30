@@ -12,16 +12,21 @@
     "build": "remotion render VideoMaster out/credit_card_debt_know_your_rights.mp4"
   },
   "dependencies": {
+    "@react-three/drei": "^9.114.0",
+    "@react-three/fiber": "^8.17.10",
     "@remotion/cli": "^4.0.530",
+    "@remotion/three": "^4.0.530",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "remotion": "^4.0.530"
+    "remotion": "^4.0.530",
+    "three": "^0.169.0"
   },
   "devDependencies": {
     "@remotion/bundler": "^4.0.530",
     "@remotion/renderer": "^4.0.530",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
+    "@types/three": "^0.169.0",
     "typescript": "^5.9.3"
   }
 }

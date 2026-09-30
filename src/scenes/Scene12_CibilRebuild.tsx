@@ -6,44 +6,15 @@ import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Check, Glass, Label, Layer, Reveal, Sfx} from '../components/primitives';
 import {CreditCard} from '../components/icons';
+import {Gauge3D} from '../three/Gauge3D';
 
 const I = 11;
-
-const Gauge: React.FC<{score: number; size?: number}> = ({score, size = 560}) => {
-  const frame = useCurrentFrame();
-  const t = (score - 300) / 600;
-  const ang = Math.PI * (1 - t);
-  const r = 220;
-  const cx = 280;
-  const cy = 280;
-  const color = score < 650 ? C.crimson : score < 730 ? C.gold : C.emerald;
-  const arc = (a0: number, a1: number) => {
-    const p = (a: number) => `${cx + r * Math.cos(Math.PI * (1 - a))} ${cy - r * Math.sin(Math.PI * (1 - a))}`;
-    return `M ${p(a0)} A ${r} ${r} 0 0 1 ${p(a1)}`;
-  };
-  return (
-    <svg width={size} height={size * 0.62} viewBox="0 0 560 340">
-      <path d={arc(0, 1)} stroke="#1e293b" strokeWidth={40} fill="none" />
-      <path d={arc(0, 0.5)} stroke={alpha(C.crimson, 0.5)} strokeWidth={40} fill="none" />
-      <path d={arc(0.5, 0.72)} stroke={alpha(C.gold, 0.5)} strokeWidth={40} fill="none" />
-      <path d={arc(0.72, 1)} stroke={alpha(C.emerald, 0.5)} strokeWidth={40} fill="none" />
-      <path d={arc(0, Math.max(0.001, t))} stroke={color} strokeWidth={14} fill="none" style={{filter: `drop-shadow(0 0 ${12 + 4 * Math.sin(frame / 6)}px ${color})`}} />
-      <line x1={cx} y1={cy} x2={cx + (r - 30) * Math.cos(ang)} y2={cy - (r - 30) * Math.sin(ang)} stroke="#fff" strokeWidth={8} strokeLinecap="round" />
-      <circle cx={cx} cy={cy} r={18} fill="#fff" />
-      <text x={cx} y={cy - 70} textAnchor="middle" fontFamily="Inter" fontWeight={900} fontSize={84} fill={color}>
-        {Math.round(score)}
-      </text>
-      <text x={40} y={325} fontFamily="JetBrains Mono" fontSize={20} fill={C.muted}>300</text>
-      <text x={480} y={325} fontFamily="JetBrains Mono" fontSize={20} fill={C.muted}>900</text>
-    </svg>
-  );
-};
 
 export const Scene12: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
   const c0 = LEAD * FPS;
-  const cMyth = cueFrame(I, 'But the belief');
+  const cMyth = cueFrame(I, 'But is your financial');
   const cWeight = cueFrame(I, 'Credit scoring models');
   const cSteps = cueFrame(I, 'Once your settlements');
   const cFd = cueFrame(I, 'Open a small fixed');
@@ -62,7 +33,7 @@ export const Scene12: React.FC = () => {
       <div style={{position: 'absolute', left: 90, top: 30, opacity: vis(frame, c0 - 10, cClose)}}>
         <Glass pad={24} accent={score > 730 ? C.emerald : C.crimson}>
           <Label>CIBIL score</Label>
-          <Gauge score={score} size={620} />
+          <Gauge3D score={score} width={620} height={384} />
           <div style={{textAlign: 'center', fontFamily: MONO, fontSize: 22, color: C.muted}}>STATUS: {frame < cMonths ? 'SETTLED · POST WRITE-OFF' : 'REBUILDING'}</div>
         </Glass>
       </div>

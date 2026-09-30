@@ -33,7 +33,7 @@ SPOKEN = {
     "CPC": "C P C", "PSSA": "P S S A", "BPO": "B P O", "GST": "G S T", "RBI": "R B I",
     "SBI": "S B I", "ICICI": "I C I C I", "HDFC": "H D F C", "IDFC": "I D F C", "RBL": "R B L",
     "NEFT": "N E F T", "RTGS": "R T G S", "IP": "I P", "SMA-1": "S M A one", "SMA-2": "S M A two",
-    "CIBIL": "sibil", "EMIs": "E M Eyes", "FD-backed": "F D backed", "SIM": "sim", "YES": "Yes",
+    "CIBIL": "sibil", "EMIs": "E M Eyes", "EMI": "E M I", "FD-backed": "F D backed", "SIM": "sim", "YES": "Yes",
     "FIRST": "First", "1872": "eighteen seventy-two", "112": "one one two", "1": "one",
     "OTS": "O T S", "PNO": "P N O",
 }

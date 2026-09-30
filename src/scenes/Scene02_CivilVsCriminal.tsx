@@ -5,52 +5,10 @@ import {CLAMP, rnd, spr, vis} from '../lib/anim';
 import {cueFrame, FPS, LEAD, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Glass, Label, Layer, PointCard, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
-import {Handcuffs, Person, Scales} from '../components/icons';
+import {Person, Scales} from '../components/icons';
+import {Handcuffs3D} from '../three/Handcuffs3D';
 
 const I = 1;
-
-const SHARDS = [
-  [50, 50, 0, 0, 50, 0],
-  [50, 50, 50, 0, 100, 0],
-  [50, 50, 100, 0, 100, 40],
-  [50, 50, 100, 40, 100, 100],
-  [50, 50, 100, 100, 55, 100],
-  [50, 50, 55, 100, 0, 100],
-  [50, 50, 0, 100, 0, 55],
-  [50, 50, 0, 55, 0, 0],
-];
-
-const ShatterCuffs: React.FC<{at: number}> = ({at}) => {
-  const frame = useCurrentFrame();
-  const f = frame - at;
-  return (
-    <div style={{position: 'relative', width: 300, height: 180}}>
-      {SHARDS.map((s, i) => {
-        const cx = (s[0] + s[2] + s[4]) / 3 - 50;
-        const cy = (s[1] + s[3] + s[5]) / 3 - 50;
-        const k = f > 0 ? f : 0;
-        const dx = cx * k * 0.9 + (rnd(i) - 0.5) * k * 2;
-        const dy = cy * k * 0.9 + 0.35 * k * k * 0.2;
-        const rot = (rnd(i + 4) - 0.5) * k * 8;
-        const o = f > 0 ? Math.max(0, 1 - f / 28) : 1;
-        return (
-          <div
-            key={i}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              clipPath: `polygon(${s[0]}% ${s[1]}%, ${s[2]}% ${s[3]}%, ${s[4]}% ${s[5]}%)`,
-              transform: `translate(${dx}px, ${dy}px) rotate(${rot}deg)`,
-              opacity: o,
-            }}
-          >
-            <Handcuffs size={300} />
-          </div>
-        );
-      })}
-    </div>
-  );
-};
 
 const PoliceBlueprint: React.FC<{start: number}> = ({start}) => {
   const frame = useCurrentFrame();
@@ -110,13 +68,13 @@ export const Scene02: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
   const c0 = LEAD * FPS;
-  const cThreat = cueFrame(I, 'They invoke');
-  const cContract = cueFrame(I, 'An unsecured credit card facility');
-  const cRemedies = cueFrame(I, 'legal recourse');
+  const cThreat = cueFrame(I, "They'll shout");
+  const cContract = cueFrame(I, 'A credit card or a personal loan');
+  const cRemedies = cueFrame(I, 'So what can the bank');
   const cArrest = cueFrame(I, 'Indian criminal law');
-  const cSC = cueFrame(I, 'Under established Supreme Court');
+  const cSC = cueFrame(I, 'The Supreme Court has said');
   const cHistory = cueFrame(I, 'If you maintained');
-  const cPolice = cueFrame(I, 'Furthermore, police stations');
+  const cPolice = cueFrame(I, 'And the police');
   const cSec = cueFrame(I, 'Pure credit card defaults');
   const smash = cArrest + 20;
   const sh = shake(frame, smash + 7, 16);
@@ -143,8 +101,8 @@ export const Scene02: React.FC = () => {
               <span style={{color: '#FCA5A5'}}>CRIMINAL CHEATING</span>
             </div>
           </div>
-          <div style={{position: 'absolute', left: 150, top: 380}}>
-            <ShatterCuffs at={smash + 7} />
+          <div style={{position: 'absolute', left: 40, top: 250}}>
+            <Handcuffs3D smash={smash + 7} width={720} height={480} />
           </div>
           {['“Section 420!”', '“Criminal breach of trust”', '“Police action today”'].map((t, i) => (
             <div key={i} style={{position: 'absolute', left: 520 - i * 60, top: 330 + i * 90, opacity: vis(frame, cThreat + i * 14, smash)}}>

@@ -29,12 +29,12 @@ export const Scene07: React.FC = () => {
   const cScript = cueFrame(I, 'automated script');
   const cLink = cueFrame(I, 'Number Three');
   const cToken = cueFrame(I, 'tracking tokens');
-  const cGenuine = cueFrame(I, 'Genuine court summons');
-  const cDoor = cueFrame(I, 'And if a representative');
+  const cGenuine = cueFrame(I, 'Real court summons');
+  const cDoor = cueFrame(I, 'And if someone actually');
   const cDocs = cueFrame(I, 'ask for two documents');
   const cCannot = cueFrame(I, 'If they cannot produce');
   const c112 = cueFrame(I, 'dial 112');
-  const cLeave = cueFrame(I, 'Unauthorized runners');
+  const cLeave = cueFrame(I, 'People without proper');
   const zoom = interpolate(frame, [cCall - 10, cCall + 30], [0, 1], CLAMP);
   const sh = shake(frame, cWhy + 40, 10);
 

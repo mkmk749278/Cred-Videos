@@ -6,6 +6,8 @@ Config.setPixelFormat('yuv420p');
 Config.setCodec('h264');
 Config.setCrf(20);
 Config.setOverwriteOutput(true);
+// Software WebGL (works without a GPU; needed for the 3D scenes)
+Config.setChromiumOpenGlRenderer('swangle');
 // Use the pre-installed headless Chromium when available (cloud containers); otherwise Remotion downloads one.
 if (process.env.REMOTION_BROWSER) {
   Config.setBrowserExecutable(process.env.REMOTION_BROWSER);

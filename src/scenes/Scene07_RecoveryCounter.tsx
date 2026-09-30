@@ -4,7 +4,7 @@ import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Counter, Cross, Glass, Label, Layer, Phone, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
+import {Counter, Cross, Glass, KLine, Label, Layer, Phone, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
 import {Person} from '../components/icons';
 
 const I = 6;
@@ -22,6 +22,12 @@ export const Scene07: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
   const c0 = contentStart(I);
+  const cReady = cueFrame(I, 'Ready');
+  const cThink = cueFrame(I, 'Now think');
+  const cNobody = cueFrame(I, 'nobody came to your door');
+  const cDontLet = cueFrame(I, "Don't let them in");
+  const cStepOut = cueFrame(I, 'Step outside');
+  const cRecord = cueFrame(I, 'start a video recording');
   const cWa = cueFrame(I, 'Number One');
   const cWhy = cueFrame(I, 'why would they');
   const cCall = cueFrame(I, 'sitting in a call center');
@@ -50,6 +56,9 @@ export const Scene07: React.FC = () => {
               </Glass>
             </Reveal>
           ))}
+        </div>
+        <div style={{position: 'absolute', left: 0, right: 0, top: 560, textAlign: 'center'}}>
+          <KLine at={cReady} size={64} color={C.violet}>Ready? One by one.</KLine>
         </div>
         {[0, 1, 2, 3].map((i) => (
           <Sfx key={i} at={c0 + 10 + i * 10} name="card_slide" volume={0.3} />
@@ -98,6 +107,10 @@ export const Scene07: React.FC = () => {
             </div>
           </Glass>
         </div>
+        <div style={{position: 'absolute', left: 900, top: 260, opacity: 1 - zoom}}>
+          <KLine at={cThink} size={60}>Now think…</KLine>
+          <KLine at={cThink + 30} size={36} color={C.muted}>Why would a real visitor need your location?</KLine>
+        </div>
         <Sfx at={cWa + 10} name="notification" volume={0.3} />
         <Sfx at={cWa + 40} name="notification" volume={0.3} />
         <Sfx at={cWhy + 40} name="buzzer" volume={0.35} />
@@ -145,6 +158,9 @@ export const Scene07: React.FC = () => {
         </div>
         <div style={{position: 'absolute', left: 240, top: 420}}>
           <Stamp at={cScript + 50} text={'AUTOMATED SCRIPT'} sub="often nobody visited" color={C.amber} size={46} />
+        </div>
+        <div style={{position: 'absolute', left: 170, top: 640}}>
+          <KLine at={cNobody} size={52} color={C.amber}>Nobody came to your door.</KLine>
         </div>
         <Sfx at={cGhost + 6} name="notification" volume={0.3} />
         <Sfx at={cScript - 15} name="printer_blast" volume={0.35} />
@@ -197,7 +213,17 @@ export const Scene07: React.FC = () => {
           <Reveal at={cDoor + 10} from="right">
             <Glass accent={C.cyan}>
               <Label color={C.cyan}>● REC · doorstep protocol</Label>
-              <div style={{fontSize: 26, color: C.muted, marginTop: 6}}>Step outside · never let them in · record video</div>
+              <div style={{display: 'flex', gap: 10, marginTop: 10, flexWrap: 'wrap'}}>
+                {[
+                  {at: cDontLet, t: "Don't let them in"},
+                  {at: cStepOut, t: 'Step outside'},
+                  {at: cRecord, t: 'Record video'},
+                ].map((x) => (
+                  <Reveal key={x.t} at={x.at} from="bottom" distance={20}>
+                    <Tag color={C.cyan} style={{fontSize: 20}}>✓ {x.t}</Tag>
+                  </Reveal>
+                ))}
+              </div>
               {[
                 {t: 'Identity card (bank employee / authorised agent)', at: cDocs + 10},
                 {t: "Bank's written authorization for YOUR account", at: cDocs + 50},

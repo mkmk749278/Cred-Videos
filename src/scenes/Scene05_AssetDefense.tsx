@@ -4,7 +4,7 @@ import {C, FONT, MONO, alpha} from '../theme';
 import {vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Banner, Glass, Label, Layer, Reveal, Sfx, shake} from '../components/primitives';
+import {Banner, Glass, KLine, Label, Layer, NextChip, Reveal, Sfx, shake, Tag} from '../components/primitives';
 import {Vaults3D} from '../three/Vaults3D';
 
 const I = 4;
@@ -29,6 +29,13 @@ export const Scene05: React.FC = () => {
   const cMove = cueFrame(I, 'your first move');
   const cKeep = cueFrame(I, 'Keep every bank');
   const cFamily = cueFrame(I, "Your family's groceries");
+  const cSetOff = cueFrame(I, 'the Right of Set-Off');
+  const cMean = cueFrame(I, 'What does that mean');
+  const cImagine = cueFrame(I, 'Imagine waking up');
+  const cNoLoan = cueFrame(I, 'no loan');
+  const cNoCard = cueFrame(I, 'no credit card');
+  const cNoOd = cueFrame(I, 'no overdraft');
+  const cBob = cueFrame(I, 'For example, Bank of Baroda');
 
   const sh = shake(frame, cSweep + 10, 12);
 
@@ -46,6 +53,13 @@ export const Scene05: React.FC = () => {
             </Glass>
           </Reveal>
         </div>
+        <div style={{position: 'absolute', left: 0, right: 0, top: 440, textAlign: 'center'}}>
+          <KLine at={cSetOff} size={68} color={C.gold} out={cMean - 4}>The Right of Set-Off</KLine>
+        </div>
+        <div style={{position: 'absolute', left: 0, right: 0, top: 440, textAlign: 'center'}}>
+          <KLine at={cMean} size={60}>What does that mean for you?</KLine>
+        </div>
+        <Sfx at={cSetOff} name="title_hit" volume={0.22} />
       </Layer>
       <Layer opacity={vis(frame, cVaults - 4, D)}>
         <Vaults3D start={cVaults} sweep={cSweep} move={cMove} keep={cKeep} />
@@ -54,6 +68,26 @@ export const Scene05: React.FC = () => {
         </div>
         <VaultTitle x={640} out={cKeep + 10} at={cVaults} title="Bank A · Creditor" sub="Unpaid card + savings account" />
         <VaultTitle x={1290} out={cKeep + 10} at={cVaults + 12} title="Clean Anchor Bank" sub="e.g. Bank of Baroda · zero loans/cards" />
+        <div style={{position: 'absolute', left: 240, top: 160, opacity: vis(frame, cImagine, cMove + 20)}}>
+          <KLine at={cImagine} size={36} color="#FCA5A5">Salary day → ₹0.00 in your account</KLine>
+        </div>
+        <div style={{position: 'absolute', left: 1360, top: 130, display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-start', opacity: vis(frame, cNoLoan, cKeep)}}>
+          {[
+            {at: cNoLoan, t: 'No loan'},
+            {at: cNoCard, t: 'No credit card'},
+            {at: cNoOd, t: 'No overdraft'},
+          ].map((x) => (
+            <Reveal key={x.t} at={x.at} from="right" distance={40}>
+              <Tag color={C.cyan} style={{fontSize: 22}}>✓ {x.t}</Tag>
+            </Reveal>
+          ))}
+          <Reveal at={cBob} from="right" distance={40}>
+            <Tag color={C.gold} style={{fontSize: 22}}>e.g. Bank of Baroda</Tag>
+          </Reveal>
+        </div>
+        {[cNoLoan, cNoCard, cNoOd, cBob].map((a, i) => (
+          <Sfx key={i} at={a} name="tactile_click" volume={0.3} />
+        ))}
         <div style={{position: 'absolute', left: 240, top: 90, opacity: vis(frame, cSweep + 40, cMove + 20)}}>
           <div style={{padding: '12px 22px', borderRadius: 12, background: alpha(C.crimson, 0.25 + 0.15 * Math.sin(frame / 3)), border: `2px solid ${C.crimson}`, fontWeight: 900, fontSize: 30, color: '#FECACA', fontFamily: FONT}}>
             ⚠ SALARY SWEPT TO ZERO · NO COURT ORDER
@@ -74,6 +108,9 @@ export const Scene05: React.FC = () => {
         <Sfx at={cMove + 20} name="air_whoosh" volume={0.4} />
         <Sfx at={cMove + 68} name="shield_activate" volume={0.5} />
         <Sfx at={cKeep + 10} name="tactile_click" volume={0.5} />
+        <div style={{position: 'absolute', right: 60, top: 6}}>
+          <NextChip at={cFamily + 90} text="Dealing with the bank itself" />
+        </div>
       </Layer>
     </SceneShell>
   );

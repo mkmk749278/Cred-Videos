@@ -4,7 +4,7 @@ import {C, MONO, alpha} from '../theme';
 import {CLAMP, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Check, Glass, Layer, Reveal, Sfx} from '../components/primitives';
+import {Check, Glass, KLine, Layer, Reveal, Sfx} from '../components/primitives';
 import {Person} from '../components/icons';
 
 const I = 12;
@@ -24,6 +24,7 @@ export const Scene13: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
   const c0 = contentStart(I);
+  const cAlone = cueFrame(I, 'Remember, you are not alone');
   const ats = STEPS.map((s) => cueFrame(I, s.cue));
   const cFinal = cueFrame(I, 'Take control today');
   const part = interpolate(frame, [cFinal - 10, cFinal + 30], [0, 1], CLAMP);
@@ -74,6 +75,9 @@ export const Scene13: React.FC = () => {
         ))}
       </Layer>
 
+      <div style={{position: 'absolute', left: 0, right: 0, top: 690, textAlign: 'center', opacity: vis(frame, cAlone, cFinal)}}>
+        <KLine at={cAlone} size={40} color={C.gold}>You are not alone. You are not a criminal.</KLine>
+      </div>
       {/* finale */}
       <Layer opacity={part}>
         <div

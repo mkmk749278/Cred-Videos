@@ -5,7 +5,7 @@ import {CLAMP, inr, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {FeeStack3D} from '../three/FeeStack3D';
-import {Banner, Glass, Label, Layer, Reveal, Sfx, shake} from '../components/primitives';
+import {Banner, Glass, KLine, Label, Layer, Reveal, Sfx, shake} from '../components/primitives';
 
 const I = 3;
 
@@ -25,6 +25,15 @@ export const Scene04: React.FC = () => {
   const cRbi = cueFrame(I, 'Under the RBI Framework');
   const cWaive = cueFrame(I, 'may be waived');
   const cSettle = cueFrame(I, 'always try to settle');
+  const cBlocked = cueFrame(I, 'Your card is blocked');
+  const cNotSpent = cueFrame(I, "You haven't spent");
+  const cUp = cueFrame(I, 'keeps going up');
+  const cCall = cueFrame(I, 'I call this');
+  const cAuto = cueFrame(I, "bank's computer starts");
+  const cFunny = cueFrame(I, "And here's the funny part");
+  const cOwnFees = cueFrame(I, 'You only crossed');
+  const cNever = cueFrame(I, 'will never collect');
+  const cGood = cueFrame(I, 'Now, good news');
   const dissolve = interpolate(frame, [cWaive, cWaive + 40], [0, 1], CLAMP);
 
 
@@ -42,7 +51,7 @@ export const Scene04: React.FC = () => {
         waive={cWaive}
         bricks={BRICKS.map((b, i) => ({label: b.label, amount: `+₹${inr(b.amt)}`, color: b.color, at: brickAt[i], h: 0.35 + (b.amt / 22400) * 0.75}))}
       />
-      <div style={{position: 'absolute', left: 120, top: 640, width: 900, textAlign: 'center', fontFamily: MONO, fontSize: 22, fontWeight: 800, color: C.gold, letterSpacing: 3, opacity: vis(frame, cWaive - 30, cWaive + 40)}}>
+      <div style={{position: 'absolute', left: 120, top: 640, width: 900, textAlign: 'center', fontFamily: MONO, fontSize: 22, fontWeight: 800, color: C.gold, letterSpacing: 3, opacity: vis(frame, cRbi, cWaive + 40)}}>
         RBI COMPROMISE SETTLEMENT FRAMEWORK
       </div>
       {/* ledger panel */}
@@ -80,11 +89,26 @@ export const Scene04: React.FC = () => {
           Phantom charges may be waived in OTS
         </Banner>
       </div>
+      <div style={{position: 'absolute', left: 1180, top: 560, width: 620}}>
+        <KLine at={cBlocked} size={40} out={cNotSpent + 20} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Card blocked.</KLine>
+        <KLine at={cNotSpent} size={40} color={C.muted} out={cUp} style={{position: 'absolute', left: 0, top: 0, width: 620}}>₹0 new spending.</KLine>
+        <KLine at={cUp} size={46} color={C.crimson} out={cCall} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Yet the balance keeps rising.</KLine>
+        <KLine at={cCall} size={54} color={C.gold} out={cAuto} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Phantom Accounting</KLine>
+        <KLine at={cAuto} size={34} color={C.muted} out={brickAt[0] + 20} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Charges added automatically by the bank's software</KLine>
+        <KLine at={cOwnFees} size={34} color="#FCA5A5" out={brickAt[3]} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Over the limit… only because of their own fees!</KLine>
+        <KLine at={cGood} size={54} color={C.emerald} out={cRbi + 10} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Now, the good news</KLine>
+      </div>
+      <div style={{position: 'absolute', left: 1180, top: 650, width: 620, opacity: vis(frame, cNever, cRbi)}}>
+        <KLine at={cNever} size={30} color={C.muted}>Most of it will never be collected</KLine>
+      </div>
       <div style={{position: 'absolute', left: 1180, top: 450, width: 600, opacity: vis(frame, cSettle)}}>
         <Glass accent={C.green} pad={20}>
           <div style={{fontSize: 28, fontWeight: 800}}>Settle against core principal — <span style={{color: C.green}}>not the phantom ledger.</span></div>
         </Glass>
       </div>
+      <Sfx at={cCall} name="title_hit" volume={0.25} />
+      <Sfx at={cFunny} name="buzzer" volume={0.15} />
+      <Sfx at={cGood} name="triumph_rise" volume={0.25} />
       {brickAt.map((b, i) => (
         <Sfx key={i} at={b + 10} name="block_slam" volume={0.5} />
       ))}

@@ -32,5 +32,7 @@ done
 LIST=out/chunks/list.txt
 : > "$LIST"
 for id in "${ORDER[@]}"; do echo "file '$id.mp4'" >> "$LIST"; done
-"$FFMPEG" -y -loglevel error -f concat -safe 0 -i "$LIST" -c copy out/credit_card_debt_know_your_rights.mp4 >> "$LOG" 2>&1
+"$FFMPEG" -y -loglevel error -f concat -safe 0 -i "$LIST" -c copy out/.joined.mp4 >> "$LOG" 2>&1 || { echo "EXIT 2" >> "$LOG"; exit 2; }
+# loudness master (-14 LUFS, -1.5 dBTP) for YouTube
+python3 scripts/master_audio.py out/.joined.mp4 out/credit_card_debt_know_your_rights.mp4 >> "$LOG" 2>&1
 echo "EXIT $?" >> "$LOG"

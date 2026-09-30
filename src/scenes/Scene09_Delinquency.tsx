@@ -5,7 +5,7 @@ import {CLAMP, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {VaultDoor3D} from '../three/VaultDoor3D';
-import {Banner, Cross, Glass, Label, Layer, Reveal, Sfx, Tag} from '../components/primitives';
+import {Banner, Cross, Glass, KLine, Label, Layer, Reveal, Sfx, Tag} from '../components/primitives';
 
 const I = 8;
 
@@ -26,6 +26,7 @@ export const Scene09: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
   const c0 = contentStart(I);
+  const cCare = cueFrame(I, 'customer care usually');
   const cSma0 = cueFrame(I, 'In the first thirty');
   const cSma1 = cueFrame(I, 'Between days thirty');
   const cOffer = cueFrame(I, 'Banks may also offer');
@@ -81,6 +82,9 @@ export const Scene09: React.FC = () => {
           </Reveal>
         </div>
       </Layer>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 530, textAlign: 'center', opacity: vis(frame, cCare, cSma1)}}>
+        <KLine at={cCare} size={44} color={C.muted}>Customer care can't offer a settlement yet.</KLine>
+      </div>
       <Layer opacity={vis(frame, cSma0, cSma1 + 4)} style={{top: 270}}>
         <div style={{display: 'flex', justifyContent: 'center'}}>
           <Reveal at={cSma0} from="bottom">

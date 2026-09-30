@@ -4,7 +4,7 @@ import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, spr, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Check, Glass, Label, Layer, Phone, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
+import {Check, Glass, KLine, Label, Layer, Phone, Reveal, Sfx, shake, SpokenTile, Stamp, Tag} from '../components/primitives';
 import {GavelIcon} from '../components/icons';
 
 const I = 10;
@@ -21,6 +21,9 @@ export const Scene11: React.FC = () => {
   const {fps} = useVideoConfig();
   const D = sceneFrames(I);
   const c0 = contentStart(I);
+  const cWay1 = cueFrame(I, 'A National Lok Adalat');
+  const cWay2 = cueFrame(I, 'direct One-Time Settlement');
+  const cWait = cueFrame(I, 'But wait');
   const cNalsa = cueFrame(I, 'National Lok Adalat is organized');
   const cAward = cueFrame(I, 'An award passed');
   const cFinal = cueFrame(I, 'It is final');
@@ -37,6 +40,9 @@ export const Scene11: React.FC = () => {
 
   return (
     <SceneShell index={I} duration={D} music="hope" tint={C.gold} stageStyle={{translate: `${sh.x}px ${sh.y}px`}}>
+      <div style={{position: 'absolute', left: 1120, top: 610, width: 680, opacity: vis(frame, cWait, cRules + 6)}}>
+        <KLine at={cWait} size={60} color={C.crimson}>But wait.</KLine>
+      </div>
       <Layer opacity={vis(frame, c0 - 10, cRules + 4)}>
         {/* bench */}
         <div style={{position: 'absolute', left: 140, top: 60, width: 900, height: 600}}>
@@ -69,6 +75,10 @@ export const Scene11: React.FC = () => {
           </div>
         </div>
         <div style={{position: 'absolute', left: 1120, top: 60, width: 680, display: 'flex', flexDirection: 'column', gap: 20}}>
+          <div style={{display: 'flex', gap: 16, opacity: vis(frame, cWay1, cNalsa)}}>
+            <SpokenTile at={cWay1} icon="1" label="National Lok Adalat" color={C.gold} width={320} />
+            <SpokenTile at={cWay2} icon="2" label="Direct OTS with the bank" color={C.cyan} width={320} />
+          </div>
           <Reveal at={cNalsa} from="right">
             <Glass accent={C.gold} pad={22}>
               <Label color={C.gold}>Organized by NALSA</Label>

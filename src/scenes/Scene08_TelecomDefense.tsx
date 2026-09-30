@@ -4,7 +4,7 @@ import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, spr, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Glass, Label, Layer, Phone, Reveal, Sfx, Stamp, Type} from '../components/primitives';
+import {Glass, KLine, Label, Layer, Phone, Reveal, Sfx, Stamp, Type} from '../components/primitives';
 
 const I = 7;
 
@@ -68,6 +68,7 @@ export const Scene08: React.FC = () => {
   const {fps} = useVideoConfig();
   const D = sceneFrames(I);
   const c0 = contentStart(I);
+  const cWin = cueFrame(I, "You can't win");
   const cAnswer = cueFrame(I, 'Every time you answer');
   const cMore = cueFrame(I, 'can get even more');
   const cSilence = cueFrame(I, 'The answer is mechanical');
@@ -84,6 +85,10 @@ export const Scene08: React.FC = () => {
     <SceneShell index={I} duration={D} music="tension" tint={C.cyan}>
       <Layer opacity={vis(frame, c0 - 10, cSilence + 4)}>
         <Dialer start={c0} answer={cAnswer + 20} more={cMore} />
+        <div style={{position: 'absolute', left: 70, top: 40, width: 820}}>
+          <KLine at={cWin} size={40} out={cAnswer}>You can't win against a computer</KLine>
+          <KLine at={cWin + 24} size={40} color={C.cyan} out={cAnswer}>with emotions.</KLine>
+        </div>
         <Sfx at={c0} name="dialer_ring" volume={0.25} />
         <Sfx at={cAnswer + 20} name="warning_pulse" volume={0.35} />
         <Sfx at={cMore} name="counter_spin" volume={0.3} />

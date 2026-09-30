@@ -248,6 +248,32 @@ const Subtitles: React.FC<{index: number}> = ({index}) => {
 
 /* ------------------------------------------------------------------ shell */
 
+/**
+ * Music bed level with ducking: sits under the voice while a sentence is spoken and rises a little in
+ * pauses and on the title card. Ramps over ~0.3 s so the dips are not audible as pumping.
+ */
+const MUSIC_UNDER_VOICE = 0.075;
+const MUSIC_OPEN = 0.16;
+const duckCache = new Map<number, [number, number][]>();
+const musicLevel = (index: number, f: number) => {
+  let spans = duckCache.get(index);
+  if (!spans) {
+    spans = timing.modules[index].sentences.map((s) => [toFrame(s.start) - 6, toFrame(s.end) + 8] as [number, number]);
+    duckCache.set(index, spans);
+  }
+  // distance (frames) to the nearest spoken span; 0 inside one
+  let d = Infinity;
+  for (const [a, b] of spans) {
+    if (f >= a && f <= b) {
+      d = 0;
+      break;
+    }
+    d = Math.min(d, f < a ? a - f : f - b);
+  }
+  const open = interpolate(d, [0, 9], [0, 1], CLAMP);
+  return MUSIC_UNDER_VOICE + (MUSIC_OPEN - MUSIC_UNDER_VOICE) * open;
+};
+
 export const SceneShell: React.FC<{
   index: number;
   duration: number;
@@ -274,7 +300,7 @@ export const SceneShell: React.FC<{
       <Audio
         src={staticFile(`audio/music/${music}.mp3`)}
         loop
-        volume={(f) => 0.13 * interpolate(f, [0, 20, duration - 24, duration], [0, 1, 1, 0], CLAMP)}
+        volume={(f) => musicLevel(index, f) * interpolate(f, [0, 20, duration - 24, duration], [0, 1, 1, 0], CLAMP)}
       />
       <Sequence from={Math.round(LEAD * FPS)} layout="none" name="voiceover">
         <Audio src={staticFile(`audio/vo/${m.id}.mp3`)} volume={1} />

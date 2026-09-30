@@ -410,3 +410,105 @@ export const Layer: React.FC<{children?: React.ReactNode; style?: React.CSSPrope
   opacity <= 0 ? null : (
     <div style={{position: 'absolute', inset: 0, opacity, ...style}}>{children}</div>
   );
+
+/* ------------------------------------------------------------------ narration-synced beats */
+
+/** Icon tile that pops in when its word is spoken (icon = short glyph/text, no emoji) */
+export const SpokenTile: React.FC<{at: number; icon: string; label: string; color?: string; width?: number; sub?: string}> = ({
+  at,
+  icon,
+  label,
+  color = C.cyan,
+  width = 230,
+  sub,
+}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  if (frame < at) return <div style={{width}} />;
+  const p = spr(frame, fps, at, SNAPPY);
+  return (
+    <div
+      style={{
+        width,
+        transform: `translateY(${(1 - p) * 40}px) scale(${0.8 + 0.2 * p})`,
+        opacity: Math.min(1, p * 1.4),
+        background: `linear-gradient(160deg, ${alpha(color, 0.2)}, rgba(15,23,42,0.75))`,
+        border: `1.5px solid ${alpha(color, 0.6)}`,
+        borderRadius: 20,
+        padding: '18px 16px',
+        textAlign: 'center',
+        boxShadow: `0 16px 40px rgba(0,0,0,0.4), 0 0 24px ${alpha(color, 0.18)}`,
+        fontFamily: FONT,
+      }}
+    >
+      <div
+        style={{
+          width: 60,
+          height: 60,
+          margin: '0 auto 10px',
+          borderRadius: 18,
+          background: alpha(color, 0.18),
+          border: `2px solid ${color}`,
+          display: 'grid',
+          placeItems: 'center',
+          color,
+          fontWeight: 900,
+          fontSize: 28,
+        }}
+      >
+        {icon}
+      </div>
+      <div style={{fontSize: 26, fontWeight: 800, color: C.text, lineHeight: 1.15}}>{label}</div>
+      {sub && <div style={{fontSize: 18, color: C.muted, marginTop: 6}}>{sub}</div>}
+    </div>
+  );
+};
+
+/** Large kinetic line that sweeps in (clip + blur) when spoken */
+export const KLine: React.FC<{at: number; children: React.ReactNode; size?: number; color?: string; out?: number; style?: React.CSSProperties}> = ({
+  at,
+  children,
+  size = 60,
+  color = C.text,
+  out,
+  style,
+}) => {
+  const frame = useCurrentFrame();
+  if (frame < at) return null;
+  const wipe = interpolate(frame, [at, at + 12], [0, 100], CLAMP);
+  const blur = interpolate(frame, [at, at + 10], [8, 0], CLAMP);
+  const o = out ? 1 - ramp(frame, out, out + 10) : 1;
+  return (
+    <div
+      style={{
+        fontFamily: FONT,
+        fontWeight: 900,
+        fontSize: size,
+        lineHeight: 1.1,
+        color,
+        letterSpacing: -0.5,
+        clipPath: `inset(-20% ${100 - wipe}% -20% 0)`,
+        filter: blur > 0.2 ? `blur(${blur}px)` : undefined,
+        opacity: o,
+        textShadow: '0 4px 24px rgba(0,0,0,0.5)',
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+/** "Up next" chip that closes a module and points at the next one */
+export const NextChip: React.FC<{at: number; text: string}> = ({at, text}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  if (frame < at) return null;
+  const p = spr(frame, fps, at, KINETIC);
+  return (
+    <div style={{display: 'inline-flex', alignItems: 'center', gap: 14, padding: '12px 24px', borderRadius: 999, background: alpha(C.cyan, 0.12), border: `1.5px solid ${alpha(C.cyan, 0.6)}`, transform: `translateX(${(1 - p) * 60}px)`, opacity: p, fontFamily: FONT}}>
+      <span style={{fontFamily: MONO, fontSize: 18, letterSpacing: 3, color: C.cyan, fontWeight: 800}}>UP NEXT</span>
+      <span style={{fontSize: 26, fontWeight: 700, color: C.text}}>{text} →</span>
+    </div>
+  );
+};

@@ -4,7 +4,7 @@ import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, spr, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Check, Glass, Label, Layer, PointCard, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
+import {Check, Glass, KLine, Label, Layer, PointCard, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
 import {Person, Scales} from '../components/icons';
 import {Handcuffs3D} from '../three/Handcuffs3D';
 
@@ -71,6 +71,17 @@ export const Scene02: React.FC = () => {
   const cThreat = cueFrame(I, "They'll shout");
   const cContract = cueFrame(I, 'A credit card or a personal loan');
   const cRemedies = cueFrame(I, 'So what can the bank');
+  const cAgreement = cueFrame(I, 'an agreement between');
+  const cActLit = cueFrame(I, 'It comes under');
+  const cCivil = cueFrame(I, 'usually a civil matter');
+  const cNotCrim = cueFrame(I, 'Not a criminal one');
+  const cOnlyCivil = cueFrame(I, 'Their options are civil');
+  const cSuit = cueFrame(I, 'called a summary suit');
+  const cLok = cueFrame(I, 'National Lok Adalat');
+  const cNormal = cueFrame(I, 'normal recovery case');
+  const cNotAgents = cueFrame(I, 'Police are not');
+  const cNotMatter = cueFrame(I, 'not a police matter');
+  const cHear = cueFrame(I, 'You may hear about');
   const cArrest = cueFrame(I, 'Indian criminal law');
   const cSC = cueFrame(I, 'The Supreme Court has said');
   const cHistory = cueFrame(I, 'If you maintained');
@@ -79,7 +90,7 @@ export const Scene02: React.FC = () => {
   const smash = cArrest + 20;
   const sh = shake(frame, smash + 7, 16);
   const split = interpolate(frame, [c0 - 10, c0 + 20], [0, 1], CLAMP);
-  const rightLit = interpolate(frame, [cContract, cContract + 20], [0.45, 1], CLAMP);
+  const rightLit = interpolate(frame, [cActLit, cActLit + 20], [0.45, 1], CLAMP);
 
   return (
     <SceneShell index={I} duration={D} music="tension" tint={C.royal} stageStyle={{translate: `${sh.x}px ${sh.y}px`}}>
@@ -111,7 +122,10 @@ export const Scene02: React.FC = () => {
               </Tag>
             </div>
           ))}
-          <div style={{position: 'absolute', left: 170, top: 400}}>
+          <div style={{position: 'absolute', left: 90, top: 272, opacity: vis(frame, cNotCrim, smash)}}>
+            <KLine at={cNotCrim} size={44} color="#FCA5A5">✕ Not a criminal matter</KLine>
+          </div>
+          <div style={{position: 'absolute', left: 250, top: 400}}>
             <Stamp at={smash} text="DOES NOT APPLY" sub="to genuine inability to repay" size={50} />
           </div>
         </div>
@@ -136,16 +150,35 @@ export const Scene02: React.FC = () => {
           <div style={{position: 'absolute', right: 520, top: 300, opacity: rightLit}}>
             <Scales size={230} color="#93C5FD" />
           </div>
+          {/* the contract, while it is being explained */}
+          <div style={{position: 'absolute', right: 90, top: 280, width: 460, opacity: vis(frame, cContract, cRemedies + 6)}}>
+            <Reveal at={cContract} from="right" distance={60}>
+              <div style={{background: '#f8fafc', color: '#0f172a', borderRadius: 10, padding: '22px 26px', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', fontFamily: FONT, transform: 'rotate(2deg)'}}>
+                <div style={{fontWeight: 900, fontSize: 26, letterSpacing: 2}}>CARDHOLDER AGREEMENT</div>
+                <div style={{fontSize: 30, fontWeight: 800, color: C.royal, marginTop: 10, opacity: vis(frame, cAgreement)}}>You ⇄ Bank</div>
+                {[1, 2, 3].map((l) => (
+                  <div key={l} style={{height: 8, background: '#cbd5e1', borderRadius: 4, marginTop: 12, width: `${96 - l * 12}%`}} />
+                ))}
+                <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: 14}}>
+                  <Stamp at={cCivil} text="CIVIL" color={C.royal} size={34} rotate={-8} />
+                </div>
+              </div>
+            </Reveal>
+          </div>
           <div style={{position: 'absolute', right: 90, top: 290, display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'flex-end'}}>
-            {['Summary suit · Order 37 CPC', 'National Lok Adalat', 'Civil recovery litigation'].map((t, i) => (
-              <Reveal key={t} at={cRemedies + 20 + i * 16} from="right" distance={60}>
+            {[
+              {t: 'Summary suit · Order 37 CPC', at: cSuit},
+              {t: 'National Lok Adalat', at: cLok},
+              {t: 'Civil recovery case', at: cNormal},
+            ].map(({t, at}) => (
+              <Reveal key={t} at={at} from="right" distance={60}>
                 <Glass accent={C.royal} pad={16} style={{display: 'flex', alignItems: 'center', gap: 16, width: 430}}>
-                  <Check at={cRemedies + 30 + i * 16} size={40} color="#60A5FA" />
+                  <Check at={at + 8} size={40} color="#60A5FA" />
                   <span style={{fontSize: 26, fontWeight: 700}}>{t}</span>
                 </Glass>
               </Reveal>
             ))}
-            <Reveal at={cRemedies + 90} from="right" distance={40}>
+            <Reveal at={cOnlyCivil} from="right" distance={40}>
               <div style={{fontFamily: MONO, fontSize: 20, color: '#93C5FD', marginTop: 6}}>CIVIL REMEDIES ONLY</div>
             </Reveal>
           </div>
@@ -155,9 +188,12 @@ export const Scene02: React.FC = () => {
         </svg>
         <Sfx at={c0} name="plasma_sweep" volume={0.3} />
         <Sfx at={cThreat} name="warning_pulse" volume={0.25} />
-        {[0, 1, 2].map((i) => (
-          <Sfx key={i} at={cRemedies + 30 + i * 16 + 20} name="tactile_click" volume={0.35} />
+        {[cSuit, cLok, cNormal].map((a, i) => (
+          <Sfx key={i} at={a + 28} name="tactile_click" volume={0.35} />
         ))}
+        <Sfx at={cContract} name="air_whoosh" volume={0.3} />
+        <Sfx at={cCivil} name="stamp_heavy" volume={0.4} />
+        <Sfx at={cNotCrim} name="buzzer" volume={0.18} />
         <Sfx at={smash + 6} name="stamp_heavy" volume={0.6} />
         <Sfx at={smash + 7} name="glass_shatter" volume={0.45} />
       </Layer>
@@ -212,16 +248,16 @@ export const Scene02: React.FC = () => {
           </Reveal>
         </div>
         <div style={{position: 'absolute', left: 290, top: 300}}>
-          <Stamp at={cPolice + 110} text={'CIVIL MATTER\nNOT A POLICE CASE'} color="#60A5FA" rotate={-6} size={46} />
+          <Stamp at={cNotMatter + 10} text={'CIVIL MATTER\nNOT A POLICE CASE'} color="#60A5FA" rotate={-6} size={46} />
         </div>
         <div style={{position: 'absolute', left: 1170, top: 90, width: 640, display: 'flex', flexDirection: 'column', gap: 24}}>
-          <Reveal at={cPolice + 30} from="right">
+          <Reveal at={cNotAgents} from="right">
             <Glass accent={C.royal}>
               <Label color="#93C5FD">Police are not recovery agents</Label>
               <div style={{fontSize: 30, fontWeight: 700, marginTop: 10, lineHeight: 1.3}}>A pure civil debt is not a police matter. No summons to the station over an unpaid card bill.</div>
             </Glass>
           </Reveal>
-          <Reveal at={cSec} from="right">
+          <Reveal at={cHear} from="right">
             <Glass accent={C.gold}>
               <Label color={C.gold}>Sec 138 NI Act · Sec 25 PSSA</Label>
               <div style={{fontSize: 30, fontWeight: 700, marginTop: 10, lineHeight: 1.3}}>Apply to bounced cheques and failed auto-debit (NACH) mandates.</div>
@@ -233,7 +269,7 @@ export const Scene02: React.FC = () => {
           </Reveal>
         </div>
         <Sfx at={cPolice + 84} name="block_slam" volume={0.4} />
-        <Sfx at={cPolice + 116} name="stamp_heavy" volume={0.55} />
+        <Sfx at={cNotMatter + 16} name="stamp_heavy" volume={0.55} />
         <Sfx at={cSec + 60} name="tactile_click" volume={0.5} />
       </Layer>
     </SceneShell>

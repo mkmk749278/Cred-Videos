@@ -4,7 +4,7 @@ import {C, MONO, alpha} from '../theme';
 import {vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Glass, Label, Sfx} from '../components/primitives';
+import {Glass, KLine, Label, Sfx} from '../components/primitives';
 import {DossierCards3D} from '../three/DossierCards3D';
 
 const I = 9;
@@ -30,12 +30,23 @@ const GAP_X = 30;
 const GAP_Y = 26;
 const CARD_TOP = 102; // card centre, px from the cell top
 
-const Cell: React.FC<{d: Dossier; at: number; done: boolean}> = ({d, at, done}) => {
+const Cell: React.FC<{d: Dossier; at: number; until: number; done: boolean}> = ({d, at, until, done}) => {
   const frame = useCurrentFrame();
   const o = vis(frame, at + 6);
   return (
     <div style={{width: CELL_W, height: CELL_H, position: 'relative'}}>
-      <Glass accent={frame >= at ? d.color : undefined} pad={0} style={{position: 'absolute', inset: 0, opacity: frame >= at ? 1 : 0.25}} />
+      <Glass
+        accent={frame >= at ? d.color : undefined}
+        pad={0}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          opacity: frame >= at ? 1 : 0.25,
+          // the bank being talked about right now glows
+          boxShadow: frame >= at && frame < until ? `0 0 ${34 + 10 * Math.sin(frame / 7)}px ${alpha(d.color, 0.55)}, 0 30px 80px rgba(0,0,0,0.45)` : undefined,
+          border: frame >= at && frame < until ? `2.5px solid ${d.color}` : undefined,
+        }}
+      />
       <div style={{position: 'absolute', right: 16, top: 14, width: 14, height: 14, borderRadius: 7, background: done ? C.green : alpha(C.muted, 0.4), boxShadow: done ? `0 0 12px ${C.green}` : undefined}} />
       <div style={{position: 'absolute', left: 22, right: 22, top: 200, opacity: o}}>
         <div style={{fontSize: 21, color: C.muted, lineHeight: 1.35}}>{d.tactic}</div>
@@ -48,6 +59,7 @@ export const Scene10: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
   const c0 = contentStart(I);
+  const cRough = cueFrame(I, 'rough patterns');
   const ats = DOSSIERS.map((d) => cueFrame(I, d.cue) + (d.offset ?? 0));
   const cEnd = ats[7] + 90;
   return (
@@ -57,7 +69,7 @@ export const Scene10: React.FC = () => {
       </div>
       <div style={{position: 'absolute', left: 115, top: 50, display: 'grid', gridTemplateColumns: `repeat(4, ${CELL_W}px)`, columnGap: GAP_X, rowGap: GAP_Y}}>
         {DOSSIERS.map((d, i) => (
-          <Cell key={d.bank} d={d} at={ats[i]} done={frame >= cEnd + i * 4} />
+          <Cell key={d.bank} d={d} at={ats[i]} until={ats[i + 1] ?? cEnd} done={frame >= cEnd + i * 4} />
         ))}
       </div>
       <div style={{position: 'absolute', left: 115, top: 50, width: GRID_W, height: GRID_H}}>
@@ -76,6 +88,9 @@ export const Scene10: React.FC = () => {
             y: Math.floor(i / 4) * (CELL_H + GAP_Y) + CARD_TOP,
           }))}
         />
+      </div>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 330, textAlign: 'center', opacity: vis(frame, cRough, ats[0])}}>
+        <KLine at={cRough} size={56} color={C.gold}>Rough patterns, not promises.</KLine>
       </div>
       {ats.map((a, i) => (
         <Sfx key={i} at={a} name="card_slide" volume={0.4} />

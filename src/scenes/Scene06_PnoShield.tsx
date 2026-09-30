@@ -4,7 +4,7 @@ import {C, FONT, MONO, alpha} from '../theme';
 import {spr, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Check, Glass, Label, Layer, Reveal, Sfx, shake, Stamp, Type} from '../components/primitives';
+import {Check, Glass, KLine, Label, Layer, Reveal, Sfx, shake, SpokenTile, Stamp, Tag, Type} from '../components/primitives';
 import {MailIcon} from '../components/icons';
 
 const I = 5;
@@ -62,7 +62,14 @@ export const Scene06: React.FC = () => {
   const cPoints = CLAUSES.map((c) => cueFrame(I, c.cue));
   const cCase = cueFrame(I, 'The Case Reference ID');
   const cCounter = cueFrame(I, 'helps counter');
-  const send = cCase - 20;
+  const cOff = cueFrame(I, 'switch off my phone');
+  const cDont = cueFrame(I, "Please don't do that");
+  const cRelatives = cueFrame(I, 'your relatives');
+  const cFriends = cueFrame(I, 'your friends');
+  const cOffice = cueFrame(I, 'even your office');
+  const cTop = cueFrame(I, "That's the top person");
+  const cReply = cueFrame(I, 'The bank will reply');
+  const send = cReply;
   const press = frame >= send && frame < send + 8 ? 0.94 : 1;
   const cert = spr(frame, fps, cCase);
   const sh = shake(frame, cCounter + 7, 10);
@@ -75,6 +82,18 @@ export const Scene06: React.FC = () => {
             <Crm start={c0 + 10} flag={cFlag} stampAt={1e9} />
           </Reveal>
         </div>
+        <div style={{position: 'absolute', left: 70, top: 110, display: 'flex', flexDirection: 'column', gap: 16}}>
+          <SpokenTile at={cOff} icon="⏻" label="Phone off. Disappear?" color={C.slate} width={400} />
+          <KLine at={cDont} size={48} color={C.crimson}>Please don't.</KLine>
+        </div>
+        <div style={{position: 'absolute', left: 1400, top: 110, display: 'flex', flexDirection: 'column', gap: 14}}>
+          <SpokenTile at={cRelatives} icon="!" label="Relatives called" color={C.crimson} width={420} />
+          <SpokenTile at={cFriends} icon="!" label="Friends called" color={C.crimson} width={420} />
+          <SpokenTile at={cOffice} icon="!" label="Office called" color={C.crimson} width={420} />
+        </div>
+        {[cOff, cRelatives, cFriends, cOffice].map((a, i) => (
+          <Sfx key={i} at={a} name="node_pop" volume={0.32} />
+        ))}
         <Sfx at={c0 + 10} name="typing" volume={0.25} />
         <Sfx at={cFlag} name="warning_pulse" volume={0.4} />
       </Layer>
@@ -116,6 +135,14 @@ export const Scene06: React.FC = () => {
             <Sfx at={p + 67} name="tactile_click" volume={0.5} />
           </React.Fragment>
         ))}
+        <div style={{position: 'absolute', left: 1180, top: 40}}>
+          <Reveal at={cTop} from="right" distance={40}>
+            <Tag color={C.gold} style={{fontSize: 20}}>PNO = top complaints officer</Tag>
+          </Reveal>
+        </div>
+        <div style={{position: 'absolute', left: 1180, top: 660, opacity: vis(frame, send + 10)}}>
+          <Tag color={C.emerald} style={{fontSize: 22}}>✓ Sent · written record created</Tag>
+        </div>
         <Sfx at={send} name="haptic_tap" volume={0.6} />
         <Sfx at={send + 4} name="email_sent" volume={0.5} />
       </Layer>

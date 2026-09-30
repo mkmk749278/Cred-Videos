@@ -4,7 +4,7 @@ import {C, MONO, alpha} from '../theme';
 import {CLAMP, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Banner, Check, Glass, Label, Layer, Reveal, Sfx} from '../components/primitives';
+import {Banner, Check, Glass, KLine, Label, Layer, Reveal, Sfx} from '../components/primitives';
 import {HeroCard3D} from '../three/HeroCard3D';
 import {Gauge3D} from '../three/Gauge3D';
 
@@ -14,6 +14,9 @@ export const Scene12: React.FC = () => {
   const frame = useCurrentFrame();
   const D = sceneFrames(I);
   const c0 = contentStart(I);
+  const cProtect = cueFrame(I, 'Protect your family first');
+  const cTrust = cueFrame(I, 'Trust the law');
+  const cDignity = cueFrame(I, 'settle with dignity');
   const cMyth = cueFrame(I, 'But is your financial');
   const cWeight = cueFrame(I, 'Credit scoring models');
   const cSteps = cueFrame(I, 'Once your settlements');
@@ -145,7 +148,11 @@ export const Scene12: React.FC = () => {
                 A difficult chapter —<br />
                 <span style={{color: C.emerald}}>not your whole story.</span>
               </div>
-              <div style={{fontSize: 34, color: C.muted, marginTop: 30}}>Family first · Law over fear · Resolve with dignity</div>
+              <div style={{display: 'flex', justifyContent: 'center', gap: 40, marginTop: 30}}>
+                <KLine at={cProtect} size={36} color={C.muted}>Family first</KLine>
+                <KLine at={cTrust} size={36} color={C.muted}>Law over fear</KLine>
+                <KLine at={cDignity} size={36} color={C.emerald}>Settle with dignity</KLine>
+              </div>
             </div>
           </Reveal>
         </div>

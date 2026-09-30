@@ -1,0 +1,7 @@
+node_modules/
+out/
+.remotion/
+*.log
+models/
+__pycache__/
+public/audio/**/*.wav

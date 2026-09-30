@@ -1,0 +1,27 @@
+{
+  "name": "cred-videos-debt-awareness",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Credit card debt awareness explainer (India) — Remotion project",
+  "scripts": {
+    "start": "remotion studio",
+    "narration": "python3 narration/generate_vo.py",
+    "sfx": "python3 narration/generate_audio.py",
+    "typecheck": "tsc --noEmit",
+    "still": "remotion still VideoMaster out/still.png",
+    "build": "remotion render VideoMaster out/credit_card_debt_know_your_rights.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.530",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.530"
+  },
+  "devDependencies": {
+    "@remotion/bundler": "^4.0.530",
+    "@remotion/renderer": "^4.0.530",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "typescript": "^5.9.3"
+  }
+}

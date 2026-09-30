@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, inr, spr, vis} from '../lib/anim';
-import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames, sentenceEnd} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Counter, Glass, KLine, Label, Layer, NextChip, Reveal, Sfx, shake, SpokenTile, Stamp, Tag} from '../components/primitives';
 import {CardOrbit3D} from '../three/CardOrbit3D';
@@ -128,9 +128,9 @@ export const Scene03: React.FC = () => {
           <KLine at={cRelax} size={64} color={C.emerald}>Relax. It doesn't work like that.</KLine>
         </div>
         <div style={{position: 'absolute', left: 50, top: 120, display: 'flex', flexDirection: 'column', gap: 14}}>
-          <SpokenTile at={cLawyer} icon="§" label="Own lawyer" color={C.gold} width={220} />
-          <SpokenTile at={cFees} icon="₹" label="Own court fees" color={C.gold} width={220} />
-          <SpokenTile at={cOwnCase} icon="1" label="Own case" color={C.gold} width={220} />
+          <SpokenTile at={cLawyer} doneAt={cFees} icon="§" label="Own lawyer" color={C.gold} width={220} />
+          <SpokenTile at={cFees} doneAt={cOwnCase} icon="₹" label="Own court fees" color={C.gold} width={220} />
+          <SpokenTile at={cOwnCase} doneAt={sentenceEnd(I, 'fight its own case')} icon="1" label="Own case" color={C.gold} width={220} />
         </div>
         {[cLawyer, cFees, cOwnCase].map((a, i) => (
           <Sfx key={i} at={a} name="node_pop" volume={0.35} />
@@ -195,7 +195,7 @@ export const Scene03: React.FC = () => {
         <div style={{position: 'absolute', left: 0, right: 0, top: 420, display: 'flex', justifyContent: 'center', gap: 24}}>
           <SpokenTile at={cSlow} icon="⧗" label="Courts are slow" color={C.crimson} width={260} />
           <SpokenTile at={cYears} icon="3–5" label="Cases take years" color={C.crimson} width={260} />
-          <SpokenTile at={cExit} icon="✓" label="Settlement = bank's easy exit" color={C.emerald} width={300} />
+          <SpokenTile at={cExit} doneAt={sentenceEnd(I, 'easiest way out')} icon="✓" label="Settlement = bank's easy exit" color={C.emerald} width={300} />
         </div>
         <div style={{position: 'absolute', right: 70, bottom: 14}}>
           <NextChip at={cExit + 30} text="The big number on your statement" />

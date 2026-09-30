@@ -5,7 +5,7 @@ import {CLAMP, inr, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {FeeStack3D} from '../three/FeeStack3D';
-import {Banner, Glass, KLine, Label, Layer, Reveal, Sfx, shake} from '../components/primitives';
+import {Banner, Glass, KLine, Label, Layer, Pulse, Reveal, Sfx, shake} from '../components/primitives';
 
 const I = 3;
 
@@ -60,7 +60,9 @@ export const Scene04: React.FC = () => {
           <Glass accent={alarm ? C.crimson : C.green}>
             <Label color={alarm ? C.crimson : C.green}>Statement balance</Label>
             <div style={{fontFamily: MONO, fontSize: 76, fontWeight: 800, color: alarm ? C.crimson : C.green, textShadow: alarm ? `0 0 ${20 + 10 * Math.sin(frame / 4)}px ${alpha(C.crimson, 0.8)}` : undefined}}>
-              ₹{inr(total)}
+              <Pulse at={brickAt.map((b) => b + 10)} color={C.crimson} amount={0.07} style={{display: 'inline-block', transformOrigin: 'left center'}}>
+                ₹{inr(total)}
+              </Pulse>
             </div>
             <div style={{fontSize: 22, color: C.muted, marginBottom: 14}}>Spends base: ₹1,00,000 · card blocked</div>
             {BRICKS.map((b, i) => (
@@ -93,7 +95,7 @@ export const Scene04: React.FC = () => {
         <KLine at={cBlocked} size={40} out={cNotSpent + 20} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Card blocked.</KLine>
         <KLine at={cNotSpent} size={40} color={C.muted} out={cUp} style={{position: 'absolute', left: 0, top: 0, width: 620}}>₹0 new spending.</KLine>
         <KLine at={cUp} size={46} color={C.crimson} out={cCall} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Yet the balance keeps rising.</KLine>
-        <KLine at={cCall} size={54} color={C.gold} out={cAuto} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Phantom Accounting</KLine>
+        <KLine at={cCall} size={54} color={C.gold} mark={C.gold} out={cAuto} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Phantom Accounting</KLine>
         <KLine at={cAuto} size={34} color={C.muted} out={brickAt[0] + 20} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Charges added automatically by the bank's software</KLine>
         <KLine at={cOwnFees} size={34} color="#FCA5A5" out={brickAt[3]} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Over the limit… only because of their own fees!</KLine>
         <KLine at={cGood} size={54} color={C.emerald} out={cRbi + 10} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Now, the good news</KLine>

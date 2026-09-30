@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, spr, vis} from '../lib/anim';
-import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames, sentenceEnd} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Glass, KLine, Label, Layer, Phone, Reveal, Sfx, shake, SpokenTile, Stamp, Tag} from '../components/primitives';
 import {GavelIcon} from '../components/icons';
@@ -30,6 +30,8 @@ export const Scene11: React.FC = () => {
   const cRange = cueFrame(I, 'In compromise settlements');
   const cRules = cueFrame(I, 'check four things');
   const cChecks = CHECKS.map((c) => cueFrame(I, c.cue));
+  const cChecksDone = CHECKS.map((c) => sentenceEnd(I, c.cue));
+  const cFinalDone = [sentenceEnd(I, 'It is final'), sentenceEnd(I, 'It binds both'), sentenceEnd(I, 'nobody can appeal')];
   const cRemit = cueFrame(I, 'And when you pay');
   const cCash = cueFrame(I, 'Never make cash');
   const gavelHit = cAward + 20;
@@ -90,7 +92,7 @@ export const Scene11: React.FC = () => {
               <div style={{display: 'flex', gap: 12, flexWrap: 'wrap'}}>
                 {['Final', 'Binding on both', 'No appeal'].map((t, i) => (
                   <div key={t} style={{display: 'flex', alignItems: 'center', gap: 10, fontSize: 28, fontWeight: 800}}>
-                    <Check at={cFinal + 8 + i * 12} size={38} />
+                    <Check at={cFinalDone[i] - 12} size={38} />
                     {t}
                   </div>
                 ))}
@@ -107,7 +109,7 @@ export const Scene11: React.FC = () => {
         </div>
         <Sfx at={gavelHit} name="gavel_strike" volume={0.6} />
         {[0, 1, 2].map((i) => (
-          <Sfx key={i} at={cFinal + 30 + i * 12} name="tactile_click" volume={0.35} />
+          <Sfx key={i} at={cFinalDone[i] + 10} name="tactile_click" volume={0.35} />
         ))}
       </Layer>
 
@@ -160,13 +162,13 @@ export const Scene11: React.FC = () => {
               <Glass accent={C.emerald} pad={20} style={{display: 'flex', alignItems: 'center', gap: 18}}>
                 <div style={{fontFamily: MONO, fontSize: 28, fontWeight: 800, color: C.emerald}}>0{i + 1}</div>
                 <div style={{flex: 1, fontSize: 27, fontWeight: 700, lineHeight: 1.3}}>{c.t}</div>
-                <Check at={cChecks[i] + 30} size={50} />
+                <Check at={cChecksDone[i] - 12} size={50} />
               </Glass>
             </Reveal>
           ))}
         </div>
         {cChecks.map((c, i) => (
-          <Sfx key={i} at={c + 52} name="tactile_click" volume={0.5} />
+          <Sfx key={i} at={cChecksDone[i] + 10} name="tactile_click" volume={0.5} />
         ))}
       </Layer>
 

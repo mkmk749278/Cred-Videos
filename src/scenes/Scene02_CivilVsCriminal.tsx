@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, spr, vis} from '../lib/anim';
-import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames, sentenceEnd} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Glass, KLine, Label, Layer, PointCard, Reveal, Sfx, shake, Stamp, Tag} from '../components/primitives';
 import {Person, Scales} from '../components/icons';
@@ -167,13 +167,13 @@ export const Scene02: React.FC = () => {
           </div>
           <div style={{position: 'absolute', right: 90, top: 290, display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'flex-end'}}>
             {[
-              {t: 'Summary suit · Order 37 CPC', at: cSuit},
-              {t: 'National Lok Adalat', at: cLok},
-              {t: 'Civil recovery case', at: cNormal},
-            ].map(({t, at}) => (
+              {t: 'Summary suit · Order 37 CPC', at: cSuit, done: cLok},
+              {t: 'National Lok Adalat', at: cLok, done: cNormal},
+              {t: 'Civil recovery case', at: cNormal, done: sentenceEnd(I, 'normal recovery case')},
+            ].map(({t, at, done}) => (
               <Reveal key={t} at={at} from="right" distance={60}>
                 <Glass accent={C.royal} pad={16} style={{display: 'flex', alignItems: 'center', gap: 16, width: 430}}>
-                  <Check at={at + 8} size={40} color="#60A5FA" />
+                  <Check at={done - 8} size={40} color="#60A5FA" />
                   <span style={{fontSize: 26, fontWeight: 700}}>{t}</span>
                 </Glass>
               </Reveal>
@@ -188,8 +188,8 @@ export const Scene02: React.FC = () => {
         </svg>
         <Sfx at={c0} name="plasma_sweep" volume={0.3} />
         <Sfx at={cThreat} name="warning_pulse" volume={0.25} />
-        {[cSuit, cLok, cNormal].map((a, i) => (
-          <Sfx key={i} at={a + 28} name="tactile_click" volume={0.35} />
+        {[cLok, cNormal, sentenceEnd(I, 'normal recovery case')].map((a, i) => (
+          <Sfx key={i} at={a + 12} name="tactile_click" volume={0.35} />
         ))}
         <Sfx at={cContract} name="air_whoosh" volume={0.3} />
         <Sfx at={cCivil} name="stamp_heavy" volume={0.4} />
@@ -212,7 +212,7 @@ export const Scene02: React.FC = () => {
             index="01"
             title="Indian Oil Corp. v. NEPC India Ltd. (2006)"
             body="A later default is not criminal cheating unless dishonest intent existed at the very start."
-            checkAt={cHistory + 20}
+            checkAt={sentenceEnd(I, 'The Supreme Court has said') - 10}
           />
           <PointCard
             at={cSC + 60}
@@ -221,7 +221,7 @@ export const Scene02: React.FC = () => {
             index="02"
             title="ICICI Bank v. Prakash Kaur (2007)"
             body="Banks cannot use muscle power or coercive methods to recover dues — only lawful process."
-            checkAt={cHistory + 60}
+            checkAt={sentenceEnd(I, 'The Supreme Court has said') + 6}
           />
           <PointCard
             at={cHistory + 90}
@@ -230,14 +230,14 @@ export const Scene02: React.FC = () => {
             index="03"
             title="Normal repayment history before the crisis?"
             body="Past usage and repayments show there was no intent to cheat at inception."
-            checkAt={cHistory + 120}
+            checkAt={sentenceEnd(I, 'If you maintained') - 10}
           />
         </div>
         <Sfx at={cSC + 6} name="node_pop" volume={0.45} />
         <Sfx at={cSC + 60} name="node_pop" volume={0.45} />
         <Sfx at={cHistory + 90} name="node_pop" volume={0.45} />
-        {[20, 60, 120].map((d) => (
-          <Sfx key={d} at={cHistory + d + 20} name="tactile_click" volume={0.5} />
+        {[sentenceEnd(I, 'The Supreme Court has said') + 12, sentenceEnd(I, 'The Supreme Court has said') + 28, sentenceEnd(I, 'If you maintained') + 12].map((d) => (
+          <Sfx key={d} at={d} name="tactile_click" volume={0.5} />
         ))}
       </Layer>
 
@@ -262,7 +262,7 @@ export const Scene02: React.FC = () => {
               <Label color={C.gold}>Sec 138 NI Act · Sec 25 PSSA</Label>
               <div style={{fontSize: 30, fontWeight: 700, marginTop: 10, lineHeight: 1.3}}>Apply to bounced cheques and failed auto-debit (NACH) mandates.</div>
               <div style={{display: 'flex', alignItems: 'center', gap: 14, marginTop: 14}}>
-                <Check at={cSec + 40} size={44} />
+                <Check at={sentenceEnd(I, 'Pure credit card defaults') - 10} size={44} />
                 <span style={{fontSize: 26, color: C.muted}}>Usually not a pure credit card bill</span>
               </div>
             </Glass>
@@ -270,7 +270,7 @@ export const Scene02: React.FC = () => {
         </div>
         <Sfx at={cPolice + 84} name="block_slam" volume={0.4} />
         <Sfx at={cNotMatter + 16} name="stamp_heavy" volume={0.55} />
-        <Sfx at={cSec + 60} name="tactile_click" volume={0.5} />
+        <Sfx at={sentenceEnd(I, 'Pure credit card defaults') + 12} name="tactile_click" volume={0.5} />
       </Layer>
     </SceneShell>
   );

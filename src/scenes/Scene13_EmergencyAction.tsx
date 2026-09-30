@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, vis} from '../lib/anim';
-import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, paragraphEnd, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Glass, KLine, Layer, Reveal, Sfx} from '../components/primitives';
 import {Person} from '../components/icons';
@@ -26,6 +26,7 @@ export const Scene13: React.FC = () => {
   const c0 = contentStart(I);
   const cAlone = cueFrame(I, 'Remember, you are not alone');
   const ats = STEPS.map((s) => cueFrame(I, s.cue));
+  const dones = STEPS.map((s) => paragraphEnd(I, s.cue));
   const cFinal = cueFrame(I, 'Take control today');
   const part = interpolate(frame, [cFinal - 10, cFinal + 30], [0, 1], CLAMP);
   const sun = interpolate(frame, [cFinal, cFinal + 120], [0, 1], CLAMP);
@@ -60,7 +61,7 @@ export const Scene13: React.FC = () => {
                       <div style={{fontSize: 30, fontWeight: 800, lineHeight: 1.2}}>{s.t}</div>
                       <div style={{fontSize: 21, color: C.muted, marginTop: 4}}>{s.s}</div>
                     </div>
-                    <Check at={ats[i] + 14} size={56} />
+                    <Check at={dones[i] - 12} size={56} />
                   </Glass>
                 </Reveal>
               );
@@ -70,7 +71,7 @@ export const Scene13: React.FC = () => {
         {ats.map((a, i) => (
           <React.Fragment key={i}>
             <Sfx at={a} name="air_whoosh" volume={0.25} />
-            <Sfx at={a + 36} name="tactile_click" volume={0.5} />
+            <Sfx at={dones[i] + 10} name="tactile_click" volume={0.5} />
           </React.Fragment>
         ))}
       </Layer>

@@ -133,6 +133,28 @@ export const Check: React.FC<{at: number; size?: number; color?: string}> = ({at
           }}
         />
       )}
+      {f >= 20 &&
+        f < 40 &&
+        [0, 1, 2, 3, 4, 5, 6, 7].map((k) => {
+          const a = (k / 8) * Math.PI * 2 + 0.3;
+          const d = interpolate(f, [20, 38], [size * 0.45, size * 1.05], CLAMP);
+          return (
+            <div
+              key={k}
+              style={{
+                position: 'absolute',
+                left: size / 2 + Math.cos(a) * d - 3,
+                top: size / 2 + Math.sin(a) * d - 3,
+                width: 6,
+                height: 6,
+                borderRadius: 3,
+                background: color,
+                opacity: interpolate(f, [20, 38], [1, 0], CLAMP),
+                boxShadow: `0 0 8px ${color}`,
+              }}
+            />
+          );
+        })}
       <svg
         width={size}
         height={size}
@@ -408,36 +430,55 @@ export const Label: React.FC<{children: React.ReactNode; color?: string; style?:
 /** Full-stage absolute layer */
 export const Layer: React.FC<{children?: React.ReactNode; style?: React.CSSProperties; opacity?: number}> = ({children, style, opacity = 1}) =>
   opacity <= 0 ? null : (
-    <div style={{position: 'absolute', inset: 0, opacity, ...style}}>{children}</div>
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        opacity,
+        // beats change with depth: slight scale + blur while crossing
+        transform: opacity < 1 ? `scale(${0.965 + 0.035 * opacity})` : undefined,
+        filter: opacity < 0.98 ? `blur(${(1 - opacity) * 7}px)` : undefined,
+        ...style,
+      }}
+    >
+      {children}
+    </div>
   );
 
 /* ------------------------------------------------------------------ narration-synced beats */
 
-/** Icon tile that pops in when its word is spoken (icon = short glyph/text, no emoji) */
-export const SpokenTile: React.FC<{at: number; icon: string; label: string; color?: string; width?: number; sub?: string}> = ({
-  at,
-  icon,
-  label,
-  color = C.cyan,
-  width = 230,
-  sub,
-}) => {
+/** Icon tile that pops in when its word is spoken; optional ✓/✕ badge lands when the point is finished */
+export const SpokenTile: React.FC<{
+  at: number;
+  icon: string;
+  label: string;
+  color?: string;
+  width?: number;
+  sub?: string;
+  /** frame the badge lands (usually the end of the sentence) */
+  doneAt?: number;
+  mark?: 'check' | 'cross';
+}> = ({at, icon, label, color = C.cyan, width = 230, sub, doneAt, mark = 'check'}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   if (frame < at) return <div style={{width}} />;
   const p = spr(frame, fps, at, SNAPPY);
+  const done = doneAt !== undefined && frame >= doneAt;
+  const flash = doneAt !== undefined ? interpolate(frame - doneAt, [0, 6, 24], [0, 1, 0], CLAMP) : 0;
+  const badgeColor = mark === 'check' ? C.emerald : C.crimson;
   return (
     <div
       style={{
+        position: 'relative',
         width,
-        transform: `translateY(${(1 - p) * 40}px) scale(${0.8 + 0.2 * p})`,
+        transform: `translateY(${(1 - p) * 40}px) scale(${(0.8 + 0.2 * p) * (1 + flash * 0.04)})`,
         opacity: Math.min(1, p * 1.4),
-        background: `linear-gradient(160deg, ${alpha(color, 0.2)}, rgba(15,23,42,0.75))`,
-        border: `1.5px solid ${alpha(color, 0.6)}`,
+        background: `linear-gradient(160deg, ${alpha(color, 0.2 + flash * 0.15)}, rgba(15,23,42,0.75))`,
+        border: `1.5px solid ${alpha(done ? badgeColor : color, 0.6 + flash * 0.4)}`,
         borderRadius: 20,
         padding: '18px 16px',
         textAlign: 'center',
-        boxShadow: `0 16px 40px rgba(0,0,0,0.4), 0 0 24px ${alpha(color, 0.18)}`,
+        boxShadow: `0 16px 40px rgba(0,0,0,0.4), 0 0 ${24 + flash * 30}px ${alpha(done ? badgeColor : color, 0.18 + flash * 0.4)}`,
         fontFamily: FONT,
       }}
     >
@@ -460,24 +501,33 @@ export const SpokenTile: React.FC<{at: number; icon: string; label: string; colo
       </div>
       <div style={{fontSize: 26, fontWeight: 800, color: C.text, lineHeight: 1.15}}>{label}</div>
       {sub && <div style={{fontSize: 18, color: C.muted, marginTop: 6}}>{sub}</div>}
+      {doneAt !== undefined && (
+        <div style={{position: 'absolute', right: -14, top: -14}}>
+          {mark === 'check' ? <Check at={doneAt} size={40} /> : <Cross at={doneAt} size={40} />}
+        </div>
+      )}
+      {doneAt !== undefined && <Sfx at={mark === 'check' ? doneAt + 20 : doneAt + 4} name={mark === 'check' ? 'tactile_click' : 'buzzer'} volume={mark === 'check' ? 0.3 : 0.12} />}
     </div>
   );
 };
 
-/** Large kinetic line that sweeps in (clip + blur) when spoken */
-export const KLine: React.FC<{at: number; children: React.ReactNode; size?: number; color?: string; out?: number; style?: React.CSSProperties}> = ({
-  at,
-  children,
-  size = 60,
-  color = C.text,
-  out,
-  style,
-}) => {
+/** Large kinetic line that sweeps in (clip + blur) when spoken; optional highlighter stroke underneath */
+export const KLine: React.FC<{
+  at: number;
+  children: React.ReactNode;
+  size?: number;
+  color?: string;
+  out?: number;
+  style?: React.CSSProperties;
+  /** highlighter color drawn under the line after it lands */
+  mark?: string;
+}> = ({at, children, size = 60, color = C.text, out, style, mark}) => {
   const frame = useCurrentFrame();
   if (frame < at) return null;
   const wipe = interpolate(frame, [at, at + 12], [0, 100], CLAMP);
   const blur = interpolate(frame, [at, at + 10], [8, 0], CLAMP);
   const o = out ? 1 - ramp(frame, out, out + 10) : 1;
+  const hl = mark ? interpolate(frame, [at + 12, at + 26], [0, 100], CLAMP) : 0;
   return (
     <div
       style={{
@@ -494,6 +544,34 @@ export const KLine: React.FC<{at: number; children: React.ReactNode; size?: numb
         ...style,
       }}
     >
+      <span
+        style={{
+          backgroundImage: mark ? `linear-gradient(${alpha(mark, 0.45)}, ${alpha(mark, 0.45)})` : undefined,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: `${hl}% 32%`,
+          backgroundPosition: '0 88%',
+          padding: '0 4px',
+        }}
+      >
+        {children}
+      </span>
+    </div>
+  );
+};
+
+/** Beat pulse: children pop (scale + glow flash) at each given frame, e.g. when a number is spoken */
+export const Pulse: React.FC<{at: number[]; color?: string; amount?: number; children: React.ReactNode; style?: React.CSSProperties}> = ({
+  at,
+  color = C.gold,
+  amount = 0.08,
+  children,
+  style,
+}) => {
+  const frame = useCurrentFrame();
+  let k = 0;
+  for (const a of at) k = Math.max(k, interpolate(frame - a, [0, 5, 16], [0, 1, 0], CLAMP));
+  return (
+    <div style={{transform: `scale(${1 + amount * k})`, filter: k > 0.02 ? `drop-shadow(0 0 ${18 * k}px ${alpha(color, 0.8)})` : undefined, ...style}}>
       {children}
     </div>
   );

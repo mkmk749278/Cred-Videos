@@ -54,7 +54,7 @@ export const Scene05: React.FC = () => {
           </Reveal>
         </div>
         <div style={{position: 'absolute', left: 0, right: 0, top: 440, textAlign: 'center'}}>
-          <KLine at={cSetOff} size={68} color={C.gold} out={cMean - 4}>The Right of Set-Off</KLine>
+          <KLine at={cSetOff} size={68} color={C.gold} mark={C.gold} out={cMean - 4}>The Right of Set-Off</KLine>
         </div>
         <div style={{position: 'absolute', left: 0, right: 0, top: 440, textAlign: 'center'}}>
           <KLine at={cMean} size={60}>What does that mean for you?</KLine>

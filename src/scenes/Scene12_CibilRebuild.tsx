@@ -2,7 +2,7 @@ import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, vis} from '../lib/anim';
-import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames, sentenceEnd} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Check, Glass, KLine, Label, Layer, Reveal, Sfx} from '../components/primitives';
 import {HeroCard3D} from '../three/HeroCard3D';
@@ -79,10 +79,10 @@ export const Scene12: React.FC = () => {
       <Layer opacity={vis(frame, cSteps, cMonths + 4)}>
         <div style={{position: 'absolute', left: 820, top: 30, width: 960, display: 'flex', flexDirection: 'column', gap: 18}}>
           {[
-            {at: cSteps, t: 'Settlements done · No Dues Certificates secured', v: '₹0.00 dues'},
-            {at: cFd, t: 'Fixed deposit in a clean bank', v: '₹25k–50k FD'},
-            {at: cCard, t: 'FD-backed secured credit card', v: 'no income proof usually'},
-            {at: cUtil, t: 'Utilization under 15–20% · pay total bill on time', v: 'auto-debit: total due'},
+            {at: cSteps, done: sentenceEnd(I, 'So once your settlements'), t: 'Settlements done · No Dues Certificates secured', v: '₹0.00 dues'},
+            {at: cFd, done: sentenceEnd(I, 'Open a small fixed'), t: 'Fixed deposit in a clean bank', v: '₹25k–50k FD'},
+            {at: cCard, done: sentenceEnd(I, 'obtain an FD-backed'), t: 'FD-backed secured credit card', v: 'no income proof usually'},
+            {at: cUtil, done: sentenceEnd(I, 'Keep your monthly'), t: 'Utilization under 15–20% · pay total bill on time', v: 'auto-debit: total due'},
           ].map((s, i) => (
             <Reveal key={i} at={s.at} from="right">
               <Glass accent={C.emerald} pad={20} style={{display: 'flex', alignItems: 'center', gap: 20}}>
@@ -91,7 +91,7 @@ export const Scene12: React.FC = () => {
                   <div style={{fontSize: 28, fontWeight: 800}}>{s.t}</div>
                   <div style={{fontSize: 20, color: C.muted, fontFamily: MONO}}>{s.v}</div>
                 </div>
-                <Check at={s.at + 30} size={46} />
+                <Check at={s.done - 12} size={46} />
               </Glass>
             </Reveal>
           ))}
@@ -99,8 +99,8 @@ export const Scene12: React.FC = () => {
         <div style={{position: 'absolute', left: 900, top: 470, width: 880, height: 300, opacity: vis(frame, cCard)}}>
           <HeroCard3D at={cCard} width={880} height={300} bank="SECURED" product="FD-backed card" c1="#064e3b" c2="#10b981" amount="₹25,000" amountLabel="BACKED BY FD" badge={{text: 'NO INCOME PROOF', color: '#6ee7b7'}} glow="#10b981" size={2.3} />
         </div>
-        {[cSteps, cFd, cCard, cUtil].map((a, i) => (
-          <Sfx key={i} at={a + 52} name="tactile_click" volume={0.45} />
+        {[sentenceEnd(I, 'So once your settlements'), sentenceEnd(I, 'Open a small fixed'), sentenceEnd(I, 'obtain an FD-backed'), sentenceEnd(I, 'Keep your monthly')].map((a, i) => (
+          <Sfx key={i} at={a + 10} name="tactile_click" volume={0.45} />
         ))}
         <Sfx at={cCard} name="card_insert" volume={0.5} />
       </Layer>

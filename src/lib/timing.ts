@@ -71,3 +71,22 @@ export const contentStart = (moduleIndex: number): number => {
   const first = timing.modules[moduleIndex].sentences.find((s) => s.para === 1);
   return first ? toFrame(first.start) : Math.round(LEAD * FPS);
 };
+
+/** Frame at which the sentence containing `phrase` finishes being spoken (for "tick when done" beats). */
+export const sentenceEnd = (moduleIndex: number, phrase: string, nth = 0): number => {
+  const {words, i} = findWord(moduleIndex, phrase, nth);
+  const t = words[i].s;
+  const s = timing.modules[moduleIndex].sentences.find((x) => t >= x.start - 1e-6 && t <= x.end + 1e-6);
+  return toFrame(s ? s.end : words[i].e);
+};
+
+/** Frame at which the paragraph containing `phrase` finishes (for multi-sentence list items). */
+export const paragraphEnd = (moduleIndex: number, phrase: string, nth = 0): number => {
+  const {words, i} = findWord(moduleIndex, phrase, nth);
+  const t = words[i].s;
+  const sents = timing.modules[moduleIndex].sentences;
+  const s = sents.find((x) => t >= x.start - 1e-6 && t <= x.end + 1e-6);
+  if (!s) return toFrame(words[i].e);
+  const last = sents.filter((x) => x.para === s.para).pop()!;
+  return toFrame(last.end);
+};

@@ -2,9 +2,9 @@ import React, {useMemo} from 'react';
 import {interpolate, Sequence, useCurrentFrame} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, vis} from '../lib/anim';
-import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames, sentenceEnd} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {Check, Counter, Glass, KLine, Label, Layer, NextChip, PointCard, Reveal, Sfx, shake, SpokenTile, Tag} from '../components/primitives';
+import {Check, Counter, Glass, KLine, Label, Layer, NextChip, PointCard, Pulse, Reveal, Sfx, shake, SpokenTile, Tag} from '../components/primitives';
 import {FamilyIcon} from '../components/icons';
 import {Phone3D} from '../three/Phone3D';
 import {HeroCard3D} from '../three/HeroCard3D';
@@ -21,7 +21,7 @@ const calls = [
 
 type PhoneCues = {start: number; intense: number; threats: number; family: number; breath: number; starts: number; sick: number; job: number; biz: number; miss: number};
 
-const PhoneBeat: React.FC<PhoneCues> = ({start, intense, threats, family, breath, starts, sick, job, biz, miss}) => {
+const PhoneBeat: React.FC<PhoneCues & {fortyFifty: number}> = ({start, intense, threats, family, breath, starts, sick, job, biz, miss, fortyFifty}) => {
   const frame = useCurrentFrame();
   return (
     <>
@@ -34,7 +34,9 @@ const PhoneBeat: React.FC<PhoneCues> = ({start, intense, threats, family, breath
         <Reveal at={start} from="left">
           <Label color={C.crimson}>Missed calls · today</Label>
           <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 220, lineHeight: 1, color: C.text, textShadow: `0 0 50px ${alpha(C.crimson, 0.5)}`}}>
-            <Counter from={0} to={48} start={start + 10} end={intense + 60} />
+            <Pulse at={[fortyFifty, fortyFifty + 14]} color={C.crimson} amount={0.1} style={{display: 'inline-block', transformOrigin: 'left center'}}>
+              <Counter from={0} to={48} start={start + 10} end={intense + 60} />
+            </Pulse>
           </div>
           <div style={{fontSize: 34, color: C.muted, fontWeight: 600}}>calls a day, every day</div>
         </Reveal>
@@ -189,7 +191,7 @@ export const Scene01: React.FC = () => {
   return (
     <SceneShell index={I} duration={D} music="tension" tint={C.crimson} stageStyle={{translate: `${sh.x}px ${sh.y}px`}}>
       <Layer opacity={vis(frame, c0 - 10, cFunnel + 8)}>
-        <PhoneBeat start={c0} intense={cIntense} threats={cThreat} family={cFamilyCalls} breath={cBreath} starts={cStarts} sick={cSick} job={cJob} biz={cBiz} miss={cMiss} />
+        <PhoneBeat fortyFifty={cueFrame(I, 'Forty, maybe fifty')} start={c0} intense={cIntense} threats={cThreat} family={cFamilyCalls} breath={cBreath} starts={cStarts} sick={cSick} job={cJob} biz={cBiz} miss={cMiss} />
       </Layer>
       <Layer opacity={vis(frame, cFunnel, cPivot + 6)}>
         <div style={{position: 'absolute', left: 0, right: 0, top: 300, textAlign: 'center', opacity: vis(frame, cFunnel, cPay + 10)}}>
@@ -236,7 +238,7 @@ export const Scene01: React.FC = () => {
         <div style={{position: 'absolute', left: 1150, top: 90, display: 'flex', flexDirection: 'column', gap: 18}}>
           <KLine at={cSteal} size={58} out={cRate - 14}>You didn't steal.</KLine>
           <KLine at={cCheat} size={58} out={cRate - 14}>You didn't cheat.</KLine>
-          <KLine at={cHit} size={46} color={C.cyan} out={cRate - 14}>You hit a money problem.</KLine>
+          <KLine at={cHit} size={46} color={C.cyan} out={cRate - 14} mark={C.cyan}>You hit a money problem.</KLine>
           <KLine at={cBad} size={40} color={C.muted} out={cRate - 14}>That's not a crime.</KLine>
         </div>
         <div style={{position: 'absolute', left: 1130, top: 40, width: 720, height: 470}}>
@@ -309,12 +311,12 @@ export const Scene01: React.FC = () => {
             </div>
           </Reveal>
           <div style={{display: 'flex', gap: 18}}>
-            <SpokenTile at={cFood} icon="F" label="Food" color={C.emerald} width={200} />
-            <SpokenTile at={cMed} icon="+" label="Medicine" color={C.emerald} width={200} />
-            <SpokenTile at={cRent} icon="⌂" label="Rent" color={C.emerald} width={200} />
-            <SpokenTile at={cSchool} icon="A" label="School fees" color={C.emerald} width={200} />
+            <SpokenTile at={cFood} doneAt={cMed} icon="F" label="Food" color={C.emerald} width={200} />
+            <SpokenTile at={cMed} doneAt={cRent} icon="+" label="Medicine" color={C.emerald} width={200} />
+            <SpokenTile at={cRent} doneAt={cSchool} icon="⌂" label="Rent" color={C.emerald} width={200} />
+            <SpokenTile at={cSchool} doneAt={sentenceEnd(I, 'school fees')} icon="A" label="School fees" color={C.emerald} width={200} />
           </div>
-          <KLine at={cStarve} size={34} color="#FCA5A5">Never starve your family to pay a card bill.</KLine>
+          <KLine at={cStarve} size={34} color="#FCA5A5" mark={C.crimson}>Never starve your family to pay a card bill.</KLine>
         </div>
         <div style={{position: 'absolute', right: 70, bottom: 14}}>
           <NextChip at={cNext} text="What the law really says" />

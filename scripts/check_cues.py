@@ -14,7 +14,7 @@ for f in sorted(glob.glob('src/scenes/Scene*.tsx')):
     idx = int(re.search(r'const I = (\d+);', src).group(1))
     words = [norm_word(w) for w in ' '.join(mods[idx]['vo']).split()]
     text = ' ' + ' '.join(words) + ' '
-    cues = re.findall(r'cueFrame\(I, ([\'"])(.+?)\1', src) + re.findall(r'cue: ([\'"])(.+?)\1', src)
+    cues = re.findall(r'(?:cueFrame|cueEnd|sentenceEnd|paragraphEnd)\(I, ([\'"])(.+?)\1', src) + re.findall(r'cue: ([\'"])(.+?)\1', src)
     for _, c in cues:
         c = c.replace("\\'", "'")
         if ' ' + ' '.join(norm_word(w) for w in c.split()) + ' ' not in text:

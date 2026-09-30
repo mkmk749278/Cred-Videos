@@ -9,8 +9,11 @@ export type Music = 'tension' | 'analytic' | 'hope';
 
 /* ------------------------------------------------------------------ backdrop */
 
-export const Backdrop: React.FC<{tint?: string}> = ({tint = C.cyan}) => {
+export const Backdrop: React.FC<{tint?: string; beat?: number; phase?: number}> = ({tint = C.cyan, beat, phase = 0}) => {
   const frame = useCurrentFrame();
+  // subtle pulse on the floor grid, in time with the music bed
+  const pulse = beat && frame >= phase ? Math.exp(-((frame - phase) % beat) / 5) : 0;
+  const gridA = 0.16 + 0.12 * pulse;
   const dust = useMemo(
     () => new Array(46).fill(0).map((_, i) => ({x: rnd(i) * 1920, y: rnd(i + 99) * 1080, s: 1 + rnd(i + 7) * 2.6, v: 0.2 + rnd(i + 3) * 0.6, o: 0.15 + rnd(i + 11) * 0.35})),
     [],
@@ -32,7 +35,7 @@ export const Backdrop: React.FC<{tint?: string}> = ({tint = C.cyan}) => {
           height: 1400,
           transform: 'perspective(900px) rotateX(72deg)',
           transformOrigin: 'top center',
-          backgroundImage: `linear-gradient(${alpha(tint, 0.16)} 2px, transparent 2px), linear-gradient(90deg, ${alpha(tint, 0.16)} 2px, transparent 2px)`,
+          backgroundImage: `linear-gradient(${alpha(tint, gridA)} 2px, transparent 2px), linear-gradient(90deg, ${alpha(tint, gridA)} 2px, transparent 2px)`,
           backgroundSize: '90px 90px',
           backgroundPosition: `0px ${(frame * 0.9) % 90}px`,
           maskImage: 'linear-gradient(180deg, rgba(0,0,0,0.9), transparent 70%)',
@@ -296,7 +299,7 @@ export const SceneShell: React.FC<{
   const stageIn = interpolate(frame, [cs - 10, cs + 8], [0, 1], CLAMP);
   return (
     <AbsoluteFill style={{fontFamily: FONT, color: C.text, overflow: 'hidden'}}>
-      <Backdrop tint={tint} />
+      <Backdrop tint={tint} beat={music === 'analytic' ? 15 : music === 'tension' ? 60 : undefined} phase={music === 'analytic' ? 4 : 15} />
       <Audio
         src={staticFile(`audio/music/${music}.mp3`)}
         loop

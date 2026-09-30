@@ -2,7 +2,7 @@ import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {spr, vis} from '../lib/anim';
-import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
+import {contentStart, cueFrame, sceneFrames, sentenceEnd} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Check, Glass, KLine, Label, Layer, Reveal, Sfx, shake, SpokenTile, Stamp, Tag, Type} from '../components/primitives';
 import {MailIcon} from '../components/icons';
@@ -60,6 +60,7 @@ export const Scene06: React.FC = () => {
   const cFlag = cueFrame(I, 'Skip or Absconding');
   const cEmail = cueFrame(I, 'Instead, build');
   const cPoints = CLAUSES.map((c) => cueFrame(I, c.cue));
+  const cDone = CLAUSES.map((c) => sentenceEnd(I, c.cue));
   const cCase = cueFrame(I, 'The Case Reference ID');
   const cCounter = cueFrame(I, 'helps counter');
   const cOff = cueFrame(I, 'switch off my phone');
@@ -87,9 +88,9 @@ export const Scene06: React.FC = () => {
           <KLine at={cDont} size={48} color={C.crimson}>Please don't.</KLine>
         </div>
         <div style={{position: 'absolute', left: 1400, top: 110, display: 'flex', flexDirection: 'column', gap: 14}}>
-          <SpokenTile at={cRelatives} icon="!" label="Relatives called" color={C.crimson} width={420} />
-          <SpokenTile at={cFriends} icon="!" label="Friends called" color={C.crimson} width={420} />
-          <SpokenTile at={cOffice} icon="!" label="Office called" color={C.crimson} width={420} />
+          <SpokenTile at={cRelatives} doneAt={cFriends} mark="cross" icon="!" label="Relatives called" color={C.crimson} width={420} />
+          <SpokenTile at={cFriends} doneAt={cOffice} mark="cross" icon="!" label="Friends called" color={C.crimson} width={420} />
+          <SpokenTile at={cOffice} doneAt={sentenceEnd(I, 'even your office')} mark="cross" icon="!" label="Office called" color={C.crimson} width={420} />
         </div>
         {[cOff, cRelatives, cFriends, cOffice].map((a, i) => (
           <Sfx key={i} at={a} name="node_pop" volume={0.32} />
@@ -119,7 +120,7 @@ export const Scene06: React.FC = () => {
                     <div style={{flex: 1, fontSize: 32, fontWeight: 700}}>
                       <Type text={c.text} start={cPoints[i] + 4} cps={55} />
                     </div>
-                    <Check at={cPoints[i] + 45} size={50} />
+                    <Check at={cDone[i] - 10} size={50} />
                   </div>
                 ))}
               </div>
@@ -132,7 +133,7 @@ export const Scene06: React.FC = () => {
         {cPoints.map((p, i) => (
           <React.Fragment key={i}>
             <Sfx at={p + 4} name="typing" volume={0.22} />
-            <Sfx at={p + 67} name="tactile_click" volume={0.5} />
+            <Sfx at={cDone[i] + 12} name="tactile_click" volume={0.5} />
           </React.Fragment>
         ))}
         <div style={{position: 'absolute', left: 1180, top: 40}}>

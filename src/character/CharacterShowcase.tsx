@@ -101,3 +101,18 @@ const ReelShot: React.FC<{s: Situation; index: number}> = ({s, index}) => {
     </AbsoluteFill>
   );
 };
+
+/** Close-up hero frame in the style of the reference: worried, arms crossed, soft studio backdrop */
+export const CharacterHero: React.FC = () => {
+  const frame = useCurrentFrame();
+  const {breathe, blink} = useLife(frame, 2);
+  return (
+    <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 40%, #B9C3CC 0%, #96A3AF 60%, #7E8B98 100%)'}}>
+      <div style={{position: 'absolute', left: 960 - 450, top: -10}}>
+        <Borrower mood="worried" pose="crossed" blink={blink} breathe={breathe} tilt={-2} width={900}>
+          <QuestionMarks t={(frame % 45) / 45} />
+        </Borrower>
+      </div>
+    </AbsoluteFill>
+  );
+};

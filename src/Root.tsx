@@ -5,7 +5,7 @@ import {Intro, INTRO_FRAMES} from './Intro';
 import {SCENES} from './scenes';
 import {Test3D} from './three/Test3D';
 import {Thumbnail} from './Thumbnail';
-import {CharacterReel, CharacterSheet, REEL_SEG, SITUATIONS} from './character/CharacterShowcase';
+import {CharacterHero, CharacterReel, CharacterSheet, REEL_SEG, SITUATIONS} from './character/CharacterShowcase';
 
 const useFonts = () => {
   const [handle] = useState(() => delayRender('fonts'));
@@ -53,6 +53,7 @@ export const RemotionRoot: React.FC = () => (
   <>
     <Composition id="VideoMaster" component={VideoMaster} durationInFrames={total} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="Test3D" component={() => <WithFonts><Test3D /></WithFonts>} durationInFrames={1200} fps={FPS} width={WIDTH} height={HEIGHT} />
+    <Composition id="CharacterHero" component={() => <WithFonts><CharacterHero /></WithFonts>} durationInFrames={90} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="CharacterSheet" component={() => <WithFonts><CharacterSheet /></WithFonts>} durationInFrames={90} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="CharacterReel" component={() => <WithFonts><CharacterReel /></WithFonts>} durationInFrames={SITUATIONS.length * REEL_SEG + 10} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="Thumbnail" component={() => <WithFonts><Thumbnail /></WithFonts>} durationInFrames={90} fps={FPS} width={1280} height={720} />

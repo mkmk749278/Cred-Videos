@@ -1,4 +1,5 @@
 import React from 'react';
+import {ArmsLayer, ArmsPose, POSES, PoseName} from './Arms';
 
 /**
  * "The borrower" — a rigged, painterly 2D character (bearded, round glasses, blue shirt).
@@ -8,11 +9,11 @@ import React from 'react';
  */
 
 export type Mood = 'neutral' | 'worried' | 'confused' | 'shocked' | 'sad' | 'thinking' | 'explaining' | 'relieved' | 'happy' | 'angry';
-export type Pose = 'down' | 'crossed' | 'chin' | 'palm' | 'thumbsUp' | 'phone' | 'scratch' | 'cheeks' | 'paper' | 'point';
+export type Pose = PoseName;
 export type Mouth = 'smile' | 'grin' | 'frown' | 'worried' | 'o' | 'flat' | 'grimace' | 'A' | 'E' | 'O' | 'M';
 
 type Brow = {inner: number; outer: number};
-type MoodSpec = {left: Brow; right: Brow; lid: number; lidTilt: number; squint: number; eye: number; mouth: Mouth; look: [number, number]};
+export type MoodSpec = {left: Brow; right: Brow; lid: number; lidTilt: number; squint: number; eye: number; mouth: Mouth; look: [number, number]};
 
 export const MOODS: Record<Mood, MoodSpec> = {
   neutral: {left: {inner: 0, outer: 0}, right: {inner: 0, outer: 0}, lid: 0.16, lidTilt: 0, squint: 0.05, eye: 1, mouth: 'flat', look: [0, 0]},
@@ -25,6 +26,13 @@ export const MOODS: Record<Mood, MoodSpec> = {
   relieved: {left: {inner: -8, outer: -2}, right: {inner: -8, outer: -2}, lid: 0.5, lidTilt: -4, squint: 0.3, eye: 1, mouth: 'smile', look: [0, 0]},
   happy: {left: {inner: -8, outer: -6}, right: {inner: -8, outer: -6}, lid: 0.12, lidTilt: 0, squint: 0.45, eye: 1, mouth: 'grin', look: [0, 0]},
   angry: {left: {inner: 14, outer: -6}, right: {inner: 14, outer: -6}, lid: 0.3, lidTilt: -12, squint: 0.2, eye: 1, mouth: 'grimace', look: [0, 0]},
+};
+
+/** blend two moods numerically (mouth switches at the midpoint) */
+export const blendMood = (a: MoodSpec, b: MoodSpec, t: number): MoodSpec => {
+  const l = (x: number, y: number) => x + (y - x) * t;
+  const br = (x: Brow, y: Brow): Brow => ({inner: l(x.inner, y.inner), outer: l(x.outer, y.outer)});
+  return {left: br(a.left, b.left), right: br(a.right, b.right), lid: l(a.lid, b.lid), lidTilt: l(a.lidTilt, b.lidTilt), squint: l(a.squint, b.squint), eye: l(a.eye, b.eye), mouth: t < 0.5 ? a.mouth : b.mouth, look: [l(a.look[0], b.look[0]), l(a.look[1], b.look[1])]};
 };
 
 const SKIN = '#E0AC88';
@@ -59,13 +67,23 @@ export type BorrowerProps = {
   breathe?: number;
   /** extra brow raise (for emphasis while talking) */
   browLift?: number;
+  /** explicit arm rig (overrides pose) */
+  arms?: ArmsPose;
+  /** explicit expression (overrides mood), e.g. from blendMood */
+  spec?: MoodSpec;
+  /** head turn -1 (his right) .. 1 (his left) */
+  turn?: number;
+  /** head nod offset in px (positive = down) */
+  nod?: number;
+  /** shoulder lift in px (shrug / big breath) */
+  shrug?: number;
   width?: number;
   style?: React.CSSProperties;
   children?: React.ReactNode;
 };
 
-export const Borrower: React.FC<BorrowerProps> = ({mood = 'neutral', pose = 'down', mouth, blink = 0, look, tilt = 0, breathe = 0, browLift = 0, width = 600, style, children}) => {
-  const m = MOODS[mood];
+export const Borrower: React.FC<BorrowerProps> = ({mood = 'neutral', pose = 'down', mouth, blink = 0, look, tilt = 0, breathe = 0, browLift = 0, arms, spec, turn = 0, nod = 0, shrug = 0, width = 600, style, children}) => {
+  const m = spec ?? MOODS[mood];
   const gaze = look ?? m.look;
   const id = React.useId().replace(/:/g, '');
   return (
@@ -74,15 +92,10 @@ export const Borrower: React.FC<BorrowerProps> = ({mood = 'neutral', pose = 'dow
       <ellipse cx={300} cy={796} rx={210} ry={14} fill="rgba(0,0,0,0.28)" filter={`url(#${id}soft)`} />
       <g transform={`translate(0 ${breathe * 3})`}>
         <Body id={id} />
-        <g transform={`translate(0 ${-breathe * 1.5}) rotate(${tilt} 300 480)`}>
-          <Head id={id} m={m} gaze={gaze} blink={blink} mouth={mouth ?? m.mouth} browLift={browLift} />
+        <g transform={`translate(${turn * 6} ${-breathe * 1.5 + nod - shrug * 0.4}) rotate(${tilt} 300 480)`}>
+          <Head id={id} m={m} gaze={gaze} blink={blink} mouth={mouth ?? m.mouth} browLift={browLift} turn={turn} />
         </g>
-        {pose === 'crossed' ? (
-          <CrossedArms id={id} />
-        ) : (
-          (['L', 'R'] as const).map((s) => <Arm key={s} pose={pose} side={s} id={id} />)
-        )}
-        {pose === 'paper' && <PaperHands id={id} />}
+        <ArmsLayer arms={arms ?? POSES[pose]} id={id} lift={shrug + breathe * 2} />
       </g>
       {children}
     </svg>
@@ -222,7 +235,7 @@ const HAIR_PATH = 'M206 300 C200 262 200 228 214 204 C220 168 246 140 284 128 C3
 const BEARD_STRANDS = ["M206 300 q3 26 1 52", "M212 312 q-3 26 -1 52", "M219 324 q3 26 1 52", "M226 440 q-3 26 -1 52", "M232 452 q3 26 1 52", "M238 464 q-3 26 -1 52", "M245 440 q3 26 1 52", "M252 452 q-3 26 -1 52", "M258 464 q3 26 1 52", "M264 440 q-3 26 -1 52", "M271 452 q3 26 1 52", "M278 464 q-3 26 -1 52", "M284 440 q3 26 1 52", "M290 452 q-3 26 -1 52", "M297 464 q3 26 1 52", "M304 440 q-3 26 -1 52", "M310 452 q3 26 1 52", "M316 464 q-3 26 -1 52", "M323 440 q3 26 1 52", "M330 452 q-3 26 -1 52", "M336 464 q3 26 1 52", "M342 440 q-3 26 -1 52", "M349 452 q3 26 1 52", "M356 464 q-3 26 -1 52", "M362 440 q3 26 1 52", "M368 452 q-3 26 -1 52", "M375 464 q3 26 1 52", "M382 300 q-3 26 -1 52", "M388 312 q3 26 1 52", "M394 324 q-3 26 -1 52", "M232 456 q2 14 0 28", "M242 464 q-2 14 0 28", "M252 456 q2 14 0 28", "M262 464 q-2 14 0 28", "M272 456 q2 14 0 28", "M282 464 q-2 14 0 28", "M292 456 q2 14 0 28", "M302 464 q-2 14 0 28", "M312 456 q2 14 0 28", "M322 464 q-2 14 0 28", "M332 456 q2 14 0 28", "M342 464 q-2 14 0 28", "M352 456 q2 14 0 28", "M362 464 q-2 14 0 28"];
 const FACE = 'M300 166 C356 166 397 200 399 262 C401 302 401 342 397 374 C391 422 357 468 300 472 C243 468 209 422 203 374 C199 342 199 302 201 262 C203 200 244 166 300 166 Z';
 
-const Head: React.FC<{id: string; m: MoodSpec; gaze: [number, number]; blink: number; mouth: Mouth; browLift: number}> = ({id, m, gaze, blink, mouth, browLift}) => (
+const Head: React.FC<{id: string; m: MoodSpec; gaze: [number, number]; blink: number; mouth: Mouth; browLift: number; turn: number}> = ({id, m, gaze, blink, mouth, browLift, turn}) => (
   <g>
     {/* ears */}
     {[192, 408].map((x, i) => (
@@ -245,6 +258,8 @@ const Head: React.FC<{id: string; m: MoodSpec; gaze: [number, number]; blink: nu
         <path d="M312 300 C318 330 322 350 318 368" stroke={SKIN_SH} strokeWidth={12} fill="none" opacity={0.6} />
       </g>
     </g>
+    {/* facial features shift with head turn (parallax) */}
+    <g transform={`translate(${turn * 10} 0)`}>
     {/* beard */}
     <g filter={`url(#${id}fuzz)`}>
       <path d={BEARD} fill={`url(#${id}beard)`} />
@@ -293,6 +308,7 @@ const Head: React.FC<{id: string; m: MoodSpec; gaze: [number, number]; blink: nu
       ))}
       <path d={`M${EX[0] + 38} ${EY - 6} Q300 ${EY - 16} ${EX[1] - 38} ${EY - 6}`} fill="none" stroke="#14141A" strokeWidth={4.5} />
       <path d={`M${EX[0] - 40} ${EY - 6} L198 ${EY - 10} M${EX[1] + 40} ${EY - 6} L402 ${EY - 10}`} stroke="#14141A" strokeWidth={4.5} strokeLinecap="round" />
+    </g>
     </g>
     {/* hair: high swept-back quiff with short sides */}
     <g filter={`url(#${id}fuzz)`}>
@@ -428,160 +444,6 @@ const MouthShape: React.FC<{kind: Mouth}> = ({kind}) => {
       );
   }
 };
-
-/* ---------------- arms + hands ---------------- */
-
-type Pt = [number, number];
-type HandKind = 'fist' | 'palm' | 'thumb' | 'point' | 'phone';
-type ArmSpec = {sh: Pt; el: Pt; wr: Pt; hand: HandKind; angle: number; flip?: boolean};
-
-const DOWN_L: ArmSpec = {sh: [170, 592], el: [140, 704], wr: [146, 830], hand: 'fist', angle: 0};
-const DOWN_R: ArmSpec = {sh: [430, 592], el: [460, 704], wr: [454, 830], hand: 'fist', angle: 0};
-
-const ARMS: Record<Exclude<Pose, 'crossed'>, {L: ArmSpec; R: ArmSpec}> = {
-  down: {L: DOWN_L, R: DOWN_R},
-  chin: {L: DOWN_L, R: {sh: [430, 592], el: [456, 716], wr: [334, 526], hand: 'fist', angle: -30}},
-  palm: {L: DOWN_L, R: {sh: [430, 592], el: [504, 676], wr: [532, 560], hand: 'palm', angle: 15}},
-  thumbsUp: {L: DOWN_L, R: {sh: [430, 592], el: [496, 690], wr: [486, 588], hand: 'thumb', angle: 0}},
-  phone: {L: DOWN_L, R: {sh: [430, 592], el: [478, 676], wr: [430, 442], hand: 'phone', angle: -15}},
-  scratch: {L: DOWN_L, R: {sh: [430, 592], el: [514, 520], wr: [432, 262], hand: 'fist', angle: -150}},
-  cheeks: {
-    L: {sh: [172, 592], el: [176, 612], wr: [214, 436], hand: 'palm', angle: -15, flip: true},
-    R: {sh: [428, 592], el: [424, 612], wr: [386, 436], hand: 'palm', angle: 15},
-  },
-  paper: {
-    L: {sh: [170, 592], el: [172, 702], wr: [238, 648], hand: 'fist', angle: 0},
-    R: {sh: [430, 592], el: [428, 702], wr: [362, 648], hand: 'fist', angle: 0},
-  },
-  point: {L: DOWN_L, R: {sh: [430, 592], el: [510, 640], wr: [570, 560], hand: 'point', angle: -40}},
-};
-
-/** a sleeve with round volume: base tone, shadow on the far side, highlight on the near side */
-const Sleeve: React.FC<{d: string; id: string; mid: string}> = ({d, id, mid}) => (
-  <g>
-    <mask id={mid}>
-      <path d={d} fill="none" stroke="#fff" strokeWidth={62} strokeLinecap="round" strokeLinejoin="round" />
-    </mask>
-    <path d={d} fill="none" stroke={SHIRT_DEEP} strokeWidth={68} strokeLinecap="round" strokeLinejoin="round" />
-    <path d={d} fill="none" stroke={`url(#${id}sleeve)`} strokeWidth={62} strokeLinecap="round" strokeLinejoin="round" />
-    <g mask={`url(#${mid})`}>
-      <path d={d} transform="translate(12 10)" fill="none" stroke={SHIRT_DEEP} strokeWidth={34} strokeLinecap="round" strokeLinejoin="round" opacity={0.55} filter={`url(#${id}soft)`} />
-      <path d={d} transform="translate(-12 -10)" fill="none" stroke={SHIRT_HI} strokeWidth={14} strokeLinecap="round" strokeLinejoin="round" opacity={0.5} filter={`url(#${id}soft2)`} />
-    </g>
-  </g>
-);
-
-const Arm: React.FC<{pose: Exclude<Pose, 'crossed'>; side: 'L' | 'R'; id: string}> = ({pose, side, id}) => {
-  const a = ARMS[pose][side];
-  const d = `M${a.sh[0]} ${a.sh[1]} L${a.el[0]} ${a.el[1]} L${a.wr[0]} ${a.wr[1]}`;
-  return (
-    <g>
-      <Sleeve d={d} id={id} mid={`${id}m${side}`} />
-      {/* elbow crease */}
-      <path d={`M${a.el[0] - 14} ${a.el[1] - 8} q14 10 28 0`} fill="none" stroke={SHIRT_DEEP} strokeWidth={3} opacity={0.6} />
-      <Hand at={a.wr} kind={a.hand} angle={a.angle} flip={a.flip} id={id} />
-    </g>
-  );
-};
-
-/** the reference pose: forearms folded across the chest, one hand tucked, one resting on the arm */
-const CrossedArms: React.FC<{id: string}> = ({id}) => (
-  <g>
-    {/* upper arms */}
-    <Sleeve d="M168 592 L150 690" id={id} mid={`${id}cu1`} />
-    <Sleeve d="M432 592 L450 690" id={id} mid={`${id}cu2`} />
-    {/* lower forearm (character's left) runs under, hand tucked */}
-    <Sleeve d="M450 690 L300 712 L218 694" id={id} mid={`${id}cf1`} />
-    {/* upper forearm (character's right) on top, hand resting on the far upper arm */}
-    <Sleeve d="M150 690 L300 668 L398 642" id={id} mid={`${id}cf2`} />
-    <g transform="translate(414 636) rotate(-14)">
-      {[-16, -2, 12, 26].map((y, i) => (
-        <rect key={y} x={-12} y={y - 20} width={44 - i * 3} height={15} rx={7.5} fill={`url(#${id}skinBall)`} stroke="#9A6A4E" strokeWidth={2} />
-      ))}
-    </g>
-    <path d="M150 690 L300 668" fill="none" stroke={SHIRT_DEEP} strokeWidth={3} opacity={0.5} transform="translate(0 30)" />
-  </g>
-);
-
-const Hand: React.FC<{at: Pt; kind: HandKind; angle: number; flip?: boolean; id: string}> = ({at, kind, angle, flip, id}) => {
-  const sx = flip ? -1 : 1;
-  const skin = {fill: `url(#${id}skinBall)`, stroke: '#9A6A4E', strokeWidth: 2.5, strokeLinejoin: 'round' as const};
-  const knuckles = (
-    <g>
-      {[-18, -6, 6, 18].map((x) => (
-        <rect key={x} x={x - 6.5} y={-30} width={13} height={22} rx={6.5} {...skin} />
-      ))}
-    </g>
-  );
-  return (
-    <g transform={`translate(${at[0]} ${at[1]}) rotate(${angle}) scale(${sx} 1)`}>
-      {/* cuff */}
-      <rect x={-32} y={14} width={64} height={18} rx={6} fill={SHIRT_SH} stroke={SHIRT_DEEP} strokeWidth={2.5} />
-      {kind === 'fist' && (
-        <g>
-          <rect x={-27} y={-24} width={54} height={44} rx={18} {...skin} />
-          {knuckles}
-          <rect x={-34} y={-14} width={20} height={14} rx={7} transform="rotate(20 -24 -7)" {...skin} />
-        </g>
-      )}
-      {kind === 'thumb' && (
-        <g>
-          <rect x={-8} y={-76} width={22} height={52} rx={11} {...skin} />
-          <rect x={-27} y={-28} width={54} height={50} rx={18} {...skin} />
-          {[-16, -2, 12].map((y) => (
-            <path key={y} d={`M-27 ${y} L14 ${y}`} stroke="#9A6A4E" strokeWidth={2} strokeLinecap="round" opacity={0.7} />
-          ))}
-        </g>
-      )}
-      {kind === 'point' && (
-        <g>
-          <rect x={14} y={-14} width={60} height={19} rx={9.5} {...skin} />
-          <rect x={-27} y={-24} width={54} height={46} rx={18} {...skin} />
-          <path d="M-27 -4 L14 -4 M-27 8 L14 8" stroke="#9A6A4E" strokeWidth={2} strokeLinecap="round" opacity={0.7} />
-        </g>
-      )}
-      {kind === 'palm' && (
-        <g>
-          {[-20, -7, 6, 19].map((x, i) => (
-            <rect key={x} x={x - 6.5} y={-80 + Math.abs(i - 1.5) * 6} width={13} height={52} rx={6.5} {...skin} />
-          ))}
-          <rect x={-36} y={-22} width={20} height={40} rx={10} transform="rotate(-35 -26 0)" {...skin} />
-          <rect x={-27} y={-38} width={54} height={60} rx={20} {...skin} />
-          <path d="M-14 -10 Q0 -2 14 -10" stroke="#9A6A4E" strokeWidth={2} fill="none" opacity={0.6} />
-        </g>
-      )}
-      {kind === 'phone' && (
-        <g>
-          <g transform="rotate(-10)">
-            <rect x={-26} y={-112} width={52} height={98} rx={10} fill="#0F172A" stroke="#05080F" strokeWidth={3} />
-            <rect x={-21} y={-104} width={42} height={82} rx={6} fill="#1E3A8A" />
-            <rect x={-21} y={-104} width={42} height={30} rx={6} fill="#ffffff" opacity={0.12} />
-          </g>
-          <rect x={-27} y={-30} width={54} height={50} rx={18} {...skin} />
-          {knuckles}
-        </g>
-      )}
-    </g>
-  );
-};
-
-/** for the 'paper' pose: a bill held at chest height, with thumbs over it */
-const PaperHands: React.FC<{id: string}> = ({id}) => (
-  <g>
-    <g transform="rotate(-4 300 600)">
-      <rect x={210} y={518} width={180} height={214} rx={6} fill="#FDFCF7" />
-      <rect x={210} y={518} width={180} height={214} rx={6} fill="none" stroke="#cbd5e1" strokeWidth={2} />
-      <rect x={210} y={700} width={180} height={32} fill="#000" opacity={0.05} />
-      <text x={300} y={556} textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight={900} fontSize={22} fill="#B91C1C">OVERDUE</text>
-      {[580, 600, 620, 640].map((y, i) => (
-        <rect key={y} x={230} y={y} width={140 - i * 18} height={8} rx={4} fill="#d6d3d1" />
-      ))}
-      <text x={300} y={702} textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight={900} fontSize={30} fill="#111827">₹1,39,176</text>
-    </g>
-    <rect x={208} y={618} width={40} height={46} rx={16} fill={`url(#${id}skinBall)`} stroke="#9A6A4E" strokeWidth={2.5} />
-    <rect x={352} y={618} width={40} height={46} rx={16} fill={`url(#${id}skinBall)`} stroke="#9A6A4E" strokeWidth={2.5} />
-  </g>
-);
 
 /* ---------------- props (drawn in the same 600x800 space) ---------------- */
 

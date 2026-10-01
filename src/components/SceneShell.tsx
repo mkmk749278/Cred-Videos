@@ -322,7 +322,10 @@ const duckCache = new Map<number, [number, number][]>();
 const musicLevel = (index: number, f: number) => {
   let spans = duckCache.get(index);
   if (!spans) {
-    spans = timing.modules[index].sentences.map((s) => [toFrame(s.start) - 6, toFrame(s.end) + 8] as [number, number]);
+    const sp = (timing.modules[index] as {speech?: [number, number][]}).speech;
+    spans = sp
+      ? sp.map(([a, b]) => [toFrame(a) - 6, toFrame(b) + 8] as [number, number])
+      : timing.modules[index].sentences.map((s) => [toFrame(s.start) - 6, toFrame(s.end) + 8] as [number, number]);
     duckCache.set(index, spans);
   }
   // distance (frames) to the nearest spoken span; 0 inside one

@@ -74,7 +74,7 @@ export const Scene04: React.FC = () => {
             ))}
           </Glass>
         </Reveal>
-        <div style={{marginTop: 24, opacity: vis(frame, cSix, cRbi)}}>
+        <div style={{marginTop: 24, opacity: vis(frame, cSix, cGood - 4)}}>
           <Glass accent={C.crimson} pad={20}>
             <div style={{fontSize: 28, fontWeight: 700}}>
               6 months: ₹1,00,000 → <span style={{color: C.crimson}}>₹1,39,176</span>
@@ -104,7 +104,7 @@ export const Scene04: React.FC = () => {
         <KLine at={cOwnFees} size={34} color="#FCA5A5" out={brickAt[3]} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Over the limit… only because of their own fees!</KLine>
         <KLine at={cGood} size={54} color={C.emerald} out={cRbi + 10} style={{position: 'absolute', left: 0, top: 0, width: 620}}>Now, the good news</KLine>
       </div>
-      <div style={{position: 'absolute', left: 1180, top: 650, width: 620, opacity: vis(frame, cNever, cRbi)}}>
+      <div style={{position: 'absolute', left: 1180, top: 650, width: 620, opacity: vis(frame, cNever, cGood - 4)}}>
         <KLine at={cNever} size={30} color={C.muted}>Most of it will never be collected</KLine>
       </div>
       <div style={{position: 'absolute', left: 1180, top: 450, width: 600, opacity: vis(frame, cSettle)}}>

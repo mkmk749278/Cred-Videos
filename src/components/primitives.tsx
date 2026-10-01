@@ -1,5 +1,6 @@
 import React from 'react';
-import {Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate} from '../lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, KINETIC, ramp, SNAPPY, spr} from '../lib/anim';
 

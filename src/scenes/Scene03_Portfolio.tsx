@@ -1,5 +1,6 @@
 import React from 'react';
-import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate} from '../lib/safeInterpolate';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, inr, spr, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames, sentenceEnd} from '../lib/timing';

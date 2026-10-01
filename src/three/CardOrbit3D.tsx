@@ -1,5 +1,6 @@
 import React, {useMemo} from 'react';
-import {interpolate, useCurrentFrame} from 'remotion';
+import {useCurrentFrame} from 'remotion';
+import {interpolate} from '../lib/safeInterpolate';
 import {CLAMP, rnd} from '../lib/anim';
 import {Floor, Glow, Scene3D} from './kit';
 import {Card3D} from './Card3D';

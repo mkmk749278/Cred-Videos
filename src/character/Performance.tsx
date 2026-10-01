@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Audio, Easing, interpolate, Sequence, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Audio, Easing, Sequence, staticFile, useCurrentFrame} from 'remotion';
+import {interpolate} from '../lib/safeInterpolate';
 import timing from '../data/timing.json';
 import {C, FONT, MONO, alpha} from '../theme';
 import {blendArms, POSES, PoseName} from './Arms';

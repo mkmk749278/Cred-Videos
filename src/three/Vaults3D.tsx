@@ -1,6 +1,7 @@
 import React, {useMemo} from 'react';
 import {RoundedBox} from '@react-three/drei';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate} from '../lib/safeInterpolate';
 import * as THREE from 'three';
 import {CLAMP, inr} from '../lib/anim';
 import {Floor, Glow, Scene3D, useCanvasTexture} from './kit';

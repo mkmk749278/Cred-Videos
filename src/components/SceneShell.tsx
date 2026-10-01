@@ -1,10 +1,12 @@
 import React, {useMemo} from 'react';
-import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate} from '../lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, spr} from '../lib/anim';
 import {contentStart, FPS, LEAD, script, SubLine, timing, toFrame, Word} from '../lib/timing';
 import {LANG, VO_DIR} from '../lib/lang';
 import {insertLevel, TeluguInserts} from './TeluguInserts';
+import {StageHidden} from '../lib/stage';
 import {Sfx, SfxMute} from './primitives';
 import {HostConfig, RaviHost} from '../character/RaviHost';
 import {HOSTS} from '../character/hosts';
@@ -408,7 +410,9 @@ export const SceneShell: React.FC<{
           ...stageStyle,
         }}
       >
-        <SfxMute.Provider value={LANG === 'te' ? muteFor(index) : null}>{children}</SfxMute.Provider>
+        <SfxMute.Provider value={LANG === 'te' ? muteFor(index) : null}>
+          <StageHidden.Provider value={ins > 0.995}>{children}</StageHidden.Provider>
+        </SfxMute.Provider>
       </div>
       {LANG === 'te' && <TeluguInserts index={index} />}
       <Hud index={index} duration={duration} />

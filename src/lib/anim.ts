@@ -1,4 +1,5 @@
-import {interpolate, spring, SpringConfig} from 'remotion';
+import {spring, SpringConfig} from 'remotion';
+import {interpolate} from './safeInterpolate';
 
 export const KINETIC: Partial<SpringConfig> = {mass: 0.8, stiffness: 180, damping: 18};
 export const SNAPPY: Partial<SpringConfig> = {mass: 0.7, stiffness: 220, damping: 14};

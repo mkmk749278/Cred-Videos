@@ -1,95 +1,900 @@
 {
-  "_note": "Seconds in narration/telugu/full.mp3. Anchors pin an English phrase (timing.json) to the Telugu moment; English beats without a Telugu match are parked under insert panels (inserts.json).",
-  "hook": {"start": 0.0, "end": 53.6, "anchors": [
-    ["Forty calls a day", 5.1], ["Messages saying", 9.8], ["stop", 27.6], ["Take a breath", 28.4],
-    ["I'll show you", 30.7], ["the law really says", 33.8], ["exactly what you can do", 41.0],
-    ["And stay till", 45.2], ["my own case", 48.6]
-  ]},
-  "m01": {"start": 54.3, "end": 192.54, "anchors": [
-    ["Let me ask you", 54.6], ["Maybe your family", 70.0], ["If yes, first", 75.0], ["This happens to lakhs", 80.0],
-    ["It usually starts", 82.56], ["Maybe someone got sick", 87.2], ["Maybe you lost your job", 88.6], ["Maybe your business", 90.0],
-    ["You miss one payment", 92.3], ["And when we panic", 96.2], ["People take loans", 104.2], ["They sell family gold", 105.7],
-    ["Just to pay the", 106.8], ["But here's the sad part", 108.0], ["Most of that money", 112.9],
-    ["So listen to me carefully", 117.6], ["Debt is a financial event", 132.92], ["You didn't steal", 138.1],
-    ["You just hit", 141.6], ["That does not make", 143.0], ["Now, let me show you", 144.9], ["They planned for it", 152.2],
-    ["And remember the Golden Rule", 153.3], ["Your family comes first", 154.8], ["Food, medicine, rent", 156.4],
-    ["All of that takes", 160.3], ["Never starve your family", 163.7], ["Okay?", 169.2], ["Let's fix this", 171.3],
-    ["And step one is", 189.0]
-  ]},
-  "m02": {"start": 193.5, "end": 293.72, "anchors": [
-    ["Let's see what the law", 196.4], ["What's the biggest weapon", 197.8], ["Scary, right?", 200.6],
-    ["A credit card or", 201.4], ["It comes under the Indian", 203.0], ["If you can't pay", 204.3], ["Not a criminal one", 206.0],
-    ["So what can the bank", 206.8], ["What about cheating", 211.4], ["The Supreme Court has said", 221.1],
-    ["If you maintained", 224.3], ["So a cheating case", 226.6], ["And the police", 228.4], ["An unpaid card bill", 232.0],
-    ["You may hear about", 271.5], ["Those are for bounced", 273.1], ["Pure credit card defaults", 276.6]
-  ]},
-  "m03": {"start": 294.72, "end": 352.62, "anchors": [
-    ["So the law is on", 295.5], ["But what if you owe", 297.5], ["And here's the fear", 299.9], ["What if all the banks", 300.4],
-    ["Relax", 325.0], ["Every card is a separate", 325.6], ["SBI Card cannot join", 328.1], ["Each bank must hire", 331.0],
-    ["And that's expensive", 333.4], ["Even in high tiers", 345.0]
-  ]},
-  "m04": {"start": 353.28, "end": 511.96, "anchors": [
-    ["Now let's look at the other", 354.4], ["Have you noticed this", 355.6], ["Your card is blocked", 357.2],
-    ["You haven't spent", 359.0], ["But the amount keeps", 359.9], ["Strange, right?", 363.3], ["I call this Phantom", 365.2],
-    ["Here's what happens", 375.6], ["And on top of everything", 390.0], ["In six months", 392.4],
-    ["Now, good news", 495.0], ["So always try to settle", 502.0], ["Not the big number", 507.4]
-  ]},
-  "m05": {"start": 513.4, "end": 572.88, "anchors": [
-    ["But before we talk", 515.0], ["Before you answer even", 516.4], ["Protect your family's money", 517.4],
-    ["This is very important", 518.8], ["Under Section 171", 519.8], ["What does that mean", 524.0],
-    ["If you have an unpaid card", 528.0], ["They don't need a court order", 533.6], ["Imagine waking up", 536.4],
-    ["So here's your first move", 543.7], ["Move your salary", 549.2], ["A bank where you have", 551.0],
-    ["One that has nothing", 552.4], ["And keep every bank", 554.4], ["Your family's groceries", 565.0]
-  ]},
-  "m06": {"start": 573.84, "end": 681.28, "anchors": [
-    ["Your salary is safe", 574.6], ["The next question is", 575.4], ["Many people think", 577.4],
-    ["If you go totally silent", 588.5], ["That means they think", 590.4], ["And then they start", 591.3],
-    ["Instead, build a paper trail", 592.4], ["Send a proper email", 598.1], ["That's the top person", 602.5],
-    ["In that email, write", 606.0], ["Fourth, state that", 640.0], ["The bank will reply", 663.2], ["Keep it safe", 665.0],
-    ["The Case Reference ID", 667.6], ["It shows you acted", 670.5], ["It helps counter", 677.2], ["And it helps you later", 679.4]
-  ]},
-  "m07": {"start": 682.34, "end": 953.14, "anchors": [
-    ["But the recovery agents", 684.4], ["So let me show you", 686.4], ["Recovery agents often use", 689.3],
-    ["Let's go one by one", 714.6], ["Number One", 768.3], ["You get a text", 769.6], ["If they really had", 781.4],
-    ["They may be sitting", 784.4], ["Just block the number", 788.4], ["Number Two", 790.3], ["Our agent visited", 791.0],
-    ["This is often an automated", 794.4], ["In many cases, nobody", 801.0], ["Number Three", 810.3],
-    ["A message says", 811.4], ["If you click", 820.0], ["Real court summons", 824.2], ["And if someone actually knocks", 841.1],
-    ["Don't let them in", 844.4], ["Step outside and start", 847.4], ["Politely ask for two", 850.1],
-    ["If they cannot produce both", 856.6], ["And if you ever feel unsafe", 874.8], ["People without proper papers", 878.4]
-  ]},
-  "m08": {"start": 953.9, "end": 1021.32, "anchors": [
-    ["But what about the endless", 954.5], ["Let's fix that next", 955.5], ["Here's a simple truth", 956.2],
-    ["So what's the answer", 959.0], ["Split your phone lines", 960.0], ["On your card number", 961.5],
-    ["And turn on", 963.5], ["Easy, right?", 966.6], ["Outside agencies usually", 996.6]
-  ]},
-  "m09": {"start": 1022.0, "end": 1175.42, "anchors": [
-    ["And time matters", 1023.8], ["Once you understand this calendar", 1025.2], ["In the first thirty days", 1039.2],
-    ["Between days thirty and ninety", 1066.6], ["At ninety days", 1081.0], ["After that, the bank", 1089.4],
-    ["Typically after about", 1134.0]
-  ]},
-  "m10": {"start": 1176.56, "end": 1231.8, "anchors": [
-    ["But not every bank", 1177.8], ["Every bank has its own", 1179.4], ["SBI Card reportedly", 1181.0],
-    ["And IDFC FIRST Bank", 1215.0], ["We've covered eight", 1224.0]
-  ]},
-  "m11": {"start": 1232.6, "end": 1453.8, "anchors": [
-    ["How does it actually", 1234.0], ["Once your account is", 1235.2], ["National Lok Adalat is organized", 1240.0],
-    ["In compromise settlements", 1270.0], ["But wait", 1286.0], ["Before you pay even", 1286.6],
-    ["First: the settlement letter", 1287.6], ["Never accept a letter", 1291.6], ["Second: the letter", 1296.5],
-    ["Third: it must clearly", 1305.0], ["Fourth: it should promise", 1324.0], ["And when you pay", 1359.9],
-    ["NEFT, RTGS", 1361.2], ["Never make cash", 1362.4], ["never", 1365.0, 2]
-  ]},
-  "m12": {"start": 1454.78, "end": 1645.58, "anchors": [
-    ["What about my CIBIL", 1456.4], ["Will I ever get", 1457.9], ["After you settle", 1464.4],
-    ["But is your financial life", 1499.0], ["No!", 1501.0], ["That's just a myth", 1501.6], ["Credit scoring models", 1503.0],
-    ["So once your settlements", 1517.3], ["Here's how", 1518.2], ["Open a small fixed deposit", 1519.0],
-    ["These cards usually", 1529.4], ["Keep your monthly usage", 1541.0], ["And pay the full bill", 1548.0],
-    ["Month after month", 1584.0], ["Within eighteen", 1590.0], ["Debt is a difficult chapter", 1606.0],
-    ["Protect your family first", 1612.0], ["Trust the law", 1614.0], ["And settle with dignity", 1616.0]
-  ]},
-  "m13": {"start": 1646.64, "end": 1844.5, "anchors": [
-    ["So let's put it all", 1647.6], ["Here's your simple", 1649.6], ["Step One", 1651.0], ["Step Five", 1700.0],
-    ["And Step Eight", 1741.0], ["Remember, you are not alone", 1778.0], ["Take control today", 1782.0],
-    ["The law protects your dignity", 1786.4], ["And here's something", 1790.4], ["I'm going through this myself", 1792.0],
-    ["In the next video", 1797.0], ["So subscribe", 1820.0], ["And if this helped you", 1828.0]
-  ]}
+ "_note": "Seconds in narration/telugu/full.mp3. Anchors pin an English phrase (timing.json) to the Telugu moment; English beats without a Telugu match are parked under insert panels (inserts.json).",
+ "hook": {
+  "start": 0.0,
+  "end": 53.6,
+  "anchors": [
+   [
+    "Forty calls a day",
+    5.1
+   ],
+   [
+    "Messages saying",
+    9.8
+   ],
+   [
+    "stop",
+    27.6
+   ],
+   [
+    "Take a breath",
+    28.4
+   ],
+   [
+    "I'll show you",
+    30.7
+   ],
+   [
+    "the law really says",
+    33.8
+   ],
+   [
+    "exactly what you can do",
+    41.0
+   ],
+   [
+    "And stay till",
+    45.2
+   ],
+   [
+    "my own case",
+    48.6
+   ]
+  ]
+ },
+ "m01": {
+  "start": 54.3,
+  "end": 192.54,
+  "anchors": [
+   [
+    "Let me ask you",
+    54.6
+   ],
+   [
+    "Maybe your family",
+    70.0
+   ],
+   [
+    "If yes, first",
+    75.0
+   ],
+   [
+    "This happens to lakhs",
+    80.0
+   ],
+   [
+    "It usually starts",
+    82.56
+   ],
+   [
+    "Maybe someone got sick",
+    87.2
+   ],
+   [
+    "Maybe you lost your job",
+    88.6
+   ],
+   [
+    "Maybe your business",
+    90.0
+   ],
+   [
+    "You miss one payment",
+    92.3
+   ],
+   [
+    "And when we panic",
+    96.2
+   ],
+   [
+    "People take loans",
+    104.2
+   ],
+   [
+    "They sell family gold",
+    105.7
+   ],
+   [
+    "Just to pay the",
+    106.8
+   ],
+   [
+    "But here's the sad part",
+    108.0
+   ],
+   [
+    "Most of that money",
+    112.9
+   ],
+   [
+    "So listen to me carefully",
+    117.6
+   ],
+   [
+    "Debt is a financial event",
+    132.92
+   ],
+   [
+    "You didn't steal",
+    138.1
+   ],
+   [
+    "You just hit",
+    141.6
+   ],
+   [
+    "That does not make",
+    143.0
+   ],
+   [
+    "Now, let me show you",
+    144.9
+   ],
+   [
+    "They planned for it",
+    152.2
+   ],
+   [
+    "And remember the Golden Rule",
+    153.3
+   ],
+   [
+    "Your family comes first",
+    154.8
+   ],
+   [
+    "Food, medicine, rent",
+    156.4
+   ],
+   [
+    "All of that takes",
+    160.3
+   ],
+   [
+    "Never starve your family",
+    163.7
+   ],
+   [
+    "Okay?",
+    169.2
+   ],
+   [
+    "Let's fix this",
+    171.3
+   ],
+   [
+    "And step one is",
+    189.0
+   ]
+  ]
+ },
+ "m02": {
+  "start": 193.5,
+  "end": 293.72,
+  "anchors": [
+   [
+    "Let's see what the law",
+    196.4
+   ],
+   [
+    "What's the biggest weapon",
+    197.8
+   ],
+   [
+    "Scary, right?",
+    200.6
+   ],
+   [
+    "A credit card or",
+    201.4
+   ],
+   [
+    "It comes under the Indian",
+    203.0
+   ],
+   [
+    "If you can't pay",
+    204.3
+   ],
+   [
+    "Not a criminal one",
+    206.0
+   ],
+   [
+    "So what can the bank",
+    206.8
+   ],
+   [
+    "What about cheating",
+    211.4
+   ],
+   [
+    "The Supreme Court has said",
+    221.1
+   ],
+   [
+    "If you maintained",
+    224.3
+   ],
+   [
+    "So a cheating case",
+    226.6
+   ],
+   [
+    "And the police",
+    228.4
+   ],
+   [
+    "An unpaid card bill",
+    232.0
+   ],
+   [
+    "You may hear about",
+    271.5
+   ],
+   [
+    "Those are for bounced",
+    273.1
+   ],
+   [
+    "Pure credit card defaults",
+    276.6
+   ]
+  ]
+ },
+ "m03": {
+  "start": 294.72,
+  "end": 352.62,
+  "anchors": [
+   [
+    "So the law is on",
+    295.5
+   ],
+   [
+    "But what if you owe",
+    297.5
+   ],
+   [
+    "And here's the fear",
+    299.9
+   ],
+   [
+    "What if all the banks",
+    300.4
+   ],
+   [
+    "Relax",
+    325.0
+   ],
+   [
+    "Every card is a separate",
+    325.6
+   ],
+   [
+    "SBI Card cannot join",
+    328.1
+   ],
+   [
+    "Each bank must hire",
+    331.0
+   ],
+   [
+    "And that's expensive",
+    333.4
+   ],
+   [
+    "Even in high tiers",
+    345.0
+   ]
+  ]
+ },
+ "m04": {
+  "start": 353.28,
+  "end": 511.96,
+  "anchors": [
+   [
+    "Now let's look at the other",
+    354.4
+   ],
+   [
+    "Have you noticed this",
+    355.6
+   ],
+   [
+    "Your card is blocked",
+    357.2
+   ],
+   [
+    "You haven't spent",
+    359.0
+   ],
+   [
+    "But the amount keeps",
+    359.9
+   ],
+   [
+    "Strange, right?",
+    363.3
+   ],
+   [
+    "Here's what happens",
+    375.6
+   ],
+   [
+    "And on top of everything",
+    390.0
+   ],
+   [
+    "In six months",
+    392.4
+   ],
+   [
+    "Now, good news",
+    495.0
+   ],
+   [
+    "So always try to settle",
+    502.0
+   ],
+   [
+    "Not the big number",
+    507.4
+   ],
+   [
+    "I call this Phantom",
+    363.6
+   ]
+  ]
+ },
+ "m05": {
+  "start": 513.4,
+  "end": 572.88,
+  "anchors": [
+   [
+    "But before we talk",
+    515.0
+   ],
+   [
+    "Before you answer even",
+    516.4
+   ],
+   [
+    "Protect your family's money",
+    517.4
+   ],
+   [
+    "This is very important",
+    518.8
+   ],
+   [
+    "Under Section 171",
+    519.8
+   ],
+   [
+    "What does that mean",
+    524.0
+   ],
+   [
+    "If you have an unpaid card",
+    528.0
+   ],
+   [
+    "They don't need a court order",
+    533.6
+   ],
+   [
+    "Imagine waking up",
+    536.4
+   ],
+   [
+    "So here's your first move",
+    543.7
+   ],
+   [
+    "Move your salary",
+    549.2
+   ],
+   [
+    "A bank where you have",
+    551.0
+   ],
+   [
+    "One that has nothing",
+    552.4
+   ],
+   [
+    "And keep every bank",
+    554.4
+   ],
+   [
+    "Your family's groceries",
+    565.0
+   ]
+  ]
+ },
+ "m06": {
+  "start": 573.84,
+  "end": 681.28,
+  "anchors": [
+   [
+    "Your salary is safe",
+    574.6
+   ],
+   [
+    "The next question is",
+    575.4
+   ],
+   [
+    "Many people think",
+    577.4
+   ],
+   [
+    "If you go totally silent",
+    588.5
+   ],
+   [
+    "That means they think",
+    590.4
+   ],
+   [
+    "And then they start",
+    591.3
+   ],
+   [
+    "Instead, build a paper trail",
+    592.4
+   ],
+   [
+    "Send a proper email",
+    598.1
+   ],
+   [
+    "That's the top person",
+    602.5
+   ],
+   [
+    "In that email, write",
+    606.0
+   ],
+   [
+    "Fourth, state that",
+    640.0
+   ],
+   [
+    "The bank will reply",
+    663.2
+   ],
+   [
+    "Keep it safe",
+    665.0
+   ],
+   [
+    "The Case Reference ID",
+    667.6
+   ],
+   [
+    "It shows you acted",
+    670.5
+   ],
+   [
+    "It helps counter",
+    677.2
+   ],
+   [
+    "And it helps you later",
+    679.4
+   ]
+  ]
+ },
+ "m07": {
+  "start": 682.34,
+  "end": 953.14,
+  "anchors": [
+   [
+    "But the recovery agents",
+    684.4
+   ],
+   [
+    "So let me show you",
+    686.4
+   ],
+   [
+    "Recovery agents often use",
+    689.3
+   ],
+   [
+    "Let's go one by one",
+    714.6
+   ],
+   [
+    "Number One",
+    768.3
+   ],
+   [
+    "You get a text",
+    769.6
+   ],
+   [
+    "Number Two",
+    790.3
+   ],
+   [
+    "Our agent visited",
+    791.0
+   ],
+   [
+    "This is often an automated",
+    794.4
+   ],
+   [
+    "In many cases, nobody",
+    801.0
+   ],
+   [
+    "Number Three",
+    810.3
+   ],
+   [
+    "A message says",
+    811.4
+   ],
+   [
+    "If you click",
+    820.0
+   ],
+   [
+    "Real court summons",
+    824.2
+   ],
+   [
+    "And if someone actually knocks",
+    841.1
+   ],
+   [
+    "Don't let them in",
+    844.4
+   ],
+   [
+    "Step outside and start",
+    847.4
+   ],
+   [
+    "Politely ask for two",
+    850.1
+   ],
+   [
+    "If they cannot produce both",
+    856.6
+   ],
+   [
+    "If they really had",
+    776.8
+   ],
+   [
+    "They may be sitting",
+    782.0
+   ],
+   [
+    "Just block the number",
+    787.0
+   ],
+   [
+    "And if you ever feel unsafe",
+    874.9
+   ],
+   [
+    "People without proper papers",
+    879.8
+   ]
+  ]
+ },
+ "m08": {
+  "start": 953.9,
+  "end": 1021.32,
+  "anchors": [
+   [
+    "But what about the endless",
+    954.5
+   ],
+   [
+    "Let's fix that next",
+    955.5
+   ],
+   [
+    "Here's a simple truth",
+    956.2
+   ],
+   [
+    "So what's the answer",
+    959.0
+   ],
+   [
+    "Split your phone lines",
+    960.0
+   ],
+   [
+    "On your card number",
+    961.5
+   ],
+   [
+    "And turn on",
+    963.5
+   ],
+   [
+    "Easy, right?",
+    966.6
+   ],
+   [
+    "Outside agencies usually",
+    996.6
+   ]
+  ]
+ },
+ "m09": {
+  "start": 1022.0,
+  "end": 1175.42,
+  "anchors": [
+   [
+    "And time matters",
+    1023.8
+   ],
+   [
+    "Once you understand this calendar",
+    1025.2
+   ],
+   [
+    "In the first thirty days",
+    1039.2
+   ],
+   [
+    "Between days thirty and ninety",
+    1066.6
+   ],
+   [
+    "At ninety days",
+    1081.0
+   ],
+   [
+    "After that, the bank",
+    1089.4
+   ],
+   [
+    "Typically after about",
+    1134.0
+   ]
+  ]
+ },
+ "m10": {
+  "start": 1176.56,
+  "end": 1231.8,
+  "anchors": [
+   [
+    "But not every bank",
+    1177.8
+   ],
+   [
+    "Every bank has its own",
+    1179.4
+   ],
+   [
+    "SBI Card reportedly",
+    1181.0
+   ],
+   [
+    "And IDFC FIRST Bank",
+    1215.0
+   ],
+   [
+    "We've covered eight",
+    1224.0
+   ]
+  ]
+ },
+ "m11": {
+  "start": 1232.6,
+  "end": 1453.8,
+  "anchors": [
+   [
+    "How does it actually",
+    1234.0
+   ],
+   [
+    "Once your account is",
+    1235.2
+   ],
+   [
+    "National Lok Adalat is organized",
+    1240.0
+   ],
+   [
+    "In compromise settlements",
+    1270.0
+   ],
+   [
+    "But wait",
+    1286.0
+   ],
+   [
+    "Before you pay even",
+    1286.6
+   ],
+   [
+    "First: the settlement letter",
+    1287.6
+   ],
+   [
+    "Never accept a letter",
+    1291.6
+   ],
+   [
+    "Second: the letter",
+    1296.5
+   ],
+   [
+    "Third: it must clearly",
+    1305.0
+   ],
+   [
+    "Fourth: it should promise",
+    1322.4
+   ],
+   [
+    "And when you pay",
+    1348.4
+   ],
+   [
+    "NEFT, RTGS",
+    1351.9
+   ],
+   [
+    "Never make cash",
+    1356.9
+   ],
+   [
+    "never",
+    1359.9,
+    2
+   ]
+  ]
+ },
+ "m12": {
+  "start": 1454.78,
+  "end": 1645.58,
+  "anchors": [
+   [
+    "What about my CIBIL",
+    1456.4
+   ],
+   [
+    "Will I ever get",
+    1457.9
+   ],
+   [
+    "After you settle",
+    1464.4
+   ],
+   [
+    "But is your financial life",
+    1499.0
+   ],
+   [
+    "No!",
+    1501.0
+   ],
+   [
+    "That's just a myth",
+    1501.6
+   ],
+   [
+    "Credit scoring models",
+    1503.0
+   ],
+   [
+    "So once your settlements",
+    1517.3
+   ],
+   [
+    "Here's how",
+    1518.2
+   ],
+   [
+    "Open a small fixed deposit",
+    1519.0
+   ],
+   [
+    "Keep your monthly usage",
+    1541.0
+   ],
+   [
+    "And pay the full bill",
+    1548.0
+   ],
+   [
+    "Month after month",
+    1584.0
+   ],
+   [
+    "Within eighteen",
+    1590.0
+   ],
+   [
+    "Debt is a difficult chapter",
+    1606.0
+   ],
+   [
+    "Protect your family first",
+    1612.0
+   ],
+   [
+    "Trust the law",
+    1614.0
+   ],
+   [
+    "And settle with dignity",
+    1616.0
+   ],
+   [
+    "These cards usually",
+    1523.0
+   ]
+  ]
+ },
+ "m13": {
+  "start": 1646.64,
+  "end": 1844.5,
+  "anchors": [
+   [
+    "So let's put it all",
+    1647.6
+   ],
+   [
+    "Here's your simple",
+    1649.6
+   ],
+   [
+    "Step One",
+    1651.0
+   ],
+   [
+    "Step Five",
+    1700.0
+   ],
+   [
+    "And Step Eight",
+    1741.0
+   ],
+   [
+    "Remember, you are not alone",
+    1778.0
+   ],
+   [
+    "Take control today",
+    1782.0
+   ],
+   [
+    "The law protects your dignity",
+    1786.4
+   ],
+   [
+    "And here's something",
+    1790.4
+   ],
+   [
+    "I'm going through this myself",
+    1792.0
+   ],
+   [
+    "In the next video",
+    1797.0
+   ],
+   [
+    "So subscribe",
+    1820.0
+   ],
+   [
+    "And if this helped you",
+    1828.0
+   ]
+  ]
+ }
 }

@@ -168,22 +168,27 @@
    "te": "“Civil matter కదా, ఏమీ జరగదు” అనుకోవద్దు",
    "items": [
     {
-     "at": 48.92,
-     "text": "Send you a legal notice",
-     "te": "Notice పంపొచ్చు",
-     "tone": "warn"
+     "at": 49.12,
+     "text": "Send you a notice",
+     "tone": "warn",
+     "te": "Notice పంపొచ్చు"
     },
     {
      "at": 50.22,
-     "text": "Go to court under the applicable law",
-     "te": "Court కి వెళ్ళొచ్చు",
+     "text": "Approach a court through the proper procedure",
+     "tone": "warn",
+     "te": "Court కి వెళ్ళొచ్చు"
+    },
+    {
+     "at": 53.12,
+     "text": "A court order can have consequences",
      "tone": "warn"
     },
     {
-     "at": 52.92,
-     "text": "Court orders must be followed",
-     "te": "Court order వస్తే follow చేయాలి",
-     "tone": "warn"
+     "at": 55.62,
+     "text": "Don’t ignore a genuine notice, summons or arbitration letter",
+     "tone": "bad",
+     "te": "నిజమైన notice / summons ని ignore చేయొద్దు"
     }
    ]
   },
@@ -252,33 +257,38 @@
    "to": 30.7,
    "kind": "points",
    "color": "cyan",
-   "kicker": "Many accounts? Don't panic",
+   "kicker": "Many accounts? Track each one",
    "title": "First, make one simple list",
    "te": "అన్నీ ఒకే చోట పెట్టండి",
    "items": [
     {
-     "at": 20.4,
-     "text": "Card issuer name",
+     "at": 20.1,
+     "text": "Card issuer’s name",
      "tone": "info"
     },
     {
-     "at": 21.8,
-     "text": "Account number",
+     "at": 21.6,
+     "text": "Outstanding amount",
      "tone": "info"
     },
     {
-     "at": 23.3,
+     "at": 23.0,
      "text": "Due date",
      "tone": "info"
     },
     {
      "at": 24.0,
-     "text": "Outstanding amount",
+     "text": "Last payment date",
+     "tone": "info"
+    },
+    {
+     "at": 25.0,
+     "text": "Complaint reference",
      "tone": "info"
     },
     {
      "at": 26.6,
-     "text": "Any legal letters or notices",
+     "text": "Any legal communication",
      "tone": "info"
     }
    ]
@@ -321,6 +331,15 @@
  ],
  "m04": [
   {
+   "from": 11.14,
+   "to": 22.04,
+   "kind": "big",
+   "color": "crimson",
+   "kicker": "Why it keeps growing",
+   "title": "Card blocked ≠ charges stopped",
+   "te": "Card block చేస్తే కొత్త transactions ఆగుతాయి — existing balance మీద interest, charges ఆగవు"
+  },
+  {
    "from": 22.24,
    "to": 38.84,
    "kind": "points",
@@ -359,30 +378,35 @@
   {
    "from": 39.04,
    "to": 66.44,
-   "kind": "steps",
+   "kind": "points",
    "color": "amber",
    "kicker": "A simple example",
    "title": "Why the balance doesn't fall",
    "te": "చిన్న payment చేసినా principal పెద్దగా తగ్గకపోవచ్చు",
    "items": [
     {
-     "at": 40.84,
-     "text": "Outstanding ₹1,00,000",
+     "at": 40.94,
+     "text": "Outstanding: ₹1,00,000",
      "tone": "info"
     },
     {
-     "at": 58.24,
-     "text": "You pay a small amount",
+     "at": 43.14,
+     "text": "At 3% a month ≈ ₹3,000 interest",
      "tone": "warn"
     },
     {
-     "at": 60.04,
-     "text": "Principal barely moves",
-     "tone": "bad"
+     "at": 47.74,
+     "text": "Only an example — check your card’s actual terms",
+     "tone": "info"
     },
     {
-     "at": 62.04,
-     "text": "“I'm paying, but it's not going down”",
+     "at": 55.14,
+     "text": "Add applicable fees and taxes",
+     "tone": "warn"
+    },
+    {
+     "at": 58.34,
+     "text": "A small payment barely reduces the principal",
      "tone": "bad"
     }
    ]
@@ -449,8 +473,8 @@
      "tone": "good"
     },
     {
-     "at": 113.14,
-     "text": "Charges shouldn't push you into over-limit fees",
+     "at": 111.34,
+     "text": "Interest, taxes & charges can’t count towards an over-limit fee",
      "tone": "good"
     }
    ]
@@ -494,13 +518,14 @@
  ],
  "m05": [
   {
-   "from": 40.92,
-   "to": 51.52,
+   "from": 39.92,
+   "to": 50.72,
    "kind": "big",
    "color": "amber",
-   "kicker": "One more thing",
-   "title": "Court orders must be followed",
-   "te": "Court order ఉంటే దాన్ని follow చేయాలి"
+   "kicker": "But remember",
+   "title": "Moving accounts isn’t a legal shield",
+   "te": "Account మార్చినా legal recovery నుంచి permanent protection ఉండదు",
+   "sub": "Court orders and valid legal obligations must be followed."
   }
  ],
  "m06": [
@@ -526,13 +551,13 @@
      "tone": "info"
     },
     {
-     "at": 41.28,
-     "text": "“Please tell me the repayment options.”",
-     "te": "“Repayment options తెలుసుకోవాలి.”",
-     "tone": "info"
+     "at": 40.68,
+     "text": "“I am available to discuss repayment options.”",
+     "tone": "info",
+     "te": "“Repayment options గురించి మాట్లాడటానికి ready.”"
     },
     {
-     "at": 45.28,
+     "at": 44.68,
      "text": "“After essentials, I can pay ₹___ a month.”",
      "te": "“Essentials తర్వాత నెలకి ఇంత కట్టగలను.”",
      "tone": "good"
@@ -589,32 +614,32 @@
    "kind": "points",
    "color": "crimson",
    "kicker": "What recovery agents can't do",
-   "title": "Recovery has limits",
+   "title": "Recovery has rules",
    "te": "Recovery agents contact చేయొచ్చు — కానీ limits లోనే",
    "items": [
     {
-     "at": 8.98,
-     "text": "Intimidate or humiliate you",
+     "at": 7.38,
+     "text": "Insults, threats or public humiliation",
      "tone": "bad"
     },
     {
-     "at": 11.78,
-     "text": "Violate your family's privacy",
+     "at": 9.38,
+     "text": "Intruding on your family’s privacy",
      "tone": "bad"
     },
     {
-     "at": 14.78,
-     "text": "Shame you in public",
+     "at": 15.18,
+     "text": "Threatening or anonymous calls",
      "tone": "bad"
     },
     {
-     "at": 17.78,
-     "text": "Threats or abusive messages",
+     "at": 17.58,
+     "text": "Persistent harassment",
      "tone": "bad"
     },
     {
-     "at": 21.98,
-     "text": "Calls usually only 8 am – 7 pm",
+     "at": 21.68,
+     "text": "No calls before 8 am or after 7 pm",
      "tone": "info"
     }
    ]
@@ -660,29 +685,55 @@
    "te": "Calm గా details అడగండి",
    "items": [
     {
-     "at": 48.78,
-     "text": "“What's your name?”",
+     "at": 47.68,
+     "text": "“Your name? Agency? Which bank?”",
      "tone": "info"
     },
     {
-     "at": 50.38,
-     "text": "“Which agency?”",
+     "at": 53.38,
+     "text": "“Send your authorisation by official email.”",
      "tone": "info"
     },
     {
-     "at": 52.18,
-     "text": "“Calling for which bank?”",
-     "tone": "info"
-    },
-    {
-     "at": 66.78,
-     "text": "“I'll discuss my hardship with the bank in writing.”",
+     "at": 56.88,
+     "text": "Don’t raise your voice — document, don’t argue",
      "tone": "good"
     },
     {
-     "at": 76.78,
-     "text": "Keep it short. Abusive? End the call.",
+     "at": 67.08,
+     "text": "“I have explained my hardship to the bank in writing.”",
      "tone": "good"
+    },
+    {
+     "at": 76.58,
+     "text": "Short. Clear. That’s enough.",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "from": 93.48,
+   "to": 107.08,
+   "kind": "points",
+   "color": "amber",
+   "kicker": "Live location request?",
+   "title": "Pause. Verify first.",
+   "te": "Unknown person అడిగాడని location share చేయక్కర్లేదు",
+   "items": [
+    {
+     "at": 93.68,
+     "text": "Never share an OTP, PIN, password or card details",
+     "tone": "bad"
+    },
+    {
+     "at": 98.68,
+     "text": "A location request alone doesn’t prove it’s fake",
+     "tone": "info"
+    },
+    {
+     "at": 102.98,
+     "text": "But no personal details without verification",
+     "tone": "warn"
     }
    ]
   },
@@ -728,17 +779,26 @@
    ]
   },
   {
-   "from": 180.08,
-   "to": 191.68,
+   "from": 179.98,
+   "to": 191.78,
    "kind": "big",
    "color": "amber",
    "kicker": "At your door",
-   "title": "Don't sign or pay under pressure",
-   "te": "“ఇప్పుడే pay చేయండి, ఇక్కడ sign చేయండి” — pressure కి లొంగకండి",
-   "sub": "Read it, understand it, take advice first."
+   "title": "“Sign now. Give cash. Give your phone.”",
+   "te": "ఇలాంటి pressure కి వెంటనే react అవ్వకండి",
+   "sub": "Read and understand any document. Sign only after advice if you need it."
   },
   {
-   "from": 198.88,
+   "from": 198.98,
+   "to": 207.78,
+   "kind": "big",
+   "color": "cyan",
+   "kicker": "Fair to know",
+   "title": "An authorised visit isn’t automatically illegal",
+   "te": "వాళ్ల conduct, సరైన process follow అవుతుందా — అదే ముఖ్యం"
+  },
+  {
+   "from": 207.98,
    "to": 229.08,
    "kind": "points",
    "color": "violet",
@@ -747,28 +807,28 @@
    "te": "Harassment ని document చేయండి",
    "items": [
     {
-     "at": 212.08,
-     "text": "Note the details",
+     "at": 210.98,
+     "text": "Note the dates",
      "tone": "info"
     },
     {
-     "at": 213.68,
-     "text": "Save call recordings",
+     "at": 212.98,
+     "text": "Save the phone numbers",
      "tone": "info"
     },
     {
-     "at": 215.28,
-     "text": "Messages and screenshots",
+     "at": 214.98,
+     "text": "Screenshots of messages",
+     "tone": "info"
+    },
+    {
+     "at": 216.98,
+     "text": "Preserve the evidence",
      "tone": "info"
     },
     {
      "at": 222.08,
-     "text": "Date, time, number — what was said",
-     "tone": "info"
-    },
-    {
-     "at": 226.08,
-     "text": "Clear evidence = a strong complaint",
+     "text": "“On this date, at this time, this number said this.”",
      "tone": "good"
     }
    ]
@@ -818,8 +878,13 @@
    "te": "Harassment complaint recovery conduct గురించి — అది debt ని cancel చేయదు",
    "items": [
     {
-     "at": 266.28,
-     "text": "Asking for fair behaviour is your right",
+     "at": 262.28,
+     "text": "Doesn’t guarantee a settlement discount",
+     "tone": "warn"
+    },
+    {
+     "at": 265.28,
+     "text": "Asking to be treated fairly is your right",
      "tone": "good"
     }
    ]
@@ -836,13 +901,13 @@
    "te": "Phone settings వాడండి",
    "items": [
     {
-     "at": 5.22,
-     "text": "Block abusive and spam numbers",
+     "at": 4.42,
+     "text": "Block known abusive numbers",
      "tone": "good"
     },
     {
-     "at": 7.22,
-     "text": "Turn on spam filters",
+     "at": 7.42,
+     "text": "Enable spam filters",
      "tone": "good"
     }
    ]
@@ -879,28 +944,33 @@
    ]
   },
   {
-   "from": 42.42,
+   "from": 42.12,
    "to": 67.42,
    "kind": "big",
    "color": "amber",
    "kicker": "No guarantee",
-   "title": "Silence alone won't fix it",
-   "te": "Calls ఎత్తకపోతే అంతా ఆగిపోతుందని guarantee లేదు",
-   "sub": "Agencies change. Bank teams follow up. Your plan should rest on:",
+   "title": "“Ignore calls and the file closes in 60 days?”",
+   "te": "అలాంటి guarantee ఏమీ లేదు",
+   "sub": "Agencies change. Calls may drop, then rise again. The debt doesn’t disappear.",
    "items": [
     {
-     "at": 62.62,
-     "text": "A budget",
+     "at": 62.42,
+     "text": "Budget",
      "tone": "good"
     },
     {
-     "at": 63.82,
+     "at": 63.42,
      "text": "Written communication",
      "tone": "good"
     },
     {
-     "at": 65.22,
+     "at": 64.42,
      "text": "Evidence",
+     "tone": "good"
+    },
+    {
+     "at": 65.22,
+     "text": "Verified repayment options",
      "tone": "good"
     }
    ]
@@ -917,9 +987,14 @@
    "te": "Due date కి full amount లేదా minimum కట్టాలి",
    "items": [
     {
-     "at": 8.72,
-     "text": "Miss it → charges may apply",
+     "at": 9.72,
+     "text": "Full bill unpaid → finance charges may apply",
      "tone": "warn"
+    },
+    {
+     "at": 13.52,
+     "text": "Minimum unpaid → the account becomes overdue",
+     "tone": "bad"
     }
    ]
   },
@@ -1137,23 +1212,23 @@
    "te": "Friend కి 25% అయిందంటే మీకూ అవుతుందని కాదు",
    "items": [
     {
-     "at": 22.96,
+     "at": 21.96,
      "text": "Account age",
      "tone": "info"
     },
     {
-     "at": 24.56,
-     "text": "Outstanding amount",
+     "at": 23.96,
+     "text": "Balance breakdown",
      "tone": "info"
     },
     {
-     "at": 26.36,
-     "text": "Your hardship",
+     "at": 25.96,
+     "text": "Financial situation",
      "tone": "info"
     },
     {
      "at": 27.96,
-     "text": "Financial situation",
+     "text": "Approval policy",
      "tone": "info"
     }
    ]
@@ -1169,32 +1244,32 @@
    "right": "DO",
    "items": [
     {
-     "at": 31.56,
-     "text": "Trust what someone said online",
+     "at": 31.86,
+     "text": "Treat an online % as a promise",
      "tone": "bad"
     },
     {
-     "at": 35.96,
-     "text": "Verify what your own bank sends",
+     "at": 36.86,
+     "text": "Use your bank’s verified written offer",
      "tone": "good"
     },
     {
-     "at": 39.96,
-     "text": "Talk about what you can afford",
+     "at": 39.86,
+     "text": "Discuss what you can afford",
      "tone": "good"
     },
     {
-     "at": 43.16,
+     "at": 42.86,
      "text": "Friendly caller = genuine offer",
      "tone": "bad"
     },
     {
-     "at": 46.96,
+     "at": 46.86,
      "text": "Rude caller = ignore the account",
      "tone": "bad"
     },
     {
-     "at": 50.56,
+     "at": 50.86,
      "text": "Verify the process",
      "tone": "good"
     }
@@ -1261,18 +1336,18 @@
    ]
   },
   {
-   "from": 90.72,
-   "to": 127.12,
+   "from": 89.52,
+   "to": 115.72,
    "kind": "big",
    "color": "amber",
-   "kicker": "“Pay first, letter comes later”?",
+   "kicker": "“Small payment first, letter will follow”?",
    "title": "Confirm in writing first",
    "te": "ఆ payment settlement లో part అవుతుందా? Written గా confirm చేసుకోండి",
-   "sub": "Otherwise the bank may record it as an ordinary part-payment."
+   "sub": "Don’t trust a WhatsApp screenshot alone. Otherwise it may count as an ordinary part-payment."
   },
   {
-   "from": 133.52,
-   "to": 162.0,
+   "from": 129.32,
+   "to": 159.32,
    "kind": "points",
    "color": "emerald",
    "kicker": "After you pay",
@@ -1280,34 +1355,34 @@
    "te": "Payment complete అయ్యాక written confirmation తీసుకోండి",
    "items": [
     {
-     "at": 134.52,
-     "text": "Save every payment receipt; pay instalments on schedule",
+     "at": 129.42,
+     "text": "Save the payment receipt",
      "tone": "good"
     },
     {
-     "at": 141.12,
-     "text": "Written confirmation of completion",
-     "tone": "good"
-    },
-    {
-     "at": 143.92,
-     "text": "No Dues / Settlement Completion Certificate",
-     "tone": "good"
-    },
-    {
-     "at": 149.02,
-     "text": "Court case pending? Confirm how it will be closed",
+     "at": 131.42,
+     "text": "Instalments? Follow the due dates carefully",
      "tone": "warn"
     },
     {
-     "at": 155.82,
-     "text": "“We'll take care of it” on the phone isn't enough",
+     "at": 141.42,
+     "text": "Written confirmation + No Dues / completion certificate",
+     "tone": "good"
+    },
+    {
+     "at": 148.42,
+     "text": "Court case pending? Confirm how it will close",
+     "tone": "warn"
+    },
+    {
+     "at": 155.52,
+     "text": "“We’ll handle everything” on the phone isn’t enough",
      "tone": "bad"
     }
    ]
   },
   {
-   "from": 162.2,
+   "from": 159.52,
    "to": 200.4,
    "kind": "points",
    "color": "cyan",
@@ -1316,28 +1391,28 @@
    "te": "Lok Adalat పేరు వినగానే tension అవసరం లేదు",
    "items": [
     {
-     "at": 167.6,
-     "text": "Pending and pre-litigation cases can be settled",
+     "at": 166.8,
+     "text": "A chance to reach a mutually agreed settlement",
      "tone": "info"
     },
     {
-     "at": 176.2,
-     "text": "They may offer a proposal — check it's affordable",
-     "tone": "warn"
-    },
-    {
-     "at": 181.3,
-     "text": "You don't have to accept just because it's offered",
-     "tone": "warn"
-    },
-    {
-     "at": 187.7,
-     "text": "Consent matters. The award = a civil court decree",
+     "at": 172.8,
+     "text": "Pending and pre-litigation cases can come there",
      "tone": "info"
     },
     {
-     "at": 195.4,
-     "text": "Final and binding — no normal appeal",
+     "at": 180.8,
+     "text": "Check the terms are affordable",
+     "tone": "warn"
+    },
+    {
+     "at": 182.8,
+     "text": "You don’t have to accept any offer",
+     "tone": "warn"
+    },
+    {
+     "at": 190.8,
+     "text": "Agreed award = final & binding, like a court decree. No ordinary appeal",
      "tone": "warn"
     }
    ]
@@ -1349,26 +1424,26 @@
    "color": "emerald",
    "kicker": "Before you sign",
    "title": "Ask until it's clear",
-   "te": "అర్థం కాకపోతే అడగండి — అది తప్పు కాదు",
+   "te": "అర్థం కాకపోతే అడగండి — అలా అడగడంలో తప్పు లేదు",
    "items": [
     {
-     "at": 208.2,
-     "text": "“After this, will any dues remain?”",
+     "at": 207.8,
+     "text": "“Any further dues after I pay this?”",
      "tone": "info"
     },
     {
-     "at": 211.2,
-     "text": "“How will this payment be recorded?”",
+     "at": 210.8,
+     "text": "“What if I miss the deadline?”",
      "tone": "info"
     },
     {
-     "at": 213.2,
+     "at": 212.8,
      "text": "“What will my credit report show?”",
      "tone": "info"
     },
     {
-     "at": 215.2,
-     "text": "Clarity about your case is your right",
+     "at": 215.8,
+     "text": "Clarity about your case is your responsibility",
      "tone": "good"
     }
    ]
@@ -1406,8 +1481,8 @@
      "tone": "bad"
     },
     {
-     "at": 33.54,
-     "text": "No-dues letter ≠ a fully clean credit report",
+     "at": 33.74,
+     "text": "No Dues Certificate ≠ report shows “Closed”",
      "tone": "bad"
     }
    ]
@@ -1439,7 +1514,7 @@
    ]
   },
   {
-   "from": 74.54,
+   "from": 67.94,
    "to": 85.74,
    "kind": "points",
    "color": "amber",
@@ -1448,12 +1523,22 @@
    "te": "Card వస్తుందని guarantee లేదు",
    "items": [
     {
-     "at": 76.74,
-     "text": "Don't lock your emergency savings in the FD",
+     "at": 68.14,
+     "text": "Approval, deposit & limits depend on the issuer",
+     "tone": "info"
+    },
+    {
+     "at": 73.14,
+     "text": "An FD doesn’t guarantee approval",
      "tone": "warn"
     },
     {
-     "at": 81.34,
+     "at": 76.14,
+     "text": "Don’t lock up your emergency savings",
+     "tone": "warn"
+    },
+    {
+     "at": 81.14,
      "text": "Use it only for small, planned expenses",
      "tone": "good"
     }
@@ -1495,28 +1580,28 @@
    "te": "Credit report regular గా check చేయండి",
    "items": [
     {
-     "at": 102.74,
-     "text": "Affordable usage",
+     "at": 104.14,
+     "text": "Pay on time, keep usage affordable",
      "tone": "good"
     },
     {
-     "at": 107.34,
-     "text": "Avoid repeated unnecessary applications",
+     "at": 108.14,
+     "text": "Avoid repeated, unnecessary applications",
      "tone": "good"
     },
     {
-     "at": 110.34,
-     "text": "After settlement: did the bank update it?",
+     "at": 112.14,
+     "text": "After settlement: did the bank update your report?",
      "tone": "good"
     },
     {
-     "at": 116.34,
-     "text": "Errors? Dispute with the lender and credit bureau",
+     "at": 116.14,
+     "text": "Errors? Dispute with the lender & credit bureau",
      "tone": "warn"
     },
     {
-     "at": 124.34,
-     "text": "Correct negative history can't be removed",
+     "at": 124.14,
+     "text": "Accurate negative history can’t be removed",
      "tone": "bad"
     }
    ]
@@ -1552,23 +1637,23 @@
    "te": "ఒక trusted person తో మాట్లాడండి",
    "items": [
     {
-     "at": 164.34,
+     "at": 164.14,
      "text": "A family member you feel safe with — or a friend",
      "tone": "info"
     },
     {
-     "at": 167.34,
-     "text": "You don't have to tell everyone every detail",
+     "at": 172.14,
+     "text": "No need to start with “I’ve ruined everything”",
      "tone": "info"
     },
     {
-     "at": 179.24,
-     "text": "“This is my income. I'm following a plan. I need support.”",
+     "at": 176.44,
+     "text": "“These are my accounts. My income. My plan. I need support.”",
      "tone": "good"
     },
     {
-     "at": 185.54,
-     "text": "That's not weakness — it's a practical step",
+     "at": 186.54,
+     "text": "Not weakness — a practical step",
      "tone": "good"
     }
    ]

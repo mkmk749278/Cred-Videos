@@ -1,5 +1,6 @@
 import React from 'react';
-import {Easing, interpolate, useCurrentFrame} from 'remotion';
+import {Easing, useCurrentFrame} from 'remotion';
+import {interpolate} from '../lib/safeInterpolate';
 import {C, MONO, alpha} from '../theme';
 import {cueFrame, FPS, LEAD, timing} from '../lib/timing';
 import {blendArms, POSES, PoseName} from './Arms';

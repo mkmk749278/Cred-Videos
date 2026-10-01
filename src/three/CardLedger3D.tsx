@@ -1,5 +1,6 @@
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate} from '../lib/safeInterpolate';
 import {CLAMP} from '../lib/anim';
 import {Glow, Scene3D} from './kit';
 import {Card3D} from './Card3D';

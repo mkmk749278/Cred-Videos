@@ -1,4 +1,4 @@
-import {interpolate} from 'remotion';
+import {interpolate} from '../lib/safeInterpolate';
 import type {Mouth} from './Borrower';
 
 export type W = {w: string; s: number; e: number};

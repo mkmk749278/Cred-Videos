@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, interpolate, Sequence, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Sequence, useCurrentFrame} from 'remotion';
+import {interpolate} from '../lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from '../theme';
 import {AngerMark, Borrower, Checkmark, Lightbulb, Mood, Mouth, Pose, QuestionMarks, RingWaves, ShockLines, Sparkles, SweatDrop} from './Borrower';
 

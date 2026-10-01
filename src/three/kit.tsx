@@ -1,3 +1,4 @@
+import {StageHidden} from '../lib/stage';
 import React, {useMemo} from 'react';
 import {ThreeCanvas} from '@remotion/three';
 import {Environment, Lightformer} from '@react-three/drei';
@@ -19,7 +20,8 @@ export const Scene3D: React.FC<{
   exposure?: number;
   /** override the internal resolution (1 = full) */
   dpr?: number;
-}> = ({width = 1920, height = 770, camera, children, style, env = 'studio', exposure = 1.1, dpr = DPR}) => (
+}> = ({width = 1920, height = 770, camera, children, style, env = 'studio', exposure = 1.1, dpr = DPR}) =>
+  React.useContext(StageHidden) ? null : (
   <div
     style={{
       position: 'absolute',

@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate} from './lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from './theme';
 import {CLAMP, spr} from './lib/anim';
 import {Backdrop} from './components/SceneShell';

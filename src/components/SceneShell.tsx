@@ -8,6 +8,7 @@ import {HostConfig, RaviHost} from '../character/RaviHost';
 import {HOSTS} from '../character/hosts';
 import {speechAt, W} from '../character/lipsync';
 import {sceneFrames} from '../lib/timing';
+import {STRESS} from '../lib/emphasis';
 
 export type Music = 'tension' | 'analytic' | 'hope';
 
@@ -120,12 +121,14 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
   const out = interpolate(frame, [end - 10, end], [0, 1], CLAMP);
   const line = interpolate(frame, [4, 20], [0, 1], CLAMP);
   // bridge modules: after the slam the title docks to the right while Ravi delivers the bridge line on the left
-  const dock = m.bridge ? interpolate(frame, [24, 40], [0, 1], CLAMP) : 0;
+  const dock = m.bridge && HOSTS[index] ? interpolate(frame, [24, 40], [0, 1], CLAMP) : 0;
+  // without a host the recap sits centred under the title once the bridge line starts
+  const recapIn = m.bridge ? interpolate(frame, [24, 40], [0, 1], CLAMP) : 0;
   const de = dock * dock * (3 - 2 * dock);
   const num = String(m.number).padStart(2, '0');
   return (
     <AbsoluteFill style={{opacity: 1 - out, filter: out > 0 ? `blur(${out * 10}px)` : undefined}}>
-      <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', transform: `translate(${de * 330}px, ${-de * 70}px) scale(${1 - de * 0.24})`}}>
+      <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', transform: `translate(${de * 330}px, ${-de * 70}px) scale(${(1 - de * 0.24) * (1 + 0.05 * interpolate(frame, [20, end], [0, 1], CLAMP))})`}}>
         <div style={{position: 'absolute', fontFamily: FONT, fontWeight: 900, fontSize: 520, color: 'transparent', WebkitTextStroke: `3px ${alpha(C.cyan, 0.16)}`, letterSpacing: -10, transform: `scale(${1.5 - 0.5 * slam})`, opacity: slam}}>{num}</div>
         <div style={{textAlign: 'center', transform: `scale(${1.25 - 0.25 * slam})`, opacity: Math.min(1, slam * 1.4), filter: slam < 0.9 ? `blur(${(1 - slam) * 10}px)` : undefined}}>
           <div style={{fontFamily: MONO, color: C.cyan, fontSize: 28, letterSpacing: 10, fontWeight: 700}}>CHAPTER {num} / 13</div>
@@ -135,14 +138,14 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
         </div>
       </AbsoluteFill>
       {m.recap && (
-        <div style={{position: 'absolute', left: 820, right: 60, top: 640, display: 'flex', justifyContent: 'center', opacity: de, transform: `translateY(${(1 - de) * 30}px)`}}>
+        <div style={{position: 'absolute', left: de > 0 ? 820 : 0, right: de > 0 ? 60 : 0, top: de > 0 ? 640 : 700, display: 'flex', justifyContent: 'center', opacity: recapIn, transform: `translateY(${(1 - recapIn) * 30}px)`}}>
           <div style={{display: 'flex', alignItems: 'center', gap: 16, padding: '14px 26px', borderRadius: 999, background: alpha(C.emerald, 0.12), border: `1.5px solid ${alpha(C.emerald, 0.6)}`, maxWidth: 1000}}>
             <span style={{fontFamily: MONO, fontSize: 20, letterSpacing: 3, color: C.emerald, fontWeight: 800}}>SO FAR</span>
             <span style={{fontFamily: FONT, fontSize: 28, fontWeight: 700, color: C.text}}>{m.recap}</span>
           </div>
         </div>
       )}
-      <div style={{position: 'absolute', left: m.bridge ? 760 : 460, top: m.bridge ? 760 : 820, opacity: m.bridge ? de : 1}}>
+      <div style={{position: 'absolute', left: de > 0 ? 760 : 460, top: de > 0 ? 760 : 820}}>
         <Journey index={index} at={8} />
       </div>
     </AbsoluteFill>
@@ -296,7 +299,8 @@ export const SceneShell: React.FC<{
   const fadeIn = interpolate(frame, [0, 10], [1, 0], CLAMP);
   const fadeOut = interpolate(frame, [duration - 14, duration], [0, 1], CLAMP);
   const words = useMemo(() => timing.modules[index].sentences.flatMap((x) => x.words as W[]), [index]);
-  const punch = host?.stress?.length ? speechAt(words, frame / FPS - LEAD, host.stress).stress : 0;
+  const stressWords = host?.stress ?? STRESS[index] ?? [];
+  const punch = stressWords.length ? speechAt(words, frame / FPS - LEAD, stressWords).stress : 0;
   const cam = {
     x: Math.sin(frame / 97) * 7 + Math.sin(frame / 31) * 1.2,
     y: Math.cos(frame / 131) * 5 + Math.cos(frame / 43) * 1,

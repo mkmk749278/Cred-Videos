@@ -40,6 +40,7 @@ export const POSES = {
   point: {L: DOWN_L, R: {wr: [570, 566], hand: 'point', bend: 'down'}},
   wave: {L: DOWN_L, R: {wr: [506, 420], hand: 'open', rot: -10, bend: 'down'}},
   card: {L: DOWN_L, R: {wr: [474, 566], hand: 'grip', held: 'card', rot: -20, bend: 'down'}},
+  phoneLook: {L: DOWN_L, R: {wr: [420, 590], hand: 'grip', held: 'phone', rot: -8, bend: 'down'}},
   letter: {L: DOWN_L, R: {wr: [470, 570], hand: 'grip', held: 'letter', rot: -16, bend: 'down'}},
   letterThumb: {L: {wr: [124, 612], hand: 'thumb', bend: 'down'}, R: {wr: [470, 570], hand: 'grip', held: 'letter', rot: -16, bend: 'down'}},
 } satisfies Record<string, ArmsPose>;

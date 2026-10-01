@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Composition, continueRender, delayRender, Series, staticFile} from 'remotion';
 import {FPS, HEIGHT, WIDTH, sceneFrames} from './lib/timing';
 import {Intro, INTRO_FRAMES} from './Intro';
+import {ColdOpen, COLD_OPEN_FRAMES} from './ColdOpen';
 import {SCENES} from './scenes';
 import {Test3D} from './three/Test3D';
 import {Thumbnail} from './Thumbnail';
@@ -36,8 +37,8 @@ const WithFonts: React.FC<{children: React.ReactNode}> = ({children}) => {
 export const VideoMaster: React.FC = () => (
   <WithFonts>
     <Series>
-      <Series.Sequence durationInFrames={INTRO_FRAMES}>
-        <Intro />
+      <Series.Sequence durationInFrames={COLD_OPEN_FRAMES}>
+        <ColdOpen />
       </Series.Sequence>
       {SCENES.map((Scene, i) => (
         <Series.Sequence key={i} durationInFrames={sceneFrames(i)}>
@@ -48,7 +49,7 @@ export const VideoMaster: React.FC = () => (
   </WithFonts>
 );
 
-const total = INTRO_FRAMES + SCENES.reduce((acc, _, i) => acc + sceneFrames(i), 0);
+const total = COLD_OPEN_FRAMES + SCENES.reduce((acc, _, i) => acc + sceneFrames(i), 0);
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -59,6 +60,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="CharacterSheet" component={() => <WithFonts><CharacterSheet /></WithFonts>} durationInFrames={90} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="CharacterReel" component={() => <WithFonts><CharacterReel /></WithFonts>} durationInFrames={SITUATIONS.length * REEL_SEG + 10} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="Thumbnail" component={() => <WithFonts><Thumbnail /></WithFonts>} durationInFrames={90} fps={FPS} width={1280} height={720} />
+    <Composition id="ColdOpen" component={() => <WithFonts><ColdOpen /></WithFonts>} durationInFrames={COLD_OPEN_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="Intro" component={() => <WithFonts><Intro /></WithFonts>} durationInFrames={INTRO_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
     {SCENES.map((Scene, i) => (
       <Composition

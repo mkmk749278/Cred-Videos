@@ -4,8 +4,11 @@ import type {HostConfig} from './RaviHost';
  * Ravi's direction per module (index 0..12). Cue strings are exact narration phrases.
  * The bridge window (title card) is added automatically by SceneShell for bridge modules.
  */
-export const HOSTS: Record<number, HostConfig> = {
-  1: {
+// Video 1 ships without the character (user decision, Oct 1). The Module 2 test direction is kept
+// below as an example for future videos; add entries to HOSTS to bring Ravi back.
+export const HOSTS: Record<number, HostConfig> = {};
+
+export const EXAMPLE_HOST_M2: HostConfig = {
     stress: ['crime', 'fear', 'contract', 'civil', 'arrest', 'cheating'],
     beats: [
       {at: 0, pose: 'down', mood: 'neutral'},
@@ -20,5 +23,4 @@ export const HOSTS: Record<number, HostConfig> = {
       {from: 'Fear', to: {phrase: 'Scary, right', offset: 30}, dock: 'right'},
       {from: 'Indian criminal law', to: {phrase: "couldn't pay", offset: 40}, dock: 'right'},
     ],
-  },
-};
+  };

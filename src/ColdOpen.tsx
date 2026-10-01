@@ -66,10 +66,10 @@ export const ColdOpen: React.FC = () => {
       <Sequence from={VO_AT} layout="none">
         <Audio src={staticFile('audio/vo/hook.mp3')} />
       </Sequence>
-      {[0, 14, 28, 42, 56].map((d) => (
-        <Sfx key={d} at={d} name="haptic_buzz" volume={0.35} />
+      {[2, 20, 38].map((d) => (
+        <Sfx key={d} at={d} name="haptic_buzz" volume={0.1} />
       ))}
-      <Sfx at={cMsg} name="warning_pulse" volume={0.35} />
+      <Sfx at={cMsg} name="warning_pulse" volume={0.22} />
       <Sfx at={cStop} name="sub_thud" volume={0.4} />
       <Sfx at={cCase} name="key_click" volume={0.4} />
       <Sfx at={cShow} name="shield_activate" volume={0.3} />

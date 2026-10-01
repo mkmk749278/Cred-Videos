@@ -223,7 +223,7 @@
   },
   {
    "from": 83.02,
-   "to": 100.22,
+   "to": 105.34,
    "kind": "points",
    "color": "cyan",
    "kicker": "It depends on the facts",
@@ -295,7 +295,7 @@
   },
   {
    "from": 38.6,
-   "to": 57.9,
+   "to": 63.02,
    "kind": "points",
    "color": "amber",
    "kicker": "Don't guess",
@@ -870,7 +870,7 @@
   },
   {
    "from": 255.68,
-   "to": 270.08,
+   "to": 275.22,
    "kind": "big",
    "color": "cyan",
    "kicker": "Remember the difference",
@@ -945,7 +945,7 @@
   },
   {
    "from": 42.12,
-   "to": 67.42,
+   "to": 72.54,
    "kind": "big",
    "color": "amber",
    "kicker": "No guarantee",
@@ -1104,7 +1104,7 @@
   },
   {
    "from": 111.72,
-   "to": 153.42,
+   "to": 158.54,
    "kind": "compare",
    "color": "amber",
    "kicker": "Write-off — the confusing word",
@@ -1235,7 +1235,7 @@
   },
   {
    "from": 31.16,
-   "to": 55.16,
+   "to": 60.36,
    "kind": "compare",
    "color": "cyan",
    "kicker": "Decide on facts, not tone",
@@ -1419,7 +1419,7 @@
   },
   {
    "from": 200.6,
-   "to": 220.8,
+   "to": 226.0,
    "kind": "points",
    "color": "emerald",
    "kicker": "Before you sign",
@@ -1638,7 +1638,7 @@
   },
   {
    "from": 156.24,
-   "to": 190.74,
+   "to": 195.92,
    "kind": "points",
    "color": "violet",
    "kicker": "You don't have to carry this alone",

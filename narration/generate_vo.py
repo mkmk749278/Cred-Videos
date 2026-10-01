@@ -35,7 +35,7 @@ SPOKEN = {
     "NEFT": "N E F T", "RTGS": "R T G S", "IP": "I P", "SMA-1": "S M A one", "SMA-2": "S M A two",
     "CIBIL": "sibil", "EMIs": "E M Eyes", "EMI": "E M I", "FD-backed": "F D backed", "SIM": "sim", "YES": "Yes",
     "FIRST": "First", "1872": "eighteen seventy-two", "112": "one one two", "1": "one",
-    "OTS": "O T S", "PNO": "P N O",
+    "OTS": "O T S", "PNO": "P N O", "Lok": "Loke", "Adalat": "Uh-daah-lut",
 }
 
 
@@ -82,6 +82,9 @@ def main():
         np.savez(voices_npz, **packed)
     kokoro = Kokoro(os.path.join(args.models, "model.onnx"), voices_npz)
     voice, speed, lang = script["voice"], script.get("speed", 1.0), "en-us"
+    if ":" in voice:  # blend, e.g. "am_puck:0.7,am_fenrir:0.3"
+        packs = np.load(voices_npz)
+        voice = sum(packs[name] * float(w) for name, w in (part.split(":") for part in voice.split(",")))
 
     timing_path = os.path.join(ROOT, "src/data/timing.json")
     timing = {"modules": []}
@@ -101,7 +104,7 @@ def main():
     if script.get("hook") and (not only or "hook" in only):
         hook = synth(kokoro, {"id": "hook", "vo": [script["hook"]]}, voice, speed, lang)
     os.makedirs(os.path.dirname(timing_path), exist_ok=True)
-    out = {"voice": voice, "modules": out_modules}
+    out = {"voice": script["voice"], "modules": out_modules}
     if hook:
         out["hook"] = hook
     json.dump(out, open(timing_path, "w"), indent=1)

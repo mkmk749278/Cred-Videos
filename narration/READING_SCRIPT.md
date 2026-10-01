@@ -1,6 +1,6 @@
 # Narration Script — Read-Aloud Version
 
-**Credit Card Debt in India — Know Your Rights** · 13 modules · about 19 minutes total
+**Credit Card Debt in India — Know Your Rights** · 13 modules · about 20 minutes total
 
 Talk to **one person** — imagine a friend who is scared and sitting across from you. You're not reading a news report; you're calmly explaining what you know. Warm, steady, confident. Smile slightly while you talk — people can hear it.
 
@@ -172,7 +172,7 @@ In six months, a one-lakh rupee debt can grow to almost one lakh forty thousand.
 
 ## Module 05 — Asset Defense
 
-*File: `m05.wav` · The banker's right of set-off · about 1:16*
+*File: `m05.wav` · The banker's right of set-off · about 1:18*
 
 > *(3 seconds of silence)*
 
@@ -190,7 +190,7 @@ Under Section 171 of the Indian Contract Act, and the rules in most bank agreeme
 
 `⏸`
 
-So here's your first move. Move your salary, your savings, and your family's money to a totally clean bank. A bank where you have no loan, no credit card, and no overdraft. For example, Bank of Baroda.
+So here's your first move. Move your salary, your savings, and your family's money to a totally clean bank. A bank where you have no loan, no credit card, and no overdraft. One that has nothing it can take from you.
 
 `⏸`
 
@@ -316,7 +316,7 @@ Typically after about one hundred and eighty days, banks may write off the accou
 
 ## Module 10 — Lender Profiles
 
-*File: `m10.wav` · Reported collection patterns · about 1:14*
+*File: `m10.wav` · Reported collection patterns · about 1:24*
 
 > *(3 seconds of silence)*
 
@@ -351,6 +351,10 @@ RBL Bank has reportedly given bigger discounts, around twenty to thirty percent,
 `⏸`
 
 And IDFC FIRST Bank mostly works online, and reportedly settles in a clear, step-by-step way after write-off.
+
+`⏸`
+
+We've covered eight big banks here. If your bank isn't on this list, tell me in the comments, and I'll cover it in a future video.
 
 ---
 
@@ -424,7 +428,7 @@ Debt is a difficult chapter, but it's not your whole story. Protect your family 
 
 ## Module 13 — Emergency Action Protocol
 
-*File: `m13.wav` · Your 8-step summary · about 1:20*
+*File: `m13.wav` · Your 8-step summary · about 1:40*
 
 > *(3 seconds of silence)*
 
@@ -470,6 +474,6 @@ And Step Eight: rebuild your credit with an FD-backed secured card, and bring yo
 
 `⏸`
 
-Remember, you are not alone, and you are not a criminal. **Take control today.** The law protects your dignity. And if this helped you, please share it with someone who needs it.
+Remember, you are not alone, and you are not a criminal. **Take control today.** The law protects your dignity. And here's something I haven't told you yet. I'm going through this myself, right now. In the next video, I'll show you my own case: exactly how I'm handling my banks, step by step, with real letters and real replies. So subscribe, and tap the bell, so you don't miss it. And if this helped you, share it with someone who needs it.
 
 ---

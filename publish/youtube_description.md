@@ -20,14 +20,19 @@ CHAPTERS
 6:51 Write to the bank (don't disappear)
 7:58 Recovery agents' scare tricks
 9:32 Stop the endless calls
-10:29 When banks become ready to settle
+10:30 When banks become ready to settle
 11:43 How different banks behave
-12:58 How to settle safely
-14:21 Rebuild your CIBIL score
-15:36 Your 8-step plan
+13:06 How to settle safely
+14:28 Rebuild your CIBIL score
+15:44 Your 8-step plan
 
 IMPORTANT: This video is for awareness only and is not legal or financial advice. Bank practices, settlement ranges and rules vary and may change. Settlement percentages mentioned are commonly reported borrower experiences, not guarantees. Please verify your own situation with a qualified advocate or financial counsellor.
 
 If this helped you, please share it with someone who needs it.
+
+MUSIC
+"Lightless Dawn", "Sincerely", "Inspired" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
 
 #CreditCardDebt #KnowYourRights #DebtFreeIndia #CIBIL #LokAdalat

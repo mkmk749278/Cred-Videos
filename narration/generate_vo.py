@@ -95,6 +95,23 @@ def main():
         if only and mod["id"] not in only:
             out_modules.append(existing[mod["id"]])
             continue
+        out_modules.append(synth(kokoro, mod, voice, speed, lang))
+
+    hook = timing.get("hook")
+    if script.get("hook") and (not only or "hook" in only):
+        hook = synth(kokoro, {"id": "hook", "vo": [script["hook"]]}, voice, speed, lang)
+    os.makedirs(os.path.dirname(timing_path), exist_ok=True)
+    out = {"voice": voice, "modules": out_modules}
+    if hook:
+        out["hook"] = hook
+    json.dump(out, open(timing_path, "w"), indent=1)
+    total = sum(m["duration"] for m in out_modules) + (hook["duration"] if hook else 0)
+    print(f"total narration: {total / 60:.2f} min")
+
+
+def synth(kokoro, mod, voice, speed, lang):
+    """TTS one module (or the hook) -> public/audio/vo/<id>.mp3, returns its timing entry."""
+    if True:
         chunks, sentences, t = [], [], 0.0
         for pi, para in enumerate(mod["vo"]):
             sents = split_sentences(para)
@@ -121,13 +138,8 @@ def main():
         peak = np.max(np.abs(track)) or 1.0
         track = (track / peak * 0.89).astype(np.float32)
         sf.write(os.path.join(ROOT, f"public/audio/vo/{mod['id']}.mp3"), track, SR, format="MP3", subtype="MPEG_LAYER_III")
-        out_modules.append({"id": mod["id"], "duration": round(len(track) / SR, 3), "sentences": sentences})
         print(f"{mod['id']}: {len(track) / SR:6.1f}s, {len(sentences)} sentences", flush=True)
-
-    os.makedirs(os.path.dirname(timing_path), exist_ok=True)
-    json.dump({"voice": voice, "modules": out_modules}, open(timing_path, "w"), indent=1)
-    total = sum(m["duration"] for m in out_modules)
-    print(f"total narration: {total / 60:.2f} min")
+        return {"id": mod["id"], "duration": round(len(track) / SR, 3), "sentences": sentences}
 
 
 if __name__ == "__main__":

@@ -45,7 +45,7 @@ export const Scene05: React.FC = () => {
   const cNoLoan = cueFrame(I, 'no loan');
   const cNoCard = cueFrame(I, 'no credit card');
   const cNoOd = cueFrame(I, 'no overdraft');
-  const cBob = cueFrame(I, 'For example, Bank of Baroda');
+  const cNothing = cueFrame(I, 'nothing it can take');
 
   const sh = shake(frame, cSweep + 10, 12);
 
@@ -92,7 +92,7 @@ export const Scene05: React.FC = () => {
           <div style={{display: 'inline-block', padding: '8px 18px', borderRadius: 12, background: alpha(C.gold, 0.2), border: `2px solid ${C.gold}`, fontFamily: MONO, fontWeight: 800, color: C.gold, fontSize: 22}}>SALARY ₹45,000</div>
         </div>
         <VaultTitle x={640} out={cKeep + 10} at={cVaults} title="Bank A · Creditor" sub="Unpaid card + savings account" />
-        <VaultTitle x={1290} out={cKeep + 10} at={cVaults + 12} title="Clean Anchor Bank" sub="e.g. Bank of Baroda · zero loans/cards" />
+        <VaultTitle x={1290} out={cKeep + 10} at={cVaults + 12} title="Clean Anchor Bank" sub="Zero loans · zero cards · zero overdraft" />
         <div style={{position: 'absolute', left: 1120, top: 190, opacity: vis(frame, cImagine, cMove + 20)}}>
           <KLine at={cImagine} size={36} color="#FCA5A5">Salary day → ₹0.00 in your account</KLine>
         </div>
@@ -106,11 +106,11 @@ export const Scene05: React.FC = () => {
               <Tag color={C.cyan} style={{fontSize: 22}}>✓ {x.t}</Tag>
             </Reveal>
           ))}
-          <Reveal at={cBob} from="right" distance={40}>
-            <Tag color={C.gold} style={{fontSize: 22}}>e.g. Bank of Baroda</Tag>
+          <Reveal at={cNothing} from="right" distance={40}>
+            <Tag color={C.gold} style={{fontSize: 22}}>Nothing to take from you</Tag>
           </Reveal>
         </div>
-        {[cNoLoan, cNoCard, cNoOd, cBob].map((a, i) => (
+        {[cNoLoan, cNoCard, cNoOd, cNothing].map((a, i) => (
           <Sfx key={i} at={a} name="tactile_click" volume={0.3} />
         ))}
         <div style={{position: 'absolute', left: 1120, top: 110, opacity: vis(frame, cSweep + 40, cMove + 20)}}>

@@ -40,6 +40,8 @@ def main():
             p = os.path.join(tmp, f'{i:04d}.jpg')
             subprocess.run([os.path.join(FF_DIR, 'ffmpeg'), '-v', 'error', '-ss', f'{t:.2f}', '-i', src, '-frames:v', '1', '-s', f'{tw}x{th}', '-y', p],
                            env=ENV, check=True)
+            if not os.path.exists(p):  # timestamp past the last frame
+                continue
             im = Image.open(p).convert('RGB')
             ImageDraw.Draw(im).text((6, 4), f'{t:6.1f}s', fill=(255, 255, 0))
             frames.append(im)

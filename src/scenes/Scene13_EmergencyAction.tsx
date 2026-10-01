@@ -91,7 +91,7 @@ export const Scene13: React.FC = () => {
             background: `radial-gradient(ellipse 60% 50% at 50% ${90 - sun * 25}%, ${alpha('#fbbf24', 0.55)}, ${alpha('#f97316', 0.25)} 40%, transparent 70%), linear-gradient(180deg, #0c1a33, #3b2410 80%)`,
           }}
         />
-        <div style={{position: 'absolute', left: 0, right: 0, top: 480, display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: 10, opacity: sun}}>
+        <div style={{position: 'absolute', left: 0, right: 0, top: 420, display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: 10, opacity: sun}}>
           <Person size={260} color="#0b1220" />
           <Person size={230} color="#0b1220" />
           <Person size={150} color="#0b1220" />
@@ -109,7 +109,7 @@ export const Scene13: React.FC = () => {
             <div style={{fontFamily: MONO, fontSize: 34, letterSpacing: 10, marginTop: 24, color: '#FDE68A', fontWeight: 700}}>TAKE CONTROL TODAY</div>
           </Reveal>
         </div>
-        <div style={{position: 'absolute', left: 0, right: 0, top: 720, textAlign: 'center', fontSize: 20, color: alpha('#FFFFFF', 0.6), opacity: vis(frame, cFinal + 90)}}>
+        <div style={{position: 'absolute', left: 0, right: 0, top: 730, textAlign: 'center', fontSize: 20, color: alpha('#FFFFFF', 0.7), textShadow: '0 1px 6px rgba(0,0,0,0.8)', opacity: vis(frame, cFinal + 90)}}>
           Awareness only · not legal or financial advice · verify with a qualified advocate
         </div>
         <Sfx at={cFinal + 30} name="title_hit" volume={0.45} />

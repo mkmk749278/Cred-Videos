@@ -4,6 +4,10 @@ import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, spr} from '../lib/anim';
 import {contentStart, FPS, LEAD, script, timing, toFrame, Word} from '../lib/timing';
 import {Sfx} from './primitives';
+import {HostConfig, RaviHost} from '../character/RaviHost';
+import {HOSTS} from '../character/hosts';
+import {speechAt, W} from '../character/lipsync';
+import {sceneFrames} from '../lib/timing';
 
 export type Music = 'tension' | 'analytic' | 'hope';
 
@@ -110,48 +114,37 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const m = script.modules[index];
-  const end = contentStart(index);
+  const end = Math.max(contentStart(index), 42);
   if (frame > end + 4) return null;
-  const p = spr(frame, fps, 2);
-  const out = interpolate(frame, [end - 12, end], [0, 1], CLAMP);
-  const line = interpolate(frame, [6, 30], [0, 1], CLAMP);
-  // while the bridge line is spoken, the title eases up and the recap appears
-  const lead = Math.round(LEAD * FPS);
-  const phase = m.bridge ? interpolate(frame, [lead - 8, lead + 14], [0, 1], CLAMP) : 0;
+  const slam = spr(frame, fps, 0, {damping: 14, stiffness: 220, mass: 0.6});
+  const out = interpolate(frame, [end - 10, end], [0, 1], CLAMP);
+  const line = interpolate(frame, [4, 20], [0, 1], CLAMP);
+  // bridge modules: after the slam the title docks to the right while Ravi delivers the bridge line on the left
+  const dock = m.bridge ? interpolate(frame, [24, 40], [0, 1], CLAMP) : 0;
+  const de = dock * dock * (3 - 2 * dock);
   const num = String(m.number).padStart(2, '0');
   return (
-    <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: 1 - out, transform: `scale(${1 + out * 0.08})`, filter: out > 0 ? `blur(${out * 12}px)` : undefined}}>
-      <div
-        style={{
-          position: 'absolute',
-          fontFamily: FONT,
-          fontWeight: 900,
-          fontSize: 520,
-          color: 'transparent',
-          WebkitTextStroke: `3px ${alpha(C.cyan, 0.16)}`,
-          transform: `translateY(${(1 - p) * 60 - phase * 60}px)`,
-          letterSpacing: -10,
-        }}
-      >
-        {num}
-      </div>
-      <div style={{textAlign: 'center', transform: `translateY(${(1 - p) * 40 - phase * 90}px) scale(${1 - phase * 0.12})`, opacity: p}}>
-        <div style={{fontFamily: MONO, color: C.cyan, fontSize: 28, letterSpacing: 10, fontWeight: 700}}>MODULE {num} / 13</div>
-        <div style={{fontFamily: FONT, color: C.text, fontSize: 116, fontWeight: 900, letterSpacing: -2, marginTop: 14, textShadow: `0 0 40px ${alpha(C.cyan, 0.3)}`}}>{m.title}</div>
-        <div style={{height: 4, width: 520 * line, margin: '18px auto', background: `linear-gradient(90deg, transparent, ${C.cyan}, transparent)`}} />
-        <div style={{fontFamily: FONT, color: C.muted, fontSize: 38, fontWeight: 500, letterSpacing: 1}}>{m.kicker}</div>
-      </div>
-      <div style={{position: 'absolute', left: 0, right: 0, top: 780}}>
-        <Journey index={index} at={10} />
-      </div>
+    <AbsoluteFill style={{opacity: 1 - out, filter: out > 0 ? `blur(${out * 10}px)` : undefined}}>
+      <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', transform: `translate(${de * 330}px, ${-de * 70}px) scale(${1 - de * 0.24})`}}>
+        <div style={{position: 'absolute', fontFamily: FONT, fontWeight: 900, fontSize: 520, color: 'transparent', WebkitTextStroke: `3px ${alpha(C.cyan, 0.16)}`, letterSpacing: -10, transform: `scale(${1.5 - 0.5 * slam})`, opacity: slam}}>{num}</div>
+        <div style={{textAlign: 'center', transform: `scale(${1.25 - 0.25 * slam})`, opacity: Math.min(1, slam * 1.4), filter: slam < 0.9 ? `blur(${(1 - slam) * 10}px)` : undefined}}>
+          <div style={{fontFamily: MONO, color: C.cyan, fontSize: 28, letterSpacing: 10, fontWeight: 700}}>CHAPTER {num} / 13</div>
+          <div style={{fontFamily: FONT, color: C.text, fontSize: 116, fontWeight: 900, letterSpacing: -2, marginTop: 14, textShadow: `0 0 40px ${alpha(C.cyan, 0.3)}`, whiteSpace: 'nowrap'}}>{m.title}</div>
+          <div style={{height: 4, width: 520 * line, margin: '18px auto', background: `linear-gradient(90deg, transparent, ${C.cyan}, transparent)`}} />
+          <div style={{fontFamily: FONT, color: C.muted, fontSize: 38, fontWeight: 500, letterSpacing: 1}}>{m.kicker}</div>
+        </div>
+      </AbsoluteFill>
       {m.recap && (
-        <div style={{position: 'absolute', left: 0, right: 0, top: 660, display: 'flex', justifyContent: 'center', opacity: phase, transform: `translateY(${(1 - phase) * 30}px)`}}>
-          <div style={{display: 'flex', alignItems: 'center', gap: 16, padding: '14px 28px', borderRadius: 999, background: alpha(C.emerald, 0.12), border: `1.5px solid ${alpha(C.emerald, 0.6)}`}}>
+        <div style={{position: 'absolute', left: 820, right: 60, top: 640, display: 'flex', justifyContent: 'center', opacity: de, transform: `translateY(${(1 - de) * 30}px)`}}>
+          <div style={{display: 'flex', alignItems: 'center', gap: 16, padding: '14px 26px', borderRadius: 999, background: alpha(C.emerald, 0.12), border: `1.5px solid ${alpha(C.emerald, 0.6)}`, maxWidth: 1000}}>
             <span style={{fontFamily: MONO, fontSize: 20, letterSpacing: 3, color: C.emerald, fontWeight: 800}}>SO FAR</span>
-            <span style={{fontFamily: FONT, fontSize: 32, fontWeight: 700, color: C.text}}>{m.recap}</span>
+            <span style={{fontFamily: FONT, fontSize: 28, fontWeight: 700, color: C.text}}>{m.recap}</span>
           </div>
         </div>
       )}
+      <div style={{position: 'absolute', left: m.bridge ? 760 : 460, top: m.bridge ? 760 : 820, opacity: m.bridge ? de : 1}}>
+        <Journey index={index} at={8} />
+      </div>
     </AbsoluteFill>
   );
 };
@@ -255,6 +248,15 @@ const Subtitles: React.FC<{index: number}> = ({index}) => {
  * Music bed level with ducking: sits under the voice while a sentence is spoken and rises a little in
  * pauses and on the title card. Ramps over ~0.3 s so the dips are not audible as pumping.
  */
+export const MUSIC_BY_MODULE: Music[] = ['tension', 'tension', 'analytic', 'analytic', 'analytic', 'analytic', 'tension', 'tension', 'analytic', 'analytic', 'hope', 'hope', 'hope'];
+const TRACK_FRAMES: Record<Music, number> = {tension: 11300, analytic: 11300, hope: 8600};
+/** where in its music track a module starts, so consecutive modules continue the track instead of restarting */
+const musicOffset = (index: number) => {
+  const bed = MUSIC_BY_MODULE[index];
+  let f = 0;
+  for (let k = 0; k < index; k++) if (MUSIC_BY_MODULE[k] === bed) f += sceneFrames(k);
+  return f % (TRACK_FRAMES[bed] - 600);
+};
 const MUSIC_UNDER_VOICE = 0.075;
 const MUSIC_OPEN = 0.16;
 const duckCache = new Map<number, [number, number][]>();
@@ -285,23 +287,32 @@ export const SceneShell: React.FC<{
   children: React.ReactNode;
   /** extra transform applied to the stage (e.g. impact shake) */
   stageStyle?: React.CSSProperties;
-}> = ({index, duration, music, tint = C.cyan, children, stageStyle}) => {
+  /** Ravi as on-screen narrator for this module */
+  host?: HostConfig;
+}> = ({index, duration, music, tint = C.cyan, children, stageStyle, host: hostProp}) => {
+  const host = hostProp ?? HOSTS[index];
   const frame = useCurrentFrame();
   const m = timing.modules[index];
   const fadeIn = interpolate(frame, [0, 10], [1, 0], CLAMP);
   const fadeOut = interpolate(frame, [duration - 14, duration], [0, 1], CLAMP);
+  const words = useMemo(() => timing.modules[index].sentences.flatMap((x) => x.words as W[]), [index]);
+  const punch = host?.stress?.length ? speechAt(words, frame / FPS - LEAD, host.stress).stress : 0;
   const cam = {
     x: Math.sin(frame / 97) * 7 + Math.sin(frame / 31) * 1.2,
     y: Math.cos(frame / 131) * 5 + Math.cos(frame / 43) * 1,
-    s: 1 + 0.012 * Math.sin(frame / 260),
+    s: 1 + 0.03 * interpolate(frame, [0, duration], [0, 1], CLAMP) + 0.035 * punch,
   };
+  const hostCfg: HostConfig | undefined = host
+    ? {...host, windows: script.modules[index].bridge ? [{from: 26, to: contentStart(index) - 2, dock: 'stage'}, ...host.windows] : host.windows}
+    : undefined;
   const cs = contentStart(index);
   const stageIn = interpolate(frame, [cs - 10, cs + 8], [0, 1], CLAMP);
   return (
     <AbsoluteFill style={{fontFamily: FONT, color: C.text, overflow: 'hidden'}}>
-      <Backdrop tint={tint} beat={music === 'analytic' ? 15 : music === 'tension' ? 60 : undefined} phase={music === 'analytic' ? 4 : 15} />
+      <Backdrop tint={tint} />
       <Audio
         src={staticFile(`audio/music/${music}.mp3`)}
+        startFrom={musicOffset(index)}
         loop
         volume={(f) => musicLevel(index, f) * interpolate(f, [0, 20, duration - 24, duration], [0, 1, 1, 0], CLAMP)}
       />
@@ -326,6 +337,7 @@ export const SceneShell: React.FC<{
       </div>
       <Hud index={index} duration={duration} />
       <TitleCard index={index} />
+      {hostCfg && <RaviHost index={index} config={hostCfg} />}
       <Subtitles index={index} />
       <AbsoluteFill style={{background: '#000', opacity: Math.max(fadeIn, fadeOut), pointerEvents: 'none'}} />
     </AbsoluteFill>

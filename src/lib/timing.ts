@@ -5,7 +5,7 @@ export const FPS = 30;
 export const WIDTH = 1920;
 export const HEIGHT = 1080;
 /** seconds of title card before narration starts in every scene */
-export const LEAD = 2.2;
+export const LEAD = 1.0;
 /** seconds after narration ends before the scene cuts */
 export const TAIL = 1.4;
 

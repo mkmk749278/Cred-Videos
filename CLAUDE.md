@@ -11,7 +11,10 @@ Read `docs/PLAYBOOK.md` before starting a new video or a big change; `docs/REVIE
 - **Unconfirmed claims** are phrased with "may / typically / reportedly / usually". Bank settlement figures are "reported borrower experiences, not guarantees". Keep the disclaimer.
 - **Numbers on screen must match the voice** (e.g. M4 caught: voice said ₹1.65 L in 6 months, screen math gave ₹1,39,176 → fixed both to agree).
 - **Work module by module**, review each, stitch only at the end. Share each approved module as it lands.
-- **Deliver big files via Gofile** (`scripts/upload_gofile.sh`); chat upload limit is 30 MB. Google Drive is not connected.
+- **Deliver everything to the user's Gofile account** (one place, across sessions). Token: ask the user / env `GOFILE_TOKEN` — **never commit it**. Upload with `GOFILE_TOKEN=… scripts/upload_gofile.sh <file> <folderId>` and check the md5 line.
+  Project folder `01 Credit Card Debt - Know Your Rights` (share link https://gofile.io/d/owUINyYh): `v1 baseline` 18158828-daf8-45fd-8600-4a9d31092f6f · `modules (approved)` 10c58350-08e7-4e1d-a04b-b93fecec7402 · `character tests` 044e632c-2e0e-4928-898c-5a2a3eb07b9e · `v2 final` 582a231d-af87-4889-9e98-bc12cc60c750. New videos: create a sibling folder `02 …` under the account root.
+  Chat upload limit is 30 MB. Google Drive is not connected.
+- **The user delegates creative calls:** pick music, visuals and fixes yourself, review yourself, deliver the best. Ask only real decisions (scope, story, personal info).
 - Commit + push after every meaningful change (a stop hook enforces a clean tree). Never put model names in commits/code.
 
 ## Environment facts (cloud container)

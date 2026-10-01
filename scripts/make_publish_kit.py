@@ -105,6 +105,11 @@ IMPORTANT: This video is for awareness only and is not legal or financial advice
 
 If this helped you, please share it with someone who needs it.
 
+MUSIC
+"Lightless Dawn", "Sincerely", "Inspired" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
 #CreditCardDebt #KnowYourRights #DebtFreeIndia #CIBIL #LokAdalat
 """
     open(os.path.join(out, 'youtube_description.md'), 'w').write(desc)

@@ -13,12 +13,19 @@ export type SfxName =
   | 'vault_open' | 'card_slide' | 'grid_lock' | 'gavel_strike' | 'payment_success' | 'gauge_drop' | 'slice'
   | 'card_insert' | 'triumph_rise' | 'warning_pulse' | 'notification' | 'title_hit';
 
+/** Lets a scene silence its own SFX in frame ranges (Telugu edition: while an insert panel covers the stage). */
+export const SfxMute = React.createContext<((frame: number) => boolean) | null>(null);
+
 /** One-shot sound effect, hard-locked to a frame. */
-export const Sfx: React.FC<{at: number; name: SfxName; volume?: number}> = ({at, name, volume = 0.5}) => (
-  <Sequence from={Math.round(at)} layout="none" name={`sfx:${name}`}>
-    <Audio src={staticFile(`audio/sfx/${name}.mp3`)} volume={volume} />
-  </Sequence>
-);
+export const Sfx: React.FC<{at: number; name: SfxName; volume?: number}> = ({at, name, volume = 0.5}) => {
+  const muted = React.useContext(SfxMute);
+  if (muted && muted(Math.round(at))) return null;
+  return (
+    <Sequence from={Math.round(at)} layout="none" name={`sfx:${name}`}>
+      <Audio src={staticFile(`audio/sfx/${name}.mp3`)} volume={volume} />
+    </Sequence>
+  );
+};
 
 /* ------------------------------------------------------------------ layout */
 

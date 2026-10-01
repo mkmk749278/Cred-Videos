@@ -126,7 +126,7 @@ def main():
         if mid not in mp:
             raise SystemExit(f"map.json has no entry for {mid}")
         cfg = mp[mid]
-        a, b = cfg["start"] - PAD_IN, cfg["end"] + PAD_OUT
+        a, b = max(0.0, cfg["start"] - PAD_IN), cfg["end"] + PAD_OUT
         seg = full[int(a * SR): int(b * SR)]
         spans = speech_spans(seg)
         seg, remap = shorten_pauses(seg, spans)

@@ -67,7 +67,7 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
   const header = (
     <div style={{textAlign: ins.kind === 'big' ? 'center' : 'left'}}>
       {ins.kicker && <Kicker text={ins.kicker} color={color} />}
-      <div style={{fontSize: ins.kind === 'big' ? 84 : 56, fontWeight: 850, lineHeight: 1.1, marginTop: 12, letterSpacing: -1}}>{ins.title}</div>
+      <div style={{fontSize: ins.kind === 'big' ? 72 : 54, fontWeight: 850, lineHeight: 1.1, marginTop: 12, letterSpacing: -1}}>{ins.title}</div>
       <TeLine text={ins.te} size={ins.kind === 'big' ? 40 : 32} />
       {ins.sub && <div style={{fontSize: 30, color: C.muted, marginTop: 14, lineHeight: 1.35}}>{ins.sub}</div>}
     </div>
@@ -81,7 +81,7 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
           <Reveal key={i} at={f(it.at)} from="left" distance={90}>
             <div style={{display: 'flex', alignItems: 'center', gap: 22}}>
               <div style={{width: 54, height: 54, borderRadius: 16, background: alpha(toneColor(it.tone), 0.16), border: `2px solid ${toneColor(it.tone)}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: MONO, fontWeight: 800, fontSize: 24, color: toneColor(it.tone), flexShrink: 0}}>
-                {it.tone === 'good' ? '✓' : it.tone === 'bad' ? '✕' : it.tone === 'warn' ? '!' : String(i + 1).padStart(2, '0')}
+                {it.tone === 'good' ? '✓' : it.tone === 'bad' ? '✕' : it.tone === 'warn' ? '!' : items.every((x) => !x.tone || x.tone === 'info') ? String(i + 1).padStart(2, '0') : '›'}
               </div>
               <div>
                 <div style={{fontSize: 36, fontWeight: 750, lineHeight: 1.2}}>{it.text}</div>
@@ -159,23 +159,43 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
     ) : null;
   }
 
+  const wide = ins.kind === 'compare' || ins.kind === 'steps';
+  const life = interpolate(frame, [a, b], [0, 1], CLAMP);
   return (
     <div
       style={{
         position: 'absolute',
-        left: 150,
-        right: 150,
-        top: 150,
-        bottom: 230,
+        left: 0,
+        right: 0,
+        top: 130,
+        bottom: 210,
         display: 'flex',
-        flexDirection: 'column',
+        alignItems: 'center',
         justifyContent: 'center',
         opacity: Math.min(1, pin) * (1 - out),
         transform: `translateY(${(1 - pin) * 50 + out * -30}px) scale(${0.97 + 0.03 * pin})`,
       }}
     >
-      {header}
-      {body}
+      <div
+        style={{
+          position: 'relative',
+          width: wide ? 1640 : 1360,
+          padding: '44px 56px 48px',
+          borderRadius: 32,
+          background: 'linear-gradient(150deg, rgba(15, 23, 42, 0.78), rgba(8, 12, 24, 0.66))',
+          border: `1.5px solid ${alpha(color, 0.35)}`,
+          boxShadow: `0 40px 120px rgba(0,0,0,0.55), 0 0 60px ${alpha(color, 0.12)}, inset 0 1px 0 rgba(255,255,255,0.07)`,
+          overflow: 'hidden',
+        }}
+      >
+        {/* accent spine + soft glow in the corner */}
+        <div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: 6, background: `linear-gradient(180deg, ${color}, ${alpha(color, 0.1)})`}} />
+        <div style={{position: 'absolute', right: -160, top: -160, width: 420, height: 420, borderRadius: '50%', background: `radial-gradient(circle, ${alpha(color, 0.16)}, transparent 70%)`}} />
+        {/* time-left bar */}
+        <div style={{position: 'absolute', left: 6, bottom: 0, height: 4, width: `${(1 - life) * 100}%`, background: alpha(color, 0.55)}} />
+        {header}
+        {body}
+      </div>
       <Sfx at={a - FADE} name="air_whoosh" volume={0.16} />
       {items.map((it, i) => (
         <Sfx key={i} at={f(it.at)} name="node_pop" volume={0.18} />

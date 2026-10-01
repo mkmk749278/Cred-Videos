@@ -5,7 +5,7 @@ import {CLAMP, rnd, spr} from '../lib/anim';
 import {contentStart, FPS, LEAD, script, SubLine, timing, toFrame, Word} from '../lib/timing';
 import {LANG, VO_DIR} from '../lib/lang';
 import {insertLevel, TeluguInserts} from './TeluguInserts';
-import {Sfx} from './primitives';
+import {Sfx, SfxMute} from './primitives';
 import {HostConfig, RaviHost} from '../character/RaviHost';
 import {HOSTS} from '../character/hosts';
 import {speechAt, W} from '../character/lipsync';
@@ -341,6 +341,16 @@ const musicLevel = (index: number, f: number) => {
   return MUSIC_UNDER_VOICE + (MUSIC_OPEN - MUSIC_UNDER_VOICE) * open;
 };
 
+const muteCache = new Map<number, (f: number) => boolean>();
+const muteFor = (index: number) => {
+  let fn = muteCache.get(index);
+  if (!fn) {
+    fn = (f: number) => insertLevel(index, f) > 0.3;
+    muteCache.set(index, fn);
+  }
+  return fn;
+};
+
 export const SceneShell: React.FC<{
   index: number;
   duration: number;
@@ -398,7 +408,7 @@ export const SceneShell: React.FC<{
           ...stageStyle,
         }}
       >
-        {children}
+        <SfxMute.Provider value={LANG === 'te' ? muteFor(index) : null}>{children}</SfxMute.Provider>
       </div>
       {LANG === 'te' && <TeluguInserts index={index} />}
       <Hud index={index} duration={duration} />

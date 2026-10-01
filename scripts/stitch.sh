@@ -5,7 +5,7 @@ set -eu
 cd "$(dirname "$0")/.."
 FFMPEG=node_modules/@remotion/compositor-linux-x64-gnu/ffmpeg
 export LD_LIBRARY_PATH="$(dirname "$FFMPEG"):${LD_LIBRARY_PATH:-}"
-ORDER=(Intro Scene01 Scene02 Scene03 Scene04 Scene05 Scene06 Scene07 Scene08 Scene09 Scene10 Scene11 Scene12 Scene13)
+ORDER=(ColdOpen Scene01 Scene02 Scene03 Scene04 Scene05 Scene06 Scene07 Scene08 Scene09 Scene10 Scene11 Scene12 Scene13)
 LIST=out/chunks/list.txt
 : > "$LIST"
 for id in "${ORDER[@]}"; do

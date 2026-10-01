@@ -9,9 +9,10 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FPS = 30
-LEAD = 2.2
+LEAD = 1.0
 TAIL = 1.4
-INTRO_FRAMES = 210
+VO_AT = 10  # cold open: frames before the hook VO
+TITLE_FRAMES = 84
 MAX_CHARS = 84  # ~2 caption lines
 
 # Viewer-friendly chapter names (the in-video module titles are shorter labels)
@@ -31,7 +32,10 @@ CHAPTERS = {
     'm13': 'Your 8-step plan',
 }
 
-timing = json.load(open(os.path.join(ROOT, 'src/data/timing.json')))['modules']
+_t = json.load(open(os.path.join(ROOT, 'src/data/timing.json')))
+timing = _t['modules']
+hook = _t.get('hook')
+INTRO_FRAMES = (VO_AT + round(hook['duration'] * FPS) + 14 + TITLE_FRAMES) if hook else 210
 script = json.load(open(os.path.join(ROOT, 'narration/script.json')))
 
 
@@ -71,6 +75,13 @@ def main():
 
     # captions
     lines, n = [], 1
+    if hook:
+        for sn in hook['sentences']:
+            for ch in caption_chunks(sn['words']):
+                a = VO_AT / FPS + ch[0]['s']
+                b = VO_AT / FPS + ch[-1]['e'] + 0.25
+                lines += [str(n), f'{ts(a)} --> {ts(b)}', ' '.join(x['w'] for x in ch), '']
+                n += 1
     for m, st in zip(timing, starts):
         for s in m['sentences']:
             for ch in caption_chunks(s['words']):

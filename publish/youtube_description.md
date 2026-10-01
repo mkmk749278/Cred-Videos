@@ -12,19 +12,19 @@ In this video:
 
 CHAPTERS
 0:00 Introduction
-0:07 Debt is not a crime
-1:38 Can they arrest you? What the law says
-3:11 Many cards, many banks: will they sue together?
-4:21 Why your balance keeps growing
-5:33 Protect your salary first
-6:38 Write to the bank (don't disappear)
-7:42 Recovery agents' scare tricks
-9:12 Stop the endless calls
-10:08 When banks become ready to settle
-11:19 How different banks behave
-12:41 How to settle safely
+0:19 Debt is not a crime
+1:50 Can they arrest you? What the law says
+3:21 Many cards, many banks: will they sue together?
+4:31 Why your balance keeps growing
+5:41 Protect your salary first
+6:44 Write to the bank (don't disappear)
+7:48 Recovery agents' scare tricks
+9:17 Stop the endless calls
+10:11 When banks become ready to settle
+11:21 How different banks behave
+12:42 How to settle safely
 14:02 Rebuild your CIBIL score
-15:16 Your 8-step plan
+15:14 Your 8-step plan
 
 IMPORTANT: This video is for awareness only and is not legal or financial advice. Bank practices, settlement ranges and rules vary and may change. Settlement percentages mentioned are commonly reported borrower experiences, not guarantees. Please verify your own situation with a qualified advocate or financial counsellor.
 

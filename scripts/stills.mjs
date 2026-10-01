@@ -15,7 +15,7 @@ const frames = framesArg.startsWith('auto:')
 fs.mkdirSync(outDir, {recursive: true});
 for (const frame of frames) {
   const output = path.join(outDir, `${cid}_${String(frame).padStart(5, '0')}.png`);
-  await renderStill({composition, serveUrl, output, frame, browserExecutable, scale: 0.5, chromiumOptions: {gl: 'swangle'}});
+  await renderStill({composition, serveUrl, output, frame, browserExecutable, scale: Number(process.env.SCALE || 0.5), chromiumOptions: {gl: 'swangle'}});
   console.log(output);
 }
 }

@@ -414,7 +414,7 @@ export const SceneShell: React.FC<{
         }}
       >
         <SfxMute.Provider value={LANG === 'te' ? muteFor(index) : null}>
-          <StageHidden.Provider value={ins > 0.995}>{children}</StageHidden.Provider>
+          <StageHidden.Provider value={ins > 0.995 || stageIn < 0.005}>{children}</StageHidden.Provider>
         </SfxMute.Provider>
       </div>
       {LANG === 'te' && <TeluguInserts index={index} />}

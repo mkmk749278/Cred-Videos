@@ -4,6 +4,7 @@ import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, spr} from '../lib/anim';
 import {contentStart, FPS, LEAD, script, SubLine, timing, toFrame, Word} from '../lib/timing';
 import {LANG, VO_DIR} from '../lib/lang';
+import {insertLevel, TeluguInserts} from './TeluguInserts';
 import {Sfx} from './primitives';
 import {HostConfig, RaviHost} from '../character/RaviHost';
 import {HOSTS} from '../character/hosts';
@@ -366,6 +367,7 @@ export const SceneShell: React.FC<{
     : undefined;
   const cs = contentStart(index);
   const stageIn = interpolate(frame, [cs - 10, cs + 8], [0, 1], CLAMP);
+  const ins = LANG === 'te' ? insertLevel(index, frame) : 0;
   return (
     <AbsoluteFill style={{fontFamily: FONT, color: C.text, overflow: 'hidden'}}>
       <Backdrop tint={tint} />
@@ -387,13 +389,15 @@ export const SceneShell: React.FC<{
           right: 0,
           top: 110,
           height: 770,
-          opacity: stageIn,
+          opacity: stageIn * (1 - 0.9 * ins),
+          filter: ins > 0.01 ? `blur(${ins * 10}px)` : undefined,
           transform: `translate(${cam.x}px, ${cam.y}px) scale(${cam.s})`,
           ...stageStyle,
         }}
       >
         {children}
       </div>
+      {LANG === 'te' && <TeluguInserts index={index} />}
       <Hud index={index} duration={duration} />
       <TitleCard index={index} />
       {hostCfg && <RaviHost index={index} config={hostCfg} />}

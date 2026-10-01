@@ -58,3 +58,5 @@ scripts/upload_gofile.sh <file>                                # public download
 4. Anything moving (a figure walking, a banner) must be checked against every panel it crosses.
 5. Edits to `src/` while a render queue runs are picked up when the **next** module bundles — keep the tree compiling at all times.
 6. Chat file limit 30 MB → re-encode a preview (`-crf 24`) or use Gofile.
+7. **Always verify true peak after mastering.** ffmpeg `loudnorm` linear mode does not limit (v1 came out at +3.6 dBTP). `scripts/master_audio.py` now limits in Python and checks 4×-oversampled true peak ≤ −1.5 dBTP.
+8. pedalboard `Limiter` adds make-up gain — re-normalise after it.

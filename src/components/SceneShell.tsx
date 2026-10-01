@@ -127,6 +127,7 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
   // bridge modules: after the slam the title docks to the right while Ravi delivers the bridge line on the left
   const dock = m.bridge && HOSTS[index] ? interpolate(frame, [24, 40], [0, 1], CLAMP) : 0;
   // without a host the recap sits centred under the title once the bridge line starts
+  const recap = LANG === 'te' ? (m as {recap_te?: string}).recap_te ?? m.recap : m.recap;
   const recapIn = m.bridge ? interpolate(frame, [24, 40], [0, 1], CLAMP) : 0;
   const de = dock * dock * (3 - 2 * dock);
   const num = String(m.number).padStart(2, '0');
@@ -138,14 +139,14 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
           <div style={{fontFamily: MONO, color: C.cyan, fontSize: 28, letterSpacing: 10, fontWeight: 700}}>CHAPTER {num} / 13</div>
           <div style={{fontFamily: FONT, color: C.text, fontSize: 116, fontWeight: 900, letterSpacing: -2, marginTop: 14, textShadow: `0 0 40px ${alpha(C.cyan, 0.3)}`, whiteSpace: 'nowrap'}}>{m.title}</div>
           <div style={{height: 4, width: 520 * line, margin: '18px auto', background: `linear-gradient(90deg, transparent, ${C.cyan}, transparent)`}} />
-          <div style={{fontFamily: FONT, color: C.muted, fontSize: 38, fontWeight: 500, letterSpacing: 1}}>{m.kicker}</div>
+          <div style={{fontFamily: FONT, color: C.muted, fontSize: 38, fontWeight: 500, letterSpacing: 1}}>{kickerOf(m)}</div>
         </div>
       </AbsoluteFill>
-      {m.recap && (
+      {recap && (
         <div style={{position: 'absolute', left: de > 0 ? 820 : 0, right: de > 0 ? 60 : 0, top: de > 0 ? 640 : 700, display: 'flex', justifyContent: 'center', opacity: recapIn, transform: `translateY(${(1 - recapIn) * 30}px)`}}>
           <div style={{display: 'flex', alignItems: 'center', gap: 16, padding: '14px 26px', borderRadius: 999, background: alpha(C.emerald, 0.12), border: `1.5px solid ${alpha(C.emerald, 0.6)}`, maxWidth: 1700, whiteSpace: 'nowrap'}}>
             <span style={{fontFamily: MONO, fontSize: 20, letterSpacing: 3, color: C.emerald, fontWeight: 800}}>SO FAR</span>
-            <span style={{fontFamily: FONT, fontSize: 28, fontWeight: 700, color: C.text}}>{m.recap}</span>
+            <span style={{fontFamily: FONT, fontSize: 28, fontWeight: 700, color: C.text}}>{recap}</span>
           </div>
         </div>
       )}
@@ -169,7 +170,7 @@ const Hud: React.FC<{index: number; duration: number}> = ({index, duration}) => 
           {String(m.number).padStart(2, '0')}
         </div>
         <div style={{fontSize: 26, fontWeight: 800, color: C.text, letterSpacing: 0.5}}>{m.title}</div>
-        <div style={{fontSize: 22, color: C.muted}}>· {m.kicker}</div>
+        <div style={{fontSize: 22, color: C.muted}}>· {kickerOf(m)}</div>
       </div>
       <div style={{position: 'absolute', right: 64, top: 30, textAlign: 'right'}}>
         <div style={{fontFamily: MONO, fontSize: 18, letterSpacing: 4, color: C.gold, fontWeight: 700}}>KNOW YOUR RIGHTS</div>
@@ -342,6 +343,8 @@ const musicLevel = (index: number, f: number) => {
   const open = interpolate(d, [0, 9], [0, 1], CLAMP);
   return MUSIC_UNDER_VOICE + (MUSIC_OPEN - MUSIC_UNDER_VOICE) * open;
 };
+
+const kickerOf = (m: {kicker: string}) => (LANG === 'te' ? (m as {kicker_te?: string}).kicker_te ?? m.kicker : m.kicker);
 
 const muteCache = new Map<number, (f: number) => boolean>();
 const muteFor = (index: number) => {

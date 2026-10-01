@@ -32,7 +32,8 @@
         "And the police? Police are not the bank's recovery agents. An unpaid card bill is not a police matter, and police usually shouldn't call you to the station for it. You may hear about Section 138 or Section 25 PSSA. Those are for bounced cheques and failed auto-debits. Pure credit card defaults usually don't come under them."
       ],
       "bridge": true,
-      "recap": "✓ Debt is a money problem, not a crime"
+      "recap": "✓ Debt is a money problem, not a crime",
+      "recap_te": "✓ “Can't pay right now” ≠ “won't pay” — plan first"
     },
     {
       "id": "m03",
@@ -47,7 +48,9 @@
         "Even in high tiers above one lakh, card cases rarely go to court. Courts are slow. Cases take years. That's why compromise settlements, often through Lok Adalat, are usually the easiest way out for the bank."
       ],
       "bridge": true,
-      "recap": "✓ Honest default is a civil matter, not a police case"
+      "recap": "✓ Honest default is a civil matter, not a police case",
+      "recap_te": "✓ Usually a civil matter — but never ignore a real notice",
+      "kicker_te": "Many banks, one list"
     },
     {
       "id": "m04",
@@ -62,7 +65,8 @@
         "Now, good news. Under the RBI Framework for Compromise Settlements and Technical Write-offs, when you do a proper One-Time Settlement, these penalties and extra interest may be waived, often completely. So always try to settle based on what you actually spent. Not the big number on your statement."
       ],
       "bridge": true,
-      "recap": "✓ Every bank must sue on its own, and small balances rarely go to court"
+      "recap": "✓ Every bank must sue on its own, and small balances rarely go to court",
+      "recap_te": "✓ Track every account separately, in one list"
     },
     {
       "id": "m05",
@@ -77,7 +81,8 @@
         "And keep every bank where you owe money at a zero balance. Your family's groceries, medicines, and home loan EMI always come before credit card bills."
       ],
       "bridge": true,
-      "recap": "✓ Most of the big balance is fees that may be waived"
+      "recap": "✓ Most of the big balance is fees that may be waived",
+      "recap_te": "✓ Read the statement breakup — waivers aren't automatic"
     },
     {
       "id": "m06",
@@ -92,7 +97,8 @@
         "The bank will reply with a reference number. Keep it safe. The Case Reference ID is your proof. It shows you acted honestly. It helps counter any claim of 'Willful Default'. And it helps you later at Lok Adalat."
       ],
       "bridge": true,
-      "recap": "✓ Salary moved to a clean bank, creditor accounts at zero"
+      "recap": "✓ Salary moved to a clean bank, creditor accounts at zero",
+      "recap_te": "✓ Know your set-off risk, protect essential money"
     },
     {
       "id": "m07",
@@ -108,7 +114,8 @@
         "And if someone actually knocks on your door? Don't let them in. Step outside and start a video recording on your phone. Politely ask for two documents: their ID card, and a letter from the bank for your account. If they cannot produce both, remind them of the RBI Fair Practices Code. And if you ever feel unsafe, dial 112. People without proper papers usually leave quickly."
       ],
       "bridge": true,
-      "recap": "✓ Hardship email sent, Case ID saved"
+      "recap": "✓ Hardship email sent, Case ID saved",
+      "recap_te": "✓ Hardship email sent, every record saved"
     },
     {
       "id": "m08",
@@ -122,7 +129,8 @@
         "Outside agencies usually get your file for sixty to ninety days. When they get total silence, no clicks, and no small payments, their time may run out. The calls typically slow down, and the file may go back to the bank's own team."
       ],
       "bridge": true,
-      "recap": "✓ Their scare tricks, exposed"
+      "recap": "✓ Their scare tricks, exposed",
+      "recap_te": "✓ Ask, verify, document — don't panic"
     },
     {
       "id": "m09",
@@ -138,7 +146,9 @@
         "Typically after about one hundred and eighty days, banks may write off the account from their main books. The loss is already counted. So any recovery effectively becomes extra profit for them. And this is often when real settlement offers, with bigger discounts, become possible."
       ],
       "bridge": true,
-      "recap": "✓ Calls filtered, silence working"
+      "recap": "✓ Calls filtered, silence working",
+      "recap_te": "✓ Calls managed, one verified channel open",
+      "kicker_te": "From the due date onwards"
     },
     {
       "id": "m10",
@@ -157,7 +167,9 @@
         "We've covered eight big banks here. If your bank isn't on this list, tell me in the comments, and I'll cover it in a future video."
       ],
       "bridge": true,
-      "recap": "✓ Settlement talks usually open after write-off"
+      "recap": "✓ Settlement talks usually open after write-off",
+      "recap_te": "✓ NPA or write-off doesn't cancel the debt",
+      "kicker_te": "Every bank is different"
     },
     {
       "id": "m11",
@@ -173,7 +185,8 @@
         "And when you pay, use only official bank channels. NEFT, RTGS, or the bank's own website. Never make cash payments to an agent. Never."
       ],
       "bridge": true,
-      "recap": "✓ Every bank has its own style"
+      "recap": "✓ Every bank has its own style",
+      "recap_te": "✓ Every bank differs — trust only verified written offers"
     },
     {
       "id": "m12",
@@ -190,7 +203,9 @@
         "Debt is a difficult chapter, but it's not your whole story. Protect your family first. Trust the law, not fear. And settle with dignity."
       ],
       "bridge": true,
-      "recap": "✓ Settle only with an official letter, and pay the bank directly"
+      "recap": "✓ Settle only with an official letter, and pay the bank directly",
+      "recap_te": "✓ Official letter first, pay only via authorised channels",
+      "kicker_te": "Rebuilding, step by step"
     },
     {
       "id": "m13",
@@ -211,7 +226,8 @@
         "Remember, you are not alone, and you are not a criminal. Take control today. The law protects your dignity. And here's something I haven't told you yet. I'm going through this myself, right now. In the next video, I'll show you my own case: exactly how I'm handling my banks, step by step, with real letters and real replies. So subscribe, and tap the bell, so you don't miss it. And if this helped you, share it with someone who needs it."
       ],
       "bridge": true,
-      "recap": "✓ Your score can recover in 18 to 24 months"
+      "recap": "✓ Your score can recover in 18 to 24 months",
+      "recap_te": "✓ Settled ≠ Closed — rebuild with steady habits"
     }
   ],
   "hook": "Forty calls a day. Messages saying the police are coming to your house. If this is happening to you right now, stop. Take a breath. In the next few minutes, I'll show you what the law really says, and exactly what you can do. And stay till the end, because I'll tell you how I'm handling my own case."

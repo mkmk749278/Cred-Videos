@@ -1628,7 +1628,16 @@
    ]
   },
   {
-   "from": 1611.0,
+   "from": 1604.2,
+   "to": 1610.7,
+   "kind": "big",
+   "color": "violet",
+   "kicker": "What I want to tell you",
+   "title": "One difficult phase doesn’t define your whole life",
+   "te": "ఒక కష్టమైన financial phase మీ జీవితం మొత్తాన్ని define చేయదు"
+  },
+  {
+   "from": 1610.9,
    "to": 1645.4,
    "kind": "points",
    "color": "violet",
@@ -1757,6 +1766,22 @@
     {
      "at": 1770.0,
      "text": "Talk to someone you trust",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "from": 1778.4,
+   "to": 1785.9,
+   "kind": "big",
+   "color": "gold",
+   "kicker": "Your dignity",
+   "title": "You may owe money — no one may disrespect you",
+   "te": "అప్పు ఉండొచ్చు — కానీ మిమ్మల్ని అగౌరవంగా treat చేసే permission ఎవరికీ లేదు",
+   "items": [
+    {
+     "at": 1784.9,
+     "text": "Handle your responsibilities honestly",
      "tone": "good"
     }
    ]

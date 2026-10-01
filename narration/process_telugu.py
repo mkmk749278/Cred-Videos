@@ -85,7 +85,9 @@ def shorten_pauses(y, spans):
     out = np.concatenate([y[int(a * SR): int(b * SR)] for a, b in keep])
     xs = [0.0] + [p[0] for p in t_map] + [len(y) / SR + 1]
     rs = [0.0] + [p[1] for p in t_map] + [removed]
-    return out, lambda t: t - float(np.interp(t, xs, rs))
+    f = lambda t: t - float(np.interp(t, xs, rs))  # noqa: E731
+    f.table = (xs, rs)
+    return out, f
 
 
 def save_mp3(y, path):
@@ -119,6 +121,7 @@ def main():
     src_ins = os.path.join(ROOT, "narration/telugu/inserts.json")
     ins_src = json.load(open(src_ins)) if os.path.exists(src_ins) else {}
     ins_out = {}
+    remaps = {}
     te = copy.deepcopy(en)
     te["voice"] = "user (Telugu)"
     entries = [("hook", te["hook"])] + [(m["id"], m) for m in te["modules"]]
@@ -162,6 +165,7 @@ def main():
             for it in ins.get("items", []):
                 it["at"] = rel(it["at"])
             ins_out.setdefault(mid, []).append(ins)
+        remaps[mid] = {"cut_start": a, "xs": [round(v, 3) for v in remap.table[0]], "removed": [round(v, 3) for v in remap.table[1]]}
         mod["duration"] = round(dur, 3)
         mod["speech"] = spans
         if not args.no_audio:
@@ -169,6 +173,8 @@ def main():
         print(f"{mid}: {dur:6.1f}s (en {en_dur:5.1f}s)  anchors {len(xs) - 2}")
     with open(os.path.join(ROOT, "src/data/timing_te.json"), "w") as f:
         json.dump(te, f, ensure_ascii=False)
+    with open(os.path.join(ROOT, "narration/telugu/remap.json"), "w") as f:
+        json.dump(remaps, f, indent=1)
     with open(os.path.join(ROOT, "src/data/inserts_te.json"), "w") as f:
         json.dump(ins_out, f, ensure_ascii=False, indent=1)
     print("wrote src/data/timing_te.json, src/data/inserts_te.json")

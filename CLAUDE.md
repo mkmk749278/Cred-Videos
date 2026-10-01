@@ -12,7 +12,7 @@ Read `docs/PLAYBOOK.md` before starting a new video or a big change; `docs/REVIE
 - **Numbers on screen must match the voice** (e.g. M4 caught: voice said ₹1.65 L in 6 months, screen math gave ₹1,39,176 → fixed both to agree).
 - **Work module by module**, review each, stitch only at the end. Share each approved module as it lands.
 - **Deliver everything to the user's Gofile account** (one place, across sessions). Token: ask the user / env `GOFILE_TOKEN` — **never commit it**. Upload with `GOFILE_TOKEN=… GOFILE_MANIFEST=<tsv> scripts/upload_gofile.sh <file> <folderId>` and check the md5 line. Listing folder contents via the API needs premium, so **keep the manifest** (file ids) to delete/replace files later; deleting a whole folder by id works.
-  Project folder `01 Credit Card Debt - Know Your Rights` (share link https://gofile.io/d/owUINyYh): `v1 baseline` 18158828-daf8-45fd-8600-4a9d31092f6f · `modules (approved, mastered)` 62c67cd4-28bd-4c43-b7de-3e11816cbf4f · `character tests` 044e632c-2e0e-4928-898c-5a2a3eb07b9e · `v2 final` 582a231d-af87-4889-9e98-bc12cc60c750. New videos: create a sibling folder `02 …` under the account root.
+  Project folder `01 Credit Card Debt - Know Your Rights` (share link https://gofile.io/d/owUINyYh): `v1 baseline` 18158828-daf8-45fd-8600-4a9d31092f6f · `modules (approved, mastered)` 62c67cd4-28bd-4c43-b7de-3e11816cbf4f · `character tests` 044e632c-2e0e-4928-898c-5a2a3eb07b9e · `v2 final` 582a231d-af87-4889-9e98-bc12cc60c750 · `Telugu final (v2)` 1113e3a1-892f-49b4-ae52-75946c32f312 (https://gofile.io/d/0dMyIMou). New videos: create a sibling folder `02 …` under the account root.
   Chat upload limit is 30 MB. Google Drive is not connected.
 - **The user delegates creative calls:** pick music, visuals and fixes yourself, review yourself, deliver the best. Ask only real decisions (scope, story, personal info).
 - Commit + push after every meaningful change (a stop hook enforces a clean tree). Never put model names in commits/code.
@@ -41,6 +41,12 @@ python3 scripts/make_publish_kit.py                            # captions.srt, c
 scripts/upload_gofile.sh <file>                                # public download link
 ```
 
+## Telugu edition (user's own narration)
+
+- `REMOTION_LANG=te` switches everything: `src/lib/lang.ts`, `src/data/timing_te.json`, `public/audio/vo_te/`, Telugu recaps/kickers (`recap_te`, `kicker_te` in script.json), insert panels (`src/components/TeluguInserts.tsx`). Renders: `REMOTION_LANG=te scripts/render_modules.sh …` → `out/chunks_te/`; `REMOTION_LANG=te scripts/stitch.sh`.
+- Source: `narration/telugu/full.mp3` + the user's English translation `english_transcript.md` (use it — Whisper Telugu is poor). Hand-made `map.json` (module start/end + English-phrase → Telugu-second anchors) and `inserts.json` (panels, full.mp3 seconds) → `python3 narration/process_telugu.py [--no-audio]` builds audio, timing, inserts, remap. Publish kit: `scripts/make_publish_kit_te.py`.
+- Wherever the Telugu narration is more cautious than the English visuals, a panel must cover the English beat (screen never contradicts voice). Check scene **tails** too: the last panel must run past the module end or English beats flash before the cut.
+
 ## Code map
 
 - `narration/script.json` — single source of truth for VO text (13 modules, `bridge` + `recap`).
@@ -62,4 +68,6 @@ scripts/upload_gofile.sh <file>                                # public download
 8. pedalboard `Limiter` adds make-up gain — re-normalise after it.
 9. **Parallel render hand-off: use git, not tokens.** Putting the Gofile token in worker prompts gets blocked by the safety classifier (and leaks it). Workers push their chunk to `render/SceneNN` (≈20–30 MB each, fine for GitHub); the coordinator `git fetch origin render/SceneNN && git show FETCH_HEAD:out/chunks/SceneNN.mp4 > …`. Branch deletes are refused by the proxy — ask the user to delete `render/*` afterwards.
 10. Gofile folder listing works through the website token: `node scripts/gofile_wt.js <token>` prints the X-Website-Token + UA to use against `api.gofile.io/contents/<code>` (only for folders the account owns or the user shares). Direct download: `https://<server>.gofile.io/download/web/<id>/<name>` with cookie `accountToken=<token>`.
+12. Long modules: split one composition across two workers with `--frames=a-b`, render its audio once (`REMOTION_AUDIO_ONLY=1 … --codec=wav`), join video with the concat demuxer and mux the wav. Small fixes to a finished chunk: render only the changed frames and splice (re-encode head with `-frames:v`, concat demuxer, keep the chunk's audio) — the bundled ffmpeg has no `setpts`/`trim`.
+13. Re-timing cues to another narration can collapse animation ranges → use `src/lib/safeInterpolate.ts` (all scenes import it).
 11. The plan's 5-hour usage limit is account-wide; a very long coordinator context burns most of it. Keep the coordinator lean; idle workers whose turn fails on the limit lose their container (and any un-uploaded render).

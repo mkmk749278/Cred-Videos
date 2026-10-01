@@ -2,7 +2,8 @@ import React, {useMemo} from 'react';
 import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, spr} from '../lib/anim';
-import {contentStart, FPS, LEAD, script, timing, toFrame, Word} from '../lib/timing';
+import {contentStart, FPS, LEAD, script, SubLine, timing, toFrame, Word} from '../lib/timing';
+import {LANG, VO_DIR} from '../lib/lang';
 import {Sfx} from './primitives';
 import {HostConfig, RaviHost} from '../character/RaviHost';
 import {HOSTS} from '../character/hosts';
@@ -245,6 +246,60 @@ const Subtitles: React.FC<{index: number}> = ({index}) => {
   );
 };
 
+/* ------------------------------------------------------------------ Telugu subtitles */
+
+export const TE_FONT = "'Noto Sans Telugu', " + FONT;
+
+/** One Telugu line at a time; words light up in reading order, spread over the line's spoken span. */
+export const TeluguSubLine: React.FC<{subs: SubLine[]; t: number; bottom?: number}> = ({subs, t, bottom = 0}) => {
+  let ci = -1;
+  for (let i = 0; i < subs.length; i++) {
+    const next = subs[i + 1];
+    const hold = next ? Math.min(next.s - 0.1, subs[i].e + 0.8) : subs[i].e + 0.8;
+    if (t >= subs[i].s - 0.12 && t < hold) ci = i;
+  }
+  if (ci < 0) return null;
+  const sub = subs[ci];
+  const words = sub.text.split(/\s+/).filter(Boolean);
+  const total = words.reduce((a, w) => a + w.length + 1, 0);
+  const lineIn = interpolate(t, [sub.s - 0.12, sub.s + 0.08], [0, 1], CLAMP);
+  const lift = interpolate(t, [sub.s - 0.12, sub.s + 0.12], [14, 0], CLAMP);
+  let acc = 0;
+  return (
+    <div style={{position: 'absolute', left: 0, right: 0, bottom, height: 210, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent, rgba(2,4,10,0.85) 45%)'}} />
+      <div style={{position: 'relative', maxWidth: 1640, textAlign: 'center', fontFamily: TE_FONT, fontSize: 46, fontWeight: 700, lineHeight: 1.45, opacity: lineIn, transform: `translateY(${lift}px)`}}>
+        {words.map((w, i) => {
+          const a = sub.s + ((sub.e - sub.s) * acc) / total;
+          acc += w.length + 1;
+          const b = sub.s + ((sub.e - sub.s) * acc) / total;
+          const said = t >= a - 0.02;
+          const active = said && t < b + 0.05;
+          return (
+            <span
+              key={i}
+              style={{
+                display: 'inline-block',
+                margin: '0 9px',
+                color: active ? C.cyan : said ? C.text : alpha(C.text, 0.55),
+                textShadow: active ? '0 0 22px rgba(56, 189, 248, 0.7)' : '0 2px 10px rgba(0,0,0,0.6)',
+              }}
+            >
+              {w}
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const TeluguSubtitles: React.FC<{index: number}> = ({index}) => {
+  const frame = useCurrentFrame();
+  const subs = timing.modules[index].subs ?? [];
+  return <TeluguSubLine subs={subs} t={frame / FPS - LEAD} />;
+};
+
 /* ------------------------------------------------------------------ shell */
 
 /**
@@ -321,7 +376,7 @@ export const SceneShell: React.FC<{
         volume={(f) => musicLevel(index, f) * interpolate(f, [0, 20, duration - 24, duration], [0, 1, 1, 0], CLAMP)}
       />
       <Sequence from={Math.round(LEAD * FPS)} layout="none" name="voiceover">
-        <Audio src={staticFile(`audio/vo/${m.id}.mp3`)} volume={1} />
+        <Audio src={staticFile(`${VO_DIR}/${m.id}.mp3`)} volume={1} />
       </Sequence>
       <Sfx at={0} name="title_hit" volume={0.32} />
       {script.modules[index].bridge && <Sfx at={Math.round(LEAD * FPS) - 6} name="air_whoosh" volume={0.22} />}
@@ -342,7 +397,7 @@ export const SceneShell: React.FC<{
       <Hud index={index} duration={duration} />
       <TitleCard index={index} />
       {hostCfg && <RaviHost index={index} config={hostCfg} />}
-      <Subtitles index={index} />
+      {LANG === 'te' ? <TeluguSubtitles index={index} /> : <Subtitles index={index} />}
       <AbsoluteFill style={{background: '#000', opacity: Math.max(fadeIn, fadeOut), pointerEvents: 'none'}} />
     </AbsoluteFill>
   );

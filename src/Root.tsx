@@ -15,6 +15,8 @@ const useFonts = () => {
   useEffect(() => {
     const faces = [
       new FontFace('Inter', `url(${staticFile('fonts/Inter.woff2')}) format('woff2')`, {weight: '100 900'}),
+      new FontFace('Noto Sans Telugu', `url(${staticFile('fonts/NotoSansTelugu-500.woff2')}) format('woff2')`, {weight: '400 600'}),
+      new FontFace('Noto Sans Telugu', `url(${staticFile('fonts/NotoSansTelugu-700.woff2')}) format('woff2')`, {weight: '650 900'}),
       new FontFace('JetBrains Mono', `url(${staticFile('fonts/JetBrainsMono.woff2')}) format('woff2')`, {weight: '100 800'}),
     ];
     Promise.all(faces.map((f) => f.load()))

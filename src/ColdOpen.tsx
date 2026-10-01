@@ -1,9 +1,9 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Easing, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import timingData from './data/timing.json';
 import {C, FONT, MONO, alpha} from './theme';
 import {CLAMP, spr} from './lib/anim';
-import {FPS} from './lib/timing';
+import {FPS, timing} from './lib/timing';
+import {VO_DIR} from './lib/lang';
 import {Phone, Sfx} from './components/primitives';
 import type {W} from './character/lipsync';
 
@@ -12,7 +12,7 @@ import type {W} from './character/lipsync';
  * Replaces the old 7 s title intro. Timed from timing.json "hook" (word level).
  */
 
-const hook = (timingData as unknown as {hook: {duration: number; sentences: {words: W[]}[]}}).hook;
+const hook = timing.hook as unknown as {duration: number; sentences: {words: W[]}[]};
 const WORDS: W[] = hook.sentences.flatMap((s) => s.words);
 const VO_AT = 10; // frames before the hook VO starts
 const vf = (sec: number) => VO_AT + Math.round(sec * FPS);
@@ -64,7 +64,7 @@ export const ColdOpen: React.FC = () => {
       <AbsoluteFill style={{background: alpha('#EF4444', 0.08 * alarm * (0.5 + 0.5 * Math.sin(f / 3)))}} />
       <Audio src={staticFile('audio/music/tension.mp3')} volume={(fr) => interpolate(fr, [0, 15, end - 20, end], [0, 0.09, 0.09, 0], CLAMP)} />
       <Sequence from={VO_AT} layout="none">
-        <Audio src={staticFile('audio/vo/hook.mp3')} />
+        <Audio src={staticFile(`${VO_DIR}/hook.mp3`)} />
       </Sequence>
       {[2, 20, 38].map((d) => (
         <Sfx key={d} at={d} name="haptic_buzz" volume={0.1} />

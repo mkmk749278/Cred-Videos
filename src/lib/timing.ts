@@ -1,4 +1,6 @@
-import timingData from '../data/timing.json';
+import timingEn from '../data/timing.json';
+import timingTe from '../data/timing_te.json';
+import {LANG} from './lang';
 import scriptData from '../../narration/script.json';
 
 export const FPS = 30;
@@ -11,10 +13,12 @@ export const TAIL = 1.4;
 
 export type Word = {w: string; s: number; e: number};
 export type Sentence = {text: string; para: number; start: number; end: number; words: Word[]};
-export type ModuleTiming = {id: string; duration: number; sentences: Sentence[]};
+/** Telugu edition: subtitle lines in Telugu script, timed to the Telugu narration (seconds, module-relative) */
+export type SubLine = {text: string; s: number; e: number};
+export type ModuleTiming = {id: string; duration: number; sentences: Sentence[]; subs?: SubLine[]};
 export type ModuleMeta = {id: string; number: number; title: string; kicker: string; vo: string[]; bridge?: boolean; recap?: string};
 
-export const timing = timingData as {voice: string; modules: ModuleTiming[]};
+export const timing = (LANG === 'te' ? timingTe : timingEn) as unknown as {voice: string; modules: ModuleTiming[]; hook: ModuleTiming};
 export const script = scriptData as {title: string; modules: ModuleMeta[]};
 
 export const sceneFrames = (i: number) => Math.ceil((LEAD + timing.modules[i].duration + TAIL) * FPS);

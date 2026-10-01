@@ -139,7 +139,7 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
       </AbsoluteFill>
       {m.recap && (
         <div style={{position: 'absolute', left: de > 0 ? 820 : 0, right: de > 0 ? 60 : 0, top: de > 0 ? 640 : 700, display: 'flex', justifyContent: 'center', opacity: recapIn, transform: `translateY(${(1 - recapIn) * 30}px)`}}>
-          <div style={{display: 'flex', alignItems: 'center', gap: 16, padding: '14px 26px', borderRadius: 999, background: alpha(C.emerald, 0.12), border: `1.5px solid ${alpha(C.emerald, 0.6)}`, maxWidth: 1000}}>
+          <div style={{display: 'flex', alignItems: 'center', gap: 16, padding: '14px 26px', borderRadius: 999, background: alpha(C.emerald, 0.12), border: `1.5px solid ${alpha(C.emerald, 0.6)}`, maxWidth: 1700, whiteSpace: 'nowrap'}}>
             <span style={{fontFamily: MONO, fontSize: 20, letterSpacing: 3, color: C.emerald, fontWeight: 800}}>SO FAR</span>
             <span style={{fontFamily: FONT, fontSize: 28, fontWeight: 700, color: C.text}}>{m.recap}</span>
           </div>

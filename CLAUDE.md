@@ -1,0 +1,57 @@
+# CLAUDE.md — Cred-Videos
+
+Remotion (React/TS) pipeline for narrated awareness videos for Indian viewers (simple English). 13 modules, 1920×1080 @ 30 fps, offline TTS, procedural SFX/music, 2D motion graphics + software-rendered 3D (three.js), optional rigged 2D character.
+
+Read `docs/PLAYBOOK.md` before starting a new video or a big change; `docs/REVIEW_CHECKLIST.md` before approving any render.
+
+## Ground rules (the user's standing preferences)
+
+- **Quality bar is "beyond expectations".** Self-review every module frame-by-frame before sharing. Never send something you haven't looked at.
+- **Narration voice:** simple, friendly English, talking directly to the viewer ("you"), like a real person explaining. Each module opens with a bridge line linking to the previous one.
+- **Unconfirmed claims** are phrased with "may / typically / reportedly / usually". Bank settlement figures are "reported borrower experiences, not guarantees". Keep the disclaimer.
+- **Numbers on screen must match the voice** (e.g. M4 caught: voice said ₹1.65 L in 6 months, screen math gave ₹1,39,176 → fixed both to agree).
+- **Work module by module**, review each, stitch only at the end. Share each approved module as it lands.
+- **Deliver big files via Gofile** (`scripts/upload_gofile.sh`); chat upload limit is 30 MB. Google Drive is not connected.
+- Commit + push after every meaningful change (a stop hook enforces a clean tree). Never put model names in commits/code.
+
+## Environment facts (cloud container)
+
+- 4 CPU, ~15 GB RAM, no GPU. The container can be **restarted without warning** — everything in `out/` survives on disk, but running processes die. Long jobs must be resumable and detached (`setsid nohup …`).
+- Harness background tasks max out at **2 h**; keep one watcher armed at all times or the idle container gets reclaimed. One watcher per module (< 1 h each) is the pattern.
+- Chromium: `export REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`. 3D needs `swangle` (set in `remotion.config.ts`).
+- Bundled ffmpeg: `node_modules/@remotion/compositor-linux-x64-gnu/ffmpeg` with `LD_LIBRARY_PATH` set to that dir. It has `loudnorm` and libx264, but **no `fps` filter and no f32le output** — extract frames with per-frame `-ss`.
+- Kill processes by PID, never `pkill -f <pattern>` (it matches the calling shell → exit 144).
+- **Never modify `public/` during a render** — it is served live; deleting/rewriting a file in use fails the render (404).
+
+## Key commands
+
+```bash
+npx tsc --noEmit -p .                      # always before any render starts bundling
+python3 scripts/check_cues.py              # every cueFrame/sentenceEnd phrase exists in timing.json
+python3 narration/generate_vo.py --models <dir> [--only m04]   # TTS + src/data/timing.json
+node scripts/stills.mjs <Id[,Id]> <frames|auto:N> <outDir>     # review stills (SCALE=1 for full size)
+python3 scripts/review_chunk.py out/chunks/SceneNN.mp4 3       # contact sheets every 3 s → out/review/
+scripts/render_modules.sh Scene01 Scene02 …                    # resumable per-module renders → out/chunks/
+scripts/stitch.sh                                              # concat chunks + loudness master (-14 LUFS)
+python3 scripts/master_audio.py in.mp4 out.mp4                 # master a single module for sharing
+python3 scripts/make_publish_kit.py                            # captions.srt, chapters, description
+scripts/upload_gofile.sh <file>                                # public download link
+```
+
+## Code map
+
+- `narration/script.json` — single source of truth for VO text (13 modules, `bridge` + `recap`).
+- `src/lib/timing.ts` — scene length from audio; cue helpers: `cueFrame(I, phrase)`, `cueEnd`, `sentenceEnd`, `paragraphEnd`, `contentStart(I)`. **Tie every visual beat to a spoken phrase**, never to hard-coded frames.
+- `src/components/SceneShell.tsx` — backdrop (beat-pulsed grid), title card with "SO FAR" recap + journey dots, HUD, word-by-word subtitles, music ducking.
+- `src/components/primitives.tsx` — `Reveal`, `Glass`, `KLine` (highlighter line), `SpokenTile` (tile + tick/cross badge with SFX), `Pulse`, `NextChip`, `Stamp`, `Check`, `Layer` (depth transition) …
+- `src/three/` — 3D pieces; `kit.tsx` `Scene3D` (DPR 0.6 default — pass `dpr={1}` for small canvases with text).
+- `src/character/` — rigged 2D borrower: `Borrower.tsx` (face, moods, visemes), `Arms.tsx` (2-bone IK arms, hands, held props), `Performance.tsx` (keyframed acting + word-timed lip-sync).
+
+## Lessons that cost hours (don't repeat)
+
+1. **Plan renders around CPU:** 3D frames ≈ 1 s each, 2D ≈ 0.15 s. A full render ≈ 9–10 h on one container. For full re-renders, **fan out across parallel sessions** (see PLAYBOOK §Parallel render).
+2. Review stills **before** rendering a module, not after — catching overlaps on a still costs seconds, on a chunk costs 40 min.
+3. Stacked text lines in the same spot must not cross-fade (`out` fade is 10 frames → start the next line at `+10`).
+4. Anything moving (a figure walking, a banner) must be checked against every panel it crosses.
+5. Edits to `src/` while a render queue runs are picked up when the **next** module bundles — keep the tree compiling at all times.
+6. Chat file limit 30 MB → re-encode a preview (`-crf 24`) or use Gofile.

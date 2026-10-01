@@ -4,7 +4,7 @@ import {interpolate} from './lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from './theme';
 import {CLAMP, spr} from './lib/anim';
 import {FPS, timing} from './lib/timing';
-import {VO_DIR} from './lib/lang';
+import {LANG, VO_DIR} from './lib/lang';
 import {Phone, Sfx} from './components/primitives';
 import type {W} from './character/lipsync';
 
@@ -114,14 +114,25 @@ export const ColdOpen: React.FC = () => {
         </div>
       )}
       {/* promises */}
-      <div style={{position: 'absolute', left: 1040, top: 300, display: 'flex', flexDirection: 'column', gap: 22}}>
-        {[
-          {a: cLaw, t: 'What the law really says', c: C.cyan},
-          {a: cDo, t: 'Exactly what you can do', c: C.emerald},
-        ].map((x) => {
+      <div style={{position: 'absolute', left: 1040, top: LANG === 'te' ? 190 : 300, display: 'flex', flexDirection: 'column', gap: LANG === 'te' ? 16 : 22}}>
+        {(LANG === 'te'
+          ? [
+              // the Telugu hook asks six questions; one line per question, on its word
+              {a: vf(33.8), t: 'What really happens if you can’t pay', c: C.cyan},
+              {a: vf(37.4), t: 'What the bank can do', c: C.cyan},
+              {a: vf(39.3), t: 'The protections you have', c: C.emerald},
+              {a: vf(41.3), t: 'How to handle recovery calls', c: C.emerald},
+              {a: vf(43.7), t: 'What settlement really means', c: C.amber},
+              {a: vf(45.6), t: 'How to rebuild your credit score', c: C.amber},
+            ]
+          : [
+              {a: cLaw, t: 'What the law really says', c: C.cyan},
+              {a: cDo, t: 'Exactly what you can do', c: C.emerald},
+            ]
+        ).map((x) => {
           const p = spr(f, fps, x.a, {damping: 15, stiffness: 200, mass: 0.6});
           return f < x.a || titleIn > 6 ? null : (
-            <div key={x.t} style={{fontSize: 54, fontWeight: 900, color: x.c, opacity: p, transform: `translateY(${(1 - p) * 30}px)`, textShadow: '0 4px 20px rgba(0,0,0,0.6)'}}>
+            <div key={x.t} style={{fontSize: LANG === 'te' ? 44 : 54, fontWeight: 900, color: x.c, opacity: p, transform: `translateY(${(1 - p) * 30}px)`, textShadow: '0 4px 20px rgba(0,0,0,0.6)'}}>
               ✓ {x.t}
             </div>
           );

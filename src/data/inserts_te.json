@@ -1336,14 +1336,24 @@
    ]
   },
   {
-   "from": 89.52,
+   "from": 54.92,
    "to": 115.72,
-   "kind": "big",
-   "color": "amber",
-   "kicker": "“Small payment first, letter will follow”?",
-   "title": "Confirm in writing first",
-   "te": "ఆ payment settlement లో part అవుతుందా? Written గా confirm చేసుకోండి",
-   "sub": "Don’t trust a WhatsApp screenshot alone. Otherwise it may count as an ordinary part-payment."
+   "kind": "demo",
+   "demo": "letter",
+   "title": "What a settlement letter must show",
+   "beats": {
+    "enter": 54.92,
+    "verify": 57.12,
+    "account": 63.82,
+    "amount": 67.12,
+    "dates": 68.72,
+    "terms": 72.82,
+    "reporting": 77.12,
+    "channel": 82.02,
+    "screenshot": 89.52,
+    "smallfirst": 92.72,
+    "writing": 97.72
+   }
   },
   {
    "from": 129.32,

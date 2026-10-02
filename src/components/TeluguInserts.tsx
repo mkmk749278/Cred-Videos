@@ -6,6 +6,7 @@ import {C, MONO, alpha} from '../theme';
 import {CLAMP, SNAPPY, spr} from '../lib/anim';
 import {FPS, LEAD, timing} from '../lib/timing';
 import {Glass, Reveal, Sfx} from './primitives';
+import {DemoRouter} from '../demos';
 
 /**
  * Telugu edition only: explainer panels for what the Telugu narration says beyond the English visuals.
@@ -17,7 +18,10 @@ type Item = {at: number; text: string; te?: string; tone?: 'good' | 'bad' | 'war
 export type Insert = {
   from: number;
   to: number;
-  kind: 'points' | 'big' | 'compare' | 'steps';
+  kind: 'points' | 'big' | 'compare' | 'steps' | 'demo';
+  /** kind 'demo': animated demonstration (src/demos) and its named beats (module-relative seconds) */
+  demo?: string;
+  beats?: Record<string, number>;
   kicker?: string;
   title: string;
   te?: string;
@@ -213,7 +217,7 @@ export const TeluguInserts: React.FC<{index: number}> = ({index}) => {
     <>
       {insertsFor(index).map((ins, i) => {
         if (frame < f(ins.from) - FADE - 2 || frame > f(ins.to) + FADE + 2) return null;
-        return <Panel key={i} ins={ins} />;
+        return ins.kind === 'demo' ? <DemoRouter key={i} ins={ins} /> : <Panel key={i} ins={ins} />;
       })}
     </>
   );

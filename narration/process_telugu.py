@@ -164,6 +164,8 @@ def main():
             ins["from"], ins["to"] = rel(ins["from"]), rel(ins["to"])
             for it in ins.get("items", []):
                 it["at"] = rel(it["at"])
+            if "beats" in ins:  # demos: named beat times
+                ins["beats"] = {k: rel(v) for k, v in ins["beats"].items()}
             ins_out.setdefault(mid, []).append(ins)
         remaps[mid] = {"cut_start": a, "xs": [round(v, 3) for v in remap.table[0]], "removed": [round(v, 3) for v in remap.table[1]]}
         mod["duration"] = round(dur, 3)

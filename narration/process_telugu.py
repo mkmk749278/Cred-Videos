@@ -1,7 +1,7 @@
 """Telugu edition: clean the user's full Telugu narration, cut it into hook + m01..m13, and build
 src/data/timing_te.json so every English cue (cueFrame etc.) lands on the matching Telugu moment.
 
-Usage: python3 narration/process_telugu.py [--no-audio]
+Usage: python3 narration/process_telugu.py [--no-audio] [--lang te|enh]   (enh: narration/english/ -> vo_enh, timing_enh, inserts_enh)
 
 Input:  narration/telugu/full.mp3            the user's recording (one take, all modules)
         narration/telugu/map.json            hand-made alignment, per module:
@@ -102,28 +102,30 @@ def save_mp3(y, path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-audio", action="store_true", help="only rebuild timing_te.json (audio already cut)")
+    ap.add_argument("--lang", default="te", choices=["te", "enh"], help="te: Telugu edition; enh: the creator's English narration")
     args = ap.parse_args()
-    mp = json.load(open(os.path.join(ROOT, "narration/telugu/map.json")))
+    src_dir, suf, cache_dir = {"te": ("narration/telugu", "te", "out/te"), "enh": ("narration/english", "enh", "out/en")}[args.lang]
+    mp = json.load(open(os.path.join(ROOT, src_dir, "map.json")))
     en = json.load(open(os.path.join(ROOT, "src/data/timing.json")))
-    out_dir = os.path.join(ROOT, "public/audio/vo_te")
+    out_dir = os.path.join(ROOT, f"public/audio/vo_{suf}")
     os.makedirs(out_dir, exist_ok=True)
-    cache = os.path.join(ROOT, "out/te/full_mastered.npy")
+    cache = os.path.join(ROOT, cache_dir, "full_mastered.npy")
     if not args.no_audio:
         if os.path.exists(cache):
             full = np.load(cache)
         else:
-            full = master(load(os.path.join(ROOT, "narration/telugu/full.mp3")))
+            full = master(load(os.path.join(ROOT, src_dir, "full.mp3")))
             os.makedirs(os.path.dirname(cache), exist_ok=True)
             np.save(cache, full)
     else:
         full = np.load(cache)
 
-    src_ins = os.path.join(ROOT, "narration/telugu/inserts.json")
+    src_ins = os.path.join(ROOT, src_dir, "inserts.json")
     ins_src = json.load(open(src_ins)) if os.path.exists(src_ins) else {}
     ins_out = {}
     remaps = {}
     te = copy.deepcopy(en)
-    te["voice"] = "user (Telugu)"
+    te["voice"] = "user (Telugu)" if args.lang == "te" else "user (English)"
     entries = [("hook", te["hook"])] + [(m["id"], m) for m in te["modules"]]
     for mid, mod in entries:
         if mid not in mp:
@@ -173,13 +175,13 @@ def main():
         if not args.no_audio:
             save_mp3(seg, os.path.join(out_dir, f"{mid}.mp3"))
         print(f"{mid}: {dur:6.1f}s (en {en_dur:5.1f}s)  anchors {len(xs) - 2}")
-    with open(os.path.join(ROOT, "src/data/timing_te.json"), "w") as f:
+    with open(os.path.join(ROOT, f"src/data/timing_{suf}.json"), "w") as f:
         json.dump(te, f, ensure_ascii=False)
-    with open(os.path.join(ROOT, "narration/telugu/remap.json"), "w") as f:
+    with open(os.path.join(ROOT, src_dir, "remap.json"), "w") as f:
         json.dump(remaps, f, indent=1)
-    with open(os.path.join(ROOT, "src/data/inserts_te.json"), "w") as f:
+    with open(os.path.join(ROOT, f"src/data/inserts_{suf}.json"), "w") as f:
         json.dump(ins_out, f, ensure_ascii=False, indent=1)
-    print("wrote src/data/timing_te.json, src/data/inserts_te.json")
+    print(f"wrote src/data/timing_{suf}.json, src/data/inserts_{suf}.json")
 
 
 if __name__ == "__main__":

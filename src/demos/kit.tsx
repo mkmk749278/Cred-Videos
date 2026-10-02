@@ -6,6 +6,7 @@ import {CLAMP, SNAPPY, SOFT, spr} from '../lib/anim';
 import {FPS, LEAD} from '../lib/timing';
 import {Sfx} from '../components/primitives';
 import type {Insert} from '../components/TeluguInserts';
+import {SHOW_TE} from '../lib/lang';
 
 /**
  * Toolkit for the Telugu edition's animated demonstrations.
@@ -60,7 +61,7 @@ export const DemoHeader: React.FC<{ins: Insert; color?: string; align?: 'left' |
     <div style={{position: 'absolute', left: 120, right: 120, top: 112, textAlign: align, opacity: o, transform: `translateY(${(1 - o) * 20}px)`}}>
       {ins.kicker && <div style={{fontFamily: MONO, fontSize: 26, letterSpacing: 6, color, fontWeight: 700, textTransform: 'uppercase'}}>{ins.kicker}</div>}
       <div style={{fontFamily: FONT, fontSize: 64, fontWeight: 850, color: C.text, letterSpacing: -1, lineHeight: 1.08, marginTop: 8}}>{ins.title}</div>
-      {ins.te && <div style={{fontFamily: TE_FONT, fontSize: 40, fontWeight: 600, color: SUPPORT, marginTop: 8, lineHeight: 1.35}}>{ins.te}</div>}
+      {ins.te && SHOW_TE && <div style={{fontFamily: TE_FONT, fontSize: 40, fontWeight: 600, color: SUPPORT, marginTop: 8, lineHeight: 1.35}}>{ins.te}</div>}
     </div>
   );
 };
@@ -85,7 +86,7 @@ export const Caption: React.FC<{lines: {k: string; text: string; te?: string; co
   return (
     <div style={{position: 'absolute', left: 120, right: 120, bottom, textAlign: 'center', opacity: o, transform: `translateY(${(1 - o) * 14}px)`}}>
       <div style={{fontFamily: FONT, fontSize: 46, fontWeight: 800, color: l.color ?? C.text, textShadow: '0 4px 24px rgba(0,0,0,0.7)'}}>{l.text}</div>
-      {l.te && <div style={{fontFamily: TE_FONT, fontSize: 38, fontWeight: 600, color: SUPPORT, marginTop: 6}}>{l.te}</div>}
+      {l.te && SHOW_TE && <div style={{fontFamily: TE_FONT, fontSize: 38, fontWeight: 600, color: SUPPORT, marginTop: 6}}>{l.te}</div>}
     </div>
   );
 };

@@ -1,7 +1,9 @@
 import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
 import {interpolate} from '../lib/safeInterpolate';
-import insertsData from '../data/inserts_te.json';
+import insertsTe from '../data/inserts_te.json';
+import insertsEnh from '../data/inserts_enh.json';
+import {LANG, SHOW_TE} from '../lib/lang';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, SNAPPY, spr} from '../lib/anim';
 import {FPS, LEAD, timing} from '../lib/timing';
@@ -33,7 +35,7 @@ export type Insert = {
   right?: string;
 };
 
-const DATA = insertsData as unknown as Record<string, Insert[]>;
+const DATA = (LANG === 'enh' ? insertsEnh : insertsTe) as unknown as Record<string, Insert[]>;
 /** supporting lines (Telugu, notes): brighter than C.muted so they read on a phone */
 const SUPPORT = '#D3DCE8';
 const TE_FONT = "'Noto Sans Telugu', 'Inter', sans-serif";
@@ -59,7 +61,7 @@ const Kicker: React.FC<{text: string; color: string}> = ({text, color}) => (
 );
 
 const TeLine: React.FC<{text?: string; size?: number; color?: string}> = ({text, size = 40, color = SUPPORT}) =>
-  text ? <div style={{fontFamily: TE_FONT, fontSize: size, fontWeight: 600, color, marginTop: 10, lineHeight: 1.4}}>{text}</div> : null;
+  text && SHOW_TE ? <div style={{fontFamily: TE_FONT, fontSize: size, fontWeight: 600, color, marginTop: 10, lineHeight: 1.4}}>{text}</div> : null;
 
 const Panel: React.FC<{ins: Insert}> = ({ins}) => {
   const frame = useCurrentFrame();
@@ -92,7 +94,7 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
               </div>
               <div>
                 <div style={{fontSize: 40, fontWeight: 750, lineHeight: 1.2}}>{it.text}</div>
-                {it.te && <div style={{fontFamily: TE_FONT, fontSize: 32, color: SUPPORT, marginTop: 4}}>{it.te}</div>}
+                {it.te && SHOW_TE && <div style={{fontFamily: TE_FONT, fontSize: 32, color: SUPPORT, marginTop: 4}}>{it.te}</div>}
               </div>
             </div>
           </Reveal>
@@ -115,7 +117,7 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
                 <Glass accent={toneColor(it.tone)} pad={24} style={{height: '100%', boxSizing: 'border-box'}}>
                   <div style={{fontFamily: MONO, fontSize: 22, color: toneColor(it.tone), fontWeight: 800, letterSpacing: 3}}>STEP {i + 1}</div>
                   <div style={{fontSize: 35, fontWeight: 800, marginTop: 10, lineHeight: 1.2}}>{it.text}</div>
-                  {it.te && <div style={{fontFamily: TE_FONT, fontSize: 29, color: SUPPORT, marginTop: 8, lineHeight: 1.35}}>{it.te}</div>}
+                  {it.te && SHOW_TE && <div style={{fontFamily: TE_FONT, fontSize: 29, color: SUPPORT, marginTop: 8, lineHeight: 1.35}}>{it.te}</div>}
                 </Glass>
               </div>
             </React.Fragment>
@@ -136,7 +138,7 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
                   <div style={{fontSize: 32, fontWeight: 900, color: side === 'good' ? C.emerald : C.crimson, width: 30}}>{side === 'good' ? '✓' : '✕'}</div>
                   <div>
                     <div style={{fontSize: 36, fontWeight: 700, lineHeight: 1.22}}>{it.text}</div>
-                    {it.te && <div style={{fontFamily: TE_FONT, fontSize: 29, color: SUPPORT, marginTop: 4}}>{it.te}</div>}
+                    {it.te && SHOW_TE && <div style={{fontFamily: TE_FONT, fontSize: 29, color: SUPPORT, marginTop: 4}}>{it.te}</div>}
                   </div>
                 </div>
               </Reveal>
@@ -158,7 +160,7 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
           <Reveal key={i} at={f(it.at)} from="scale">
             <div style={{padding: '14px 28px', borderRadius: 999, border: `2px solid ${toneColor(it.tone)}`, background: alpha(toneColor(it.tone), 0.12), fontSize: 32, fontWeight: 750, whiteSpace: 'nowrap'}}>
               {it.text}
-              {it.te && <span style={{fontFamily: TE_FONT, fontSize: 31, color: SUPPORT, marginLeft: 14}}>{it.te}</span>}
+              {it.te && SHOW_TE && <span style={{fontFamily: TE_FONT, fontSize: 31, color: SUPPORT, marginLeft: 14}}>{it.te}</span>}
             </div>
           </Reveal>
         ))}

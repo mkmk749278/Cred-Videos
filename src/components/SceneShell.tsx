@@ -4,7 +4,7 @@ import {interpolate} from '../lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, spr} from '../lib/anim';
 import {contentStart, FPS, LEAD, script, SubLine, timing, toFrame, Word} from '../lib/timing';
-import {LANG, VO_DIR} from '../lib/lang';
+import {DEMO, VO_DIR} from '../lib/lang';
 import {insertLevel, TeluguInserts} from './TeluguInserts';
 import {StageHidden} from '../lib/stage';
 import {Sfx, SfxMute} from './primitives';
@@ -127,7 +127,7 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
   // bridge modules: after the slam the title docks to the right while Ravi delivers the bridge line on the left
   const dock = m.bridge && HOSTS[index] ? interpolate(frame, [24, 40], [0, 1], CLAMP) : 0;
   // without a host the recap sits centred under the title once the bridge line starts
-  const recap = LANG === 'te' ? (m as {recap_te?: string}).recap_te ?? m.recap : m.recap;
+  const recap = DEMO ? (m as {recap_te?: string}).recap_te ?? m.recap : m.recap;
   const recapIn = m.bridge ? interpolate(frame, [24, 40], [0, 1], CLAMP) : 0;
   const de = dock * dock * (3 - 2 * dock);
   const num = String(m.number).padStart(2, '0');
@@ -344,7 +344,7 @@ const musicLevel = (index: number, f: number) => {
   return MUSIC_UNDER_VOICE + (MUSIC_OPEN - MUSIC_UNDER_VOICE) * open;
 };
 
-const kickerOf = (m: {kicker: string}) => (LANG === 'te' ? (m as {kicker_te?: string}).kicker_te ?? m.kicker : m.kicker);
+const kickerOf = (m: {kicker: string}) => (DEMO ? (m as {kicker_te?: string}).kicker_te ?? m.kicker : m.kicker);
 
 const muteCache = new Map<number, (f: number) => boolean>();
 const muteFor = (index: number) => {
@@ -385,7 +385,7 @@ export const SceneShell: React.FC<{
     : undefined;
   const cs = contentStart(index);
   const stageIn = interpolate(frame, [cs - 10, cs + 8], [0, 1], CLAMP);
-  const ins = LANG === 'te' ? insertLevel(index, frame) : 0;
+  const ins = DEMO ? insertLevel(index, frame) : 0;
   return (
     <AbsoluteFill style={{fontFamily: FONT, color: C.text, overflow: 'hidden'}}>
       <Backdrop tint={tint} />
@@ -413,15 +413,15 @@ export const SceneShell: React.FC<{
           ...stageStyle,
         }}
       >
-        <SfxMute.Provider value={LANG === 'te' ? muteFor(index) : null}>
+        <SfxMute.Provider value={DEMO ? muteFor(index) : null}>
           <StageHidden.Provider value={ins > 0.995 || stageIn < 0.005}>{children}</StageHidden.Provider>
         </SfxMute.Provider>
       </div>
-      {LANG === 'te' && <TeluguInserts index={index} />}
+      {DEMO && <TeluguInserts index={index} />}
       <Hud index={index} duration={duration} />
       <TitleCard index={index} />
       {hostCfg && <RaviHost index={index} config={hostCfg} />}
-      {LANG === 'te' ? <TeluguSubtitles index={index} /> : <Subtitles index={index} />}
+      {DEMO ? <TeluguSubtitles index={index} /> : <Subtitles index={index} />}
       <AbsoluteFill style={{background: '#000', opacity: Math.max(fadeIn, fadeOut), pointerEvents: 'none'}} />
     </AbsoluteFill>
   );

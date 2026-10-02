@@ -5,7 +5,7 @@ import {C, MONO, alpha} from '../theme';
 import {CLAMP, inr, vis} from '../lib/anim';
 import {contentStart, cueFrame, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
-import {LANG} from '../lib/lang';
+import {DEMO} from '../lib/lang';
 import {FeeStack3D} from '../three/FeeStack3D';
 import {Banner, Glass, KLine, Label, Layer, Pulse, Reveal, Sfx, shake} from '../components/primitives';
 
@@ -13,9 +13,9 @@ const I = 3;
 
 const BRICKS = [
   {label: 'Late payment fees', amt: 7200, color: '#F87171', cue: 'late payment charges'},
-  {label: LANG === 'te' ? 'Finance charges' : '42% APR finance charges', amt: 22400, color: '#EF4444', cue: 'revolving finance charges'},
+  {label: DEMO ? 'Finance charges' : '42% APR finance charges', amt: 22400, color: '#EF4444', cue: 'revolving finance charges'},
   {label: 'Over-limit charges', amt: 3600, color: '#DC2626', cue: 'over-limit charges'},
-  {label: LANG === 'te' ? 'Taxes on charges' : '18% GST on all charges', amt: 5976, color: '#B91C1C', cue: 'eighteen percent GST'},
+  {label: DEMO ? 'Taxes on charges' : '18% GST on all charges', amt: 5976, color: '#B91C1C', cue: 'eighteen percent GST'},
 ];
 
 export const Scene04: React.FC = () => {
@@ -52,7 +52,7 @@ export const Scene04: React.FC = () => {
       <FeeStack3D
         start={c0}
         waive={cWaive}
-        bricks={BRICKS.map((b, i) => ({label: b.label, amount: LANG === 'te' ? '' : `+₹${inr(b.amt)}`, color: b.color, at: brickAt[i], h: 0.35 + (b.amt / 22400) * 0.75}))}
+        bricks={BRICKS.map((b, i) => ({label: b.label, amount: DEMO ? '' : `+₹${inr(b.amt)}`, color: b.color, at: brickAt[i], h: 0.35 + (b.amt / 22400) * 0.75}))}
       />
       <div style={{position: 'absolute', left: 120, top: 640, width: 900, textAlign: 'center', fontFamily: MONO, fontSize: 22, fontWeight: 800, color: C.gold, letterSpacing: 3, opacity: vis(frame, cRbi, cWaive + 40)}}>
         RBI COMPROMISE SETTLEMENT FRAMEWORK
@@ -71,7 +71,7 @@ export const Scene04: React.FC = () => {
             {BRICKS.map((b, i) => (
               <div key={i} style={{display: 'flex', justifyContent: 'space-between', fontSize: 26, padding: '8px 0', borderTop: `1px solid ${C.border}`, opacity: frame >= brickAt[i] ? 1 : 0.15, textDecoration: dissolve > 0.5 ? 'line-through' : undefined, color: dissolve > 0.5 ? C.dim : C.text}}>
                 <span>{b.label}</span>
-                <span style={{fontFamily: MONO, color: dissolve > 0.5 ? C.dim : b.color}}>{LANG === 'te' ? '' : `+₹${inr(b.amt)}`}</span>
+                <span style={{fontFamily: MONO, color: dissolve > 0.5 ? C.dim : b.color}}>{DEMO ? '' : `+₹${inr(b.amt)}`}</span>
               </div>
             ))}
           </Glass>

@@ -6,10 +6,10 @@ import {contentStart, cueFrame, sceneFrames, sentenceEnd} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Glass, KLine, Label, Layer, NextChip, Reveal, Sfx, shake, SpokenTile, Tag} from '../components/primitives';
 import {Vaults3D} from '../three/Vaults3D';
-import {LANG} from '../lib/lang';
+import {DEMO} from '../lib/lang';
 
 // Telugu narration qualifies set-off ("may adjust ... under applicable terms") and says moving accounts is no legal shield
-const TE = LANG === 'te';
+const TE = DEMO;
 
 const I = 4;
 

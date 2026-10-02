@@ -1,6 +1,6 @@
 # Verification report: Telugu edition with animated demonstrations
 
-**Export:** `Credit Card Debt - Know Your Rights (Telugu, demonstrations).mp4`
+**Export:** `Credit Card Debt - Know Your Rights (Telugu demonstrations).mp4`
 
 | Property | Value |
 |---|---|
@@ -66,11 +66,11 @@ The specific asks from the brief are all in place:
 - Against the approved export, the correlation is 0.98–1.00 per section. The exception is chapter 7, where the approved file is 40 ms early.
 - No new text-to-speech, no stretching. The duration equals the timeline.
 
-**Audio master.** −14.00 LUFS integrated, true peak −1.7 dBTP.
+**Audio master.** −14.00 LUFS integrated, true peak −1.74 dBTP.
 
 **Subtitles and chapters.** `captions_en.srt` (576 cues) and `chapters.txt` (14 chapters) are generated from the same timeline. The chapter times match the brief's chapter table (17:19, 19:55, 20:53, 24:37, 27:50).
 
-**Frozen foreground.** `scripts/find_frozen.py` decodes the whole export, excludes the caption band, and counts a window as moving when ≥ 0.3% of foreground pixels change within 1 s. The two longest holds (17.7 s and 15.1 s) were broken up with new motion and spliced in. The remaining runs of 8 s or more are listed in `frozen_report.txt`. Each is a single explanation beat whose caption still changes: a demo's final state held while the narration finishes the point, or a closing reflection panel.
+**Frozen foreground.** `scripts/find_frozen.py` decodes the whole export, excludes the caption band, and counts a window as moving when ≥ 0.3% of foreground pixels change within 1 s. The two longest holds (17.7 s and 15.1 s) were broken up with new motion and spliced in. After that, 21 runs of 8 s or more remain, the longest 13.4 s; all are listed in `frozen_report.txt`. Each is a single explanation beat whose caption still changes: a demo's final state held while the narration finishes the point, or a closing reflection panel.
 
 **Timing fix found during verification.** The approved export carried ~50 ms picture holds at every chunk join. As a result, its subtitles and chapters drifted by up to 0.6 s towards the end. `stitch.sh` now joins gap-free video with audio trimmed per chunk. A drift-free copy of the approved export was uploaded next to the original.
 

@@ -664,34 +664,20 @@
   {
    "from": 995.9,
    "to": 1026.3200000000002,
-   "kind": "big",
-   "color": "amber",
+   "kind": "demo",
+   "demo": "sixty",
    "kicker": "No guarantee",
    "title": "“Ignore calls and the file closes in 60 days?”",
    "te": "అలాంటి guarantee ఏమీ లేదు",
-   "sub": "Agencies change. Calls may drop, then rise again. The debt doesn’t disappear.",
-   "items": [
-    {
-     "at": 1016.2,
-     "text": "Budget",
-     "tone": "good"
-    },
-    {
-     "at": 1017.2,
-     "text": "Written communication",
-     "tone": "good"
-    },
-    {
-     "at": 1018.2,
-     "text": "Evidence",
-     "tone": "good"
-    },
-    {
-     "at": 1019.0,
-     "text": "Verified repayment options",
-     "tone": "good"
-    }
-   ]
+   "beats": {
+    "q": 996.0,
+    "noguarantee": 1001.5,
+    "agency": 1003.0,
+    "calls": 1006.2,
+    "debt": 1008.5,
+    "notsilence": 1013.5,
+    "plan": 1016.2
+   }
   }
  ],
  "m09": [

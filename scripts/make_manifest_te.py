@@ -57,6 +57,7 @@ META = {
     'visit': ('I', ['SMS “our agent visited, door was locked”', 'question checklist'], ['who / what time / which agency; confirm officially'], ['Example message — fictional'], ['do not assume every message is genuine']),
     'paychannel': ('M', ['Bank A official-app payment screen (instalment 1 of 3, ₹10,000)', 'agent UPI and cash cards'], ['authorised channels tick in; UPI and cash crossed'], ['Example interface — fictional'], ['only channels the bank authorises']),
     'profile': ('O', ['sample credit profile row (Settled)'], ['status row appears with its effect'], ['sample'], ['settlement can affect the profile — no score number, no promise']),
+    'sixty': ('J', ['60-day countdown', 'agency badge swap', 'call-volume line', 'plan blocks'], ['countdown struck; agency changes; calls dip and rise; plan replaces silence'], [], ['no guarantee the file closes; the debt does not disappear']),
     'plan': ('P', ['8-step rail', 'register', 'budget bars', 'clause', 'email', 'phone toggle', 'loop', 'evidence folder', 'ledger', 'verified letter', 'receipt', 'credit report', 'secured card'], ['each object activates on its spoken step'], [], ['all eight steps preserved']),
 }
 

@@ -206,3 +206,73 @@ export const ProfileDemo: React.FC<DemoProps> = ({ins}) => {
     </DemoRoot>
   );
 };
+
+/* ------------------------------------------------------------------ m08: "ignore calls and the file closes in 60 days?" */
+
+export const SixtyDaysDemo: React.FC<DemoProps> = ({ins}) => {
+  const {p, on, lin} = useBeats(ins);
+  // call volume: drops, then rises again
+  const pts = Array.from({length: 25}, (_, i) => {
+    const x = i / 24;
+    const calls = x < 0.55 ? 1 - 0.7 * Math.sin((x / 0.55) * Math.PI * 0.5) : 0.3 + (x - 0.55) * 1.4;
+    return `${i * 19},${20 + (1 - calls) * 150}`;
+  });
+  const shown = on('calls') ? Math.max(2, Math.round(25 * lin('calls', 60))) : 0;
+  return (
+    <DemoRoot ins={ins}>
+      <DemoHeader ins={ins} color={C.amber} />
+      {/* day-60 countdown */}
+      <Card x={160} y={330} w={460} color={on('noguarantee') ? C.crimson : 'rgba(148,163,184,0.6)'} o={p('q')}>
+        <T s={26} c={SUPPORT}>IGNORE ALL CALLS FOR…</T>
+        <div style={{fontFamily: MONO, fontSize: 96, fontWeight: 900, color: '#fff', lineHeight: 1.1}}>60 days</div>
+        <T s={30} c={on('noguarantee') ? '#FCA5A5' : '#fff'} mt={4}><span style={{textDecoration: on('noguarantee') ? 'line-through' : 'none'}}>…and the file closes?</span></T>
+        {on('noguarantee') && <div style={{marginTop: 12, opacity: p('noguarantee')}}><Pill text="No such guarantee" color={C.crimson} size={30} /></div>}
+      </Card>
+      {/* assignment changes */}
+      {on('agency') && (
+        <Card x={680} y={330} w={520} color="rgba(148,163,184,0.6)" o={p('agency')}>
+          <T s={26} c={SUPPORT}>RECOVERY ASSIGNMENT</T>
+          <div style={{display: 'flex', alignItems: 'center', gap: 14, marginTop: 10}}>
+            <Pill text="Agency X" color="#94A3B8" size={28} style={{opacity: 1 - 0.6 * p('agency', 30)}} />
+            <span style={{fontFamily: FONT, fontSize: 36, color: SUPPORT}}>→</span>
+            <Pill text="Agency Y" color={C.amber} size={28} style={{opacity: p('agency', 30)}} />
+          </div>
+          <T s={24} c={SUPPORT} mt={10}>the agency or bank team may change</T>
+        </Card>
+      )}
+      {on('calls') && (
+        <Card x={1260} y={330} w={540} color="rgba(148,163,184,0.6)" o={p('calls')}>
+          <T s={26} c={SUPPORT}>CALLS</T>
+          <svg width={480} height={200} style={{display: 'block', marginTop: 6}}>
+            <polyline points={pts.slice(0, shown).join(' ')} fill="none" stroke={C.amber} strokeWidth={6} strokeLinejoin="round" />
+          </svg>
+          <T s={24} c={SUPPORT}>may drop, then rise again</T>
+        </Card>
+      )}
+      {on('debt') && !on('notsilence') && (
+        <div style={{position: 'absolute', left: 160, top: 720, display: 'flex', alignItems: 'center', gap: 20, opacity: p('debt')}}>
+          <Pill text="Still owed — the debt doesn’t disappear" color={C.crimson} size={34} />
+        </div>
+      )}
+      {on('notsilence') && (
+        <div style={{position: 'absolute', left: 160, top: 700, opacity: p('notsilence')}}>
+          <div style={{display: 'flex', alignItems: 'center', gap: 16}}>
+            <span style={{fontFamily: FONT, fontSize: 34, fontWeight: 800, color: '#FCA5A5', textDecoration: 'line-through'}}>a plan built on silence</span>
+            <span style={{fontFamily: FONT, fontSize: 34, color: SUPPORT}}>→</span>
+            {['budget', 'written communication', 'evidence', 'verified repayment options'].map((t, i) => (
+              <Pill key={t} text={t} color={C.emerald} size={30} style={{opacity: on('plan') ? p('plan', i * 12) : 0}} />
+            ))}
+          </div>
+        </div>
+      )}
+      <Caption ins={ins} bottom={44} lines={[
+        {k: 'q', text: '“If I don’t answer, will the file close after 60 days?”', te: 'Calls ఎత్తకపోతే 60 రోజుల తర్వాత file close అవుతుందా?'},
+        {k: 'noguarantee', text: 'There is no such guarantee', te: 'అలాంటి guarantee ఏమీ లేదు', color: '#FCA5A5'},
+        {k: 'agency', text: 'The agency or team may change', te: 'Agency, bank team మారొచ్చు'},
+        {k: 'debt', text: 'A new assignment doesn’t make the debt disappear', te: 'Agency మారినా debt మాయం అవ్వదు', color: '#FCA5A5'},
+        {k: 'notsilence', text: 'Your plan shouldn’t depend on silence', te: 'మీ plan silence మీద ఆధారపడకూడదు'},
+        {k: 'plan', text: 'Budget, written communication, evidence, verified options', te: 'Budget, written communication, evidence, verified options', color: '#86EFAC'},
+      ]} />
+    </DemoRoot>
+  );
+};

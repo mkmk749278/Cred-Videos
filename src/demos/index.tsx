@@ -10,7 +10,7 @@ import {CalendarDemo, EmiDemo, LedgerDemo} from './Ch09';
 import {LokAdalatDemo, OfferAffDemo, OffersDemo, ReceiptsDemo} from './Ch10_11';
 import {ReportDisputeDemo, ReportsDemo, SecuredCardDemo, StabiliseDemo, UsageDemo} from './Ch12';
 import {PlanDemo} from './Ch13';
-import {PayChannelDemo, ProfileDemo, RecordDemo, SilenceDemo, VisitDemo} from './Gaps';
+import {PayChannelDemo, ProfileDemo, RecordDemo, SilenceDemo, SixtyDaysDemo, VisitDemo} from './Gaps';
 
 /** Telugu-edition animated demonstrations, selected by inserts_te.json `demo`. */
 const DEMOS: Record<string, React.FC<{ins: Insert}>> = {
@@ -53,6 +53,7 @@ const DEMOS: Record<string, React.FC<{ins: Insert}>> = {
   visit: VisitDemo,
   paychannel: PayChannelDemo,
   profile: ProfileDemo,
+  sixty: SixtyDaysDemo,
 };
 
 export const DemoRouter: React.FC<{ins: Insert}> = ({ins}) => {

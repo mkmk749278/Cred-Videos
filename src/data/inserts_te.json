@@ -190,8 +190,8 @@
  ],
  "m03": [
   {
-   "from": 7.4,
-   "to": 30.7,
+   "from": 5.2,
+   "to": 38.4,
    "kind": "demo",
    "demo": "register",
    "kicker": "Many accounts? One list",
@@ -207,7 +207,9 @@
     "lastpay": 23.3,
     "complaint": 24.4,
     "legal": 26.7,
-    "separate": 9704.4
+    "separate": 31.1,
+    "fear": 5.3,
+    "onebank": 33.6
    }
   },
   {
@@ -330,7 +332,7 @@
   },
   {
    "from": 120.24,
-   "to": 148.44,
+   "to": 163.74,
    "kind": "demo",
    "demo": "dispute",
    "kicker": "Spot a wrong charge?",
@@ -345,7 +347,9 @@
     "waive": 129.94,
     "some": 134.44,
     "depends": 140.54,
-    "rbi": 145.34
+    "rbi": 145.34,
+    "prep": 150.34,
+    "clarity": 156.34
    }
   }
  ],
@@ -390,6 +394,23 @@
  ],
  "m06": [
   {
+   "from": 5.18,
+   "to": 24.28,
+   "kind": "demo",
+   "demo": "silence",
+   "kicker": "How to communicate",
+   "title": "Silence explains nothing",
+   "te": "Phone off చేస్తే bank కి మీ పరిస్థితి తెలియదు",
+   "beats": {
+    "off": 5.28,
+    "peace": 7.68,
+    "understandable": 11.68,
+    "silence": 13.68,
+    "resolve": 17.68,
+    "written": 19.68
+   }
+  },
+  {
    "from": 24.38,
    "to": 89.28,
    "kind": "demo",
@@ -412,6 +433,22 @@
     "sent": 73.88,
     "lawful": 76.88,
     "separate": 85.88
+   }
+  },
+  {
+   "from": 89.48,
+   "to": 112.48,
+   "kind": "demo",
+   "demo": "record",
+   "kicker": "Keep every record",
+   "title": "A record — not a shield",
+   "te": "అన్నీ ఒక folder లో save చేయండి",
+   "beats": {
+    "items": 89.58,
+    "folder": 93.38,
+    "record": 97.08,
+    "shield": 99.68,
+    "documents": 103.78
    }
   }
  ],
@@ -469,6 +506,22 @@
     "otp": 93.68,
     "notfake": 98.68,
     "noinfo": 102.98
+   }
+  },
+  {
+   "from": 107.28,
+   "to": 119.98,
+   "kind": "demo",
+   "demo": "visit",
+   "kicker": "Check before you react",
+   "title": "“Our agent visited…”",
+   "te": "ఎవరు, ఎప్పుడు వచ్చారో verify చేయండి",
+   "beats": {
+    "msg": 107.48,
+    "facts": 111.48,
+    "who": 113.78,
+    "agency": 116.28,
+    "confirm": 117.68
    }
   },
   {
@@ -864,6 +917,21 @@
    }
   },
   {
+   "from": 115.92,
+   "to": 129.12,
+   "kind": "demo",
+   "demo": "paychannel",
+   "kicker": "Paying the settlement",
+   "title": "Only authorised payment channels",
+   "te": "Bank authorise చేసిన channels ద్వారా మాత్రమే pay చేయండి",
+   "beats": {
+    "only": 116.02,
+    "app": 119.42,
+    "upi": 124.42,
+    "cash": 127.42
+   }
+  },
+  {
    "from": 129.32,
    "to": 159.32,
    "kind": "demo",
@@ -933,6 +1001,22 @@
   }
  ],
  "m12": [
+  {
+   "from": 8.74,
+   "to": 13.94,
+   "kind": "demo",
+   "demo": "profile",
+   "kicker": "After settlement",
+   "title": "Is my CIBIL ruined?",
+   "te": "CIBIL పూర్తిగా పాడైపోదు — కానీ affect అవ్వొచ్చు",
+   "beats": {
+    "q1": 8544.34,
+    "q2": 8544.34,
+    "assume": 8544.34,
+    "affect": 8.84,
+    "honest": 12.14
+   }
+  },
   {
    "from": 14.14,
    "to": 44.14,

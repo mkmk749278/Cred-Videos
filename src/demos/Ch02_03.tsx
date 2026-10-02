@@ -158,7 +158,7 @@ export const RegisterDemo: React.FC<DemoProps> = ({ins}) => {
       <DemoHeader ins={ins} color={C.cyan} />
       {/* scattered papers, before the list */}
       {scatter.map((s, i) => (
-        <div key={i} style={{position: 'absolute', left: s.x + (tableX - s.x) * form, top: s.y + (380 + i * 30 - s.y) * form, width: 360, height: 200, borderRadius: 18, background: i % 2 ? '#F4F1EA' : '#1F2A44', color: i % 2 ? '#1B2433' : '#fff', fontFamily: FONT, fontSize: 32, fontWeight: 800, padding: 24, boxSizing: 'border-box', transform: `rotate(${s.r * (1 - form)}deg) scale(${1 - 0.6 * form})`, opacity: p('overwhelmed', i * 5) * (1 - form), boxShadow: '0 20px 50px rgba(0,0,0,0.5)'}}>{s.t}</div>
+        <div key={i} style={{position: 'absolute', left: s.x + (tableX - s.x) * form, top: s.y + (380 + i * 30 - s.y) * form, width: 360, height: 200, borderRadius: 18, background: i % 2 ? '#F4F1EA' : '#1F2A44', color: i % 2 ? '#1B2433' : '#fff', fontFamily: FONT, fontSize: 32, fontWeight: 800, padding: 24, boxSizing: 'border-box', transform: `rotate(${s.r * (1 - form)}deg) scale(${1 - 0.6 * form})`, opacity: p('fear', i * 5) * (1 - form), boxShadow: '0 20px 50px rgba(0,0,0,0.5)'}}>{s.t}</div>
       ))}
       {on('lose') && !on('list') && <div style={{position: 'absolute', left: 0, right: 0, top: 900, textAlign: 'center', opacity: p('lose')}}><Pill text="How much do I owe where?" color={C.crimson} size={36} /></div>}
       {/* the register */}
@@ -185,14 +185,20 @@ export const RegisterDemo: React.FC<DemoProps> = ({ins}) => {
       )}
       {on('separate') && (
         <div style={{position: 'absolute', left: tableX, top: 800, opacity: p('separate')}}>
-          <Pill text="Track every account separately" color={C.emerald} size={34} />
+          <div style={{display: 'flex', gap: 20}}>
+            <Pill text="Track every account separately" color={C.emerald} size={34} />
+            {on('onebank') && <Pill text="Settling Bank A ≠ settling Bank B or C" color={C.amber} size={32} style={{opacity: p('onebank')}} />}
+          </div>
         </div>
       )}
       <div style={{position: 'absolute', right: 110, top: 128, padding: '10px 18px', borderRadius: 12, border: `2px solid ${alpha(C.amber, 0.7)}`, background: alpha(C.amber, 0.14), color: '#FDE68A', fontFamily: FONT, fontSize: 28, fontWeight: 750, opacity: form}}>Example register — fictional banks and figures</div>
       <Caption ins={ins} bottom={56} lines={[
+        {k: 'fear', text: '“I owe four or five banks…”', te: '4–5 banks కి అప్పు ఉంది…'},
         {k: 'overwhelmed', text: 'Many accounts can feel overwhelming', te: 'చాలా accounts ఉంటే mentally చాలా pressure'},
         {k: 'list', text: 'First, make one simple list', te: 'ముందు ఒక simple list తయారు చేయండి'},
         {k: 'legal', text: 'Record any legal communication too — keep it all in one place', te: 'Legal communication కూడా — అన్నీ ఒకే చోట'},
+        {k: 'separate', text: 'Track every account separately', te: 'ప్రతి account ని separate గా track చేయండి', color: '#86EFAC'},
+        {k: 'onebank', text: 'Settling with one bank doesn’t settle the others', te: 'ఒక bank తో settle చేస్తే మిగతా accounts settle అవ్వవు', color: '#FDE68A'},
       ]} />
       <BeatSfx ins={ins} k="list" name="grid_lock" />
     </DemoRoot>

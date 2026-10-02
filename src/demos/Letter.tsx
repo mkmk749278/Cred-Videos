@@ -33,11 +33,11 @@ const LetterBody: React.FC = () => (
       Agreed settlement amount: <b style={{fontSize: 32}}>₹30,000</b>
     </div>
     <div style={{position: 'absolute', left: 48, top: ROW.dates, fontSize: 24}}>
-      Pay by: <b>30 Nov 2026</b> · single payment
+      Instalments: <b>₹10,000 × 3</b> · 30 Nov · 30 Dec 2026 · 30 Jan 2027
     </div>
     {/* terms */}
     <div style={{position: 'absolute', left: 48, right: 48, top: ROW.terms, fontSize: 22, lineHeight: 1.45}}>
-      On receipt of the full amount by the date above, the <b>remaining dues on this card will be waived</b> and the account closed. Bank A will make <b>no further claim</b> on this card.
+      On receipt of all instalments by the dates above, the <b>remaining dues on this card will be waived</b> and the account closed. Bank A will make <b>no further claim</b> on this card.
     </div>
     <div style={{position: 'absolute', left: 48, right: 48, top: ROW.reporting, fontSize: 22}}>
       Credit bureau reporting after completion: <b>“Settled”</b>
@@ -83,7 +83,6 @@ export const LetterDemo: React.FC<DemoProps> = ({ins}) => {
         <div style={{fontFamily: MONO, fontSize: 26, letterSpacing: 6, color: C.emerald, fontWeight: 700}}>CHECK THE LETTER — BEFORE ONE RUPEE</div>
         <div style={{fontFamily: FONT, fontSize: 60, fontWeight: 850, color: C.text, marginTop: 6}}>What a settlement letter must show</div>
       </div>
-      <IllusTag text="Sample / Illustration — fictional bank and figures" style={{top: 272, bottom: 'auto', zIndex: 5}} />
       {/* camera viewport over the letter */}
       <div style={{position: 'absolute', left: 0, top: 262, width: VW, height: VH, overflow: 'hidden'}}>
         <div style={{position: 'absolute', left: 0, top: 0, ...cam, opacity: enter}}>
@@ -92,8 +91,8 @@ export const LetterDemo: React.FC<DemoProps> = ({ins}) => {
             <Hi x={36} y={ROW.issuer - 4} w={420} h={80} t={between('verify', 'account', 6)} color={C.cyan} label="Issuer" />
             <Hi x={36} y={ROW.sign - 6} w={560} h={96} t={between('verify', 'account', 16)} color={C.cyan} label="Authorised signatory" />
             <Hi x={36} y={ROW.account - 4} w={720} h={40} t={between('account', 'amount')} color={C.cyan} />
-            <Hi x={36} y={ROW.amount - 6} w={470} h={48} t={between('amount', 'terms')} color={C.emerald} />
-            <Hi x={36} y={ROW.dates - 4} w={470} h={40} t={between('dates', 'terms')} color={C.amber} />
+            <Hi x={36} y={ROW.amount - 6} w={490} h={48} t={between('amount', 'terms')} color={C.emerald} />
+            <Hi x={36} y={ROW.dates - 4} w={735} h={40} t={between('dates', 'terms')} color={C.amber} />
             <Hi x={36} y={ROW.terms - 4} w={740} h={104} t={between('terms', 'reporting', 6)} color={C.emerald} />
             <Hi x={36} y={ROW.reporting - 4} w={740} h={38} t={between('reporting', 'channel')} color={C.amber} />
             <Hi x={36} y={ROW.channel - 4} w={740} h={72} t={between('channel', 'screenshot', 20)} color={C.emerald} label="Payment channel" labelSide="top" />
@@ -155,6 +154,7 @@ export const LetterDemo: React.FC<DemoProps> = ({ins}) => {
       <BeatSfx ins={ins} k="enter" name="pages_flip" volume={0.25} />
       <BeatSfx ins={ins} k="channel" name="radar_ping" volume={0.18} />
       <BeatSfx ins={ins} k="screenshot" name="warning_pulse" volume={0.14} />
+      <IllusTag text="Sample / Illustration — fictional bank and figures" style={{top: 272, bottom: 'auto', zIndex: 10, background: '#2A2410'}} />
     </DemoRoot>
   );
 };

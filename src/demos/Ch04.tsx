@@ -182,7 +182,7 @@ export const DisputeDemo: React.FC<DemoProps> = ({ins}) => {
           </div>
         </div>
       )}
-      {on('depends') && (
+      {on('depends') && !on('prep') && (
         <div style={{position: 'absolute', left: 120, top: 830, display: 'flex', gap: 14, opacity: p('depends')}}>
           <span style={{fontFamily: FONT, fontSize: 32, fontWeight: 800, color: '#fff', alignSelf: 'center'}}>Depends on:</span>
           <Pill text="hardship" color={C.cyan} size={28} />
@@ -191,11 +191,20 @@ export const DisputeDemo: React.FC<DemoProps> = ({ins}) => {
           <Pill text="approval" color={C.cyan} size={28} />
         </div>
       )}
+      {on('prep') && (
+        <div style={{position: 'absolute', left: 120, top: 830, display: 'flex', gap: 14, opacity: p('prep')}}>
+          <span style={{fontFamily: FONT, fontSize: 32, fontWeight: 800, color: '#fff', alignSelf: 'center'}}>Before any proposal, know your:</span>
+          {['spending', 'payments', 'interest', 'charges'].map((t, i) => <Pill key={t} text={`✓ ${t}`} color={C.emerald} size={28} style={{opacity: p('prep', 8 + i * 6)}} />)}
+          {on('clarity') && <Pill text="clarity helps you negotiate" color={C.cyan} size={28} style={{opacity: p('clarity')}} />}
+        </div>
+      )}
       <Caption ins={ins} bottom={56} lines={[
         {k: 'incorrect', text: 'See a charge that looks wrong? Don’t just accept it', te: 'Bank వేసింది కాబట్టి correct అనుకోవద్దు'},
         {k: 'breakdown', text: 'Ask for a written breakdown and raise a dispute', te: 'Written breakdown అడిగి dispute raise చేయండి'},
         {k: 'some', text: 'In some cases the bank may waive part — not an automatic right', te: 'కొన్ని cases లో waive చేయొచ్చు — automatic right కాదు', color: '#FDE68A'},
         {k: 'rbi', text: 'An RBI rule doesn’t guarantee you a discount', te: 'RBI rule ఉంది కాబట్టి discount ఇవ్వాల్సిందే అనుకోవద్దు', color: '#FCA5A5'},
+        {k: 'prep', text: 'Understand your real numbers before you propose', te: 'Proposal ముందు మీ spending, payments, interest, charges అర్థం చేసుకోండి'},
+        {k: 'clarity', text: 'Clarity helps during negotiation', te: 'Clarity ఉంటే negotiation సులభం', color: '#7DD3FC'},
       ]} />
       <BeatSfx ins={ins} k="dispute" name="stamp_heavy" volume={0.2} />
     </DemoRoot>

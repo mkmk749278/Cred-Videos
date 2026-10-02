@@ -934,41 +934,21 @@
  ],
  "m12": [
   {
-   "from": 14.34,
+   "from": 14.14,
    "to": 44.14,
-   "kind": "compare",
-   "color": "amber",
+   "kind": "demo",
+   "demo": "reports",
    "kicker": "Settled vs Closed",
    "title": "Two different statuses",
-   "left": "SETTLED",
-   "right": "CLOSED",
-   "items": [
-    {
-     "at": 14.94,
-     "text": "Paid less than the full dues, with the lender's consent",
-     "tone": "bad"
-    },
-    {
-     "at": 22.34,
-     "text": "Full repayment",
-     "tone": "good"
-    },
-    {
-     "at": 27.34,
-     "text": "Lenders may see it negatively",
-     "tone": "bad"
-    },
-    {
-     "at": 30.34,
-     "text": "Future loan / card approvals may be affected",
-     "tone": "bad"
-    },
-    {
-     "at": 33.74,
-     "text": "No Dues Certificate ≠ report shows “Closed”",
-     "tone": "bad"
-    }
-   ]
+   "te": "Settled, Closed — రెండూ వేరు",
+   "beats": {
+    "settled": 14.14,
+    "closed": 22.54,
+    "negative": 27.24,
+    "approvals": 30.54,
+    "ndc": 33.74,
+    "different": 39.74
+   }
   },
   {
    "from": 47.34,
@@ -997,97 +977,54 @@
    ]
   },
   {
-   "from": 67.94,
+   "from": 62.64,
    "to": 85.74,
-   "kind": "points",
-   "color": "amber",
+   "kind": "demo",
+   "demo": "securedcard",
    "kicker": "FD-backed secured card",
-   "title": "Approval isn't guaranteed",
+   "title": "An option — not a guarantee",
    "te": "Card వస్తుందని guarantee లేదు",
-   "items": [
-    {
-     "at": 68.14,
-     "text": "Approval, deposit & limits depend on the issuer",
-     "tone": "info"
-    },
-    {
-     "at": 73.14,
-     "text": "An FD doesn’t guarantee approval",
-     "tone": "warn"
-    },
-    {
-     "at": 76.14,
-     "text": "Don’t lock up your emergency savings",
-     "tone": "warn"
-    },
-    {
-     "at": 81.14,
-     "text": "Use it only for small, planned expenses",
-     "tone": "good"
-    }
-   ]
+   "beats": {
+    "fd": 62.64,
+    "card": 65.14,
+    "approval": 68.14,
+    "noguarantee": 73.14,
+    "reserve": 76.14,
+    "small": 81.14
+   }
   },
   {
    "from": 85.94,
    "to": 102.34,
-   "kind": "points",
-   "color": "emerald",
+   "kind": "demo",
+   "demo": "usage",
    "kicker": "Use it lightly",
    "title": "Pay in full. Use little.",
    "te": "Full statement balance due date కి కట్టండి",
-   "items": [
-    {
-     "at": 86.34,
-     "text": "Pay the full statement balance by the due date",
-     "tone": "good"
-    },
-    {
-     "at": 91.14,
-     "text": "Use about 10–20% of the limit",
-     "tone": "good"
-    },
-    {
-     "at": 96.74,
-     "text": "No exact formula guarantees a score jump",
-     "tone": "warn"
-    }
-   ]
+   "beats": {
+    "full": 86.14,
+    "low": 89.14,
+    "example": 91.14,
+    "nopct": 96.14
+   }
   },
   {
    "from": 102.54,
    "to": 128.74,
-   "kind": "points",
-   "color": "cyan",
+   "kind": "demo",
+   "demo": "reportdispute",
    "kicker": "Habits that matter",
    "title": "Watch your credit report",
    "te": "Credit report regular గా check చేయండి",
-   "items": [
-    {
-     "at": 104.14,
-     "text": "Pay on time, keep usage affordable",
-     "tone": "good"
-    },
-    {
-     "at": 108.14,
-     "text": "Avoid repeated, unnecessary applications",
-     "tone": "good"
-    },
-    {
-     "at": 112.14,
-     "text": "After settlement: did the bank update your report?",
-     "tone": "good"
-    },
-    {
-     "at": 116.14,
-     "text": "Errors? Dispute with the lender & credit bureau",
-     "tone": "warn"
-    },
-    {
-     "at": 124.14,
-     "text": "Accurate negative history can’t be removed",
-     "tone": "bad"
-    }
-   ]
+   "beats": {
+    "ontime": 104.14,
+    "apps": 108.14,
+    "check": 110.14,
+    "updated": 112.14,
+    "error": 116.14,
+    "dispute": 121.14,
+    "accurate": 124.14
+   }
   },
   {
    "from": 128.94,

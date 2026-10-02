@@ -15,6 +15,8 @@ mkdir -p "$CH"
 for id in "$@"; do
   [ -f "$CH/$id.mp4" ] && continue
   echo "START $id $(date -u +%H:%M:%S)" >> "$LOG"
+  # each render leaves a ~110 MB webpack bundle in /tmp; keep only the newest few or the disk fills up
+  ls -dt /tmp/remotion-webpack-bundle-* 2>/dev/null | tail -n +3 | xargs -r rm -rf
   if npx remotion render "$id" "$CH/.$id.partial.mp4" --concurrency=4 "${ENVF[@]}" >> "$LOG" 2>&1; then
     mv "$CH/.$id.partial.mp4" "$CH/$id.mp4"
     echo "DONE $id $(date -u +%H:%M:%S)" >> "$LOG"

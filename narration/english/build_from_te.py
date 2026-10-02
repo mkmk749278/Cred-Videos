@@ -55,6 +55,28 @@ def english_sentences():
     return [{'s': c[0]['s'], 'e': c[-1]['e'], 'text': ''.join(x['w'] for x in c).strip()} for c in sents]
 
 
+def whisper_words():
+    segs = json.load(open(os.path.join(ROOT, 'out/en/whisper.json')))
+    return [w for s in segs for w in s['words']]
+
+
+def resolver():
+    W = whisper_words()
+    nw = [re.sub(r'[^a-z0-9]', '', w['w'].lower()) for w in W]
+
+    def resolve(val, near):
+        if isinstance(val, (int, float)):
+            return float(val)
+        ps = [re.sub(r'[^a-z0-9]', '', p.lower()) for p in val.split()]
+        ps = [p for p in ps if p]
+        hits = [W[i]['s'] for i in range(len(W) - len(ps) + 1) if all(nw[i + j] == p for j, p in enumerate(ps))]
+        hits = [h for h in hits if abs(h - near) < 40]
+        if not hits:
+            raise SystemExit(f'override phrase not found near {near:.1f}s: {val!r}')
+        return round(min(hits, key=lambda h: abs(h - near)), 2)
+    return resolve
+
+
 def align(A, B):
     """monotonic DP: each step pairs 1-2 Telugu sentences with 1-2 English sentences, or skips one."""
     n, m = len(A), len(B)
@@ -121,6 +143,8 @@ def main():
     ends = [s['e'] for s in B]
     snap_start = lambda t: min(starts, key=lambda s: abs(s - t))  # noqa: E731
     mp_te = json.load(open(os.path.join(ROOT, 'narration/telugu/map.json')))
+    ov = json.load(open(os.path.join(ROOT, 'narration/english/overrides.json')))
+    res = resolver()
     order = ['hook'] + [f'm{k:02d}' for k in range(1, 14)]
     mp = {}
     st = {k: (0.0 if k == 'hook' else snap_start(f(mp_te[k]['start']))) for k in order}
@@ -131,6 +155,9 @@ def main():
                  'anchors': [[a[0], f(a[1])] + list(a[2:]) for a in mp_te[k].get('anchors', [])]}
         # anchors must stay inside the module and in order
         mp[k]['anchors'] = [a for a in mp[k]['anchors'] if mp[k]['start'] < a[1] < mp[k]['end']]
+        for a in mp[k]['anchors']:
+            if a[0] in ov.get('map', {}).get(k, {}):
+                a[1] = res(ov['map'][k][a[0]], a[1])
     json.dump(mp, open(os.path.join(ROOT, 'narration/english/map.json'), 'w'), indent=1)
 
     ins_te = json.load(open(os.path.join(ROOT, 'narration/telugu/inserts.json')))
@@ -144,6 +171,16 @@ def main():
                 it['at'] = f(it['at'])
             if 'beats' in ins:
                 ins['beats'] = {b: (9999 if v == 9999 else f(v)) for b, v in ins['beats'].items()}
+            o = ov.get('inserts', {}).get(k, {}).get(ins.get('demo') or ins.get('title'), {})
+            for b, v in o.get('beats', {}).items():
+                assert b in ins['beats'], (k, b)
+                ins['beats'][b] = 9999 if v == 9999 else res(v, ins['beats'][b] if ins['beats'][b] != 9999 else ins['from'])
+            for it, v in zip(ins.get('items', []), o.get('items', [])):
+                it['at'] = res(v, it['at'])
+            if o.get('from') is not None:
+                ins['from'] = res(o['from'], ins['from'])
+            if o.get('to') is not None:
+                ins['to'] = res(o['to'], ins['to'])
             lst.append(ins)
         out[k] = lst
     json.dump(out, open(os.path.join(ROOT, 'narration/english/inserts.json'), 'w'), ensure_ascii=False, indent=1)

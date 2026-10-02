@@ -1,4 +1,5 @@
 import React from 'react';
+import {tx} from '../lib/lang';
 import {C, FONT, MONO, alpha} from '../theme';
 import {Arrow, BeatSfx, Caption, DemoHeader, DemoProps, DemoRoot, Hi, Paper, Pill, SUPPORT, useBeats} from './kit';
 
@@ -67,10 +68,10 @@ const Field: React.FC<{label: string; value: string; o: number; good?: number}> 
 );
 
 const BODY = [
-  {k: 'l1', text: '“My income has fallen.”'},
-  {k: 'l2', text: '“Medical expenses make the current payment hard to manage.”'},
-  {k: 'l3', text: '“I am available to discuss repayment options.”'},
-  {k: 'l4', text: '“After essential expenses, I can afford ₹7,000 a month.”'},
+  {k: 'l1', text: tx('“My income has fallen.”', '“My income has come down.”')},
+  {k: 'l2', text: tx('“Medical expenses make the current payment hard to manage.”', '“I have medical expenses at home.”')},
+  {k: 'l3', text: tx('“I am available to discuss repayment options.”', '“I want to discuss a payment plan.”')},
+  {k: 'l4', text: tx('“After essential expenses, I can afford ₹7,000 a month.”', '“After my basic expenses, I can afford ₹7,000 each month.”')},
   {k: 'ask', text: 'Which options apply: reduced EMI, repayment plan, restructuring or settlement?'},
   {k: 'sent', text: 'I prefer written communication by email.'},
 ];
@@ -108,12 +109,12 @@ export const EmailDemo: React.FC<DemoProps> = ({ins}) => {
       {promise > 0.01 && (
         <div style={{position: 'absolute', left: 1270, top: 330, width: 540, opacity: promise}}>
           <div style={{padding: 24, borderRadius: 20, background: '#2A1416', border: `3px solid ${C.crimson}`}}>
-            <div style={{fontFamily: FONT, fontSize: 34, fontWeight: 850, color: '#fff'}}>“I’ll pay ₹20,000 tomorrow”</div>
+            <div style={{fontFamily: FONT, fontSize: 34, fontWeight: 850, color: '#fff'}}>{tx('“I’ll pay ₹20,000 tomorrow”', '“I’ll pay tomorrow”')}</div>
             <div style={{fontFamily: FONT, fontSize: 28, color: '#FCA5A5', marginTop: 8}}>just to end the call — not in the budget</div>
           </div>
           {on('honest') && (
             <div style={{marginTop: 22, padding: 24, borderRadius: 20, background: '#0F2A1D', border: `3px solid ${C.emerald}`, opacity: p('honest')}}>
-              <div style={{fontFamily: FONT, fontSize: 34, fontWeight: 850, color: '#fff'}}>“I need a workable option”</div>
+              <div style={{fontFamily: FONT, fontSize: 34, fontWeight: 850, color: '#fff'}}>{tx('“I need a workable option”', '“I can’t promise that amount. What other options are there?”')}</div>
               <div style={{fontFamily: FONT, fontSize: 28, color: '#86EFAC', marginTop: 8}}>₹7,000 a month — from the budget</div>
             </div>
           )}

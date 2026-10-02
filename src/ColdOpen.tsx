@@ -4,7 +4,7 @@ import {interpolate} from './lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from './theme';
 import {CLAMP, spr} from './lib/anim';
 import {FPS, timing} from './lib/timing';
-import {LANG, VO_DIR} from './lib/lang';
+import {DEMO, LANG, VO_DIR} from './lib/lang';
 import {Phone, Sfx} from './components/primitives';
 import type {W} from './character/lipsync';
 
@@ -114,8 +114,18 @@ export const ColdOpen: React.FC = () => {
         </div>
       )}
       {/* promises */}
-      <div style={{position: 'absolute', left: 1040, top: LANG === 'te' ? 190 : 300, display: 'flex', flexDirection: 'column', gap: LANG === 'te' ? 16 : 22}}>
-        {((LANG === 'te'
+      <div style={{position: 'absolute', left: 1040, top: DEMO ? 190 : 300, display: 'flex', flexDirection: 'column', gap: DEMO ? 16 : 22}}>
+        {((LANG === 'enh'
+          ? [
+              // the creator's English hook asks these on its own words (seconds in the hook)
+              {a: vf(34.84), t: 'When you can’t pay the bill', c: C.cyan, ic: 'statement' as RoadIconKind},
+              {a: vf(36.9), t: 'What the bank can actually do', c: C.cyan, ic: 'bank' as RoadIconKind},
+              {a: vf(38.82), t: 'What your rights are', c: C.emerald, ic: 'shield' as RoadIconKind},
+              {a: vf(40.08), t: 'How to handle the calls', c: C.emerald, ic: 'phone' as RoadIconKind},
+              {a: vf(41.7), t: 'Asking for a settlement', c: C.amber, ic: 'letter' as RoadIconKind},
+              {a: vf(43.46), t: 'Improving your credit score', c: C.amber, ic: 'report' as RoadIconKind},
+            ]
+          : LANG === 'te'
           ? [
               // the Telugu hook asks six questions; one line per question, on its word
               {a: vf(33.8), t: 'What happens if you can’t pay', c: C.cyan, ic: 'statement' as RoadIconKind},
@@ -132,7 +142,7 @@ export const ColdOpen: React.FC = () => {
         ).map((x: {a: number; t: string; c: string; ic?: RoadIconKind}) => {
           const p = spr(f, fps, x.a, {damping: 15, stiffness: 200, mass: 0.6});
           return f < x.a || titleIn > 6 ? null : (
-            <div key={x.t} style={{fontSize: LANG === 'te' ? 44 : 54, fontWeight: 900, color: x.c, opacity: p, transform: `translateY(${(1 - p) * 30}px)`, textShadow: '0 4px 20px rgba(0,0,0,0.6)'}}>
+            <div key={x.t} style={{fontSize: DEMO ? 44 : 54, fontWeight: 900, color: x.c, opacity: p, transform: `translateY(${(1 - p) * 30}px)`, textShadow: '0 4px 20px rgba(0,0,0,0.6)'}}>
               {x.ic ? <span style={{display: 'inline-flex', alignItems: 'center', gap: 20}}><RoadIcon kind={x.ic} color={x.c} />{x.t}</span> : <>✓ {x.t}</>}
             </div>
           );

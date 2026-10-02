@@ -1,4 +1,5 @@
 import React from 'react';
+import {tx} from '../lib/lang';
 import {interpolate} from '../lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP} from '../lib/anim';
@@ -95,7 +96,7 @@ export const CallerDemo: React.FC<DemoProps> = ({ins}) => {
       )}
       {on('say') && (
         <div style={{position: 'absolute', left: 640, top: 750, width: 1160, padding: '18px 26px', borderRadius: 18, background: '#0F2A1D', border: `3px solid ${C.emerald}`, fontFamily: FONT, fontSize: 30, color: '#fff', opacity: p('say')}}>
-          “I’ve explained my hardship to the bank in writing. I’ll discuss payment options through the official channel. Please don’t use threatening language.”
+          {tx('“I’ve explained my hardship to the bank in writing. I’ll discuss payment options through the official channel. Please don’t use threatening language.”', '“I have already explained my problem to the bank in writing. I’ll discuss payment through the official channel. Please don’t threaten me.”')}
         </div>
       )}
       <Caption ins={ins} bottom={30} lines={[

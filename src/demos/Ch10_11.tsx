@@ -1,4 +1,5 @@
 import React from 'react';
+import {tx} from '../lib/lang';
 import {C, FONT, MONO, alpha} from '../theme';
 import {BeatSfx, Caption, DemoHeader, DemoProps, DemoRoot, IllusTag, inr, Paper, PhoneBody, Pill, SUPPORT, useBeats} from './kit';
 
@@ -126,7 +127,7 @@ export const OfferAffDemo: React.FC<DemoProps> = ({ins}) => {
         <>
           <Card x={120} y={320} w={860} color={C.emerald} o={p('start')} bg="#0F2A1D">
             <T s={26} c="#86EFAC" w={800}>YOUR PROPOSAL — BASED ON INCOME AND FUNDS</T>
-            <T s={36} mt={10}>“This is the amount I can arrange at present. I can’t commit to more. Please consider a full and final settlement.”</T>
+            <T s={36} mt={10}>{tx('“This is the amount I can arrange at present. I can’t commit to more. Please consider a full and final settlement.”', '“This is what I can arrange now. I can’t promise more. Please consider a full and final settlement.”')}</T>
           </Card>
           {on('borrow') && (
             <div style={{position: 'absolute', left: 1040, top: 320, width: 760, opacity: p('borrow')}}>
@@ -250,7 +251,7 @@ export const ReceiptsDemo: React.FC<DemoProps> = ({ins}) => {
           </Card>
           {on('phone') && (
             <>
-              <Bubble x={1040} y={340} text="📞 “We will handle everything.”" o={p('phone')} size={36} />
+              <Bubble x={1040} y={340} text={tx('📞 “We will handle everything.”', '📞 “Don’t worry, we’ll handle it.”')} o={p('phone')} size={36} />
               <div style={{position: 'absolute', left: 1040, top: 470, opacity: p('phone', 15)}}><Pill text="✕ A phone assurance is not enough" color={C.crimson} size={32} /></div>
             </>
           )}

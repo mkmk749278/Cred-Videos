@@ -161,8 +161,11 @@ const OfferRow: React.FC<{label: string; value: string; o: number; hi: boolean}>
 );
 
 export const EmiDemo: React.FC<DemoProps> = ({ins}) => {
-  const {p, on, stage} = useBeats(ins);
+  const {p, on, stage, at} = useBeats(ins);
   const st = stage(['emi', 'fee', 'total']);
+  // whichever example the narration reaches last is the one on screen (the order differs per narration)
+  const showA = on('unaffordable') && !(on('useful') && at('useful') > at('unaffordable'));
+  const showB = on('useful') && !(on('unaffordable') && at('unaffordable') > at('useful'));
   const AV = 7000;
   const scale = 0.07; // px per rupee
   const bar = (amt: number, color: string, label: string, o: number, y: number) => (
@@ -191,7 +194,7 @@ export const EmiDemo: React.FC<DemoProps> = ({ins}) => {
       {/* affordability test against the budget from chapter 1 */}
       {bar(AV, C.cyan, 'Available after essentials (from your budget)', p('afford'), 330)}
       {on('afford') && <div style={{position: 'absolute', left: limitX - 2, top: 380, width: 4, height: 400, background: alpha(C.cyan, 0.8), opacity: p('afford', 10)}} />}
-      {on('unaffordable') && !on('useful') && (
+      {showA && (
         <>
           {bar(9500, C.crimson, 'EMI offer A (example)', p('unaffordable'), 480)}
           <div style={{position: 'absolute', left: limitX + 10, top: 586, opacity: p('unaffordable', 20)}}><Pill text="over budget" color={C.crimson} size={26} /></div>
@@ -200,7 +203,7 @@ export const EmiDemo: React.FC<DemoProps> = ({ins}) => {
           </div>
         </>
       )}
-      {on('useful') && (
+      {showB && (
         <>
           {bar(6500, C.emerald, 'EMI offer B (example)', p('useful'), 480)}
           <div style={{position: 'absolute', left: 1060, top: 660, opacity: p('useful', 20)}}><Pill text="✓ fits — an affordable plan may be useful" color={C.emerald} size={30} /></div>

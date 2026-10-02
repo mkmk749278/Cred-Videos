@@ -76,9 +76,10 @@ export const IllusTag: React.FC<{text?: string; style?: React.CSSProperties}> = 
 /** A bottom caption line that changes with the beat (main conclusion text, readable size) */
 export const Caption: React.FC<{lines: {k: string; text: string; te?: string; color?: string}[]; ins: Insert; bottom?: number}> = ({lines, ins, bottom = 150}) => {
   const {frame, at} = useBeats(ins);
+  // the most recently reached line wins (ties: the later one), so lines may be listed in any order
   let cur = -1;
   lines.forEach((l, i) => {
-    if (frame >= at(l.k)) cur = i;
+    if (frame >= at(l.k) && (cur < 0 || at(l.k) >= at(lines[cur].k))) cur = i;
   });
   if (cur < 0) return null;
   const l = lines[cur];

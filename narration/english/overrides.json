@@ -1,0 +1,178 @@
+{
+ "_doc": "Beat/item/anchor fixes for the English narration. Values: an English phrase (resolved to the first word's time in out/en/whisper.json, nearest to the mapped time), a number (full.mp3 seconds), or 9999 (beat not shown). Inserts are keyed by demo name, or by panel title.",
+ "map": {
+  "hook": {
+   "Forty calls a day": "40 calls",
+   "Messages saying": "Then the WhatsApp messages",
+   "stop": "take a moment",
+   "Take a breath": "Take a deep breath",
+   "I'll show you": "Let's talk about it calmly",
+   "the law really says": "When you can't pay",
+   "exactly what you can do": "How do you handle",
+   "And stay till": "We'll go through all",
+   "my own case": "You don't need to know"
+  }
+ },
+ "inserts": {
+  "m01": {
+   "Can pay? Pay on time.": {
+    "items": [
+     "salary has stopped",
+     "needed hospital treatment",
+     "using one card to pay another",
+     "bills have become too much"
+    ]
+   },
+   "budget": {
+    "beats": {
+     "essentials": "Then write down these necessary",
+     "available": "see how much is actually left",
+     "write": "Put it on paper"
+    }
+   }
+  },
+  "m02": {
+   "verifynotice": {
+    "beats": {
+     "verify": 259.5,
+     "sender": 260.1,
+     "ref": 260.8,
+     "help": "speak to a lawyer",
+     "actual": "What matters is the actual",
+     "loud": "A loud voice"
+    }
+   }
+  },
+  "m03": {
+   "register": {
+    "beats": {
+     "separate": "Keep each account's papers"
+    }
+   }
+  },
+  "m04": {
+   "statement": {
+    "beats": {
+     "purchase": "How much did you actually spend",
+     "finance": "How much is interest",
+     "late": "late payment fee",
+     "taxes": "What are the taxes",
+     "prevpay": "where did your earlier payments",
+     "total": "Ask for a clear breakdown"
+    }
+   },
+   "dispute": {
+    "beats": {
+     "incorrect": "If something looks wrong",
+     "breakdown": "ask the bank to explain it in writing",
+     "notassume": "You don't have to accept a charge",
+     "dispute": "only because it appears",
+     "review": "does this mean the bank must",
+     "waive": "the bank may agree to reduce",
+     "some": "the bank may agree to reduce",
+     "rbi": 9999
+    },
+    "from": "If something looks wrong"
+   },
+   "A protection on charges": {
+    "to": 476.1
+   }
+  },
+  "m05": {
+   "setoff": {
+    "beats": {
+     "meaning": "The point is this",
+     "adjust": "may be able to use money"
+    }
+   }
+  },
+  "m06": {
+   "silence": {
+    "beats": {
+     "resolve": 9999
+    }
+   },
+   "record": {
+    "beats": {
+     "record": "But it gives you a record",
+     "documents": "It shows what you told"
+    }
+   }
+  },
+  "m08": {
+   "phone": {
+    "beats": {
+     "keep": "keep a way for the bank",
+     "email": "Check verified emails",
+     "letters": "collect official letters",
+     "miss": "If you silence every"
+    }
+   },
+   "sixty": {
+    "beats": {
+     "calls": "and another may start",
+     "debt": "The debt does not disappear",
+     "notsilence": "Keep working on your budget",
+     "plan": "Keep working on your budget"
+    }
+   }
+  },
+  "m09": {
+   "calendar": {
+    "beats": {
+     "incorrect": "That is not correct",
+     "before": "Charges, overdue reporting"
+    }
+   },
+   "emi": {
+    "beats": {
+     "useful": "If it is affordable",
+     "unaffordable": "If it is too high"
+    }
+   }
+  },
+  "m10": {
+   "offers": {
+    "beats": {
+     "age": "The age of the account",
+     "breakdown": "the balance",
+     "situation": "the person's finances",
+     "policy": "the bank's approval",
+     "written": "Check your own written offer",
+     "online": 9999,
+     "afford": 9999,
+     "friendly": "A friendly person",
+     "rude": "A rude person",
+     "verify": "Verify first"
+    }
+   }
+  },
+  "m11": {
+   "offeraff": {
+    "beats": {
+     "affordable": "Keep the amount and deadline",
+     "deadline": "deadline realistic",
+     "borrow": "If you take another very costly",
+     "example": "Imagine your balance",
+     "outstanding": "is one lakh rupees",
+     "caller": "A caller says",
+     "relief": "You feel relieved",
+     "notimmediately": "But before paying"
+    }
+   },
+   "letter": {
+    "beats": {
+     "clarity": 9999
+    }
+   }
+  },
+  "m12": {
+   "reports": {
+    "beats": {
+     "approvals": "checking a new application",
+     "ndc": "Getting a"
+    }
+   }
+  }
+ }
+}

@@ -15,3 +15,6 @@ export const DEMO = LANG !== 'en';
 /** Telugu lines (header/caption/panel translations) are shown only in the Telugu edition */
 export const SHOW_TE = LANG === 'te';
 export const VO_DIR = LANG === 'te' ? 'audio/vo_te' : LANG === 'enh' ? 'audio/vo_enh' : 'audio/vo';
+
+/** pick on-screen wording: the Telugu-edition text, or the creator's own English phrasing in the English edition */
+export const tx = (te: string, enh: string) => (LANG === 'enh' ? enh : te);

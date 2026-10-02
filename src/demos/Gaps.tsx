@@ -1,4 +1,5 @@
 import React from 'react';
+import {tx} from '../lib/lang';
 import {C, FONT, MONO, alpha} from '../theme';
 import {Arrow, BeatSfx, Caption, DemoHeader, DemoProps, DemoRoot, Folder, IllusTag, inr, Paper, PhoneBody, Pill, SUPPORT, useBeats} from './kit';
 
@@ -30,7 +31,7 @@ export const SilenceDemo: React.FC<DemoProps> = ({ins}) => {
           </div>
         )}
       </PhoneBody>
-      {on('peace') && !on('silence') && <div style={{position: 'absolute', left: 660, top: 360, padding: '18px 28px', borderRadius: '28px 28px 28px 8px', background: '#1E293B', border: '3px solid rgba(148,163,184,0.5)', fontFamily: FONT, fontSize: 38, fontWeight: 800, color: '#fff', opacity: p('peace')}}>“I won’t answer anyone for a few days.”</div>}
+      {on('peace') && !on('silence') && <div style={{position: 'absolute', left: 660, top: 360, padding: '18px 28px', borderRadius: '28px 28px 28px 8px', background: '#1E293B', border: '3px solid rgba(148,163,184,0.5)', fontFamily: FONT, fontSize: 38, fontWeight: 800, color: '#fff', opacity: p('peace')}}>{tx('“I won’t answer anyone for a few days.”', '“I just want some peace.”')}</div>}
       {on('understandable') && !on('silence') && <div style={{position: 'absolute', left: 660, top: 480, opacity: p('understandable')}}><Pill text="That feeling is understandable" color={C.cyan} size={34} /></div>}
       {/* the bank's side of the silence */}
       {on('silence') && (

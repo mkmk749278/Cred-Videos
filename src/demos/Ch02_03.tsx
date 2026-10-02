@@ -160,7 +160,7 @@ export const RegisterDemo: React.FC<DemoProps> = ({ins}) => {
       {scatter.map((s, i) => (
         <div key={i} style={{position: 'absolute', left: s.x + (tableX - s.x) * form, top: s.y + (380 + i * 30 - s.y) * form, width: 360, height: 200, borderRadius: 18, background: i % 2 ? '#F4F1EA' : '#1F2A44', color: i % 2 ? '#1B2433' : '#fff', fontFamily: FONT, fontSize: 32, fontWeight: 800, padding: 24, boxSizing: 'border-box', transform: `rotate(${s.r * (1 - form)}deg) scale(${1 - 0.6 * form})`, opacity: p('fear', i * 5) * (1 - form), boxShadow: '0 20px 50px rgba(0,0,0,0.5)'}}>{s.t}</div>
       ))}
-      {on('lose') && !on('list') && <div style={{position: 'absolute', left: 0, right: 0, top: 900, textAlign: 'center', opacity: p('lose')}}><Pill text="How much do I owe where?" color={C.crimson} size={36} /></div>}
+      {on('lose') && !on('list') && <div style={{position: 'absolute', left: 0, right: 0, top: 780, textAlign: 'center', opacity: p('lose')}}><Pill text="How much do I owe where?" color={C.crimson} size={36} /></div>}
       {/* the register */}
       {on('list') && (
         <div style={{position: 'absolute', left: tableX, top: 340, opacity: form}}>

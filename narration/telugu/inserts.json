@@ -775,76 +775,25 @@
   },
   {
    "from": 1194.2,
-   "to": 1207.4,
-   "kind": "big",
-   "color": "amber",
-   "kicker": "Don't compare blindly",
-   "title": "“My friend got 25%” ≠ you will too",
-   "te": "Friend కి 25% అయిందంటే మీకూ అవుతుందని కాదు",
-   "items": [
-    {
-     "at": 1198.4,
-     "text": "Account age",
-     "tone": "info"
-    },
-    {
-     "at": 1200.4,
-     "text": "Balance breakdown",
-     "tone": "info"
-    },
-    {
-     "at": 1202.4,
-     "text": "Financial situation",
-     "tone": "info"
-    },
-    {
-     "at": 1204.4,
-     "text": "Approval policy",
-     "tone": "info"
-    }
-   ]
-  },
-  {
-   "from": 1207.6,
    "to": 1236.8,
-   "kind": "compare",
-   "color": "cyan",
-   "kicker": "Decide on facts, not tone",
-   "title": "Verify first. Then decide.",
-   "left": "DON'T",
-   "right": "DO",
-   "items": [
-    {
-     "at": 1208.3,
-     "text": "Treat an online % as a promise",
-     "tone": "bad"
-    },
-    {
-     "at": 1213.3,
-     "text": "Use your bank’s verified written offer",
-     "tone": "good"
-    },
-    {
-     "at": 1216.3,
-     "text": "Discuss what you can afford",
-     "tone": "good"
-    },
-    {
-     "at": 1219.3,
-     "text": "Friendly caller = genuine offer",
-     "tone": "bad"
-    },
-    {
-     "at": 1223.3,
-     "text": "Rude caller = ignore the account",
-     "tone": "bad"
-    },
-    {
-     "at": 1227.3,
-     "text": "Verify the process",
-     "tone": "good"
-    }
-   ]
+   "kind": "demo",
+   "demo": "offers",
+   "kicker": "Don't compare blindly",
+   "title": "Your account, your offer",
+   "te": "Friend కి వచ్చిన offer మీకు రావాలని లేదు",
+   "beats": {
+    "friend": 1194.3,
+    "age": 1198.3,
+    "breakdown": 1202.3,
+    "situation": 1204.3,
+    "policy": 1206.3,
+    "online": 1208.3,
+    "written": 1213.3,
+    "afford": 1216.3,
+    "friendly": 1219.3,
+    "rude": 1223.3,
+    "verify": 1227.3
+   }
   }
  ],
  "m11": [
@@ -877,34 +826,22 @@
   {
    "from": 1255.4,
    "to": 1287.4,
-   "kind": "compare",
-   "color": "amber",
+   "kind": "demo",
+   "demo": "offeraff",
    "kicker": "Settle only what you can afford",
    "title": "Affordable amount, realistic deadline",
-   "left": "AVOID",
-   "right": "DO",
-   "items": [
-    {
-     "at": 1255.6,
-     "text": "“I can't commit more than this — offer a full and final settlement”",
-     "tone": "good"
-    },
-    {
-     "at": 1261.2,
-     "text": "A high-interest loan to pay the settlement",
-     "tone": "bad"
-    },
-    {
-     "at": 1268.9,
-     "text": "An amount you can afford, a deadline you can meet",
-     "tone": "good"
-    },
-    {
-     "at": 1277.4,
-     "text": "“Pay ₹30,000 now, we'll close it” — paying at once, in relief",
-     "tone": "bad"
-    }
-   ]
+   "te": "Afford చేయగల amount, realistic deadline",
+   "beats": {
+    "start": 1255.6,
+    "borrow": 1261.3,
+    "affordable": 1268.3,
+    "deadline": 1271.3,
+    "example": 1273.3,
+    "outstanding": 1275.3,
+    "caller": 1277.3,
+    "relief": 1281.3,
+    "notimmediately": 1283.3
+   }
   },
   {
    "from": 1287.4,
@@ -929,74 +866,39 @@
   {
    "from": 1361.8,
    "to": 1391.8,
-   "kind": "points",
-   "color": "emerald",
+   "kind": "demo",
+   "demo": "receipts",
    "kicker": "After you pay",
    "title": "Get it in writing",
    "te": "Payment complete అయ్యాక written confirmation తీసుకోండి",
-   "items": [
-    {
-     "at": 1361.9,
-     "text": "Save the payment receipt",
-     "tone": "good"
-    },
-    {
-     "at": 1363.9,
-     "text": "Instalments? Follow the due dates carefully",
-     "tone": "warn"
-    },
-    {
-     "at": 1373.9,
-     "text": "Written confirmation + No Dues / completion certificate",
-     "tone": "good"
-    },
-    {
-     "at": 1380.9,
-     "text": "Court case pending? Confirm how it will close",
-     "tone": "warn"
-    },
-    {
-     "at": 1388.0,
-     "text": "“We’ll handle everything” on the phone isn’t enough",
-     "tone": "bad"
-    }
-   ]
+   "beats": {
+    "receipt": 1361.9,
+    "instal": 1363.9,
+    "miss": 1368.9,
+    "confirm": 1373.9,
+    "court": 1380.9,
+    "phone": 1388.0
+   }
   },
   {
    "from": 1392.0,
    "to": 1433.2,
-   "kind": "points",
-   "color": "cyan",
+   "kind": "demo",
+   "demo": "lokadalat",
    "kicker": "Lok Adalat",
    "title": "Nothing to fear — but read the terms",
    "te": "Lok Adalat పేరు వినగానే tension అవసరం లేదు",
-   "items": [
-    {
-     "at": 1399.6,
-     "text": "A chance to reach a mutually agreed settlement",
-     "tone": "info"
-    },
-    {
-     "at": 1405.6,
-     "text": "Pending and pre-litigation cases can come there",
-     "tone": "info"
-    },
-    {
-     "at": 1413.6,
-     "text": "Check the terms are affordable",
-     "tone": "warn"
-    },
-    {
-     "at": 1415.6,
-     "text": "You don’t have to accept any offer",
-     "tone": "warn"
-    },
-    {
-     "at": 1423.6,
-     "text": "Agreed award = final & binding, like a court decree. No ordinary appeal",
-     "tone": "warn"
-    }
-   ]
+   "beats": {
+    "nervous": 1394.6,
+    "opportunity": 1399.6,
+    "eligible": 1405.6,
+    "explain": 1409.6,
+    "afford": 1413.6,
+    "notaccept": 1415.6,
+    "consent": 1419.6,
+    "award": 1423.6,
+    "appeal": 1429.6
+   }
   },
   {
    "from": 1433.4,

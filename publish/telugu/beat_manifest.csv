@@ -33,7 +33,7 @@ Scene07,Recovery agents — rules & tricks · Your rights,evidence,demo,905.147,
 Scene07,Recovery agents — rules & tricks · Your rights,complaint,demo,926.447,952.647,912.2,938.4,I.7,,eligibility not simplified to “wait 30 days”
 Scene07,Recovery agents — rules & tricks · Your rights,panel:A complaint fixes conduct — not the debt,big,952.847,969.067,938.6,958.14,,,
 Scene08,Non-stop calls control · Phone settings,phone,demo,972.487,1011.987,956.2,995.7,J,Example interface — settings vary by phone,job/hospital/delivery calls can be hidden too
-Scene08,Non-stop calls control · Phone settings,panel:“Ignore calls and the file closes in 60 days?”,big,1012.187,1039.267,995.9,1026.3200000000002,,,
+Scene08,Non-stop calls control · Phone settings,sixty,demo,1012.187,1039.267,995.9,1026.3200000000002,J,,no guarantee the file closes; the debt does not disappear
 Scene09,"Due date నుంచి NPA, write-off వరకు · The timeline",calendar,demo,1044.787,1114.987,1026.4,1096.6,K,illustration,NPA = minimum due not fully paid within 90 days from the due date; >3 days rule counted from original due date; not “no problem until 90 days”
 Scene09,"Due date నుంచి NPA, write-off వరకు · The timeline",panel:NPA doesn't mean “no need to pay”,big,1115.187,1122.387,1096.8,1104.0,,,
 Scene09,"Due date నుంచి NPA, write-off వరకు · The timeline",emi,demo,1122.587,1151.787,1104.2,1133.4,L,Illustration — example amounts,no invented rate; affordability decides
@@ -48,7 +48,7 @@ Scene11,Settlement & Lok Adalat — safe గా · Settle safely,receipts,demo,1
 Scene11,Settlement & Lok Adalat — safe గా · Settle safely,lokadalat,demo,1414.02,1454.9,1392.0,1433.2,N,sample,consent matters; final and binding; no ordinary appeal
 Scene11,Settlement & Lok Adalat — safe గా · Settle safely,panel:Ask until it's clear,points,1455.1,1477.167,1433.4,1458.8,,,
 Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",profile,demo,1486.907,1492.107,1463.4,1468.6,O,sample,"settlement can affect the profile — no score number, no promise"
-Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",reports,demo,1492.307,1522.307,1468.8,1498.8,O,sample — fictional,settlement completion ≠ reporting status
+Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",reports,demo,1492.307,1525.407,1468.8,1501.9,O,sample — fictional,settlement completion ≠ reporting status
 Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",stabilise,demo,1525.507,1540.707,1502.0,1517.2,O,,no instant reset; no rush into new credit
 Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",securedcard,demo,1540.807,1563.907,1517.3,1540.4,O,sample,FD doesn’t guarantee approval; keep emergency savings separate
 Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",usage,demo,1564.107,1580.507,1540.6,1557.0,O,Illustration — example limit,no exact % guarantees a score rise

@@ -1808,8 +1808,8 @@
      ]
     },
     {
-     "beat_id": "panel:“Ignore calls and the file closes in 60 days?”",
-     "kind": "big",
+     "beat_id": "sixty",
+     "kind": "demo",
      "title": "“Ignore calls and the file closes in 60 days?”",
      "kicker": "No guarantee",
      "te": "అలాంటి guarantee ఏమీ లేదు",
@@ -1818,7 +1818,58 @@
      "video_start": 1012.187,
      "video_end": 1039.267,
      "cue_text": "“If I do not answer the calls, will the file close after sixty days?” There is no such guarantee. The recovery agency may change. The bank's team may change. Calls may decrease and then increase again. But a change in the agency's assignment does not make the debt disappear. Your plan should not depend on silence. It should depend on a budget, written communication, evidence, and verified repayment options. Now, let us see what happens to the account from the due date onwards. Your statement has a due date.",
-     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "J",
+     "objects": [
+      "60-day countdown",
+      "agency badge swap",
+      "call-volume line",
+      "plan blocks"
+     ],
+     "actions": [
+      "countdown struck; agency changes; calls dip and rise; plan replaces silence"
+     ],
+     "labels": [],
+     "qualifications": [
+      "no guarantee the file closes; the debt does not disappear"
+     ],
+     "sub_beats": [
+      {
+       "key": "q",
+       "audio_sec": 996.0,
+       "video_sec": 1012.287
+      },
+      {
+       "key": "noguarantee",
+       "audio_sec": 1001.5,
+       "video_sec": 1017.787
+      },
+      {
+       "key": "agency",
+       "audio_sec": 1003.0,
+       "video_sec": 1019.287
+      },
+      {
+       "key": "calls",
+       "audio_sec": 1006.2,
+       "video_sec": 1022.487
+      },
+      {
+       "key": "debt",
+       "audio_sec": 1008.5,
+       "video_sec": 1024.787
+      },
+      {
+       "key": "notsilence",
+       "audio_sec": 1013.5,
+       "video_sec": 1029.787
+      },
+      {
+       "key": "plan",
+       "audio_sec": 1016.2,
+       "video_sec": 1032.487
+      }
+     ]
     }
    ]
   },
@@ -2654,8 +2705,8 @@
      "sub_beats": [
       {
        "key": "affect",
-       "audio_sec": 1463.5,
-       "video_sec": 1487.007
+       "audio_sec": 1464.6,
+       "video_sec": 1488.107
       },
       {
        "key": "honest",
@@ -2671,10 +2722,10 @@
      "kicker": "Settled vs Closed",
      "te": "Settled, Closed — రెండూ వేరు",
      "audio_start": 1468.8,
-     "audio_end": 1498.8,
+     "audio_end": 1501.9,
      "video_start": 1492.307,
-     "video_end": 1522.307,
-     "cue_text": "“Settled” generally indicates a payment below the full contractual dues, made with the lender's consent. “Closed” is a different status, associated with an account that has been fully repaid. Lenders may view a “Settled” status negatively. It can affect future loan or card approvals. Receiving a No Dues Certificate does not mean your credit report must show “Closed”. Settlement completion and credit reporting status are two different things.",
+     "video_end": 1525.407,
+     "cue_text": "“Settled” generally indicates a payment below the full contractual dues, made with the lender's consent. “Closed” is a different status, associated with an account that has been fully repaid. Lenders may view a “Settled” status negatively. It can affect future loan or card approvals. Receiving a No Dues Certificate does not mean your credit report must show “Closed”. Settlement completion and credit reporting status are two different things. So, can you rebuild your credit? Yes, you can. But there is no instant reset.",
      "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
      "brief_section": "O",
      "objects": [

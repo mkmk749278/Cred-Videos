@@ -6,6 +6,10 @@ import {contentStart, cueFrame, sceneFrames, sentenceEnd} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
 import {Banner, Glass, KLine, Label, Layer, NextChip, Reveal, Sfx, shake, SpokenTile, Tag} from '../components/primitives';
 import {Vaults3D} from '../three/Vaults3D';
+import {LANG} from '../lib/lang';
+
+// Telugu narration qualifies set-off ("may adjust ... under applicable terms") and says moving accounts is no legal shield
+const TE = LANG === 'te';
 
 const I = 4;
 
@@ -115,16 +119,16 @@ export const Scene05: React.FC = () => {
         ))}
         <div style={{position: 'absolute', left: 1120, top: 110, opacity: vis(frame, cSweep + 40, cMove + 20)}}>
           <div style={{padding: '12px 22px', borderRadius: 12, background: alpha(C.crimson, 0.25 + 0.15 * Math.sin(frame / 3)), border: `2px solid ${C.crimson}`, fontWeight: 900, fontSize: 30, color: '#FECACA', fontFamily: FONT}}>
-            ⚠ SALARY SWEPT TO ZERO · NO COURT ORDER
+            {TE ? '⚠ SAME-BANK MONEY MAY BE ADJUSTED' : '⚠ SALARY SWEPT TO ZERO · NO COURT ORDER'}
           </div>
         </div>
         <div style={{position: 'absolute', left: 0, right: 0, top: 680}}>
           <Banner at={cKeep + 10} color={C.gold} size={38}>
-            Creditor-bank accounts: keep at ₹0
+            {TE ? 'Plan your essentials so household money isn’t disrupted' : 'Creditor-bank accounts: keep at ₹0'}
           </Banner>
         </div>
         <div style={{position: 'absolute', left: 0, right: 0, top: 735, opacity: vis(frame, cFamily)}}>
-          <div style={{textAlign: 'center', fontSize: 26, color: C.muted}}>Groceries · healthcare · secured EMIs come before unsecured card debt</div>
+          <div style={{textAlign: 'center', fontSize: 26, color: C.muted}}>{TE ? 'Moving accounts is not a shield from valid legal recovery or court orders' : 'Groceries · healthcare · secured EMIs come before unsecured card debt'}</div>
         </div>
         <Sfx at={cVaults} name="block_slam" volume={0.35} />
         <Sfx at={cVaults + 12} name="block_slam" volume={0.35} />

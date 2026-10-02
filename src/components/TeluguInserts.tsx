@@ -30,6 +30,8 @@ export type Insert = {
 };
 
 const DATA = insertsData as unknown as Record<string, Insert[]>;
+/** supporting lines (Telugu, notes): brighter than C.muted so they read on a phone */
+const SUPPORT = '#D3DCE8';
 const TE_FONT = "'Noto Sans Telugu', 'Inter', sans-serif";
 const FADE = 12;
 const f = (sec: number) => Math.round((LEAD + sec) * FPS);
@@ -49,10 +51,10 @@ export const insertLevel = (index: number, frame: number) => {
 };
 
 const Kicker: React.FC<{text: string; color: string}> = ({text, color}) => (
-  <div style={{fontFamily: MONO, fontSize: 22, letterSpacing: 6, color, fontWeight: 700, textTransform: 'uppercase'}}>{text}</div>
+  <div style={{fontFamily: MONO, fontSize: 26, letterSpacing: 6, color, fontWeight: 700, textTransform: 'uppercase'}}>{text}</div>
 );
 
-const TeLine: React.FC<{text?: string; size?: number; color?: string}> = ({text, size = 34, color = C.muted}) =>
+const TeLine: React.FC<{text?: string; size?: number; color?: string}> = ({text, size = 40, color = SUPPORT}) =>
   text ? <div style={{fontFamily: TE_FONT, fontSize: size, fontWeight: 600, color, marginTop: 10, lineHeight: 1.4}}>{text}</div> : null;
 
 const Panel: React.FC<{ins: Insert}> = ({ins}) => {
@@ -69,8 +71,8 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
     <div style={{textAlign: ins.kind === 'big' ? 'center' : 'left'}}>
       {ins.kicker && <Kicker text={ins.kicker} color={color} />}
       <div style={{fontSize: ins.kind === 'big' ? 72 : 54, fontWeight: 850, lineHeight: 1.1, marginTop: 12, letterSpacing: -1}}>{ins.title}</div>
-      <TeLine text={ins.te} size={ins.kind === 'big' ? 40 : 32} />
-      {ins.sub && <div style={{fontSize: 30, color: C.muted, marginTop: 14, lineHeight: 1.35}}>{ins.sub}</div>}
+      <TeLine text={ins.te} size={ins.kind === 'big' ? 46 : 40} />
+      {ins.sub && <div style={{fontSize: 34, color: SUPPORT, marginTop: 14, lineHeight: 1.35}}>{ins.sub}</div>}
     </div>
   );
 
@@ -85,8 +87,8 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
                 {it.tone === 'good' ? '✓' : it.tone === 'bad' ? '✕' : it.tone === 'warn' ? '!' : items.every((x) => !x.tone || x.tone === 'info') ? String(i + 1).padStart(2, '0') : '›'}
               </div>
               <div>
-                <div style={{fontSize: 36, fontWeight: 750, lineHeight: 1.2}}>{it.text}</div>
-                {it.te && <div style={{fontFamily: TE_FONT, fontSize: 26, color: C.muted, marginTop: 4}}>{it.te}</div>}
+                <div style={{fontSize: 40, fontWeight: 750, lineHeight: 1.2}}>{it.text}</div>
+                {it.te && <div style={{fontFamily: TE_FONT, fontSize: 32, color: SUPPORT, marginTop: 4}}>{it.te}</div>}
               </div>
             </div>
           </Reveal>
@@ -107,9 +109,9 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
               )}
               <div style={{opacity: on, transform: `translateY(${(1 - on) * 40}px) scale(${0.9 + 0.1 * on})`, width: Math.min(330, 1500 / items.length - 60)}}>
                 <Glass accent={toneColor(it.tone)} pad={24} style={{height: '100%', boxSizing: 'border-box'}}>
-                  <div style={{fontFamily: MONO, fontSize: 20, color: toneColor(it.tone), fontWeight: 800, letterSpacing: 3}}>STEP {i + 1}</div>
-                  <div style={{fontSize: 32, fontWeight: 800, marginTop: 10, lineHeight: 1.2}}>{it.text}</div>
-                  {it.te && <div style={{fontFamily: TE_FONT, fontSize: 24, color: C.muted, marginTop: 8, lineHeight: 1.35}}>{it.te}</div>}
+                  <div style={{fontFamily: MONO, fontSize: 22, color: toneColor(it.tone), fontWeight: 800, letterSpacing: 3}}>STEP {i + 1}</div>
+                  <div style={{fontSize: 35, fontWeight: 800, marginTop: 10, lineHeight: 1.2}}>{it.text}</div>
+                  {it.te && <div style={{fontFamily: TE_FONT, fontSize: 29, color: SUPPORT, marginTop: 8, lineHeight: 1.35}}>{it.te}</div>}
                 </Glass>
               </div>
             </React.Fragment>
@@ -120,7 +122,7 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
   } else if (ins.kind === 'compare') {
     const col = (side: 'bad' | 'good', head?: string) => (
       <Glass accent={side === 'good' ? C.emerald : C.crimson} pad={30} style={{flex: 1}}>
-        <div style={{fontFamily: MONO, fontSize: 22, letterSpacing: 4, fontWeight: 800, color: side === 'good' ? C.emerald : C.crimson}}>{head}</div>
+        <div style={{fontFamily: MONO, fontSize: 25, letterSpacing: 4, fontWeight: 800, color: side === 'good' ? C.emerald : C.crimson}}>{head}</div>
         <div style={{display: 'flex', flexDirection: 'column', gap: 16, marginTop: 18}}>
           {items
             .filter((it) => (side === 'good' ? it.tone === 'good' : it.tone !== 'good'))
@@ -129,8 +131,8 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
                 <div style={{display: 'flex', gap: 16, alignItems: 'flex-start'}}>
                   <div style={{fontSize: 32, fontWeight: 900, color: side === 'good' ? C.emerald : C.crimson, width: 30}}>{side === 'good' ? '✓' : '✕'}</div>
                   <div>
-                    <div style={{fontSize: 32, fontWeight: 700, lineHeight: 1.22}}>{it.text}</div>
-                    {it.te && <div style={{fontFamily: TE_FONT, fontSize: 24, color: C.muted, marginTop: 4}}>{it.te}</div>}
+                    <div style={{fontSize: 36, fontWeight: 700, lineHeight: 1.22}}>{it.text}</div>
+                    {it.te && <div style={{fontFamily: TE_FONT, fontSize: 29, color: SUPPORT, marginTop: 4}}>{it.te}</div>}
                   </div>
                 </div>
               </Reveal>
@@ -152,7 +154,7 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
           <Reveal key={i} at={f(it.at)} from="scale">
             <div style={{padding: '14px 28px', borderRadius: 999, border: `2px solid ${toneColor(it.tone)}`, background: alpha(toneColor(it.tone), 0.12), fontSize: 32, fontWeight: 750, whiteSpace: 'nowrap'}}>
               {it.text}
-              {it.te && <span style={{fontFamily: TE_FONT, fontSize: 26, color: C.muted, marginLeft: 14}}>{it.te}</span>}
+              {it.te && <span style={{fontFamily: TE_FONT, fontSize: 31, color: SUPPORT, marginLeft: 14}}>{it.te}</span>}
             </div>
           </Reveal>
         ))}
@@ -168,8 +170,8 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
         position: 'absolute',
         left: 0,
         right: 0,
-        top: 130,
-        bottom: 210,
+        top: 96,
+        bottom: 100,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -180,7 +182,7 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
       <div
         style={{
           position: 'relative',
-          width: wide ? 1640 : 1360,
+          width: wide ? 1700 : 1480,
           padding: '44px 56px 48px',
           borderRadius: 32,
           background: 'linear-gradient(150deg, rgba(15, 23, 42, 0.78), rgba(8, 12, 24, 0.66))',

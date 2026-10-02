@@ -35,7 +35,7 @@ def env(x, hop=80):  # 10 ms RMS envelope: robust to music/SFX beds
     return np.sqrt((x[: n * hop].reshape(n, hop) ** 2).mean(1))
 
 
-te = json.load(open('src/data/timing_te.json'))
+import os as _o; _L=_o.environ.get('VO_LANG','te'); te = json.load(open(f'src/data/timing_{_L}.json'))
 mix = load(sys.argv[1])
 ref = load(sys.argv[2]) if len(sys.argv) > 2 else None
 t = (VO_AT + round(te['hook']['duration'] * FPS) + 14 + TITLE_FRAMES) / FPS
@@ -46,7 +46,7 @@ for m in te['modules']:
 print(f'export {len(mix) / SR:.2f}s, timeline {t:.2f}s' + (f', reference {len(ref) / SR:.2f}s' if ref is not None else ''))
 worst = 0
 for mid, s0 in starts.items():
-    vo = env(load(f'public/audio/vo_te/{mid}.mp3'))
+    vo = env(load(f'public/audio/vo_{_L}/{mid}.mp3'))
     e = env(mix)
     i0 = int(round(s0 * 100))
     best = (-1, 0)

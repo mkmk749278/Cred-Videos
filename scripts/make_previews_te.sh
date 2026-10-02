@@ -17,9 +17,9 @@ for sc in m['scenes']:
 PY
 while IFS=$'\t' read -r name ss dur; do
   if [ "$name" = SettlementLetterSample ]; then
-    "$FF" -y -loglevel error -ss "$ss" -i "$IN" -t "$dur" -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -c:a aac -b:a 192k "$OUT/settlement_letter_sample_1080p.mp4"
+    "$FF" -nostdin -y -loglevel error -ss "$ss" -i "$IN" -t "$dur" -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -c:a aac -b:a 192k "$OUT/settlement_letter_sample_1080p.mp4"
   else
-    "$FF" -y -loglevel error -ss "$ss" -i "$IN" -t "$dur" -vf scale=960:540 -c:v libx264 -crf 26 -preset medium -pix_fmt yuv420p -c:a aac -b:a 128k "$OUT/preview_${name}.mp4"
+    "$FF" -nostdin -y -loglevel error -ss "$ss" -i "$IN" -t "$dur" -vf scale=960:540 -c:v libx264 -crf 26 -preset medium -pix_fmt yuv420p -c:a aac -b:a 128k "$OUT/preview_${name}.mp4"
   fi
   echo "$name $(du -h "$OUT"/*"${name#Settlement}"* 2>/dev/null | tail -1 | cut -f1)"
 done < "$OUT/.cuts.tsv"

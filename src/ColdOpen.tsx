@@ -115,25 +115,25 @@ export const ColdOpen: React.FC = () => {
       )}
       {/* promises */}
       <div style={{position: 'absolute', left: 1040, top: LANG === 'te' ? 190 : 300, display: 'flex', flexDirection: 'column', gap: LANG === 'te' ? 16 : 22}}>
-        {(LANG === 'te'
+        {((LANG === 'te'
           ? [
               // the Telugu hook asks six questions; one line per question, on its word
-              {a: vf(33.8), t: 'What really happens if you can’t pay', c: C.cyan},
-              {a: vf(37.4), t: 'What the bank can do', c: C.cyan},
-              {a: vf(39.3), t: 'The protections you have', c: C.emerald},
-              {a: vf(41.3), t: 'How to handle recovery calls', c: C.emerald},
-              {a: vf(43.7), t: 'What settlement really means', c: C.amber},
-              {a: vf(45.6), t: 'How to rebuild your credit score', c: C.amber},
+              {a: vf(33.8), t: 'What happens if you can’t pay', c: C.cyan, ic: 'statement' as RoadIconKind},
+              {a: vf(37.4), t: 'What the bank can do', c: C.cyan, ic: 'bank'},
+              {a: vf(39.3), t: 'The protections you have', c: C.emerald, ic: 'shield'},
+              {a: vf(41.3), t: 'How to handle recovery calls', c: C.emerald, ic: 'phone'},
+              {a: vf(43.7), t: 'What settlement really means', c: C.amber, ic: 'letter'},
+              {a: vf(45.6), t: 'How to rebuild your credit score', c: C.amber, ic: 'report'},
             ]
           : [
               {a: cLaw, t: 'What the law really says', c: C.cyan},
               {a: cDo, t: 'Exactly what you can do', c: C.emerald},
-            ]
-        ).map((x) => {
+            ]) as {a: number; t: string; c: string; ic?: RoadIconKind}[]
+        ).map((x: {a: number; t: string; c: string; ic?: RoadIconKind}) => {
           const p = spr(f, fps, x.a, {damping: 15, stiffness: 200, mass: 0.6});
           return f < x.a || titleIn > 6 ? null : (
             <div key={x.t} style={{fontSize: LANG === 'te' ? 44 : 54, fontWeight: 900, color: x.c, opacity: p, transform: `translateY(${(1 - p) * 30}px)`, textShadow: '0 4px 20px rgba(0,0,0,0.6)'}}>
-              ✓ {x.t}
+              {x.ic ? <span style={{display: 'inline-flex', alignItems: 'center', gap: 20}}><RoadIcon kind={x.ic} color={x.c} />{x.t}</span> : <>✓ {x.t}</>}
             </div>
           );
         })}
@@ -216,5 +216,23 @@ const PhoneScreen: React.FC<{f: number; cMsg: number; cStop: number; cShow: numb
         </div>
       )}
     </AbsoluteFill>
+  );
+};
+
+/* Telugu roadmap: one object icon per promise (statement, bank, shield, phone, letter, report) */
+type RoadIconKind = 'statement' | 'bank' | 'shield' | 'phone' | 'letter' | 'report';
+const RoadIcon: React.FC<{kind: RoadIconKind; color: string}> = ({kind, color}) => {
+  const st = {fill: 'none', stroke: color, strokeWidth: 4, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const};
+  return (
+    <span style={{display: 'inline-flex', width: 64, height: 64, borderRadius: 16, background: alpha(color, 0.16), border: `2px solid ${alpha(color, 0.7)}`, alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
+      <svg width={40} height={40} viewBox="0 0 40 40">
+        {kind === 'statement' && <><rect x={8} y={4} width={24} height={32} rx={3} {...st} /><path d="M13 13h14M13 19h14M13 25h8" {...st} /></>}
+        {kind === 'bank' && <><path d="M5 15 L20 6 L35 15 Z" {...st} /><path d="M9 18v12M16 18v12M24 18v12M31 18v12M5 34h30" {...st} /></>}
+        {kind === 'shield' && <><path d="M20 4 L33 9 V19 C33 27 27 33 20 36 C13 33 7 27 7 19 V9 Z" {...st} /><path d="M14 20 l4 4 l8 -9" {...st} /></>}
+        {kind === 'phone' && <><rect x={11} y={3} width={18} height={34} rx={4} {...st} /><path d="M17 31h6" {...st} /></>}
+        {kind === 'letter' && <><rect x={4} y={9} width={32} height={22} rx={3} {...st} /><path d="M5 11 L20 22 L35 11" {...st} /></>}
+        {kind === 'report' && <><path d="M6 34h28" {...st} /><path d="M10 28v-6M17 28v-11M24 28v-8M31 28v-16" {...st} /></>}
+      </svg>
+    </span>
   );
 };

@@ -1,0 +1,57 @@
+scene_id,chapter,beat_id,kind,video_start,video_end,audio_start,audio_end,brief_section,labels,qualifications
+Scene01,అప్పు crime కాదు · Debt is not a crime,panel:Can pay? Pay on time.,points,61.487,78.587,57.2,74.3,,,
+Scene01,అప్పు crime కాదు · Debt is not a crime,panel:“Won't pay” ≠ “Can't pay right now”,big,78.887,86.587,74.6,82.3,,,
+Scene01,అప్పు crime కాదు · Debt is not a crime,rotation,demo,96.587,136.887,92.3,132.6,B,,no new loan advice; questions about the cycle
+Scene01,అప్పు crime కాదు · Debt is not a crime,panel:A plan — not shame,points,148.887,157.287,144.6,153.0,,,
+Scene01,అప్పు crime కాదు · Debt is not a crime,budget,demo,175.587,196.687,171.3,192.4,B,Illustration — not real figures,"₹40,000 − 33,000 = ₹7,000 reconciles; not personal advice"
+Scene02,Arrest చేస్తారా? Law ఏం చెప్తుంది · What the law says,legal,demo,212.72,227.12,206.6,221.0,C,,no automatic arrest; no immunity from legal process
+Scene02,Arrest చేస్తారా? Law ఏం చెప్తుంది · What the law says,legalproc,demo,240.62,262.12,234.5,256.0,C,,court orders must be respected
+Scene02,Arrest చేస్తారా? Law ఏం చెప్తుంది · What the law says,verifynotice,demo,262.32,277.42,256.2,271.3,C,Sample,message ≠ criminal-case verdict; do not ignore genuine notices
+Scene02,Arrest చేస్తారా? Law ఏం చెప్తుంది · What the law says,"panel:Don't assume “it's a card, nothing applies”",points,282.52,301.5,276.4,298.72,,,
+Scene03,"చాలా cards, చాలా banks · Many accounts, one list",register,demo,309.9,333.2,302.0,325.3,D,"fictional Bank A/B/C, masked numbers",each account stays separate
+Scene03,"చాలా cards, చాలా banks · Many accounts, one list",panel:Small amount ≠ “they won't act”,points,341.1,362.2,333.2,357.62,,,
+Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",statement,demo,374.34,402.04,364.3,392.0,E,Illustrative statement — check your own,"100000+3000+1200+756−2000 = ₹1,02,956"
+Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",interest,demo,402.24,429.64,392.2,419.6,E,Illustration — check your card’s actual terms,"rough teaching example, not APR"
+Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",mindue,demo,429.84,464.04,419.8,454.0,F,,minimum is not useless; not interest-free
+Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",panel:A protection on charges,points,464.24,483.24,454.2,473.2,,,
+Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",dispute,demo,483.44,511.64,473.4,501.6,F,Sample,no guaranteed waiver
+Scene05,Salary account & set-off · Protect essential money,setoff,demo,531.187,564.387,519.8,553.0,G,Illustration — read your own agreement,“may adjust · applicable terms”; panel after demo: Understand your bank’s set-off terms. Plan essential expenses.
+Scene05,Salary account & set-off · Protect essential money,panel:Moving accounts isn’t a legal shield,big,564.587,575.387,553.2,564.0,,,
+Scene05,Salary account & set-off · Protect essential money,panel:Understand your bank’s set-off terms. Plan essential expenses.,big,575.587,585.933,564.2,577.88,,,
+Scene06,Bank తో written గా · Hardship communication,email,demo,611.313,676.213,598.1,663.0,H,Sample email — fictional address,written preference ≠ no lawful calls; harassment protections separate
+Scene07,Recovery agents — rules & tricks · Your rights,clock,demo,703.947,744.647,689.0,729.7,I.1,,harassment unacceptable even within hours
+Scene07,Recovery agents — rules & tricks · Your rights,caller,demo,744.847,776.447,729.9,761.5,I.2,,a logo alone proves nothing
+Scene07,Recovery agents — rules & tricks · Your rights,location,demo,776.647,804.247,761.7,790.0,I.4,,OTP/PIN never entered; a request alone doesn’t prove fake
+Scene07,Recovery agents — rules & tricks · Your rights,panel:Not every message is real — or fake,big,817.247,824.247,803.0,810.0,,,
+Scene07,Recovery agents — rules & tricks · Your rights,linkcheck,demo,824.547,855.247,810.3,841.0,I.3,,do not ignore every electronic notice
+Scene07,Recovery agents — rules & tricks · Your rights,doorstep,demo,855.347,895.847,841.1,881.6,I.5,,no caricature; 112 only for immediate danger
+Scene07,Recovery agents — rules & tricks · Your rights,panel:An authorised visit isn’t automatically illegal,big,896.147,904.947,881.9,890.7,,,
+Scene07,Recovery agents — rules & tricks · Your rights,evidence,demo,905.147,926.247,890.9,912.0,I.6,,
+Scene07,Recovery agents — rules & tricks · Your rights,complaint,demo,926.447,952.647,912.2,938.4,I.7,,eligibility not simplified to “wait 30 days”
+Scene07,Recovery agents — rules & tricks · Your rights,panel:A complaint fixes conduct — not the debt,big,952.847,969.067,938.6,958.14,,,
+Scene08,Non-stop calls control · Phone settings,phone,demo,972.487,1011.987,956.2,995.7,J,Example interface — settings vary by phone,job/hospital/delivery calls can be hidden too
+Scene08,Non-stop calls control · Phone settings,panel:“Ignore calls and the file closes in 60 days?”,big,1012.187,1039.267,995.9,1026.3200000000002,,,
+Scene09,"Due date నుంచి NPA, write-off వరకు · The timeline",calendar,demo,1044.787,1114.987,1026.4,1096.6,K,illustration,NPA = minimum due not fully paid within 90 days from the due date; >3 days rule counted from original due date; not “no problem until 90 days”
+Scene09,"Due date నుంచి NPA, write-off వరకు · The timeline",panel:NPA doesn't mean “no need to pay”,big,1115.187,1122.387,1096.8,1104.0,,,
+Scene09,"Due date నుంచి NPA, write-off వరకు · The timeline",emi,demo,1122.587,1151.787,1104.2,1133.4,L,Illustration — example amounts,no invented rate; affordability decides
+Scene09,"Due date నుంచి NPA, write-off వరకు · The timeline",ledger,demo,1151.987,1195.467,1133.6,1180.42,K,illustration,write-off doesn’t cancel the debt; no universal 180 days; no guaranteed discount
+Scene10,ప్రతి bank వేరు · Issuer differences,panel:Each bank has its own process,big,1199.427,1214.027,1179.4,1194.0,,,
+Scene10,ప్రతి bank వేరు · Issuer differences,offers,demo,1214.227,1253.5,1194.2,1236.8,L,Illustration — fictional proposals,no bank-specific percentages; friend’s outcome no prediction
+Scene11,Settlement & Lok Adalat — safe గా · Settle safely,panel:The bank accepts less to close the account,points,1257.02,1277.22,1235.0,1255.2,,,
+Scene11,Settlement & Lok Adalat — safe గా · Settle safely,offeraff,demo,1277.42,1309.42,1255.4,1287.4,M,Example — not a real offer,verify before paying
+Scene11,Settlement & Lok Adalat — safe గా · Settle safely,letter,demo,1309.42,1370.22,1287.4,1348.2,M,Sample / Illustration — fictional bank and figures,small payment not converted into a settlement; no guaranteed reporting
+Scene11,Settlement & Lok Adalat — safe గా · Settle safely,receipts,demo,1383.82,1413.82,1361.8,1391.8,M,Sample documents — fictional,credit report checked separately; phone assurance not enough
+Scene11,Settlement & Lok Adalat — safe గా · Settle safely,lokadalat,demo,1414.02,1454.9,1392.0,1433.2,N,sample,consent matters; final and binding; no ordinary appeal
+Scene11,Settlement & Lok Adalat — safe గా · Settle safely,panel:Ask until it's clear,points,1455.1,1477.167,1433.4,1458.8,,,
+Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",reports,demo,1492.307,1522.307,1468.8,1498.8,O,sample — fictional,settlement completion ≠ reporting status
+Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",stabilise,demo,1525.507,1540.707,1502.0,1517.2,O,,no instant reset; no rush into new credit
+Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",securedcard,demo,1540.807,1563.907,1517.3,1540.4,O,sample,FD doesn’t guarantee approval; keep emergency savings separate
+Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",usage,demo,1564.107,1580.507,1540.6,1557.0,O,Illustration — example limit,no exact % guarantees a score rise
+Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",reportdispute,demo,1580.707,1606.907,1557.2,1583.4,O,Sample report — fictional,accurate negative history stays
+Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",panel:“750 in 18 months” — don't believe it,big,1607.107,1627.507,1583.6,1604.0,,,
+Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",panel:One difficult phase doesn’t define your whole life,big,1627.707,1634.207,1604.2,1610.7,,,
+Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",panel:Talk to one person you trust,points,1634.407,1670.767,1610.9,1650.58,,,
+Scene13,మీ 8-step plan · Your next step,plan,demo,1675.847,1778.247,1650.6,1753.0,P,,all eight steps preserved
+Scene13,మీ 8-step plan · Your next step,panel:What's my one next step today?,big,1778.447,1803.047,1753.2,1777.8,,,
+Scene13,మీ 8-step plan · Your next step,panel:You may owe money — no one may disrespect you,big,1803.647,1811.147,1778.4,1785.9,,,
+Scene13,మీ 8-step plan · Your next step,panel:My case won't be your case,big,1835.847,1844.847,1810.6,1819.6,,,

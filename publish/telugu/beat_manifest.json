@@ -1,0 +1,2927 @@
+{
+ "video": {
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "duration_sec": 1871.2,
+  "audio_source": "narration/telugu/full.mp3 (locked)"
+ },
+ "timing_source": "narration/telugu/inserts.json → narration/process_telugu.py → src/data/inserts_te.json",
+ "validation": "ok",
+ "scenes": [
+  {
+   "scene_id": "ColdOpen",
+   "chapter": "Introduction",
+   "video_start": 0.0,
+   "video_end": 57.467,
+   "audio_start": 0.0,
+   "audio_end": 53.6,
+   "beats": [
+    {
+     "beat_id": "roadmap",
+     "brief_section": "A",
+     "objects": [
+      "phone",
+      "six roadmap lines with object icons: statement, bank, shield, phone, letter, report"
+     ],
+     "actions": [
+      "calls/messages accumulate",
+      "screen calms",
+      "roadmap lines appear on each question"
+     ],
+     "labels": [
+      "fictional masked numbers"
+     ],
+     "qualifications": [
+      "“40 calls” is an illustrative scenario"
+     ],
+     "cue_text": "rstand your situation. What actually happens when you cannot pay your credit card bill? What rights does the bank have? What protections do you have? How should you handle recovery calls? What does settlement mean? And how can you rebuild your credit score afterwards? Let us talk through everything, one step at a time. Simply, as if we were sitting across from each other and having a conversation.",
+     "transition_owner": "ColdOpen composition"
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene01",
+   "module": "m01",
+   "chapter": "అప్పు crime కాదు · Debt is not a crime",
+   "video_start": 57.467,
+   "video_end": 198.5,
+   "frames": 4231,
+   "audio_start": 54.3,
+   "audio_end": 192.54,
+   "beats": [
+    {
+     "beat_id": "panel:Can pay? Pay on time.",
+     "kind": "points",
+     "title": "Can pay? Pay on time.",
+     "kicker": "First, be honest with yourself",
+     "te": "ఈ video — నిజంగా కట్టలేని పరిస్థితిలో ఉన్నవాళ్ల కోసం",
+     "audio_start": 57.2,
+     "audio_end": 74.3,
+     "video_start": 61.487,
+     "video_end": 78.587,
+     "cue_text": "If you are in a position to make the payment, paying on time is better for you. This video is for people whose income has genuinely fallen, whose medical expenses have increased, who are trapped in credit card rotation, and who cannot manage their bills despite trying everything. Because saying, “I will not pay,” is one thing.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "panel:“Won't pay” ≠ “Can't pay right now”",
+     "kind": "big",
+     "title": "“Won't pay” ≠ “Can't pay right now”",
+     "kicker": "Two very different things",
+     "te": "“కట్టను” అనడం వేరు — “ఇప్పుడు కట్టలేకపోతున్నా” అనడం వేరు",
+     "audio_start": 74.6,
+     "audio_end": 82.3,
+     "video_start": 78.887,
+     "video_end": 86.587,
+     "cue_text": "Saying, “I cannot pay right now,” is another. First, be honest with yourself about your actual situation.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "rotation",
+     "kind": "demo",
+     "title": "Card to card, loan to app…",
+     "kicker": "The debt loop",
+     "te": "కొత్త అప్పుతో పాత అప్పు cover చేస్తే?",
+     "audio_start": 92.3,
+     "audio_end": 132.6,
+     "video_start": 96.587,
+     "video_end": 136.887,
+     "cue_text": "“Let us use the card this month, and clear it next month,” we think. Then another expense arrives next month. We arrange money from another card to pay the first card's bill. Then we pay the minimum due. Then we take a small loan. Then we turn to another loan app. Before we know it, the salary is coming in, but there is no money left in our hands. “I earn this much, so where is all my money going?” You wonder that, do you not? This is where we need to pause. When we cover old borrowing with new borrowing, are we actually solving the problem? Or are we simply pushing it into next month? That question may feel uncomfortable. But that is where clarity begins.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "B",
+     "objects": [
+      "Card A",
+      "Card B",
+      "loan app",
+      "balance tag",
+      "salary pills"
+     ],
+     "actions": [
+      "arrows move money card→card→app and back",
+      "balance remains"
+     ],
+     "labels": [],
+     "qualifications": [
+      "no new loan advice; questions about the cycle"
+     ],
+     "sub_beats": [
+      {
+       "key": "card",
+       "audio_sec": 92.4,
+       "video_sec": 96.687
+      },
+      {
+       "key": "cardtocard",
+       "audio_sec": 98.3,
+       "video_sec": 102.587
+      },
+      {
+       "key": "mindue",
+       "audio_sec": 102.7,
+       "video_sec": 106.987
+      },
+      {
+       "key": "loan",
+       "audio_sec": 104.3,
+       "video_sec": 108.587
+      },
+      {
+       "key": "app",
+       "audio_sec": 105.9,
+       "video_sec": 110.187
+      },
+      {
+       "key": "loop",
+       "audio_sec": 105.9,
+       "video_sec": 110.187
+      },
+      {
+       "key": "salary",
+       "audio_sec": 107.9,
+       "video_sec": 112.187
+      },
+      {
+       "key": "question",
+       "audio_sec": 119.5,
+       "video_sec": 123.787
+      },
+      {
+       "key": "next",
+       "audio_sec": 124.9,
+       "video_sec": 129.187
+      },
+      {
+       "key": "clarity",
+       "audio_sec": 127.5,
+       "video_sec": 131.787
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:A plan — not shame",
+     "kind": "points",
+     "title": "A plan — not shame",
+     "kicker": "What you actually need",
+     "te": "సిగ్గుతో మోయాల్సిన అవసరం లేదు",
+     "audio_start": 144.6,
+     "audio_end": 153.0,
+     "video_start": 148.887,
+     "video_end": 157.287,
+     "cue_text": "To handle it, you need a plan. You need support. And you need correct information. You do not have to make decisions out of shame.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "budget",
+     "kind": "demo",
+     "title": "Find your real repayment number",
+     "kicker": "Before you pay anyone",
+     "te": "నెలకి repayment కి నిజంగా ఎంత మిగులుతుంది?",
+     "audio_start": 171.3,
+     "audio_end": 192.4,
+     "video_start": 175.587,
+     "video_end": 196.687,
+     "cue_text": "First, write down your monthly income, essential expenses, and what you can realistically afford to repay. Do not just calculate it in your head. Write it on paper or in your phone notes. Once you see the numbers, your situation becomes clearer. Rather than hoping, “I will somehow manage,” a realistic budget will help you more.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "B",
+     "objects": [
+      "income tray",
+      "expense blocks: food, medicines, rent, school fees, basics"
+     ],
+     "actions": [
+      "income enters, essentials allocated, remainder = available"
+     ],
+     "labels": [
+      "Illustration — not real figures"
+     ],
+     "qualifications": [
+      "₹40,000 − 33,000 = ₹7,000 reconciles; not personal advice"
+     ],
+     "sub_beats": [
+      {
+       "key": "income",
+       "audio_sec": 171.6,
+       "video_sec": 175.887
+      },
+      {
+       "key": "essentials",
+       "audio_sec": 174.0,
+       "video_sec": 178.287
+      },
+      {
+       "key": "available",
+       "audio_sec": 176.6,
+       "video_sec": 180.887
+      },
+      {
+       "key": "write",
+       "audio_sec": 180.0,
+       "video_sec": 184.287
+      },
+      {
+       "key": "realistic",
+       "audio_sec": 187.3,
+       "video_sec": 191.587
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene02",
+   "module": "m02",
+   "chapter": "Arrest చేస్తారా? Law ఏం చెప్తుంది · What the law says",
+   "video_start": 198.5,
+   "video_end": 301.5,
+   "frames": 3090,
+   "audio_start": 193.5,
+   "audio_end": 293.72,
+   "beats": [
+    {
+     "beat_id": "legal",
+     "kind": "demo",
+     "title": "Missed payment ≠ automatic cheating",
+     "kicker": "Separate the questions",
+     "te": "Payment miss అయితే cheating అని automatic గా prove అవ్వదు",
+     "audio_start": 206.6,
+     "audio_end": 221.0,
+     "video_start": 212.72,
+     "video_end": 227.12,
+     "cue_text": "Missing a payment alone does not automatically prove cheating. A cheating allegation requires looking at facts such as dishonest intention and deception. Was there fraud from the beginning? Did you submit false documents? Did you deliberately mislead anyone?",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "C",
+     "objects": [
+      "three lanes: missed payment / fraud facts / lawful recovery"
+     ],
+     "actions": [
+      "lanes separate"
+     ],
+     "labels": [],
+     "qualifications": [
+      "no automatic arrest; no immunity from legal process"
+     ],
+     "sub_beats": [
+      {
+       "key": "missed",
+       "audio_sec": 206.8,
+       "video_sec": 212.92
+      },
+      {
+       "key": "fraud",
+       "audio_sec": 211.3,
+       "video_sec": 217.42
+      },
+      {
+       "key": "q1",
+       "audio_sec": 216.1,
+       "video_sec": 222.22
+      },
+      {
+       "key": "q2",
+       "audio_sec": 217.8,
+       "video_sec": 223.92
+      },
+      {
+       "key": "q3",
+       "audio_sec": 219.3,
+       "video_sec": 225.42
+      }
+     ]
+    },
+    {
+     "beat_id": "legalproc",
+     "kind": "demo",
+     "title": "The bank can use legal recovery",
+     "kicker": "But don’t ignore it",
+     "te": "Bank legal recovery process చేయొచ్చు",
+     "audio_start": 234.5,
+     "audio_end": 256.0,
+     "video_start": 240.62,
+     "video_end": 262.12,
+     "cue_text": "At the same time, do not say, “It is a civil matter, so nothing can happen.” The bank can start a legal recovery process. It can send a notice. It can approach a court through the applicable procedure. A court order can have consequences. So, do not ignore a genuine legal notice, court summons, or arbitration communication.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "C",
+     "objects": [
+      "notice",
+      "court",
+      "court order"
+     ],
+     "actions": [
+      "process steps reveal; do-not-ignore pills"
+     ],
+     "labels": [],
+     "qualifications": [
+      "court orders must be respected"
+     ],
+     "sub_beats": [
+      {
+       "key": "civil",
+       "audio_sec": 234.6,
+       "video_sec": 240.72
+      },
+      {
+       "key": "notice",
+       "audio_sec": 240.1,
+       "video_sec": 246.22
+      },
+      {
+       "key": "court",
+       "audio_sec": 243.6,
+       "video_sec": 249.72
+      },
+      {
+       "key": "order",
+       "audio_sec": 246.6,
+       "video_sec": 252.72
+      },
+      {
+       "key": "ignore",
+       "audio_sec": 249.1,
+       "video_sec": 255.22
+      }
+     ]
+    },
+    {
+     "beat_id": "verifynotice",
+     "kind": "demo",
+     "title": "Verify the notice",
+     "kicker": "Documents matter — not a caller’s tone",
+     "te": "Notice ని verify చేయండి",
+     "audio_start": 256.2,
+     "audio_end": 271.3,
+     "video_start": 262.32,
+     "video_end": 277.42,
+     "cue_text": "Verify it. If necessary, get help from a lawyer or legal aid. Remember one thing here. How loudly a caller speaks is not legal proof. Actual documents, actual facts, and the actual procedure matter. What about a bounced cheque?",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "C",
+     "objects": [
+      "VERIFY tray",
+      "sample notice LN/2026/0412",
+      "folder"
+     ],
+     "actions": [
+      "threat enters tray, details checked, filed"
+     ],
+     "labels": [
+      "Sample"
+     ],
+     "qualifications": [
+      "message ≠ criminal-case verdict; do not ignore genuine notices"
+     ],
+     "sub_beats": [
+      {
+       "key": "verify",
+       "audio_sec": 256.2,
+       "video_sec": 262.32
+      },
+      {
+       "key": "sender",
+       "audio_sec": 257.4,
+       "video_sec": 263.52
+      },
+      {
+       "key": "ref",
+       "audio_sec": 258.4,
+       "video_sec": 264.52
+      },
+      {
+       "key": "help",
+       "audio_sec": 259.6,
+       "video_sec": 265.72
+      },
+      {
+       "key": "loud",
+       "audio_sec": 263.1,
+       "video_sec": 269.22
+      },
+      {
+       "key": "actual",
+       "audio_sec": 267.1,
+       "video_sec": 273.22
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:Don't assume “it's a card, nothing applies”",
+     "kind": "points",
+     "title": "Don't assume “it's a card, nothing applies”",
+     "kicker": "It depends on the facts",
+     "te": "Credit card కాబట్టి ఏ law apply అవ్వదు అనుకోవద్దు",
+     "audio_start": 276.4,
+     "audio_end": 298.72,
+     "video_start": 282.52,
+     "video_end": 301.5,
+     "cue_text": "Whether a particular law applies depends on the transaction, mandate, notice, and the facts of the case. Do not assume that no law can apply simply because it involves a credit card. Read the notice you receive and respond appropriately. Now, another common fear. “I do not have just one card. I owe four or five banks.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene03",
+   "module": "m03",
+   "chapter": "చాలా cards, చాలా banks · Many accounts, one list",
+   "video_start": 301.5,
+   "video_end": 362.2,
+   "frames": 1821,
+   "audio_start": 294.72,
+   "audio_end": 352.62,
+   "beats": [
+    {
+     "beat_id": "register",
+     "kind": "demo",
+     "title": "Make one simple list",
+     "kicker": "Many accounts? One list",
+     "te": "అన్నీ ఒకే చోట పెట్టండి",
+     "audio_start": 302.0,
+     "audio_end": 325.3,
+     "video_start": 309.9,
+     "video_end": 333.2,
+     "cue_text": "Yes, multiple accounts can feel mentally overwhelming. One bank's call ends and another bank calls. You may even lose track of how much you owe on each account. First, make a simple list. The card issuer's name, outstanding amount, due date, last payment date, and complaint reference. Record any legal communication too, and keep everything in one place.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "D",
+     "objects": [
+      "scattered cards/bills",
+      "register table"
+     ],
+     "actions": [
+      "objects transform into rows; columns added in spoken order"
+     ],
+     "labels": [
+      "fictional Bank A/B/C, masked numbers"
+     ],
+     "qualifications": [
+      "each account stays separate"
+     ],
+     "sub_beats": [
+      {
+       "key": "overwhelmed",
+       "audio_sec": 302.3,
+       "video_sec": 310.2
+      },
+      {
+       "key": "lose",
+       "audio_sec": 308.8,
+       "video_sec": 316.7
+      },
+      {
+       "key": "list",
+       "audio_sec": 311.8,
+       "video_sec": 319.7
+      },
+      {
+       "key": "issuer",
+       "audio_sec": 314.8,
+       "video_sec": 322.7
+      },
+      {
+       "key": "outstanding",
+       "audio_sec": 315.8,
+       "video_sec": 323.7
+      },
+      {
+       "key": "due",
+       "audio_sec": 317.0,
+       "video_sec": 324.9
+      },
+      {
+       "key": "lastpay",
+       "audio_sec": 317.9,
+       "video_sec": 325.8
+      },
+      {
+       "key": "complaint",
+       "audio_sec": 319.0,
+       "video_sec": 326.9
+      },
+      {
+       "key": "legal",
+       "audio_sec": 321.3,
+       "video_sec": 329.2
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:Small amount ≠ “they won't act”",
+     "kind": "points",
+     "title": "Small amount ≠ “they won't act”",
+     "kicker": "Don't guess",
+     "te": "Amount చిన్నది కాబట్టి bank ఏమీ చేయదు అనుకోవద్దు",
+     "audio_start": 333.2,
+     "audio_end": 357.62,
+     "video_start": 341.1,
+     "video_end": 362.2,
+     "cue_text": "Do not assume the bank will avoid court just because the amount is small. Recovery decisions depend on the account's facts, the issuer's policy, and available legal options. Your plan should not depend on guessing, “They will not do anything.” It should be based on, “Whatever communication arrives, I will respond in an organised way.” That is the confidence you need. Now, let us talk about your statement. You have stopped using the card.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene04",
+   "module": "m04",
+   "chapter": "Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",
+   "video_start": 362.2,
+   "video_end": 523.667,
+   "frames": 4844,
+   "audio_start": 353.28,
+   "audio_end": 511.96,
+   "beats": [
+    {
+     "beat_id": "statement",
+     "kind": "demo",
+     "title": "What’s inside that big number?",
+     "kicker": "Read the breakup",
+     "te": "Statement లో ఏమేం ఉన్నాయో check చేయండి",
+     "audio_start": 364.3,
+     "audio_end": 392.0,
+     "video_start": 374.34,
+     "video_end": 402.04,
+     "cue_text": "That is what you wonder. Blocking the card may stop new transactions. But it does not automatically stop applicable interest and charges on the existing outstanding balance. That is where the confusion begins. How much is the purchase balance in your statement? How much are the finance charges? What is the late payment fee? What are the taxes? How have your previous payments been adjusted? Looking only at the total without checking the breakdown just increases your fear.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "E",
+     "objects": [
+      "Bank A statement",
+      "breakdown legend"
+     ],
+     "actions": [
+      "lines highlighted as spoken; total expands"
+     ],
+     "labels": [
+      "Illustrative statement — check your own"
+     ],
+     "qualifications": [
+      "100000+3000+1200+756−2000 = ₹1,02,956"
+     ],
+     "sub_beats": [
+      {
+       "key": "blocked",
+       "audio_sec": 364.4,
+       "video_sec": 374.44
+      },
+      {
+       "key": "purchase",
+       "audio_sec": 377.8,
+       "video_sec": 387.84
+      },
+      {
+       "key": "finance",
+       "audio_sec": 380.1,
+       "video_sec": 390.14
+      },
+      {
+       "key": "late",
+       "audio_sec": 381.4,
+       "video_sec": 391.44
+      },
+      {
+       "key": "taxes",
+       "audio_sec": 383.3,
+       "video_sec": 393.34
+      },
+      {
+       "key": "prevpay",
+       "audio_sec": 384.6,
+       "video_sec": 394.64
+      },
+      {
+       "key": "total",
+       "audio_sec": 386.8,
+       "video_sec": 396.84
+      }
+     ]
+    },
+    {
+     "beat_id": "interest",
+     "kind": "demo",
+     "title": "Why the balance doesn’t fall",
+     "kicker": "A simple example",
+     "te": "చిన్న payment చేసినా principal పెద్దగా తగ్గకపోవచ్చు",
+     "audio_start": 392.2,
+     "audio_end": 419.6,
+     "video_start": 402.24,
+     "video_end": 429.64,
+     "cue_text": "Let us take a simple example. Suppose the outstanding amount is one lakh. At three percent monthly interest, that would be roughly three thousand in interest. This is only an example to explain the idea. Check your card's terms for your actual rate and calculation method. When applicable fees and taxes are added, a small payment may not reduce the principal very much. Then you wonder, “I am paying, so why is the balance not going down?”",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "E",
+     "objects": [
+      "₹1,00,000 balance",
+      "3% example"
+     ],
+     "actions": [
+      "₹1,00,000 × 3% ≈ ₹3,000"
+     ],
+     "labels": [
+      "Illustration — check your card’s actual terms"
+     ],
+     "qualifications": [
+      "rough teaching example, not APR"
+     ],
+     "sub_beats": [
+      {
+       "key": "outstanding",
+       "audio_sec": 394.1,
+       "video_sec": 404.14
+      },
+      {
+       "key": "rate",
+       "audio_sec": 396.3,
+       "video_sec": 406.34
+      },
+      {
+       "key": "result",
+       "audio_sec": 397.6,
+       "video_sec": 407.64
+      },
+      {
+       "key": "example",
+       "audio_sec": 400.9,
+       "video_sec": 410.94
+      },
+      {
+       "key": "fees",
+       "audio_sec": 408.3,
+       "video_sec": 418.34
+      },
+      {
+       "key": "small",
+       "audio_sec": 411.5,
+       "video_sec": 421.54
+      },
+      {
+       "key": "why",
+       "audio_sec": 415.4,
+       "video_sec": 425.44
+      }
+     ]
+    },
+    {
+     "beat_id": "mindue",
+     "kind": "demo",
+     "title": "Minimum on time vs full payment",
+     "kicker": "The minimum due trap",
+     "te": "Minimum due అంటే full bill clear కాదు",
+     "audio_start": 419.8,
+     "audio_end": 454.0,
+     "video_start": 429.84,
+     "video_end": 464.04,
+     "cue_text": "Paying the minimum due does not mean the full bill has been cleared. Finance charges may continue on the remaining balance. The interest-free period may also be affected according to your card's terms. But do not assume the minimum due is completely useless. Paying the required minimum on time can help keep the account from becoming overdue. The problem is that repeatedly paying only the minimum can keep the debt going for a long time. So, if you can afford it, paying in full is better. Otherwise, talk to the bank about a workable repayment option.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "F",
+     "objects": [
+      "two tracks: minimum on time / full payment"
+     ],
+     "actions": [
+      "payment marker; remaining balance persists"
+     ],
+     "labels": [],
+     "qualifications": [
+      "minimum is not useless; not interest-free"
+     ],
+     "sub_beats": [
+      {
+       "key": "mindue",
+       "audio_sec": 420.1,
+       "video_sec": 430.14
+      },
+      {
+       "key": "finance",
+       "audio_sec": 424.1,
+       "video_sec": 434.14
+      },
+      {
+       "key": "interestfree",
+       "audio_sec": 427.6,
+       "video_sec": 437.64
+      },
+      {
+       "key": "notuseless",
+       "audio_sec": 431.4,
+       "video_sec": 441.44
+      },
+      {
+       "key": "ontime",
+       "audio_sec": 435.1,
+       "video_sec": 445.14
+      },
+      {
+       "key": "repeated",
+       "audio_sec": 440.1,
+       "video_sec": 450.14
+      },
+      {
+       "key": "full",
+       "audio_sec": 446.0,
+       "video_sec": 456.04
+      },
+      {
+       "key": "option",
+       "audio_sec": 449.3,
+       "video_sec": 459.34
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:A protection on charges",
+     "kind": "points",
+     "title": "A protection on charges",
+     "kicker": "RBI credit card rules",
+     "te": "RBI rules ప్రకారం మీకు ఒక protection ఉంది",
+     "audio_start": 454.2,
+     "audio_end": 473.2,
+     "video_start": 464.24,
+     "video_end": 483.24,
+     "cue_text": "There is another important protection. Under RBI credit card rules, unpaid taxes, levies, and charges must not be capitalised to charge or compound interest on them. Similarly, interest, taxes, and other charges must not be included in credit-limit usage calculations for levying an over-limit fee. RBI has clarified this.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "dispute",
+     "kind": "demo",
+     "title": "Question it — in writing",
+     "kicker": "Spot a wrong charge?",
+     "te": "Bank వేసింది కాబట్టి correct అనుకోవద్దు",
+     "audio_start": 473.4,
+     "audio_end": 501.6,
+     "video_start": 483.44,
+     "video_end": 511.64,
+     "cue_text": "So, if you see an incorrect charge in your statement, do not assume it must be correct just because the bank charged it. Ask for a written breakdown and raise a dispute. Does settlement mean all interest and penalties will be removed? In some cases, the bank may agree to waive part of the amount. But that is not an automatic right. It depends on your hardship, the account's situation, the bank's policy, and the approval. Do not assume, “Because there is an RBI rule, they must give me a discount.”",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "F",
+     "objects": [
+      "over-limit fee line ₹600",
+      "dispute steps",
+      "ref DSP-55120"
+     ],
+     "actions": [
+      "ask in writing → dispute → under review → waiver only if approved"
+     ],
+     "labels": [
+      "Sample"
+     ],
+     "qualifications": [
+      "no guaranteed waiver"
+     ],
+     "sub_beats": [
+      {
+       "key": "incorrect",
+       "audio_sec": 473.6,
+       "video_sec": 483.64
+      },
+      {
+       "key": "notassume",
+       "audio_sec": 476.3,
+       "video_sec": 486.34
+      },
+      {
+       "key": "breakdown",
+       "audio_sec": 479.9,
+       "video_sec": 489.94
+      },
+      {
+       "key": "dispute",
+       "audio_sec": 481.2,
+       "video_sec": 491.24
+      },
+      {
+       "key": "review",
+       "audio_sec": 482.2,
+       "video_sec": 492.24
+      },
+      {
+       "key": "waive",
+       "audio_sec": 483.1,
+       "video_sec": 493.14
+      },
+      {
+       "key": "some",
+       "audio_sec": 487.6,
+       "video_sec": 497.64
+      },
+      {
+       "key": "depends",
+       "audio_sec": 493.7,
+       "video_sec": 503.74
+      },
+      {
+       "key": "rbi",
+       "audio_sec": 498.5,
+       "video_sec": 508.54
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene05",
+   "module": "m05",
+   "chapter": "Salary account & set-off · Protect essential money",
+   "video_start": 523.667,
+   "video_end": 585.933,
+   "frames": 1868,
+   "audio_start": 513.4,
+   "audio_end": 572.88,
+   "beats": [
+    {
+     "beat_id": "setoff",
+     "kind": "demo",
+     "title": "Same bank? Read the agreement",
+     "kicker": "Salary account and set-off",
+     "te": "Agreement లో lien / set-off clause చెక్ చేయండి",
+     "audio_start": 519.8,
+     "audio_end": 553.0,
+     "video_start": 531.187,
+     "video_end": 564.387,
+     "cue_text": "If so, check your agreement for lien or set-off clauses. What does set-off mean? Under applicable terms and law, the bank may adjust money in your account with it against your dues. Do not blindly assume, “My savings account and credit card are separate, so there is no problem.” Some card agreements explicitly include these rights. So, plan ahead for the money you rely on for essential expenses. If necessary, seek advice about changing your salary banking arrangement.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "G",
+     "objects": [
+      "card account",
+      "salary account",
+      "same-bank frame",
+      "sample Clause 14"
+     ],
+     "actions": [
+      "clause zoom; conditional dashed adjustment arrow"
+     ],
+     "labels": [
+      "Illustration — read your own agreement"
+     ],
+     "qualifications": [
+      "“may adjust · applicable terms”; panel after demo: Understand your bank’s set-off terms. Plan essential expenses."
+     ],
+     "sub_beats": [
+      {
+       "key": "clause",
+       "audio_sec": 519.8,
+       "video_sec": 531.187
+      },
+      {
+       "key": "meaning",
+       "audio_sec": 524.6,
+       "video_sec": 535.987
+      },
+      {
+       "key": "adjust",
+       "audio_sec": 526.1,
+       "video_sec": 537.487
+      },
+      {
+       "key": "notassume",
+       "audio_sec": 533.6,
+       "video_sec": 544.987
+      },
+      {
+       "key": "explicit",
+       "audio_sec": 540.2,
+       "video_sec": 551.587
+      },
+      {
+       "key": "plan",
+       "audio_sec": 543.7,
+       "video_sec": 555.087
+      },
+      {
+       "key": "advice",
+       "audio_sec": 549.2,
+       "video_sec": 560.587
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:Moving accounts isn’t a legal shield",
+     "kind": "big",
+     "title": "Moving accounts isn’t a legal shield",
+     "kicker": "But remember",
+     "te": "Account మార్చినా legal recovery నుంచి permanent protection ఉండదు",
+     "audio_start": 553.2,
+     "audio_end": 564.0,
+     "video_start": 564.587,
+     "video_end": 575.387,
+     "cue_text": "But changing accounts does not permanently protect your money from legal recovery. You must comply with court orders and valid legal obligations.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "panel:Understand your bank’s set-off terms. Plan essential expenses.",
+     "kind": "big",
+     "title": "Understand your bank’s set-off terms. Plan essential expenses.",
+     "kicker": "The purpose",
+     "te": "ఇంటి ఖర్చులు అనుకోకుండా ఆగిపోకుండా ముందే plan చేసుకోండి",
+     "audio_start": 564.2,
+     "audio_end": 577.88,
+     "video_start": 575.587,
+     "video_end": 585.933,
+     "cue_text": "What is our purpose here? To understand the situation and plan ahead so household expenses are not unexpectedly disrupted. Okay. Now, how should you communicate with the bank? When the calls keep coming, you may feel like switching off your phone and disappearing.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene06",
+   "module": "m06",
+   "chapter": "Bank తో written గా · Hardship communication",
+   "video_start": 585.933,
+   "video_end": 696.167,
+   "frames": 3307,
+   "audio_start": 573.84,
+   "audio_end": 681.28,
+   "beats": [
+    {
+     "beat_id": "email",
+     "kind": "demo",
+     "title": "A clear hardship email",
+     "kicker": "Write to the bank",
+     "te": "Clear written communication పంపండి",
+     "audio_start": 598.1,
+     "audio_end": 663.0,
+     "video_start": 611.313,
+     "video_end": 676.213,
+     "cue_text": "Verify the grievance officer's or nodal officer's contact on the bank's official website. Send a hardship email there. You do not need fancy English. Explain your actual situation clearly. “My income has fallen.” “Medical expenses have made it difficult to manage the current payment.” “I am available to discuss repayment options.” “After essential expenses, this is the amount I can afford each month.” State the facts like this. Do not promise an amount you cannot afford. It is easy to say, “I will pay tomorrow,” just to end the call. But tomorrow, the same pressure returns, right? Honestly say, “I cannot commit to that amount. I need a workable option.” A reduced EMI. A repayment plan. Restructuring. Settlement. Ask in writing which options apply to your situation. You can also say that you prefer written communication. But requesting communication only by email does not mean the bank loses permission to make lawful calls. That request is a communication preference. The protections against harassment are a separate matter.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "H",
+     "objects": [
+      "email draft to grievance@bank-a.example",
+      "promise comparison"
+     ],
+     "actions": [
+      "fields fill on beats; sent; preference note"
+     ],
+     "labels": [
+      "Sample email — fictional address"
+     ],
+     "qualifications": [
+      "written preference ≠ no lawful calls; harassment protections separate"
+     ],
+     "sub_beats": [
+      {
+       "key": "verify",
+       "audio_sec": 598.1,
+       "video_sec": 611.313
+      },
+      {
+       "key": "send",
+       "audio_sec": 603.4,
+       "video_sec": 616.613
+      },
+      {
+       "key": "nofancy",
+       "audio_sec": 605.4,
+       "video_sec": 618.613
+      },
+      {
+       "key": "l1",
+       "audio_sec": 609.4,
+       "video_sec": 622.613
+      },
+      {
+       "key": "l2",
+       "audio_sec": 611.4,
+       "video_sec": 624.613
+      },
+      {
+       "key": "l3",
+       "audio_sec": 614.4,
+       "video_sec": 627.613
+      },
+      {
+       "key": "l4",
+       "audio_sec": 618.4,
+       "video_sec": 631.613
+      },
+      {
+       "key": "promise",
+       "audio_sec": 624.4,
+       "video_sec": 637.613
+      },
+      {
+       "key": "honest",
+       "audio_sec": 634.4,
+       "video_sec": 647.613
+      },
+      {
+       "key": "options",
+       "audio_sec": 639.4,
+       "video_sec": 652.613
+      },
+      {
+       "key": "ask",
+       "audio_sec": 643.6,
+       "video_sec": 656.813
+      },
+      {
+       "key": "sent",
+       "audio_sec": 647.6,
+       "video_sec": 660.813
+      },
+      {
+       "key": "lawful",
+       "audio_sec": 650.6,
+       "video_sec": 663.813
+      },
+      {
+       "key": "separate",
+       "audio_sec": 659.6,
+       "video_sec": 672.813
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene07",
+   "module": "m07",
+   "chapter": "Recovery agents — rules & tricks · Your rights",
+   "video_start": 696.167,
+   "video_end": 969.067,
+   "frames": 8187,
+   "audio_start": 682.34,
+   "audio_end": 953.14,
+   "beats": [
+    {
+     "beat_id": "clock",
+     "kind": "demo",
+     "title": "Calling hours — and limits",
+     "kicker": "Recovery has rules",
+     "te": "Recovery agents contact చేయొచ్చు — కానీ limits లోనే",
+     "audio_start": 689.0,
+     "audio_end": 729.7,
+     "video_start": 703.947,
+     "video_end": 744.647,
+     "cue_text": "But insulting, threatening, or publicly humiliating you during recovery, or intruding on your family's privacy, is not allowed. Under RBI instructions, threatening or anonymous calls, inappropriate messages, and persistent harassment are prohibited. Calls to recover overdue dues must not be made before eight in the morning or after seven in the evening. Does that mean anything is acceptable between eight and seven? No. Following the time limit does not make harassment acceptable. “We will tell your neighbours.” “We will speak in front of everyone at your office.” “We will trouble your family.” If you face this kind of pressure, you do not have to accept it as a normal recovery process.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "I.1",
+     "objects": [
+      "24-hour bar",
+      "8 am–7 pm window",
+      "threat bubbles"
+     ],
+     "actions": [
+      "window highlights; threats flagged"
+     ],
+     "labels": [],
+     "qualifications": [
+      "harassment unacceptable even within hours"
+     ],
+     "sub_beats": [
+      {
+       "key": "rules",
+       "audio_sec": 689.6,
+       "video_sec": 704.547
+      },
+      {
+       "key": "prohibited",
+       "audio_sec": 697.4,
+       "video_sec": 712.347
+      },
+      {
+       "key": "hours",
+       "audio_sec": 703.9,
+       "video_sec": 718.847
+      },
+      {
+       "key": "inside",
+       "audio_sec": 709.2,
+       "video_sec": 724.147
+      },
+      {
+       "key": "neighbours",
+       "audio_sec": 719.5,
+       "video_sec": 734.447
+      },
+      {
+       "key": "office",
+       "audio_sec": 721.0,
+       "video_sec": 735.947
+      },
+      {
+       "key": "family",
+       "audio_sec": 723.0,
+       "video_sec": 737.947
+      },
+      {
+       "key": "notnormal",
+       "audio_sec": 724.8,
+       "video_sec": 739.747
+      }
+     ]
+    },
+    {
+     "beat_id": "caller",
+     "kind": "demo",
+     "title": "Who is calling — for which bank?",
+     "kicker": "Stay calm and ask",
+     "te": "Calm గా details అడగండి",
+     "audio_start": 729.9,
+     "audio_end": 761.5,
+     "video_start": 744.847,
+     "video_end": 776.447,
+     "cue_text": "Calmly ask, “What is your name? What is the agency's name? Which bank are you representing? Please send your authorisation details through an official email.” If they speak loudly, you do not have to raise your voice too. Your goal is not to win an argument. It is to document the situation and handle it through the correct channel. If necessary, say, “I have explained my hardship to the bank in writing. I will discuss payment options through the official channel. Please do not use threatening language.” Short. Clear. That is enough.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "I.2",
+     "objects": [
+      "phone",
+      "verification rows"
+     ],
+     "actions": [
+      "rows stay unverified until checked via official channel"
+     ],
+     "labels": [],
+     "qualifications": [
+      "a logo alone proves nothing"
+     ],
+     "sub_beats": [
+      {
+       "key": "name",
+       "audio_sec": 729.9,
+       "video_sec": 744.847
+      },
+      {
+       "key": "agency",
+       "audio_sec": 732.4,
+       "video_sec": 747.347
+      },
+      {
+       "key": "bank",
+       "audio_sec": 733.4,
+       "video_sec": 748.347
+      },
+      {
+       "key": "auth",
+       "audio_sec": 735.6,
+       "video_sec": 750.547
+      },
+      {
+       "key": "voice",
+       "audio_sec": 739.1,
+       "video_sec": 754.047
+      },
+      {
+       "key": "goal",
+       "audio_sec": 743.2,
+       "video_sec": 758.147
+      },
+      {
+       "key": "say",
+       "audio_sec": 749.3,
+       "video_sec": 764.247
+      },
+      {
+       "key": "channel",
+       "audio_sec": 753.7,
+       "video_sec": 768.647
+      }
+     ]
+    },
+    {
+     "beat_id": "location",
+     "kind": "demo",
+     "title": "Pause. Verify first.",
+     "kicker": "Live location request?",
+     "te": "Unknown person అడిగాడని location share చేయక్కర్లేదు",
+     "audio_start": 761.7,
+     "audio_end": 790.0,
+     "video_start": 776.647,
+     "video_end": 804.247,
+     "cue_text": "What if you get a WhatsApp message asking you to share your live location? First, pause. You do not have to share your location just because an unknown person asks. Officially verify their identity and bank authorisation. Never share an OTP, PIN, password, or card details. Asking for your location alone does not prove that someone is fake. But there is no need to give personal information without verification.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "I.4",
+     "objects": [
+      "location request dialog"
+     ],
+     "actions": [
+      "request paused and checked"
+     ],
+     "labels": [],
+     "qualifications": [
+      "OTP/PIN never entered; a request alone doesn’t prove fake"
+     ],
+     "sub_beats": [
+      {
+       "key": "ask",
+       "audio_sec": 761.7,
+       "video_sec": 776.647
+      },
+      {
+       "key": "pause",
+       "audio_sec": 766.7,
+       "video_sec": 780.947
+      },
+      {
+       "key": "verify",
+       "audio_sec": 772.2,
+       "video_sec": 786.447
+      },
+      {
+       "key": "otp",
+       "audio_sec": 776.6,
+       "video_sec": 790.847
+      },
+      {
+       "key": "notfake",
+       "audio_sec": 781.6,
+       "video_sec": 795.847
+      },
+      {
+       "key": "noinfo",
+       "audio_sec": 785.9,
+       "video_sec": 800.147
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:Not every message is real — or fake",
+     "kind": "big",
+     "title": "Not every message is real — or fake",
+     "kicker": "The sensible approach",
+     "te": "ప్రతి message నిజం అనుకోవద్దు, ప్రతిదీ fake అని ignore చేయొద్దు",
+     "audio_start": 803.0,
+     "audio_end": 810.0,
+     "video_start": 817.247,
+     "video_end": 824.247,
+     "cue_text": "Do not assume every message is genuine. And do not dismiss every message as fake. That is a sensible approach.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "linkcheck",
+     "kind": "demo",
+     "title": "A “legal notice” link",
+     "kicker": "Verify — don’t panic-click",
+     "te": "Unknown link ని వెంటనే tap చేయొద్దు",
+     "audio_start": 810.3,
+     "audio_end": 841.0,
+     "video_start": 824.547,
+     "video_end": 855.247,
+     "cue_text": "That is a sensible approach. What if a message says, “Click this link to see your legal notice”? Do not immediately tap an unknown link. Confirm through the bank app, official website, or verified customer care. Legal communication can also arrive electronically. So, do not assume it is fake just because it came through WhatsApp or email. Who sent it? Are there case details? Can you verify the court or the lawyer's information? Check these things. Spending two minutes verifying is better than clicking out of fear.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "I.3",
+     "objects": [
+      "threatening message with link"
+     ],
+     "actions": [
+      "pause before tap; sender details; verification path"
+     ],
+     "labels": [],
+     "qualifications": [
+      "do not ignore every electronic notice"
+     ],
+     "sub_beats": [
+      {
+       "key": "msg",
+       "audio_sec": 811.4,
+       "video_sec": 825.647
+      },
+      {
+       "key": "pause",
+       "audio_sec": 815.9,
+       "video_sec": 830.147
+      },
+      {
+       "key": "confirm",
+       "audio_sec": 818.5,
+       "video_sec": 832.747
+      },
+      {
+       "key": "electronic",
+       "audio_sec": 824.0,
+       "video_sec": 838.247
+      },
+      {
+       "key": "who",
+       "audio_sec": 830.9,
+       "video_sec": 845.147
+      },
+      {
+       "key": "case",
+       "audio_sec": 831.9,
+       "video_sec": 846.147
+      },
+      {
+       "key": "court",
+       "audio_sec": 832.9,
+       "video_sec": 847.147
+      },
+      {
+       "key": "minutes",
+       "audio_sec": 836.9,
+       "video_sec": 851.147
+      }
+     ]
+    },
+    {
+     "beat_id": "doorstep",
+     "kind": "demo",
+     "title": "Someone actually comes home?",
+     "kicker": "At your door",
+     "te": "నిజంగానే ఎవరైనా ఇంటికి వస్తే?",
+     "audio_start": 841.1,
+     "audio_end": 881.6,
+     "video_start": 855.347,
+     "video_end": 895.847,
+     "cue_text": "Now, what if someone actually comes to your house? First, stay calm. If you feel uncomfortable, you do not have to invite them inside. Ask for an ID card. Ask for the bank's authorisation letter. Verify which account the visit concerns. Speak only in a place where you feel safe. If needed, ask a trusted person to stay with you. “Sign right now.” “Give me cash.” “Give me your phone.” Do not immediately react to this kind of pressure. Read and understand any document. Sign only after getting advice if you need it. If there is force, a physical threat, or immediate danger, call the emergency number, one one two. Your safety comes first.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "I.5",
+     "objects": [
+      "visitor",
+      "doorway",
+      "ID card",
+      "authorisation letter",
+      "112 box"
+     ],
+     "actions": [
+      "ID requested; read first; decline to sign under pressure"
+     ],
+     "labels": [],
+     "qualifications": [
+      "no caricature; 112 only for immediate danger"
+     ],
+     "sub_beats": [
+      {
+       "key": "calm",
+       "audio_sec": 843.9,
+       "video_sec": 858.147
+      },
+      {
+       "key": "inside",
+       "audio_sec": 845.9,
+       "video_sec": 860.147
+      },
+      {
+       "key": "id",
+       "audio_sec": 849.9,
+       "video_sec": 864.147
+      },
+      {
+       "key": "letter",
+       "audio_sec": 851.9,
+       "video_sec": 866.147
+      },
+      {
+       "key": "safe",
+       "audio_sec": 855.9,
+       "video_sec": 870.147
+      },
+      {
+       "key": "trusted",
+       "audio_sec": 858.9,
+       "video_sec": 873.147
+      },
+      {
+       "key": "pressure",
+       "audio_sec": 862.9,
+       "video_sec": 877.147
+      },
+      {
+       "key": "read",
+       "audio_sec": 868.9,
+       "video_sec": 883.147
+      },
+      {
+       "key": "advice",
+       "audio_sec": 870.9,
+       "video_sec": 885.147
+      },
+      {
+       "key": "danger",
+       "audio_sec": 874.9,
+       "video_sec": 889.147
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:An authorised visit isn’t automatically illegal",
+     "kind": "big",
+     "title": "An authorised visit isn’t automatically illegal",
+     "kicker": "Fair to know",
+     "te": "వాళ్ల conduct, సరైన process follow అవుతుందా — అదే ముఖ్యం",
+     "audio_start": 881.9,
+     "audio_end": 890.7,
+     "video_start": 896.147,
+     "video_end": 904.947,
+     "cue_text": "But an authorised recovery visit is not automatically illegal. The person's conduct and whether the proper process is followed are what matter.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "evidence",
+     "kind": "demo",
+     "title": "Build your complaint record",
+     "kicker": "Harassed? Keep evidence",
+     "te": "Harassment ని document చేయండి",
+     "audio_start": 890.9,
+     "audio_end": 912.0,
+     "video_start": 905.147,
+     "video_end": 926.247,
+     "cue_text": "Now, how do you complain about harassment? Note the dates. Save the phone numbers. Take screenshots of messages. Preserve the available evidence. Rather than simply saying, “They called many times,” your complaint is clearer when you can explain, “On this date, at this time, this number called and said this.”",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "I.6",
+     "objects": [
+      "date, number, screenshot, notes",
+      "complaint folder"
+     ],
+     "actions": [
+      "evidence filed"
+     ],
+     "labels": [],
+     "qualifications": [],
+     "sub_beats": [
+      {
+       "key": "dates",
+       "audio_sec": 893.9,
+       "video_sec": 908.147
+      },
+      {
+       "key": "numbers",
+       "audio_sec": 895.9,
+       "video_sec": 910.147
+      },
+      {
+       "key": "screens",
+       "audio_sec": 897.9,
+       "video_sec": 912.147
+      },
+      {
+       "key": "preserve",
+       "audio_sec": 899.9,
+       "video_sec": 914.147
+      },
+      {
+       "key": "rather",
+       "audio_sec": 903.0,
+       "video_sec": 917.247
+      },
+      {
+       "key": "specific",
+       "audio_sec": 905.0,
+       "video_sec": 919.247
+      }
+     ]
+    },
+    {
+     "beat_id": "complaint",
+     "kind": "demo",
+     "title": "Escalate step by step",
+     "kicker": "How to complain",
+     "te": "Complaint ఎలా చేయాలి",
+     "audio_start": 912.2,
+     "audio_end": 938.4,
+     "video_start": 926.447,
+     "video_end": 952.647,
+     "cue_text": "Send a written complaint to the bank's grievance team. Explain the recovery agency's conduct. Get a complaint reference number. If the bank rejects your complaint, the response is unsatisfactory, or you receive no response within thirty days, you may escalate it through the applicable RBI Ombudsman process. The RBI Complaint Management System's official address is cms dot rbi dot org dot in. Remember this distinction.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "I.7",
+     "objects": [
+      "bank",
+      "ref CMP-20931",
+      "RBI Ombudsman"
+     ],
+     "actions": [
+      "rejected / unsatisfactory / no reply within 30 days → Ombudsman"
+     ],
+     "labels": [],
+     "qualifications": [
+      "eligibility not simplified to “wait 30 days”"
+     ],
+     "sub_beats": [
+      {
+       "key": "bank",
+       "audio_sec": 912.2,
+       "video_sec": 926.447
+      },
+      {
+       "key": "ref",
+       "audio_sec": 918.0,
+       "video_sec": 932.247
+      },
+      {
+       "key": "rejected",
+       "audio_sec": 920.0,
+       "video_sec": 934.247
+      },
+      {
+       "key": "noreply",
+       "audio_sec": 924.0,
+       "video_sec": 938.247
+      },
+      {
+       "key": "ombudsman",
+       "audio_sec": 927.0,
+       "video_sec": 941.247
+      },
+      {
+       "key": "cms",
+       "audio_sec": 931.0,
+       "video_sec": 945.247
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:A complaint fixes conduct — not the debt",
+     "kind": "big",
+     "title": "A complaint fixes conduct — not the debt",
+     "kicker": "Remember the difference",
+     "te": "Harassment complaint recovery conduct గురించి — అది debt ని cancel చేయదు",
+     "audio_start": 938.6,
+     "audio_end": 958.14,
+     "video_start": 952.847,
+     "video_end": 969.067,
+     "cue_text": "Remember this distinction. A harassment complaint concerns recovery conduct. It does not cancel the debt. Nor does it guarantee approval of a settlement discount. But you have the right to ask to be treated fairly. What if nonstop calls are disrupting daily life? Use your phone settings.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene08",
+   "module": "m08",
+   "chapter": "Non-stop calls control · Phone settings",
+   "video_start": 969.067,
+   "video_end": 1039.267,
+   "frames": 2106,
+   "audio_start": 953.9,
+   "audio_end": 1021.32,
+   "beats": [
+    {
+     "beat_id": "phone",
+     "kind": "demo",
+     "title": "Phone settings — one channel stays open",
+     "kicker": "Too many calls?",
+     "te": "ఒక verified channel open గా ఉంచండి",
+     "audio_start": 956.2,
+     "audio_end": 995.7,
+     "video_start": 972.487,
+     "video_end": 1011.987,
+     "cue_text": "Use your phone settings. You can block known abusive numbers. Enable spam filters. You can turn on WhatsApp's Silence Unknown Callers option. But keep a verified communication channel open. Check the bank's emails. Collect official letters. Silencing unknown calls may also make you miss job, hospital, or delivery calls, right? Choose settings that suit your daily needs. Set aside a fixed time. Check bank communications then and respond to those that need a reply. A routine helps you avoid being emotionally drained by calls throughout the day.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "J",
+     "objects": [
+      "phone settings toggles",
+      "silenced unknown",
+      "verified Bank A",
+      "email"
+     ],
+     "actions": [
+      "unknown silenced; verified channel open; fixed time"
+     ],
+     "labels": [
+      "Example interface — settings vary by phone"
+     ],
+     "qualifications": [
+      "job/hospital/delivery calls can be hidden too"
+     ],
+     "sub_beats": [
+      {
+       "key": "settings",
+       "audio_sec": 956.2,
+       "video_sec": 972.487
+      },
+      {
+       "key": "block",
+       "audio_sec": 958.2,
+       "video_sec": 974.487
+      },
+      {
+       "key": "spam",
+       "audio_sec": 961.2,
+       "video_sec": 977.487
+      },
+      {
+       "key": "silence",
+       "audio_sec": 963.2,
+       "video_sec": 979.487
+      },
+      {
+       "key": "keep",
+       "audio_sec": 967.2,
+       "video_sec": 983.487
+      },
+      {
+       "key": "email",
+       "audio_sec": 970.2,
+       "video_sec": 986.487
+      },
+      {
+       "key": "letters",
+       "audio_sec": 972.2,
+       "video_sec": 988.487
+      },
+      {
+       "key": "miss",
+       "audio_sec": 974.2,
+       "video_sec": 990.487
+      },
+      {
+       "key": "fixed",
+       "audio_sec": 984.2,
+       "video_sec": 1000.487
+      },
+      {
+       "key": "routine",
+       "audio_sec": 991.2,
+       "video_sec": 1007.487
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:“Ignore calls and the file closes in 60 days?”",
+     "kind": "big",
+     "title": "“Ignore calls and the file closes in 60 days?”",
+     "kicker": "No guarantee",
+     "te": "అలాంటి guarantee ఏమీ లేదు",
+     "audio_start": 995.9,
+     "audio_end": 1026.3200000000002,
+     "video_start": 1012.187,
+     "video_end": 1039.267,
+     "cue_text": "“If I do not answer the calls, will the file close after sixty days?” There is no such guarantee. The recovery agency may change. The bank's team may change. Calls may decrease and then increase again. But a change in the agency's assignment does not make the debt disappear. Your plan should not depend on silence. It should depend on a budget, written communication, evidence, and verified repayment options. Now, let us see what happens to the account from the due date onwards. Your statement has a due date.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene09",
+   "module": "m09",
+   "chapter": "Due date నుంచి NPA, write-off వరకు · The timeline",
+   "video_start": 1039.267,
+   "video_end": 1195.467,
+   "frames": 4686,
+   "audio_start": 1022.0,
+   "audio_end": 1175.42,
+   "beats": [
+    {
+     "beat_id": "calendar",
+     "kind": "demo",
+     "title": "How an unpaid card moves towards NPA",
+     "kicker": "From the due date onwards",
+     "te": "Due date నుంచి NPA వరకు ఏం జరుగుతుంది",
+     "audio_start": 1026.4,
+     "audio_end": 1096.6,
+     "video_start": 1044.787,
+     "video_end": 1114.987,
+     "cue_text": "Your statement has a due date. By that date, you need to pay the full amount or the required minimum amount. If you do not pay the full bill, applicable finance charges may arise. If you do not fully pay the minimum amount either, the account becomes overdue. RBI rules say the credit card account must be past due for more than three days before late payment charges can be levied or the account reported as past due. But the days-past-due calculation starts from the original due date. So, do not treat those extra three days as a new due date. Do not plan to delay the payment. As the delay continues, collection follow-up may increase. Account restrictions may apply. Your credit report may be affected. Many people assume, “There will be no problem until ninety days.” That is incorrect. Even before NPA classification, there can be overdue reporting, charges, and recovery follow-up. Under RBI rules, if the minimum amount due shown in your statement is not fully paid within ninety days from the payment due date, the credit card account is treated as an NPA. What does NPA mean? In the bank's asset classification, the account has become non-performing. Bank accounting and provisioning rules apply.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "K",
+     "objects": [
+      "due-date choices",
+      "calendar strip",
+      "RBI >3 days card",
+      "NPA marker",
+      "asset-classification ledger"
+     ],
+     "actions": [
+      "overdue cursor sweeps from the original due date"
+     ],
+     "labels": [
+      "illustration"
+     ],
+     "qualifications": [
+      "NPA = minimum due not fully paid within 90 days from the due date; >3 days rule counted from original due date; not “no problem until 90 days”"
+     ],
+     "sub_beats": [
+      {
+       "key": "due",
+       "audio_sec": 1026.4,
+       "video_sec": 1044.787
+      },
+      {
+       "key": "full",
+       "audio_sec": 1027.2,
+       "video_sec": 1045.587
+      },
+      {
+       "key": "finance",
+       "audio_sec": 1031.6,
+       "video_sec": 1049.987
+      },
+      {
+       "key": "overdue",
+       "audio_sec": 1035.4,
+       "video_sec": 1053.787
+      },
+      {
+       "key": "three",
+       "audio_sec": 1039.7,
+       "video_sec": 1058.087
+      },
+      {
+       "key": "original",
+       "audio_sec": 1048.8,
+       "video_sec": 1067.187
+      },
+      {
+       "key": "notnew",
+       "audio_sec": 1053.0,
+       "video_sec": 1071.387
+      },
+      {
+       "key": "nodelay",
+       "audio_sec": 1056.7,
+       "video_sec": 1075.087
+      },
+      {
+       "key": "followup",
+       "audio_sec": 1059.2,
+       "video_sec": 1077.587
+      },
+      {
+       "key": "restrict",
+       "audio_sec": 1062.4,
+       "video_sec": 1080.787
+      },
+      {
+       "key": "report",
+       "audio_sec": 1064.2,
+       "video_sec": 1082.587
+      },
+      {
+       "key": "ninety",
+       "audio_sec": 1066.5,
+       "video_sec": 1084.887
+      },
+      {
+       "key": "incorrect",
+       "audio_sec": 1070.7,
+       "video_sec": 1089.087
+      },
+      {
+       "key": "before",
+       "audio_sec": 1073.4,
+       "video_sec": 1091.787
+      },
+      {
+       "key": "npa",
+       "audio_sec": 1077.2,
+       "video_sec": 1095.587
+      },
+      {
+       "key": "npa90",
+       "audio_sec": 1080.7,
+       "video_sec": 1099.087
+      },
+      {
+       "key": "meaning",
+       "audio_sec": 1087.7,
+       "video_sec": 1106.087
+      },
+      {
+       "key": "provision",
+       "audio_sec": 1093.9,
+       "video_sec": 1112.287
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:NPA doesn't mean “no need to pay”",
+     "kind": "big",
+     "title": "NPA doesn't mean “no need to pay”",
+     "kicker": "And from your side",
+     "te": "NPA అయింది కాబట్టి కట్టక్కర్లేదు — అది నిజం కాదు",
+     "audio_start": 1096.8,
+     "audio_end": 1104.0,
+     "video_start": 1115.187,
+     "video_end": 1122.387,
+     "cue_text": "But from your perspective, does NPA classification mean you no longer need to pay? No. Similarly, if the bank offers EMI conversion, look at the details before immediately saying yes.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "emi",
+     "kind": "demo",
+     "title": "Understand the EMI offer first",
+     "kicker": "EMI conversion offer?",
+     "te": "వెంటనే yes చెప్పకండి — ముందు details చూడండి",
+     "audio_start": 1104.2,
+     "audio_end": 1133.4,
+     "video_start": 1122.587,
+     "video_end": 1151.787,
+     "cue_text": "No. Similarly, if the bank offers EMI conversion, look at the details before immediately saying yes. What is the monthly EMI, interest rate, and tenure? Is there a processing fee? What is the total repayment? Here is the most important question. Can you genuinely afford that EMI every month? Taking an unaffordable EMI just to escape credit card pressure can bring the same problem back in a new form next month. An affordable repayment plan may be useful. So, understand the offer before deciding. Now, let us talk about write-off.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "L",
+     "objects": [
+      "EMI offer sheet",
+      "available-amount bar",
+      "two example EMIs"
+     ],
+     "actions": [
+      "fields highlight; EMI compared with ₹7,000 available"
+     ],
+     "labels": [
+      "Illustration — example amounts"
+     ],
+     "qualifications": [
+      "no invented rate; affordability decides"
+     ],
+     "sub_beats": [
+      {
+       "key": "details",
+       "audio_sec": 1104.9,
+       "video_sec": 1123.287
+      },
+      {
+       "key": "emi",
+       "audio_sec": 1107.2,
+       "video_sec": 1125.587
+      },
+      {
+       "key": "fee",
+       "audio_sec": 1111.4,
+       "video_sec": 1129.787
+      },
+      {
+       "key": "total",
+       "audio_sec": 1112.6,
+       "video_sec": 1130.987
+      },
+      {
+       "key": "afford",
+       "audio_sec": 1116.2,
+       "video_sec": 1134.587
+      },
+      {
+       "key": "unaffordable",
+       "audio_sec": 1119.9,
+       "video_sec": 1138.287
+      },
+      {
+       "key": "useful",
+       "audio_sec": 1126.9,
+       "video_sec": 1145.287
+      },
+      {
+       "key": "decide",
+       "audio_sec": 1129.9,
+       "video_sec": 1148.287
+      }
+     ]
+    },
+    {
+     "beat_id": "ledger",
+     "kind": "demo",
+     "title": "The books change. The claim remains.",
+     "kicker": "Write-off — the confusing word",
+     "te": "Write-off అంటే debt cancel అయినట్టు కాదు",
+     "audio_start": 1133.6,
+     "audio_end": 1180.42,
+     "video_start": 1151.987,
+     "video_end": 1195.467,
+     "cue_text": "Now, let us talk about write-off. Many people feel relieved when they hear that word. “Does that mean the bank has removed my debt?” That is where the confusion lies. A technical write-off is generally an accounting action. The treatment in the bank's books may change. But the claim against the borrower is not automatically waived. Recovery may continue. There is no universal rule that every card must be written off after one hundred and eighty days. The timing depends on the issuer's policy and the facts of the account. Waiting for write-off does not guarantee a large discount. When you are struggling, you can discuss workable options with the bank immediately. You do not necessarily have to wait for write-off to request a settlement. Now, let us discuss differences between banks. SBI Card, HDFC, ICICI, Axis, YES Bank, Kotak, RBL, and IDFC FIRST.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "K",
+     "objects": [
+      "bank books ledger",
+      "borrower obligation card"
+     ],
+     "actions": [
+      "card moves to written-off column; obligation stays"
+     ],
+     "labels": [
+      "illustration"
+     ],
+     "qualifications": [
+      "write-off doesn’t cancel the debt; no universal 180 days; no guaranteed discount"
+     ],
+     "sub_beats": [
+      {
+       "key": "relief",
+       "audio_sec": 1134.7,
+       "video_sec": 1153.087
+      },
+      {
+       "key": "accounting",
+       "audio_sec": 1141.4,
+       "video_sec": 1159.787
+      },
+      {
+       "key": "books",
+       "audio_sec": 1144.4,
+       "video_sec": 1162.787
+      },
+      {
+       "key": "claim",
+       "audio_sec": 1146.4,
+       "video_sec": 1164.787
+      },
+      {
+       "key": "recovery",
+       "audio_sec": 1149.9,
+       "video_sec": 1168.287
+      },
+      {
+       "key": "n180",
+       "audio_sec": 1151.7,
+       "video_sec": 1170.087
+      },
+      {
+       "key": "timing",
+       "audio_sec": 1157.7,
+       "video_sec": 1176.087
+      },
+      {
+       "key": "nodiscount",
+       "audio_sec": 1161.7,
+       "video_sec": 1180.087
+      },
+      {
+       "key": "options",
+       "audio_sec": 1166.7,
+       "video_sec": 1185.087
+      },
+      {
+       "key": "nowait",
+       "audio_sec": 1170.7,
+       "video_sec": 1189.087
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene10",
+   "module": "m10",
+   "chapter": "ప్రతి bank వేరు · Issuer differences",
+   "video_start": 1195.467,
+   "video_end": 1253.5,
+   "frames": 1741,
+   "audio_start": 1176.56,
+   "audio_end": 1231.8,
+   "beats": [
+    {
+     "beat_id": "panel:Each bank has its own process",
+     "kind": "big",
+     "title": "Each bank has its own process",
+     "kicker": "Every lender is different",
+     "te": "ఒకే bank లో కూడా accounts వేర్వేరుగా ఉండొచ్చు",
+     "audio_start": 1179.4,
+     "audio_end": 1194.0,
+     "video_start": 1199.427,
+     "video_end": 1214.027,
+     "cue_text": "SBI Card, HDFC, ICICI, Axis, YES Bank, Kotak, RBL, and IDFC FIRST. Every issuer's process may be different. Even within one bank, different accounts may receive different offers.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "offers",
+     "kind": "demo",
+     "title": "Your account, your offer",
+     "kicker": "Don't compare blindly",
+     "te": "Friend కి వచ్చిన offer మీకు రావాలని లేదు",
+     "audio_start": 1194.2,
+     "audio_end": 1236.8,
+     "video_start": 1214.227,
+     "video_end": 1253.5,
+     "cue_text": "“My friend settled at twenty-five percent, so I should get the same.” Do not get fixated on that. Your friend's account may have a different age. The outstanding balance's breakdown may differ. Their financial situation may be different. The approval policy may differ too. Do not treat a settlement percentage mentioned online as a promise for your case. Look at the verified written offer from your bank, consider what you can afford, and discuss it accordingly. A friendly caller does not automatically mean the offer is genuine. And a rude caller is not a reason to ignore the account details. Verify the process. Do not make a financial decision based on someone's tone. Okay. What does settlement actually mean? The bank agrees to accept part of its claimed dues and waive the remaining claim under agreed terms.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "L",
+     "objects": [
+      "friend bubble",
+      "factor comparison",
+      "forum post",
+      "two fictional written proposals",
+      "caller tone cards"
+     ],
+     "actions": [
+      "factors differ; online % stamped; proposals vs budget"
+     ],
+     "labels": [
+      "Illustration — fictional proposals"
+     ],
+     "qualifications": [
+      "no bank-specific percentages; friend’s outcome no prediction"
+     ],
+     "sub_beats": [
+      {
+       "key": "friend",
+       "audio_sec": 1194.3,
+       "video_sec": 1214.327
+      },
+      {
+       "key": "age",
+       "audio_sec": 1198.3,
+       "video_sec": 1218.327
+      },
+      {
+       "key": "breakdown",
+       "audio_sec": 1202.3,
+       "video_sec": 1222.327
+      },
+      {
+       "key": "situation",
+       "audio_sec": 1204.3,
+       "video_sec": 1224.327
+      },
+      {
+       "key": "policy",
+       "audio_sec": 1206.3,
+       "video_sec": 1226.327
+      },
+      {
+       "key": "online",
+       "audio_sec": 1208.3,
+       "video_sec": 1228.327
+      },
+      {
+       "key": "written",
+       "audio_sec": 1213.3,
+       "video_sec": 1233.327
+      },
+      {
+       "key": "afford",
+       "audio_sec": 1216.3,
+       "video_sec": 1236.327
+      },
+      {
+       "key": "friendly",
+       "audio_sec": 1219.3,
+       "video_sec": 1239.327
+      },
+      {
+       "key": "rude",
+       "audio_sec": 1223.3,
+       "video_sec": 1243.327
+      },
+      {
+       "key": "verify",
+       "audio_sec": 1227.3,
+       "video_sec": 1247.327
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene11",
+   "module": "m11",
+   "chapter": "Settlement & Lok Adalat — safe గా · Settle safely",
+   "video_start": 1253.5,
+   "video_end": 1477.167,
+   "frames": 6710,
+   "audio_start": 1232.6,
+   "audio_end": 1453.8,
+   "beats": [
+    {
+     "beat_id": "panel:The bank accepts less to close the account",
+     "kind": "points",
+     "title": "The bank accepts less to close the account",
+     "kicker": "What is a settlement?",
+     "te": "Bank తక్కువ amount తీసుకుని account close చేయడానికి ఒప్పుకోవడం",
+     "audio_start": 1235.0,
+     "audio_end": 1255.2,
+     "video_start": 1257.02,
+     "video_end": 1277.22,
+     "cue_text": "Okay. What does settlement actually mean? The bank agrees to accept part of its claimed dues and waive the remaining claim under agreed terms. It is a mutual agreement. Your request alone is not enough. The bank's approval is needed too. You can make a realistic proposal based on your income, hardship, and available funds. “This is the amount I can arrange at present.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "offeraff",
+     "kind": "demo",
+     "title": "Affordable amount, realistic deadline",
+     "kicker": "Settle only what you can afford",
+     "te": "Afford చేయగల amount, realistic deadline",
+     "audio_start": 1255.4,
+     "audio_end": 1287.4,
+     "video_start": 1277.42,
+     "video_end": 1309.42,
+     "cue_text": "“This is the amount I can arrange at present. I cannot commit to anything more. Please consider a full and final settlement,” you can ask. But borrowing again at very high interest to fund the settlement risks moving you from one problem into another. The settlement amount must be affordable. The payment deadline must be realistic. Here is an example. Suppose your outstanding amount is one lakh. A caller says, “Pay thirty thousand and we will close it.” That sounds like a relief, right? But do not make the payment immediately out of excitement. First, ask, “Can you send the official settlement letter?",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "M",
+     "objects": [
+      "your proposal card",
+      "high-interest loan arrow",
+      "example ₹1,00,000",
+      "caller ₹30,000 offer"
+     ],
+     "actions": [
+      "loan route struck; pay-now disabled until verified"
+     ],
+     "labels": [
+      "Example — not a real offer"
+     ],
+     "qualifications": [
+      "verify before paying"
+     ],
+     "sub_beats": [
+      {
+       "key": "start",
+       "audio_sec": 1255.6,
+       "video_sec": 1277.62
+      },
+      {
+       "key": "borrow",
+       "audio_sec": 1261.3,
+       "video_sec": 1283.32
+      },
+      {
+       "key": "affordable",
+       "audio_sec": 1268.3,
+       "video_sec": 1290.32
+      },
+      {
+       "key": "deadline",
+       "audio_sec": 1271.3,
+       "video_sec": 1293.32
+      },
+      {
+       "key": "example",
+       "audio_sec": 1273.3,
+       "video_sec": 1295.32
+      },
+      {
+       "key": "outstanding",
+       "audio_sec": 1275.3,
+       "video_sec": 1297.32
+      },
+      {
+       "key": "caller",
+       "audio_sec": 1277.3,
+       "video_sec": 1299.32
+      },
+      {
+       "key": "relief",
+       "audio_sec": 1281.3,
+       "video_sec": 1303.32
+      },
+      {
+       "key": "notimmediately",
+       "audio_sec": 1283.3,
+       "video_sec": 1305.32
+      }
+     ]
+    },
+    {
+     "beat_id": "letter",
+     "kind": "demo",
+     "title": "What a settlement letter must show",
+     "kicker": null,
+     "te": null,
+     "audio_start": 1287.4,
+     "audio_end": 1348.2,
+     "video_start": 1309.42,
+     "video_end": 1370.22,
+     "cue_text": "First, ask, “Can you send the official settlement letter? Can I verify this offer through the bank's customer care?” The offer's authenticity matters more than its amount. The settlement letter must clearly identify your name and account, the agreed amount, payment dates, and the schedule if there are instalments. If you pay the agreed amount fully and on time, how will the remaining dues be waived? Will there be any further claim? How will the account be reported? You need to understand all of this. Use communication from an official bank channel or an authorised settlement letter verified by the bank. Do not trust a WhatsApp screenshot alone. What if someone says, “Make a small payment first, and the letter will follow”? Confirm in writing whether that payment is part of the settlement or will be adjusted as a regular account payment. If money you pay believing it is a settlement is recorded as an ordinary part payment, that creates a misunderstanding, right? Get clarity before making the payment.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "M",
+     "objects": [
+      "fictional Bank A settlement letter",
+      "official-app verification",
+      "WhatsApp screenshot",
+      "“pay ₹5,000 now” warning"
+     ],
+     "actions": [
+      "camera zooms per field; verification card; confirm in writing"
+     ],
+     "labels": [
+      "Sample / Illustration — fictional bank and figures"
+     ],
+     "qualifications": [
+      "small payment not converted into a settlement; no guaranteed reporting"
+     ],
+     "sub_beats": [
+      {
+       "key": "enter",
+       "audio_sec": 1287.4,
+       "video_sec": 1309.42
+      },
+      {
+       "key": "verify",
+       "audio_sec": 1289.6,
+       "video_sec": 1311.62
+      },
+      {
+       "key": "account",
+       "audio_sec": 1296.3,
+       "video_sec": 1318.32
+      },
+      {
+       "key": "amount",
+       "audio_sec": 1299.6,
+       "video_sec": 1321.62
+      },
+      {
+       "key": "dates",
+       "audio_sec": 1301.2,
+       "video_sec": 1323.22
+      },
+      {
+       "key": "terms",
+       "audio_sec": 1305.3,
+       "video_sec": 1327.32
+      },
+      {
+       "key": "reporting",
+       "audio_sec": 1309.6,
+       "video_sec": 1331.62
+      },
+      {
+       "key": "channel",
+       "audio_sec": 1314.5,
+       "video_sec": 1336.52
+      },
+      {
+       "key": "screenshot",
+       "audio_sec": 1322.0,
+       "video_sec": 1344.02
+      },
+      {
+       "key": "smallfirst",
+       "audio_sec": 1325.2,
+       "video_sec": 1347.22
+      },
+      {
+       "key": "writing",
+       "audio_sec": 1330.2,
+       "video_sec": 1352.22
+      }
+     ]
+    },
+    {
+     "beat_id": "receipts",
+     "kind": "demo",
+     "title": "Get it in writing",
+     "kicker": "After you pay",
+     "te": "Payment complete అయ్యాక written confirmation తీసుకోండి",
+     "audio_start": 1361.8,
+     "audio_end": 1391.8,
+     "video_start": 1383.82,
+     "video_end": 1413.82,
+     "cue_text": "Save the payment receipt. If your agreement has multiple instalments, carefully follow the due dates. Understand beforehand how missing an instalment would affect the offer. After completing payment, obtain written confirmation and the applicable No Dues or settlement completion certificate. If a court recovery case is already pending, confirm how those proceedings will be closed after settlement. A telephone assurance that “We will handle everything” is not enough.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "M",
+     "objects": [
+      "payment receipt",
+      "instalment schedule",
+      "written confirmation",
+      "No Dues / completion certificate"
+     ],
+     "actions": [
+      "receipt saved; missed-instalment question; certificate filed"
+     ],
+     "labels": [
+      "Sample documents — fictional"
+     ],
+     "qualifications": [
+      "credit report checked separately; phone assurance not enough"
+     ],
+     "sub_beats": [
+      {
+       "key": "receipt",
+       "audio_sec": 1361.9,
+       "video_sec": 1383.92
+      },
+      {
+       "key": "instal",
+       "audio_sec": 1363.9,
+       "video_sec": 1385.92
+      },
+      {
+       "key": "miss",
+       "audio_sec": 1368.9,
+       "video_sec": 1390.92
+      },
+      {
+       "key": "confirm",
+       "audio_sec": 1373.9,
+       "video_sec": 1395.92
+      },
+      {
+       "key": "court",
+       "audio_sec": 1380.9,
+       "video_sec": 1402.92
+      },
+      {
+       "key": "phone",
+       "audio_sec": 1388.0,
+       "video_sec": 1410.02
+      }
+     ]
+    },
+    {
+     "beat_id": "lokadalat",
+     "kind": "demo",
+     "title": "Nothing to fear — but read the terms",
+     "kicker": "Lok Adalat",
+     "te": "Lok Adalat పేరు వినగానే tension అవసరం లేదు",
+     "audio_start": 1392.0,
+     "audio_end": 1433.2,
+     "video_start": 1414.02,
+     "video_end": 1454.9,
+     "cue_text": "What about Lok Adalat? The name itself makes some people nervous: “Do I have to go to court? What will they ask me there?” A regular Lok Adalat offers an opportunity for the parties to reach a mutually agreed settlement. Eligible pending cases and pre-litigation disputes may also be brought there. They will explain the proposal. Understand the terms. Check whether they are affordable for you. Going there does not mean you have to accept any offer you receive. Consent matters in a regular Lok Adalat settlement. An award based on an agreed settlement is final and binding, like a civil court decree. There is no ordinary appeal. So, understand the amount, dates, and consequences clearly before signing.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "N",
+     "objects": [
+      "table: You, Lok Adalat, Bank A",
+      "proposal",
+      "accept / don’t accept",
+      "award"
+     ],
+     "actions": [
+      "proposal enlarged; choice visible; award only after agreement"
+     ],
+     "labels": [
+      "sample"
+     ],
+     "qualifications": [
+      "consent matters; final and binding; no ordinary appeal"
+     ],
+     "sub_beats": [
+      {
+       "key": "nervous",
+       "audio_sec": 1394.6,
+       "video_sec": 1416.3
+      },
+      {
+       "key": "opportunity",
+       "audio_sec": 1399.6,
+       "video_sec": 1421.3
+      },
+      {
+       "key": "eligible",
+       "audio_sec": 1405.6,
+       "video_sec": 1427.3
+      },
+      {
+       "key": "explain",
+       "audio_sec": 1409.6,
+       "video_sec": 1431.3
+      },
+      {
+       "key": "afford",
+       "audio_sec": 1413.6,
+       "video_sec": 1435.3
+      },
+      {
+       "key": "notaccept",
+       "audio_sec": 1415.6,
+       "video_sec": 1437.3
+      },
+      {
+       "key": "consent",
+       "audio_sec": 1419.6,
+       "video_sec": 1441.3
+      },
+      {
+       "key": "award",
+       "audio_sec": 1423.6,
+       "video_sec": 1445.3
+      },
+      {
+       "key": "appeal",
+       "audio_sec": 1429.6,
+       "video_sec": 1451.3
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:Ask until it's clear",
+     "kind": "points",
+     "title": "Ask until it's clear",
+     "kicker": "Before you sign",
+     "te": "అర్థం కాకపోతే అడగండి — అలా అడగడంలో తప్పు లేదు",
+     "audio_start": 1433.4,
+     "audio_end": 1458.8,
+     "video_start": 1455.1,
+     "video_end": 1477.167,
+     "cue_text": "So, understand the amount, dates, and consequences clearly before signing. If you do not understand the terms, ask. “Will there be any further dues after I pay this amount? What happens if I miss the payment deadline? What status will appear in my credit report?” There is nothing wrong with asking these questions. Getting clarity about your case is your responsibility. Now, a question people often ask after settlement. “Is my CIBIL score ruined?",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene12",
+   "module": "m12",
+   "chapter": "Settled vs Closed, CIBIL rebuild · Rebuilding credit",
+   "video_start": 1477.167,
+   "video_end": 1670.767,
+   "frames": 5808,
+   "audio_start": 1454.78,
+   "audio_end": 1645.58,
+   "beats": [
+    {
+     "beat_id": "reports",
+     "kind": "demo",
+     "title": "Two different statuses",
+     "kicker": "Settled vs Closed",
+     "te": "Settled, Closed — రెండూ వేరు",
+     "audio_start": 1468.8,
+     "audio_end": 1498.8,
+     "video_start": 1492.307,
+     "video_end": 1522.307,
+     "cue_text": "“Settled” generally indicates a payment below the full contractual dues, made with the lender's consent. “Closed” is a different status, associated with an account that has been fully repaid. Lenders may view a “Settled” status negatively. It can affect future loan or card approvals. Receiving a No Dues Certificate does not mean your credit report must show “Closed”. Settlement completion and credit reporting status are two different things.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "O",
+     "objects": [
+      "sample credit report (Settled / Closed rows)",
+      "No Dues Certificate"
+     ],
+     "actions": [
+      "status field highlighted; NDC does not flip status"
+     ],
+     "labels": [
+      "sample — fictional"
+     ],
+     "qualifications": [
+      "settlement completion ≠ reporting status"
+     ],
+     "sub_beats": [
+      {
+       "key": "settled",
+       "audio_sec": 1468.8,
+       "video_sec": 1492.307
+      },
+      {
+       "key": "closed",
+       "audio_sec": 1477.2,
+       "video_sec": 1500.707
+      },
+      {
+       "key": "negative",
+       "audio_sec": 1481.9,
+       "video_sec": 1505.407
+      },
+      {
+       "key": "approvals",
+       "audio_sec": 1485.2,
+       "video_sec": 1508.707
+      },
+      {
+       "key": "ndc",
+       "audio_sec": 1488.4,
+       "video_sec": 1511.907
+      },
+      {
+       "key": "different",
+       "audio_sec": 1494.4,
+       "video_sec": 1517.907
+      }
+     ]
+    },
+    {
+     "beat_id": "stabilise",
+     "kind": "demo",
+     "title": "First, stabilise",
+     "kicker": "Rebuild — yes. Instantly — no.",
+     "te": "Instant reset ఉండదు — ముందు stabilize అవ్వండి",
+     "audio_start": 1502.0,
+     "audio_end": 1517.2,
+     "video_start": 1525.507,
+     "video_end": 1540.707,
+     "cue_text": "Yes, you can. But there is no instant reset. First, stabilise your income. Make your monthly budget manageable. Build a small emergency fund. Just because you feel relieved that the debt has been cleared, you do not need to take new credit immediately. Later, if it is suitable for you, you can consider an FD-backed secured credit card.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "O",
+     "objects": [
+      "income line",
+      "budget bar",
+      "emergency-fund bar"
+     ],
+     "actions": [
+      "income steadies; fund fills"
+     ],
+     "labels": [],
+     "qualifications": [
+      "no instant reset; no rush into new credit"
+     ],
+     "sub_beats": [
+      {
+       "key": "income",
+       "audio_sec": 1502.0,
+       "video_sec": 1525.507
+      },
+      {
+       "key": "budget",
+       "audio_sec": 1505.8,
+       "video_sec": 1529.307
+      },
+      {
+       "key": "fund",
+       "audio_sec": 1507.8,
+       "video_sec": 1531.307
+      },
+      {
+       "key": "nonew",
+       "audio_sec": 1510.8,
+       "video_sec": 1534.307
+      }
+     ]
+    },
+    {
+     "beat_id": "securedcard",
+     "kind": "demo",
+     "title": "An option — not a guarantee",
+     "kicker": "FD-backed secured card",
+     "te": "Card వస్తుందని guarantee లేదు",
+     "audio_start": 1517.3,
+     "audio_end": 1540.4,
+     "video_start": 1540.807,
+     "video_end": 1563.907,
+     "cue_text": "Later, if it is suitable for you, you can consider an FD-backed secured credit card. That is a card secured against a fixed deposit. Approval, deposit requirements, and limits depend on the issuer's policy. Making an FD does not guarantee card approval. And do not lock up all the savings you need for emergencies just to get a card. Once you get the card, use it only for small, planned expenses.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "O",
+     "objects": [
+      "fixed deposit",
+      "secured card",
+      "issuer-policy pills",
+      "emergency savings"
+     ],
+     "actions": [
+      "FD links to card; approval “?”"
+     ],
+     "labels": [
+      "sample"
+     ],
+     "qualifications": [
+      "FD doesn’t guarantee approval; keep emergency savings separate"
+     ],
+     "sub_beats": [
+      {
+       "key": "fd",
+       "audio_sec": 1517.3,
+       "video_sec": 1540.807
+      },
+      {
+       "key": "card",
+       "audio_sec": 1519.8,
+       "video_sec": 1543.307
+      },
+      {
+       "key": "approval",
+       "audio_sec": 1522.8,
+       "video_sec": 1546.307
+      },
+      {
+       "key": "noguarantee",
+       "audio_sec": 1527.8,
+       "video_sec": 1551.307
+      },
+      {
+       "key": "reserve",
+       "audio_sec": 1530.8,
+       "video_sec": 1554.307
+      },
+      {
+       "key": "small",
+       "audio_sec": 1535.8,
+       "video_sec": 1559.307
+      }
+     ]
+    },
+    {
+     "beat_id": "usage",
+     "kind": "demo",
+     "title": "Pay in full. Use little.",
+     "kicker": "Use it lightly",
+     "te": "Full statement balance due date కి కట్టండి",
+     "audio_start": 1540.6,
+     "audio_end": 1557.0,
+     "video_start": 1564.107,
+     "video_end": 1580.507,
+     "cue_text": "Pay the full statement balance by the due date. Keeping usage low may help. For example, one manageable approach might be using ten or twenty percent of the limit. But using an exact percentage does not guarantee that your score will increase. What are the most important habits?",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "O",
+     "objects": [
+      "limit bar ₹20,000 (example)",
+      "10–20% zone"
+     ],
+     "actions": [
+      "usage zone highlighted"
+     ],
+     "labels": [
+      "Illustration — example limit"
+     ],
+     "qualifications": [
+      "no exact % guarantees a score rise"
+     ],
+     "sub_beats": [
+      {
+       "key": "full",
+       "audio_sec": 1540.8,
+       "video_sec": 1564.307
+      },
+      {
+       "key": "low",
+       "audio_sec": 1543.8,
+       "video_sec": 1567.307
+      },
+      {
+       "key": "example",
+       "audio_sec": 1545.8,
+       "video_sec": 1569.307
+      },
+      {
+       "key": "nopct",
+       "audio_sec": 1550.8,
+       "video_sec": 1574.307
+      }
+     ]
+    },
+    {
+     "beat_id": "reportdispute",
+     "kind": "demo",
+     "title": "Watch your credit report",
+     "kicker": "Habits that matter",
+     "te": "Credit report regular గా check చేయండి",
+     "audio_start": 1557.2,
+     "audio_end": 1583.4,
+     "video_start": 1580.707,
+     "video_end": 1606.907,
+     "cue_text": "What are the most important habits? Paying on time. Keeping usage affordable. Avoiding repeated, unnecessary applications. Checking your credit report regularly. After settlement, check whether the bank has updated your report. If there is an incorrect balance or overdue status, or a duplicate account, raise a dispute with the lender and credit bureau. But you cannot remove accurate negative history simply because you do not like it. One more thing.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "O",
+     "objects": [
+      "habit checklist",
+      "sample credit report rows",
+      "dispute targets",
+      "ref BUR-48213"
+     ],
+     "actions": [
+      "errors flagged; dispute raised; accurate row stays"
+     ],
+     "labels": [
+      "Sample report — fictional"
+     ],
+     "qualifications": [
+      "accurate negative history stays"
+     ],
+     "sub_beats": [
+      {
+       "key": "ontime",
+       "audio_sec": 1558.8,
+       "video_sec": 1582.307
+      },
+      {
+       "key": "apps",
+       "audio_sec": 1562.8,
+       "video_sec": 1586.307
+      },
+      {
+       "key": "check",
+       "audio_sec": 1564.8,
+       "video_sec": 1588.307
+      },
+      {
+       "key": "updated",
+       "audio_sec": 1566.8,
+       "video_sec": 1590.307
+      },
+      {
+       "key": "error",
+       "audio_sec": 1570.8,
+       "video_sec": 1594.307
+      },
+      {
+       "key": "dispute",
+       "audio_sec": 1575.8,
+       "video_sec": 1599.307
+      },
+      {
+       "key": "accurate",
+       "audio_sec": 1578.8,
+       "video_sec": 1602.307
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:“750 in 18 months” — don't believe it",
+     "kind": "big",
+     "title": "“750 in 18 months” — don't believe it",
+     "kicker": "Ignore magic numbers",
+     "te": "18 months లో 750, 24 months లో problems పోతాయి — ఇలాంటివి నమ్మొద్దు",
+     "audio_start": 1583.6,
+     "audio_end": 1604.0,
+     "video_start": 1607.107,
+     "video_end": 1627.507,
+     "cue_text": "One more thing. “You will reach seven fifty in eighteen months.” “All your problems will disappear in twenty-four months.” Do not believe promises like these. Recovery time depends on your entire credit history, existing accounts, repayment behaviour, and lender reporting. Your focus should not be on a magic number, but on sustainable financial habits. Here is what I want to tell you.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "panel:One difficult phase doesn’t define your whole life",
+     "kind": "big",
+     "title": "One difficult phase doesn’t define your whole life",
+     "kicker": "What I want to tell you",
+     "te": "ఒక కష్టమైన financial phase మీ జీవితం మొత్తాన్ని define చేయదు",
+     "audio_start": 1604.2,
+     "audio_end": 1610.7,
+     "video_start": 1627.707,
+     "video_end": 1634.207,
+     "cue_text": "Here is what I want to tell you. One difficult financial phase does not define your entire life. Today, you may feel afraid or confused.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "panel:Talk to one person you trust",
+     "kind": "points",
+     "title": "Talk to one person you trust",
+     "kicker": "You don't have to carry this alone",
+     "te": "ఒక trusted person తో మాట్లాడండి",
+     "audio_start": 1610.9,
+     "audio_end": 1650.58,
+     "video_start": 1634.407,
+     "video_end": 1670.767,
+     "cue_text": "Today, you may feel afraid or confused. You may not know how to tell your family. But talk to a trusted person. It could be a family member you feel safe with, or a friend. You do not have to carry every detail alone. When you explain your situation, you do not have to begin by saying, “I have ruined everything.” “I am facing financial difficulty. These are my accounts. This is my current income. This is the plan I want to follow. I need support.” You can say that. It is not a weakness. It is a practical step towards facing the problem. Okay. Let us remember everything we have discussed as a simple eight-step plan.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    }
+   ]
+  },
+  {
+   "scene_id": "Scene13",
+   "module": "m13",
+   "chapter": "మీ 8-step plan · Your next step",
+   "video_start": 1670.767,
+   "video_end": 1871.2,
+   "frames": 6013,
+   "audio_start": 1646.64,
+   "audio_end": 1844.5,
+   "beats": [
+    {
+     "beat_id": "plan",
+     "kind": "demo",
+     "title": "Everything so far — as one plan",
+     "kicker": "Your 8-step plan",
+     "te": "ఇప్పటి వరకు మాట్లాడిందంతా ఒక simple plan గా",
+     "audio_start": 1650.6,
+     "audio_end": 1753.0,
+     "video_start": 1675.847,
+     "video_end": 1778.247,
+     "cue_text": "Okay. Let us remember everything we have discussed as a simple eight-step plan. Step One. List all your accounts. Calculate your income, essential expenses, and the money available for repayment. Understand your agreement's terms and any set-off risk involving your salary account. Step Two. Explain your hardship through each issuer's official grievance channel. Ask for affordable repayment options in writing. Save complaint IDs and replies. Step Three. Organise recovery communication. Use spam controls. But make sure you do not miss verified bank emails, official letters, or genuine legal notices. Step Four. Review the cycle of covering old debt with new borrowing. Understand the benefits and costs of paying the minimum due. Do not make promises your budget cannot support. Step Five. If there are threats, humiliation, or abusive messages, save the evidence and complain. If necessary, escalate through the RBI complaint process. In immediate danger, call one one two. Step Six. Remember the difference between NPA, write-off, and settlement. Write-off does not cancel the debt. Discuss workable options instead of blindly waiting for a discount. Step Seven. If you settle, verify the official offer. Understand the amount, dates, waiver terms, and credit reporting status. Pay through an authorised channel and obtain receipts and confirmation of completion. Step Eight. Stabilise your income. Build emergency savings. Check your credit report. Then, if necessary, rebuild your credit profile with suitable secured credit and regular payments in full.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "P",
+     "objects": [
+      "8-step rail",
+      "register",
+      "budget bars",
+      "clause",
+      "email",
+      "phone toggle",
+      "loop",
+      "evidence folder",
+      "ledger",
+      "verified letter",
+      "receipt",
+      "credit report",
+      "secured card"
+     ],
+     "actions": [
+      "each object activates on its spoken step"
+     ],
+     "labels": [],
+     "qualifications": [
+      "all eight steps preserved"
+     ],
+     "sub_beats": [
+      {
+       "key": "s1",
+       "audio_sec": 1652.0,
+       "video_sec": 1677.247
+      },
+      {
+       "key": "s1b",
+       "audio_sec": 1655.1,
+       "video_sec": 1680.347
+      },
+      {
+       "key": "s1c",
+       "audio_sec": 1659.6,
+       "video_sec": 1684.847
+      },
+      {
+       "key": "s2",
+       "audio_sec": 1664.2,
+       "video_sec": 1689.447
+      },
+      {
+       "key": "s2b",
+       "audio_sec": 1669.4,
+       "video_sec": 1694.647
+      },
+      {
+       "key": "s2c",
+       "audio_sec": 1672.2,
+       "video_sec": 1697.447
+      },
+      {
+       "key": "s3",
+       "audio_sec": 1675.4,
+       "video_sec": 1700.647
+      },
+      {
+       "key": "s3b",
+       "audio_sec": 1679.0,
+       "video_sec": 1704.247
+      },
+      {
+       "key": "s3c",
+       "audio_sec": 1681.0,
+       "video_sec": 1706.247
+      },
+      {
+       "key": "s4",
+       "audio_sec": 1687.6,
+       "video_sec": 1712.847
+      },
+      {
+       "key": "s4b",
+       "audio_sec": 1692.7,
+       "video_sec": 1717.947
+      },
+      {
+       "key": "s4c",
+       "audio_sec": 1696.8,
+       "video_sec": 1722.047
+      },
+      {
+       "key": "s5",
+       "audio_sec": 1699.8,
+       "video_sec": 1725.047
+      },
+      {
+       "key": "s5b",
+       "audio_sec": 1706.6,
+       "video_sec": 1731.847
+      },
+      {
+       "key": "s5c",
+       "audio_sec": 1710.3,
+       "video_sec": 1735.547
+      },
+      {
+       "key": "s6",
+       "audio_sec": 1713.7,
+       "video_sec": 1738.947
+      },
+      {
+       "key": "s6b",
+       "audio_sec": 1719.2,
+       "video_sec": 1744.447
+      },
+      {
+       "key": "s6c",
+       "audio_sec": 1721.7,
+       "video_sec": 1746.947
+      },
+      {
+       "key": "s7",
+       "audio_sec": 1726.4,
+       "video_sec": 1751.647
+      },
+      {
+       "key": "s7b",
+       "audio_sec": 1730.8,
+       "video_sec": 1756.047
+      },
+      {
+       "key": "s7c",
+       "audio_sec": 1735.6,
+       "video_sec": 1760.847
+      },
+      {
+       "key": "s8",
+       "audio_sec": 1740.4,
+       "video_sec": 1765.647
+      },
+      {
+       "key": "s8b",
+       "audio_sec": 1743.2,
+       "video_sec": 1768.447
+      },
+      {
+       "key": "s8c",
+       "audio_sec": 1745.2,
+       "video_sec": 1770.447
+      },
+      {
+       "key": "s8d",
+       "audio_sec": 1746.9,
+       "video_sec": 1772.147
+      }
+     ]
+    },
+    {
+     "beat_id": "panel:What's my one next step today?",
+     "kind": "big",
+     "title": "What's my one next step today?",
+     "kicker": "Ask yourself",
+     "te": "మొత్తం debt ఈ రోజే solve చేయక్కర్లేదు — ఒక్క useful step చాలు",
+     "audio_start": 1753.2,
+     "audio_end": 1777.8,
+     "video_start": 1778.447,
+     "video_end": 1803.047,
+     "cue_text": "Now, ask yourself one question. “What is my next step?” You do not need to solve your entire debt today. But you can take one useful step today, right? You can list your accounts. Check your statement's breakdown. Send a hardship email. Talk to a trusted person. Taking one step at a time reduces confusion. You get clarity about what to do.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "panel:You may owe money — no one may disrespect you",
+     "kind": "big",
+     "title": "You may owe money — no one may disrespect you",
+     "kicker": "Your dignity",
+     "te": "అప్పు ఉండొచ్చు — కానీ మిమ్మల్ని అగౌరవంగా treat చేసే permission ఎవరికీ లేదు",
+     "audio_start": 1778.4,
+     "audio_end": 1785.9,
+     "video_start": 1803.647,
+     "video_end": 1811.147,
+     "cue_text": "You may owe money. But that does not give anyone permission to treat you disrespectfully. Handle your responsibilities honestly.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    },
+    {
+     "beat_id": "panel:My case won't be your case",
+     "kind": "big",
+     "title": "My case won't be your case",
+     "kicker": "One honest note",
+     "te": "నా case లో జరిగిందే మీ case లో జరుగుతుందని promise చేయను",
+     "audio_start": 1810.6,
+     "audio_end": 1819.6,
+     "video_start": 1835.847,
+     "video_end": 1844.847,
+     "cue_text": "I do not promise that what happened in my case will also happen in yours. But seeing the real process can help you ask better questions about your own situation.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)"
+    }
+   ]
+  }
+ ]
+}

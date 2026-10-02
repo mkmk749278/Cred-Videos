@@ -160,7 +160,6 @@ export const RegisterDemo: React.FC<DemoProps> = ({ins}) => {
       {scatter.map((s, i) => (
         <div key={i} style={{position: 'absolute', left: s.x + (tableX - s.x) * form, top: s.y + (380 + i * 30 - s.y) * form, width: 360, height: 200, borderRadius: 18, background: i % 2 ? '#F4F1EA' : '#1F2A44', color: i % 2 ? '#1B2433' : '#fff', fontFamily: FONT, fontSize: 32, fontWeight: 800, padding: 24, boxSizing: 'border-box', transform: `rotate(${s.r * (1 - form)}deg) scale(${1 - 0.6 * form})`, opacity: p('fear', i * 5) * (1 - form), boxShadow: '0 20px 50px rgba(0,0,0,0.5)'}}>{s.t}</div>
       ))}
-      {on('lose') && !on('list') && <div style={{position: 'absolute', left: 0, right: 0, top: 780, textAlign: 'center', opacity: p('lose')}}><Pill text="How much do I owe where?" color={C.crimson} size={36} /></div>}
       {/* the register */}
       {on('list') && (
         <div style={{position: 'absolute', left: tableX, top: 340, opacity: form}}>
@@ -195,6 +194,7 @@ export const RegisterDemo: React.FC<DemoProps> = ({ins}) => {
       <Caption ins={ins} bottom={56} lines={[
         {k: 'fear', text: '“I owe four or five banks…”', te: '4–5 banks కి అప్పు ఉంది…'},
         {k: 'overwhelmed', text: 'Many accounts can feel overwhelming', te: 'చాలా accounts ఉంటే mentally చాలా pressure'},
+        {k: 'lose', text: 'How much do I owe where?', te: 'ఎక్కడ ఎంత కట్టాలో కూడా మర్చిపోవచ్చు', color: '#FCA5A5'},
         {k: 'list', text: 'First, make one simple list', te: 'ముందు ఒక simple list తయారు చేయండి'},
         {k: 'legal', text: 'Record any legal communication too — keep it all in one place', te: 'Legal communication కూడా — అన్నీ ఒకే చోట'},
         {k: 'separate', text: 'Track every account separately', te: 'ప్రతి account ని separate గా track చేయండి', color: '#86EFAC'},

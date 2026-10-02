@@ -644,83 +644,32 @@
  "m09": [
   {
    "from": 1026.4,
-   "to": 1038.8,
-   "kind": "big",
-   "color": "cyan",
-   "kicker": "It starts at the due date",
-   "title": "Pay the full amount or the minimum",
-   "te": "Due date కి full amount లేదా minimum కట్టాలి",
-   "items": [
-    {
-     "at": 1031.6,
-     "text": "Full bill unpaid → finance charges may apply",
-     "tone": "warn"
-    },
-    {
-     "at": 1035.4,
-     "text": "Minimum unpaid → the account becomes overdue",
-     "tone": "bad"
-    }
-   ]
-  },
-  {
-   "from": 1039.0,
-   "to": 1066.0,
-   "kind": "steps",
-   "color": "amber",
-   "kicker": "RBI rules",
-   "title": "How a missed payment grows",
-   "te": "Extra 3 days ని delay plan గా తీసుకోవద్దు",
-   "items": [
-    {
-     "at": 1039.6,
-     "text": "Past due > 3 days",
-     "te": "Late fee, reporting",
-     "tone": "warn"
-    },
-    {
-     "at": 1059.2,
-     "text": "More follow-up",
-     "te": "Collection calls పెరుగుతాయి",
-     "tone": "warn"
-    },
-    {
-     "at": 1062.0,
-     "text": "Account restrictions",
-     "tone": "bad"
-    },
-    {
-     "at": 1064.0,
-     "text": "Credit report impact",
-     "tone": "bad"
-    }
-   ]
-  },
-  {
-   "from": 1066.2,
-   "to": 1080.8,
-   "kind": "big",
-   "color": "crimson",
-   "kicker": "A common mistake",
-   "title": "“No problem until 90 days” — wrong",
-   "te": "90 days వరకు ఏ problem లేదు అనుకోవడం correct కాదు",
-   "items": [
-    {
-     "at": 1073.4,
-     "text": "Reporting",
-     "tone": "bad"
-    },
-    {
-     "at": 1074.8,
-     "text": "Charges",
-     "tone": "bad"
-    },
-    {
-     "at": 1076.2,
-     "text": "Recovery follow-up",
-     "tone": "bad"
-    }
-   ]
+   "to": 1096.6,
+   "kind": "demo",
+   "demo": "calendar",
+   "kicker": "From the due date onwards",
+   "title": "How an unpaid card moves towards NPA",
+   "te": "Due date నుంచి NPA వరకు ఏం జరుగుతుంది",
+   "beats": {
+    "due": 1026.4,
+    "full": 1027.2,
+    "finance": 1031.6,
+    "overdue": 1035.4,
+    "three": 1039.7,
+    "original": 1048.8,
+    "notnew": 1053.0,
+    "nodelay": 1056.7,
+    "followup": 1059.2,
+    "restrict": 1062.4,
+    "report": 1064.2,
+    "ninety": 1066.5,
+    "incorrect": 1070.7,
+    "before": 1073.4,
+    "npa": 1077.2,
+    "npa90": 1080.7,
+    "meaning": 1087.7,
+    "provision": 1093.9
+   }
   },
   {
    "from": 1096.8,
@@ -734,85 +683,42 @@
   {
    "from": 1104.2,
    "to": 1133.4,
-   "kind": "points",
-   "color": "amber",
-   "kicker": "EMI or restructuring offer?",
-   "title": "Don't say yes right away — ask",
-   "te": "వెంటనే yes చెప్పకండి",
-   "items": [
-    {
-     "at": 1108.0,
-     "text": "Monthly EMI?",
-     "tone": "info"
-    },
-    {
-     "at": 1109.6,
-     "text": "Interest rate and tenure?",
-     "tone": "info"
-    },
-    {
-     "at": 1111.2,
-     "text": "Processing fee?",
-     "tone": "info"
-    },
-    {
-     "at": 1113.0,
-     "text": "Total repayment?",
-     "tone": "info"
-    },
-    {
-     "at": 1116.0,
-     "text": "Can you really afford it? If not, the problem returns in a new form",
-     "tone": "warn"
-    }
-   ]
+   "kind": "demo",
+   "demo": "emi",
+   "kicker": "EMI conversion offer?",
+   "title": "Understand the EMI offer first",
+   "te": "వెంటనే yes చెప్పకండి — ముందు details చూడండి",
+   "beats": {
+    "details": 1104.9,
+    "emi": 1107.2,
+    "fee": 1111.4,
+    "total": 1112.6,
+    "afford": 1116.2,
+    "unaffordable": 1119.9,
+    "useful": 1126.9,
+    "decide": 1129.9
+   }
   },
   {
    "from": 1133.6,
    "to": 1180.42,
-   "kind": "compare",
-   "color": "amber",
+   "kind": "demo",
+   "demo": "ledger",
    "kicker": "Write-off — the confusing word",
-   "title": "Write-off ≠ debt cancelled",
-   "left": "MYTH",
-   "right": "REALITY",
-   "items": [
-    {
-     "at": 1135.0,
-     "text": "“Written off = I'm free”",
-     "tone": "bad"
-    },
-    {
-     "at": 1140.2,
-     "text": "Usually an accounting step in the bank's books",
-     "tone": "good"
-    },
-    {
-     "at": 1146.6,
-     "text": "The claim stays — recovery can continue",
-     "tone": "good"
-    },
-    {
-     "at": 1151.7,
-     "text": "“Every account is written off at 180 days”",
-     "tone": "bad"
-    },
-    {
-     "at": 1158.6,
-     "text": "Timing depends on the bank's policy",
-     "tone": "good"
-    },
-    {
-     "at": 1162.0,
-     "text": "“Write-off = a big discount”",
-     "tone": "bad"
-    },
-    {
-     "at": 1167.0,
-     "text": "Talk about workable options early",
-     "tone": "good"
-    }
-   ]
+   "title": "The books change. The claim remains.",
+   "te": "Write-off అంటే debt cancel అయినట్టు కాదు",
+   "beats": {
+    "relief": 1134.7,
+    "accounting": 1141.4,
+    "books": 1144.4,
+    "claim": 1146.4,
+    "recovery": 1149.9,
+    "n180": 1151.7,
+    "timing": 1157.7,
+    "nodiscount": 1161.7,
+    "options": 1166.7,
+    "nowait": 1170.7
+   }
   }
  ],
  "m10": [

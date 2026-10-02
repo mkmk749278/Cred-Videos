@@ -6,6 +6,7 @@ import {LegalDemo, LegalProcDemo, RegisterDemo, VerifyNoticeDemo} from './Ch02_0
 import {DisputeDemo, InterestDemo, MinDueDemo, StatementDemo} from './Ch04';
 import {EmailDemo, SetOffDemo} from './Ch05_06';
 import {CallerDemo, ClockDemo, ComplaintDemo, DoorstepDemo, EvidenceDemo, LinkCheckDemo, LocationDemo, PhoneSettingsDemo} from './Ch07_08';
+import {CalendarDemo, EmiDemo, LedgerDemo} from './Ch09';
 
 /** Telugu-edition animated demonstrations, selected by inserts_te.json `demo`. */
 const DEMOS: Record<string, React.FC<{ins: Insert}>> = {
@@ -30,6 +31,9 @@ const DEMOS: Record<string, React.FC<{ins: Insert}>> = {
   evidence: EvidenceDemo,
   complaint: ComplaintDemo,
   phone: PhoneSettingsDemo,
+  calendar: CalendarDemo,
+  emi: EmiDemo,
+  ledger: LedgerDemo,
 };
 
 export const DemoRouter: React.FC<{ins: Insert}> = ({ins}) => {

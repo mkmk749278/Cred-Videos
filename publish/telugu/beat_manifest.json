@@ -431,11 +431,11 @@
      "title": "Make one simple list",
      "kicker": "Many accounts? One list",
      "te": "అన్నీ ఒకే చోట పెట్టండి",
-     "audio_start": 302.0,
-     "audio_end": 325.3,
-     "video_start": 309.9,
-     "video_end": 333.2,
-     "cue_text": "Yes, multiple accounts can feel mentally overwhelming. One bank's call ends and another bank calls. You may even lose track of how much you owe on each account. First, make a simple list. The card issuer's name, outstanding amount, due date, last payment date, and complaint reference. Record any legal communication too, and keep everything in one place.",
+     "audio_start": 299.8,
+     "audio_end": 333.0,
+     "video_start": 307.7,
+     "video_end": 340.9,
+     "cue_text": "What if they all put pressure on me?” Yes, multiple accounts can feel mentally overwhelming. One bank's call ends and another bank calls. You may even lose track of how much you owe on each account. First, make a simple list. The card issuer's name, outstanding amount, due date, last payment date, and complaint reference. Record any legal communication too, and keep everything in one place. Track every account separately. Settling with one bank does not settle your other accounts. Do not assume the bank will avoid court just because the amount is small.",
      "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
      "brief_section": "D",
      "objects": [
@@ -452,6 +452,11 @@
       "each account stays separate"
      ],
      "sub_beats": [
+      {
+       "key": "fear",
+       "audio_sec": 299.9,
+       "video_sec": 307.8
+      },
       {
        "key": "overwhelmed",
        "audio_sec": 302.3,
@@ -496,6 +501,16 @@
        "key": "legal",
        "audio_sec": 321.3,
        "video_sec": 329.2
+      },
+      {
+       "key": "separate",
+       "audio_sec": 325.7,
+       "video_sec": 333.6
+      },
+      {
+       "key": "onebank",
+       "audio_sec": 328.2,
+       "video_sec": 336.1
       }
      ]
     },
@@ -738,10 +753,10 @@
      "kicker": "Spot a wrong charge?",
      "te": "Bank వేసింది కాబట్టి correct అనుకోవద్దు",
      "audio_start": 473.4,
-     "audio_end": 501.6,
+     "audio_end": 516.9,
      "video_start": 483.44,
-     "video_end": 511.64,
-     "cue_text": "So, if you see an incorrect charge in your statement, do not assume it must be correct just because the bank charged it. Ask for a written breakdown and raise a dispute. Does settlement mean all interest and penalties will be removed? In some cases, the bank may agree to waive part of the amount. But that is not an automatic right. It depends on your hardship, the account's situation, the bank's policy, and the approval. Do not assume, “Because there is an RBI rule, they must give me a discount.”",
+     "video_end": 523.667,
+     "cue_text": "So, if you see an incorrect charge in your statement, do not assume it must be correct just because the bank charged it. Ask for a written breakdown and raise a dispute. Does settlement mean all interest and penalties will be removed? In some cases, the bank may agree to waive part of the amount. But that is not an automatic right. It depends on your hardship, the account's situation, the bank's policy, and the approval. Do not assume, “Because there is an RBI rule, they must give me a discount.” Understand your actual spending, payments, interest, and charges before making a proposal. Clarity helps during negotiation. Now, we need to talk about your salary account. Is your salary account with the same bank where your credit card is overdue?",
      "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
      "brief_section": "F",
      "objects": [
@@ -803,6 +818,16 @@
        "key": "rbi",
        "audio_sec": 498.5,
        "video_sec": 508.54
+      },
+      {
+       "key": "prep",
+       "audio_sec": 503.5,
+       "video_sec": 513.54
+      },
+      {
+       "key": "clarity",
+       "audio_sec": 509.5,
+       "video_sec": 519.54
       }
      ]
     }
@@ -923,6 +948,66 @@
    "audio_end": 681.28,
    "beats": [
     {
+     "beat_id": "silence",
+     "kind": "demo",
+     "title": "Silence explains nothing",
+     "kicker": "How to communicate",
+     "te": "Phone off చేస్తే bank కి మీ పరిస్థితి తెలియదు",
+     "audio_start": 578.9,
+     "audio_end": 598.0,
+     "video_start": 592.113,
+     "video_end": 611.213,
+     "cue_text": "When the calls keep coming, you may feel like switching off your phone and disappearing. “I will not answer anyone for a few days. At least I will have some peace,” you may think. That feeling is understandable. But complete silence does not explain your situation to the bank. It does not resolve the problem either. Instead, send a clear written communication. Verify the grievance officer's or nodal officer's contact on the bank's official website.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "H",
+     "objects": [
+      "phone (switched off)",
+      "Bank A account file",
+      "hardship email"
+     ],
+     "actions": [
+      "phone goes dark; file shows “no response”; email sent and file updates"
+     ],
+     "labels": [
+      "illustration"
+     ],
+     "qualifications": [
+      "silence explains nothing; one clear written communication"
+     ],
+     "sub_beats": [
+      {
+       "key": "off",
+       "audio_sec": 579.0,
+       "video_sec": 592.213
+      },
+      {
+       "key": "peace",
+       "audio_sec": 581.4,
+       "video_sec": 594.613
+      },
+      {
+       "key": "understandable",
+       "audio_sec": 585.4,
+       "video_sec": 598.613
+      },
+      {
+       "key": "silence",
+       "audio_sec": 587.4,
+       "video_sec": 600.613
+      },
+      {
+       "key": "resolve",
+       "audio_sec": 591.4,
+       "video_sec": 604.613
+      },
+      {
+       "key": "written",
+       "audio_sec": 593.4,
+       "video_sec": 606.613
+      }
+     ]
+    },
+    {
      "beat_id": "email",
      "kind": "demo",
      "title": "A clear hardship email",
@@ -1018,6 +1103,59 @@
        "key": "separate",
        "audio_sec": 659.6,
        "video_sec": 672.813
+      }
+     ]
+    },
+    {
+     "beat_id": "record",
+     "kind": "demo",
+     "title": "A record — not a shield",
+     "kicker": "Keep every record",
+     "te": "అన్నీ ఒక folder లో save చేయండి",
+     "audio_start": 663.2,
+     "audio_end": 686.2,
+     "video_start": 676.413,
+     "video_end": 696.167,
+     "cue_text": "Email copies, attachments, acknowledgements, and complaint IDs. Save them all. Create a folder and keep them together. The email you sent is a useful record. But it is not a shield that automatically stops a court case. It documents your communication, hardship, and cooperation. Now, let us talk about recovery agents. They may contact you about payment.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "H",
+     "objects": [
+      "email copy, attachments, acknowledgement, complaint ID",
+      "records folder",
+      "crossed shield"
+     ],
+     "actions": [
+      "items filed into the folder"
+     ],
+     "labels": [],
+     "qualifications": [
+      "a record, not an automatic stop to a court case"
+     ],
+     "sub_beats": [
+      {
+       "key": "items",
+       "audio_sec": 663.3,
+       "video_sec": 676.513
+      },
+      {
+       "key": "folder",
+       "audio_sec": 667.1,
+       "video_sec": 680.313
+      },
+      {
+       "key": "record",
+       "audio_sec": 670.8,
+       "video_sec": 684.013
+      },
+      {
+       "key": "shield",
+       "audio_sec": 673.4,
+       "video_sec": 686.613
+      },
+      {
+       "key": "documents",
+       "audio_sec": 677.5,
+       "video_sec": 690.713
       }
      ]
     }
@@ -1221,6 +1359,60 @@
        "key": "noinfo",
        "audio_sec": 785.9,
        "video_sec": 800.147
+      }
+     ]
+    },
+    {
+     "beat_id": "visit",
+     "kind": "demo",
+     "title": "“Our agent visited…”",
+     "kicker": "Check before you react",
+     "te": "ఎవరు, ఎప్పుడు వచ్చారో verify చేయండి",
+     "audio_start": 790.2,
+     "audio_end": 802.9,
+     "video_start": 804.447,
+     "video_end": 817.147,
+     "cue_text": "What if a message says, “Our agent visited, but your door was locked”? Check the facts you know. Who actually visited? At what time? Which agency? Confirm through the bank's official channel.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "I",
+     "objects": [
+      "SMS “our agent visited, door was locked”",
+      "question checklist"
+     ],
+     "actions": [
+      "who / what time / which agency; confirm officially"
+     ],
+     "labels": [
+      "Example message — fictional"
+     ],
+     "qualifications": [
+      "do not assume every message is genuine"
+     ],
+     "sub_beats": [
+      {
+       "key": "msg",
+       "audio_sec": 790.4,
+       "video_sec": 804.647
+      },
+      {
+       "key": "facts",
+       "audio_sec": 794.4,
+       "video_sec": 808.647
+      },
+      {
+       "key": "who",
+       "audio_sec": 796.7,
+       "video_sec": 810.947
+      },
+      {
+       "key": "agency",
+       "audio_sec": 799.2,
+       "video_sec": 813.447
+      },
+      {
+       "key": "confirm",
+       "audio_sec": 800.6,
+       "video_sec": 814.847
       }
      ]
     },
@@ -2224,6 +2416,55 @@
      ]
     },
     {
+     "beat_id": "paychannel",
+     "kind": "demo",
+     "title": "Only authorised payment channels",
+     "kicker": "Paying the settlement",
+     "te": "Bank authorise చేసిన channels ద్వారా మాత్రమే pay చేయండి",
+     "audio_start": 1348.4,
+     "audio_end": 1361.6,
+     "video_start": 1370.42,
+     "video_end": 1383.62,
+     "cue_text": "Use only payment channels authorised by the bank. The official app, website, or a payment method the bank has confirmed. Do not transfer money to an agent's personal UPI account. Do not hand over cash.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "M",
+     "objects": [
+      "Bank A official-app payment screen (instalment 1 of 3, ₹10,000)",
+      "agent UPI and cash cards"
+     ],
+     "actions": [
+      "authorised channels tick in; UPI and cash crossed"
+     ],
+     "labels": [
+      "Example interface — fictional"
+     ],
+     "qualifications": [
+      "only channels the bank authorises"
+     ],
+     "sub_beats": [
+      {
+       "key": "only",
+       "audio_sec": 1348.5,
+       "video_sec": 1370.52
+      },
+      {
+       "key": "app",
+       "audio_sec": 1351.9,
+       "video_sec": 1373.92
+      },
+      {
+       "key": "upi",
+       "audio_sec": 1356.9,
+       "video_sec": 1378.92
+      },
+      {
+       "key": "cash",
+       "audio_sec": 1359.9,
+       "video_sec": 1381.92
+      }
+     ]
+    },
+    {
      "beat_id": "receipts",
      "kind": "demo",
      "title": "Get it in writing",
@@ -2385,6 +2626,44 @@
    "audio_start": 1454.78,
    "audio_end": 1645.58,
    "beats": [
+    {
+     "beat_id": "profile",
+     "kind": "demo",
+     "title": "Is my CIBIL ruined?",
+     "kicker": "After settlement",
+     "te": "CIBIL పూర్తిగా పాడైపోదు — కానీ affect అవ్వొచ్చు",
+     "audio_start": 1463.4,
+     "audio_end": 1468.6,
+     "video_start": 1486.907,
+     "video_end": 1492.107,
+     "cue_text": "But settlement can affect your credit profile. Understand that honestly.",
+     "transition_owner": "TeluguInserts layer (12-frame fade in/out over the dimmed stage)",
+     "brief_section": "O",
+     "objects": [
+      "sample credit profile row (Settled)"
+     ],
+     "actions": [
+      "status row appears with its effect"
+     ],
+     "labels": [
+      "sample"
+     ],
+     "qualifications": [
+      "settlement can affect the profile — no score number, no promise"
+     ],
+     "sub_beats": [
+      {
+       "key": "affect",
+       "audio_sec": 1463.5,
+       "video_sec": 1487.007
+      },
+      {
+       "key": "honest",
+       "audio_sec": 1466.8,
+       "video_sec": 1490.307
+      }
+     ]
+    },
     {
      "beat_id": "reports",
      "kind": "demo",

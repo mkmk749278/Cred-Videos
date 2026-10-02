@@ -8,20 +8,23 @@ Scene02,Arrest చేస్తారా? Law ఏం చెప్తుంది 
 Scene02,Arrest చేస్తారా? Law ఏం చెప్తుంది · What the law says,legalproc,demo,240.62,262.12,234.5,256.0,C,,court orders must be respected
 Scene02,Arrest చేస్తారా? Law ఏం చెప్తుంది · What the law says,verifynotice,demo,262.32,277.42,256.2,271.3,C,Sample,message ≠ criminal-case verdict; do not ignore genuine notices
 Scene02,Arrest చేస్తారా? Law ఏం చెప్తుంది · What the law says,"panel:Don't assume “it's a card, nothing applies”",points,282.52,301.5,276.4,298.72,,,
-Scene03,"చాలా cards, చాలా banks · Many accounts, one list",register,demo,309.9,333.2,302.0,325.3,D,"fictional Bank A/B/C, masked numbers",each account stays separate
+Scene03,"చాలా cards, చాలా banks · Many accounts, one list",register,demo,307.7,340.9,299.8,333.0,D,"fictional Bank A/B/C, masked numbers",each account stays separate
 Scene03,"చాలా cards, చాలా banks · Many accounts, one list",panel:Small amount ≠ “they won't act”,points,341.1,362.2,333.2,357.62,,,
 Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",statement,demo,374.34,402.04,364.3,392.0,E,Illustrative statement — check your own,"100000+3000+1200+756−2000 = ₹1,02,956"
 Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",interest,demo,402.24,429.64,392.2,419.6,E,Illustration — check your card’s actual terms,"rough teaching example, not APR"
 Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",mindue,demo,429.84,464.04,419.8,454.0,F,,minimum is not useless; not interest-free
 Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",panel:A protection on charges,points,464.24,483.24,454.2,473.2,,,
-Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",dispute,demo,483.44,511.64,473.4,501.6,F,Sample,no guaranteed waiver
+Scene04,"Balance ఎందుకు పెరుగుతుంది · Statement, interest & minimum due",dispute,demo,483.44,523.667,473.4,516.9,F,Sample,no guaranteed waiver
 Scene05,Salary account & set-off · Protect essential money,setoff,demo,531.187,564.387,519.8,553.0,G,Illustration — read your own agreement,“may adjust · applicable terms”; panel after demo: Understand your bank’s set-off terms. Plan essential expenses.
 Scene05,Salary account & set-off · Protect essential money,panel:Moving accounts isn’t a legal shield,big,564.587,575.387,553.2,564.0,,,
 Scene05,Salary account & set-off · Protect essential money,panel:Understand your bank’s set-off terms. Plan essential expenses.,big,575.587,585.933,564.2,577.88,,,
+Scene06,Bank తో written గా · Hardship communication,silence,demo,592.113,611.213,578.9,598.0,H,illustration,silence explains nothing; one clear written communication
 Scene06,Bank తో written గా · Hardship communication,email,demo,611.313,676.213,598.1,663.0,H,Sample email — fictional address,written preference ≠ no lawful calls; harassment protections separate
+Scene06,Bank తో written గా · Hardship communication,record,demo,676.413,696.167,663.2,686.2,H,,"a record, not an automatic stop to a court case"
 Scene07,Recovery agents — rules & tricks · Your rights,clock,demo,703.947,744.647,689.0,729.7,I.1,,harassment unacceptable even within hours
 Scene07,Recovery agents — rules & tricks · Your rights,caller,demo,744.847,776.447,729.9,761.5,I.2,,a logo alone proves nothing
 Scene07,Recovery agents — rules & tricks · Your rights,location,demo,776.647,804.247,761.7,790.0,I.4,,OTP/PIN never entered; a request alone doesn’t prove fake
+Scene07,Recovery agents — rules & tricks · Your rights,visit,demo,804.447,817.147,790.2,802.9,I,Example message — fictional,do not assume every message is genuine
 Scene07,Recovery agents — rules & tricks · Your rights,panel:Not every message is real — or fake,big,817.247,824.247,803.0,810.0,,,
 Scene07,Recovery agents — rules & tricks · Your rights,linkcheck,demo,824.547,855.247,810.3,841.0,I.3,,do not ignore every electronic notice
 Scene07,Recovery agents — rules & tricks · Your rights,doorstep,demo,855.347,895.847,841.1,881.6,I.5,,no caricature; 112 only for immediate danger
@@ -40,9 +43,11 @@ Scene10,ప్రతి bank వేరు · Issuer differences,offers,demo,1214
 Scene11,Settlement & Lok Adalat — safe గా · Settle safely,panel:The bank accepts less to close the account,points,1257.02,1277.22,1235.0,1255.2,,,
 Scene11,Settlement & Lok Adalat — safe గా · Settle safely,offeraff,demo,1277.42,1309.42,1255.4,1287.4,M,Example — not a real offer,verify before paying
 Scene11,Settlement & Lok Adalat — safe గా · Settle safely,letter,demo,1309.42,1370.22,1287.4,1348.2,M,Sample / Illustration — fictional bank and figures,small payment not converted into a settlement; no guaranteed reporting
+Scene11,Settlement & Lok Adalat — safe గా · Settle safely,paychannel,demo,1370.42,1383.62,1348.4,1361.6,M,Example interface — fictional,only channels the bank authorises
 Scene11,Settlement & Lok Adalat — safe గా · Settle safely,receipts,demo,1383.82,1413.82,1361.8,1391.8,M,Sample documents — fictional,credit report checked separately; phone assurance not enough
 Scene11,Settlement & Lok Adalat — safe గా · Settle safely,lokadalat,demo,1414.02,1454.9,1392.0,1433.2,N,sample,consent matters; final and binding; no ordinary appeal
 Scene11,Settlement & Lok Adalat — safe గా · Settle safely,panel:Ask until it's clear,points,1455.1,1477.167,1433.4,1458.8,,,
+Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",profile,demo,1486.907,1492.107,1463.4,1468.6,O,sample,"settlement can affect the profile — no score number, no promise"
 Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",reports,demo,1492.307,1522.307,1468.8,1498.8,O,sample — fictional,settlement completion ≠ reporting status
 Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",stabilise,demo,1525.507,1540.707,1502.0,1517.2,O,,no instant reset; no rush into new credit
 Scene12,"Settled vs Closed, CIBIL rebuild · Rebuilding credit",securedcard,demo,1540.807,1563.907,1517.3,1540.4,O,sample,FD doesn’t guarantee approval; keep emergency savings separate

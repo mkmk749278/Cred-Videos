@@ -52,6 +52,11 @@ META = {
     'securedcard': ('O', ['fixed deposit', 'secured card', 'issuer-policy pills', 'emergency savings'], ['FD links to card; approval “?”'], ['sample'], ['FD doesn’t guarantee approval; keep emergency savings separate']),
     'usage': ('O', ['limit bar ₹20,000 (example)', '10–20% zone'], ['usage zone highlighted'], ['Illustration — example limit'], ['no exact % guarantees a score rise']),
     'reportdispute': ('O', ['habit checklist', 'sample credit report rows', 'dispute targets', 'ref BUR-48213'], ['errors flagged; dispute raised; accurate row stays'], ['Sample report — fictional'], ['accurate negative history stays']),
+    'silence': ('H', ['phone (switched off)', 'Bank A account file', 'hardship email'], ['phone goes dark; file shows “no response”; email sent and file updates'], ['illustration'], ['silence explains nothing; one clear written communication']),
+    'record': ('H', ['email copy, attachments, acknowledgement, complaint ID', 'records folder', 'crossed shield'], ['items filed into the folder'], [], ['a record, not an automatic stop to a court case']),
+    'visit': ('I', ['SMS “our agent visited, door was locked”', 'question checklist'], ['who / what time / which agency; confirm officially'], ['Example message — fictional'], ['do not assume every message is genuine']),
+    'paychannel': ('M', ['Bank A official-app payment screen (instalment 1 of 3, ₹10,000)', 'agent UPI and cash cards'], ['authorised channels tick in; UPI and cash crossed'], ['Example interface — fictional'], ['only channels the bank authorises']),
+    'profile': ('O', ['sample credit profile row (Settled)'], ['status row appears with its effect'], ['sample'], ['settlement can affect the profile — no score number, no promise']),
     'plan': ('P', ['8-step rail', 'register', 'budget bars', 'clause', 'email', 'phone toggle', 'loop', 'evidence folder', 'ledger', 'verified letter', 'receipt', 'credit report', 'secured card'], ['each object activates on its spoken step'], [], ['all eight steps preserved']),
 }
 

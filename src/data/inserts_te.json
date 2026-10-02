@@ -999,13 +999,13 @@
     "q1": 8544.34,
     "q2": 8544.34,
     "assume": 8544.34,
-    "affect": 8.84,
+    "affect": 9.94,
     "honest": 12.14
    }
   },
   {
    "from": 14.14,
-   "to": 44.14,
+   "to": 47.24,
    "kind": "demo",
    "demo": "reports",
    "kicker": "Settled vs Closed",

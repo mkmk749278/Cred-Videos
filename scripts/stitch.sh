@@ -12,7 +12,12 @@ LIST=$CH/list.txt
 : > "$LIST"
 for id in "${ORDER[@]}"; do
   [ -f "$CH/$id.mp4" ] || { echo "missing $id"; exit 1; }
-  echo "file '$id.mp4'" >> "$LIST"
+  # chunks re-encoded outside Remotion get a different video timebase; concat -c copy would then
+  # mis-scale their timestamps (frozen/out-of-sync picture). Normalise every chunk to 1/90000 first.
+  "$FFMPEG" -y -loglevel error -i "$CH/$id.mp4" -map 0 -c copy -video_track_timescale 90000 "$CH/.norm_$id.mp4"
+  echo "file '.norm_$id.mp4'" >> "$LIST"
 done
 "$FFMPEG" -y -loglevel error -f concat -safe 0 -i "$LIST" -c copy out/.joined.mp4
+python3 scripts/check_av.py out/.joined.mp4 "${ORDER[@]/#/$CH/}"
 python3 scripts/master_audio.py out/.joined.mp4 "$OUT"
+rm -f "$CH"/.norm_*.mp4

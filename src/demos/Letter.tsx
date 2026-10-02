@@ -53,7 +53,7 @@ const LetterBody: React.FC = () => (
 );
 
 export const LetterDemo: React.FC<DemoProps> = ({ins}) => {
-  const {p, on} = useBeats(ins);
+  const {p, on, lin} = useBeats(ins);
   const VW = 1920;
   const VH = 600;
   const cam = useCamera(
@@ -122,10 +122,16 @@ export const LetterDemo: React.FC<DemoProps> = ({ins}) => {
             <div style={{padding: '24px 30px', borderRadius: '28px 28px 28px 6px', background: '#2A1416', border: `3px solid ${C.crimson}`, fontSize: 42, fontWeight: 750}}>“Pay ₹5,000 now — the letter will follow.”</div>
             <div style={{marginTop: 26, padding: '22px 28px', borderRadius: 20, background: '#111A2E', border: `3px dashed ${C.amber}`}}>
               <div style={{fontSize: 32, color: SUPPORT}}>That payment may be recorded as…</div>
-              <div style={{display: 'flex', gap: 16, marginTop: 14}}>
-                <Pill text="settlement?" color={C.amber} size={32} />
-                <Pill text="ordinary part-payment?" color={C.amber} size={32} />
+              <div style={{position: 'relative', display: 'flex', gap: 16, marginTop: 14}}>
+                <Pill text="settlement?" color={C.amber} size={32} style={{opacity: on('misrecord') ? 0.4 : 1}} />
+                <Pill text="ordinary part-payment?" color={on('misrecord') ? C.crimson : C.amber} size={32} />
+                {/* the ₹5,000 slides into the wrong bucket */}
+                {on('misrecord') && !on('clarity') && (
+                  <div style={{position: 'absolute', left: 120 + 330 * lin('misrecord', 24), top: -70 + 70 * lin('misrecord', 24), padding: '6px 14px', borderRadius: 999, background: C.amber, color: '#04111C', fontFamily: MONO, fontSize: 26, fontWeight: 900}}>₹5,000</div>
+                )}
               </div>
+              {on('misrecord') && !on('clarity') && <div style={{marginTop: 14, fontSize: 30, fontWeight: 800, color: '#FCA5A5', opacity: p('misrecord', 24)}}>Paid as a “settlement”, recorded as a part-payment → misunderstanding</div>}
+              {on('clarity') && <div style={{marginTop: 14, opacity: p('clarity')}}><Pill text="Get clarity first — then pay" color={C.cyan} size={34} /></div>}
             </div>
             {writing > 0.01 && (
               <div style={{marginTop: 26, opacity: writing, transform: `scale(${0.92 + 0.08 * writing})`, transformOrigin: 'left center'}}>
@@ -149,6 +155,8 @@ export const LetterDemo: React.FC<DemoProps> = ({ins}) => {
           {k: 'screenshot', text: 'A WhatsApp screenshot alone is not enough', te: 'WhatsApp screenshot ఒక్కటే చాలదు', color: '#FCA5A5'},
           {k: 'smallfirst', text: '“Pay a little now, letter later”? Stop.', te: 'ఆ payment settlement లో part అవుతుందా?', color: '#FCA5A5'},
           {k: 'writing', text: 'Get clarity in writing before paying', te: 'Payment కి ముందే written గా clarity', color: '#86EFAC'},
+          {k: 'misrecord', text: 'Recorded as an ordinary part-payment? That’s a misunderstanding', te: 'Ordinary part payment గా record అయితే misunderstanding', color: '#FCA5A5'},
+          {k: 'clarity', text: 'Get clarity before making the payment', te: 'Payment చేసే ముందే clarity తీసుకోండి', color: '#7DD3FC'},
         ]}
       />
       <BeatSfx ins={ins} k="enter" name="pages_flip" volume={0.25} />

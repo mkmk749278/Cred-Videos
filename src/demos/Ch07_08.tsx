@@ -7,7 +7,7 @@ import {Arrow, BeatSfx, Caption, DemoHeader, DemoProps, DemoRoot, Folder, IllusT
 /* ------------------------------------------------------------------ §I-1 calling hours */
 
 export const ClockDemo: React.FC<DemoProps> = ({ins}) => {
-  const {p, on} = useBeats(ins);
+  const {p, on, at, frame, fps} = useBeats(ins);
   const X0 = 160;
   const W = 1600;
   const hx = (h: number) => X0 + (W * h) / 24;
@@ -28,6 +28,16 @@ export const ClockDemo: React.FC<DemoProps> = ({ins}) => {
         <div key={h} style={{position: 'absolute', left: hx(h) - 60, top: 620, width: 120, textAlign: 'center', fontFamily: MONO, fontSize: 26, color: h === 8 || h === 19 ? '#86EFAC' : SUPPORT, opacity: p('hours')}}>{h === 8 ? '8 am' : h === 19 ? '7 pm' : h === 24 ? '12 am' : h === 12 ? 'noon' : `${h} am`}</div>
       ))}
       <div style={{position: 'absolute', left: hx(8), width: hx(19) - hx(8), top: 540, textAlign: 'center', fontFamily: FONT, fontSize: 34, fontWeight: 850, color: '#fff', opacity: p('hours', 14)}}>recovery calls allowed only in this window</div>
+      {/* a call sweeps through the allowed window while the rule is explained */}
+      {on('hours') && !on('neighbours') && (() => {
+        const t = ((frame - at('hours')) / (fps * 5)) % 1;
+        return <div style={{position: 'absolute', left: hx(8) + (hx(19) - hx(8)) * t - 30, top: 668, width: 60, height: 60, borderRadius: 30, background: C.emerald, boxShadow: `0 0 24px ${alpha(C.emerald, 0.7)}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 30, opacity: Math.min(1, (frame - at('hours')) / 15)}}>📞</div>;
+      })()}
+      {on('no') && (
+        <div style={{position: 'absolute', left: 0, right: 0, top: 444, textAlign: 'center', opacity: p('no'), transform: `scale(${1.15 - 0.15 * p('no')})`}}>
+          <Pill text="✕ Harassment is never OK — even inside these hours" color={C.crimson} size={32} />
+        </div>
+      )}
       {/* harassment is not OK even inside the window */}
       {threats.map((t, i) => on(t.k) && (
         <div key={t.k} style={{position: 'absolute', left: 160 + i * 560, top: 700, width: 520, opacity: p(t.k)}}>
@@ -38,7 +48,8 @@ export const ClockDemo: React.FC<DemoProps> = ({ins}) => {
       <Caption ins={ins} bottom={44} lines={[
         {k: 'rules', text: 'They may contact you about payment — within limits', te: 'Payment గురించి contact చేయొచ్చు — కానీ limits లో'},
         {k: 'hours', text: 'No recovery calls before 8 am or after 7 pm', te: 'ఉదయం 8 కి ముందు, సాయంత్రం 7 తర్వాత calls చేయకూడదు'},
-        {k: 'inside', text: 'Between 8 and 7, is anything acceptable? No.', te: '8 నుంచి 7 మధ్య ఏదైనా OK నా? కాదు.', color: '#FDE68A'},
+        {k: 'inside', text: 'Between 8 and 7, is anything acceptable?', te: '8 నుంచి 7 మధ్య ఏదైనా OK నా?', color: '#FDE68A'},
+        {k: 'no', text: 'No. Keeping to the hours doesn’t make harassment acceptable', te: 'కాదు. Time limit పాటించినా harassment OK కాదు', color: '#FCA5A5'},
       ]} />
     </DemoRoot>
   );

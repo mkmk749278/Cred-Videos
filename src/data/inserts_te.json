@@ -469,7 +469,8 @@
     "neighbours": 37.28,
     "office": 38.78,
     "family": 40.78,
-    "notnormal": 42.58
+    "notnormal": 42.58,
+    "no": 31.68
    }
   },
   {
@@ -899,7 +900,9 @@
     "channel": 82.02,
     "screenshot": 89.52,
     "smallfirst": 92.72,
-    "writing": 97.72
+    "writing": 97.72,
+    "misrecord": 105.32,
+    "clarity": 112.92
    }
   },
   {

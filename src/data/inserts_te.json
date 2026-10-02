@@ -351,6 +351,24 @@
  ],
  "m05": [
   {
+   "from": 6.52,
+   "to": 39.72,
+   "kind": "demo",
+   "demo": "setoff",
+   "kicker": "Salary account and set-off",
+   "title": "Same bank? Read the agreement",
+   "te": "Agreement లో lien / set-off clause చెక్ చేయండి",
+   "beats": {
+    "clause": 6.52,
+    "meaning": 11.32,
+    "adjust": 12.82,
+    "notassume": 20.32,
+    "explicit": 26.92,
+    "plan": 30.42,
+    "advice": 35.92
+   }
+  },
+  {
    "from": 39.92,
    "to": 50.72,
    "kind": "big",
@@ -359,216 +377,99 @@
    "title": "Moving accounts isn’t a legal shield",
    "te": "Account మార్చినా legal recovery నుంచి permanent protection ఉండదు",
    "sub": "Court orders and valid legal obligations must be followed."
+  },
+  {
+   "from": 50.92,
+   "to": 64.6,
+   "kind": "big",
+   "color": "emerald",
+   "kicker": "The purpose",
+   "title": "Understand your bank’s set-off terms. Plan essential expenses.",
+   "te": "ఇంటి ఖర్చులు అనుకోకుండా ఆగిపోకుండా ముందే plan చేసుకోండి"
   }
  ],
  "m06": [
   {
-   "from": 32.28,
-   "to": 51.08,
-   "kind": "points",
-   "color": "cyan",
-   "kicker": "Write it simply",
-   "title": "No fancy English needed",
-   "te": "మీ actual situation clear గా చెప్పండి",
-   "items": [
-    {
-     "at": 36.28,
-     "text": "“My income has reduced.”",
-     "te": "“నా income తగ్గింది.”",
-     "tone": "info"
-    },
-    {
-     "at": 38.28,
-     "text": "“Medical expenses — I can't pay right now.”",
-     "te": "“Medical ఖర్చుల వల్ల ఇప్పుడు కట్టలేకపోతున్నా.”",
-     "tone": "info"
-    },
-    {
-     "at": 40.68,
-     "text": "“I am available to discuss repayment options.”",
-     "tone": "info",
-     "te": "“Repayment options గురించి మాట్లాడటానికి ready.”"
-    },
-    {
-     "at": 44.68,
-     "text": "“After essentials, I can pay ₹___ a month.”",
-     "te": "“Essentials తర్వాత నెలకి ఇంత కట్టగలను.”",
-     "tone": "good"
-    }
-   ]
-  },
-  {
-   "from": 51.28,
-   "to": 74.48,
-   "kind": "compare",
-   "color": "amber",
-   "kicker": "Promise only what you can pay",
-   "title": "Honest beats “I'll pay tomorrow”",
-   "left": "DON'T",
-   "right": "DO",
-   "items": [
-    {
-     "at": 51.68,
-     "text": "Promise amounts you can't afford",
-     "tone": "bad"
-    },
-    {
-     "at": 54.28,
-     "text": "“I'll pay tomorrow” — just to end the call",
-     "tone": "bad"
-    },
-    {
-     "at": 59.28,
-     "text": "Say honestly: “I need a workable option”",
-     "tone": "good"
-    },
-    {
-     "at": 66.38,
-     "text": "Ask in writing: reduced EMI, repayment plan, restructuring, settlement",
-     "tone": "good"
-    }
-   ]
-  },
-  {
-   "from": 74.68,
+   "from": 24.38,
    "to": 89.28,
-   "kind": "big",
-   "color": "cyan",
-   "kicker": "Your preference",
-   "title": "Ask for written communication",
-   "te": "Written communication prefer చేస్తున్నానని చెప్పొచ్చు",
-   "sub": "It's a request — it doesn't stop the bank's lawful calls."
+   "kind": "demo",
+   "demo": "email",
+   "kicker": "Write to the bank",
+   "title": "A clear hardship email",
+   "te": "Clear written communication పంపండి",
+   "beats": {
+    "verify": 24.38,
+    "send": 29.68,
+    "nofancy": 31.68,
+    "l1": 35.68,
+    "l2": 37.68,
+    "l3": 40.68,
+    "l4": 44.68,
+    "promise": 50.68,
+    "honest": 60.68,
+    "options": 65.68,
+    "ask": 69.88,
+    "sent": 73.88,
+    "lawful": 76.88,
+    "separate": 85.88
+   }
   }
  ],
  "m07": [
   {
    "from": 6.78,
-   "to": 32.78,
-   "kind": "points",
-   "color": "crimson",
-   "kicker": "What recovery agents can't do",
-   "title": "Recovery has rules",
+   "to": 47.48,
+   "kind": "demo",
+   "demo": "clock",
+   "kicker": "Recovery has rules",
+   "title": "Calling hours — and limits",
    "te": "Recovery agents contact చేయొచ్చు — కానీ limits లోనే",
-   "items": [
-    {
-     "at": 7.38,
-     "text": "Insults, threats or public humiliation",
-     "tone": "bad"
-    },
-    {
-     "at": 9.38,
-     "text": "Intruding on your family’s privacy",
-     "tone": "bad"
-    },
-    {
-     "at": 15.18,
-     "text": "Threatening or anonymous calls",
-     "tone": "bad"
-    },
-    {
-     "at": 17.58,
-     "text": "Persistent harassment",
-     "tone": "bad"
-    },
-    {
-     "at": 21.68,
-     "text": "No calls before 8 am or after 7 pm",
-     "tone": "info"
-    }
-   ]
+   "beats": {
+    "rules": 7.38,
+    "prohibited": 15.18,
+    "hours": 21.68,
+    "inside": 26.98,
+    "neighbours": 37.28,
+    "office": 38.78,
+    "family": 40.78,
+    "notnormal": 42.58
+   }
   },
   {
-   "from": 32.98,
-   "to": 47.98,
-   "kind": "points",
-   "color": "crimson",
-   "kicker": "Even inside calling hours",
-   "title": "Harassment is never acceptable",
-   "te": "Time limit follow అయినా harassment acceptable కాదు",
-   "items": [
-    {
-     "at": 35.78,
-     "text": "“We'll tell your neighbours”",
-     "tone": "bad"
-    },
-    {
-     "at": 38.78,
-     "text": "“We'll talk to your office”",
-     "tone": "bad"
-    },
-    {
-     "at": 40.78,
-     "text": "“We'll trouble your family”",
-     "tone": "bad"
-    },
-    {
-     "at": 43.18,
-     "text": "Don't react to threats — stay calm",
-     "tone": "good"
-    }
-   ]
-  },
-  {
-   "from": 48.18,
-   "to": 85.08,
-   "kind": "points",
-   "color": "cyan",
+   "from": 47.68,
+   "to": 79.28,
+   "kind": "demo",
+   "demo": "caller",
    "kicker": "Stay calm and ask",
-   "title": "Who is calling, for which bank?",
+   "title": "Who is calling — for which bank?",
    "te": "Calm గా details అడగండి",
-   "items": [
-    {
-     "at": 47.68,
-     "text": "“Your name? Agency? Which bank?”",
-     "tone": "info"
-    },
-    {
-     "at": 53.38,
-     "text": "“Send your authorisation by official email.”",
-     "tone": "info"
-    },
-    {
-     "at": 56.88,
-     "text": "Don’t raise your voice — document, don’t argue",
-     "tone": "good"
-    },
-    {
-     "at": 67.08,
-     "text": "“I have explained my hardship to the bank in writing.”",
-     "tone": "good"
-    },
-    {
-     "at": 76.58,
-     "text": "Short. Clear. That’s enough.",
-     "tone": "good"
-    }
-   ]
+   "beats": {
+    "name": 47.68,
+    "agency": 50.18,
+    "bank": 51.18,
+    "auth": 53.38,
+    "voice": 56.88,
+    "goal": 60.98,
+    "say": 67.08,
+    "channel": 71.48
+   }
   },
   {
-   "from": 93.48,
+   "from": 79.48,
    "to": 107.08,
-   "kind": "points",
-   "color": "amber",
+   "kind": "demo",
+   "demo": "location",
    "kicker": "Live location request?",
    "title": "Pause. Verify first.",
    "te": "Unknown person అడిగాడని location share చేయక్కర్లేదు",
-   "items": [
-    {
-     "at": 93.68,
-     "text": "Never share an OTP, PIN, password or card details",
-     "tone": "bad"
-    },
-    {
-     "at": 98.68,
-     "text": "A location request alone doesn’t prove it’s fake",
-     "tone": "info"
-    },
-    {
-     "at": 102.98,
-     "text": "But no personal details without verification",
-     "tone": "warn"
-    }
-   ]
+   "beats": {
+    "ask": 79.48,
+    "pause": 83.78,
+    "verify": 89.28,
+    "otp": 93.68,
+    "notfake": 98.68,
+    "noinfo": 102.98
+   }
   },
   {
    "from": 120.08,
@@ -581,45 +482,44 @@
    "sub": "Confirm through the bank's official channels."
   },
   {
-   "from": 141.08,
+   "from": 127.38,
    "to": 158.08,
-   "kind": "points",
-   "color": "cyan",
-   "kicker": "Verify — don't panic-click",
-   "title": "Notices can come electronically too",
-   "te": "Legal notice WhatsApp / email లో కూడా రావొచ్చు",
-   "items": [
-    {
-     "at": 148.08,
-     "text": "Who is the sender?",
-     "tone": "info"
-    },
-    {
-     "at": 149.68,
-     "text": "Are case details given?",
-     "tone": "info"
-    },
-    {
-     "at": 151.28,
-     "text": "Can the court / reference number be verified?",
-     "tone": "info"
-    },
-    {
-     "at": 153.28,
-     "text": "2 minutes of checking beats a scared click",
-     "tone": "good"
-    }
-   ]
+   "kind": "demo",
+   "demo": "linkcheck",
+   "kicker": "Verify — don’t panic-click",
+   "title": "A “legal notice” link",
+   "te": "Unknown link ని వెంటనే tap చేయొద్దు",
+   "beats": {
+    "msg": 128.48,
+    "pause": 132.98,
+    "confirm": 135.58,
+    "electronic": 141.08,
+    "who": 147.98,
+    "case": 148.98,
+    "court": 149.98,
+    "minutes": 153.98
+   }
   },
   {
-   "from": 179.98,
-   "to": 191.78,
-   "kind": "big",
-   "color": "amber",
+   "from": 158.18,
+   "to": 198.68,
+   "kind": "demo",
+   "demo": "doorstep",
    "kicker": "At your door",
-   "title": "“Sign now. Give cash. Give your phone.”",
-   "te": "ఇలాంటి pressure కి వెంటనే react అవ్వకండి",
-   "sub": "Read and understand any document. Sign only after advice if you need it."
+   "title": "Someone actually comes home?",
+   "te": "నిజంగానే ఎవరైనా ఇంటికి వస్తే?",
+   "beats": {
+    "calm": 160.98,
+    "inside": 162.98,
+    "id": 166.98,
+    "letter": 168.98,
+    "safe": 172.98,
+    "trusted": 175.98,
+    "pressure": 179.98,
+    "read": 185.98,
+    "advice": 187.98,
+    "danger": 191.98
+   }
   },
   {
    "from": 198.98,
@@ -633,73 +533,36 @@
   {
    "from": 207.98,
    "to": 229.08,
-   "kind": "points",
-   "color": "violet",
+   "kind": "demo",
+   "demo": "evidence",
    "kicker": "Harassed? Keep evidence",
-   "title": "Document everything",
+   "title": "Build your complaint record",
    "te": "Harassment ని document చేయండి",
-   "items": [
-    {
-     "at": 210.98,
-     "text": "Note the dates",
-     "tone": "info"
-    },
-    {
-     "at": 212.98,
-     "text": "Save the phone numbers",
-     "tone": "info"
-    },
-    {
-     "at": 214.98,
-     "text": "Screenshots of messages",
-     "tone": "info"
-    },
-    {
-     "at": 216.98,
-     "text": "Preserve the evidence",
-     "tone": "info"
-    },
-    {
-     "at": 222.08,
-     "text": "“On this date, at this time, this number said this.”",
-     "tone": "good"
-    }
-   ]
+   "beats": {
+    "dates": 210.98,
+    "numbers": 212.98,
+    "screens": 214.98,
+    "preserve": 216.98,
+    "rather": 220.08,
+    "specific": 222.08
+   }
   },
   {
    "from": 229.28,
    "to": 255.48,
-   "kind": "steps",
-   "color": "violet",
+   "kind": "demo",
+   "demo": "complaint",
    "kicker": "How to complain",
    "title": "Escalate step by step",
    "te": "Complaint ఎలా చేయాలి",
-   "items": [
-    {
-     "at": 229.68,
-     "text": "Bank grievance team",
-     "te": "Agency conduct గురించి written గా",
-     "tone": "info"
-    },
-    {
-     "at": 235.08,
-     "text": "Keep the reference",
-     "te": "Complaint reference తీసుకోండి",
-     "tone": "info"
-    },
-    {
-     "at": 237.68,
-     "text": "No reply in 30 days?",
-     "te": "లేదా reply బాలేకపోతే",
-     "tone": "warn"
-    },
-    {
-     "at": 243.08,
-     "text": "RBI Ombudsman",
-     "te": "cms.rbi.org.in",
-     "tone": "good"
-    }
-   ]
+   "beats": {
+    "bank": 229.28,
+    "ref": 235.08,
+    "rejected": 237.08,
+    "noreply": 241.08,
+    "ombudsman": 244.08,
+    "cms": 248.08
+   }
   },
   {
    "from": 255.68,
@@ -726,55 +589,24 @@
  "m08": [
   {
    "from": 2.42,
-   "to": 9.42,
-   "kind": "points",
-   "color": "cyan",
-   "kicker": "Too many calls?",
-   "title": "Use your phone's settings",
-   "te": "Phone settings వాడండి",
-   "items": [
-    {
-     "at": 4.42,
-     "text": "Block known abusive numbers",
-     "tone": "good"
-    },
-    {
-     "at": 7.42,
-     "text": "Enable spam filters",
-     "tone": "good"
-    }
-   ]
-  },
-  {
-   "from": 13.22,
    "to": 42.22,
-   "kind": "points",
-   "color": "emerald",
-   "kicker": "But don't go dark",
-   "title": "Keep one verified channel open",
-   "te": "ఒక verified communication channel open గా ఉంచండి",
-   "items": [
-    {
-     "at": 17.22,
-     "text": "Bank email and official letters",
-     "tone": "good"
-    },
-    {
-     "at": 21.42,
-     "text": "Silencing unknowns can hide job, hospital and delivery calls",
-     "tone": "warn"
-    },
-    {
-     "at": 30.22,
-     "text": "Fix one time a day for bank communication",
-     "tone": "good"
-    },
-    {
-     "at": 37.22,
-     "text": "Don't let every call drain you",
-     "tone": "good"
-    }
-   ]
+   "kind": "demo",
+   "demo": "phone",
+   "kicker": "Too many calls?",
+   "title": "Phone settings — one channel stays open",
+   "te": "ఒక verified channel open గా ఉంచండి",
+   "beats": {
+    "settings": 2.42,
+    "block": 4.42,
+    "spam": 7.42,
+    "silence": 9.42,
+    "keep": 13.42,
+    "email": 16.42,
+    "letters": 18.42,
+    "miss": 20.42,
+    "fixed": 30.42,
+    "routine": 37.42
+   }
   },
   {
    "from": 42.12,

@@ -3,7 +3,7 @@
 
 Decodes the whole file once at 96x54 grayscale (PyAV), crops away the
 top HUD and the bottom caption band, and reports runs where the foreground barely changes for at least
-MIN seconds. Usage: python3 scripts/find_frozen.py video.mp4 [min_seconds=8] [threshold=1.2]
+MIN seconds. Usage: python3 scripts/find_frozen.py video.mp4 [min_seconds=8] [threshold_pct=0.3]
 """
 import os
 import sys
@@ -14,7 +14,7 @@ import numpy as np
 W, H, FPS = 96, 54, 30
 path = sys.argv[1]
 MIN = float(sys.argv[2]) if len(sys.argv) > 2 else 8.0
-TH = float(sys.argv[3]) if len(sys.argv) > 3 else 1.2
+TH = float(sys.argv[3]) if len(sys.argv) > 3 else 0.3  # % of foreground pixels
 with av.open(path) as c:
     st = c.streams.video[0]
     st.thread_type = 'AUTO'
@@ -23,7 +23,8 @@ fg = fr[:, int(H * 0.09):int(H * 0.80), :]  # drop HUD (top) and caption band (b
 n = len(fg)
 # change over a 1-second window, so slow moves still count
 step = FPS
-d = np.array([np.abs(fg[i].astype(np.int16) - fg[max(0, i - step)]).mean() for i in range(n)])
+# a window counts as moving when enough pixels change visibly (a new pill or line is a few dozen pixels)
+d = np.array([(np.abs(fg[i].astype(np.int16) - fg[max(0, i - step)]) > 12).mean() * 100 for i in range(n)])
 still = d < TH
 runs, i = [], 0
 while i < n:

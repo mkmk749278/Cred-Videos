@@ -8,7 +8,7 @@ import {EmailDemo, SetOffDemo} from './Ch05_06';
 import {CallerDemo, ClockDemo, ComplaintDemo, DoorstepDemo, EvidenceDemo, LinkCheckDemo, LocationDemo, PhoneSettingsDemo} from './Ch07_08';
 import {CalendarDemo, EmiDemo, LedgerDemo} from './Ch09';
 import {LokAdalatDemo, OfferAffDemo, OffersDemo, ReceiptsDemo} from './Ch10_11';
-import {ReportDisputeDemo, ReportsDemo, SecuredCardDemo, UsageDemo} from './Ch12';
+import {ReportDisputeDemo, ReportsDemo, SecuredCardDemo, StabiliseDemo, UsageDemo} from './Ch12';
 import {PlanDemo} from './Ch13';
 
 /** Telugu-edition animated demonstrations, selected by inserts_te.json `demo`. */
@@ -44,6 +44,7 @@ const DEMOS: Record<string, React.FC<{ins: Insert}>> = {
   reports: ReportsDemo,
   securedcard: SecuredCardDemo,
   usage: UsageDemo,
+  stabilise: StabiliseDemo,
   reportdispute: ReportDisputeDemo,
   plan: PlanDemo,
 };

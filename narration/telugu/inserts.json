@@ -953,28 +953,17 @@
   {
    "from": 1502.0,
    "to": 1517.2,
-   "kind": "points",
-   "color": "emerald",
+   "kind": "demo",
+   "demo": "stabilise",
    "kicker": "Rebuild — yes. Instantly — no.",
    "title": "First, stabilise",
    "te": "Instant reset ఉండదు — ముందు stabilize అవ్వండి",
-   "items": [
-    {
-     "at": 1506.0,
-     "text": "A manageable monthly budget",
-     "tone": "good"
-    },
-    {
-     "at": 1508.0,
-     "text": "A small emergency fund",
-     "tone": "good"
-    },
-    {
-     "at": 1510.8,
-     "text": "Don't rush into new credit",
-     "tone": "warn"
-    }
-   ]
+   "beats": {
+    "income": 1502.0,
+    "budget": 1505.8,
+    "fund": 1507.8,
+    "nonew": 1510.8
+   }
   },
   {
    "from": 1517.3,

@@ -237,6 +237,7 @@ export const ReportDisputeDemo: React.FC<DemoProps> = ({ins}) => {
           <T s={32}>Raise a dispute with:</T>
           <Pill text="the lender (Bank B)" color={C.cyan} size={32} />
           <Pill text="the credit bureau" color={C.cyan} size={32} />
+          {on('accurate') ? null : <T s={26} c={SUPPORT}>save the reference · BUR-48213 (sample)</T>}
         </div>
       )}
       {st === 1 && on('accurate') && (
@@ -256,6 +257,53 @@ export const ReportDisputeDemo: React.FC<DemoProps> = ({ins}) => {
         {k: 'accurate', text: 'Accurate history stays', te: 'నిజమైన negative history ని తీసేయలేం', color: '#FDE68A'},
       ]} />
       <BeatSfx ins={ins} k="error" name="haptic_buzz" volume={0.16} />
+    </DemoRoot>
+  );
+};
+
+/* ------------------------------------------------------------------ rebuilding: stabilise first (income, budget, reserve) */
+
+export const StabiliseDemo: React.FC<DemoProps> = ({ins}) => {
+  const {p, on, lin} = useBeats(ins);
+  // income line settles from jagged to steady
+  const calm = on('income') ? lin('income', 100, 40) : 0;
+  const pts = Array.from({length: 13}, (_, i) => {
+    const jag = [40, -60, 70, -30, 55, -70, 35, -45, 60, -20, 30, -35, 10][i];
+    return `${i * 60},${110 + jag * (1 - calm) - calm * 20}`;
+  }).join(' ');
+  const fill = on('fund') ? lin('fund', 60) : 0;
+  return (
+    <DemoRoot ins={ins}>
+      <DemoHeader ins={ins} color={C.emerald} />
+      <Box x={120} y={320} w={820} h={300} color={C.emerald} o={p('income')}>
+        <T s={30}>1 · Stabilise your income</T>
+        <svg width={760} height={200} style={{position: 'absolute', left: 30, top: 80}}>
+          <polyline points={pts} fill="none" stroke={C.emerald} strokeWidth={6} strokeLinejoin="round" />
+        </svg>
+      </Box>
+      {on('budget') && (
+        <Box x={1000} y={320} w={800} h={140} color={C.cyan} o={p('budget')}>
+          <T s={30}>2 · A manageable monthly budget</T>
+          <div style={{display: 'flex', gap: 8, marginTop: 14}}>
+            {[['#F59E0B', 3], ['#38BDF8', 4], ['#A78BFA', 2], ['#22C55E', 2]].map(([c, f], i) => <div key={i} style={{flex: f as number, height: 26, borderRadius: 6, background: c as string, opacity: p('budget', i * 5)}} />)}
+          </div>
+        </Box>
+      )}
+      {on('fund') && (
+        <Box x={1000} y={480} w={800} h={140} color={C.emerald} o={p('fund')}>
+          <T s={30}>3 · A small emergency fund</T>
+          <div style={{position: 'relative', height: 26, marginTop: 14, borderRadius: 13, background: '#1E293B', overflow: 'hidden'}}>
+            <div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: `${fill * 45}%`, background: C.emerald}} />
+          </div>
+        </Box>
+      )}
+      {on('nonew') && <div style={{position: 'absolute', left: 120, top: 680, opacity: p('nonew')}}><Pill text="Debt cleared? No need to take new credit immediately" color={C.amber} size={34} /></div>}
+      <Caption ins={ins} bottom={44} lines={[
+        {k: 'income', text: 'Rebuilding is possible — but there’s no instant reset', te: 'Rebuild చేయొచ్చు — కానీ instant reset ఉండదు'},
+        {k: 'budget', text: 'Make your monthly budget manageable', te: 'Monthly budget manageable గా చేసుకోండి'},
+        {k: 'fund', text: 'Build a small emergency fund', te: 'చిన్న emergency fund పెట్టుకోండి', color: '#86EFAC'},
+        {k: 'nonew', text: 'Don’t rush into new credit', te: 'వెంటనే కొత్త credit తీసుకోవాల్సిన అవసరం లేదు', color: '#FDE68A'},
+      ]} />
     </DemoRoot>
   );
 };

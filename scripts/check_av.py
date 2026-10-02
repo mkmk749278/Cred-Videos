@@ -16,4 +16,5 @@ assert len(pts) == n, f'frame count {len(pts)} != chunks {n}'
 bad = [i for i in range(1, len(pts)) if abs(pts[i] - pts[i - 1] - 1 / 30) > 0.002 and not (i in bounds and pts[i] - pts[i - 1] < 0.15)]
 if bad:
     sys.exit(f'timestamp jumps at frames {bad[:10]} (of {len(bad)})')
-print(f'check_av: {n} frames, timestamps continuous (holds only at {len(bounds) - 1} chunk boundaries)')
+holds = sum(1 for i in range(1, len(pts)) if abs(pts[i] - pts[i - 1] - 1 / 30) > 0.002)
+print(f'check_av: {n} frames, timestamps continuous ({holds} boundary holds of {len(bounds) - 1} boundaries)')

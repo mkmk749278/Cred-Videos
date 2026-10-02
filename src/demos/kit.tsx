@@ -67,7 +67,7 @@ export const DemoHeader: React.FC<{ins: Insert; color?: string; align?: 'left' |
 
 /** "Illustration" / "Sample" tag, bottom-right, always legible */
 export const IllusTag: React.FC<{text?: string; style?: React.CSSProperties}> = ({text = 'Illustration — not real figures', style}) => (
-  <div style={{position: 'absolute', right: 110, bottom: 96, padding: '10px 18px', borderRadius: 12, border: `2px solid ${alpha(C.amber, 0.7)}`, background: alpha(C.amber, 0.14), color: '#FDE68A', fontFamily: FONT, fontSize: 28, fontWeight: 750, ...style}}>
+  <div style={{position: 'absolute', right: 110, top: 128, padding: '10px 18px', borderRadius: 12, border: `2px solid ${alpha(C.amber, 0.7)}`, background: alpha(C.amber, 0.14), color: '#FDE68A', fontFamily: FONT, fontSize: 28, fontWeight: 750, ...style}}>
     {text}
   </div>
 );

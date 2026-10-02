@@ -1091,73 +1091,39 @@
  "m13": [
   {
    "from": 1650.6,
-   "to": 1699.4,
-   "kind": "steps",
-   "color": "cyan",
-   "kicker": "Your 8-step plan",
-   "title": "Steps 1 – 4",
-   "te": "ఇప్పటి వరకు మాట్లాడిందంతా ఒక simple plan గా",
-   "items": [
-    {
-     "at": 1651.2,
-     "text": "List every account",
-     "te": "Income, essentials, set-off risk కూడా",
-     "tone": "info"
-    },
-    {
-     "at": 1664.0,
-     "text": "Write to each bank",
-     "te": "Hardship చెప్పి, options written గా అడగండి",
-     "tone": "info"
-    },
-    {
-     "at": 1675.0,
-     "text": "Organise the calls",
-     "te": "Spam controls — verified bank mail మిస్ అవ్వొద్దు",
-     "tone": "info"
-    },
-    {
-     "at": 1688.0,
-     "text": "Stop the debt cycle",
-     "te": "కొత్త అప్పుతో పాత అప్పు కట్టొద్దు",
-     "tone": "warn"
-    }
-   ]
-  },
-  {
-   "from": 1699.6,
    "to": 1753.0,
-   "kind": "steps",
-   "color": "emerald",
+   "kind": "demo",
+   "demo": "plan",
    "kicker": "Your 8-step plan",
-   "title": "Steps 5 – 8",
-   "te": "Steps 5 నుంచి 8",
-   "items": [
-    {
-     "at": 1699.8,
-     "text": "Record harassment",
-     "te": "Evidence + complaint; danger అయితే 112",
-     "tone": "warn"
-    },
-    {
-     "at": 1713.0,
-     "text": "Know NPA vs write-off",
-     "te": "Write-off అంటే debt cancel కాదు",
-     "tone": "info"
-    },
-    {
-     "at": 1726.0,
-     "text": "Verify any settlement",
-     "te": "Official offer, authorised channel, receipts",
-     "tone": "good"
-    },
-    {
-     "at": 1740.2,
-     "text": "Rebuild steadily",
-     "te": "Income, emergency savings, credit report",
-     "tone": "good"
-    }
-   ]
+   "title": "Everything so far — as one plan",
+   "te": "ఇప్పటి వరకు మాట్లాడిందంతా ఒక simple plan గా",
+   "beats": {
+    "s1": 1652.0,
+    "s1b": 1655.1,
+    "s1c": 1659.6,
+    "s2": 1664.2,
+    "s2b": 1669.4,
+    "s2c": 1672.2,
+    "s3": 1675.4,
+    "s3b": 1679.0,
+    "s3c": 1681.0,
+    "s4": 1687.6,
+    "s4b": 1692.7,
+    "s4c": 1696.8,
+    "s5": 1699.8,
+    "s5b": 1706.6,
+    "s5c": 1710.3,
+    "s6": 1713.7,
+    "s6b": 1719.2,
+    "s6c": 1721.7,
+    "s7": 1726.4,
+    "s7b": 1730.8,
+    "s7c": 1735.6,
+    "s8": 1740.4,
+    "s8b": 1743.2,
+    "s8c": 1745.2,
+    "s8d": 1746.9
+   }
   },
   {
    "from": 1753.2,

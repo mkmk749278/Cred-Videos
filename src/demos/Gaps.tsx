@@ -195,7 +195,7 @@ export const ProfileDemo: React.FC<DemoProps> = ({ins}) => {
             </div>
             <div style={{position: 'absolute', left: 28, top: 160, fontSize: 30, color: '#B45309', fontWeight: 800}}>can affect your credit profile and future approvals</div>
           </Paper>
-          {on('honest') && <div style={{marginTop: 40, opacity: p('honest')}}><Pill text="Affected — not “ruined forever”. Understand it honestly." color={C.cyan} size={34} /></div>}
+          {on('honest') && <div style={{position: 'absolute', left: 0, top: 300, opacity: p('honest')}}><Pill text="Affected — not “ruined forever”. Understand it honestly." color={C.cyan} size={34} /></div>}
         </div>
       )}
       <Caption ins={ins} bottom={44} lines={[

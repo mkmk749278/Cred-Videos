@@ -147,7 +147,7 @@ export const ColdOpen: React.FC = () => {
             </div>
           );
         })}
-        {f >= cCase - 4 && titleIn <= 6 && (
+        {LANG !== 'enh' && f >= cCase - 4 && titleIn <= 6 && (
           <div style={{marginTop: 18, display: 'flex', alignItems: 'center', gap: 18, padding: '18px 26px', borderRadius: 20, background: alpha(C.gold, 0.14), border: `2px solid ${alpha(C.gold, 0.7)}`, opacity: spr(f, fps, cCase - 4), transform: `scale(${0.9 + 0.1 * spr(f, fps, cCase - 4)})`}}>
             <svg width={44} height={52} viewBox="0 0 44 52"><rect x={4} y={22} width={36} height={28} rx={6} fill={C.gold} /><path d="M12 22 V14 a10 10 0 0 1 20 0 V22" fill="none" stroke={C.gold} strokeWidth={6} /><circle cx={22} cy={36} r={4} fill="#05060B" /></svg>
             <div>

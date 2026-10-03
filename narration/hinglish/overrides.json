@@ -66,5 +66,17 @@
    "Here's your simple": 1765.3
   }
  },
- "inserts": {}
+ "inserts": {
+  "m11": {
+   "receipts": {
+    "to": 1476.6
+   },
+   "lokadalat": {
+    "from": 1476.7,
+    "beats": {
+     "nervous": 1479.4
+    }
+   }
+  }
+ }
 }

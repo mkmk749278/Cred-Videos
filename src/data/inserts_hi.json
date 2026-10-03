@@ -922,7 +922,7 @@
   },
   {
    "from": 141.02,
-   "to": 175.12,
+   "to": 181.6,
    "kind": "demo",
    "demo": "receipts",
    "kicker": "After you pay",
@@ -938,7 +938,7 @@
    }
   },
   {
-   "from": 175.27,
+   "from": 181.7,
    "to": 231.46,
    "kind": "demo",
    "demo": "lokadalat",
@@ -946,7 +946,7 @@
    "title": "Nothing to fear — but read the terms",
    "te": "Lok Adalat పేరు వినగానే tension అవసరం లేదు",
    "beats": {
-    "nervous": 183.02,
+    "nervous": 184.4,
     "opportunity": 188.33,
     "eligible": 193.01,
     "explain": 199.47,

@@ -1128,22 +1128,22 @@
    "te": "ఒక trusted person తో మాట్లాడండి",
    "items": [
     {
-     "at": 1736.91,
+     "at": 1738.4,
      "text": "A family member you feel safe with — or a friend",
      "tone": "info"
     },
     {
-     "at": 1749.48,
-     "text": "No need to start with “I’ve ruined everything”",
+     "at": 1743.4,
+     "text": "You don't have to handle it all alone",
      "tone": "info"
     },
     {
-     "at": 1754.75,
+     "at": 1746.0,
      "text": "“These are my accounts. My income. My plan. I need support.”",
      "tone": "good"
     },
     {
-     "at": 1767.83,
+     "at": 1756.0,
      "text": "Not weakness — a practical step",
      "tone": "good"
     }

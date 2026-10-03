@@ -151,6 +151,9 @@ def main():
                 assert b in ins['beats'], (k, b)
                 ins['beats'][b] = 9999 if v == 9999 else res(v, ins['beats'][b] if ins['beats'][b] != 9999 else ins['from'])
             for it, v in zip(ins.get('items', []), o.get('items', [])):
+                if isinstance(v, dict):  # {"at": ..., "text": ...}: the Hinglish narration words this point differently
+                    it['text'] = v.get('text', it['text'])
+                    v = v.get('at')
                 if v is not None:
                     it['at'] = res(v, it['at'])
             if o.get('from') is not None:

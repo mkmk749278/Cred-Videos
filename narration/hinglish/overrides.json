@@ -82,6 +82,19 @@
    "What's my one next step today?": {
     "to": 1899.19
    }
+  },
+  "m12": {
+   "Talk to one person you trust": {
+    "items": [
+     1738.4,
+     {
+      "at": 1743.4,
+      "text": "You don't have to handle it all alone"
+     },
+     1746.0,
+     1756.0
+    ]
+   }
   }
  }
 }

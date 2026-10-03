@@ -1,0 +1,52 @@
+{
+ "duration": 27.08,
+ "segments": [
+  {
+   "t0": 0.15,
+   "t1": 3.46
+  },
+  {
+   "t0": 3.74,
+   "t1": 8.19
+  },
+  {
+   "t0": 8.47,
+   "t1": 14.43
+  },
+  {
+   "t0": 14.71,
+   "t1": 19.8
+  },
+  {
+   "t0": 20.08,
+   "t1": 27.08
+  }
+ ],
+ "lines": [
+  {
+   "text": "“Will the police arrest me if I cannot pay my credit card bill?”",
+   "s": 0.15,
+   "e": 3.46
+  },
+  {
+   "text": "Missing a payment alone does not automatically prove cheating.",
+   "s": 3.74,
+   "e": 8.19
+  },
+  {
+   "text": "A caller saying “We will file a criminal case” does not establish the legal position.",
+   "s": 8.47,
+   "e": 14.43
+  },
+  {
+   "text": "At the same time, do not say, “It is a civil matter, so nothing can happen.”",
+   "s": 14.71,
+   "e": 19.8
+  },
+  {
+   "text": "So, do not ignore a genuine legal notice, court summons, or arbitration communication.",
+   "s": 20.08,
+   "e": 27.08
+  }
+ ]
+}

@@ -6,6 +6,7 @@ import {ColdOpen, COLD_OPEN_FRAMES} from './ColdOpen';
 import {SCENES} from './scenes';
 import {Test3D} from './three/Test3D';
 import {Thumbnail} from './Thumbnail';
+import {Reel, REEL_FPS, REEL_FRAMES, REEL_H, REEL_W} from './reel/Reel';
 import {CharacterPerformance, PERFORMANCE_FRAMES} from './character/Performance';
 import {CharacterHero, CharacterReel, CharacterSheet, REEL_SEG, SITUATIONS} from './character/CharacterShowcase';
 
@@ -62,6 +63,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="CharacterSheet" component={() => <WithFonts><CharacterSheet /></WithFonts>} durationInFrames={90} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="CharacterReel" component={() => <WithFonts><CharacterReel /></WithFonts>} durationInFrames={SITUATIONS.length * REEL_SEG + 10} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="Thumbnail" component={() => <WithFonts><Thumbnail /></WithFonts>} durationInFrames={90} fps={FPS} width={1280} height={720} />
+    <Composition id="Reel" component={() => <WithFonts><Reel /></WithFonts>} durationInFrames={REEL_FRAMES} fps={REEL_FPS} width={REEL_W} height={REEL_H} />
     <Composition id="ColdOpen" component={() => <WithFonts><ColdOpen /></WithFonts>} durationInFrames={COLD_OPEN_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="Intro" component={() => <WithFonts><Intro /></WithFonts>} durationInFrames={INTRO_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
     {SCENES.map((Scene, i) => (

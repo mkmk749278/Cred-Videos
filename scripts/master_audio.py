@@ -27,9 +27,15 @@ ENV = dict(os.environ, LD_LIBRARY_PATH=FF_DIR)
 TP_CEIL = -1.5
 
 
-def true_peak_db(x):
-    up = resample_poly(x, 4, 1, axis=0)
-    return 20 * np.log10(np.max(np.abs(up)) + 1e-12)
+def true_peak_db(x, block=48000 * 30, pad=256):
+    """4x-oversampled peak, in blocks (a whole 33 min film upsampled at once needs > 14 GB)."""
+    peak = 0.0
+    for a in range(0, len(x), block):
+        lo = max(0, a - pad)
+        seg = resample_poly(x[lo: a + block + pad], 4, 1, axis=0)
+        k = (a - lo) * 4
+        peak = max(peak, float(np.max(np.abs(seg[k: k + block * 4]))))
+    return 20 * np.log10(peak + 1e-12)
 
 
 def main():

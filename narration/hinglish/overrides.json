@@ -94,6 +94,30 @@
      1746.0,
      1756.0
     ]
+   },
+   "“750 in 18 months” — don't believe it": {
+    "items_replace": [
+     {
+      "at": 1709.3,
+      "text": "…or “all clean in 24 months”",
+      "tone": "bad"
+     },
+     {
+      "at": 1711.2,
+      "text": "No one can promise this for everyone",
+      "tone": "warn"
+     },
+     {
+      "at": 1715.46,
+      "text": "Depends on your whole credit history",
+      "tone": "info"
+     },
+     {
+      "at": 1723.9,
+      "text": "Build on sustainable habits",
+      "tone": "good"
+     }
+    ]
    }
   }
  }

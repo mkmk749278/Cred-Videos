@@ -150,6 +150,10 @@ def main():
             for b, v in o.get('beats', {}).items():
                 assert b in ins['beats'], (k, b)
                 ins['beats'][b] = 9999 if v == 9999 else res(v, ins['beats'][b] if ins['beats'][b] != 9999 else ins['from'])
+            if 'items_replace' in o:  # the Hinglish narration makes more (or different) points here
+                ins['items'] = [dict(it) for it in o['items_replace']]
+                for it in ins['items']:
+                    it['at'] = res(it['at'], ins['from'])
             for it, v in zip(ins.get('items', []), o.get('items', [])):
                 if isinstance(v, dict):  # {"at": ..., "text": ...}: the Hinglish narration words this point differently
                     it['text'] = v.get('text', it['text'])

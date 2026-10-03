@@ -1098,12 +1098,22 @@
    "te": "18 months లో 750, 24 months లో problems పోతాయి — ఇలాంటివి నమ్మొద్దు",
    "items": [
     {
-     "at": 1715.63,
+     "at": 1709.3,
+     "text": "…or “all clean in 24 months”",
+     "tone": "bad"
+    },
+    {
+     "at": 1711.2,
+     "text": "No one can promise this for everyone",
+     "tone": "warn"
+    },
+    {
+     "at": 1715.46,
      "text": "Depends on your whole credit history",
      "tone": "info"
     },
     {
-     "at": 1723.62,
+     "at": 1723.9,
      "text": "Build on sustainable habits",
      "tone": "good"
     }

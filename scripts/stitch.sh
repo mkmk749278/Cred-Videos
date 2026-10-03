@@ -9,6 +9,7 @@ ORDER=(ColdOpen Scene01 Scene02 Scene03 Scene04 Scene05 Scene06 Scene07 Scene08 
 CH=out/chunks; OUT=out/credit_card_debt_know_your_rights.mp4
 if [ "${REMOTION_LANG:-en}" = te ]; then CH=out/chunks_te; OUT=out/credit_card_debt_know_your_rights_telugu.mp4; fi
 if [ "${REMOTION_LANG:-en}" = enh ]; then CH=out/chunks_enh; OUT=out/credit_card_debt_know_your_rights_english.mp4; fi
+if [ "${REMOTION_LANG:-en}" = hi ]; then CH=out/chunks_hi; OUT=out/credit_card_debt_know_your_rights_hinglish.mp4; fi
 CH=${CHUNKS_DIR:-$CH}; OUT=${STITCH_OUT:-$OUT}
 # a module rendered in two halves (Scene07_a/_b) joins like two chunks
 for i in "${!ORDER[@]}"; do id=${ORDER[$i]}; if [ ! -f "$CH/$id.mp4" ] && [ -f "$CH/${id}_a.mp4" ] && [ -f "$CH/${id}_b.mp4" ]; then ORDER[$i]="${id}_a ${id}_b"; fi; done

@@ -17,8 +17,8 @@ import re
 import subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BRANCH = 'ccr-c1d4fa8a-p80wyo'
-CHUNKS = {'en': 'out/chunks', 'te': 'out/chunks_te', 'enh': 'out/chunks_enh'}
+BRANCH = subprocess.run(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+CHUNKS = {'en': 'out/chunks', 'te': 'out/chunks_te', 'enh': 'out/chunks_enh', 'hi': 'out/chunks_hi'}
 
 PROMPT = """You are a render worker for the Cred-Videos Remotion project ({label}). Work autonomously; nobody will answer questions. Do not change or commit any source files. Your jobs: {jobs}
 
@@ -81,7 +81,7 @@ def main():
     load = [w for w in load if w[1]]
     d = os.path.join(ROOT, 'out/fanout', a.prefix)
     os.makedirs(d, exist_ok=True)
-    label = {'en': 'English edition, synthetic voice', 'te': 'Telugu edition with animated demonstrations', 'enh': "English edition with the creator's own narration"}[a.lang]
+    label = {'en': 'English edition, synthetic voice', 'te': 'Telugu edition with animated demonstrations', 'enh': "English edition with the creator's own narration", 'hi': "Hinglish edition with the creator's own narration"}[a.lang]
     envprefix = '' if a.lang == 'en' else f'REMOTION_LANG={a.lang} '
     log = 'out/render_modules.log' if a.lang == 'en' else f'out/render_modules_{a.lang}.log'
     plan = {'lang': a.lang, 'sha': a.sha, 'prefix': a.prefix, 'local': local, 'workers': []}

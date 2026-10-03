@@ -1,0 +1,1248 @@
+{
+ "m01": [
+  {
+   "from": 2.9,
+   "to": 21.93,
+   "kind": "points",
+   "color": "cyan",
+   "kicker": "First, be honest with yourself",
+   "title": "Can pay? Pay on time.",
+   "te": "ఈ video — నిజంగా కట్టలేని పరిస్థితిలో ఉన్నవాళ్ల కోసం",
+   "items": [
+    {
+     "at": 10.78,
+     "text": "Income dropped",
+     "te": "Income తగ్గిపోయింది",
+     "tone": "warn"
+    },
+    {
+     "at": 13.08,
+     "text": "Medical expenses went up",
+     "te": "Medical ఖర్చులు పెరిగాయి",
+     "tone": "warn"
+    },
+    {
+     "at": 15.26,
+     "text": "Stuck rotating one card to pay another",
+     "te": "Card rotation లో ఇరుక్కుపోయారు",
+     "tone": "warn"
+    },
+    {
+     "at": 17.92,
+     "text": "Bills unmanageable despite trying",
+     "te": "ఎంత try చేసినా bills manage అవ్వట్లేదు",
+     "tone": "warn"
+    }
+   ]
+  },
+  {
+   "from": 22.25,
+   "to": 30.87,
+   "kind": "big",
+   "color": "amber",
+   "kicker": "Two very different things",
+   "title": "“Won't pay” ≠ “Can't pay right now”",
+   "te": "“కట్టను” అనడం వేరు — “ఇప్పుడు కట్టలేకపోతున్నా” అనడం వేరు"
+  },
+  {
+   "from": 39.03,
+   "to": 74.54,
+   "kind": "demo",
+   "demo": "rotation",
+   "kicker": "The debt loop",
+   "title": "Card to card, loan to app…",
+   "te": "కొత్త అప్పుతో పాత అప్పు cover చేస్తే?",
+   "beats": {
+    "card": 39.12,
+    "cardtocard": 45.32,
+    "mindue": 47.56,
+    "loan": 49.92,
+    "app": 51.75,
+    "loop": 51.75,
+    "salary": 53.7,
+    "question": 61.02,
+    "next": 66.59,
+    "clarity": 69.28
+   }
+  },
+  {
+   "from": 90.59,
+   "to": 97.4,
+   "kind": "points",
+   "color": "emerald",
+   "kicker": "What you actually need",
+   "title": "A plan — not shame",
+   "te": "సిగ్గుతో మోయాల్సిన అవసరం లేదు",
+   "items": [
+    {
+     "at": 91.31,
+     "text": "A plan",
+     "tone": "good"
+    },
+    {
+     "at": 92.1,
+     "text": "Support",
+     "tone": "good"
+    },
+    {
+     "at": 93.1,
+     "text": "Correct information",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "from": 116.83,
+   "to": 140.81,
+   "kind": "demo",
+   "demo": "budget",
+   "kicker": "Before you pay anyone",
+   "title": "Find your real repayment number",
+   "te": "నెలకి repayment కి నిజంగా ఎంత మిగులుతుంది?",
+   "beats": {
+    "income": 116.92,
+    "essentials": 120.04,
+    "available": 123.9,
+    "write": 126.8,
+    "realistic": 134.86
+   }
+  }
+ ],
+ "m02": [
+  {
+   "from": 13.91,
+   "to": 27.01,
+   "kind": "demo",
+   "demo": "legal",
+   "kicker": "Separate the questions",
+   "title": "Missed payment ≠ automatic cheating",
+   "te": "Payment miss అయితే cheating అని automatic గా prove అవ్వదు",
+   "beats": {
+    "missed": 14.07,
+    "fraud": 18.35,
+    "q1": 21.03,
+    "q2": 23.36,
+    "q3": 25.07
+   }
+  },
+  {
+   "from": 41.79,
+   "to": 64.71,
+   "kind": "demo",
+   "demo": "legalproc",
+   "kicker": "But don’t ignore it",
+   "title": "The bank can use legal recovery",
+   "te": "Bank legal recovery process చేయొచ్చు",
+   "beats": {
+    "civil": 41.87,
+    "notice": 46.41,
+    "court": 51.44,
+    "order": 54.11,
+    "ignore": 57.67
+   }
+  },
+  {
+   "from": 64.79,
+   "to": 74.2,
+   "kind": "demo",
+   "demo": "verifynotice",
+   "kicker": "Documents matter — not a caller’s tone",
+   "title": "Verify the notice",
+   "te": "Notice ని verify చేయండి",
+   "beats": {
+    "verify": 64.9,
+    "sender": 65.5,
+    "ref": 66.2,
+    "help": 66.08,
+    "loud": 73.02,
+    "actual": 68.82
+   }
+  },
+  {
+   "from": 83.2,
+   "to": 101.99,
+   "kind": "points",
+   "color": "cyan",
+   "kicker": "It depends on the facts",
+   "title": "Don't assume “it's a card, nothing applies”",
+   "te": "Credit card కాబట్టి ఏ law apply అవ్వదు అనుకోవద్దు",
+   "items": [
+    {
+     "at": 84.09,
+     "text": "The transaction and the mandate",
+     "te": "Transaction, mandate",
+     "tone": "info"
+    },
+    {
+     "at": 85.86,
+     "text": "The notice and your case facts",
+     "te": "Notice, case facts",
+     "tone": "info"
+    },
+    {
+     "at": 94.65,
+     "text": "Read your notice — and respond",
+     "te": "Notice చదివి, దానికి respond అవ్వండి",
+     "tone": "good"
+    }
+   ]
+  }
+ ],
+ "m03": [
+  {
+   "from": 3.64,
+   "to": 40.3,
+   "kind": "demo",
+   "demo": "register",
+   "kicker": "Many accounts? One list",
+   "title": "Make one simple list",
+   "te": "అన్నీ ఒకే చోట పెట్టండి",
+   "beats": {
+    "overwhelmed": 4.52,
+    "lose": 8.87,
+    "list": 13.36,
+    "issuer": 15.32,
+    "outstanding": 16.3,
+    "due": 17.48,
+    "lastpay": 18.37,
+    "complaint": 19.45,
+    "legal": 22.09,
+    "separate": 25.08,
+    "fear": 3.68,
+    "onebank": 33.51
+   }
+  },
+  {
+   "from": 40.46,
+   "to": 63.12,
+   "kind": "points",
+   "color": "amber",
+   "kicker": "Don't guess",
+   "title": "Small amount ≠ “they won't act”",
+   "te": "Amount చిన్నది కాబట్టి bank ఏమీ చేయదు అనుకోవద్దు",
+   "items": [
+    {
+     "at": 43.63,
+     "text": "Depends on your account facts",
+     "te": "Account facts",
+     "tone": "info"
+    },
+    {
+     "at": 46.31,
+     "text": "…the issuer's policy",
+     "te": "Issuer policy",
+     "tone": "info"
+    },
+    {
+     "at": 48.09,
+     "text": "…and the legal options available",
+     "te": "Available legal options",
+     "tone": "info"
+    },
+    {
+     "at": 53.44,
+     "text": "Your goal: respond in an organised way",
+     "te": "ఏ communication వచ్చినా organised గా respond అవుతా",
+     "tone": "good"
+    }
+   ]
+  }
+ ],
+ "m04": [
+  {
+   "from": 8.77,
+   "to": 32.91,
+   "kind": "demo",
+   "demo": "statement",
+   "kicker": "Read the breakup",
+   "title": "What’s inside that big number?",
+   "te": "Statement లో ఏమేం ఉన్నాయో check చేయండి",
+   "beats": {
+    "blocked": 8.81,
+    "purchase": 20.86,
+    "finance": 23.08,
+    "late": 25.1,
+    "taxes": 26.22,
+    "prevpay": 27.68,
+    "total": 29.86
+   }
+  },
+  {
+   "from": 33.11,
+   "to": 60.58,
+   "kind": "demo",
+   "demo": "interest",
+   "kicker": "A simple example",
+   "title": "Why the balance doesn’t fall",
+   "te": "చిన్న payment చేసినా principal పెద్దగా తగ్గకపోవచ్చు",
+   "beats": {
+    "outstanding": 34.61,
+    "rate": 36.53,
+    "result": 38.18,
+    "example": 42.19,
+    "fees": 48.65,
+    "small": 52.32,
+    "why": 56.7
+   }
+  },
+  {
+   "from": 60.78,
+   "to": 97.09,
+   "kind": "demo",
+   "demo": "mindue",
+   "kicker": "The minimum due trap",
+   "title": "Minimum on time vs full payment",
+   "te": "Minimum due అంటే full bill clear కాదు",
+   "beats": {
+    "mindue": 61.08,
+    "finance": 67.04,
+    "interestfree": 69.99,
+    "notuseless": 74.45,
+    "ontime": 77.32,
+    "repeated": 82.15,
+    "full": 89.76,
+    "option": 93.04
+   }
+  },
+  {
+   "from": 97.25,
+   "to": 124.24,
+   "kind": "points",
+   "color": "emerald",
+   "kicker": "RBI credit card rules",
+   "title": "A protection on charges",
+   "te": "RBI rules ప్రకారం మీకు ఒక protection ఉంది",
+   "items": [
+    {
+     "at": 100.5,
+     "text": "Unpaid charges, levies and taxes can't be capitalised",
+     "tone": "good"
+    },
+    {
+     "at": 103.84,
+     "text": "No compounding interest on them",
+     "tone": "good"
+    },
+    {
+     "at": 114.72,
+     "text": "Interest, taxes & charges can’t count towards an over-limit fee",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "from": 124.42,
+   "to": 158.08,
+   "kind": "demo",
+   "demo": "dispute",
+   "kicker": "Spot a wrong charge?",
+   "title": "Question it — in writing",
+   "te": "Bank వేసింది కాబట్టి correct అనుకోవద్దు",
+   "beats": {
+    "incorrect": 124.42,
+    "notassume": 128.76,
+    "breakdown": 126.52,
+    "dispute": 130.48,
+    "review": 133.34,
+    "waive": 138.7,
+    "some": 138.7,
+    "depends": 143.16,
+    "rbi": 9647.14,
+    "prep": 147.48,
+    "clarity": 152.76
+   }
+  }
+ ],
+ "m05": [
+  {
+   "from": 5.54,
+   "to": 37.58,
+   "kind": "demo",
+   "demo": "setoff",
+   "kicker": "Salary account and set-off",
+   "title": "Same bank? Read the agreement",
+   "te": "Agreement లో lien / set-off clause చెక్ చేయండి",
+   "beats": {
+    "clause": 5.54,
+    "meaning": 14.06,
+    "adjust": 17.86,
+    "notassume": 21.64,
+    "explicit": 26.74,
+    "plan": 29.43,
+    "advice": 34.1
+   }
+  },
+  {
+   "from": 37.77,
+   "to": 48.43,
+   "kind": "big",
+   "color": "amber",
+   "kicker": "But remember",
+   "title": "Moving accounts isn’t a legal shield",
+   "te": "Account మార్చినా legal recovery నుంచి permanent protection ఉండదు",
+   "sub": "Court orders and valid legal obligations must be followed."
+  },
+  {
+   "from": 48.58,
+   "to": 56.35,
+   "kind": "big",
+   "color": "emerald",
+   "kicker": "The purpose",
+   "title": "Understand your bank’s set-off terms. Plan essential expenses.",
+   "te": "ఇంటి ఖర్చులు అనుకోకుండా ఆగిపోకుండా ముందే plan చేసుకోండి"
+  }
+ ],
+ "m06": [
+  {
+   "from": 3.17,
+   "to": 18.59,
+   "kind": "demo",
+   "demo": "silence",
+   "kicker": "How to communicate",
+   "title": "Silence explains nothing",
+   "te": "Phone off చేస్తే bank కి మీ పరిస్థితి తెలియదు",
+   "beats": {
+    "off": 3.25,
+    "peace": 5.22,
+    "understandable": 8.48,
+    "silence": 10.61,
+    "resolve": 9438.1,
+    "written": 15.41
+   }
+  },
+  {
+   "from": 18.67,
+   "to": 82.31,
+   "kind": "demo",
+   "demo": "email",
+   "kicker": "Write to the bank",
+   "title": "A clear hardship email",
+   "te": "Clear written communication పంపండి",
+   "beats": {
+    "verify": 18.67,
+    "send": 23.34,
+    "nofancy": 28.75,
+    "l1": 30.51,
+    "l2": 32.59,
+    "l3": 34.52,
+    "l4": 36.89,
+    "promise": 41.58,
+    "honest": 53.33,
+    "options": 59.65,
+    "ask": 64.84,
+    "sent": 69.66,
+    "lawful": 72.73,
+    "separate": 78.94
+   }
+  },
+  {
+   "from": 82.47,
+   "to": 103.58,
+   "kind": "demo",
+   "demo": "record",
+   "kicker": "Keep every record",
+   "title": "A record — not a shield",
+   "te": "అన్నీ ఒక folder లో save చేయండి",
+   "beats": {
+    "items": 82.57,
+    "folder": 86.56,
+    "record": 92.44,
+    "shield": 89.56,
+    "documents": 94.28
+   }
+  }
+ ],
+ "m07": [
+  {
+   "from": 6.38,
+   "to": 43.33,
+   "kind": "demo",
+   "demo": "clock",
+   "kicker": "Recovery has rules",
+   "title": "Calling hours — and limits",
+   "te": "Recovery agents contact చేయొచ్చు — కానీ limits లోనే",
+   "beats": {
+    "rules": 6.93,
+    "prohibited": 13.82,
+    "hours": 19.07,
+    "inside": 25.16,
+    "neighbours": 34.36,
+    "office": 36.56,
+    "family": 39.02,
+    "notnormal": 40.52,
+    "no": 30.54
+   }
+  },
+  {
+   "from": 43.5,
+   "to": 69.53,
+   "kind": "demo",
+   "demo": "caller",
+   "kicker": "Stay calm and ask",
+   "title": "Who is calling — for which bank?",
+   "te": "Calm గా details అడగండి",
+   "beats": {
+    "name": 43.5,
+    "agency": 45.77,
+    "bank": 46.86,
+    "auth": 49.2,
+    "voice": 52.72,
+    "goal": 55.19,
+    "say": 58.86,
+    "channel": 62.99
+   }
+  },
+  {
+   "from": 70.2,
+   "to": 94.43,
+   "kind": "demo",
+   "demo": "location",
+   "kicker": "Live location request?",
+   "title": "Pause. Verify first.",
+   "te": "Unknown person అడిగాడని location share చేయక్కర్లేదు",
+   "beats": {
+    "ask": 70.2,
+    "pause": 73.48,
+    "verify": 77.26,
+    "otp": 82.44,
+    "notfake": 87.19,
+    "noinfo": 90.96
+   }
+  },
+  {
+   "from": 94.54,
+   "to": 105.18,
+   "kind": "demo",
+   "demo": "visit",
+   "kicker": "Check before you react",
+   "title": "“Our agent visited…”",
+   "te": "ఎవరు, ఎప్పుడు వచ్చారో verify చేయండి",
+   "beats": {
+    "msg": 94.65,
+    "facts": 98.93,
+    "who": 100.12,
+    "agency": 100.87,
+    "confirm": 102.55
+   }
+  },
+  {
+   "from": 105.24,
+   "to": 109.51,
+   "kind": "big",
+   "color": "amber",
+   "kicker": "The sensible approach",
+   "title": "Not every message is real — or fake",
+   "te": "ప్రతి message నిజం అనుకోవద్దు, ప్రతిదీ fake అని ignore చేయొద్దు",
+   "sub": "Confirm through the bank's official channels."
+  },
+  {
+   "from": 109.7,
+   "to": 136.35,
+   "kind": "demo",
+   "demo": "linkcheck",
+   "kicker": "Verify — don’t panic-click",
+   "title": "A “legal notice” link",
+   "te": "Unknown link ని వెంటనే tap చేయొద్దు",
+   "beats": {
+    "msg": 110.37,
+    "pause": 114.97,
+    "confirm": 117.0,
+    "electronic": 122.06,
+    "who": 128.3,
+    "case": 128.99,
+    "court": 129.68,
+    "minutes": 132.46
+   }
+  },
+  {
+   "from": 136.44,
+   "to": 174.06,
+   "kind": "demo",
+   "demo": "doorstep",
+   "kicker": "At your door",
+   "title": "Someone actually comes home?",
+   "te": "నిజంగానే ఎవరైనా ఇంటికి వస్తే?",
+   "beats": {
+    "calm": 138.95,
+    "inside": 140.84,
+    "id": 144.37,
+    "letter": 144.79,
+    "safe": 149.82,
+    "trusted": 152.11,
+    "pressure": 155.83,
+    "read": 163.04,
+    "advice": 164.83,
+    "danger": 167.63
+   }
+  },
+  {
+   "from": 174.36,
+   "to": 184.0,
+   "kind": "big",
+   "color": "cyan",
+   "kicker": "Fair to know",
+   "title": "An authorised visit isn’t automatically illegal",
+   "te": "వాళ్ల conduct, సరైన process follow అవుతుందా — అదే ముఖ్యం"
+  },
+  {
+   "from": 184.22,
+   "to": 202.25,
+   "kind": "demo",
+   "demo": "evidence",
+   "kicker": "Harassed? Keep evidence",
+   "title": "Build your complaint record",
+   "te": "Harassment ని document చేయండి",
+   "beats": {
+    "dates": 187.03,
+    "numbers": 188.86,
+    "screens": 190.69,
+    "preserve": 191.88,
+    "rather": 193.7,
+    "specific": 195.34
+   }
+  },
+  {
+   "from": 202.34,
+   "to": 229.88,
+   "kind": "demo",
+   "demo": "complaint",
+   "kicker": "How to complain",
+   "title": "Escalate step by step",
+   "te": "Complaint ఎలా చేయాలి",
+   "beats": {
+    "bank": 202.34,
+    "ref": 204.68,
+    "rejected": 207.83,
+    "noreply": 213.23,
+    "ombudsman": 217.29,
+    "cms": 222.69
+   }
+  },
+  {
+   "from": 230.08,
+   "to": 247.88,
+   "kind": "big",
+   "color": "cyan",
+   "kicker": "Remember the difference",
+   "title": "A complaint fixes conduct — not the debt",
+   "te": "Harassment complaint recovery conduct గురించి — అది debt ని cancel చేయదు",
+   "items": [
+    {
+     "at": 236.6,
+     "text": "Doesn’t guarantee a settlement discount",
+     "tone": "warn"
+    },
+    {
+     "at": 238.76,
+     "text": "Asking to be treated fairly is your right",
+     "tone": "good"
+    }
+   ]
+  }
+ ],
+ "m08": [
+  {
+   "from": 4.02,
+   "to": 34.47,
+   "kind": "demo",
+   "demo": "phone",
+   "kicker": "Too many calls?",
+   "title": "Phone settings — one channel stays open",
+   "te": "ఒక verified channel open గా ఉంచండి",
+   "beats": {
+    "settings": 4.02,
+    "block": 5.32,
+    "spam": 7.26,
+    "silence": 8.59,
+    "keep": 12.2,
+    "email": 14.98,
+    "letters": 16.48,
+    "miss": 20.06,
+    "fixed": 26.94,
+    "routine": 30.87
+   }
+  },
+  {
+   "from": 34.62,
+   "to": 56.32,
+   "kind": "demo",
+   "demo": "sixty",
+   "kicker": "No guarantee",
+   "title": "“Ignore calls and the file closes in 60 days?”",
+   "te": "అలాంటి guarantee ఏమీ లేదు",
+   "beats": {
+    "q": 34.69,
+    "noguarantee": 37.98,
+    "agency": 39.81,
+    "calls": 41.8,
+    "debt": 44.8,
+    "notsilence": 48.16,
+    "plan": 48.16
+   }
+  }
+ ],
+ "m09": [
+  {
+   "from": 3.96,
+   "to": 70.52,
+   "kind": "demo",
+   "demo": "calendar",
+   "kicker": "From the due date onwards",
+   "title": "How an unpaid card moves towards NPA",
+   "te": "Due date నుంచి NPA వరకు ఏం జరుగుతుంది",
+   "beats": {
+    "due": 3.96,
+    "full": 4.73,
+    "finance": 8.03,
+    "overdue": 11.14,
+    "three": 15.78,
+    "original": 24.29,
+    "notnew": 27.33,
+    "nodelay": 29.71,
+    "followup": 31.71,
+    "restrict": 34.88,
+    "report": 36.66,
+    "ninety": 38.84,
+    "incorrect": 42.02,
+    "before": 43.4,
+    "npa": 48.39,
+    "npa90": 51.74,
+    "meaning": 58.39,
+    "provision": 67.85
+   }
+  },
+  {
+   "from": 70.83,
+   "to": 76.52,
+   "kind": "big",
+   "color": "crimson",
+   "kicker": "And from your side",
+   "title": "NPA doesn't mean “no need to pay”",
+   "te": "NPA అయింది కాబట్టి కట్టక్కర్లేదు — అది నిజం కాదు"
+  },
+  {
+   "from": 76.76,
+   "to": 99.64,
+   "kind": "demo",
+   "demo": "emi",
+   "kicker": "EMI conversion offer?",
+   "title": "Understand the EMI offer first",
+   "te": "వెంటనే yes చెప్పకండి — ముందు details చూడండి",
+   "beats": {
+    "details": 77.57,
+    "emi": 80.23,
+    "fee": 84.43,
+    "total": 85.63,
+    "afford": 87.54,
+    "unaffordable": 93.12,
+    "useful": 91.02,
+    "decide": 97.69
+   }
+  },
+  {
+   "from": 99.76,
+   "to": 141.17,
+   "kind": "demo",
+   "demo": "ledger",
+   "kicker": "Write-off — the confusing word",
+   "title": "The books change. The claim remains.",
+   "te": "Write-off అంటే debt cancel అయినట్టు కాదు",
+   "beats": {
+    "relief": 100.4,
+    "accounting": 108.13,
+    "books": 110.19,
+    "claim": 111.64,
+    "recovery": 115.25,
+    "n180": 116.84,
+    "timing": 122.53,
+    "nodiscount": 125.51,
+    "options": 128.84,
+    "nowait": 133.27
+   }
+  }
+ ],
+ "m10": [
+  {
+   "from": 3.35,
+   "to": 15.06,
+   "kind": "big",
+   "color": "cyan",
+   "kicker": "Every lender is different",
+   "title": "Each bank has its own process",
+   "te": "ఒకే bank లో కూడా accounts వేర్వేరుగా ఉండొచ్చు",
+   "items": [
+    {
+     "at": 3.5,
+     "text": "SBI Card",
+     "tone": "info"
+    },
+    {
+     "at": 4.13,
+     "text": "HDFC Bank",
+     "tone": "info"
+    },
+    {
+     "at": 4.76,
+     "text": "ICICI Bank",
+     "tone": "info"
+    },
+    {
+     "at": 5.86,
+     "text": "Axis Bank",
+     "tone": "info"
+    },
+    {
+     "at": 6.64,
+     "text": "YES Bank",
+     "tone": "info"
+    },
+    {
+     "at": 7.42,
+     "text": "Kotak",
+     "tone": "info"
+    },
+    {
+     "at": 8.21,
+     "text": "RBL Bank",
+     "tone": "info"
+    },
+    {
+     "at": 8.99,
+     "text": "IDFC FIRST",
+     "tone": "info"
+    }
+   ]
+  },
+  {
+   "from": 15.23,
+   "to": 47.29,
+   "kind": "demo",
+   "demo": "offers",
+   "kicker": "Don't compare blindly",
+   "title": "Your account, your offer",
+   "te": "Friend కి వచ్చిన offer మీకు రావాలని లేదు",
+   "beats": {
+    "friend": 15.31,
+    "age": 21.76,
+    "breakdown": 23.18,
+    "situation": 23.72,
+    "policy": 25.56,
+    "online": 8905.36,
+    "written": 27.6,
+    "afford": 8905.36,
+    "friendly": 35.68,
+    "rude": 38.84,
+    "verify": 42.88
+   }
+  }
+ ],
+ "m11": [
+  {
+   "from": 1.44,
+   "to": 17.94,
+   "kind": "points",
+   "color": "cyan",
+   "kicker": "What is a settlement?",
+   "title": "The bank accepts less to close the account",
+   "te": "Bank తక్కువ amount తీసుకుని account close చేయడానికి ఒప్పుకోవడం",
+   "items": [
+    {
+     "at": 8.92,
+     "text": "Needs the bank's approval — a request isn't enough",
+     "tone": "warn"
+    },
+    {
+     "at": 15.98,
+     "text": "Explain your hardship clearly",
+     "tone": "good"
+    },
+    {
+     "at": 16.34,
+     "text": "Make a realistic proposal from available funds",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "from": 18.09,
+   "to": 42.13,
+   "kind": "demo",
+   "demo": "offeraff",
+   "kicker": "Settle only what you can afford",
+   "title": "Affordable amount, realistic deadline",
+   "te": "Afford చేయగల amount, realistic deadline",
+   "beats": {
+    "start": 18.25,
+    "borrow": 25.98,
+    "affordable": 23.38,
+    "deadline": 24.44,
+    "example": 33.48,
+    "outstanding": 34.36,
+    "caller": 35.82,
+    "relief": 39.76,
+    "notimmediately": 41.24
+   }
+  },
+  {
+   "from": 42.13,
+   "to": 94.06,
+   "kind": "demo",
+   "demo": "letter",
+   "title": "What a settlement letter must show",
+   "beats": {
+    "enter": 42.13,
+    "verify": 43.95,
+    "account": 51.38,
+    "amount": 53.82,
+    "dates": 55.0,
+    "terms": 58.01,
+    "reporting": 62.82,
+    "channel": 70.17,
+    "screenshot": 74.75,
+    "smallfirst": 77.7,
+    "writing": 84.56,
+    "misrecord": 88.79,
+    "clarity": 8861.24
+   }
+  },
+  {
+   "from": 94.16,
+   "to": 105.35,
+   "kind": "demo",
+   "demo": "paychannel",
+   "kicker": "Paying the settlement",
+   "title": "Only authorised payment channels",
+   "te": "Bank authorise చేసిన channels ద్వారా మాత్రమే pay చేయండి",
+   "beats": {
+    "only": 94.22,
+    "app": 96.77,
+    "upi": 101.29,
+    "cash": 103.89
+   }
+  },
+  {
+   "from": 105.53,
+   "to": 127.64,
+   "kind": "demo",
+   "demo": "receipts",
+   "kicker": "After you pay",
+   "title": "Get it in writing",
+   "te": "Payment complete అయ్యాక written confirmation తీసుకోండి",
+   "beats": {
+    "receipt": 105.61,
+    "instal": 106.96,
+    "miss": 110.18,
+    "confirm": 113.5,
+    "court": 119.91,
+    "phone": 123.94
+   }
+  },
+  {
+   "from": 127.83,
+   "to": 165.08,
+   "kind": "demo",
+   "demo": "lokadalat",
+   "kicker": "Lok Adalat",
+   "title": "Nothing to fear — but read the terms",
+   "te": "Lok Adalat పేరు వినగానే tension అవసరం లేదు",
+   "beats": {
+    "nervous": 131.22,
+    "opportunity": 136.21,
+    "eligible": 140.45,
+    "explain": 145.16,
+    "afford": 148.0,
+    "notaccept": 149.41,
+    "consent": 152.94,
+    "award": 155.61,
+    "appeal": 161.89
+   }
+  },
+  {
+   "from": 165.24,
+   "to": 184.89,
+   "kind": "points",
+   "color": "emerald",
+   "kicker": "Before you sign",
+   "title": "Ask until it's clear",
+   "te": "అర్థం కాకపోతే అడగండి — అలా అడగడంలో తప్పు లేదు",
+   "items": [
+    {
+     "at": 170.24,
+     "text": "“Any further dues after I pay this?”",
+     "tone": "info"
+    },
+    {
+     "at": 171.99,
+     "text": "“What if I miss the deadline?”",
+     "tone": "info"
+    },
+    {
+     "at": 173.86,
+     "text": "“What will my credit report show?”",
+     "tone": "info"
+    },
+    {
+     "at": 175.67,
+     "text": "Clarity about your case is your responsibility",
+     "tone": "good"
+    }
+   ]
+  }
+ ],
+ "m12": [
+  {
+   "from": 8.32,
+   "to": 14.9,
+   "kind": "demo",
+   "demo": "profile",
+   "kicker": "After settlement",
+   "title": "Is my CIBIL ruined?",
+   "te": "CIBIL పూర్తిగా పాడైపోదు — కానీ affect అవ్వొచ్చు",
+   "beats": {
+    "q1": 8680.66,
+    "q2": 8680.66,
+    "assume": 8680.66,
+    "affect": 9.37,
+    "honest": 11.29
+   }
+  },
+  {
+   "from": 15.24,
+   "to": 39.46,
+   "kind": "demo",
+   "demo": "reports",
+   "kicker": "Settled vs Closed",
+   "title": "Two different statuses",
+   "te": "Settled, Closed — రెండూ వేరు",
+   "beats": {
+    "settled": 15.24,
+    "closed": 20.18,
+    "negative": 24.01,
+    "approvals": 26.14,
+    "ndc": 27.4,
+    "different": 32.62
+   }
+  },
+  {
+   "from": 39.55,
+   "to": 54.51,
+   "kind": "demo",
+   "demo": "stabilise",
+   "kicker": "Rebuild — yes. Instantly — no.",
+   "title": "First, stabilise",
+   "te": "Instant reset ఉండదు — ముందు stabilize అవ్వండి",
+   "beats": {
+    "income": 39.55,
+    "budget": 43.09,
+    "fund": 44.87,
+    "nonew": 47.47
+   }
+  },
+  {
+   "from": 54.61,
+   "to": 75.38,
+   "kind": "demo",
+   "demo": "securedcard",
+   "kicker": "FD-backed secured card",
+   "title": "An option — not a guarantee",
+   "te": "Card వస్తుందని guarantee లేదు",
+   "beats": {
+    "fd": 54.61,
+    "card": 57.0,
+    "approval": 60.04,
+    "noguarantee": 65.31,
+    "reserve": 67.57,
+    "small": 71.49
+   }
+  },
+  {
+   "from": 75.54,
+   "to": 88.14,
+   "kind": "demo",
+   "demo": "usage",
+   "kicker": "Use it lightly",
+   "title": "Pay in full. Use little.",
+   "te": "Full statement balance due date కి కట్టండి",
+   "beats": {
+    "full": 75.71,
+    "low": 77.95,
+    "example": 80.67,
+    "nopct": 84.0
+   }
+  },
+  {
+   "from": 88.28,
+   "to": 114.36,
+   "kind": "demo",
+   "demo": "reportdispute",
+   "kicker": "Habits that matter",
+   "title": "Watch your credit report",
+   "te": "Credit report regular గా check చేయండి",
+   "beats": {
+    "ontime": 89.4,
+    "apps": 93.67,
+    "check": 96.1,
+    "updated": 98.25,
+    "error": 101.75,
+    "dispute": 106.22,
+    "accurate": 108.9
+   }
+  },
+  {
+   "from": 114.68,
+   "to": 132.65,
+   "kind": "big",
+   "color": "crimson",
+   "kicker": "Ignore magic numbers",
+   "title": "“750 in 18 months” — don't believe it",
+   "te": "18 months లో 750, 24 months లో problems పోతాయి — ఇలాంటివి నమ్మొద్దు",
+   "items": [
+    {
+     "at": 126.08,
+     "text": "Depends on your whole credit history",
+     "tone": "info"
+    },
+    {
+     "at": 131.39,
+     "text": "Build on sustainable habits",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "from": 132.72,
+   "to": 135.09,
+   "kind": "big",
+   "color": "violet",
+   "kicker": "What I want to tell you",
+   "title": "One difficult phase doesn’t define your whole life",
+   "te": "ఒక కష్టమైన financial phase మీ జీవితం మొత్తాన్ని define చేయదు"
+  },
+  {
+   "from": 135.16,
+   "to": 162.44,
+   "kind": "points",
+   "color": "violet",
+   "kicker": "You don't have to carry this alone",
+   "title": "Talk to one person you trust",
+   "te": "ఒక trusted person తో మాట్లాడండి",
+   "items": [
+    {
+     "at": 142.68,
+     "text": "A family member you feel safe with — or a friend",
+     "tone": "info"
+    },
+    {
+     "at": 148.66,
+     "text": "No need to start with “I’ve ruined everything”",
+     "tone": "info"
+    },
+    {
+     "at": 150.87,
+     "text": "“These are my accounts. My income. My plan. I need support.”",
+     "tone": "good"
+    },
+    {
+     "at": 156.5,
+     "text": "Not weakness — a practical step",
+     "tone": "good"
+    }
+   ]
+  }
+ ],
+ "m13": [
+  {
+   "from": 3.09,
+   "to": 85.63,
+   "kind": "demo",
+   "demo": "plan",
+   "kicker": "Your 8-step plan",
+   "title": "Everything so far — as one plan",
+   "te": "ఇప్పటి వరకు మాట్లాడిందంతా ఒక simple plan గా",
+   "beats": {
+    "s1": 4.06,
+    "s1b": 7.21,
+    "s1c": 10.81,
+    "s2": 14.37,
+    "s2b": 19.12,
+    "s2c": 21.29,
+    "s3": 23.86,
+    "s3b": 26.11,
+    "s3c": 27.37,
+    "s4": 32.48,
+    "s4b": 37.17,
+    "s4c": 40.14,
+    "s5": 42.96,
+    "s5b": 47.39,
+    "s5c": 50.38,
+    "s6": 53.52,
+    "s6b": 59.17,
+    "s6c": 61.27,
+    "s7": 63.34,
+    "s7b": 66.42,
+    "s7c": 71.04,
+    "s8": 75.79,
+    "s8b": 78.44,
+    "s8c": 80.11,
+    "s8d": 81.5
+   }
+  },
+  {
+   "from": 85.77,
+   "to": 103.82,
+   "kind": "big",
+   "color": "gold",
+   "kicker": "Ask yourself",
+   "title": "What's my one next step today?",
+   "te": "మొత్తం debt ఈ రోజే solve చేయక్కర్లేదు — ఒక్క useful step చాలు",
+   "items": [
+    {
+     "at": 94.6,
+     "text": "List your accounts",
+     "tone": "good"
+    },
+    {
+     "at": 95.6,
+     "text": "Check a statement",
+     "tone": "good"
+    },
+    {
+     "at": 96.84,
+     "text": "Send a hardship email",
+     "tone": "good"
+    },
+    {
+     "at": 98.3,
+     "text": "Talk to someone you trust",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "from": 104.24,
+   "to": 108.27,
+   "kind": "big",
+   "color": "gold",
+   "kicker": "Your dignity",
+   "title": "You may owe money — no one may disrespect you",
+   "te": "అప్పు ఉండొచ్చు — కానీ మిమ్మల్ని అగౌరవంగా treat చేసే permission ఎవరికీ లేదు",
+   "items": [
+    {
+     "at": 107.62,
+     "text": "Handle your responsibilities honestly",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "from": 129.83,
+   "to": 134.0,
+   "kind": "big",
+   "color": "amber",
+   "kicker": "One honest note",
+   "title": "My case won't be your case",
+   "te": "నా case లో జరిగిందే మీ case లో జరుగుతుందని promise చేయను",
+   "sub": "But seeing a real process helps you ask better questions."
+  }
+ ]
+}

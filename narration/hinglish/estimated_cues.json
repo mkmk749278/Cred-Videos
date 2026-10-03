@@ -1,0 +1,865 @@
+{
+  "title": "English translation and estimated visual cues for Hinglish narration",
+  "audio_file": "BE_PRACTICAL_HINGLISH_FULL_AUDIO.mp3",
+  "audio_duration_seconds": 1971.853061,
+  "translation_source": "prepared Hinglish script; not an audio-derived transcription",
+  "audio_speech_verified": false,
+  "clip_to_script_mapping_verified": false,
+  "timing_method": "Source-script word counts distribute each measured clip duration proportionally across its paragraphs. Internal times are estimates, not forced alignment.",
+  "editing_instruction": "Keep audio as master. Verify spoken clip contents and align internal cue timing before final render. Do not alter narration speed to fit an older video.",
+  "clip_anchors": [
+    {
+      "block": 1,
+      "clip_file": "ElevenLabs_2026-10-03T15_20_48_Raju - Clear, Natural and Warm_eleven_v4.mp3",
+      "start_seconds": 0,
+      "end_seconds": 307.565688,
+      "boundary_status": "measured_clip_duration",
+      "content_assignment_status": "assumed_script_block_order_not_speech_verified",
+      "cue_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "block": 2,
+      "clip_file": "ElevenLabs_2026-10-03T15_22_21_Raju - Clear, Natural and Warm_eleven_v4.mp3",
+      "start_seconds": 307.565688,
+      "end_seconds": 594.808126,
+      "boundary_status": "measured_clip_duration",
+      "content_assignment_status": "assumed_script_block_order_not_speech_verified",
+      "cue_ids": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "block": 3,
+      "clip_file": "ElevenLabs_2026-10-03T15_29_14_Raju - Clear, Natural and Warm_eleven_v4.mp3",
+      "start_seconds": 594.808126,
+      "end_seconds": 901.564001,
+      "boundary_status": "measured_clip_duration",
+      "content_assignment_status": "assumed_script_block_order_not_speech_verified",
+      "cue_ids": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "block": 4,
+      "clip_file": "ElevenLabs_2026-10-03T15_30_58_Raju - Clear, Natural and Warm_eleven_v4.mp3",
+      "start_seconds": 901.564001,
+      "end_seconds": 1198.471751,
+      "boundary_status": "measured_clip_duration",
+      "content_assignment_status": "assumed_script_block_order_not_speech_verified",
+      "cue_ids": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "block": 5,
+      "clip_file": "ElevenLabs_2026-10-03T15_36_57_Raju - Clear, Natural and Warm_eleven_v4.mp3",
+      "start_seconds": 1198.471751,
+      "end_seconds": 1500.421126,
+      "boundary_status": "measured_clip_duration",
+      "content_assignment_status": "assumed_script_block_order_not_speech_verified",
+      "cue_ids": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "block": 6,
+      "clip_file": "ElevenLabs_2026-10-03T15_38_47_Raju - Clear, Natural and Warm_eleven_v4.mp3",
+      "start_seconds": 1500.421126,
+      "end_seconds": 1806.863564,
+      "boundary_status": "measured_clip_duration",
+      "content_assignment_status": "assumed_script_block_order_not_speech_verified",
+      "cue_ids": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ]
+    },
+    {
+      "block": 7,
+      "clip_file": "ElevenLabs_2026-10-03T16_18_11_Raju - Clear, Natural and Warm_eleven_v4.mp3",
+      "start_seconds": 1806.863564,
+      "end_seconds": 1971.852939,
+      "boundary_status": "measured_clip_duration",
+      "content_assignment_status": "assumed_script_block_order_not_speech_verified",
+      "cue_ids": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ]
+    }
+  ],
+  "cues": [
+    {
+      "cue_id": 1,
+      "block": 1,
+      "topic": "Recovery-call anxiety",
+      "estimated_start_seconds": 0.0,
+      "estimated_end_seconds": 31.427,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Your phone rings. As soon as you see the number, you think, another call from the bank? Forty calls, fifty calls in a day. Then the WhatsApp messages begin. Pay today. Our person is coming to your house. We will file a police case. After a while, even the ringtone makes you tense, doesn't it? You are sitting with your family, but your mind keeps going back to the same questions. What if they call my office? What if my family finds out? Even at night, you cannot sleep properly.",
+      "hinglish_source": "आपका phone बजता है। Number देखते ही मन में आता है, फिर से bank का call? दिन में चालीस calls, पचास calls। फिर WhatsApp messages शुरू हो जाते हैं। आज ही payment करो। हमारा आदमी घर आ रहा है। Police case कर देंगे। एक time के बाद ringtone सुनकर भी tension होने लगती है, है ना? Family के साथ बैठे हैं, लेकिन दिमाग में यही चल रहा है। Office में call कर दिया तो? घर वालों को पता चल गया तो? रात में भी ठीक से नींद नहीं आती।"
+    },
+    {
+      "cue_id": 2,
+      "block": 1,
+      "topic": "What this explanation covers",
+      "estimated_start_seconds": 31.427,
+      "estimated_end_seconds": 60.736,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "If this is happening to you too, pause for a moment. Take a deep breath. Let's talk calmly. If you cannot pay your credit card bill, what can the bank actually do? What are your rights? How do you handle recovery calls? When and how can you ask about settlement? And can your credit score improve afterwards? We will understand everything, one step at a time. You do not need to know difficult banking words. Wherever needed, I will explain them simply.",
+      "hinglish_source": "अगर आपके साथ भी ऐसा हो रहा है, तो पहले थोड़ा रुकिए। एक गहरी सांस लीजिए। आराम से बात करते हैं। Credit card का bill नहीं भर पा रहे हैं, तो bank actually क्या कर सकता है? आपके rights क्या हैं? Recovery calls कैसे handle करें? Settlement कब और कैसे पूछें? और बाद में credit score ठीक हो सकता है या नहीं? सब एक-एक करके समझेंगे। Banking के मुश्किल words जानना जरूरी नहीं है। जहाँ जरूरत होगी, वहीं simple तरीके से समझा दूंगा।"
+    },
+    {
+      "cue_id": 3,
+      "block": 1,
+      "topic": "Who this video is for",
+      "estimated_start_seconds": 60.736,
+      "estimated_end_seconds": 95.342,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "But let's make one thing clear at the beginning. If you have the money, paying on time is better. This video is for people who want to pay but cannot manage it right now. Your salary has stopped. Someone at home has needed hospital treatment. Or the amount has become too big while you were using one card to pay another. I have the money, but I will not pay, and I want to pay, but I do not have the money right now, are different situations. So first, ask yourself honestly: how much can I actually pay?",
+      "hinglish_source": "लेकिन शुरू में एक बात clear रखिए। अगर payment के लिए पैसे हैं, तो time पर pay करना बेहतर है। यह video उन लोगों के लिए है जो pay करना चाहते हैं, लेकिन अभी कर नहीं पा रहे। Salary रुक गई। घर में किसी का hospital खर्च आ गया। या एक card का bill दूसरे card से भरते-भरते amount बहुत बढ़ गया। मेरे पास पैसे हैं, लेकिन मैं नहीं दूंगा, और मैं देना चाहता हूँ, लेकिन अभी पैसे नहीं हैं, ये दोनों अलग situations हैं। इसलिए पहले खुद से honestly पूछिए। मैं actually कितना pay कर सकता हूँ?"
+    },
+    {
+      "cue_id": 4,
+      "block": 1,
+      "topic": "How card rotation becomes debt",
+      "estimated_start_seconds": 95.342,
+      "estimated_end_seconds": 129.594,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "The problem often starts with something small. A hospital bill arrives. You lose your job. A business customer does not pay on time. We think, let's use the card now and clear it next month. But another expense comes next month. Then we arrange money from another card. After that, we pay only the minimum due. Then a small loan. Then a loan app. Your salary arrives, and within a few days almost all of it is gone. Then you think, I am earning money. Why am I still short every month?",
+      "hinglish_source": "अक्सर problem छोटी सी बात से शुरू होती है। Hospital bill आ गया। Job चली गई। Business में customer ने time पर पैसे नहीं दिए। हम सोचते हैं, अभी card use कर लेते हैं। अगले महीने clear कर देंगे। लेकिन अगले महीने एक और खर्च आ जाता है। फिर दूसरे card से पैसे arrange करते हैं। उसके बाद सिर्फ minimum due भरते हैं। फिर छोटा loan। फिर loan app। Salary आती है, और कुछ दिनों में लगभग पूरी चली जाती है। फिर लगता है, मैं कमाता तो हूँ। फिर हर महीने पैसे कम क्यों पड़ रहे हैं?"
+    },
+    {
+      "cue_id": 5,
+      "block": 1,
+      "topic": "New loans versus reducing debt",
+      "estimated_start_seconds": 129.594,
+      "estimated_end_seconds": 167.025,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now, a simple question. If we keep taking new loans to pay old loans, is our total debt coming down? Or are we just moving the problem to next month? The answer may be uncomfortable. But it tells us what needs to change. Remember, having debt does not make you a bad person. One late bill does not reduce your worth. You have a money problem. A serious problem. But it needs a plan, the right information, and support. Shame will not pay the bill. A decision made in panic will not help either.",
+      "hinglish_source": "अब एक simple सवाल। पुराने loan को भरने के लिए हर बार नया loan ले रहे हैं, तो हमारा total debt कम हो रहा है? या बस problem को अगले महीने भेज रहे हैं? जवाब थोड़ा uncomfortable हो सकता है। लेकिन इसी जवाब से पता चलता है कि क्या बदलना है। और याद रखिए, कर्ज होने से आप खराब इंसान नहीं बन जाते। एक bill late होने से आपकी value कम नहीं होती। पैसे की problem है। Serious problem है। लेकिन इसके लिए plan चाहिए, सही information चाहिए, और support चाहिए। शर्म करने से bill नहीं भरेगा। Panic में लिया हुआ decision भी मदद नहीं करेगा।"
+    },
+    {
+      "cue_id": 6,
+      "block": 1,
+      "topic": "Household needs and repayment budget",
+      "estimated_start_seconds": 167.025,
+      "estimated_end_seconds": 205.868,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "So where should you begin? Look at your family's essential expenses first. Food. Rent. Medicines. Your children's school fees. The basic costs of running your home. Suppose you make a payment just to stop the calls, but then have no money left for medicines. How long can that plan work? Write down your monthly income. Under that, write your essential expenses. Then see how much remains for repayment. Use paper or make a note on your phone. Do not keep doing the calculation in your head. When the numbers are in front of you, the decision becomes clearer. It is easy to say, I will somehow manage. Knowing how much you can manage is more useful.",
+      "hinglish_source": "तो शुरुआत कहाँ से करें? पहले घर के जरूरी खर्च देखिए। खाना। Rent। Medicines। बच्चों की school fees। घर चलाने के basic खर्च। सिर्फ calls बंद कराने के लिए payment कर दी, लेकिन फिर medicines के लिए पैसे ही नहीं बचे। ऐसा plan कितने दिन चलेगा? इसलिए monthly income लिखिए। उसके नीचे जरूरी खर्च लिखिए। फिर देखिए कि payment के लिए कितना बचता है। Paper पर लिख लें, या phone में note बना लें। बार-बार दिमाग में calculation मत करते रहिए। Numbers सामने होंगे, तो decision भी clear होगा। किसी तरह manage कर लूंगा, यह बोलना आसान है। लेकिन कितना manage कर सकते हैं, यह जानना ज्यादा काम आता है।"
+    },
+    {
+      "cue_id": 7,
+      "block": 1,
+      "topic": "Civil recovery versus cheating",
+      "estimated_start_seconds": 205.868,
+      "estimated_end_seconds": 246.123,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now, the biggest fear. If I cannot pay my credit card bill, will the police arrest me? When genuine money problems prevent payment, the matter generally concerns recovering the money through civil law. Missing a payment does not automatically become cheating. A cheating case depends on the facts. Was there a plan to deceive from the beginning? Were fake documents used? Was incorrect information deliberately given? Those are different questions. The Supreme Court has also explained this distinction between failing to fulfil a payment agreement and cheating. Someone shouting on the phone that they will file a criminal case does not decide what the law says.",
+      "hinglish_source": "अब सबसे बड़ा डर। Credit card bill नहीं भर पाया, तो police arrest कर लेगी क्या? देखिए, genuine money problem की वजह से payment नहीं हो पा रही, तो आम तौर पर मामला पैसे की recovery और civil law का होता है। सिर्फ payment miss होना अपने आप cheating नहीं बन जाता। Cheating का मामला facts पर depend करता है। क्या शुरू से धोखा देने का plan था? Fake documents दिए थे? जान-बूझकर गलत information दी थी? ये अलग बातें हैं। Supreme Court ने भी payment agreement पूरा न होने और cheating के बीच यह फर्क समझाया है। Phone पर किसी का चिल्लाना कि criminal case कर देंगे, उससे कानून तय नहीं हो जाता।"
+    },
+    {
+      "cue_id": 8,
+      "block": 1,
+      "topic": "Legal notices and court orders",
+      "estimated_start_seconds": 246.123,
+      "estimated_end_seconds": 280.022,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "But that does not mean nothing can happen and you can ignore everything. The bank can send a legal notice. It can start a recovery case. It can use the legal process applicable to your account. If a court order arrives, you must take it seriously. Verify a genuine legal notice, court summons, or arbitration notice, and respond properly. Speak to a lawyer or ask about legal aid if needed. The actual document and actual case matter more than a loud voice on the phone.",
+      "hinglish_source": "लेकिन इसका मतलब यह भी नहीं है कि कुछ होगा ही नहीं, इसलिए सब ignore कर दें। Bank legal notice भेज सकता है। Recovery case शुरू कर सकता है। आपके account पर जो legal process लागू होता है, उसका use कर सकता है। Court का order आया, तो उसे seriously लेना पड़ेगा। असली legal notice, court summons या arbitration notice आए, तो verify करके सही तरीके से जवाब दीजिए। जरूरत हो, तो lawyer से बात कीजिए, या legal aid के बारे में पूछिए। Phone पर loud आवाज से ज्यादा जरूरी है actual document और actual case।"
+    },
+    {
+      "cue_id": 9,
+      "block": 1,
+      "topic": "Cheque bounce and failed auto-debit",
+      "estimated_start_seconds": 280.022,
+      "estimated_end_seconds": 307.566,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "You may ask, what if a cheque bounced? Or an auto-debit failed? Separate legal issues may arise here. The answer depends on which payment it was, the instructions you gave, what the notice says, and the actual facts. Do not assume that no other law can apply just because the matter began with a credit card bill. Read the notice. Understand it. Get advice when needed.",
+      "hinglish_source": "आप पूछ सकते हैं, cheque bounce हो गया तो? या auto-debit fail हो गया तो? यहाँ अलग legal issues भी हो सकते हैं। कौन सा payment था, आपने क्या instructions दिए थे, notice में क्या लिखा है, और actual facts क्या हैं, इन सब पर जवाब depend करेगा। सिर्फ इसलिए कि शुरुआत credit card bill से हुई थी, यह मत मानिए कि कोई दूसरा law लागू हो ही नहीं सकता। Notice पढ़िए। समझिए। जरूरत पड़ने पर advice लीजिए।"
+    },
+    {
+      "cue_id": 10,
+      "block": 2,
+      "topic": "List all card accounts",
+      "estimated_start_seconds": 307.566,
+      "estimated_end_seconds": 341.359,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now suppose you have dues with four or five banks. One call has barely ended before another begins. Sometimes you cannot even remember the exact balance on each card. Make a list. For each card, write the bank's name, amount due, due date, and last payment date. Add any complaint number or legal notice. Keep each account's papers separately. Then, when someone pressures you, you will not have to answer from memory. You will have the facts in front of you.",
+      "hinglish_source": "अब मान लीजिए आपके चार या पाँच banks के dues हैं। एक call खत्म नहीं होता, दूसरा शुरू हो जाता है। कई बार यह भी याद नहीं रहता कि किस card पर exact कितना बाकी है। इसलिए एक list बना लीजिए। हर card के सामने bank का नाम, amount due, due date और last payment की date लिखिए। कोई complaint number है या legal notice आया है, तो वह भी लिखिए। हर account के papers अलग रखिए। फिर कोई pressure डाले, तो आपको याद से बोलने की जरूरत नहीं होगी। आपके सामने facts होंगे।"
+    },
+    {
+      "cue_id": 11,
+      "block": 2,
+      "topic": "Each account needs its own plan",
+      "estimated_start_seconds": 341.359,
+      "estimated_end_seconds": 368.681,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Settling one card does not automatically settle the others. Each account must be handled separately. Do not assume that because your amount is small, the bank will never go to court. Its decision can depend on the account, its policy, and the legal options available. Build your plan around checking and responding to genuine communication, rather than guessing that the bank probably will not do anything.",
+      "hinglish_source": "एक card settle हो गया, तो बाकी cards अपने आप settle नहीं होंगे। हर account अलग handle करना होगा। और यह भी मत सोचिए कि मेरा amount छोटा है, यह bank court में जाएगा ही नहीं। Bank का decision account, उसकी policy और available legal options पर depend कर सकता है। इसलिए plan इस बात पर बनाइए कि genuine communication को कैसे check और answer करेंगे। इस guess पर नहीं कि bank शायद कुछ नहीं करेगा।"
+    },
+    {
+      "cue_id": 12,
+      "block": 2,
+      "topic": "Read the statement breakdown",
+      "estimated_start_seconds": 368.681,
+      "estimated_end_seconds": 400.677,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now open your statement. Have you ever thought, I stopped using the card, and the bank even blocked it. Why is the balance still growing? Blocking the card can stop new purchases. But interest and charges applicable to the old balance do not automatically stop. Do not look only at the final total. How much did you actually spend? How much is interest? How much is the late fee? How much is tax? And where were your earlier payments adjusted? If you do not understand, ask the bank for a clear breakdown.",
+      "hinglish_source": "अब अपना statement खोलिए। कभी लगा है, मैंने card use करना बंद कर दिया। Bank ने card block भी कर दिया। फिर balance क्यों बढ़ रहा है? Card block होने से नई shopping रुक सकती है। लेकिन पुराने balance पर लागू interest और charges अपने आप बंद नहीं होते। इसलिए सिर्फ final total मत देखिए। आपने actually कितना spend किया था? Interest कितना है? Late fee कितनी है? Tax कितना है? और जो payments किए, वे कहाँ adjust हुए? समझ नहीं आ रहा, तो bank से clear breakup मांगिए।"
+    },
+    {
+      "cue_id": 13,
+      "block": 2,
+      "topic": "One-lakh interest example",
+      "estimated_start_seconds": 400.677,
+      "estimated_end_seconds": 434.47,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Let's take an example. Suppose the balance is one lakh rupees. At a monthly interest rate of three percent, a simple calculation gives about three thousand rupees in interest. This is an illustration. Your card's actual rate and calculation may differ. Check your own terms. Applicable fees and taxes are separate. In that situation, only a small part of a small payment may reduce what you originally spent. That is why you may think, I keep paying. Why is the bill not coming down?",
+      "hinglish_source": "एक example लेते हैं। मान लीजिए एक लाख रुपये का balance है। Monthly interest rate three percent है, तो सिर्फ simple calculation में लगभग तीन हजार रुपये interest बनता है। यह समझाने के लिए example है। आपके card का actual rate और calculation अलग हो सकता है। अपने card के terms check कीजिए। फिर जो fees और taxes लागू हों, वे अलग। ऐसे में छोटी payment का बहुत कम हिस्सा आपके original खर्च को कम कर सकता है। इसलिए लगता है, मैं pay तो कर रहा हूँ। फिर bill कम क्यों नहीं हो रहा?"
+    },
+    {
+      "cue_id": 14,
+      "block": 2,
+      "topic": "What minimum due does",
+      "estimated_start_seconds": 434.47,
+      "estimated_end_seconds": 474.375,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now, the minimum due. Paying the small amount shown on the statement does not clear the whole bill. Interest can continue on the unpaid balance. Depending on the card's terms, the interest-free benefit may also end. But the minimum due is not useless. Paying the full required minimum on time can prevent the account from becoming overdue. The problem comes when you keep paying only that small amount every month. The debt can continue for a very long time. If you can afford the full bill, clear it. If not, ask the bank for a payment option that fits your budget.",
+      "hinglish_source": "अब minimum due की बात। Statement पर जो छोटा amount दिखता है, उसे भरने से पूरा bill clear नहीं होता। बाकी unpaid balance पर interest चल सकता है। Card के terms के हिसाब से interest-free benefit भी खत्म हो सकता है। लेकिन minimum due बेकार भी नहीं है। Required minimum amount time पर पूरा pay करने से account overdue होने से बच सकता है। Problem तब होती है जब हर महीने सिर्फ वही छोटा amount भरते रहते हैं। Debt बहुत लंबे time तक चल सकता है। इसलिए full bill afford कर सकते हैं, तो clear कीजिए। नहीं कर सकते, तो bank से ऐसा payment option पूछिए जो आपके budget में आए।"
+    },
+    {
+      "cue_id": 15,
+      "block": 2,
+      "topic": "Interest-on-charges and over-limit protection",
+      "estimated_start_seconds": 474.375,
+      "estimated_end_seconds": 511.763,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "There is an RBI protection to understand here. Unpaid taxes, fees, and other charges cannot simply be added to the principal for charging interest. Principal means the base amount used to calculate interest. In simple terms, unpaid charges should not be treated like new spending so that interest keeps being added to them. Also, when checking whether you crossed the limit for an over-limit fee, interest, taxes, and other charges should not be included in that calculation. If a charge seems wrong, ask the bank for a written explanation. You do not have to accept it without asking just because it appears on the bill.",
+      "hinglish_source": "यहाँ RBI का एक protection भी समझिए। Unpaid taxes, fees और दूसरे charges को सिर्फ interest जोड़ने के लिए principal में नहीं जोड़ सकते। Principal मतलब वह base amount जिस पर interest calculate किया जाता है। आसान भाषा में, unpaid charges को नए खर्च जैसा बनाकर उन पर फिर interest नहीं जोड़ते जाना चाहिए। और over-limit fee check करते समय, limit cross हुई या नहीं, इस calculation में interest, taxes और दूसरे charges include नहीं करने चाहिए। Statement में कोई charge गलत लग रहा है, तो bank से written explanation मांगिए। Bill पर दिख रहा है, इसलिए बिना पूछे मान लेना जरूरी नहीं है।"
+    },
+    {
+      "cue_id": 16,
+      "block": 2,
+      "topic": "No automatic interest waiver",
+      "estimated_start_seconds": 511.763,
+      "estimated_end_seconds": 536.569,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Does asking for settlement mean the bank will remove all interest and fees? No. The bank may agree to reduce some dues, but it is not guaranteed. It depends on your situation, account, and the bank's approval. First understand how much you spent, how much you paid, and how much is charges. Then you will know which amount is being discussed during settlement talks.",
+      "hinglish_source": "तो क्या settlement मांगते ही bank पूरा interest और सारी fees हटा देगा? नहीं। Bank कुछ dues कम करने के लिए agree कर सकता है, लेकिन guarantee नहीं है। आपकी situation, account और bank की approval पर depend करेगा। पहले समझिए कि आपने कितना spend किया, कितना pay किया, और charges कितने हैं। तभी settlement की बात में आपको पता रहेगा कि discussion किस amount पर हो रहा है।"
+    },
+    {
+      "cue_id": 17,
+      "block": 2,
+      "topic": "Salary account lien and set-off",
+      "estimated_start_seconds": 536.569,
+      "estimated_end_seconds": 569.283,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now check your salary account. Does your salary come into the same bank where your credit card is overdue? If yes, read the account and card terms carefully. You may see words like lien or set-off. Simply put, depending on applicable terms and law, the bank may be able to use money in your account with it to pay your dues. Do not assume that the card and savings account are separate, so nothing can happen to your salary. Some agreements give the bank these rights.",
+      "hinglish_source": "अब salary account देखिए। क्या salary उसी bank में आती है जहाँ credit card overdue है? अगर हाँ, तो account और card के terms ध्यान से पढ़िए। Lien या set-off जैसे words दिख सकते हैं। Simple मतलब यह है कि लागू terms और law के हिसाब से bank, आपके उसी bank वाले account के पैसे को dues भरने के लिए use कर सकता है। इसलिए यह assume मत कीजिए कि card अलग है, savings account अलग है, salary को कुछ नहीं होगा। कुछ agreements में bank को ऐसी rights मिलती हैं।"
+    },
+    {
+      "cue_id": 18,
+      "block": 2,
+      "topic": "Plan essential spending and follow legal duties",
+      "estimated_start_seconds": 569.283,
+      "estimated_end_seconds": 594.808,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Think ahead about the money needed for rent, food, and medicines. Get advice about your salary account arrangement if necessary. But receiving your salary in another account does not end the debt. It does not protect you from every legal recovery step either. You must follow valid legal duties and court orders. The point is to understand the risk and plan properly for your home's basic expenses.",
+      "hinglish_source": "Rent, खाना और medicines के लिए जो पैसे चाहिए, उनके बारे में पहले से सोचिए। जरूरत हो, तो salary account की arrangement पर advice लीजिए। लेकिन salary दूसरे account में आने लगे, तो debt खत्म नहीं होता। हर legal recovery से protection भी नहीं मिल जाता। Valid legal duties और court orders follow करने होंगे। यहाँ point है risk को समझना और घर के basic खर्च के लिए सही planning करना।"
+    },
+    {
+      "cue_id": 19,
+      "block": 3,
+      "topic": "Contact the bank in writing",
+      "estimated_start_seconds": 594.808,
+      "estimated_end_seconds": 624.699,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now, how should you talk to the bank? After so many calls, you feel like switching off the phone. You need some peace. That feeling is understandable. But the bank also needs to know your situation. Explain it in writing instead of only talking on calls. Open the bank's official website. Find the grievance officer's or nodal officer's contact. The names sound complicated, but these are the bank's complaint contacts. Send a simple email explaining why payment has become difficult.",
+      "hinglish_source": "अब bank से बात कैसे करें? इतने calls के बाद लगता है, phone ही बंद कर दूं। थोड़ी शांति चाहिए। यह feeling समझ आती है। लेकिन आपकी situation bank को पता भी चलनी चाहिए। इसलिए सिर्फ calls पर बात करने के बजाय लिखकर बताइए। Bank की official website खोलिए। Grievance officer या nodal officer का contact ढूंढिए। नाम थोड़ा बड़ा है, लेकिन ये bank के complaint contacts हैं। उन्हें simple email भेजिए कि payment में दिक्कत क्यों हो रही है।"
+    },
+    {
+      "cue_id": 20,
+      "block": 3,
+      "topic": "Simple hardship email and realistic promises",
+      "estimated_start_seconds": 624.699,
+      "estimated_end_seconds": 662.063,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "You can write: my income has reduced. There are medical expenses at home. I want to discuss a payment plan. After essential household expenses, this is how much I can pay each month. That is enough. Big words are not necessary. Be simple and honest. Do not agree to an amount just to end the call. Saying I will pay tomorrow may bring a few minutes of peace. But if there will be no money tomorrow, the same problem returns. Calmly say, I cannot promise this amount. Please tell me the other options.",
+      "hinglish_source": "आप ऐसे लिख सकते हैं। मेरी income कम हो गई है। घर में medical खर्च है। मैं payment plan discuss करना चाहता हूँ। घर के जरूरी खर्च के बाद मैं हर महीने इतना pay कर सकता हूँ। बस। बड़े-बड़े words जरूरी नहीं हैं। बात simple और honest होनी चाहिए। सिर्फ call खत्म करने के लिए किसी amount पर agree मत कीजिए। कल pay कर दूंगा बोलने से अभी कुछ मिनट की शांति मिल सकती है। लेकिन कल पैसे नहीं होंगे, तो वही problem फिर आएगी। Calm होकर कहिए, मैं इस amount का promise नहीं कर सकता। Please दूसरे options बताइए।"
+    },
+    {
+      "cue_id": 21,
+      "block": 3,
+      "topic": "Request affordable repayment options",
+      "estimated_start_seconds": 662.063,
+      "estimated_end_seconds": 693.822,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "You can ask about a smaller EMI, a payment plan, changes to repayment terms, or settlement. Ask which option is available for your account. Get the details in writing. You can request that most communication happen by email. But that request does not automatically stop all lawful calls from the bank. Your preference for email is one thing. Your right to complain about harassment is another. Save all emails, replies, attachments, and complaint numbers in one folder.",
+      "hinglish_source": "छोटी EMI, payment plan, repayment terms में बदलाव या settlement के बारे में पूछ सकते हैं। आपके account पर कौन सा option available है, यह पूछिए। Details लिखित में लीजिए। आप कह सकते हैं कि ज्यादा communication email पर करें। लेकिन सिर्फ यह request करने से bank के सभी lawful calls अपने आप बंद नहीं होते। Email पर बात करने की preference अलग है। Harassment के खिलाफ complaint करने का right अलग है। सारे emails, replies, attachments और complaint numbers एक folder में save कीजिए।"
+    },
+    {
+      "cue_id": 22,
+      "block": 3,
+      "topic": "What written communication proves",
+      "estimated_start_seconds": 693.822,
+      "estimated_end_seconds": 712.504,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Will sending an email automatically stop a legal case? No. But you will have a record. It will show what you told the bank, which option you requested, and how you tried to handle the problem. If there is confusion later, you will not have to prove everything from memory.",
+      "hinglish_source": "Email भेजने से legal case अपने आप रुक जाएगा क्या? नहीं। लेकिन आपके पास record रहेगा। आपने bank को क्या बताया, कौन सा option मांगा, और problem handle करने की क्या कोशिश की, ये सब दिखेगा। बाद में confusion हो, तो आपको हर बात याद से साबित नहीं करनी पड़ेगी।"
+    },
+    {
+      "cue_id": 23,
+      "block": 3,
+      "topic": "Recovery-agent conduct and call hours",
+      "estimated_start_seconds": 712.504,
+      "estimated_end_seconds": 742.768,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now let's talk about recovery agents. They can contact you about payment. But that does not mean they can abuse you, threaten you, embarrass you publicly, or interfere with your family's privacy. RBI instructions do not allow threatening calls, anonymous calls, inappropriate messages, or persistent harassment. Calls to recover overdue payments should not be made before eight in the morning or after seven in the evening.",
+      "hinglish_source": "अब recovery agents की बात करते हैं। Payment के लिए वे contact कर सकते हैं। लेकिन इसका मतलब यह नहीं कि गाली दे सकते हैं, धमकी दे सकते हैं, सबके सामने शर्मिंदा कर सकते हैं, या family की privacy खराब कर सकते हैं। RBI instructions के हिसाब से threatening calls, anonymous calls, गलत messages और बार-बार परेशान करना allowed नहीं है। Overdue payment की recovery के calls सुबह आठ बजे से पहले और शाम सात बजे के बाद नहीं होने चाहिए।"
+    },
+    {
+      "cue_id": 24,
+      "block": 3,
+      "topic": "Threats and verifying agent identity",
+      "estimated_start_seconds": 742.768,
+      "estimated_end_seconds": 776.022,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "And that does not mean they can say whatever they want between eight and seven. Calling time is one rule. Harassment is still not allowed. Someone says, we will tell your neighbours. We will come to your office and tell everyone. We will trouble your family. You do not have to stay silent and accept this as normal recovery. Calmly ask, what is your name? Which agency are you from? Which bank are you calling for? Send the details of your authorisation from the bank through an official email.",
+      "hinglish_source": "और हाँ, इसका मतलब यह नहीं कि आठ से सात के बीच जो मन करे बोल सकते हैं। Call का time एक rule है। Harassment फिर भी allowed नहीं है। कोई बोलता है, neighbours को बता देंगे। Office आकर सबको बताएंगे। Family को परेशान करेंगे। तो इसे normal recovery समझकर चुप रहने की जरूरत नहीं है। Calm होकर पूछिए, आपका नाम क्या है? कौन सी agency से हैं? किस bank के लिए call कर रहे हैं? Bank की तरफ से आपको मिली permission के details official email से भेजिए।"
+    },
+    {
+      "cue_id": 25,
+      "block": 3,
+      "topic": "A calm response to recovery calls",
+      "estimated_start_seconds": 776.022,
+      "estimated_end_seconds": 799.187,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "You do not have to be as loud as them. The goal is not to win an argument. The goal is to keep a record and handle the problem through the official channel. You can say, I have explained my situation to the bank in writing. I will discuss payment through the official channel. Please do not threaten me. That is enough. You do not need a long argument on every call.",
+      "hinglish_source": "आपको उनकी तरह loud होने की जरूरत नहीं है। Goal बहस जीतना नहीं है। Goal है record रखना और official channel से problem handle करना। आप कह सकते हैं, मैंने अपनी situation bank को लिखकर बता दी है। Payment की बात official channel पर करूंगा। Please धमकी मत दीजिए। इतना काफी है। हर call पर लंबी बहस में जाना जरूरी नहीं है।"
+    },
+    {
+      "cue_id": 26,
+      "block": 3,
+      "topic": "Live-location and secret-information safety",
+      "estimated_start_seconds": 799.187,
+      "estimated_end_seconds": 824.595,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now someone asks for your live location on WhatsApp. Wait a moment. Do you know who this person is? Have you verified that the bank sent them? Do not send your location simply because someone asks. Never share your OTP, PIN, password, or secret card details. Asking for location alone does not prove that someone is fake. But verify identity before sharing personal information.",
+      "hinglish_source": "अब WhatsApp पर कोई live location मांगता है। एक मिनट रुकिए। आप जानते हैं यह person कौन है? Bank ने इन्हें भेजा है, यह verify किया है? सिर्फ किसी ने पूछा, इसलिए location मत भेज दीजिए। OTP, PIN, password या card के secret details कभी share मत कीजिए। Location मांगने से ही कोई fake साबित नहीं होता। लेकिन personal information देने से पहले identity check करना जरूरी है।"
+    },
+    {
+      "cue_id": 27,
+      "block": 3,
+      "topic": "Verify claims of attempted visits",
+      "estimated_start_seconds": 824.595,
+      "estimated_end_seconds": 845.145,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "A message says, we came to your house, but the door was locked. First confirm it. Who came? When? From which agency? Check through the bank's official contact. Not every message is false. Not every message is true either. Do not make a decision only because you are scared. Check first, then proceed.",
+      "hinglish_source": "एक message आता है, हम आपके घर आए थे, door locked था। पहले confirm कीजिए। कौन आया? कब आया? किस agency से आया? Bank के official contact से check कीजिए। हर message झूठा नहीं होता। हर message सही भी नहीं होता। सिर्फ डर के कारण decision मत लीजिए। Check करने के बाद ही आगे बढ़िए।"
+    },
+    {
+      "cue_id": 28,
+      "block": 3,
+      "topic": "Verify electronic legal notices",
+      "estimated_start_seconds": 845.145,
+      "estimated_end_seconds": 876.904,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Someone says, click this link to see your legal notice. Do not open an unknown link in panic. Open the bank's official app or website yourself, or call verified customer care. But do not assume a notice is fake and ignore it simply because it came by email or WhatsApp. Verify the sender, account, case details, and any court or lawyer information. Taking a few minutes to check is better than clicking in fear.",
+      "hinglish_source": "और कोई कहता है, legal notice देखने के लिए इस link पर click करो। Panic में unknown link मत खोलिए। खुद bank की official app या website खोलिए। या verified customer care पर call कीजिए। लेकिन notice email या WhatsApp पर आया है, इसलिए उसे fake मानकर ignore भी मत कीजिए। किसने भेजा, कौन सा account है, case details क्या हैं, court या lawyer की information सही है या नहीं, यह verify कीजिए। डर में click करने से बेहतर है कुछ मिनट लेकर check करना।"
+    },
+    {
+      "cue_id": 29,
+      "block": 3,
+      "topic": "Handling an agent at your home",
+      "estimated_start_seconds": 876.904,
+      "estimated_end_seconds": 901.564,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "What if an agent really comes to your house? Stay calm. If you are uncomfortable, you do not have to invite them inside. Ask for ID and the bank's authorisation letter. Check which account they have come about. Speak somewhere you feel safe. Keep a trusted person with you if needed. There is nothing wrong with having someone there for support.",
+      "hinglish_source": "Agent सच में घर आ गया, तो? पहले calm रहिए। Comfortable नहीं हैं, तो अंदर बुलाना जरूरी नहीं है। ID और bank की authorisation letter मांगिए। कौन से account के बारे में आए हैं, यह check कीजिए। ऐसी जगह बात कीजिए जहाँ आप safe feel करें। जरूरत हो, तो किसी trusted person को अपने साथ रखिए। Support के लिए किसी को साथ रखना गलत नहीं है।"
+    },
+    {
+      "cue_id": 30,
+      "block": 4,
+      "topic": "Pressure to sign, emergency safety, lawful visits",
+      "estimated_start_seconds": 901.564,
+      "estimated_end_seconds": 932.95,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "If they say, sign now, give me cash, or hand over your phone, do not act just because of pressure. Do not sign without reading the paper. If you do not understand, get advice first. If there is force, a physical threat, or immediate danger, call the emergency number one one two. Safety comes first. But an authorised agent's visit is not illegal simply because a visit occurred. What matters is how they behaved and whether they followed the proper process.",
+      "hinglish_source": "अगर बोलें, अभी sign करो। Cash दे दो। Phone दे दो। तो सिर्फ pressure में कुछ मत कीजिए। Paper पढ़े बिना sign मत कीजिए। समझ नहीं आया, तो पहले advice लीजिए। Force हो रहा है, physical threat है, या immediate danger है, तो emergency number one one two पर call कीजिए। Safety पहले है। लेकिन bank का authorised agent मिलने आया है, तो सिर्फ visit होने से वह illegal नहीं बन जाता। उसने कैसे behave किया और proper process follow किया या नहीं, यह मायने रखता है।"
+    },
+    {
+      "cue_id": 31,
+      "block": 4,
+      "topic": "Record evidence and complain to the bank",
+      "estimated_start_seconds": 932.95,
+      "estimated_end_seconds": 958.204,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "How do you complain about harassment? Save dates, times, phone numbers, and messages. Keep screenshots. Preserve whatever evidence you have. Instead of only writing that they are troubling you a lot, clearly explain what happened. On this date, at this time, this number called and these words were said. Details make the complaint easier to understand. Send it to the bank's grievance team and ask for a complaint number.",
+      "hinglish_source": "Harassment की complaint कैसे करें? Dates, time, phone numbers और messages save कीजिए। Screenshots रखिए। जो evidence है, उसे संभालकर रखिए। सिर्फ ये लोग बहुत परेशान कर रहे हैं लिखने के बजाय clearly बताइए कि क्या हुआ। इस date को, इस time पर, इस number से call आया, और यह बात कही गई। Details से complaint समझना आसान होता है। Bank की grievance team को भेजिए और complaint number मांगिए।"
+    },
+    {
+      "cue_id": 32,
+      "block": 4,
+      "topic": "RBI Ombudsman and complaint eligibility",
+      "estimated_start_seconds": 958.204,
+      "estimated_end_seconds": 988.869,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "If the bank rejects the complaint, you are not satisfied with its reply, or generally there is no reply for thirty days, you may approach the RBI Ombudsman under the applicable rules. Some complaints may have a different prescribed timeline. Check current rules and the filing deadline before submitting. The Ombudsman is RBI's process for examining eligible complaints against banks. The official complaint website is cms dot rbi dot org dot in.",
+      "hinglish_source": "अगर bank complaint reject कर दे, reply से आप satisfied नहीं हैं, या सामान्य तौर पर तीस दिन तक reply नहीं मिला, तो applicable rules के हिसाब से RBI Ombudsman के पास complaint ले जा सकते हैं। कुछ complaints में अलग prescribed timeline लागू हो सकती है। Current rules और filing deadline check करके ही submit कीजिए। Ombudsman मतलब RBI का eligible bank complaints देखने वाला process। Official complaint website है, सी एम एस dot आर बी आई dot ओ आर जी dot आई एन।"
+    },
+    {
+      "cue_id": 33,
+      "block": 4,
+      "topic": "Complaints do not cancel debt",
+      "estimated_start_seconds": 988.869,
+      "estimated_end_seconds": 1006.907,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Remember one thing here. A harassment complaint concerns the recovery method. It does not automatically cancel your debt. It does not guarantee a settlement discount either. But you have the right to ask for fair treatment. The payment problem and improper recovery behaviour need to be understood separately.",
+      "hinglish_source": "यहाँ एक बात याद रखिए। Harassment की complaint recovery के तरीके के बारे में है। उससे आपका debt अपने आप cancel नहीं होता। Settlement discount की guarantee भी नहीं मिलती। लेकिन fair treatment मांगना आपका right है। Payment की problem और गलत recovery behaviour, दोनों को अलग समझना जरूरी है।"
+    },
+    {
+      "cue_id": 34,
+      "block": 4,
+      "topic": "Call-filter and WhatsApp settings",
+      "estimated_start_seconds": 1006.907,
+      "estimated_end_seconds": 1031.439,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "If calls are disturbing you all day, phone settings can help too. You can block numbers used for abuse. Turn on a spam filter. WhatsApp also has a Silence Unknown Callers option. But keep a way for the bank to contact you properly. Check verified emails. Receive official letters. Pay attention to genuine legal notices.",
+      "hinglish_source": "अब calls पूरे दिन disturb कर रहे हैं, तो phone settings भी मदद कर सकती हैं। जिन numbers से abuse हो रहा है, उन्हें block कर सकते हैं। Spam filter on कर सकते हैं। WhatsApp में Silence Unknown Callers का option भी है। लेकिन bank के सही तरीके से contact करने का रास्ता खुला रखिए। Verified emails check कीजिए। Official letters लीजिए। Genuine legal notices पर ध्यान दीजिए।"
+    },
+    {
+      "cue_id": 35,
+      "block": 4,
+      "topic": "Stay reachable for genuine communication",
+      "estimated_start_seconds": 1031.439,
+      "estimated_end_seconds": 1055.249,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "If you silence every unknown caller, you could miss an important hospital, job, or delivery call. Choose settings according to your daily needs. Set a regular time to check bank messages and send necessary replies. Your entire day does not have to be disrupted by every ringtone. But completely abandoning communication is not a solution either.",
+      "hinglish_source": "हर unknown caller को silence कर दिया, तो hospital, job या delivery का जरूरी call भी miss हो सकता है। इसलिए अपने daily needs के हिसाब से settings चुनिए। Bank के messages check करने और जरूरी replies देने के लिए regular time रखिए। हर ringtone के साथ अपना पूरा दिन खराब करना जरूरी नहीं है। लेकिन communication को पूरी तरह छोड़ देना भी solution नहीं है।"
+    },
+    {
+      "cue_id": 36,
+      "block": 4,
+      "topic": "Sixty days of silence does not close debt",
+      "estimated_start_seconds": 1055.249,
+      "estimated_end_seconds": 1077.977,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Some people ask, if I do not answer calls for sixty days, will the account close? There is no such guarantee. One recovery agency's calls may stop. Another agency's calls may begin. The team may change. Fewer calls do not make the debt disappear. Keep working on your budget, written communication, and payment options. Do not mistake silence for settlement.",
+      "hinglish_source": "कुछ लोग पूछते हैं, साठ दिन calls नहीं उठाए, तो account बंद हो जाएगा? ऐसी कोई guarantee नहीं है। एक recovery agency के calls बंद हो सकते हैं। दूसरी agency के शुरू हो सकते हैं। Team बदल सकती है। Calls कम होने से debt गायब नहीं होता। इसलिए budget, written communication और payment options पर काम करते रहिए। Silence को settlement मत समझिए।"
+    },
+    {
+      "cue_id": 37,
+      "block": 4,
+      "topic": "Due date and the three-day rule",
+      "estimated_start_seconds": 1077.977,
+      "estimated_end_seconds": 1106.838,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now let's understand the payment timeline. Your statement has a due date. By that date, you need to pay the full bill, or at least the entire required minimum due. If the full bill is not paid, interest may apply. If the full minimum due is also unpaid, the account becomes overdue. Under RBI rules, an account must be past due for more than three days before late payment charges are levied or it is reported as past due to a credit bureau.",
+      "hinglish_source": "अब payment का timeline समझते हैं। Statement में एक due date होती है। उस date तक full bill, या कम से कम पूरा required minimum due pay करना होता है। Full bill pay नहीं किया, तो interest लग सकता है। पूरा minimum due भी pay नहीं हुआ, तो account overdue होता है। RBI rules के हिसाब से late payment charges लगाने या credit bureau को past due report करने से पहले account तीन दिन से ज्यादा past due होना चाहिए।"
+    },
+    {
+      "cue_id": 38,
+      "block": 4,
+      "topic": "Consequences can begin before ninety days",
+      "estimated_start_seconds": 1106.838,
+      "estimated_end_seconds": 1136.781,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "But the delay is counted from the original due date. Those three days are not a new due date. Do not plan payment assuming you will definitely get three extra days. As the delay grows, recovery calls may increase. The bank may restrict use of the account or card. Your credit report may be affected. Some people say nothing happens for ninety days. That is incorrect. Interest, charges, overdue reporting, and recovery follow-up can happen earlier.",
+      "hinglish_source": "लेकिन delay की counting original due date से होती है। ये तीन दिन नई due date नहीं हैं। यह सोचकर payment plan मत बनाइए कि तीन extra दिन मिल ही जाएंगे। Delay बढ़ने पर recovery calls बढ़ सकते हैं। Bank account या card का use restrict कर सकता है। Credit report पर असर पड़ सकता है। कुछ लोग कहते हैं, नब्बे दिन तक कुछ नहीं होता। यह सही नहीं है। Interest, charges, overdue reporting और recovery follow-up उससे पहले भी हो सकते हैं।"
+    },
+    {
+      "cue_id": 39,
+      "block": 4,
+      "topic": "NPA after unpaid minimum due for ninety days",
+      "estimated_start_seconds": 1136.781,
+      "estimated_end_seconds": 1167.085,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "If the full minimum amount due on the credit card statement remains unpaid within ninety days from the payment due date, the account enters the NPA category under RBI rules. NPA means Non-Performing Asset. The word is big, but the meaning is simple. The bank puts the account in a category where the required payment has not arrived on time. It then follows the accounting rules for that category. This does not cancel the debt. A change in the category's name does not erase the amount you owe.",
+      "hinglish_source": "Credit card statement का पूरा minimum amount due, payment due date से नब्बे दिन के अंदर भी pay नहीं हुआ, तो RBI के rules के हिसाब से account NPA category में आता है। NPA मतलब Non-Performing Asset। Word बड़ा है, मतलब simple है। Bank account को ऐसी category में डालता है जहाँ required payment time पर नहीं आया। फिर bank उस category के accounting rules follow करता है। इससे debt cancel नहीं होता। Category का नाम बदलने से आपका बाकी amount खत्म नहीं होता।"
+    },
+    {
+      "cue_id": 40,
+      "block": 4,
+      "topic": "Check an EMI conversion offer",
+      "estimated_start_seconds": 1167.085,
+      "estimated_end_seconds": 1198.472,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "If the bank offers to convert the balance into EMIs, check the details before immediately saying yes. How much must you pay each month? What is the interest rate? How many months will it continue? Is there a processing fee? How much will you pay in total? Compare it with your budget. Can you manage this EMI every month? If affordable, it may help. But if it is too high, agreeing just to escape today's pressure can bring back the same problem next month.",
+      "hinglish_source": "इस बीच bank balance को EMI में convert करने का offer दे, तो तुरंत yes बोलने से पहले details देखिए। हर महीने कितना pay करना है? Interest rate क्या है? कितने महीने चलना है? Processing fee है? आखिर में total कितना pay करेंगे? फिर अपने budget से compare कीजिए। हर महीने यह EMI manage होगी? अगर affordable है, तो मदद कर सकती है। लेकिन बहुत ज्यादा है, तो सिर्फ आज के pressure से बचने के लिए agree करने पर अगले महीने वही problem फिर आ सकती है।"
+    },
+    {
+      "cue_id": 41,
+      "block": 5,
+      "topic": "Technical write-off meaning",
+      "estimated_start_seconds": 1198.472,
+      "estimated_end_seconds": 1219.829,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now another word: write-off. You hear it and think, good, the bank has removed my debt. But first understand which kind of write-off the bank means. A technical write-off is generally a change in the bank's accounting. It does not mean the bank has forgiven your debt. Recovery can continue afterwards.",
+      "hinglish_source": "अब एक और word, write-off। सुनकर लगता है, अच्छा, bank ने मेरा debt हटा दिया। लेकिन पहले समझिए कि bank किस तरह के write-off की बात कर रहा है। Technical write-off आम तौर पर bank की accounting में change है। इसका मतलब यह नहीं कि bank ने आपका debt माफ कर दिया। Recovery आगे भी चल सकती है।"
+    },
+    {
+      "cue_id": 42,
+      "block": 5,
+      "topic": "No guaranteed 180-day write-off or discount",
+      "estimated_start_seconds": 1219.829,
+      "estimated_end_seconds": 1243.396,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "There is no single rule saying that every credit card will definitely be written off in one hundred and eighty days. Timing can depend on the bank and account. Waiting for write-off does not guarantee a large discount. If you are struggling now, you can ask the bank about workable options now. Do not sit waiting because you think write-off must happen before settlement.",
+      "hinglish_source": "और ऐसा कोई single rule नहीं है कि हर credit card एक सौ अस्सी दिन में write-off हो ही जाएगा। Timing bank और account पर depend कर सकती है। Write-off का wait करने से बड़ा discount मिलने की guarantee नहीं है। अभी परेशानी है, तो अभी bank से workable options पूछ सकते हैं। Settlement के लिए पहले write-off होना जरूरी समझकर मत बैठे रहिए।"
+    },
+    {
+      "cue_id": 43,
+      "block": 5,
+      "topic": "Bank-specific settlement offers",
+      "estimated_start_seconds": 1243.396,
+      "estimated_end_seconds": 1275.064,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Every bank's process may differ. SBI Card, HDFC, ICICI, Axis, YES Bank, Kotak, RBL, and IDFC FIRST do not necessarily have identical internal processes. Even two customers with the same bank may get different offers. Your friend says, I settled by paying only twenty-five percent. That does not mean you will receive the same offer. The account's age, balance, financial situation, and what the bank approves can all differ.",
+      "hinglish_source": "हर bank का process अलग भी हो सकता है। SBI Card, HDFC, ICICI, Axis, YES Bank, Kotak, RBL या IDFC FIRST, सबके internal processes एक जैसे जरूरी नहीं हैं। Same bank के दो customers को भी अलग offers मिल सकते हैं। आपके friend ने कहा, मैंने सिर्फ twenty-five percent देकर settle कर लिया। तो इसका मतलब यह नहीं कि आपको भी वही offer मिलेगा। Account कितना पुराना है, balance कितना है, financial situation क्या है, और bank क्या approve करता है, सब अलग हो सकता है।"
+    },
+    {
+      "cue_id": 44,
+      "block": 5,
+      "topic": "Verify offers regardless of caller tone",
+      "estimated_start_seconds": 1275.064,
+      "estimated_end_seconds": 1297.526,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Check your own written offer. Do not treat a percentage someone quoted online as a promise. Do not believe everything just because the caller speaks nicely either. A friendly person can give incorrect information. A rude caller is not a reason to ignore genuine account information. Verify first. Then decide.",
+      "hinglish_source": "अपना written offer check कीजिए। Online किसी ने एक percentage बता दिया, तो उसे promise मत समझिए। और caller अच्छा बोल रहा है, इसलिए हर बात सही मान लेना भी ठीक नहीं है। Friendly person भी गलत information दे सकता है। Caller rude है, इसलिए account की genuine information ignore करना भी ठीक नहीं है। पहले verify कीजिए। फिर decision लीजिए।"
+    },
+    {
+      "cue_id": 45,
+      "block": 5,
+      "topic": "Settlement requires agreement and approval",
+      "estimated_start_seconds": 1297.526,
+      "estimated_end_seconds": 1321.461,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "What actually is settlement? The bank agrees to accept an agreed amount lower than its total claim. It waives the remaining amount according to the agreed conditions. That means it agrees to give up its claim to that remaining amount on those terms. Both sides need to agree. Merely sending your request does not create a settlement. The bank's approval is also required.",
+      "hinglish_source": "अब settlement actually क्या है? Bank अपने total claim से कम, एक agreed amount लेने के लिए agree करता है। बाकी amount को agreed conditions के हिसाब से waive करता है। मतलब उस बाकी amount की मांग छोड़ने के लिए तैयार होता है। दोनों sides का agree होना जरूरी है। आपने request भेज दी, बस उससे settlement नहीं हो जाता। Bank की approval भी चाहिए।"
+    },
+    {
+      "cue_id": 46,
+      "block": 5,
+      "topic": "Make an affordable settlement request",
+      "estimated_start_seconds": 1321.461,
+      "estimated_end_seconds": 1347.605,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "You can say, this is what I can arrange now. I cannot promise more. Please consider a full and final settlement. Keep the amount and deadline realistic. If you need a very expensive new loan to pay the settlement, think for a moment. Is the problem being solved? Or will you simply owe someone else now? An attractive offer and an affordable offer are different things.",
+      "hinglish_source": "आप कह सकते हैं, अभी मैं इतना arrange कर सकता हूँ। इससे ज्यादा promise नहीं कर सकता। Please full and final settlement consider कीजिए। Amount और deadline realistic रखिए। Settlement भरने के लिए बहुत महंगा नया loan लेना पड़ रहा है, तो एक बार सोचिए। Problem solve हो रही है? या बस अब किसी दूसरे को पैसे देने पड़ेंगे? Offer अच्छा लगना और उसे afford कर पाना, दोनों अलग बातें हैं।"
+    },
+    {
+      "cue_id": 47,
+      "block": 5,
+      "topic": "One-lakh and thirty-thousand example",
+      "estimated_start_seconds": 1347.605,
+      "estimated_end_seconds": 1373.381,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Suppose the balance is one lakh rupees. A caller says, pay thirty thousand and we will close everything. You feel relieved, right? But ask for the official settlement letter before paying. Confirm the offer through the bank's verified customer care. This is just an example. There is no guarantee your account will settle for thirty thousand. A lower amount is useful only when the offer is genuine and the conditions are clear.",
+      "hinglish_source": "मान लीजिए एक लाख रुपये का balance है। Caller बोलता है, तीस हजार भर दो, सब close कर देंगे। सुनकर राहत मिलती है, है ना? लेकिन payment से पहले official settlement letter मांगिए। Bank के verified customer care से offer confirm कीजिए। यह सिर्फ example है। तीस हजार में आपका account settle होगा, ऐसी guarantee नहीं है। कम amount तभी useful है जब offer असली हो और conditions clear हों।"
+    },
+    {
+      "cue_id": 48,
+      "block": 5,
+      "topic": "Settlement-letter terms and reporting",
+      "estimated_start_seconds": 1373.381,
+      "estimated_end_seconds": 1401.735,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "The letter should show your name, account identification, settlement amount, payment dates, and any instalment schedule. What happens to the remaining dues after you pay the agreed amount fully and on time? Will anything else be claimed? How will the account appear on your credit report? Understand these points before paying. Use an offer from an official bank channel, or have the bank confirm the letter's authorisation. Do not pay simply based on a WhatsApp screenshot.",
+      "hinglish_source": "Letter में आपका नाम, account की पहचान, settlement amount, payment dates और instalments हैं तो उनका schedule होना चाहिए। Agreed amount पूरा और time पर pay करने के बाद बाकी dues का क्या होगा? क्या कुछ और claim किया जाएगा? Credit report में account कैसे दिखेगा? ये points payment से पहले समझिए। Official bank channel से आया offer use कीजिए, या उस letter की authorisation bank से confirm कीजिए। सिर्फ WhatsApp screenshot देखकर payment मत कर दीजिए।"
+    },
+    {
+      "cue_id": 49,
+      "block": 5,
+      "topic": "Clarify payments before the letter",
+      "estimated_start_seconds": 1401.735,
+      "estimated_end_seconds": 1426.038,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Someone says, pay a little first; we will give you the letter later. Ask what that payment will count towards. Is it part of an approved settlement? Or just an ordinary payment adjusted against the outstanding balance? You should not discover later that the caller said one thing but the bank recorded the payment differently. The payment's purpose should be clear beforehand.",
+      "hinglish_source": "कोई कहता है, पहले थोड़ा pay करो। Letter बाद में देंगे। तो पूछिए, यह payment किस चीज में count होगा? Approved settlement का हिस्सा है? या सिर्फ normal payment है जो outstanding balance में adjust होगा? बाद में यह पता नहीं चलना चाहिए कि caller ने एक बात कही थी, लेकिन bank ने payment अलग तरीके से record किया। Payment का purpose पहले clear होना चाहिए।"
+    },
+    {
+      "cue_id": 50,
+      "block": 5,
+      "topic": "Authorised payment channels and instalments",
+      "estimated_start_seconds": 1426.038,
+      "estimated_end_seconds": 1453.656,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Pay only using a method authorised by the bank. Use its official app, website, or a channel the bank has confirmed. Do not send money to an agent's personal UPI account. Do not hand over cash. Keep the receipt. If there are instalments, follow the dates carefully. Ask beforehand what happens if you miss one instalment. Sometimes a missed payment can break the settlement conditions. The dates matter as well as the total amount.",
+      "hinglish_source": "Payment सिर्फ bank के authorised method से कीजिए। Official app, website या bank से confirm किया हुआ channel use कीजिए। Agent के personal UPI account में पैसे मत भेजिए। Cash हाथ में मत दीजिए। Receipt जरूर रखिए। Instalments हैं, तो dates ध्यान से follow कीजिए। एक instalment miss हो गई, तो क्या होगा, यह पहले पूछिए। कभी missed payment से settlement की conditions टूट सकती हैं। इसलिए सिर्फ total amount नहीं, dates भी जरूरी हैं।"
+    },
+    {
+      "cue_id": 51,
+      "block": 5,
+      "topic": "Receipts, completion certificate and case closure",
+      "estimated_start_seconds": 1453.656,
+      "estimated_end_seconds": 1476.118,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "After completing all payments, get written confirmation. Ask for the applicable No Dues Certificate or settlement completion certificate. If a court case is already running, confirm how it will be closed. A phone assurance saying do not worry, we will do it, is not enough. There should be a proper closure record according to the final agreement.",
+      "hinglish_source": "सारी payments पूरी होने के बाद written confirmation लीजिए। जो applicable हो, No Dues Certificate या settlement completion certificate मांगिए। Court case पहले से चल रहा है, तो वह कैसे close होगा, यह भी confirm कीजिए। Phone पर चिंता मत करो, हम कर देंगे बोलना काफी नहीं है। जो final agreement है, उसके हिसाब से closure का proper record होना चाहिए।"
+    },
+    {
+      "cue_id": 52,
+      "block": 5,
+      "topic": "What regular Lok Adalat does",
+      "estimated_start_seconds": 1476.118,
+      "estimated_end_seconds": 1500.421,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now, Lok Adalat. Some people become nervous hearing the name. Will I have to go to court? What will they ask? A regular Lok Adalat gives both sides an opportunity to discuss and agree on a settlement. An eligible matter can reach it before a court case, or while a case is already running. Listen to the offer. Read the terms. Check whether you can afford them.",
+      "hinglish_source": "अब Lok Adalat की बात। नाम सुनकर कुछ लोग घबरा जाते हैं। Court जाना पड़ेगा? वहाँ क्या पूछेंगे? Regular Lok Adalat में दोनों sides को बात करके settlement पर agree करने का मौका मिलता है। Eligible मामला court case से पहले भी वहाँ पहुंच सकता है, या case चल रहा हो तब भी। Offer सुनिए। Terms पढ़िए। देखिए कि आप afford कर सकते हैं या नहीं।"
+    },
+    {
+      "cue_id": 53,
+      "block": 6,
+      "topic": "An agreed Lok Adalat award is binding",
+      "estimated_start_seconds": 1500.421,
+      "estimated_end_seconds": 1530.435,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "You do not have to accept every offer simply because you went there. In a regular Lok Adalat, both sides' agreement is required. But once an agreed settlement becomes a Lok Adalat award, it is final and binding. It has legal effect like a civil court decree. It is not merely a conversation after which you leave. You must follow it. There is no ordinary appeal route. Do not sign without understanding the amount, dates, and consequences.",
+      "hinglish_source": "सिर्फ वहाँ गए हैं, इसलिए हर offer accept करना जरूरी नहीं है। Regular Lok Adalat में दोनों sides की agreement जरूरी है। लेकिन जब agreed settlement, Lok Adalat के award में बदल जाता है, तो वह final और binding होता है। Civil court के decree की तरह legal effect होता है। यानी सिर्फ बात करके वापस आने जैसा नहीं है। उसे follow करना होता है। Ordinary appeal का रास्ता नहीं होता। इसलिए amount, dates और consequences समझे बिना sign मत कीजिए।"
+    },
+    {
+      "cue_id": 54,
+      "block": 6,
+      "topic": "Questions before accepting a Lok Adalat offer",
+      "estimated_start_seconds": 1530.435,
+      "estimated_end_seconds": 1548.222,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "You can ask, after I complete this payment, will anything else remain? What happens if I miss one payment? What will be updated in the credit report? These are completely reasonable questions. Ask again if you do not understand. It is better to get clarity first than to say yes under pressure.",
+      "hinglish_source": "आप पूछ सकते हैं, यह payment पूरा करने के बाद कुछ और बाकी रहेगा? एक payment miss हुई, तो क्या होगा? Credit report में क्या update होगा? ये बिल्कुल सही questions हैं। समझ नहीं आया, तो फिर पूछिए। Pressure में yes बोलने से बेहतर है पहले clear होना।"
+    },
+    {
+      "cue_id": 55,
+      "block": 6,
+      "topic": "CIBIL: Settled versus Closed",
+      "estimated_start_seconds": 1548.222,
+      "estimated_end_seconds": 1577.865,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "After settlement, the next worry arrives. What happens to my CIBIL score? Will I ever get another loan? Settlement can affect future approvals. But do not assume your financial life is over. First understand two words: Settled and Closed. They are not the same. Settled generally means the lender accepted less than the full dues. Closed is a different status, generally associated with full repayment.",
+      "hinglish_source": "Settlement के बाद अगली tension आती है। अब CIBIL score का क्या होगा? कभी फिर loan मिलेगा या नहीं? Settlement future approvals पर असर डाल सकता है। लेकिन यह मत मानिए कि आपकी financial life खत्म हो गई। पहले दो words समझिए। Settled और Closed। दोनों एक जैसे नहीं हैं। Settled आम तौर पर बताता है कि lender ने पूरे dues से कम amount accept किया। Closed अलग status है, जो आम तौर पर full repayment से जुड़ा होता है।"
+    },
+    {
+      "cue_id": 56,
+      "block": 6,
+      "topic": "No Dues Certificate versus report status",
+      "estimated_start_seconds": 1577.865,
+      "estimated_end_seconds": 1598.616,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "When deciding on a new loan or card, a lender may view a Settled status negatively. Receiving a No Dues Certificate does not necessarily mean the credit report will automatically show Closed. Completing the settlement payment is one thing. The status in the credit report is another. You need to check both.",
+      "hinglish_source": "नया loan या card देते समय lender, Settled status को negative तरीके से देख सकता है। No Dues Certificate मिल गया, तो credit report अपने आप Closed हो जाएगी, ऐसा जरूरी नहीं है। Settlement की payment पूरी होना एक बात है। Credit report में status क्या है, यह दूसरी बात है। इसलिए दोनों check करने होंगे।"
+    },
+    {
+      "cue_id": 57,
+      "block": 6,
+      "topic": "Stabilise finances before rebuilding credit",
+      "estimated_start_seconds": 1598.616,
+      "estimated_end_seconds": 1621.59,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Can you improve your credit again? Yes, but there is no instant reset. First make your income and household budget more stable. Try to build a small emergency fund. If the old debt has been settled, you do not need a new credit card the very next day. Give yourself some breathing space first. Then decide what to do next based on your situation.",
+      "hinglish_source": "अब credit दोबारा improve कर सकते हैं? हाँ, लेकिन instant reset नहीं होता। पहले income और घर का budget थोड़ा stable कीजिए। छोटा emergency fund बनाने की कोशिश कीजिए। पुराना debt settle हुआ है, तो अगले ही दिन नया credit card लेना जरूरी नहीं है। पहले खुद को थोड़ा breathing space दीजिए। फिर अपनी situation के हिसाब से आगे का decision लीजिए।"
+    },
+    {
+      "cue_id": 58,
+      "block": 6,
+      "topic": "FD-backed secured-card limitations",
+      "estimated_start_seconds": 1621.59,
+      "estimated_end_seconds": 1649.381,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Later, if your needs and budget allow it, you can consider an FD-backed secured card. This is a credit card issued against a fixed deposit. The bank decides who is approved, how much deposit is needed, and what limit is offered. Simply making a fixed deposit does not guarantee approval. Do not lock all your emergency savings away just to get a new card. Money you need in an emergency should remain available too.",
+      "hinglish_source": "बाद में जरूरत और budget सही हो, तो FD-backed secured card देख सकते हैं। यह ऐसा credit card है जो fixed deposit के against दिया जाता है। कौन approve होगा, कितनी FD चाहिए और limit कितनी मिलेगी, bank decide करता है। सिर्फ FD बना देने से approval की guarantee नहीं होती। और नया card लेने के लिए अपनी पूरी emergency savings lock मत कर दीजिए। Emergency में use करने वाले पैसे available भी रहने चाहिए।"
+    },
+    {
+      "cue_id": 59,
+      "block": 6,
+      "topic": "Low affordable use and full on-time payment",
+      "estimated_start_seconds": 1649.381,
+      "estimated_end_seconds": 1677.172,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "If you get a card, use it for small, planned expenses. Pay the full bill by the due date. Keep spending low and affordable. Using ten or twenty percent of the limit may be manageable for some people. But no exact percentage guarantees a higher score. What matters is paying on time, spending within your budget, avoiding repeated unnecessary applications, and regularly checking your credit report.",
+      "hinglish_source": "Card मिलता है, तो छोटी, पहले से planned expenses के लिए use कीजिए। Full bill due date तक pay कीजिए। Spending कम और affordable रखिए। Limit का ten या twenty percent use करना कुछ लोगों के लिए manageable हो सकता है। लेकिन कोई exact percentage higher score की guarantee नहीं देता। जरूरी है payment time पर करना, budget के अंदर spend करना, बार-बार बिना जरूरत नए applications न देना, और credit report check करते रहना।"
+    },
+    {
+      "cue_id": 60,
+      "block": 6,
+      "topic": "Dispute inaccurate credit-report entries",
+      "estimated_start_seconds": 1677.172,
+      "estimated_end_seconds": 1704.222,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "After settlement, check whether the bank updated the report. Is the balance incorrect? Is the overdue status wrong? Does the same account appear twice? Raise a dispute with the bank and credit bureau. A dispute is a request to correct an inaccurate entry. But negative history that is correct does not disappear merely because you request it. Correcting a report's error and erasing an accurate old record are different things.",
+      "hinglish_source": "Settlement के बाद देखिए कि bank ने report update की या नहीं। Balance गलत है? Overdue गलत दिख रहा है? Same account दो बार दिख रहा है? तो bank और credit bureau के पास dispute raise कीजिए। Dispute मतलब गलत entry की correction के लिए request। लेकिन जो negative history सही है, वह सिर्फ आपकी request से हट नहीं जाती। Report की गलती ठीक कराना और सही पुराना record मिटाना, दोनों अलग हैं।"
+    },
+    {
+      "cue_id": 61,
+      "block": 6,
+      "topic": "No guaranteed score-recovery date",
+      "estimated_start_seconds": 1704.222,
+      "estimated_end_seconds": 1731.643,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Be careful with promises that your score will reach seven hundred and fifty in eighteen months, or everything will be clean in twenty-four months. Nobody can promise that for every person. Your earlier history, current accounts, payments, and reporting all matter. Instead of chasing a fixed date, build habits you can follow over time. One difficult phase does not decide your whole life.",
+      "hinglish_source": "और ऐसे promises से बचिए कि अठारह महीने में score seven hundred and fifty हो जाएगा। या चौबीस महीने में सब साफ हो जाएगा। हर person के लिए ऐसा promise कोई नहीं कर सकता। आपकी पुरानी history, current accounts, payments और reporting, सब असर डालते हैं। इसलिए किसी fixed date के पीछे भागने के बजाय ऐसी habits बनाइए जिन्हें लंबे time तक follow कर सकें। एक मुश्किल phase आपकी पूरी life decide नहीं करता।"
+    },
+    {
+      "cue_id": 62,
+      "block": 6,
+      "topic": "Ask a trusted person for support",
+      "estimated_start_seconds": 1731.643,
+      "estimated_end_seconds": 1766.844,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "If you are scared, or do not know how to tell your family, start with someone you trust. Someone in your family you feel safe with, or a close friend. You do not have to carry the entire problem alone. You can say, I am having money problems. These are my dues. This is my income. I want to follow this plan. I need some support. Asking for support is not a weakness. Talking to the right person can ease some pressure and help you think.",
+      "hinglish_source": "अब अगर डर लग रहा है, या समझ नहीं आ रहा कि घर में कैसे बताएं, तो किसी trusted person से शुरू कीजिए। Family में कोई ऐसा person जिससे safe feel करते हैं। या close friend। पूरी problem अकेले उठाना जरूरी नहीं है। आप कह सकते हैं, मेरे पास पैसे की problem है। ये मेरे dues हैं। इतनी income है। मैं यह plan follow करना चाहता हूँ। मुझे थोड़ा support चाहिए। Support मांगना कमजोरी नहीं है। सही person से बात करने पर pressure थोड़ा कम हो सकता है और सोचने में मदद मिल सकती है।"
+    },
+    {
+      "cue_id": 63,
+      "block": 6,
+      "topic": "Recap: step one",
+      "estimated_start_seconds": 1766.844,
+      "estimated_end_seconds": 1788.336,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Let's put the whole explanation into eight simple steps. Step one: list every card and balance in one place. Check your income, essential expenses, and money available for repayment. Check the salary account terms too, and any risk from dues with that same bank. Clear numbers make the plan realistic.",
+      "hinglish_source": "चलिये, अब पूरी बात आठ simple steps में रख लेते हैं। पहला step। हर card और उसका balance एक जगह लिखिए। Income, जरूरी खर्च और payment के लिए बचने वाले पैसे check कीजिए। Salary account के terms भी देखिए कि उसी bank के dues से क्या risk हो सकता है। Numbers clear होंगे, तो plan भी realistic बनेगा।"
+    },
+    {
+      "cue_id": 64,
+      "block": 6,
+      "topic": "Recap: steps two and three",
+      "estimated_start_seconds": 1788.336,
+      "estimated_end_seconds": 1806.864,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Step two: explain your situation in writing through each bank's official complaint channel. Ask for a payment option you can afford. Save replies and complaint numbers. Step three: manage calls through phone settings. But keep checking verified bank emails, letters, and genuine legal notices.",
+      "hinglish_source": "दूसरा step। हर bank के official complaint channel पर अपनी situation लिखकर बताइए। ऐसा payment option पूछिए जो आप afford कर सकते हैं। Replies और complaint numbers save रखिए। तीसरा step। Phone settings से calls manage कीजिए। लेकिन bank के verified emails, letters और genuine legal notices check करते रहिए।"
+    },
+    {
+      "cue_id": 65,
+      "block": 7,
+      "topic": "Recap: steps four and five",
+      "estimated_start_seconds": 1806.864,
+      "estimated_end_seconds": 1833.353,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Step four: examine the full cost before taking a new loan to pay old debt. Understand what minimum payments do and how much interest may continue. Do not promise more than your budget allows. Step five: save evidence of threats or harassment and complain. Use the RBI complaint process according to your needs and eligibility. If there is immediate danger, call one one two.",
+      "hinglish_source": "चौथा step। पुराने debt को भरने के लिए नया loan लेने से पहले पूरा cost देखिए। Minimum payment क्या करती है और कितना interest चल सकता है, इसे समझिए। Budget से ज्यादा payment का promise मत कीजिए। पाँचवां step। Threats या harassment का evidence save कीजिए और complaint कीजिए। जरूरत और eligibility के हिसाब से RBI complaint process use कीजिए। Immediate danger हो, तो one one two पर call कीजिए।"
+    },
+    {
+      "cue_id": 66,
+      "block": 7,
+      "topic": "Recap: steps six and seven",
+      "estimated_start_seconds": 1833.353,
+      "estimated_end_seconds": 1852.652,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Step six: NPA, write-off, and settlement are three different things. Write-off does not cancel the debt. Ask the bank about options that are available and affordable now. Step seven: verify the settlement letter. Make the amount, dates, waiver of remaining dues, and credit reporting clear. Pay through an authorised method. Keep receipts and get confirmation of completion.",
+      "hinglish_source": "छठा step। NPA, write-off और settlement तीन अलग चीजें हैं। Write-off debt cancel नहीं करता। Bank से अभी available और affordable options पूछिए। सातवां step। Settlement letter verify कीजिए। Amount, dates, बाकी dues की waiver और credit reporting clear कीजिए। Authorised method से payment कीजिए। Receipts और completion confirmation जरूर लीजिए।"
+    },
+    {
+      "cue_id": 67,
+      "block": 7,
+      "topic": "Recap: step eight",
+      "estimated_start_seconds": 1852.652,
+      "estimated_end_seconds": 1869.681,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Step eight: work on making your income stable. Build emergency savings. Check your credit report. If you later use suitable credit for your needs, use it carefully. Pay the full bill on time. These actions gradually build a better routine.",
+      "hinglish_source": "आठवां step। Income को stable करने पर काम कीजिए। Emergency savings बनाइए। Credit report check कीजिए। बाद में आपकी जरूरत के हिसाब से suitable credit use करें, तो सोच-समझकर करें। और पूरा bill time पर pay करें। बस यही धीरे-धीरे एक बेहतर routine बनाता है।"
+    },
+    {
+      "cue_id": 68,
+      "block": 7,
+      "topic": "Take one practical step today",
+      "estimated_start_seconds": 1869.681,
+      "estimated_end_seconds": 1894.656,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Now ask yourself, what can I do today? You do not have to solve the entire problem today. But can you take one useful step? List your accounts? Check one statement? Send one email? Speak to someone you trust? Start there. When one task becomes clear, the next one can feel a little easier.",
+      "hinglish_source": "अब खुद से पूछिए, आज मैं क्या कर सकता हूँ? सारी problem आज ही solve करना जरूरी नहीं है। लेकिन एक useful step ले सकते हैं? अपने accounts की list बना सकते हैं? एक statement check कर सकते हैं? एक email भेज सकते हैं? किसी trusted person से बात कर सकते हैं? शुरुआत वहीं से कीजिए। एक काम clear होगा, तो अगला काम थोड़ा आसान लगेगा।"
+    },
+    {
+      "cue_id": 69,
+      "block": 7,
+      "topic": "Responsibility and respectful treatment",
+      "estimated_start_seconds": 1894.656,
+      "estimated_end_seconds": 1913.198,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "You owe money. That is true. But you also have the right to be treated with respect. Understand your responsibility honestly. Know your rights too. Both can exist together. You do not have to live only in fear. You can move forward by understanding the facts, keeping records, and making a realistic plan.",
+      "hinglish_source": "आपको पैसे देने हैं, यह सही है। लेकिन आपको respect मिलने का right भी है। अपनी responsibility को honestly समझिए। अपने rights भी जानिए। दोनों साथ में हो सकते हैं। सिर्फ डर में रहना जरूरी नहीं है। Facts समझकर, record रखकर और realistic plan बनाकर आगे बढ़ सकते हैं।"
+    },
+    {
+      "cue_id": 70,
+      "block": 7,
+      "topic": "Personal experience and next-video promise",
+      "estimated_start_seconds": 1913.198,
+      "estimated_end_seconds": 1943.85,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "I want to share something personal too. I am also handling this kind of situation right now. That is why I understand how tiring this pressure can be. In the next video, I will show my actual process. How I talk to the banks. Which letters I send. What replies arrive. And which decisions I make. Your case may be different from mine. But seeing the process may help you ask the right questions about your account.",
+      "hinglish_source": "और एक personal बात बताना चाहता हूँ। मैं भी अभी ऐसी situation handle कर रहा हूँ। इसलिए समझ सकता हूँ कि यह pressure कितना थका देता है। अगले video में अपना actual process दिखाऊंगा। Banks से कैसे बात करता हूँ। कौन से letters भेजता हूँ। क्या replies आते हैं। और कौन से decisions लेता हूँ। आपका case मेरे case से अलग हो सकता है। लेकिन process देखने से आपको अपने account के लिए सही questions पूछने में मदद मिल सकती है।"
+    },
+    {
+      "cue_id": 71,
+      "block": 7,
+      "topic": "Subscribe, notifications and sharing",
+      "estimated_start_seconds": 1943.85,
+      "estimated_end_seconds": 1971.853,
+      "timing_status": "estimated_from_source_word_share_within_clip",
+      "english_translation": "Subscribe so that you do not miss the next video. Tap the bell icon and select All notifications. If this explanation helped, share it with someone who needs it. They may be handling the same stress alone and unable to tell anyone. Your message could help them pause, think, and take their first useful step.",
+      "hinglish_source": "इसलिए subscribe कर लीजिए, ताकि अगला video miss न हो। Bell icon पर tap करके All notifications select कर लें। और यह explanation useful लगा, तो किसी ऐसे person को share कीजिए जिसे इसकी जरूरत है। हो सकता है वह भी यही tension अकेले handle कर रहा हो और किसी को बता नहीं पा रहा हो। आपके एक message से उसे थोड़ा रुककर सोचने और पहला सही step लेने में मदद मिल सकती है।"
+    }
+  ]
+}

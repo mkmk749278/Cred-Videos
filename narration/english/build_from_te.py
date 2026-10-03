@@ -8,8 +8,11 @@ Sentences are aligned monotonically (DP over word-overlap similarity), giving a 
 Telugu-second -> English-second. Every module boundary, anchor, insert window, item and demo beat of the
 Telugu edition is carried through that map; module boundaries snap to English sentence edges.
 
-Usage: python3 narration/english/build_from_te.py   (then: python3 narration/process_telugu.py --lang enh)
+Usage: python3 narration/english/build_from_te.py [--lang enh|hi]   (then: python3 narration/process_telugu.py --lang enh|hi)
+  hi: the creator's Hinglish narration (narration/hinglish/full.mp3); out/hi/translate.json is faster-whisper's
+      English translation of it (task=translate), aligned the same way -> narration/hinglish/{map,inserts}.json
 """
+import argparse
 import json
 import os
 import re
@@ -20,6 +23,15 @@ import numpy as np
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 from make_publish_kit_te import transcript  # noqa: E402
+
+LANG = 'enh'
+SRC = {'enh': ('out/en/whisper.json', 'narration/english', 'out/en'), 'hi': ('out/hi/translate.json', 'narration/hinglish', 'out/hi')}
+
+
+def P(k):
+    w, d, o = SRC[LANG]
+    return os.path.join(ROOT, {'whisper': w, 'dir': d, 'out': o}[k])
+
 
 STOP = set('the a an and or of to in is it you your i we that this for on be are with as at by do not no if so can will may but have has was what how'.split())
 NUM = {'one': '1', 'two': '2', 'three': '3', 'four': '4', 'five': '5', 'eight': '8', 'seven': '7', 'ten': '10', 'twenty': '20', 'thirty': '30', 'ninety': '90', 'sixty': '60', 'lakh': '100000', 'hundred': '100', 'fifty': '50', 'forty': '40'}
@@ -42,7 +54,7 @@ def sim(a, b):
 
 
 def english_sentences():
-    segs = json.load(open(os.path.join(ROOT, 'out/en/whisper.json')))
+    segs = json.load(open(P('whisper')))
     words = [w for s in segs for w in s['words']]
     sents, cur = [], []
     for w in words:
@@ -56,7 +68,7 @@ def english_sentences():
 
 
 def whisper_words():
-    segs = json.load(open(os.path.join(ROOT, 'out/en/whisper.json')))
+    segs = json.load(open(P('whisper')))
     return [w for s in segs for w in s['words']]
 
 
@@ -112,6 +124,10 @@ def align(A, B):
 
 
 def main():
+    global LANG
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--lang', default='enh', choices=list(SRC))
+    LANG = ap.parse_args().lang
     A = transcript()  # [start, end, text] in Telugu seconds
     B = english_sentences()
     path, ta, tb = align(A, B)
@@ -134,8 +150,8 @@ def main():
     xs.append(tel_end + 60)
     ys.append(B[-1]['e'] + 2 + 60 * (B[-1]['e'] / A[-1][1]))
     f = lambda t: round(float(np.interp(t, xs, ys)), 2)  # noqa: E731
-    json.dump({'xs': xs, 'ys': ys}, open(os.path.join(ROOT, 'narration/english/te_to_en.json'), 'w'))
-    with open(os.path.join(ROOT, 'out/en/align_report.tsv'), 'w') as fh:
+    json.dump({'xs': xs, 'ys': ys}, open(os.path.join(P('dir'), 'te_to_en.json'), 'w'))
+    with open(os.path.join(P('out'), 'align_report.tsv'), 'w') as fh:
         for r in report:
             fh.write('\t'.join(map(str, r)) + '\n')
 
@@ -143,7 +159,7 @@ def main():
     ends = [s['e'] for s in B]
     snap_start = lambda t: min(starts, key=lambda s: abs(s - t))  # noqa: E731
     mp_te = json.load(open(os.path.join(ROOT, 'narration/telugu/map.json')))
-    ov = json.load(open(os.path.join(ROOT, 'narration/english/overrides.json')))
+    ov = json.load(open(os.path.join(P('dir'), 'overrides.json')))
     res = resolver()
     order = ['hook'] + [f'm{k:02d}' for k in range(1, 14)]
     mp = {}
@@ -158,7 +174,7 @@ def main():
         for a in mp[k]['anchors']:
             if a[0] in ov.get('map', {}).get(k, {}):
                 a[1] = res(ov['map'][k][a[0]], a[1])
-    json.dump(mp, open(os.path.join(ROOT, 'narration/english/map.json'), 'w'), indent=1)
+    json.dump(mp, open(os.path.join(P('dir'), 'map.json'), 'w'), indent=1)
 
     ins_te = json.load(open(os.path.join(ROOT, 'narration/telugu/inserts.json')))
     out = {}
@@ -183,7 +199,7 @@ def main():
                 ins['to'] = res(o['to'], ins['to'])
             lst.append(ins)
         out[k] = lst
-    json.dump(out, open(os.path.join(ROOT, 'narration/english/inserts.json'), 'w'), ensure_ascii=False, indent=1)
+    json.dump(out, open(os.path.join(P('dir'), 'inserts.json'), 'w'), ensure_ascii=False, indent=1)
     good = sum(1 for r in report if r[2] >= 0.25)
     print(f'telugu sentences {len(A)}, english sentences {len(B)}, matched pairs {len(report)} (good {good}), map points {len(xs)}')
     for k in order:

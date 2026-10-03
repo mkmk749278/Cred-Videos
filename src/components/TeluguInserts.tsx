@@ -3,6 +3,7 @@ import {useCurrentFrame, useVideoConfig} from 'remotion';
 import {interpolate} from '../lib/safeInterpolate';
 import insertsTe from '../data/inserts_te.json';
 import insertsEnh from '../data/inserts_enh.json';
+import insertsHi from '../data/inserts_hi.json';
 import {LANG, SHOW_TE} from '../lib/lang';
 import {C, MONO, alpha} from '../theme';
 import {CLAMP, SNAPPY, spr} from '../lib/anim';
@@ -35,7 +36,7 @@ export type Insert = {
   right?: string;
 };
 
-const DATA = (LANG === 'enh' ? insertsEnh : insertsTe) as unknown as Record<string, Insert[]>;
+const DATA = (LANG === 'enh' ? insertsEnh : LANG === 'hi' ? insertsHi : insertsTe) as unknown as Record<string, Insert[]>;
 /** supporting lines (Telugu, notes): brighter than C.muted so they read on a phone */
 const SUPPORT = '#D3DCE8';
 const TE_FONT = "'Noto Sans Telugu', 'Inter', sans-serif";

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate Telugu demo inserts: ordered windows, beats inside windows, and every beat key a demo reads is defined."""
 import json, re, glob, sys
-ins = json.load(open('narration/english/inserts.json' if 'enh' in sys.argv else 'narration/telugu/inserts.json'))
+ins = json.load(open('narration/english/inserts.json' if 'enh' in sys.argv else 'narration/hinglish/inserts.json' if 'hi' in sys.argv else 'narration/telugu/inserts.json'))
 idx = open('src/demos/index.tsx').read()
 name2comp = dict(re.findall(r"^\s+(\w+): (\w+),$", idx, re.M))
 src = {}

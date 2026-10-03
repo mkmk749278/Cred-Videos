@@ -1,7 +1,7 @@
 #!/bin/bash
 # Fetch every chunk a worker has pushed to <prefix>/<Id> that is not yet local, and make its review sheets
 # (out/review/<Id>_N.jpg, one frame every 5 s). Look at every sheet before stitching.
-# Usage: scripts/fanout_ingest.sh <prefix> <lang: en|te|enh> [Id to skip ...]   (skip = stale chunks being re-rendered)
+# Usage: scripts/fanout_ingest.sh <prefix> <lang: en|te|enh|hi> [Id to skip ...]   (skip = stale chunks being re-rendered)
 cd "$(dirname "$0")/.."
 P=$1; L=${2:-en}; shift 2
 CH=out/chunks; [ "$L" != en ] && CH=out/chunks_$L

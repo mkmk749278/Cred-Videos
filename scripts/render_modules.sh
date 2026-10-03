@@ -1,12 +1,12 @@
 #!/bin/bash
 # Render modules one at a time into out/chunks/<Id>.mp4 (finished ones are skipped). No stitching.
 # Usage: scripts/render_modules.sh Scene01 Scene07@0-3674:Scene07_a ...   (log: out/render_modules.log)
-# Telugu / creator-English editions: REMOTION_LANG=te|enh scripts/render_modules.sh ...  -> out/chunks_te|enh/, log out/render_modules_te|enh.log
+# Telugu / creator-English editions: REMOTION_LANG=te|enh|hi scripts/render_modules.sh ...  -> out/chunks_te|enh/, log out/render_modules_te|enh.log
 set -u
 cd "$(dirname "$0")/.."
 LANGV=${REMOTION_LANG:-en}
 CH=out/chunks; LOG=out/render_modules.log; ENVF=()
-if [ "$LANGV" = te ] || [ "$LANGV" = enh ]; then
+if [ "$LANGV" = te ] || [ "$LANGV" = enh ] || [ "$LANGV" = hi ]; then
   CH=out/chunks_$LANGV; LOG=out/render_modules_$LANGV.log
   echo "REMOTION_LANG=$LANGV" > out/lang_$LANGV.env; ENVF=(--env-file=out/lang_$LANGV.env)
 fi

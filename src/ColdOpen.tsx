@@ -17,6 +17,8 @@ const hook = timing.hook as unknown as {duration: number; sentences: {words: W[]
 const WORDS: W[] = hook.sentences.flatMap((s) => s.words);
 const VO_AT = 10; // frames before the hook VO starts
 const vf = (sec: number) => VO_AT + Math.round(sec * FPS);
+/** Hinglish hook: when each roadmap question is asked (hook seconds, from out/hi/translate.json via remap) */
+const HI_Q = [0, 0, 0, 0, 0, 0];
 const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9]/g, '');
 const at = (phrase: string) => {
   const ps = phrase.split(' ').map(norm);
@@ -125,6 +127,16 @@ export const ColdOpen: React.FC = () => {
               {a: vf(41.7), t: 'Asking for a settlement', c: C.amber, ic: 'letter' as RoadIconKind},
               {a: vf(43.46), t: 'Improving your credit score', c: C.amber, ic: 'report' as RoadIconKind},
             ]
+          : LANG === 'hi'
+          ? [
+              // the Hinglish hook asks the same questions (seconds in the hook, after pause shortening)
+              {a: vf(HI_Q[0]), t: 'When you can’t pay the bill', c: C.cyan, ic: 'statement' as RoadIconKind},
+              {a: vf(HI_Q[1]), t: 'What the bank can actually do', c: C.cyan, ic: 'bank' as RoadIconKind},
+              {a: vf(HI_Q[2]), t: 'What your rights are', c: C.emerald, ic: 'shield' as RoadIconKind},
+              {a: vf(HI_Q[3]), t: 'How to handle recovery calls', c: C.emerald, ic: 'phone' as RoadIconKind},
+              {a: vf(HI_Q[4]), t: 'When and how to ask for settlement', c: C.amber, ic: 'letter' as RoadIconKind},
+              {a: vf(HI_Q[5]), t: 'Improving your credit score', c: C.amber, ic: 'report' as RoadIconKind},
+            ]
           : LANG === 'te'
           ? [
               // the Telugu hook asks six questions; one line per question, on its word
@@ -147,7 +159,7 @@ export const ColdOpen: React.FC = () => {
             </div>
           );
         })}
-        {LANG !== 'enh' && f >= cCase - 4 && titleIn <= 6 && (
+        {LANG !== 'enh' && LANG !== 'hi' && f >= cCase - 4 && titleIn <= 6 && (
           <div style={{marginTop: 18, display: 'flex', alignItems: 'center', gap: 18, padding: '18px 26px', borderRadius: 20, background: alpha(C.gold, 0.14), border: `2px solid ${alpha(C.gold, 0.7)}`, opacity: spr(f, fps, cCase - 4), transform: `scale(${0.9 + 0.1 * spr(f, fps, cCase - 4)})`}}>
             <svg width={44} height={52} viewBox="0 0 44 52"><rect x={4} y={22} width={36} height={28} rx={6} fill={C.gold} /><path d="M12 22 V14 a10 10 0 0 1 20 0 V22" fill="none" stroke={C.gold} strokeWidth={6} /><circle cx={22} cy={36} r={4} fill="#05060B" /></svg>
             <div>

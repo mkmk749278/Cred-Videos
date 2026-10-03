@@ -1,6 +1,7 @@
 import timingEn from '../data/timing.json';
 import timingTe from '../data/timing_te.json';
 import timingEnh from '../data/timing_enh.json';
+import timingHi from '../data/timing_hi.json';
 import {LANG} from './lang';
 import scriptData from '../../narration/script.json';
 
@@ -19,7 +20,7 @@ export type SubLine = {text: string; s: number; e: number};
 export type ModuleTiming = {id: string; duration: number; sentences: Sentence[]; subs?: SubLine[]};
 export type ModuleMeta = {id: string; number: number; title: string; kicker: string; vo: string[]; bridge?: boolean; recap?: string};
 
-export const timing = (LANG === 'te' ? timingTe : LANG === 'enh' ? timingEnh : timingEn) as unknown as {voice: string; modules: ModuleTiming[]; hook: ModuleTiming};
+export const timing = (LANG === 'te' ? timingTe : LANG === 'enh' ? timingEnh : LANG === 'hi' ? timingHi : timingEn) as unknown as {voice: string; modules: ModuleTiming[]; hook: ModuleTiming};
 export const script = scriptData as {title: string; modules: ModuleMeta[]};
 
 export const sceneFrames = (i: number) => Math.ceil((LEAD + timing.modules[i].duration + TAIL) * FPS);

@@ -1,0 +1,226 @@
+{
+ "hook": {
+  "start": 0.0,
+  "end": 60.04,
+  "anchors": [
+   [
+    "Forty calls a day",
+    6.58
+   ],
+   [
+    "Messages saying",
+    9.22
+   ],
+   [
+    "stop",
+    33.29
+   ],
+   [
+    "Take a breath",
+    35.44
+   ],
+   [
+    "I'll show you",
+    37.08
+   ],
+   [
+    "the law really says",
+    38.7
+   ],
+   [
+    "exactly what you can do",
+    44.58
+   ],
+   [
+    "And stay till",
+    52.52
+   ],
+   [
+    "my own case",
+    55.0
+   ]
+  ]
+ },
+ "m01": {
+  "start": 60.82,
+  "end": 191.28,
+  "anchors": [
+   [
+    "Let me ask you",
+    61.31
+   ],
+   [
+    "Maybe your family",
+    72.19
+   ],
+   [
+    "If yes, first",
+    82.62
+   ],
+   [
+    "This happens to lakhs",
+    91.1
+   ],
+   [
+    "It usually starts",
+    95.02
+   ],
+   [
+    "Maybe someone got sick",
+    97.69
+   ],
+   [
+    "Maybe you lost your job",
+    99.04
+   ],
+   [
+    "Maybe your business",
+    100.24
+   ],
+   [
+    "You miss one payment",
+    102.83
+   ],
+   [
+    "And when we panic",
+    107.08
+   ],
+   [
+    "People take loans",
+    113.92
+   ],
+   [
+    "They sell family gold",
+    115.51
+   ],
+   [
+    "Just to pay the",
+    116.6
+   ],
+   [
+    "But here's the sad part",
+    117.52
+   ],
+   [
+    "Most of that money",
+    120.86
+   ],
+   [
+    "So listen to me carefully",
+    122.48
+   ],
+   [
+    "Debt is a financial event",
+    137.21
+   ],
+   [
+    "You didn't steal",
+    143.72
+   ],
+   [
+    "You just hit",
+    151.0
+   ],
+   [
+    "That does not make",
+    152.11
+   ],
+   [
+    "Now, let me show you",
+    153.74
+   ],
+   [
+    "They planned for it",
+    161.05
+   ],
+   [
+    "And remember the Golden Rule",
+    162.69
+   ],
+   [
+    "Your family comes first",
+    164.35
+   ],
+   [
+    "Food, medicine, rent",
+    166.26
+   ],
+   [
+    "All of that takes",
+    170.51
+   ],
+   [
+    "Never starve your family",
+    174.29
+   ],
+   [
+    "Okay?",
+    177.74
+   ],
+   [
+    "Let's fix this",
+    180.84
+   ]
+  ]
+ },
+ "m02": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m03": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m04": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m05": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m06": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m07": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m08": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m09": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m10": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m11": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m12": {
+  "start": 192.02,
+  "end": 191.28,
+  "anchors": []
+ },
+ "m13": {
+  "start": 192.02,
+  "end": 193.86,
+  "anchors": []
+ }
+}

@@ -102,9 +102,9 @@ def save_mp3(y, path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-audio", action="store_true", help="only rebuild timing_te.json (audio already cut)")
-    ap.add_argument("--lang", default="te", choices=["te", "enh"], help="te: Telugu edition; enh: the creator's English narration")
+    ap.add_argument("--lang", default="te", choices=["te", "enh", "hi"], help="te: Telugu edition; enh: the creator's English narration")
     args = ap.parse_args()
-    src_dir, suf, cache_dir = {"te": ("narration/telugu", "te", "out/te"), "enh": ("narration/english", "enh", "out/en")}[args.lang]
+    src_dir, suf, cache_dir = {"te": ("narration/telugu", "te", "out/te"), "enh": ("narration/english", "enh", "out/en"), "hi": ("narration/hinglish", "hi", "out/hi")}[args.lang]
     mp = json.load(open(os.path.join(ROOT, src_dir, "map.json")))
     en = json.load(open(os.path.join(ROOT, "src/data/timing.json")))
     out_dir = os.path.join(ROOT, f"public/audio/vo_{suf}")
@@ -125,7 +125,7 @@ def main():
     ins_out = {}
     remaps = {}
     te = copy.deepcopy(en)
-    te["voice"] = "user (Telugu)" if args.lang == "te" else "user (English)"
+    te["voice"] = {"te": "user (Telugu)", "enh": "user (English)", "hi": "user (Hinglish)"}[args.lang]
     entries = [("hook", te["hook"])] + [(m["id"], m) for m in te["modules"]]
     for mid, mod in entries:
         if mid not in mp:

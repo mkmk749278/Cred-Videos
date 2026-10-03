@@ -1,16 +1,23 @@
 # Worker session prompt (parallel render)
 
-Fill in `<SHA>` and `<MODULES>` and pass this as the `prompt` of `create_session` (repo checked out at `<SHA>`).
+Don't write worker prompts by hand. Generate them:
 
----
+```bash
+SHA=$(git rev-parse HEAD)   # after commit + push, with the pre-render gate passed
+python3 scripts/fanout_plan.py --lang <en|te|enh> --sha $SHA --prefix render-<tag><n> --workers 9 --local ColdOpen
+# → out/fanout/<prefix>/worker_NN.txt  (pass each file's text as the `prompt` of create_session,
+#    source_url = this repo, source_revision = the working branch)
+```
 
-You are a render worker for the Cred-Videos Remotion project. Do not change any source files.
+Each generated prompt makes the worker:
+1. check out the exact `<SHA>`, `npm ci`, and confirm `tsc` passes;
+2. run its job list with `scripts/render_modules.sh`, detached and resumable. A job is a composition (`Scene04`) or a frame range of one (`Scene07@0-3674:Scene07_a`);
+3. keep a background watcher armed, so the container never idles;
+4. push each finished chunk to `<prefix>/<Id>`. The hand-off goes through git: no Gofile uploads, no tokens in prompts;
+5. reply `<Id> <md5>` per chunk. It does not stitch, master, commit to the working branch or open PRs.
 
-1. `git checkout <SHA>` (verify `git rev-parse HEAD`). Then `npm ci`.
-2. `export REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`
-3. `npx tsc --noEmit -p .` must pass.
-4. Render your modules, one at a time, detached and resumable:
-   `setsid nohup scripts/render_modules.sh <MODULES> > /dev/null 2>&1 &`
-   Keep a harness background watcher armed on `out/render_modules.log` (wait for `DONE`/`FAILED`; < 2 h per watcher) so the container is never idle. If the container restarts, delete `out/chunks/.*.partial.mp4` and relaunch with the remaining modules.
-5. For each finished chunk: check it with `python3 scripts/review_chunk.py out/chunks/<Id>.mp4 3` (look at the sheets), then upload: `scripts/upload_gofile.sh out/chunks/<Id>.mp4` and note the returned link + md5.
-6. When all are done, reply with one line per module: `<Id> <gofile link> <md5> <duration s>`. Do not stitch, do not master, do not commit.
+The coordinator then follows `docs/PLAYBOOK.md` §6:
+- `scripts/fanout_watch.sh` (background, re-armed);
+- `scripts/fanout_ingest.sh`, reviewing every sheet;
+- archive the workers;
+- `scripts/stitch.sh`.

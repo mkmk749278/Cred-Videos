@@ -18,7 +18,7 @@ const WORDS: W[] = hook.sentences.flatMap((s) => s.words);
 const VO_AT = 10; // frames before the hook VO starts
 const vf = (sec: number) => VO_AT + Math.round(sec * FPS);
 /** Hinglish hook: when each roadmap question is asked (hook seconds, from out/hi/translate.json via remap) */
-const HI_Q = [0, 0, 0, 0, 0, 0];
+const HI_Q = [38.6, 40.89, 43.21, 44.52, 46.56, 48.81];
 const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9]/g, '');
 const at = (phrase: string) => {
   const ps = phrase.split(' ').map(norm);
@@ -134,7 +134,7 @@ export const ColdOpen: React.FC = () => {
               {a: vf(HI_Q[1]), t: 'What the bank can actually do', c: C.cyan, ic: 'bank' as RoadIconKind},
               {a: vf(HI_Q[2]), t: 'What your rights are', c: C.emerald, ic: 'shield' as RoadIconKind},
               {a: vf(HI_Q[3]), t: 'How to handle recovery calls', c: C.emerald, ic: 'phone' as RoadIconKind},
-              {a: vf(HI_Q[4]), t: 'When and how to ask for settlement', c: C.amber, ic: 'letter' as RoadIconKind},
+              {a: vf(HI_Q[4]), t: 'Asking for a settlement', c: C.amber, ic: 'letter' as RoadIconKind},
               {a: vf(HI_Q[5]), t: 'Improving your credit score', c: C.amber, ic: 'report' as RoadIconKind},
             ]
           : LANG === 'te'

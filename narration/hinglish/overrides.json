@@ -1,1 +1,70 @@
-{"map": {}, "inserts": {}}
+{
+ "_doc": "Fixes for the Hinglish build. modules: cut points (Hinglish full.mp3 seconds) snapped to silences in the audio. map/inserts: as in narration/english/overrides.json; values are full.mp3 seconds, a phrase of out/hi/translate.json, or 9999.",
+ "modules": {
+  "hook": {
+   "end": 60.37
+  },
+  "m01": {
+   "start": 60.68,
+   "end": 205.3
+  },
+  "m02": {
+   "start": 205.65,
+   "end": 307.36
+  },
+  "m03": {
+   "start": 307.58,
+   "end": 366.36
+  },
+  "m04": {
+   "start": 366.98,
+   "end": 535.76
+  },
+  "m05": {
+   "start": 536.24,
+   "end": 594.6
+  },
+  "m06": {
+   "start": 594.8,
+   "end": 713.54
+  },
+  "m07": {
+   "start": 714.0,
+   "end": 1006.26
+  },
+  "m08": {
+   "start": 1006.8,
+   "end": 1076.34
+  },
+  "m09": {
+   "start": 1076.77,
+   "end": 1240.25
+  },
+  "m10": {
+   "start": 1240.6,
+   "end": 1294.79
+  },
+  "m11": {
+   "start": 1295.12,
+   "end": 1548.65
+  },
+  "m12": {
+   "start": 1549.3,
+   "end": 1763.85
+  },
+  "m13": {
+   "start": 1764.2,
+   "end": 1971.5
+  }
+ },
+ "map": {
+  "m06": {
+   "Your salary is safe": 594.9
+  },
+  "m13": {
+   "So let's put it all": 1764.3,
+   "Here's your simple": 1765.3
+  }
+ },
+ "inserts": {}
+}

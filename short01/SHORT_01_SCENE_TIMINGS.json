@@ -1,0 +1,258 @@
+{
+  "revision": 4,
+  "updated": "2026-10-04",
+  "concept": "What happens when only the credit card minimum due is paid?",
+  "audio_file": "SHORT_01_ELEVENLABS_VOICE.mp3",
+  "original_upload_name": "ElevenLabs_2026-10-04T08_44_59_Bunty - Punchy, Crisp and Reel King_pvc_sp100_s50_sb75_v4(1).mp3",
+  "audio_sha256": "9186b193a80144895b6e9c46fe9815b155157aa495215adeb1eb33ab9575da47",
+  "audio_size_bytes": 695284,
+  "audio_duration_container_seconds": 42.370612,
+  "audio_duration_decoded_seconds": 42.32,
+  "audio_start_frame": 0,
+  "target_video_duration_seconds": 42.7,
+  "target_video_frames": 1281,
+  "fps": 30,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "source_measured_audio": {
+    "integrated_lufs": -19.71,
+    "true_peak_dbtp": -1.96,
+    "loudness_range_lu": 4.0
+  },
+  "voice": {
+    "source": "User-supplied ElevenLabs export",
+    "filename_description": "Bunty - Punchy, Crisp and Reel King, v4",
+    "preserve_playback_speed_and_delivery": true
+  },
+  "timing_method": "large-v3-turbo Telugu ASR phrase/word cues, with sentence onsets adjusted against original decoded-audio silence gaps; first-pass editing cues, not human-verified forced alignment",
+  "caption_status": "Draft: English words and Telugu spellings normalised; compare wording and timestamps with audio before publishing captions",
+  "scenes": [
+    {
+      "scene": 1,
+      "name": "The payment worked. Why interest?",
+      "start_frame": 0,
+      "end_frame_exclusive": 174,
+      "start_seconds": 0.0,
+      "end_seconds": 5.8,
+      "action": "Open inside the problem: a realistic paper finance-charge line beside the earlier minimum-payment receipt. Rack focus from Interest charged to Payment received. A fingertip stops beside the interest line. No payment-success-only opening."
+    },
+    {
+      "scene": 2,
+      "name": "Only the minimum was paid",
+      "start_frame": 174,
+      "end_frame_exclusive": 276,
+      "start_seconds": 5.8,
+      "end_seconds": 9.2,
+      "action": "Reveal the original statement: total bill ₹50,000; stated minimum ₹1,000. Put the received ₹1,000 payment receipt beside it. The receipt stays green and successful; the full bill remains unpaid."
+    },
+    {
+      "scene": 3,
+      "name": "The purchase-date reveal",
+      "start_frame": 276,
+      "end_frame_exclusive": 404,
+      "start_seconds": 9.2,
+      "end_seconds": 13.466666666666667,
+      "action": "Match-cut the same card into its original retail purchase. A fresh receipt shows 7 May. Show the calendar date, then start a thin yellow tracked mark from 7 May on the spoken నుంచే. The highlight belongs on the physical calendar or receipt, not a floating slide."
+    },
+    {
+      "scene": 4,
+      "name": "Balance before payment",
+      "start_frame": 404,
+      "end_frame_exclusive": 511,
+      "start_seconds": 13.466666666666667,
+      "end_seconds": 17.033333333333335,
+      "action": "Travel through the same physical calendar from 7 May toward 1 June. Keep the illustrative original ₹50,000 balance visible while the voice describes the amount outstanding before payment."
+    },
+    {
+      "scene": 5,
+      "name": "Balance after payment",
+      "start_frame": 511,
+      "end_frame_exclusive": 640,
+      "start_seconds": 17.033333333333335,
+      "end_seconds": 21.333333333333332,
+      "action": "At the 1 June marker, slide the received ₹1,000 receipt into place. Reveal ₹49,000 before interest/other additions as the narration says మిగిలిన బాకీ. Continue the time highlight beyond payment against this reduced balance."
+    },
+    {
+      "scene": 6,
+      "name": "Late fee and interest are different",
+      "start_frame": 640,
+      "end_frame_exclusive": 831,
+      "start_seconds": 21.333333333333332,
+      "end_seconds": 27.7,
+      "action": "Two macro inserts on the statement: Late payment charge ₹0, then Finance charges / Interest charged. Move focus to the second line on కానీ interest ఆగదు. A subtle amber highlight is enough; avoid a fake computed interest total."
+    },
+    {
+      "scene": 7,
+      "name": "A new purchase has its own date",
+      "start_frame": 831,
+      "end_frame_exclusive": 1058,
+      "start_seconds": 27.7,
+      "end_seconds": 35.266666666666666,
+      "action": "The earlier unpaid statement remains on the desk. Match-cut to a new small-shop card-terminal purchase using the same card. The new receipt is dated 4 June. Begin its separate interest-date highlight at 4 June, rather than reusing 7 May."
+    },
+    {
+      "scene": 8,
+      "name": "The practical question",
+      "start_frame": 1058,
+      "end_frame_exclusive": 1162,
+      "start_seconds": 35.266666666666666,
+      "end_seconds": 38.733333333333334,
+      "action": "Return to the home desk. Place the card beside the unpaid statement; a hand pauses over a notebook, then reaches for the phone. Keep one live focus move while the voice asks how to break the cycle."
+    },
+    {
+      "scene": 9,
+      "name": "Full-video invitation",
+      "start_frame": 1162,
+      "end_frame_exclusive": 1281,
+      "start_seconds": 38.733333333333334,
+      "end_seconds": 42.7,
+      "action": "Show a fresh phone composition with a newly made full-Telugu-video cover. Display Full Telugu video ↓ with small BE PRACTICAL branding. Keep the frame alive through a slow push and hold the ending. The genuine clickable Related Video is supplied by YouTube, outside the burned-in graphic."
+    }
+  ],
+  "key_cues": [
+    {
+      "time_seconds": 9.22,
+      "frame": 277,
+      "cue": "మీరు shopping...",
+      "action": "Begin original-purchase flashback."
+    },
+    {
+      "time_seconds": 11.167,
+      "frame": 335,
+      "cue": "రోజు నుంచే",
+      "action": "Start the original interest-date mark at 7 May."
+    },
+    {
+      "time_seconds": 17.033,
+      "frame": 511,
+      "cue": "payment చేసిన తర్వాత",
+      "action": "Bring the 1 June received-payment receipt into the shot."
+    },
+    {
+      "time_seconds": 18.567,
+      "frame": 557,
+      "cue": "మిగిలిన బాకీ",
+      "action": "Reveal ₹49,000, before interest/other additions."
+    },
+    {
+      "time_seconds": 23.833,
+      "frame": 715,
+      "cue": "late fee",
+      "action": "Hold the Late payment charge ₹0 line."
+    },
+    {
+      "time_seconds": 25.533,
+      "frame": 766,
+      "cue": "కానీ interest ఆగదు",
+      "action": "Rack focus to the finance-charge line."
+    },
+    {
+      "time_seconds": 30.878,
+      "frame": 926,
+      "cue": "కొత్త purchases",
+      "action": "Reveal the new receipt, dated 4 June."
+    },
+    {
+      "time_seconds": 33.1,
+      "frame": 993,
+      "cue": "రోజు నుంచే",
+      "action": "Start the new purchase's own interest-date mark at 4 June."
+    },
+    {
+      "time_seconds": 38.736,
+      "frame": 1162,
+      "cue": "పూర్తి explanation",
+      "action": "Begin the full-Telugu-video invitation."
+    }
+  ],
+  "caption_cues": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 2.5,
+      "text": "Minimum due కట్టాను..."
+    },
+    {
+      "index": 2,
+      "start_seconds": 2.624,
+      "end_seconds": 4.837,
+      "text": "అయినా interest ఎందుకు పడింది?"
+    },
+    {
+      "index": 3,
+      "start_seconds": 5.811,
+      "end_seconds": 9.22,
+      "text": "Bill మొత్తం కట్టకుండా\nminimum due మాత్రమే pay చేస్తే,"
+    },
+    {
+      "index": 4,
+      "start_seconds": 9.22,
+      "end_seconds": 12.93,
+      "text": "మీరు shopping చేసిన రోజు నుంచే\ninterest లెక్క పడుతుంది."
+    },
+    {
+      "index": 5,
+      "start_seconds": 13.473,
+      "end_seconds": 16.736,
+      "text": "మీరు payment చేసే వరకు\nఅప్పటికి ఉన్న బాకీ మీద,"
+    },
+    {
+      "index": 6,
+      "start_seconds": 17.051,
+      "end_seconds": 20.701,
+      "text": "payment చేసిన తర్వాత మిగిలిన బాకీ మీద\ninterest పడుతుంది."
+    },
+    {
+      "index": 7,
+      "start_seconds": 21.342,
+      "end_seconds": 25.048,
+      "text": "Due date లోపు minimum due కడితే\nlate fee తప్పుతుంది."
+    },
+    {
+      "index": 8,
+      "start_seconds": 25.533,
+      "end_seconds": 27.003,
+      "text": "కానీ interest ఆగదు."
+    },
+    {
+      "index": 9,
+      "start_seconds": 27.708,
+      "end_seconds": 30.515,
+      "text": "పాత bill బాకీ ఉండగా\nమళ్లీ card వాడితే,"
+    },
+    {
+      "index": 10,
+      "start_seconds": 30.878,
+      "end_seconds": 34.426,
+      "text": "కొత్త purchases మీద కూడా కొన్న రోజు నుంచే\ninterest పడుతుంది."
+    },
+    {
+      "index": 11,
+      "start_seconds": 35.29,
+      "end_seconds": 37.947,
+      "text": "మరి ఈ cycle నుంచి\nబయటపడటం ఎలా?"
+    },
+    {
+      "index": 12,
+      "start_seconds": 38.736,
+      "end_seconds": 41.901,
+      "text": "పూర్తి explanation కోసం\nకిందున్న related video చూడండి."
+    }
+  ],
+  "financial_example": {
+    "original_bill_inr": 50000,
+    "required_minimum_in_this_example_inr": 1000,
+    "credited_payment_inr": 1000,
+    "remaining_before_interest_and_other_additions_inr": 49000,
+    "original_purchase_date": "7 May",
+    "statement_date": "12 May",
+    "minimum_payment_received_date": "1 June",
+    "new_purchase_date": "4 June",
+    "later_statement_date": "12 June",
+    "numerical_interest_rate": null,
+    "amounts_and_dates": "Fictional example; no previous arrears, EMI, earlier billed finance charges, other first-statement fees or promotional interest waiver"
+  },
+  "related_video_url": "https://youtu.be/lZKBTCqDlsA"
+}

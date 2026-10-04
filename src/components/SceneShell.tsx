@@ -4,7 +4,8 @@ import {interpolate} from '../lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, rnd, spr} from '../lib/anim';
 import {contentStart, FPS, LEAD, script, SubLine, timing, toFrame, Word} from '../lib/timing';
-import {DEMO, VO_DIR} from '../lib/lang';
+import {DEMO, LANG, VO_DIR} from '../lib/lang';
+import {BRAND, BRAND_GOLD, Wordmark} from './Brand';
 import {insertLevel, TeluguInserts} from './TeluguInserts';
 import {StageHidden} from '../lib/stage';
 import {Sfx, SfxMute} from './primitives';
@@ -137,7 +138,7 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
         <div style={{position: 'absolute', fontFamily: FONT, fontWeight: 900, fontSize: 520, color: 'transparent', WebkitTextStroke: `3px ${alpha(C.cyan, 0.16)}`, letterSpacing: -10, transform: `scale(${1.5 - 0.5 * slam})`, opacity: slam}}>{num}</div>
         <div style={{textAlign: 'center', transform: `scale(${1.25 - 0.25 * slam})`, opacity: Math.min(1, slam * 1.4), filter: slam < 0.9 ? `blur(${(1 - slam) * 10}px)` : undefined}}>
           <div style={{fontFamily: MONO, color: C.cyan, fontSize: 28, letterSpacing: 10, fontWeight: 700}}>CHAPTER {num} / 13</div>
-          <div style={{fontFamily: FONT, color: C.text, fontSize: 116, fontWeight: 900, letterSpacing: -2, marginTop: 14, textShadow: `0 0 40px ${alpha(C.cyan, 0.3)}`, whiteSpace: 'nowrap'}}>{m.title}</div>
+          <div style={{fontFamily: FONT, color: C.text, fontSize: fitTitle(titleOf(m), m.bridge && HOSTS[index] ? 1360 : 1720), fontWeight: 900, letterSpacing: -2, marginTop: 14, textShadow: `0 0 40px ${alpha(C.cyan, 0.3)}`, whiteSpace: 'nowrap'}}>{titleOf(m)}</div>
           <div style={{height: 4, width: 520 * line, margin: '18px auto', background: `linear-gradient(90deg, transparent, ${C.cyan}, transparent)`}} />
           <div style={{fontFamily: FONT, color: C.muted, fontSize: 38, fontWeight: 500, letterSpacing: 1}}>{kickerOf(m)}</div>
         </div>
@@ -148,6 +149,11 @@ const TitleCard: React.FC<{index: number}> = ({index}) => {
             <span style={{fontFamily: MONO, fontSize: 20, letterSpacing: 3, color: C.emerald, fontWeight: 800}}>SO FAR</span>
             <span style={{fontFamily: FONT, fontSize: 28, fontWeight: 700, color: C.text}}>{recap}</span>
           </div>
+        </div>
+      )}
+      {BRAND && (
+        <div style={{position: 'absolute', left: 0, right: 0, top: 70, opacity: Math.min(1, slam * 1.4)}}>
+          <Wordmark size={44} />
         </div>
       )}
       <div style={{position: 'absolute', left: de > 0 ? 760 : 460, top: de > 0 ? 760 : 820}}>
@@ -169,12 +175,25 @@ const Hud: React.FC<{index: number; duration: number}> = ({index, duration}) => 
         <div style={{fontFamily: MONO, fontWeight: 800, fontSize: 22, color: C.bg, background: C.cyan, borderRadius: 8, padding: '4px 10px'}}>
           {String(m.number).padStart(2, '0')}
         </div>
-        <div style={{fontSize: 26, fontWeight: 800, color: C.text, letterSpacing: 0.5}}>{m.title}</div>
+        <div style={{fontSize: 26, fontWeight: 800, color: C.text, letterSpacing: 0.5}}>{titleOf(m)}</div>
         <div style={{fontSize: 22, color: C.muted}}>· {kickerOf(m)}</div>
       </div>
       <div style={{position: 'absolute', right: 64, top: 30, textAlign: 'right'}}>
-        <div style={{fontFamily: MONO, fontSize: 18, letterSpacing: 4, color: C.gold, fontWeight: 700}}>KNOW YOUR RIGHTS</div>
-        <div style={{fontSize: 15, color: C.dim, marginTop: 4, letterSpacing: 1}}>Awareness only · Not legal advice</div>
+        {BRAND ? (
+          <>
+            <div style={{fontFamily: FONT, fontSize: 22, fontWeight: 900, letterSpacing: -0.3, whiteSpace: 'nowrap'}}>
+              <span style={{color: '#FAFAFA'}}>BE </span>
+              <span style={{color: BRAND_GOLD}}>PRACTICAL</span>
+              <span style={{color: '#E2E8F0', fontWeight: 700, fontSize: 17}}> with Kishore</span>
+            </div>
+            <div style={{fontSize: 15, color: C.muted, marginTop: 4, letterSpacing: 1}}>Know your rights · Awareness only</div>
+          </>
+        ) : (
+          <>
+            <div style={{fontFamily: MONO, fontSize: 18, letterSpacing: 4, color: C.gold, fontWeight: 700}}>KNOW YOUR RIGHTS</div>
+            <div style={{fontSize: 15, color: C.dim, marginTop: 4, letterSpacing: 1}}>Awareness only · Not legal advice</div>
+          </>
+        )}
       </div>
       <div style={{position: 'absolute', left: 64, right: 64, top: 92, height: 2, background: 'rgba(148,163,184,0.12)'}}>
         <div style={{width: `${prog * 100}%`, height: '100%', background: C.cyan, boxShadow: `0 0 10px ${C.cyan}`}} />
@@ -344,7 +363,19 @@ const musicLevel = (index: number, f: number) => {
   return MUSIC_UNDER_VOICE + (MUSIC_OPEN - MUSIC_UNDER_VOICE) * open;
 };
 
-const kickerOf = (m: {kicker: string}) => (DEMO ? (m as {kicker_te?: string}).kicker_te ?? m.kicker : m.kicker);
+const kickerOf = (m: {kicker: string}) =>
+  LANG === 'hi' ? (m as {kicker_hi?: string}).kicker_hi ?? m.kicker : DEMO ? (m as {kicker_te?: string}).kicker_te ?? m.kicker : m.kicker;
+/** chapter name: the Hinglish edition uses short everyday Hinglish names */
+export const titleOf = (m: {title: string}) => (LANG === 'hi' ? (m as {title_hi?: string}).title_hi ?? m.title : m.title);
+/** title-card font size that keeps a one-line chapter name within maxW px (measured with the loaded Inter) */
+const fitTitle = (text: string, maxW: number, size = 116) => {
+  if (typeof document === 'undefined') return size;
+  const ctx = document.createElement('canvas').getContext('2d');
+  if (!ctx) return size;
+  ctx.font = `900 ${size}px Inter`;
+  const w = ctx.measureText(text).width - 2 * text.length; // letterSpacing -2
+  return w > maxW ? Math.floor((size * maxW) / w) : size;
+};
 
 const muteCache = new Map<number, (f: number) => boolean>();
 const muteFor = (index: number) => {

@@ -16,7 +16,9 @@
         "So listen to me carefully. Debt is a financial event, not a moral crime. You didn't steal. You didn't cheat. You just hit a money problem. That does not make you a bad person, and it's not a crime.",
         "Now, let me show you something. Look at the business side. Why do credit cards charge around 42% to 48% interest every year? Because the bank took nothing from you as security. No house. No gold. No land. They know some people won't be able to pay. That big interest is how they cover that risk. They planned for it from day one.",
         "And remember the Golden Rule. Your family comes first. Food, medicine, rent, school fees. All of that takes absolute priority over paying the bank. Never starve your family to pay a card bill. Okay? Let's fix this the right way, step by step. And step one is knowing what the law really says."
-      ]
+      ],
+      "title_hi": "Pehle apni situation samjho",
+      "kicker_hi": "Debt is not a crime"
     },
     {
       "id": "m02",
@@ -33,7 +35,9 @@
       ],
       "bridge": true,
       "recap": "✓ Debt is a money problem, not a crime",
-      "recap_te": "✓ “Can't pay right now” ≠ “won't pay” — plan first"
+      "recap_te": "✓ “Can't pay right now” ≠ “won't pay” — plan first",
+      "title_hi": "Bank kya kar sakta hai?",
+      "kicker_hi": "Civil matter vs criminal case"
     },
     {
       "id": "m03",
@@ -50,7 +54,9 @@
       "bridge": true,
       "recap": "✓ Honest default is a civil matter, not a police case",
       "recap_te": "✓ Usually a civil matter — but never ignore a real notice",
-      "kicker_te": "Many banks, one list"
+      "kicker_te": "Many banks, one list",
+      "title_hi": "Saare cards ki ek list",
+      "kicker_hi": "Many banks, one list"
     },
     {
       "id": "m04",
@@ -66,7 +72,9 @@
       ],
       "bridge": true,
       "recap": "✓ Every bank must sue on its own, and small balances rarely go to court",
-      "recap_te": "✓ Track every account separately, in one list"
+      "recap_te": "✓ Track every account separately, in one list",
+      "title_hi": "Bill kyun badh raha hai?",
+      "kicker_hi": "Interest, fees & minimum due"
     },
     {
       "id": "m05",
@@ -82,7 +90,9 @@
       ],
       "bridge": true,
       "recap": "✓ Most of the big balance is fees that may be waived",
-      "recap_te": "✓ Read the statement breakup — waivers aren't automatic"
+      "recap_te": "✓ Read the statement breakup — waivers aren't automatic",
+      "title_hi": "Salary account ka risk",
+      "kicker_hi": "Bank set-off — protect essential money"
     },
     {
       "id": "m06",
@@ -98,7 +108,9 @@
       ],
       "bridge": true,
       "recap": "✓ Salary moved to a clean bank, creditor accounts at zero",
-      "recap_te": "✓ Know your set-off risk, protect essential money"
+      "recap_te": "✓ Know your set-off risk, protect essential money",
+      "title_hi": "Bank ko kya likhein?",
+      "kicker_hi": "A simple hardship email"
     },
     {
       "id": "m07",
@@ -115,7 +127,9 @@
       ],
       "bridge": true,
       "recap": "✓ Hardship email sent, Case ID saved",
-      "recap_te": "✓ Hardship email sent, every record saved"
+      "recap_te": "✓ Hardship email sent, every record saved",
+      "title_hi": "Recovery calls kaise handle karein?",
+      "kicker_hi": "Agent rules & complaints"
     },
     {
       "id": "m08",
@@ -130,7 +144,9 @@
       ],
       "bridge": true,
       "recap": "✓ Their scare tricks, exposed",
-      "recap_te": "✓ Ask, verify, document — don't panic"
+      "recap_te": "✓ Ask, verify, document — don't panic",
+      "title_hi": "Calls aur messages manage karo",
+      "kicker_hi": "Phone settings that help"
     },
     {
       "id": "m09",
@@ -148,7 +164,9 @@
       "bridge": true,
       "recap": "✓ Calls filtered, silence working",
       "recap_te": "✓ Calls managed, one verified channel open",
-      "kicker_te": "From the due date onwards"
+      "kicker_te": "From the due date onwards",
+      "title_hi": "Payment late hua toh kya hoga?",
+      "kicker_hi": "Due date se NPA aur write-off tak"
     },
     {
       "id": "m10",
@@ -169,7 +187,9 @@
       "bridge": true,
       "recap": "✓ Settlement talks usually open after write-off",
       "recap_te": "✓ NPA or write-off doesn't cancel the debt",
-      "kicker_te": "Every bank is different"
+      "kicker_te": "Every bank is different",
+      "title_hi": "Har bank ka process alag",
+      "kicker_hi": "Every bank is different"
     },
     {
       "id": "m11",
@@ -186,7 +206,9 @@
       ],
       "bridge": true,
       "recap": "✓ Every bank has its own style",
-      "recap_te": "✓ Every bank differs — trust only verified written offers"
+      "recap_te": "✓ Every bank differs — trust only verified written offers",
+      "title_hi": "Settlement se pehle kya check karein?",
+      "kicker_hi": "OTS & Lok Adalat — safely"
     },
     {
       "id": "m12",
@@ -205,7 +227,9 @@
       "bridge": true,
       "recap": "✓ Settle only with an official letter, and pay the bank directly",
       "recap_te": "✓ Official letter first, pay only via authorised channels",
-      "kicker_te": "Rebuilding, step by step"
+      "kicker_te": "Rebuilding, step by step",
+      "title_hi": "Credit score kaise rebuild karein?",
+      "kicker_hi": "Settled vs Closed, CIBIL"
     },
     {
       "id": "m13",
@@ -227,7 +251,9 @@
       ],
       "bridge": true,
       "recap": "✓ Your score can recover in 18 to 24 months",
-      "recap_te": "✓ Settled ≠ Closed — rebuild with steady habits"
+      "recap_te": "✓ Settled ≠ Closed — rebuild with steady habits",
+      "title_hi": "Ab ye 8 steps follow karein",
+      "kicker_hi": "Your 8-step plan"
     }
   ],
   "hook": "Forty calls a day. Messages saying the police are coming to your house. If this is happening to you right now, stop. Take a breath. In the next few minutes, I'll show you what the law really says, and exactly what you can do. And stay till the end, because I'll tell you how I'm handling my own case."

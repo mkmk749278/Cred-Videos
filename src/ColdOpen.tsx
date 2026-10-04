@@ -2,6 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Audio, Easing, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {interpolate} from './lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from './theme';
+import {BRAND, Wordmark} from './components/Brand';
 import {CLAMP, spr} from './lib/anim';
 import {FPS, timing} from './lib/timing';
 import {DEMO, LANG, VO_DIR} from './lib/lang';
@@ -170,6 +171,13 @@ export const ColdOpen: React.FC = () => {
         )}
       </div>
 
+      {/* channel mark from the first second, so a shared clip says whose it is */}
+      {BRAND && titleIn <= 0 && (
+        <div style={{position: 'absolute', left: 64, top: 44, opacity: interpolate(f, [6, 20, end - 12, end], [0, 1, 1, 0], CLAMP)}}>
+          <Wordmark size={46} align="left" />
+        </div>
+      )}
+
       {/* title slam */}
       {titleIn > 0 && <TitleSlam f={titleIn} />}
       <AbsoluteFill style={{background: '#000', opacity: interpolate(f, [0, 6], [1, 0], CLAMP), pointerEvents: 'none'}} />
@@ -186,6 +194,7 @@ const TitleSlam: React.FC<{f: number}> = ({f}) => {
     <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', background: `radial-gradient(ellipse at 50% 45%, ${alpha(C.gold, 0.18)} 0%, #05060B 70%)`, opacity: interpolate(f, [0, 6], [0, 1], CLAMP)}}>
       <Sfx at={0} name="title_hit" volume={0.55} />
       <div style={{textAlign: 'center', transform: `scale(${1.3 - 0.3 * p})`, opacity: Math.min(1, p * 1.3), filter: p < 0.9 ? `blur(${(1 - p) * 10}px)` : undefined}}>
+        {BRAND && <Wordmark size={60} style={{marginBottom: 34}} />}
         <div style={{fontFamily: MONO, color: C.gold, fontSize: 30, letterSpacing: 14, fontWeight: 700}}>KNOW YOUR RIGHTS</div>
         <div style={{fontSize: 128, fontWeight: 900, lineHeight: 1.02, letterSpacing: -3, marginTop: 10}}>
           Credit Card Debt

@@ -2,6 +2,7 @@ import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
 import {interpolate} from '../lib/safeInterpolate';
 import {C, FONT, MONO, alpha} from '../theme';
+import {BRAND, BrandLines, Wordmark} from '../components/Brand';
 import {CLAMP, spr, vis} from '../lib/anim';
 import {contentStart, cueFrame, paragraphEnd, sceneFrames} from '../lib/timing';
 import {SceneShell} from '../components/SceneShell';
@@ -193,6 +194,14 @@ const Teaser: React.FC<{told: number; myself: number; next: number; sub: number;
         <svg width={34} height={30} viewBox="0 0 34 30"><path d="M20 2 L32 13 L20 24 V17 C11 17 6 20 2 28 C3 18 8 10 20 9 Z" fill="#fff" /></svg>
         Share with someone who needs it
       </div>
+      {/* channel sign-off */}
+      {BRAND && (
+        <div style={{position: 'absolute', left: 0, right: 0, top: 588, height: 130, opacity: pop(share + 20)}}>
+          <BrandLines side="left" width={300} top={-40} progress={interpolate(frame, [share + 20, share + 50], [0, 1], CLAMP)} />
+          <BrandLines side="right" width={300} top={-40} progress={interpolate(frame, [share + 20, share + 50], [0, 1], CLAMP)} />
+          <Wordmark size={78} style={{transform: `scale(${0.94 + 0.06 * pop(share + 20)})`}} />
+        </div>
+      )}
       {/* cursor */}
       {frame >= sub - 4 && frame < click + 24 && (
         <svg width={40} height={48} viewBox="0 0 40 48" style={{position: 'absolute', left: cx, top: cy, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))'}}>

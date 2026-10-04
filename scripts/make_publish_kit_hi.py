@@ -23,20 +23,20 @@ from make_publish_kit_te import FPS, LEAD, TAIL, TITLE_FRAMES, VO_AT, split_capt
 import build_from_te as B  # noqa: E402
 from build_from_enh import sentences  # noqa: E402
 
-CHAPTERS = {
-    'm01': 'Karz koi crime nahi · Debt is not a crime',
-    'm02': 'Kya police arrest karegi? · What the law says',
-    'm03': 'Kai cards, kai banks · Many accounts, one list',
-    'm04': 'Balance kyun badhta hai · Statement, interest & minimum due',
-    'm05': 'Salary account & set-off · Protect essential money',
-    'm06': 'Bank se likhit mein baat · Hardship communication',
-    'm07': 'Recovery agents ke rules · Your rights',
-    'm08': 'Calls ko control karein · Phone settings',
-    'm09': 'Due date se NPA aur write-off · The timeline',
-    'm10': 'Har bank alag hai · Issuer differences',
-    'm11': 'Settlement & Lok Adalat · Settle safely',
-    'm12': 'Settled vs Closed, CIBIL · Rebuilding credit',
-    'm13': 'Aapka 8-step plan · Your next step',
+CHAPTERS = {  # the on-screen Hinglish chapter names (script.json title_hi)
+    'm01': 'Pehle apni situation samjho',
+    'm02': 'Bank kya kar sakta hai?',
+    'm03': 'Saare cards ki ek list',
+    'm04': 'Bill kyun badh raha hai?',
+    'm05': 'Salary account ka risk',
+    'm06': 'Bank ko kya likhein?',
+    'm07': 'Recovery calls kaise handle karein?',
+    'm08': 'Calls aur messages manage karo',
+    'm09': 'Payment late hua toh kya hoga?',
+    'm10': 'Har bank ka process alag',
+    'm11': 'Settlement se pehle kya check karein?',
+    'm12': 'Credit score kaise rebuild karein?',
+    'm13': 'Ab ye 8 steps follow karein',
 }
 
 

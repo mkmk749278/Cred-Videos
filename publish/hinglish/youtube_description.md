@@ -16,19 +16,19 @@ Is video mein:
 
 CHAPTERS
 0:00 Introduction
-1:04 Karz koi crime nahi · Debt is not a crime
-3:31 Kya police arrest karegi? · What the law says
-5:16 Kai cards, kai banks · Many accounts, one list
-6:17 Balance kyun badhta hai · Statement, interest & minimum due
-9:09 Salary account & set-off · Protect essential money
-10:10 Bank se likhit mein baat · Hardship communication
-12:11 Recovery agents ke rules · Your rights
-17:06 Calls ko control karein · Phone settings
-18:19 Due date se NPA aur write-off · The timeline
-21:05 Har bank alag hai · Issuer differences
-22:02 Settlement & Lok Adalat · Settle safely
-26:18 Settled vs Closed, CIBIL · Rebuilding credit
-29:56 Aapka 8-step plan · Your next step
+1:04 Pehle apni situation samjho
+3:31 Bank kya kar sakta hai?
+5:16 Saare cards ki ek list
+6:17 Bill kyun badh raha hai?
+9:09 Salary account ka risk
+10:10 Bank ko kya likhein?
+12:11 Recovery calls kaise handle karein?
+17:06 Calls aur messages manage karo
+18:19 Payment late hua toh kya hoga?
+21:05 Har bank ka process alag
+22:02 Settlement se pehle kya check karein?
+26:18 Credit score kaise rebuild karein?
+29:56 Ab ye 8 steps follow karein
 
 English subtitles available (CC).
 

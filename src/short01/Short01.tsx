@@ -104,3 +104,22 @@ export const Short01: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+/** Cover image: "MINIMUM PAID… INTEREST?" over a fresh render of the payment slip + interest line (frame 0 of this Short). */
+export const Short01Cover: React.FC = () => (
+  <AbsoluteFill style={{background: '#000'}}>
+    <Img src={staticFile('short01/frames/f0002.jpg')} style={{width: SHORT01_W, height: SHORT01_H}} />
+    <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(11,21,48,0.0) 0%, rgba(11,21,48,0.0) 55%, rgba(11,21,48,0.55) 100%)'}} />
+    <div style={{position: 'absolute', left: 90, right: 150, top: 200, fontFamily: CAP_FONT}}>
+      <div style={{display: 'inline-block', background: NAVY, color: WHITE, fontSize: 104, fontWeight: 900, lineHeight: 1.0, padding: '22px 30px 26px', borderRadius: 22, letterSpacing: -2, borderLeft: `14px solid ${YELLOW}`}}>
+        MINIMUM
+        <br />
+        PAID…
+      </div>
+      <div style={{display: 'inline-block', marginTop: 18, background: YELLOW, color: NAVY, fontSize: 112, fontWeight: 900, padding: '14px 30px 20px', borderRadius: 22, letterSpacing: -2}}>INTEREST?</div>
+    </div>
+    <div style={{position: 'absolute', left: 90, top: 1380, padding: '10px 18px', borderRadius: 10, background: 'rgba(11,21,48,0.85)', fontFamily: CAP_FONT, fontSize: 32, fontWeight: 800, color: WHITE, letterSpacing: 1.5}}>
+      BE PRACTICAL <span style={{color: YELLOW, fontWeight: 600}}>with Kishore</span>
+    </div>
+  </AbsoluteFill>
+);

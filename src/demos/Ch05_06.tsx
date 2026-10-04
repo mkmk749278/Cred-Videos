@@ -1,7 +1,7 @@
 import React from 'react';
 import {tx} from '../lib/lang';
 import {C, FONT, MONO, alpha} from '../theme';
-import {Arrow, BeatSfx, Caption, DemoHeader, DemoProps, DemoRoot, Hi, Paper, Pill, SUPPORT, useBeats} from './kit';
+import {Arrow, BeatSfx, Caption, DemoHeader, DemoProps, DemoRoot, Hi, HI, Lens, Paper, Pill, SUPPORT, useBeats} from './kit';
 
 /* ------------------------------------------------------------------ §G salary account and set-off */
 
@@ -84,7 +84,7 @@ export const EmailDemo: React.FC<DemoProps> = ({ins}) => {
     <DemoRoot ins={ins}>
       <DemoHeader ins={ins} color={C.cyan} />
       {/* mail window */}
-      <div style={{position: 'absolute', left: 120, top: 310, width: 1100, height: 640, borderRadius: 22, background: '#0F172A', border: '2px solid rgba(148,163,184,0.35)', boxShadow: '0 40px 90px rgba(0,0,0,0.55)', overflow: 'hidden', opacity: p('verify')}}>
+      <div style={{position: 'absolute', left: 120, top: 310, width: 1100, height: HI ? 590 : 640, borderRadius: 22, background: '#0F172A', border: '2px solid rgba(148,163,184,0.35)', boxShadow: '0 40px 90px rgba(0,0,0,0.55)', overflow: 'hidden', opacity: p('verify')}}>
         <div style={{height: 56, background: '#1E293B', display: 'flex', alignItems: 'center', padding: '0 24px', gap: 10}}>
           {['#EF4444', '#F59E0B', '#22C55E'].map((c) => <div key={c} style={{width: 16, height: 16, borderRadius: 8, background: c}} />)}
           <div style={{marginLeft: 16, fontFamily: FONT, fontSize: 26, fontWeight: 800, color: '#fff'}}>New message — hardship</div>
@@ -94,7 +94,7 @@ export const EmailDemo: React.FC<DemoProps> = ({ins}) => {
           <Field label="Subject" value="Hardship — card •••• 4821" o={p('send')} />
           <div style={{paddingTop: 16}}>
             {BODY.map((b) => (
-              <div key={b.k} style={{fontFamily: FONT, fontSize: 30, color: '#fff', lineHeight: 1.45, minHeight: on(b.k) ? 46 : 0}}>{typed(b.k, b.text)}</div>
+              <div key={b.k} style={{fontFamily: FONT, fontSize: 30, color: '#fff', lineHeight: 1.45, minHeight: on(b.k) ? 46 : 0, background: HI && on(b.k) && !on('promise') && b.k === BODY.filter((q) => on(q.k)).slice(-1)[0]?.k ? alpha(C.cyan, 0.16) : undefined, borderRadius: 8}}>{typed(b.k, b.text)}</div>
             ))}
           </div>
         </div>
@@ -138,12 +138,13 @@ export const EmailDemo: React.FC<DemoProps> = ({ins}) => {
         </div>
       )}
       <div style={{position: 'absolute', right: 110, top: 128, padding: '10px 18px', borderRadius: 12, border: `2px solid ${alpha(C.amber, 0.7)}`, background: alpha(C.amber, 0.14), color: '#FDE68A', fontFamily: FONT, fontSize: 28, fontWeight: 750}}>Sample email — fictional address</div>
+      <Lens ins={ins} x={1270} y={430} w={560} size={46} lines={BODY.slice(0, 4).map((b) => ({k: b.k, until: 'promise', label: 'Your email says', text: b.text}))} />
       <Caption ins={ins} bottom={44} lines={[
-        {k: 'verify', text: 'Verify the grievance / nodal officer contact on the official website', te: 'Official website లో contact verify చేయండి'},
-        {k: 'nofancy', text: 'No fancy English — just your actual situation', te: 'Fancy English అవసరం లేదు'},
-        {k: 'promise', text: 'Don’t promise what you can’t afford', te: 'Afford చేయలేని amount promise చేయొద్దు', color: '#FCA5A5'},
-        {k: 'options', text: 'Ask in writing which options apply to you', te: 'ఏ options apply అవుతాయో written గా అడగండి'},
-        {k: 'sent', text: 'You can say you prefer written communication', te: 'Written communication prefer చేస్తున్నానని చెప్పొచ్చు'},
+        {k: 'verify', hi: 'Email ID bank ki official website se check karo', text: 'Verify the grievance / nodal officer contact on the official website', te: 'Official website లో contact verify చేయండి'},
+        {k: 'nofancy', hi: 'Fancy English nahi — apni asli situation likho', text: 'No fancy English — just your actual situation', te: 'Fancy English అవసరం లేదు'},
+        {k: 'promise', hi: 'Jo afford nahi kar sakte, woh promise mat karo', text: 'Don’t promise what you can’t afford', te: 'Afford చేయలేని amount promise చేయొద్దు', color: '#FCA5A5'},
+        {k: 'options', hi: 'Likh ke poocho — aapke liye kaun se options hain?', text: 'Ask in writing which options apply to you', te: 'ఏ options apply అవుతాయో written గా అడగండి'},
+        {k: 'sent', hi: 'Bol sakte ho: mujhe likhit mein baat karni hai', text: 'You can say you prefer written communication', te: 'Written communication prefer చేస్తున్నానని చెప్పొచ్చు'},
       ]} />
       <BeatSfx ins={ins} k="sent" name="email_sent" volume={0.25} />
     </DemoRoot>

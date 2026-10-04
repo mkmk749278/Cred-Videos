@@ -1,6 +1,6 @@
 import React from 'react';
 import {C, FONT, MONO, alpha} from '../theme';
-import {Arrow, BeatSfx, Caption, DemoHeader, DemoProps, DemoRoot, IllusTag, inr, Paper, Pill, SUPPORT, useBeats} from './kit';
+import {Arrow, BeatSfx, Caption, DemoHeader, DemoProps, DemoRoot, HI, IllusTag, inr, Lens, Paper, Pill, SUPPORT, useBeats} from './kit';
 
 const Box: React.FC<{x: number; y: number; w: number; h?: number; color: string; o: number; children: React.ReactNode; bg?: string}> = ({x, y, w, h, color, o, children, bg = '#0E1628'}) => (
   <div style={{position: 'absolute', left: x, top: y, width: w, height: h, padding: '22px 26px', borderRadius: 20, background: bg, border: `3px solid ${color}`, boxSizing: 'border-box', opacity: o, boxShadow: '0 30px 60px rgba(0,0,0,0.45)'}}>{children}</div>
@@ -72,12 +72,16 @@ export const ReportsDemo: React.FC<DemoProps> = ({ins}) => {
           )}
         </>
       )}
+      <Lens ins={ins} x={1140} y={320} w={660} size={72} lines={[
+        {k: 'settled', until: 'negative', label: 'Bank A card', text: 'Settled', note: '₹30,000 paid of ₹1,00,000 — lender agreed', color: C.amber},
+        {k: 'closed', until: 'negative', label: 'Bank C card', text: 'Closed', note: 'Fully repaid', color: C.emerald},
+      ]} />
       <Caption ins={ins} bottom={44} lines={[
-        {k: 'settled', text: '“Settled”: paid below the full dues, with the lender’s consent', te: 'Settled — full dues కంటే తక్కువ, lender ఒప్పుకోలుతో'},
-        {k: 'closed', text: '“Closed”: an account fully repaid', te: 'Closed — పూర్తిగా కట్టేసిన account'},
-        {k: 'negative', text: 'Lenders may view “Settled” negatively', te: 'Settled status ని lenders negative గా చూడొచ్చు', color: '#FDE68A'},
-        {k: 'ndc', text: 'A No Dues Certificate doesn’t mean the report must show “Closed”', te: 'No Dues Certificate వచ్చినా report లో Closed అని రావాలని లేదు'},
-        {k: 'different', text: 'Settlement completion and reporting status are different things', te: 'Settlement completion, credit reporting — రెండూ వేరు', color: '#FDE68A'},
+        {k: 'settled', hi: '“Settled” = poora nahi chukaya, bank ki marzi se kam', text: '“Settled”: paid below the full dues, with the lender’s consent', te: 'Settled — full dues కంటే తక్కువ, lender ఒప్పుకోలుతో'},
+        {k: 'closed', hi: '“Closed” = poora chuka diya', text: '“Closed”: an account fully repaid', te: 'Closed — పూర్తిగా కట్టేసిన account'},
+        {k: 'negative', hi: 'Naye lender “Settled” ko negative dekh sakte hain', text: 'Lenders may view “Settled” negatively', te: 'Settled status ని lenders negative గా చూడొచ్చు', color: '#FDE68A'},
+        {k: 'ndc', hi: 'No Dues Certificate mila, phir bhi report “Closed” ho — zaroori nahi', text: 'A No Dues Certificate doesn’t mean the report must show “Closed”', te: 'No Dues Certificate వచ్చినా report లో Closed అని రావాలని లేదు'},
+        {k: 'different', hi: 'Settlement poora hona aur report ka status — alag cheezein', text: 'Settlement completion and reporting status are different things', te: 'Settlement completion, credit reporting — రెండూ వేరు', color: '#FDE68A'},
       ]} />
     </DemoRoot>
   );
@@ -143,11 +147,11 @@ export const SecuredCardDemo: React.FC<DemoProps> = ({ins}) => {
         </div>
       )}
       <Caption ins={ins} bottom={44} lines={[
-        {k: 'fd', text: 'Later, if suitable: an FD-backed secured card', te: 'తర్వాత suitable అయితే FD-backed secured card'},
-        {k: 'approval', text: 'Approval, deposit and limits depend on the issuer', te: 'Approval, deposit, limit — issuer policy మీద ఆధారపడతాయి'},
-        {k: 'noguarantee', text: 'An FD doesn’t guarantee approval', te: 'FD చేసినంత మాత్రాన card వస్తుందని guarantee లేదు', color: '#FDE68A'},
-        {k: 'reserve', text: 'Don’t lock up your emergency savings for a card', te: 'Card కోసం emergency savings అన్నీ lock చేయకండి'},
-        {k: 'small', text: 'Use it only for small, planned expenses', te: 'చిన్న, plan చేసిన ఖర్చులకి మాత్రమే వాడండి', color: '#86EFAC'},
+        {k: 'fd', hi: 'Baad mein, agar suit kare: FD wala secured card', text: 'Later, if suitable: an FD-backed secured card', te: 'తర్వాత suitable అయితే FD-backed secured card'},
+        {k: 'approval', hi: 'Approval, deposit, limit — bank ki policy pe', text: 'Approval, deposit and limits depend on the issuer', te: 'Approval, deposit, limit — issuer policy మీద ఆధారపడతాయి'},
+        {k: 'noguarantee', hi: 'FD karne se card milega — guarantee nahi', text: 'An FD doesn’t guarantee approval', te: 'FD చేసినంత మాత్రాన card వస్తుందని guarantee లేదు', color: '#FDE68A'},
+        {k: 'reserve', hi: 'Card ke liye emergency savings lock mat karo', text: 'Don’t lock up your emergency savings for a card', te: 'Card కోసం emergency savings అన్నీ lock చేయకండి'},
+        {k: 'small', hi: 'Sirf chhote, planned kharchon ke liye', text: 'Use it only for small, planned expenses', te: 'చిన్న, plan చేసిన ఖర్చులకి మాత్రమే వాడండి', color: '#86EFAC'},
       ]} />
     </DemoRoot>
   );
@@ -176,18 +180,18 @@ export const UsageDemo: React.FC<DemoProps> = ({ins}) => {
       {on('example') && (
         <>
           <div style={{position: 'absolute', left: X + W * 0.1, top: 572, width: W * 0.1, height: 80, border: `4px dashed ${C.cyan}`, borderRadius: 12, opacity: p('example')}} />
-          <div style={{position: 'absolute', right: 1920 - (X + W * 0.1) + 10, top: 664, whiteSpace: 'nowrap', fontFamily: MONO, fontSize: 26, color: '#7DD3FC', opacity: p('example')}}>10% · {inr(LIMIT * 0.1)}</div>
-          <div style={{position: 'absolute', left: X + W * 0.2 + 10, top: 664, whiteSpace: 'nowrap', fontFamily: MONO, fontSize: 26, color: '#7DD3FC', opacity: p('example')}}>20% · {inr(LIMIT * 0.2)}</div>
+          <div style={{position: 'absolute', right: 1920 - (X + W * 0.1) + 10, top: 664, whiteSpace: 'nowrap', fontFamily: MONO, fontSize: HI ? 36 : 26, color: '#7DD3FC', opacity: p('example')}}>10% · {inr(LIMIT * 0.1)}</div>
+          <div style={{position: 'absolute', left: X + W * 0.2 + 10, top: 664, whiteSpace: 'nowrap', fontFamily: MONO, fontSize: HI ? 36 : 26, color: '#7DD3FC', opacity: p('example')}}>20% · {inr(LIMIT * 0.2)}</div>
           <div style={{position: 'absolute', left: X + W * 0.25, top: 590, fontFamily: FONT, fontSize: 30, color: SUPPORT, opacity: p('example', 10)}}>← one manageable approach (example)</div>
         </>
       )}
       {on('nopct') && <div style={{position: 'absolute', left: X, top: 740, opacity: p('nopct')}}><Pill text="No exact percentage guarantees your score will rise" color={C.amber} size={36} /></div>}
       <IllusTag text="Illustration — example limit" style={{top: 262}} />
       <Caption ins={ins} bottom={44} lines={[
-        {k: 'full', text: 'Pay the full statement balance by the due date', te: 'Full statement balance due date కి కట్టండి', color: '#86EFAC'},
-        {k: 'low', text: 'Keeping usage low may help', te: 'Usage తక్కువగా ఉంచడం help అవ్వొచ్చు'},
-        {k: 'example', text: 'For example, 10 or 20% of the limit', te: 'ఉదాహరణకి limit లో 10 లేదా 20%'},
-        {k: 'nopct', text: 'But no exact percentage guarantees a higher score', te: 'కానీ exact percentage తో score పెరుగుతుందని guarantee లేదు', color: '#FDE68A'},
+        {k: 'full', hi: 'Poora statement balance due date tak bharo', text: 'Pay the full statement balance by the due date', te: 'Full statement balance due date కి కట్టండి', color: '#86EFAC'},
+        {k: 'low', hi: 'Usage kam rakhna help kar sakta hai', text: 'Keeping usage low may help', te: 'Usage తక్కువగా ఉంచడం help అవ్వొచ్చు'},
+        {k: 'example', hi: 'Jaise limit ka 10 ya 20%', text: 'For example, 10 or 20% of the limit', te: 'ఉదాహరణకి limit లో 10 లేదా 20%'},
+        {k: 'nopct', hi: 'Koi exact % score badhne ki guarantee nahi', text: 'But no exact percentage guarantees a higher score', te: 'కానీ exact percentage తో score పెరుగుతుందని guarantee లేదు', color: '#FDE68A'},
       ]} />
     </DemoRoot>
   );
@@ -235,8 +239,8 @@ export const ReportDisputeDemo: React.FC<DemoProps> = ({ins}) => {
       {st === 1 && on('dispute') && (
         <div style={{position: 'absolute', left: 1280, top: 330, width: 520, display: 'flex', flexDirection: 'column', gap: 16, opacity: p('dispute')}}>
           <T s={32}>Raise a dispute with:</T>
-          <Pill text="the lender (Bank B)" color={C.cyan} size={32} />
-          <Pill text="the credit bureau" color={C.cyan} size={32} />
+          <Pill text="the lender (Bank B)" color={C.cyan} size={HI ? 40 : 32} />
+          <Pill text="the credit bureau" color={C.cyan} size={HI ? 40 : 32} />
           {on('accurate') ? null : <T s={26} c={SUPPORT}>save the reference · BUR-48213 (sample)</T>}
         </div>
       )}
@@ -247,14 +251,18 @@ export const ReportDisputeDemo: React.FC<DemoProps> = ({ins}) => {
           </Box>
         </div>
       )}
+      <Lens ins={ins} x={1280} y={330} w={540} size={50} lines={[
+        {k: 'updated', until: 'dispute', label: 'Bank A', text: '“Settled” ✓', note: 'Updated after settlement', color: C.emerald},
+        {k: 'error', until: 'dispute', label: 'Bank B', text: 'Wrong balance? Duplicate?', note: 'Galti hai toh dispute karo', color: C.crimson},
+      ]} />
       <IllusTag text="Sample report — fictional" style={{top: 262}} />
       <Caption ins={ins} bottom={44} lines={[
-        {k: 'ontime', text: 'The habits that matter most', te: 'ముఖ్యమైన habits'},
-        {k: 'check', text: 'Check your credit report regularly', te: 'Credit report regular గా check చేయండి'},
-        {k: 'updated', text: 'After settlement, check the report was updated', te: 'Settlement తర్వాత report update అయిందో చూడండి'},
-        {k: 'error', text: 'Wrong balance, wrong status, a duplicate account?', te: 'Balance, status తప్పుగా ఉందా? Duplicate account?', color: '#FCA5A5'},
-        {k: 'dispute', text: 'Raise a dispute with the lender and the bureau', te: 'Lender, credit bureau దగ్గర dispute raise చేయండి', color: '#7DD3FC'},
-        {k: 'accurate', text: 'Accurate history stays', te: 'నిజమైన negative history ని తీసేయలేం', color: '#FDE68A'},
+        {k: 'ontime', hi: 'Ye aadatein sabse zaroori hain', text: 'The habits that matter most', te: 'ముఖ్యమైన habits'},
+        {k: 'check', hi: 'Credit report regular check karo', text: 'Check your credit report regularly', te: 'Credit report regular గా check చేయండి'},
+        {k: 'updated', hi: 'Settlement ke baad report update hui? Check karo', text: 'After settlement, check the report was updated', te: 'Settlement తర్వాత report update అయిందో చూడండి'},
+        {k: 'error', hi: 'Galat balance, galat status, duplicate account?', text: 'Wrong balance, wrong status, a duplicate account?', te: 'Balance, status తప్పుగా ఉందా? Duplicate account?', color: '#FCA5A5'},
+        {k: 'dispute', hi: 'Lender aur credit bureau — dono se dispute karo', text: 'Raise a dispute with the lender and the bureau', te: 'Lender, credit bureau దగ్గర dispute raise చేయండి', color: '#7DD3FC'},
+        {k: 'accurate', hi: 'Sahi history hategi nahi', text: 'Accurate history stays', te: 'నిజమైన negative history ని తీసేయలేం', color: '#FDE68A'},
       ]} />
       <BeatSfx ins={ins} k="error" name="haptic_buzz" volume={0.16} />
     </DemoRoot>
@@ -299,10 +307,10 @@ export const StabiliseDemo: React.FC<DemoProps> = ({ins}) => {
       )}
       {on('nonew') && <div style={{position: 'absolute', left: 120, top: 680, opacity: p('nonew')}}><Pill text="Debt cleared? No need to take new credit immediately" color={C.amber} size={34} /></div>}
       <Caption ins={ins} bottom={44} lines={[
-        {k: 'income', text: 'Rebuilding is possible — but there’s no instant reset', te: 'Rebuild చేయొచ్చు — కానీ instant reset ఉండదు'},
-        {k: 'budget', text: 'Make your monthly budget manageable', te: 'Monthly budget manageable గా చేసుకోండి'},
-        {k: 'fund', text: 'Build a small emergency fund', te: 'చిన్న emergency fund పెట్టుకోండి', color: '#86EFAC'},
-        {k: 'nonew', text: 'Don’t rush into new credit', te: 'వెంటనే కొత్త credit తీసుకోవాల్సిన అవసరం లేదు', color: '#FDE68A'},
+        {k: 'income', hi: 'Rebuild ho sakta hai — par turant reset nahi', text: 'Rebuilding is possible — but there’s no instant reset', te: 'Rebuild చేయొచ్చు — కానీ instant reset ఉండదు'},
+        {k: 'budget', hi: 'Mahine ka budget sambhalne layak banao', text: 'Make your monthly budget manageable', te: 'Monthly budget manageable గా చేసుకోండి'},
+        {k: 'fund', hi: 'Chhota sa emergency fund banao', text: 'Build a small emergency fund', te: 'చిన్న emergency fund పెట్టుకోండి', color: '#86EFAC'},
+        {k: 'nonew', hi: 'Naye credit ki jaldi mat karo', text: 'Don’t rush into new credit', te: 'వెంటనే కొత్త credit తీసుకోవాల్సిన అవసరం లేదు', color: '#FDE68A'},
       ]} />
     </DemoRoot>
   );

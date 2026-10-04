@@ -1,6 +1,6 @@
 import React from 'react';
 import {C, FONT, MONO, alpha} from '../theme';
-import {Arrow, BeatSfx, Caption, DemoHeader, DemoProps, DemoRoot, Folder, Hi, Paper, Pill, SUPPORT, useBeats} from './kit';
+import {Arrow, BeatSfx, Caption, DemoHeader, DemoProps, DemoRoot, Folder, Hi, HI, Lens, Paper, Pill, SUPPORT, useBeats} from './kit';
 
 /* ------------------------------------------------------------------ §C legal distinctions */
 
@@ -177,7 +177,7 @@ export const RegisterDemo: React.FC<DemoProps> = ({ins}) => {
           ))}
         </div>
       )}
-      {on('legal') && (
+      {on('legal') && !HI && (
         <div style={{position: 'absolute', left: 1240, top: 720, opacity: p('legal', 14)}}>
           <Pill text="📎 Notice attached · reply by 25 Oct" color={C.amber} size={30} />
         </div>
@@ -185,20 +185,23 @@ export const RegisterDemo: React.FC<DemoProps> = ({ins}) => {
       {on('separate') && (
         <div style={{position: 'absolute', left: tableX, top: 800, opacity: p('separate')}}>
           <div style={{display: 'flex', gap: 20}}>
-            <Pill text="Track every account separately" color={C.emerald} size={34} />
-            {on('onebank') && <Pill text="Settling Bank A ≠ settling Bank B or C" color={C.amber} size={32} style={{opacity: p('onebank')}} />}
+            <Pill text="Track every account separately" color={C.emerald} size={HI ? 42 : 34} />
+            {on('onebank') && <Pill text="Settling Bank A ≠ settling Bank B or C" color={C.amber} size={HI ? 40 : 32} style={{opacity: p('onebank')}} />}
           </div>
         </div>
       )}
       <div style={{position: 'absolute', right: 110, top: 128, padding: '10px 18px', borderRadius: 12, border: `2px solid ${alpha(C.amber, 0.7)}`, background: alpha(C.amber, 0.14), color: '#FDE68A', fontFamily: FONT, fontSize: 28, fontWeight: 750, opacity: form}}>Example register — fictional banks and figures</div>
+      <Lens ins={ins} x={tableX} y={650} w={1400} size={58} lines={[
+        {k: 'legal', until: 'separate', label: 'Bank B · legal communication', text: '📎 Notice, 10 Oct → reply by 25 Oct', color: C.amber},
+      ]} />
       <Caption ins={ins} bottom={56} lines={[
-        {k: 'fear', text: '“I owe four or five banks…”', te: '4–5 banks కి అప్పు ఉంది…'},
-        {k: 'overwhelmed', text: 'Many accounts can feel overwhelming', te: 'చాలా accounts ఉంటే mentally చాలా pressure'},
-        {k: 'lose', text: 'How much do I owe where?', te: 'ఎక్కడ ఎంత కట్టాలో కూడా మర్చిపోవచ్చు', color: '#FCA5A5'},
-        {k: 'list', text: 'First, make one simple list', te: 'ముందు ఒక simple list తయారు చేయండి'},
-        {k: 'legal', text: 'Record any legal communication too — keep it all in one place', te: 'Legal communication కూడా — అన్నీ ఒకే చోట'},
-        {k: 'separate', text: 'Track every account separately', te: 'ప్రతి account ని separate గా track చేయండి', color: '#86EFAC'},
-        {k: 'onebank', text: 'Settling with one bank doesn’t settle the others', te: 'ఒక bank తో settle చేస్తే మిగతా accounts settle అవ్వవు', color: '#FDE68A'},
+        {k: 'fear', hi: '“Chaar-paanch banks ka loan hai…”', text: '“I owe four or five banks…”', te: '4–5 banks కి అప్పు ఉంది…'},
+        {k: 'overwhelmed', hi: 'Itne accounts — dimaag pe pressure', text: 'Many accounts can feel overwhelming', te: 'చాలా accounts ఉంటే mentally చాలా pressure'},
+        {k: 'lose', hi: 'Kahan kitna dena hai, yaad hi nahi', text: 'How much do I owe where?', te: 'ఎక్కడ ఎంత కట్టాలో కూడా మర్చిపోవచ్చు', color: '#FCA5A5'},
+        {k: 'list', hi: 'Pehle ek simple list banao', text: 'First, make one simple list', te: 'ముందు ఒక simple list తయారు చేయండి'},
+        {k: 'legal', hi: 'Legal notice bhi isi list mein — sab ek jagah', text: 'Record any legal communication too — keep it all in one place', te: 'Legal communication కూడా — అన్నీ ఒకే చోట'},
+        {k: 'separate', hi: 'Har account ka hisaab alag rakho', text: 'Track every account separately', te: 'ప్రతి account ని separate గా track చేయండి', color: '#86EFAC'},
+        {k: 'onebank', hi: 'Ek bank se settle kiya, toh baaki settle nahi hote', text: 'Settling with one bank doesn’t settle the others', te: 'ఒక bank తో settle చేస్తే మిగతా accounts settle అవ్వవు', color: '#FDE68A'},
       ]} />
       <BeatSfx ins={ins} k="list" name="grid_lock" />
     </DemoRoot>

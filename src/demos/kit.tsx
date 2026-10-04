@@ -6,7 +6,11 @@ import {CLAMP, SNAPPY, SOFT, spr} from '../lib/anim';
 import {FPS, LEAD} from '../lib/timing';
 import {Sfx} from '../components/primitives';
 import type {Insert} from '../components/TeluguInserts';
-import {SHOW_TE} from '../lib/lang';
+import {LANG, SHOW_TE} from '../lib/lang';
+
+/** Hinglish edition: Hinglish takeaways under the captions, enlarged document lines (phone readability) */
+export const HI = LANG === 'hi';
+export const HI_GOLD = '#FFD54F';
 
 /**
  * Toolkit for the Telugu edition's animated demonstrations.
@@ -74,7 +78,7 @@ export const IllusTag: React.FC<{text?: string; style?: React.CSSProperties}> = 
 );
 
 /** A bottom caption line that changes with the beat (main conclusion text, readable size) */
-export const Caption: React.FC<{lines: {k: string; text: string; te?: string; color?: string}[]; ins: Insert; bottom?: number}> = ({lines, ins, bottom = 150}) => {
+export const Caption: React.FC<{lines: {k: string; text: string; te?: string; hi?: string; color?: string}[]; ins: Insert; bottom?: number}> = ({lines, ins, bottom = 150}) => {
   const {frame, at} = useBeats(ins);
   // the most recently reached line wins (ties: the later one), so lines may be listed in any order
   let cur = -1;
@@ -88,6 +92,44 @@ export const Caption: React.FC<{lines: {k: string; text: string; te?: string; co
     <div style={{position: 'absolute', left: 120, right: 120, bottom, textAlign: 'center', opacity: o, transform: `translateY(${(1 - o) * 14}px)`}}>
       <div style={{fontFamily: FONT, fontSize: 46, fontWeight: 800, color: l.color ?? C.text, textShadow: '0 4px 24px rgba(0,0,0,0.7)'}}>{l.text}</div>
       {l.te && SHOW_TE && <div style={{fontFamily: TE_FONT, fontSize: 38, fontWeight: 600, color: SUPPORT, marginTop: 6}}>{l.te}</div>}
+      {l.hi && HI && <div style={{fontFamily: FONT, fontSize: 40, fontWeight: 750, color: HI_GOLD, marginTop: 6, textShadow: '0 4px 20px rgba(0,0,0,0.75)'}}>{l.hi}</div>}
+    </div>
+  );
+};
+
+/**
+ * Hinglish edition: the one document line being spoken, enlarged in a card so it reads on a phone.
+ * The most recently reached line shows; `until` hides it again. Renders nothing outside the Hinglish edition.
+ */
+export const Lens: React.FC<{
+  ins: Insert;
+  lines: {k: string; until?: string; label?: string; text: React.ReactNode; note?: React.ReactNode; color?: string}[];
+  x: number;
+  y: number;
+  w: number;
+  size?: number;
+}> = ({ins, lines, x, y, w, size = 54}) => {
+  const {frame, at, fps} = useBeats(ins);
+  if (!HI) return null;
+  let cur = -1;
+  lines.forEach((l, i) => {
+    if (frame >= at(l.k) && (cur < 0 || at(l.k) >= at(lines[cur].k))) cur = i;
+  });
+  if (cur < 0) return null;
+  const l = lines[cur];
+  if (l.until && frame >= at(l.until)) return null;
+  // the card pops in once (first line) and stays; each new line slides its text in
+  const first = at(lines.reduce((a, b) => (at(b.k) < at(a.k) ? b : a)).k);
+  const card = spr(frame, fps, first, SNAPPY);
+  const t = interpolate(frame, [at(l.k), at(l.k) + 8], [0, 1], CLAMP);
+  const color = l.color ?? C.cyan;
+  return (
+    <div style={{position: 'absolute', left: x, top: y, width: w, opacity: Math.min(1, card), transform: `scale(${0.94 + 0.06 * Math.min(1, card)})`, transformOrigin: 'left top', zIndex: 5}}>
+      <div style={{padding: '26px 34px 30px', borderRadius: 24, background: 'rgba(8, 13, 26, 0.94)', border: `3px solid ${color}`, boxShadow: `0 30px 70px rgba(0,0,0,0.6), 0 0 40px ${alpha(color, 0.25)}`, fontFamily: FONT, color: '#fff'}}>
+        {l.label && <div style={{fontFamily: MONO, fontSize: 24, letterSpacing: 4, color, fontWeight: 800, textTransform: 'uppercase', opacity: t}}>{l.label}</div>}
+        <div style={{fontSize: size, fontWeight: 850, lineHeight: 1.12, letterSpacing: -0.5, marginTop: l.label ? 10 : 0, opacity: t, transform: `translateY(${(1 - t) * 16}px)`}}>{l.text}</div>
+        {l.note && <div style={{fontSize: 34, fontWeight: 700, color: HI_GOLD, marginTop: 14, lineHeight: 1.25, opacity: t}}>{l.note}</div>}
+      </div>
     </div>
   );
 };

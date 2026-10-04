@@ -1,6 +1,6 @@
 import React from 'react';
 import {C, FONT, MONO, alpha} from '../theme';
-import {BeatSfx, Caption, DemoProps, DemoRoot, Hi, IllusTag, Paper, Pill, SUPPORT, useBeats, useCamera} from './kit';
+import {BeatSfx, Caption, DemoProps, DemoRoot, Hi, HI, IllusTag, Lens, Paper, Pill, SUPPORT, useBeats, useCamera} from './kit';
 
 /**
  * §M Settlement-letter demonstration (m11). A fictional Bank A letter, labelled Sample / Illustration.
@@ -61,9 +61,18 @@ export const LetterDemo: React.FC<DemoProps> = ({ins}) => {
     [
       {k: 'enter', x: 410, y: 500, s: 0.58},
       {k: 'verify', x: 410, y: 500, s: 0.58},
-      {k: 'account', x: 400, y: 232, s: 1.3},
-      {k: 'amount', x: 400, y: 352, s: 1.3},
-      {k: 'terms', x: 410, y: 548, s: 1.1},
+      // Hinglish edition: the letter sits on the left at full size, the spoken line is enlarged on the right (Lens)
+      ...(HI
+        ? [
+            {k: 'account', x: 860, y: 260, s: 1},
+            {k: 'amount', x: 860, y: 352, s: 1},
+            {k: 'terms', x: 860, y: 540, s: 1},
+          ]
+        : [
+            {k: 'account', x: 400, y: 232, s: 1.3},
+            {k: 'amount', x: 400, y: 352, s: 1.3},
+            {k: 'terms', x: 410, y: 548, s: 1.1},
+          ]),
       {k: 'channel', x: 1120, y: 500, s: 0.58},
     ],
     VW,
@@ -141,22 +150,29 @@ export const LetterDemo: React.FC<DemoProps> = ({ins}) => {
           </div>
         )}
       </div>
+      <Lens ins={ins} x={990} y={352} w={800} size={56} lines={[
+        {k: 'account', until: 'channel', label: 'Name & account', text: 'R. Kumar · card •••• 4821', color: C.cyan},
+        {k: 'amount', until: 'channel', label: 'Agreed amount', text: '₹30,000', note: 'Settlement amount — in writing', color: C.emerald},
+        {k: 'dates', until: 'channel', label: 'Payment dates', text: '₹10,000 × 3', note: '30 Nov · 30 Dec 2026 · 30 Jan 2027', color: C.amber},
+        {k: 'terms', until: 'channel', label: 'Remaining dues', text: 'Waived · no further claim', note: 'Baaki dues ka kya hoga — likha hai', color: C.emerald},
+        {k: 'reporting', until: 'channel', label: 'Credit bureau reporting', text: '“Settled”', note: 'Report mein yahi status dikhega', color: C.amber},
+      ]} />
       <Caption
         ins={ins}
         bottom={48}
         lines={[
-          {k: 'enter', text: 'Ask for the official settlement letter first', te: 'ముందు official settlement letter అడగండి'},
-          {k: 'verify', text: 'Who issued it? Who signed it?', te: 'ఎవరు ఇచ్చారు? ఎవరు sign చేశారు?'},
-          {k: 'account', text: 'Your name and the exact account', te: 'మీ పేరు, ఏ account అనేది clear గా'},
-          {k: 'amount', text: 'The agreed amount — and the payment date', te: 'Agreed amount, payment dates'},
-          {k: 'terms', text: 'What happens to the remaining dues?', te: 'మిగతా dues ఏమవుతాయి? ఇంకేమైనా claim ఉందా?'},
-          {k: 'reporting', text: 'How will the account be reported?', te: 'Credit report లో ఎలా చూపిస్తారు?', color: '#FDE68A'},
-          {k: 'channel', text: 'Verify it yourself, through the official channel', te: 'Official channel లో మీరే verify చేయండి', color: '#86EFAC'},
-          {k: 'screenshot', text: 'A WhatsApp screenshot alone is not enough', te: 'WhatsApp screenshot ఒక్కటే చాలదు', color: '#FCA5A5'},
-          {k: 'smallfirst', text: '“Pay a little now, letter later”? Stop.', te: 'ఆ payment settlement లో part అవుతుందా?', color: '#FCA5A5'},
-          {k: 'writing', text: 'Get clarity in writing before paying', te: 'Payment కి ముందే written గా clarity', color: '#86EFAC'},
-          {k: 'misrecord', text: 'Recorded as an ordinary part-payment? That’s a misunderstanding', te: 'Ordinary part payment గా record అయితే misunderstanding', color: '#FCA5A5'},
-          {k: 'clarity', text: 'Get clarity before making the payment', te: 'Payment చేసే ముందే clarity తీసుకోండి', color: '#7DD3FC'},
+          {k: 'enter', hi: 'Pehle official settlement letter maango', text: 'Ask for the official settlement letter first', te: 'ముందు official settlement letter అడగండి'},
+          {k: 'verify', hi: 'Kisne bheja? Kisne sign kiya?', text: 'Who issued it? Who signed it?', te: 'ఎవరు ఇచ్చారు? ఎవరు sign చేశారు?'},
+          {k: 'account', hi: 'Aapka naam aur sahi account', text: 'Your name and the exact account', te: 'మీ పేరు, ఏ account అనేది clear గా'},
+          {k: 'amount', hi: 'Kitna dena hai — aur kab tak', text: 'The agreed amount — and the payment date', te: 'Agreed amount, payment dates'},
+          {k: 'terms', hi: 'Baaki dues ka kya hoga? Letter mein likha ho', text: 'What happens to the remaining dues?', te: 'మిగతా dues ఏమవుతాయి? ఇంకేమైనా claim ఉందా?'},
+          {k: 'reporting', hi: 'Credit report mein kya dikhega?', text: 'How will the account be reported?', te: 'Credit report లో ఎలా చూపిస్తారు?', color: '#FDE68A'},
+          {k: 'channel', hi: 'Official channel se khud verify karo', text: 'Verify it yourself, through the official channel', te: 'Official channel లో మీరే verify చేయండి', color: '#86EFAC'},
+          {k: 'screenshot', hi: 'Sirf WhatsApp screenshot kaafi nahi', text: 'A WhatsApp screenshot alone is not enough', te: 'WhatsApp screenshot ఒక్కటే చాలదు', color: '#FCA5A5'},
+          {k: 'smallfirst', hi: '“Abhi thoda do, letter baad mein”? Ruko.', text: '“Pay a little now, letter later”? Stop.', te: 'ఆ payment settlement లో part అవుతుందా?', color: '#FCA5A5'},
+          {k: 'writing', hi: 'Paisa dene se pehle likhit mein clarity lo', text: 'Get clarity in writing before paying', te: 'Payment కి ముందే written గా clarity', color: '#86EFAC'},
+          {k: 'misrecord', hi: 'Part-payment maana gaya toh confusion hoga', text: 'Recorded as an ordinary part-payment? That’s a misunderstanding', te: 'Ordinary part payment గా record అయితే misunderstanding', color: '#FCA5A5'},
+          {k: 'clarity', hi: 'Pehle clarity, phir payment', text: 'Get clarity before making the payment', te: 'Payment చేసే ముందే clarity తీసుకోండి', color: '#7DD3FC'},
         ]}
       />
       <BeatSfx ins={ins} k="enter" name="pages_flip" volume={0.25} />

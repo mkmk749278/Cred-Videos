@@ -38,19 +38,19 @@ const t = <T,>(en: T, te: T): T => (TE ? te : en);
 
 /* ---------------------------------------------------------------- pieces */
 
-const Chip: React.FC<{text: string; color: string; size?: number; style?: React.CSSProperties}> = ({text, color, size = 30, style}) => (
+export const Chip: React.FC<{text: string; color: string; size?: number; style?: React.CSSProperties}> = ({text, color, size = 30, style}) => (
   <div style={{display: 'inline-flex', alignItems: 'center', padding: '10px 22px', borderRadius: 999, border: `3px solid ${color}`, background: alpha(color, 0.16), color: '#fff', fontFamily: FONT, fontSize: size, fontWeight: 800, whiteSpace: 'nowrap', ...style}}>
     {text}
   </div>
 );
 
-const Stamp: React.FC<{text: string; color: string; p: number; rot?: number; size?: number}> = ({text, color, p, rot = -6, size = 44}) => (
+export const Stamp: React.FC<{text: string; color: string; p: number; rot?: number; size?: number}> = ({text, color, p, rot = -6, size = 44}) => (
   <div style={{display: 'inline-block', padding: '12px 26px', borderRadius: 16, border: `6px solid ${color}`, color, fontFamily: FONT, fontSize: size, fontWeight: 900, letterSpacing: 1, background: alpha('#04060C', 0.75), transform: `rotate(${rot}deg) scale(${1.35 - 0.35 * p})`, opacity: p, textAlign: 'center', lineHeight: 1.15}}>
     {text}
   </div>
 );
 
-const Card: React.FC<{children: React.ReactNode; color?: string; style?: React.CSSProperties}> = ({children, color = 'rgba(148,163,184,0.45)', style}) => (
+export const Card: React.FC<{children: React.ReactNode; color?: string; style?: React.CSSProperties}> = ({children, color = 'rgba(148,163,184,0.45)', style}) => (
   <div style={{padding: '24px 28px', borderRadius: 26, background: '#0E1628', border: `3px solid ${color}`, boxShadow: '0 30px 70px rgba(0,0,0,0.55)', boxSizing: 'border-box', ...style}}>{children}</div>
 );
 

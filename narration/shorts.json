@@ -1,0 +1,58 @@
+{
+  "_doc": "Curiosity shorts cut from the creator's own narration (no new words). Each passage is [first words, last words] of a sentence run in narration/english/transcript.md; scripts/make_shorts_audio.py finds them in the word timestamps. 'answer' is where the full English video answers the open question (mm:ss on YouTube).",
+  "enh": {
+    "blocked": {
+      "answer": "7:40",
+      "passages": [
+        ["I stopped using the card.", "Then why is the balance still increasing?"],
+        ["Blocking the card may stop new purchases.", "other charges that apply to the old balance."],
+        ["Suppose you owe one lakh rupees.", "about three thousand rupees in interest."],
+        ["This is just an example.", "This is just an example."],
+        ["There is an important RBI protection here too.", "There is an important RBI protection here too."]
+      ]
+    },
+    "calls": {
+      "answer": "12:02",
+      "passages": [
+        ["Calls for recovering overdue dues", "after seven in the evening."],
+        ["And no, that does not mean", "between eight and seven."],
+        ["Suppose someone says, \"We'll tell your neighbours.", "We'll trouble your family.\""],
+        ["You don't have to treat this as normal recovery.", "You don't have to treat this as normal recovery."]
+      ]
+    },
+    "thirtyk": {
+      "answer": "20:15",
+      "passages": [
+        ["Imagine your balance is one lakh rupees.", "You feel relieved, right?"],
+        ["But before paying, ask for the official settlement letter.", "But before paying, ask for the official settlement letter."],
+        ["If someone says, \"Pay a little first.", "ask what that payment will count as."],
+        ["You should not discover later", "from what you expected."]
+      ]
+    },
+    "writeoff": {
+      "answer": "18:06",
+      "passages": [
+        ["Now comes another confusing word: write-off.", "Please check what they mean."],
+        ["There is also no single rule", "after one hundred and eighty days."],
+        ["Waiting for write-off does not guarantee a big discount.", "Waiting for write-off does not guarantee a big discount."]
+      ]
+    },
+    "cibil": {
+      "answer": "22:38",
+      "passages": [
+        ["After settlement, another worry comes.", "Will I ever get a loan again?\""],
+        ["First, understand two words: Settled and Closed.", "First, understand two words: Settled and Closed."],
+        ["Getting a No Dues Certificate", "your report will say Closed."],
+        ["Can you improve your credit again?", "there is no instant reset."]
+      ]
+    },
+    "salary": {
+      "answer": "8:50",
+      "passages": [
+        ["Next, check your salary account.", "where your credit card payment is overdue?"],
+        ["If yes, read the account and card terms carefully.", "\"lien\" or \"set-off\"."],
+        ["So don't assume,", "Some agreements give the bank these rights."]
+      ]
+    }
+  }
+}

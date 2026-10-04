@@ -40,3 +40,10 @@
 | Subtitles (`captions_en.srt`) | 615 English cues from the creator's translation, timed to the Hinglish audio by sentence alignment (537 of 556 sentences with good overlap). No overlaps; the last cue ends before the film does. They are a translation, not a transcript of the Hinglish words. |
 | Frozen foreground (`find_frozen.py`) | 49 runs of 8–13.5 s (`frozen_report.txt`); each is a demo's final state held while the slower Hinglish narration finishes the point. Longest 13.5 s (ch 6, the hardship email). |
 | Visual review | Stills of the cold open and every stretch of 8 s or more where the English stage shows; contact sheets of all 19 rendered chunks every 5 s; a full-film sheet every 30 s; the spliced fixes checked frame by frame |
+
+## v2 (review fixes, 4 Oct 2026)
+
+- Changes: Hinglish chapter names on title cards, HUD and chapters; BE PRACTICAL with Kishore wordmark (opening, title cards, HUD, closing); complaint graphic says "no reply in time — usually 30 days; longer applicable timelines may apply"; enlarged spoken document lines with Hinglish takeaways in the register, hardship email, settlement letter and credit-report demos; clean hand-off at all 40 back-to-back insert transitions (incl. 29:20).
+- `check_av`: 60185 frames, timestamps continuous (0 boundary holds of 18 boundaries).
+- `check_vo_sync`: lag +40…+50 ms in every module (decoder baseline), correlation ≥ 0.96.
+- Master: −14.00 LUFS, −3.25 dBTP true peak.

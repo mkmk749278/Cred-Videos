@@ -40,7 +40,7 @@ const Caption: React.FC<{from: number; to: number; text: string; accent?: string
   const outP = interpolate(f, [to - 7, to], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const parts = accent && text.includes(accent) ? text.split(accent) : [text];
   return (
-    <div style={{position: 'absolute', top: 196, left: 90, right: 200, display: 'flex', justifyContent: 'flex-start', opacity: p * outP, transform: `translateY(${(1 - p) * 18}px)`}}>
+    <div style={{position: 'absolute', top: 226, left: 90, right: 200, display: 'flex', justifyContent: 'flex-start', opacity: p * outP, transform: `translateY(${(1 - p) * 18}px)`}}>
       <div style={{background: 'rgba(11,21,48,0.88)', borderRadius: 22, padding: '20px 30px 24px', boxShadow: '0 10px 40px rgba(0,0,0,0.35)', borderLeft: `10px solid ${YELLOW}`}}>
         <div style={{fontFamily: CAP_FONT, fontSize: 64, fontWeight: 800, lineHeight: 1.28, color: WHITE, letterSpacing: -0.3}}>
           {parts.length === 2 ? (
@@ -63,7 +63,7 @@ const ExampleTag: React.FC = () => {
   const on = EXAMPLE_SPANS.some(([a, b]) => f >= a && f < b);
   if (!on) return null;
   return (
-    <div style={{position: 'absolute', left: 90, top: 1372, padding: '8px 16px', borderRadius: 10, background: 'rgba(11,21,48,0.78)', border: `2px solid ${YELLOW}`, color: YELLOW, fontFamily: CAP_FONT, fontSize: 28, fontWeight: 800, letterSpacing: 2}}>
+    <div style={{position: 'absolute', left: 90, top: 162, padding: '6px 14px', borderRadius: 10, background: 'rgba(11,21,48,0.78)', border: `2px solid ${YELLOW}`, color: YELLOW, fontFamily: CAP_FONT, fontSize: 26, fontWeight: 800, letterSpacing: 2}}>
       EXAMPLE <span style={{color: WHITE, fontWeight: 600, letterSpacing: 0.5}}>· fictional amounts &amp; dates</span>
     </div>
   );
@@ -76,7 +76,7 @@ const Invite: React.FC = () => {
   const p = interpolate(f, [from, from + 12], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const bob = Math.sin((f - from) / 9) * 6;
   return (
-    <div style={{position: 'absolute', left: 90, right: 200, top: 1180, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', opacity: p, transform: `translateY(${(1 - p) * 24}px)`}}>
+    <div style={{position: 'absolute', left: 90, right: 200, top: 1290, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', opacity: p, transform: `translateY(${(1 - p) * 24}px)`}}>
       <div style={{background: YELLOW, color: NAVY, borderRadius: 22, padding: '18px 30px 22px', fontFamily: CAP_FONT, fontSize: 66, fontWeight: 900, boxShadow: '0 12px 40px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', gap: 18}}>
         Full Telugu video <span style={{display: 'inline-block', transform: `translateY(${bob}px)`}}>↓</span>
       </div>

@@ -16,8 +16,7 @@ n=$(ls short01/frames/f*.jpg | wc -l); echo "frames: $n"; [ "$n" -eq 1281 ]
 python3 short01/make_audio.py
 ln -sfn ../../short01/frames public/short01/frames
 npx tsc --noEmit -p .
-npx remotion render Short01 out/short01/raw.mp4 --codec h264 --video-bitrate 16M --audio-codec aac --audio-bitrate 320k --concurrency 4
-python3 scripts/master_audio.py out/short01/raw.mp4 out/short01/mastered.mp4 -16
-$FF -v error -y -i out/short01/mastered.mp4 -c copy -movflags +faststart out/short01/SHORT_01_TELUGU_FINAL.mp4
+npx remotion render Short01 out/short01/raw.mp4 --codec h264 --crf 11 --pixel-format yuv420p --color-space bt709 --audio-codec aac --audio-bitrate 320k --concurrency 4
+python3 short01/master.py out/short01/raw.mp4 out/short01/SHORT_01_TELUGU_FINAL.mp4 -14
 npx remotion still Short01Cover out/short01/SHORT_01_COVER.png
 ls -la out/short01

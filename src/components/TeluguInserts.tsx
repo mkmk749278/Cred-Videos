@@ -64,19 +64,35 @@ const Kicker: React.FC<{text: string; color: string}> = ({text, color}) => (
 const TeLine: React.FC<{text?: string; size?: number; color?: string}> = ({text, size = 40, color = SUPPORT}) =>
   text && SHOW_TE ? <div style={{fontFamily: TE_FONT, fontSize: size, fontWeight: 600, color, marginTop: 10, lineHeight: 1.4}}>{text}</div> : null;
 
-/** back-to-back panels hand over cleanly: the outgoing one clears before the next comes in (no two headlines stacked) */
+/**
+ * Fade window of an insert (frames, module-relative): fades in over [inA, inB], out over [outA, outB].
+ * Back-to-back inserts hand over cleanly: the outgoing one clears before the next comes in, so two headlines
+ * never stack (the stage stays covered — insertLevel spans the gap).
+ */
 const HANDOFF = 8;
-const Panel: React.FC<{ins: Insert; prev?: Insert; next?: Insert}> = ({ins, prev, next}) => {
+export const fadeWindow = (ins: Insert) => {
+  const list = Object.values(DATA).find((l) => l.includes(ins)) ?? [ins];
+  const i = list.indexOf(ins);
+  const prev = list[i - 1];
+  const next = list[i + 1];
+  const a = f(ins.from);
+  const b = f(ins.to);
+  const tight = (x?: Insert, y?: Insert) => !!x && !!y && f(y.from) - FADE < f(x.to) + FADE;
+  const inA = tight(prev, ins) ? Math.max(a - FADE, Math.min(f(prev!.to), a)) : a - FADE;
+  const outB = tight(ins, next) ? Math.min(b, f(next!.from)) : b + FADE;
+  return {inA, inB: inA + FADE, outA: outB - (tight(ins, next) ? HANDOFF : FADE), outB};
+};
+
+const Panel: React.FC<{ins: Insert}> = ({ins}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const a = f(ins.from);
   const b = f(ins.to);
   const color = C[ins.color ?? 'cyan'];
-  const tight = (x?: Insert, y?: Insert) => !!x && !!y && x.kind !== 'demo' && y.kind !== 'demo' && f(y.from) - FADE < f(x.to) + FADE;
-  const pinAt = tight(prev, ins) ? Math.max(a - FADE, f(prev!.to)) : a - FADE;
-  const outAt = tight(ins, next) ? Math.min(b, f(next!.from)) - HANDOFF : b;
+  const w = fadeWindow(ins);
+  const pinAt = w.inA;
   const pin = spr(frame, fps, pinAt, SNAPPY);
-  const out = interpolate(frame, [outAt, outAt + (outAt < b ? HANDOFF : FADE)], [0, 1], CLAMP);
+  const out = interpolate(frame, [w.outA, w.outB], [0, 1], CLAMP);
   const items = ins.items ?? [];
 
   const header = (
@@ -223,9 +239,9 @@ export const TeluguInserts: React.FC<{index: number}> = ({index}) => {
   const frame = useCurrentFrame();
   return (
     <>
-      {insertsFor(index).map((ins, i, all) => {
+      {insertsFor(index).map((ins, i) => {
         if (frame < f(ins.from) - FADE - 2 || frame > f(ins.to) + FADE + 2) return null;
-        return ins.kind === 'demo' ? <DemoRouter key={i} ins={ins} /> : <Panel key={i} ins={ins} prev={all[i - 1]} next={all[i + 1]} />;
+        return ins.kind === 'demo' ? <DemoRouter key={i} ins={ins} /> : <Panel key={i} ins={ins} />;
       })}
     </>
   );

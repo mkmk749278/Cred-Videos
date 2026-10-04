@@ -5,7 +5,7 @@ import {C, FONT, MONO, alpha} from '../theme';
 import {CLAMP, SNAPPY, SOFT, spr} from '../lib/anim';
 import {FPS, LEAD} from '../lib/timing';
 import {Sfx} from '../components/primitives';
-import type {Insert} from '../components/TeluguInserts';
+import {fadeWindow, type Insert} from '../components/TeluguInserts';
 import {LANG, SHOW_TE} from '../lib/lang';
 
 /** Hinglish edition: Hinglish takeaways under the captions, enlarged document lines (phone readability) */
@@ -216,8 +216,7 @@ export const BeatSfx: React.FC<{ins: Insert; k: string; name: Parameters<typeof 
 /** container covering the stage area below the header, fading in/out with the insert window */
 export const DemoRoot: React.FC<{ins: Insert; children: React.ReactNode}> = ({ins, children}) => {
   const frame = useCurrentFrame();
-  const a = fr(ins.from);
-  const b = fr(ins.to);
-  const o = interpolate(frame, [a - 12, a, b, b + 12], [0, 1, 1, 0], CLAMP);
+  const w = fadeWindow(ins);
+  const o = interpolate(frame, [w.inA, w.inB, w.outA, w.outB], [0, 1, 1, 0], CLAMP);
   return <div style={{position: 'absolute', inset: 0, opacity: o}}>{children}</div>;
 };

@@ -7,9 +7,10 @@ cd "$(dirname "$0")/.."
 A=$1; B=$2; BR=$3
 pip install -q bpy==4.2.0 numpy pillow fonttools brotli 2>&1 | grep -v WARN || true
 python3 short01/fetch_assets.py >/dev/null
+echo assets ok
 python3 short01/make_textures.py >/dev/null
 (python3 short01/scene.py >/dev/null 2>&1; true)
-test -f short01/build/short01.blend
+test -f short01/build/short01.blend && echo scene ok
 OUT=short01/frames
 mkdir -p $OUT
 python3 short01/render.py $OUT $A-$B --samples 16 2>&1 | grep --line-buffered '^frame'

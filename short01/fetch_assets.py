@@ -1,4 +1,6 @@
 import json,urllib.request,os
+os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)),'assets'),exist_ok=True)
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)),'assets'))
 UA={'User-Agent':'Mozilla/5.0 cred-videos-asset-fetch'}
 def get(url): return urllib.request.urlopen(urllib.request.Request(url,headers=UA)).read()
 def files(a): return json.loads(get(f"https://api.polyhaven.com/files/{a}"))

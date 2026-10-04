@@ -9,7 +9,7 @@ pip install -q bpy==4.2.0 numpy pillow fonttools brotli 2>&1 | grep -v WARN || t
 python3 short01/fetch_assets.py >/dev/null
 echo assets ok
 python3 short01/make_textures.py >/dev/null
-(python3 short01/scene.py >/dev/null 2>&1; true)
+python3 short01/scene.py >/dev/null 2>&1 || true
 test -f short01/build/short01.blend && echo scene ok
 OUT=short01/frames
 mkdir -p $OUT

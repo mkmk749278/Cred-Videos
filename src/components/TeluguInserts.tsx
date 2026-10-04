@@ -64,14 +64,19 @@ const Kicker: React.FC<{text: string; color: string}> = ({text, color}) => (
 const TeLine: React.FC<{text?: string; size?: number; color?: string}> = ({text, size = 40, color = SUPPORT}) =>
   text && SHOW_TE ? <div style={{fontFamily: TE_FONT, fontSize: size, fontWeight: 600, color, marginTop: 10, lineHeight: 1.4}}>{text}</div> : null;
 
-const Panel: React.FC<{ins: Insert}> = ({ins}) => {
+/** back-to-back panels hand over cleanly: the outgoing one clears before the next comes in (no two headlines stacked) */
+const HANDOFF = 8;
+const Panel: React.FC<{ins: Insert; prev?: Insert; next?: Insert}> = ({ins, prev, next}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const a = f(ins.from);
   const b = f(ins.to);
   const color = C[ins.color ?? 'cyan'];
-  const pin = spr(frame, fps, a - FADE, SNAPPY);
-  const out = interpolate(frame, [b, b + FADE], [0, 1], CLAMP);
+  const tight = (x?: Insert, y?: Insert) => !!x && !!y && x.kind !== 'demo' && y.kind !== 'demo' && f(y.from) - FADE < f(x.to) + FADE;
+  const pinAt = tight(prev, ins) ? Math.max(a - FADE, f(prev!.to)) : a - FADE;
+  const outAt = tight(ins, next) ? Math.min(b, f(next!.from)) - HANDOFF : b;
+  const pin = spr(frame, fps, pinAt, SNAPPY);
+  const out = interpolate(frame, [outAt, outAt + (outAt < b ? HANDOFF : FADE)], [0, 1], CLAMP);
   const items = ins.items ?? [];
 
   const header = (
@@ -206,7 +211,7 @@ const Panel: React.FC<{ins: Insert}> = ({ins}) => {
         {header}
         {body}
       </div>
-      <Sfx at={a - FADE} name="air_whoosh" volume={0.16} />
+      <Sfx at={pinAt} name="air_whoosh" volume={0.16} />
       {items.map((it, i) => (
         <Sfx key={i} at={f(it.at)} name="node_pop" volume={0.18} />
       ))}
@@ -218,9 +223,9 @@ export const TeluguInserts: React.FC<{index: number}> = ({index}) => {
   const frame = useCurrentFrame();
   return (
     <>
-      {insertsFor(index).map((ins, i) => {
+      {insertsFor(index).map((ins, i, all) => {
         if (frame < f(ins.from) - FADE - 2 || frame > f(ins.to) + FADE + 2) return null;
-        return ins.kind === 'demo' ? <DemoRouter key={i} ins={ins} /> : <Panel key={i} ins={ins} />;
+        return ins.kind === 'demo' ? <DemoRouter key={i} ins={ins} /> : <Panel key={i} ins={ins} prev={all[i - 1]} next={all[i + 1]} />;
       })}
     </>
   );

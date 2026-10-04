@@ -312,7 +312,14 @@ export const ComplaintDemo: React.FC<DemoProps> = ({ins}) => {
         <div style={{position: 'absolute', left: 140, top: 560, display: 'flex', gap: 14, flexWrap: 'wrap', width: 1040, opacity: p('rejected')}}>
           <Pill text="rejected" color={C.amber} size={30} />
           <Pill text="unsatisfactory reply" color={C.amber} size={30} />
-          {on('noreply') && <Pill text="no reply within 30 days" color={C.amber} size={30} style={{opacity: p('noreply')}} />}
+          {on('noreply') && <Pill text="no reply in time" color={C.amber} size={30} style={{opacity: p('noreply')}} />}
+        </div>
+      )}
+      {/* RBI: no reply within 30 days, or a longer prescribed timeline where one applies, whichever is higher */}
+      {on('noreply') && (
+        <div style={{position: 'absolute', left: 140, top: 640, width: 1040, opacity: p('noreply'), fontFamily: FONT}}>
+          <div style={{fontSize: 34, fontWeight: 800, color: '#FDE68A'}}>“In time” = usually 30 days</div>
+          <div style={{fontSize: 28, color: SUPPORT, marginTop: 6}}>Longer applicable timelines may apply. Check the current rule on cms.rbi.org.in.</div>
         </div>
       )}
       <Arrow x1={1180} y1={420} x2={1290} y2={420} t={on('ombudsman') ? lin('ombudsman', 12) : 0} color={C.violet} dashed />
@@ -325,7 +332,7 @@ export const ComplaintDemo: React.FC<DemoProps> = ({ins}) => {
       )}
       <Caption ins={ins} bottom={30} lines={[
         {k: 'bank', text: 'Write to the bank’s grievance team first', te: 'ముందు bank grievance team కి written complaint'},
-        {k: 'rejected', text: 'Rejected, unsatisfactory, or no reply in 30 days?', te: 'Reject చేసినా, reply బాలేకపోయినా, 30 రోజుల్లో reply రాకపోయినా'},
+        {k: 'rejected', text: 'Rejected, unsatisfactory, or no reply in time (usually 30 days)?', te: 'Reject చేసినా, reply బాలేకపోయినా, 30 రోజుల్లో reply రాకపోయినా'},
         {k: 'ombudsman', text: 'You may escalate through the RBI Ombudsman process', te: 'RBI Ombudsman process ద్వారా escalate చేయొచ్చు', color: '#86EFAC'},
       ]} />
       <BeatSfx ins={ins} k="ref" name="stamp_heavy" volume={0.18} />

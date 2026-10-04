@@ -8,3 +8,7 @@ public/audio/**/*.wav
 narration/processed/
 narration/raw/*
 !narration/raw/.gitkeep
+short01/assets/hdri/
+short01/assets/tex/
+short01/assets/models/
+short01/build/

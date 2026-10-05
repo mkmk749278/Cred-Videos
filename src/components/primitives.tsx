@@ -12,7 +12,7 @@ export type SfxName =
   | 'vaporize' | 'block_slam' | 'piston_clamp' | 'shield_activate' | 'typing' | 'key_click' | 'email_sent'
   | 'buzzer' | 'printer_blast' | 'radar_ping' | 'dial_112' | 'dialer_ring' | 'pages_flip' | 'gear_shift'
   | 'vault_open' | 'card_slide' | 'grid_lock' | 'gavel_strike' | 'payment_success' | 'gauge_drop' | 'slice'
-  | 'card_insert' | 'triumph_rise' | 'warning_pulse' | 'notification' | 'title_hit';
+  | 'card_insert' | 'triumph_rise' | 'warning_pulse' | 'notification' | 'title_hit' | 'door_knock';
 
 /** Lets a scene silence its own SFX in frame ranges (Telugu edition: while an insert panel covers the stage). */
 export const SfxMute = React.createContext<((frame: number) => boolean) | null>(null);

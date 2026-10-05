@@ -8,3 +8,4 @@ public/audio/**/*.wav
 narration/processed/
 narration/raw/*
 !narration/raw/.gitkeep
+publish/02_no_cost_emi/preview_720p.mp4

@@ -9,14 +9,14 @@ const browserExecutable = process.env.REMOTION_BROWSER || null;
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
 for (const cid of id.split(',')) {
 const envVariables = process.env.REMOTION_LANG ? {REMOTION_LANG: process.env.REMOTION_LANG} : {};
-  const composition = await selectComposition({serveUrl, id: cid, browserExecutable, envVariables, chromiumOptions: {gl: 'swangle'}});
+  const composition = await selectComposition({serveUrl, id: cid, browserExecutable, envVariables, chromiumOptions: {gl: process.env.GL || 'swangle'}});
 const frames = framesArg.startsWith('auto:')
   ? Array.from({length: Number(framesArg.slice(5))}, (_, i) => Math.round(((i + 0.5) / Number(framesArg.slice(5))) * composition.durationInFrames))
   : framesArg.split(',').map(Number);
 fs.mkdirSync(outDir, {recursive: true});
 for (const frame of frames) {
   const output = path.join(outDir, `${cid}_${String(frame).padStart(5, '0')}.png`);
-  await renderStill({composition, serveUrl, output, frame, browserExecutable, scale: Number(process.env.SCALE || 0.5), envVariables, chromiumOptions: {gl: 'swangle'}});
+  await renderStill({composition, serveUrl, output, frame, browserExecutable, scale: Number(process.env.SCALE || 0.5), envVariables, chromiumOptions: {gl: process.env.GL || 'swangle'}});
   console.log(output);
 }
 }

@@ -470,7 +470,7 @@ export const Scene4: React.FC = () => {
           return (
             <>
               <FlowArrow x1={B.x + 150} y1={B.y} x2={N.x - 150} y2={N.y} t={tA} color={K.gold} label={<>≈ ₹1,270 interest <span style={{color: K.gold}}>paid by brand</span></>} lx={960} ly={250} f={f} />
-              <FlowArrow x1={N.x - 60} y1={N.y + 130} x2={U.x + 140} y2={U.y - 70} t={tB} color={K.loss} label={<>Processing fee + <span style={{color: K.loss}}>GST on interest</span></>} lx={1420} ly={600} f={f} />
+              <FlowArrow x1={N.x - 150} y1={N.y + 100} x2={U.x + 140} y2={U.y - 70} t={tB} color={K.loss} label={<>Processing fee + <span style={{color: K.loss}}>GST on interest</span></>} lx={1500} ly={650} f={f} />
               <Node x={U.x} y={U.y} label="YOU" sub="BUYER" color={K.cyan} at={S(19) + 4} icon={<IconUser />} hot={lin(f, S(24), S(24) + 10)} />
               <Node x={B.x} y={B.y} label="BRAND / SELLER" sub="PAYS THE INTEREST" color={K.gold} at={S(19) + 10} icon={<IconBrand />} hot={hotBrand} />
               <Node x={N.x} y={N.y} label="BANK" sub="GETS ITS INTEREST" color={K.violet} at={S(19) + 16} icon={<IconBank />} hot={lin(f, S(23), S(23) + 10)} />
@@ -488,7 +488,7 @@ export const Scene4: React.FC = () => {
                 ))}
                 <div style={{fontFamily: DISPLAY, fontWeight: 850, fontSize: 34, color: K.win, marginLeft: 12}}>Brand: more sales ↑</div>
               </div>
-              <div style={{position: 'absolute', left: 1690, top: 280, width: 220, opacity: lin(f, S(23), S(23) + 10), fontFamily: DISPLAY, fontWeight: 850, fontSize: 30, lineHeight: 1.15, color: K.violet}}>Interest received from brand ✓</div>
+              <div style={{position: 'absolute', left: 1500, top: 500, width: 380, textAlign: 'center', opacity: lin(f, S(23), S(23) + 10), fontFamily: DISPLAY, fontWeight: 850, fontSize: 30, lineHeight: 1.15, color: K.violet}}>Interest received from brand ✓</div>
             </>
           );
         })()}

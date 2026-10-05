@@ -35,15 +35,6 @@ const MathScene: React.FC<MathCfg> = (c) => {
       <Backdrop plate={c.plate} tint={c.tint} bokeh={0.32} />
       {/* desk surface */}
       <div style={{position: 'absolute', left: -100, right: -100, top: 780, bottom: -200, background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.5))', transform: 'perspective(1200px) rotateX(60deg)', transformOrigin: '50% 0%'}} />
-      {/* title */}
-      <div style={{position: 'absolute', left: 120, top: 70 - dock * 0, opacity: introP}}>
-        <Kicker text={`${c.platform} × ${c.bankName}`} at={c.intro} color={c.accent} style={{fontSize: 30}} />
-        <div style={{fontFamily: DISPLAY, fontWeight: 900, fontSize: 52, color: '#fff', marginTop: 6, opacity: dock}}>₹30,000 phone · two ways to pay</div>
-      </div>
-      {/* hero cards: big in the centre during the intro, then docked */}
-      <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transform: `translate(${dock * 700}px, ${dock * -370}px) scale(${1 - dock * 0.62})`, transformOrigin: '960px 540px', opacity: introP * (1 - lin(f, c.to - 400, c.to - 380) * 0)}}>
-        {c.cards}
-      </div>
       {/* the two receipts + side panels, under a camera that follows the printing */}
       <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transformOrigin: '0 0', transform: camTransform(f, c.cam)}}>
         <div style={{opacity: dock}}>
@@ -53,8 +44,19 @@ const MathScene: React.FC<MathCfg> = (c) => {
         {c.side}
         {c.verdict}
       </div>
-      {c.sfx}
+      {/* top shade so zoomed receipts slide under the title */}
+      <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 215, background: 'linear-gradient(180deg, rgba(4,6,12,0.92) 0%, rgba(4,6,12,0.7) 70%, transparent 100%)', opacity: dock}} />
+      {/* title */}
+      <div style={{position: 'absolute', left: 120, top: 70 - dock * 0, opacity: introP}}>
+        <Kicker text={`${c.platform} × ${c.bankName}`} at={c.intro} color={c.accent} style={{fontSize: 30}} />
+        <div style={{fontFamily: DISPLAY, fontWeight: 900, fontSize: 52, color: '#fff', marginTop: 6, opacity: dock}}>₹30,000 phone · two ways to pay</div>
+      </div>
       <div style={{position: 'absolute', left: 140, top: 178, fontFamily: NUM, fontSize: 18, color: 'rgba(255,255,255,0.5)', opacity: lin(f, c.full[0].at - 30, c.full[0].at)}}>Figures as narrated for a ₹30,000 example · offer caps, fees and rules can change — check your checkout page and card T&amp;C</div>
+      {/* hero cards: big in the centre during the intro, then docked */}
+      <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transform: `translate(${dock * 700}px, ${dock * -370}px) scale(${1 - dock * 0.62})`, transformOrigin: '960px 540px', opacity: introP * (1 - lin(f, c.to - 400, c.to - 380) * 0)}}>
+        {c.cards}
+      </div>
+      {c.sfx}
     </Shot>
   );
 };
@@ -214,7 +216,7 @@ export const Scene6: React.FC = () => {
           <ContactShadow x={960} y={800} w={800} />
           <CreditCard skin={SKINS.axis} w={560} rx={8} ry={-20 + 16 * lin(f, S(42), S(43))} rz={-7} style={{left: 520, top: 330}} />
           <CreditCard skin={SKINS.icici} w={560} rx={8} ry={-12 + 16 * lin(f, S(42), S(43))} rz={5} style={{left: 860, top: 360}} glow={0.4} />
-          <div style={{position: 'absolute', left: 0, right: 0, top: 790, textAlign: 'center', opacity: lin(f, S(42, 0.2), S(42, 0.2) + 10)}}>
+          <div style={{position: 'absolute', left: 0, right: 0, top: 790, textAlign: 'center', opacity: lin(f, S(42, 0.2), S(42, 0.2) + 10) * (1 - lin(f, S(43, 0.3) - 26, S(43, 0.3) - 10))}}>
             <span style={{fontFamily: NUM, fontSize: 28, letterSpacing: 5, color: K.soft}}>SAME BASE PRICE </span>
             <span style={{fontFamily: DISPLAY, fontWeight: 900, fontSize: 64, color: '#fff'}}>₹30,000</span>
           </div>

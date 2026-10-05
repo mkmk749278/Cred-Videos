@@ -1,0 +1,1075 @@
+{
+"duration": 434.833,
+"sentences": [
+{
+"s": 0,
+"e": 8.39
+},
+{
+"s": 9.04,
+"e": 11.84
+},
+{
+"s": 12.35,
+"e": 16.28
+},
+{
+"s": 16.63,
+"e": 21.55
+},
+{
+"s": 23.13,
+"e": 28.85
+},
+{
+"s": 29.28,
+"e": 33.02
+},
+{
+"s": 33.56,
+"e": 40.36
+},
+{
+"s": 40.8,
+"e": 48.95
+},
+{
+"s": 49.35,
+"e": 54.51
+},
+{
+"s": 54.96,
+"e": 61.9
+},
+{
+"s": 62.7,
+"e": 65.29
+},
+{
+"s": 65.81,
+"e": 70.75
+},
+{
+"s": 71.23,
+"e": 80.93
+},
+{
+"s": 81.49,
+"e": 83.54
+},
+{
+"s": 85.39,
+"e": 89.7
+},
+{
+"s": 90.17,
+"e": 94.67
+},
+{
+"s": 94.67,
+"e": 100.12
+},
+{
+"s": 100.61,
+"e": 104.73
+},
+{
+"s": 105.19,
+"e": 107.32
+},
+{
+"s": 107.76,
+"e": 110.38
+},
+{
+"s": 110.85,
+"e": 122.04
+},
+{
+"s": 122.08,
+"e": 123.87
+},
+{
+"s": 124.21,
+"e": 126.72
+},
+{
+"s": 127.23,
+"e": 130.62
+},
+{
+"s": 131.16,
+"e": 135.2
+},
+{
+"s": 135.7,
+"e": 138.58
+},
+{
+"s": 139.04,
+"e": 140.01
+},
+{
+"s": 140.01,
+"e": 149.42
+},
+{
+"s": 149.85,
+"e": 153.16
+},
+{
+"s": 153.23,
+"e": 159.54
+},
+{
+"s": 159.9,
+"e": 166.5
+},
+{
+"s": 167.04,
+"e": 168.97
+},
+{
+"s": 169.4,
+"e": 173.98
+},
+{
+"s": 174.36,
+"e": 182.71
+},
+{
+"s": 183.08,
+"e": 188.16
+},
+{
+"s": 188.56,
+"e": 193.96
+},
+{
+"s": 194.34,
+"e": 195.2
+},
+{
+"s": 195.2,
+"e": 204.96
+},
+{
+"s": 205.0,
+"e": 209.24
+},
+{
+"s": 210.06,
+"e": 217.11
+},
+{
+"s": 217.57,
+"e": 221.14
+},
+{
+"s": 223.21,
+"e": 230.84
+},
+{
+"s": 231.41,
+"e": 233.25
+},
+{
+"s": 233.79,
+"e": 237.93
+},
+{
+"s": 238.51,
+"e": 241.96
+},
+{
+"s": 242.03,
+"e": 247.53
+},
+{
+"s": 247.99,
+"e": 251.63
+},
+{
+"s": 252.1,
+"e": 256.73
+},
+{
+"s": 257.13,
+"e": 259.59
+},
+{
+"s": 260.04,
+"e": 268.15
+},
+{
+"s": 268.43,
+"e": 271.9
+},
+{
+"s": 271.9,
+"e": 277.11
+},
+{
+"s": 277.6,
+"e": 289.33
+},
+{
+"s": 289.76,
+"e": 292.8
+},
+{
+"s": 293.2,
+"e": 297.0
+},
+{
+"s": 299.15,
+"e": 306.08
+},
+{
+"s": 306.1,
+"e": 314.67
+},
+{
+"s": 315.12,
+"e": 318.68
+},
+{
+"s": 319.21,
+"e": 328.1
+},
+{
+"s": 328.1,
+"e": 332.68
+},
+{
+"s": 333.39,
+"e": 336.85
+},
+{
+"s": 337.37,
+"e": 339.78
+},
+{
+"s": 340.35,
+"e": 344.29
+},
+{
+"s": 344.7,
+"e": 348.18
+},
+{
+"s": 348.66,
+"e": 352.96
+},
+{
+"s": 353.6,
+"e": 356.36
+},
+{
+"s": 356.82,
+"e": 359.28
+},
+{
+"s": 359.72,
+"e": 366.95
+},
+{
+"s": 367.66,
+"e": 369.82
+},
+{
+"s": 370.33,
+"e": 376.17
+},
+{
+"s": 376.57,
+"e": 382.5
+},
+{
+"s": 382.92,
+"e": 386.94
+},
+{
+"s": 387.29,
+"e": 393.91
+},
+{
+"s": 394.23,
+"e": 401.45
+},
+{
+"s": 402.05,
+"e": 405.82
+},
+{
+"s": 406.35,
+"e": 414.87
+},
+{
+"s": 415.43,
+"e": 421.76
+},
+{
+"s": 422.33,
+"e": 426.73
+},
+{
+"s": 427.24,
+"e": 431.54
+},
+{
+"s": 431.97,
+"e": 434.58
+}
+],
+"words": {
+"w1_10pct": 6.1,
+"w2_30000": 10.0,
+"w3_3000": 14.3,
+"w5_1000": 27.6,
+"w6_3pct": 31.9,
+"w7_1250": 38.3,
+"w8_29990": 43.1,
+"w8_500": 47.6,
+"w9_750": 52.4,
+"w12_449": 69.0,
+"w13_336": 78.9,
+"w21_1270": 115.7,
+"w28_1000": 142.6,
+"w28_29000": 148.3,
+"w30_1250": 155.3,
+"w30_500": 157.6,
+"w31_1750": 160.8,
+"w31_28250": 164.3,
+"w33_date": 171.4,
+"w34_45": 176.9,
+"w34_53": 181.2,
+"w35_248": 186.8,
+"w36_301": 192.0,
+"w38_28551": 202.3,
+"w39_1448": 208.0,
+"w40_29000": 211.3,
+"w40_449": 214.9,
+"w44_29000": 236.7,
+"w46_1250": 243.9,
+"w47_28750": 249.5,
+"w48_250": 255.1,
+"w50_299": 263.7,
+"w50_353": 267.1,
+"w51_233": 271.0,
+"w52_586": 275.9,
+"w53_586": 282.7,
+"w53_29336": 286.5,
+"w54_29000": 291.5,
+"w55_336": 295.8,
+"w57_5pct": 310.4,
+"w57_1500": 313.7,
+"w58_28500": 316.6,
+"w59_5pct": 321.9,
+"w59_30580": 325.6,
+"w63_5000": 341.0,
+"w64_30000": 346.1,
+"w67_5000": 358.2,
+"w68_5417": 364.5,
+"w72_45": 383.8,
+"w73_15": 393.3,
+"w74_3pct": 399.3
+},
+"captions": [
+{
+"s": 0,
+"e": 1.8,
+"t": "Amazon Great Indian Festival,"
+},
+{
+"s": 1.8,
+"e": 4.97,
+"t": "Flipkart Big Billion Days సేల్స్ banners చూడగానే..."
+},
+{
+"s": 4.97,
+"e": 8.39,
+"t": "మన కళ్లన్నీ ఆ ten percent instant discount మీదే పడతాయి."
+},
+{
+"s": 9.04,
+"e": 11.84,
+"t": "మనం ఒక thirty thousand rupees phone కొంటున్నామనుకోండి..."
+},
+{
+"s": 12.35,
+"e": 14.09,
+"t": "ten percent అంటే straight గా three"
+},
+{
+"s": 14.09,
+"e": 16.08,
+"t": "thousand rupees తగ్గిపోతుంది అనుకుంటాం,"
+},
+{
+"s": 16.08,
+"e": 16.28,
+"t": "కదా?"
+},
+{
+"s": 16.63,
+"e": 19.23,
+"t": "కానీ checkout page కి వెళ్లేసరికి..."
+},
+{
+"s": 19.23,
+"e": 21.55,
+"t": "అసలైన discount limits బయటపడతాయి!"
+},
+{
+"s": 23.13,
+"e": 26.05,
+"t": "మొబైల్స్ category పై full payment swipe చేస్తే..."
+},
+{
+"s": 26.05,
+"e": 28.85,
+"t": "discount cap కేవలం one thousand rupees మాత్రమే!"
+},
+{
+"s": 29.28,
+"e": 30.8,
+"t": "అంటే ten percent కాదు..."
+},
+{
+"s": 30.8,
+"e": 33.02,
+"t": "practical గా three percent మాత్రమే!"
+},
+{
+"s": 33.56,
+"e": 33.96,
+"t": "కానీ..."
+},
+{
+"s": 33.96,
+"e": 37.02,
+"t": "అదే credit card EMI option సెలెక్ట్ చేసుకుంటే discount"
+},
+{
+"s": 37.02,
+"e": 40.36,
+"t": "limit one thousand two hundred fifty rupees కి పెరుగుతుంది."
+},
+{
+"s": 40.8,
+"e": 44.76,
+"t": "పైగా Amazon లో cart value twenty-nine thousand nine hundred ninety"
+},
+{
+"s": 44.76,
+"e": 48.95,
+"t": "rupees దాటినందుకు మరో five hundred rupees extra EMI bonus ఇస్తున్నారు!"
+},
+{
+"s": 49.35,
+"e": 52.05,
+"t": "అంటే full payment కంటే EMI లోనే seven hundred"
+},
+{
+"s": 52.05,
+"e": 54.51,
+"t": "fifty rupees extra discount కనిపిస్తుంది!"
+},
+{
+"s": 54.96,
+"e": 57.16,
+"t": "చాలామంది \"ఎలాగో No Cost EMI కదా,"
+},
+{
+"s": 57.16,
+"e": 61.9,
+"t": "extra discount కూడా వస్తోంది\" అని వెంటనే six months EMI పెట్టేస్తారు."
+},
+{
+"s": 62.7,
+"e": 65.29,
+"t": "కానీ ఇక్కడే అసలైన twist ఉంది!"
+},
+{
+"s": 65.81,
+"e": 68.25,
+"t": "Amazon లో SBI card వాడితే నిజంగానే four"
+},
+{
+"s": 68.25,
+"e": 70.75,
+"t": "hundred forty-nine rupees ఆదా అవుతాయి..."
+},
+{
+"s": 71.23,
+"e": 75.93,
+"t": "కానీ అదే No Cost EMI Flipkart లో Axis లేదా ICICI card తో పెడితే,"
+},
+{
+"s": 75.93,
+"e": 80.93,
+"t": "full payment కంటే three hundred thirty-six rupees ఎక్కువ నష్టపోతారు!"
+},
+{
+"s": 81.49,
+"e": 83.54,
+"t": "అసలు ఈ No Cost EMI వెనుక ఖర్చు భరించేది ఎవరు?"
+},
+{
+"s": 85.39,
+"e": 87.82,
+"t": "thirty thousand rupees base price పెట్టుకుని"
+},
+{
+"s": 87.82,
+"e": 89.7,
+"t": "ప్రతి ఒక్క పైసా లెక్క తేల్చేద్దాం."
+},
+{
+"s": 90.17,
+"e": 91.54,
+"t": "చాలామందికి ఒక doubt ఉంటుంది:"
+},
+{
+"s": 91.54,
+"e": 94.67,
+"t": "అసలు బ్యాంకులు రూపాయి వడ్డీ లేకుండా ఉచితంగా loan ఎందుకు ఇస్తాయి?"
+},
+{
+"s": 94.67,
+"e": 100.12,
+"t": "నిజం చెప్పాలంటే... బ్యాంకులు ఉచితంగా ఏదీ ఇవ్వవు!"
+},
+{
+"s": 100.61,
+"e": 104.73,
+"t": "RBI rules ప్రకారం ఏ బ్యాంకు కూడా zero interest తో loan ఇవ్వకూడదు."
+},
+{
+"s": 105.19,
+"e": 107.32,
+"t": "మరి ఈ interest ని ఎవరు భరిస్తారు?"
+},
+{
+"s": 107.76,
+"e": 110.38,
+"t": "మనం కొనే phone brand లేదా seller భరిస్తారు!"
+},
+{
+"s": 110.85,
+"e": 114.34,
+"t": "మీరు thirty thousand rupees phone కొన్నప్పుడు six months కి"
+},
+{
+"s": 114.34,
+"e": 118.13,
+"t": "బ్యాంక్ వేసే సుమారు twelve hundred seventy rupees interest ని..."
+},
+{
+"s": 118.13,
+"e": 122.04,
+"t": "brand వాళ్లే phone price లోంచి upfront discount గా తగ్గించేస్తాయి."
+},
+{
+"s": 122.08,
+"e": 123.87,
+"t": "Brand కి sales volume పెరుగుతుంది."
+},
+{
+"s": 124.21,
+"e": 126.72,
+"t": "Bank కి interest డబ్బులు brand నుంచి వచ్చేస్తాయి."
+},
+{
+"s": 127.23,
+"e": 130.62,
+"t": "పైగా మీ దగ్గర processing fee, interest GST తీసుకుంటారు!"
+},
+{
+"s": 131.16,
+"e": 135.2,
+"t": "ఇప్పుడు Amazon లో SBI credit card తో కొంటే ఏం జరుగుతుందో చూద్దాం."
+},
+{
+"s": 135.7,
+"e": 138.58,
+"t": "మన base reference price: thirty thousand rupees."
+},
+{
+"s": 139.04,
+"e": 140.01,
+"t": "Option one: Full Payment."
+},
+{
+"s": 140.01,
+"e": 143.7,
+"t": "Mobile cap ప్రకారం one thousand rupees discount పోతే,"
+},
+{
+"s": 143.7,
+"e": 146.63,
+"t": "base thirty thousand rupees లోంచి final గా"
+},
+{
+"s": 146.63,
+"e": 149.42,
+"t": "మనం కట్టేది twenty-nine thousand rupees."
+},
+{
+"s": 149.85,
+"e": 153.16,
+"t": "Option two: Six Months No Cost EMI."
+},
+{
+"s": 153.23,
+"e": 156.69,
+"t": "ఇక్కడ base EMI cap one thousand two hundred fifty rupees,"
+},
+{
+"s": 156.69,
+"e": 159.54,
+"t": "ప్లస్ five hundred rupees bonus offer వస్తుంది."
+},
+{
+"s": 159.9,
+"e": 163.15,
+"t": "మొత్తం seventeen hundred fifty rupees discount పోను checkout"
+},
+{
+"s": 163.15,
+"e": 166.5,
+"t": "price twenty-eight thousand two hundred fifty rupees అవుతుంది!"
+},
+{
+"s": 167.04,
+"e": 168.97,
+"t": "ఇప్పుడు దీనికి bank charges కలుపుదాం:"
+},
+{
+"s": 169.4,
+"e": 171.54,
+"t": "SBI Card రీసెంట్ గా సెప్టెంబర్ ten,"
+},
+{
+"s": 171.54,
+"e": 173.98,
+"t": "twenty twenty-six నుంచి rules మార్చింది."
+},
+{
+"s": 174.36,
+"e": 178.38,
+"t": "six months EMI కి processing fee కేవలం forty-five rupees మాత్రమే,"
+},
+{
+"s": 178.38,
+"e": 182.71,
+"t": "eighteen percent GST తో కలిపితే fifty-three rupees ten paise అవుతుంది."
+},
+{
+"s": 183.08,
+"e": 185.68,
+"t": "six months interest పై eighteen percent GST"
+},
+{
+"s": 185.68,
+"e": 188.16,
+"t": "two hundred forty-eight rupees ten paise."
+},
+{
+"s": 188.56,
+"e": 191.39,
+"t": "రెండు కలిపితే extra bank charges కేవలం three"
+},
+{
+"s": 191.39,
+"e": 193.96,
+"t": "hundred one rupees twenty paise మాత్రమే!"
+},
+{
+"s": 194.34,
+"e": 195.2,
+"t": "ఫైనల్ లెక్క చూడండి!"
+},
+{
+"s": 195.2,
+"e": 200.08,
+"t": "twenty-eight thousand two hundred fifty rupees కి ఈ three hundred one rupees"
+},
+{
+"s": 200.08,
+"e": 202.46,
+"t": "కలిపితే net bank outflow twenty-eight"
+},
+{
+"s": 202.46,
+"e": 204.96,
+"t": "thousand five hundred fifty-one rupees."
+},
+{
+"s": 205.0,
+"e": 207.07,
+"t": "Base price thirty thousand rupees తో పోలిస్తే"
+},
+{
+"s": 207.07,
+"e": 209.24,
+"t": "fourteen hundred forty-eight rupees ఆదా అయింది."
+},
+{
+"s": 210.06,
+"e": 213.37,
+"t": "Full payment twenty-nine thousand rupees తో పోలిస్తే..."
+},
+{
+"s": 213.37,
+"e": 217.11,
+"t": "EMI లోనే four hundred forty-nine rupees clear గా సేవ్ అయ్యాయి!"
+},
+{
+"s": 217.57,
+"e": 221.14,
+"t": "అంటే Amazon SBI card లో extra discount ఉంది కాబట్టి EMI గెలిచింది!"
+},
+{
+"s": 223.21,
+"e": 227.03,
+"t": "మరి ఇదే thirty thousand rupees base price ని Flipkart"
+},
+{
+"s": 227.03,
+"e": 230.84,
+"t": "లో Axis లేదా ICICI card తో పెడితే ఏమవుతుందో చూడండి..."
+},
+{
+"s": 231.41,
+"e": 233.25,
+"t": "Option one: Full Payment."
+},
+{
+"s": 233.79,
+"e": 235.91,
+"t": "ఇక్కడ కూడా one thousand rupees cap పోను"
+},
+{
+"s": 235.91,
+"e": 237.93,
+"t": "twenty-nine thousand rupees అవుతుంది."
+},
+{
+"s": 238.51,
+"e": 241.96,
+"t": "Option two: Six Months No Cost EMI."
+},
+{
+"s": 242.03,
+"e": 246.2,
+"t": "Flipkart లో EMI cap one thousand two hundred fifty rupees మాత్రమే,"
+},
+{
+"s": 246.2,
+"e": 247.53,
+"t": "extra bonus ఏమీ లేదు."
+},
+{
+"s": 247.99,
+"e": 249.81,
+"t": "Checkout price twenty-eight thousand"
+},
+{
+"s": 249.81,
+"e": 251.63,
+"t": "seven hundred fifty rupees అవుతుంది."
+},
+{
+"s": 252.1,
+"e": 254.47,
+"t": "Full payment కంటే కేవలం two hundred fifty"
+},
+{
+"s": 254.47,
+"e": 256.73,
+"t": "rupees మాత్రమే extra discount వచ్చింది."
+},
+{
+"s": 257.13,
+"e": 259.59,
+"t": "కానీ బ్యాంక్ ఛార్జీలు చూడండి!"
+},
+{
+"s": 260.04,
+"e": 262.92,
+"t": "Axis మరియు ICICI బ్యాంకుల్లో processing fee"
+},
+{
+"s": 262.92,
+"e": 265.6,
+"t": "two hundred ninety-nine rupees plus GST,"
+},
+{
+"s": 265.6,
+"e": 268.15,
+"t": "అంటే three hundred fifty-three rupees!"
+},
+{
+"s": 268.43,
+"e": 271.9,
+"t": "six months interest పై GST two hundred thirty-three rupees!"
+},
+{
+"s": 271.9,
+"e": 277.11,
+"t": "రెండు కలిపితే bank extra charges ఏకంగా five hundred eighty-six rupees!"
+},
+{
+"s": 277.6,
+"e": 281.18,
+"t": "ఇప్పుడు checkout price twenty-eight thousand seven hundred"
+},
+{
+"s": 281.18,
+"e": 284.82,
+"t": "fifty rupees కి ఈ five hundred eighty-six rupees కలిపితే..."
+},
+{
+"s": 284.82,
+"e": 287.17,
+"t": "మీ net cost twenty-nine thousand three"
+},
+{
+"s": 287.17,
+"e": 289.33,
+"t": "hundred thirty-six rupees అవుతుంది!"
+},
+{
+"s": 289.76,
+"e": 292.8,
+"t": "Full payment చేస్తే twenty-nine thousand rupees అయ్యేది."
+},
+{
+"s": 293.2,
+"e": 295.2,
+"t": "కానీ EMI పెట్టడం వల్ల మీరు three hundred"
+},
+{
+"s": 295.2,
+"e": 297.0,
+"t": "thirty-six rupees అదనంగా నష్టపోయారు!"
+},
+{
+"s": 299.15,
+"e": 300.49,
+"t": "ఇక మూడవ category:"
+},
+{
+"s": 300.49,
+"e": 303.32,
+"t": "మీ దగ్గర Amazon Pay ICICI లాంటి five"
+},
+{
+"s": 303.32,
+"e": 306.08,
+"t": "percent cashback card ఉందనుకోండి..."
+},
+{
+"s": 306.1,
+"e": 309.1,
+"t": "Base thirty thousand rupees phone కి full payment"
+},
+{
+"s": 309.1,
+"e": 312.41,
+"t": "చేస్తే direct గా flat five percent unlimited cashback,"
+},
+{
+"s": 312.41,
+"e": 314.67,
+"t": "అంటే fifteen hundred rupees వస్తుంది."
+},
+{
+"s": 315.12,
+"e": 318.68,
+"t": "Phone net price twenty-eight thousand five hundred rupees కే పడుతుంది!"
+},
+{
+"s": 319.21,
+"e": 323.07,
+"t": "కానీ ఈ cards పై EMI పెడితే ఆ five percent cashback రాదు,"
+},
+{
+"s": 323.07,
+"e": 325.76,
+"t": "పైగా fees పడి bill thirty thousand five"
+},
+{
+"s": 325.76,
+"e": 328.1,
+"t": "hundred eighty rupees దాటిపోతుంది!"
+},
+{
+"s": 328.1,
+"e": 332.68,
+"t": "కాబట్టి cashback cards ఉంటే ఎప్పుడూ full payment యే best."
+},
+{
+"s": 333.39,
+"e": 336.85,
+"t": "ఇప్పుడు చాలామంది creators చెప్పని three hidden traps గమనించండి!"
+},
+{
+"s": 337.37,
+"e": 339.78,
+"t": "Trap one: Credit Limit Block!"
+},
+{
+"s": 340.35,
+"e": 344.29,
+"t": "నెలకి five thousand rupees కదా అని card లో limit లేకపోయినా కొనలేరు."
+},
+{
+"s": 344.7,
+"e": 348.18,
+"t": "మొదటి రోజే మొత్తం thirty thousand rupees limit block అయిపోతుంది!"
+},
+{
+"s": 348.66,
+"e": 350.87,
+"t": "దీనివల్ల credit utilization పెరిగి మీ"
+},
+{
+"s": 350.87,
+"e": 352.96,
+"t": "CIBIL score drop అయ్యే chance ఉంది."
+},
+{
+"s": 353.6,
+"e": 356.36,
+"t": "Trap two: First Month Bill Shock!"
+},
+{
+"s": 356.82,
+"e": 359.28,
+"t": "మొదటి నెల బిల్లు five thousand rupees రాదు!"
+},
+{
+"s": 359.72,
+"e": 360.67,
+"t": "processing fee,"
+},
+{
+"s": 360.67,
+"e": 364.1,
+"t": "GST అన్నీ మొదటి నెలలోనే add అయ్యి దాదాపు five thousand"
+},
+{
+"s": 364.1,
+"e": 366.95,
+"t": "four hundred seventeen rupees debit అవుతుంది!"
+},
+{
+"s": 367.66,
+"e": 369.82,
+"t": "Trap three: The Return Trap!"
+},
+{
+"s": 370.33,
+"e": 372.03,
+"t": "Phone నచ్చక return చేస్తే..."
+},
+{
+"s": 372.03,
+"e": 376.17,
+"t": "app లో refund completed అని రాగానే loan cancel అయిపోయింది అనుకోకండి!"
+},
+{
+"s": 376.57,
+"e": 379.63,
+"t": "ఆ refund మీ credit card లో normal credit balance"
+},
+{
+"s": 379.63,
+"e": 382.5,
+"t": "లా పడుతుంది తప్ప bank EMI loan cancel అవ్వదు!"
+},
+{
+"s": 382.92,
+"e": 386.94,
+"t": "SBI అయితే forty-five days లో full refund వస్తే auto-close చేస్తుంది."
+},
+{
+"s": 387.29,
+"e": 388.1,
+"t": "కానీ ICICI,"
+},
+{
+"s": 388.1,
+"e": 391.04,
+"t": "Axis లలో fifteen days లోపు మీరే customer"
+},
+{
+"s": 391.04,
+"e": 393.91,
+"t": "care కి call చేసి EMI cancel చేయించాలి!"
+},
+{
+"s": 394.23,
+"e": 397.48,
+"t": "లేదంటే bank ప్రతి month interest cut చేస్తూనే ఉంటుంది,"
+},
+{
+"s": 397.48,
+"e": 401.45,
+"t": "తర్వాత close చేయాలంటే three percent pre-closure penalty వేస్తుంది!"
+},
+{
+"s": 402.05,
+"e": 405.82,
+"t": "Sale లో Buy Now క్లిక్ చేసే ముందు ఈ three rules గుర్తుపెట్టుకోండి:"
+},
+{
+"s": 406.35,
+"e": 406.7,
+"t": "ఒకటి:"
+},
+{
+"s": 406.7,
+"e": 410.92,
+"t": "Amazon లో SBI card తో EMI bonus offer ఉంటే six months No Cost"
+},
+{
+"s": 410.92,
+"e": 414.87,
+"t": "EMI పెట్టి four hundred forty-nine rupees save చేసుకోండి."
+},
+{
+"s": 415.43,
+"e": 419.89,
+"t": "రెండు: Flipkart లో Axis లేదా ICICI card ఉంటే EMI వద్దు,"
+},
+{
+"s": 419.89,
+"e": 421.76,
+"t": "full payment యే చేయండి."
+},
+{
+"s": 422.33,
+"e": 422.63,
+"t": "మూడు:"
+},
+{
+"s": 422.63,
+"e": 426.73,
+"t": "five percent cashback cards ఉంటే కళ్లు మూసుకుని full payment చేయండి!"
+},
+{
+"s": 427.24,
+"e": 431.54,
+"t": "నెల నెలా తక్కువ amount కనిపిస్తోందని unnecessary EMI trap లో పడకండి."
+},
+{
+"s": 431.97,
+"e": 434.58,
+"t": "ఈ practical video మీ friends కి కూడా share చేయండి!"
+}
+]
+}

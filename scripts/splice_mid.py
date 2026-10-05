@@ -12,10 +12,11 @@ import subprocess
 import sys
 
 src, mid, a, b = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
+FPS = int(os.environ.get('FPS', 30))  # chunk frame rate (the doorstep short is 60)
 F = 'node_modules/@remotion/compositor-linux-x64-gnu'
 env = dict(os.environ, LD_LIBRARY_PATH=F)
 ff = [f'{F}/ffmpeg', '-y', '-loglevel', 'error']
-enc = ['-video_track_timescale', '90000', '-c:v', 'libx264', '-crf', '17', '-preset', 'fast', '-pix_fmt', 'yuv420p', '-r', '30', '-an']
+enc = ['-video_track_timescale', '90000', '-c:v', 'libx264', '-crf', '17', '-preset', 'fast', '-pix_fmt', 'yuv420p', '-r', str(FPS), '-an']
 d = src + '.splice'
 os.makedirs(d, exist_ok=True)
 
@@ -29,7 +30,7 @@ n0 = frames(src)
 assert frames(mid) == b - a + 1, ('mid frames', frames(mid), b - a + 1)
 subprocess.run(ff + ['-i', src, '-frames:v', str(a)] + enc + [f'{d}/0.mp4'], check=True, env=env)
 subprocess.run(ff + ['-i', mid] + enc + [f'{d}/1.mp4'], check=True, env=env)
-subprocess.run(ff + ['-i', src, '-ss', f'{(b + 1) / 30:.6f}'] + enc + [f'{d}/2.mp4'], check=True, env=env)
+subprocess.run(ff + ['-i', src, '-ss', f'{(b + 1) / FPS:.6f}'] + enc + [f'{d}/2.mp4'], check=True, env=env)
 open(f'{d}/list.txt', 'w').write("file '0.mp4'\nfile '1.mp4'\nfile '2.mp4'\n")
 subprocess.run(ff + ['-f', 'concat', '-safe', '0', '-i', f'{d}/list.txt', '-i', src, '-map', '0:v', '-map', '1:a',
                      '-c', 'copy', f'{d}/out.mp4'], check=True, env=env)

@@ -55,6 +55,10 @@ npx remotion render Reel --env-file=out/lang_<lang>.env       # 1080×1920 reel;
 - Build: `out/en/whisper.json` (faster-whisper word timestamps of `narration/english/full.mp3`) → `python3 narration/english/build_from_te.py` (sentence-aligns to the Telugu timeline; phrase fixes in `narration/english/overrides.json`) → `python3 narration/process_telugu.py --lang enh` → `python3 scripts/check_demos.py enh` → `python3 scripts/make_publish_kit_enh.py`.
 - Render/stitch: `REMOTION_LANG=enh scripts/render_modules.sh …` → `out/chunks_enh/`; `REMOTION_LANG=enh scripts/stitch.sh`; verify `VO_LANG=enh python3 scripts/check_vo_sync.py out/credit_card_debt_know_your_rights_english.mp4`.
 
+## Shorts
+
+- `DoorstepShort` (`src/short/`): 9:16 Telugu short, 1080×1920 @ 60 fps, ElevenLabs VO `public/audio/shorts/doorstep_vo_telugu.mp3` (67.2 s); phrase timings in `doorstepLines.ts` (from silencedetect pauses). Render ≈ 45 min locally at 60 fps. Small fixes: render `--frames=a-b` and `FPS=60 scripts/splice_mid.py`, then `master_audio.py`. Deliverables in `publish/shorts/doorstep/`.
+
 ## Code map
 
 - `narration/script.json` — single source of truth for VO text (13 modules, `bridge` + `recap`).

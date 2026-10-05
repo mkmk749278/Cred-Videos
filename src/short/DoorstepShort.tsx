@@ -467,9 +467,9 @@ const CheckBeats: React.FC = () => {
 const NinetyBeat: React.FC = () => {
   const {frame, fps, on, o} = useWin(W.ninety[0], W.ninety[1]);
   if (!on) return null;
-  const count = Math.round(interpolate(frame, [f(L.ninety.s), f(L.ninety.s + 1.2)], [0, 90], {...CLAMP, easing: (x) => 1 - Math.pow(1 - x, 3)}));
-  const trustIn = spr(frame, fps, S('trust') - 8, SNAPPY);
-  const cardIn = spr(frame, fps, S('ninety') - 6, SNAPPY);
+  const count = Math.round(interpolate(frame, [f(L.ninety.s), f(L.ninety.s + 1.6)], [0, 90], {...CLAMP, easing: (x) => 1 - Math.pow(1 - x, 3)}));
+  const trustIn = spr(frame, fps, W.ninety[0], SNAPPY);
+  const cardIn = spr(frame, fps, W.ninety[0] + 10, SNAPPY);
   const stamp = spr(frame, fps, f(L.ninety.s + 2.9), SNAPPY);
   return (
     <AbsoluteFill style={{opacity: o}}>
@@ -502,7 +502,7 @@ const NinetyBeat: React.FC = () => {
           <div style={{marginTop: 14, fontFamily: TE, fontSize: 24, fontWeight: 600, color: 'rgba(226,232,240,0.75)'}}>క్రియేటర్ అనుభవం ఆధారంగా · అధికారిక గణాంకం కాదు</div>
         </div>
       </div>
-      <Sfx at={S('trust') - 8} name="sub_thud" volume={0.4} />
+      <Sfx at={W.ninety[0]} name="sub_thud" volume={0.4} />
       <Sfx at={f(L.ninety.s)} name="counter_spin" volume={0.35} />
       <Sfx at={f(L.ninety.s + 2.9)} name="stamp_heavy" volume={0.5} />
     </AbsoluteFill>
@@ -545,8 +545,8 @@ const BanBeats: React.FC = () => {
   const {frame, fps, on, o} = useWin(W.bans[0], W.bans[1]);
   if (!on) return null;
   const head = spr(frame, fps, S('most') - 8, SNAPPY);
-  const cashIn = spr(frame, fps, S('cash') - 4, SNAPPY);
-  const signIn = spr(frame, fps, S('sign') - 4, SNAPPY);
+  const cashIn = Math.max(0.32 * head, spr(frame, fps, S('cash') - 4, SNAPPY));
+  const signIn = Math.max(0.32 * spr(frame, fps, S('most') + 4, SNAPPY), spr(frame, fps, S('sign') - 4, SNAPPY));
   const cashBan = interpolate(frame, [f(L.cash.e - 0.9), f(L.cash.e - 0.3)], [0, 1], CLAMP);
   const signBan = interpolate(frame, [f(L.sign.e - 0.7), f(L.sign.e - 0.15)], [0, 1], CLAMP);
   return (

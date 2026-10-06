@@ -2,6 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {Backdrop, camTransform, ContactShadow, Count, DISPLAY, Flare, Glass, Headline, K, Kicker, NUM, S, Sfx, Shot, W, eout, lin, rgba, rs, useSp, POP, SMOOTH} from './core';
 import {Badge, CreditCard, Receipt, RLine, SKINS, Stamp} from './objects';
+import {RealCrop} from './real';
 
 /* ================================================================== SCENE 5 / 6 — the receipts */
 
@@ -22,6 +23,7 @@ type MathCfg = {
   sfx: React.ReactNode;
   emiSub: string;
   cam: {f: number; x: number; y: number; s: number}[];
+  real?: React.ReactNode;
 };
 
 const MathScene: React.FC<MathCfg> = (c) => {
@@ -52,6 +54,8 @@ const MathScene: React.FC<MathCfg> = (c) => {
         <div style={{fontFamily: DISPLAY, fontWeight: 900, fontSize: 52, color: '#fff', marginTop: 6, opacity: dock}}>₹30,000 phone · two ways to pay</div>
       </div>
       <div style={{position: 'absolute', left: 140, top: 178, fontFamily: NUM, fontSize: 18, color: 'rgba(255,255,255,0.5)', opacity: lin(f, c.full[0].at - 30, c.full[0].at)}}>Figures as narrated for a ₹30,000 example · offer caps, fees and rules can change — check your checkout page and card T&amp;C</div>
+      {/* real banner for this platform × bank, during the intro */}
+      {c.real && <div style={{position: 'absolute', inset: 0, opacity: introP * (1 - dock)}}>{c.real}</div>}
       {/* hero cards: big in the centre during the intro, then docked */}
       <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transform: `translate(${dock * 700}px, ${dock * -370}px) scale(${1 - dock * 0.62})`, transformOrigin: '960px 540px', opacity: introP * (1 - lin(f, c.to - 400, c.to - 380) * 0)}}>
         {c.cards}
@@ -97,6 +101,12 @@ export const Scene5: React.FC = () => {
       accent={K.amz}
       intro={S(25)}
       emiSub="6 months · SBI Card"
+      real={
+        <>
+          <RealCrop page="amzSale" box={{x: 280, y: 806, w: 1124, h: 128}} w={1180} style={{left: 370, top: 150, transform: `perspective(1800px) rotateX(${(1 - sp(S(25) + 4, SMOOTH)) * 30}deg)`}} />
+          <div style={{position: 'absolute', left: 370, top: 290, fontFamily: NUM, fontSize: 17, letterSpacing: 2, color: 'rgba(255,255,255,0.7)'}}>REAL BANNER · AMAZON.IN MOBILES PAGE · 6 OCT 2026</div>
+        </>
+      }
       cam={[
         {f: 0, x: 960, y: 540, s: 1},
         {f: S(27, 0.2) - 6, x: 440, y: 420, s: 1.38},
@@ -204,6 +214,12 @@ export const Scene6: React.FC = () => {
       accent={K.fkY}
       intro={S(42)}
       emiSub="6 months · Axis / ICICI"
+      real={
+        <>
+          <RealCrop page="fkHome" box={{x: 136, y: 226, w: 460, h: 222}} w={470} style={{left: 725, top: 56, transform: `perspective(1800px) rotateX(${(1 - sp(S(42) + 4, SMOOTH)) * 30}deg)`}} />
+          <div style={{position: 'absolute', left: 725, top: 30, width: 470, textAlign: 'center', fontFamily: NUM, fontSize: 16, letterSpacing: 2, color: 'rgba(255,255,255,0.7)'}}>REAL BANNER · FLIPKART.COM · 6 OCT 2026</div>
+        </>
+      }
       cam={[
         {f: 0, x: 960, y: 540, s: 1},
         {f: S(43, 0.3) - 6, x: 440, y: 420, s: 1.38},
@@ -290,6 +306,11 @@ export const Scene7: React.FC = () => {
           <Kicker text="third category" at={a} color={K.gold} style={{fontSize: 30}} />
           <Headline at={a + 6} size={78} text={<>A <span style={{color: K.gold}}>5% cashback</span> card</>} />
           <div style={{fontFamily: NUM, fontSize: 22, color: K.soft, marginTop: 8, opacity: lin(f, a + 20, a + 30)}}>e.g. co-branded cards like Amazon Pay ICICI</div>
+        </div>
+        {/* the real listing line: "Up to 5% back with Amazon Pay ICICI card" */}
+        <div style={{opacity: lin(f, a + 30, a + 42) * (1 - dock)}}>
+          <RealCrop page="amzSearch" box={{x: 585, y: 410, w: 420, h: 62}} w={760} style={{left: 580, top: 838}} />
+          <div style={{position: 'absolute', left: 580, top: 899, width: 505, height: 48, borderRadius: 10, border: `4px solid ${K.gold}`, boxShadow: `0 0 24px ${rgba(K.gold, 0.6)}`}} />
         </div>
       </div>
       {/* two outcomes */}

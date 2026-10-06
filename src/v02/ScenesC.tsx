@@ -2,6 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {Backdrop, Count, DISPLAY, Flare, Glass, Headline, K, Kicker, NUM, S, Sfx, Shot, TOTAL, W, eout, lin, rgba, useSp, POP, SMOOTH} from './core';
 import {Badge, Phone} from './objects';
+import {RealCrop} from './real';
 
 /* ================================================================== SCENE 8 — three hidden traps */
 
@@ -272,9 +273,12 @@ export const Scene9: React.FC = () => {
             <Headline at={end} size={100} text={<>Don't fall for the <span style={{color: K.loss}}>small monthly amount</span></>} style={{textAlign: 'center', width: 1500}} />
           </div>
           <div style={{display: 'flex', alignItems: 'center', gap: 30, marginTop: 40, opacity: lin(f, end + 30, end + 40)}}>
-            <div style={{position: 'relative', fontFamily: DISPLAY, fontWeight: 950, fontSize: 70, color: K.soft}}>
-              “only ₹5,000/month”
-              <div style={{position: 'absolute', left: -10, right: -10, top: '52%', height: 9, background: K.loss, transform: `scaleX(${lin(f, end + 44, end + 54)})`, transformOrigin: '0 50%'}} />
+            {/* real "per month" offers from the sale pages */}
+            <div style={{position: 'relative', width: 820, height: 240}}>
+              <RealCrop page="fkPdp" box={{x: 1050, y: 752, w: 258, h: 66}} w={540} style={{left: 0, top: 50, transform: 'rotate(-3deg)'}} />
+              <RealCrop page="amzSale" box={{x: 522, y: 1800, w: 148, h: 178}} w={200} style={{left: 600, top: -6, transform: 'rotate(4deg)'}} />
+              <div style={{position: 'absolute', left: -20, right: -20, top: '50%', height: 10, borderRadius: 5, background: K.loss, boxShadow: `0 0 20px ${K.loss}`, transform: `scaleX(${lin(f, end + 44, end + 54)}) rotate(-4deg)`, transformOrigin: '0 50%'}} />
+              <div style={{position: 'absolute', left: 0, top: 246, fontFamily: NUM, fontSize: 16, letterSpacing: 2, color: 'rgba(255,255,255,0.6)'}}>REAL OFFERS · FLIPKART.COM / AMAZON.IN · 6 OCT 2026</div>
             </div>
             <div style={{fontFamily: DISPLAY, fontWeight: 950, fontSize: 70, color: '#fff', opacity: lin(f, end + 56, end + 64)}}>→ do the full math</div>
           </div>

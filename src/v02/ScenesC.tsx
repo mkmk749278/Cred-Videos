@@ -268,7 +268,7 @@ export const Scene9: React.FC = () => {
       </Shot>
       <Shot from={end - 4} to={TOTAL + 30} fout={0} push={0.05} seed={19}>
         <Backdrop plate="warm" tint="#1C1A30" />
-        <AbsoluteFill style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+        <AbsoluteFill style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: 110}}>
           <div style={{position: 'relative'}}>
             <Headline at={end} size={100} text={<>Don't fall for the <span style={{color: K.loss}}>small monthly amount</span></>} style={{textAlign: 'center', width: 1500}} />
           </div>
@@ -283,7 +283,7 @@ export const Scene9: React.FC = () => {
             <div style={{fontFamily: DISPLAY, fontWeight: 950, fontSize: 70, color: '#fff', opacity: lin(f, end + 56, end + 64)}}>→ do the full math</div>
           </div>
           {/* share */}
-          <div style={{marginTop: 70, display: 'flex', alignItems: 'center', gap: 24, opacity: lin(f, S(80), S(80) + 10), transform: `scale(${0.8 + 0.2 * sp(S(80), POP)})`}}>
+          <div style={{marginTop: 40, display: 'flex', alignItems: 'center', gap: 24, opacity: lin(f, S(80), S(80) + 10), transform: `scale(${0.8 + 0.2 * sp(S(80), POP)})`}}>
             <div style={{width: 96, height: 96, borderRadius: 30, background: `linear-gradient(135deg, ${K.win}, #0FB57A)`, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <svg width={54} height={54} viewBox="0 0 24 24" fill="none" stroke="#04150E" strokeWidth={2.4} strokeLinecap="round">
                 <circle cx="18" cy="5" r="3" />
@@ -294,7 +294,7 @@ export const Scene9: React.FC = () => {
             </div>
             <div style={{fontFamily: DISPLAY, fontWeight: 900, fontSize: 56, color: '#fff'}}>Share this with your friends</div>
           </div>
-          <div style={{position: 'absolute', left: 160, right: 160, bottom: 150, textAlign: 'center', fontFamily: NUM, fontSize: 20, lineHeight: 1.5, color: 'rgba(255,255,255,0.6)', opacity: lin(f, S(80), S(80) + 20)}}>
+          <div style={{position: 'absolute', left: 160, right: 160, bottom: 118, textAlign: 'center', fontFamily: NUM, fontSize: 19, lineHeight: 1.5, color: 'rgba(255,255,255,0.6)', opacity: lin(f, S(80), S(80) + 20)}}>
             Example on a ₹30,000 phone using the offer caps, fees and bank rules as narrated for the festive sales (Oct 2026). Offers and charges change and vary by card — always check the checkout page and your bank's T&amp;C. Not affiliated with Amazon, Flipkart or any bank. Not financial advice.
           </div>
         </AbsoluteFill>
